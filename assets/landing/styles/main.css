@@ -457,16 +457,35 @@ body {
 .sejarah .card-header {
   background-color: #F69D1B;
   color: #fff;
+  border: 0px;
+}
+
+.sejarah .card-body {
+  border: 0px;
 }
 
 .sejarah .card-text:hover {
   color: #007530;
 }
 
+.sejarah em:hover {
+  color: #F69D1B;
+}
+
 @media (max-width: 768px) {
   .sejarah .card {
     margin-top: 0px;
   }
+}
+
+.visimisi .card-header, .tugasfungsi .card-header, .struktur .card-header, .kontak .card-header {
+  background-color: #F69D1B;
+  color: #fff;
+  border: 0px;
+}
+
+.visimisi .card-body, .tugasfungsi .card-body, .struktur .card-body, .kontak .card-body {
+  border: 0px;
 }
 
 .ptsp .cari-permohonan {
