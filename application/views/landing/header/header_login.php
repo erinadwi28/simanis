@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/landing/libraries/owl_carousel/dist/assets/owl.carousel.min.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('assets/landing/libraries/owl_carousel/dist/assets/owl.theme.default.min.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('assets/landing/styles/main.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/landing/styles/login.css') ?>"/>
 </head>
 
 <body>
