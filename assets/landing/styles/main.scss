@@ -499,11 +499,22 @@ $breakpoint-tablet: 768px;
     .card-header {
         background-color: #F69D1B;
         color: #fff;
+        border: 0px;
+    }
+
+    .card-body {
+        border: 0px;
     }
 
     .card-text {
         &:hover {
             color: #007530;
+        }
+    }
+    
+    em {
+        &:hover {
+            color: #F69D1B;
         }
     }
 
@@ -514,7 +525,18 @@ $breakpoint-tablet: 768px;
                 margin-top: 0px;
             }
         }
+}
 
+.visimisi,.tugasfungsi,.struktur,.kontak{
+    .card-header {
+        background-color: #F69D1B;
+        color: #fff;
+        border: 0px;
+    }
+
+    .card-body {
+        border: 0px;
+    }
 }
 
 // PTSP
