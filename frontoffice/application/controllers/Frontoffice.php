@@ -59,7 +59,7 @@ class Frontoffice extends CI_Controller
                 $this->load->view('header');
                 $this->load->view('frontoffice/sidebar_fo', $data);
                 $this->load->view('topbar', $data);
-                $this->load->view('ptsp/list_permohonan_masuk', $data_detail);
+                $this->load->view('frontoffice/list_permohonan_masuk', $data_detail);
                 $this->load->view('footer');
         }
 
@@ -76,7 +76,7 @@ class Frontoffice extends CI_Controller
                 $this->load->view('header');
                 $this->load->view('frontoffice/sidebar_fo', $data);
                 $this->load->view('topbar', $data);
-                $this->load->view('ptsp/list_permohonan_pending', $data_detail);
+                $this->load->view('frontoffice/list_permohonan_pending', $data_detail);
                 $this->load->view('footer');
         }
 
@@ -93,7 +93,7 @@ class Frontoffice extends CI_Controller
                 $this->load->view('header');
                 $this->load->view('frontoffice/sidebar_fo', $data);
                 $this->load->view('topbar', $data);
-                $this->load->view('ptsp/list_permohonan_selesai', $data_detail);
+                $this->load->view('frontoffice/list_permohonan_selesai', $data_detail);
                 $this->load->view('footer');
         }
 
@@ -110,7 +110,7 @@ class Frontoffice extends CI_Controller
                 $this->load->view('header');
                 $this->load->view('frontoffice/sidebar_fo', $data);
                 $this->load->view('topbar', $data);
-                $this->load->view('ptsp/detail_ptsp03', $data_detail);
+                $this->load->view('frontoffice/ptsp3/detail_ptsp03', $data_detail);
                 $this->load->view('footer');
         }
 

@@ -69,7 +69,7 @@ class Pemohon extends CI_Controller
         $this->load->view('header');
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('ptsp/list_permohonan_validasi_kemenag', $data_detail);
+        $this->load->view('pemohon/list_permohonan_validasi_kemenag', $data_detail);
         $this->load->view('footer');
     }
 
@@ -86,7 +86,7 @@ class Pemohon extends CI_Controller
         $this->load->view('header');
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('ptsp/list_permohonan_pending', $data_detail);
+        $this->load->view('pemohon/list_permohonan_pending', $data_detail);
         $this->load->view('footer');
     }
 
@@ -103,11 +103,28 @@ class Pemohon extends CI_Controller
         $this->load->view('header');
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('ptsp/list_permohonan_selesai', $data_detail);
+        $this->load->view('pemohon/list_permohonan_selesai', $data_detail);
         $this->load->view('footer');
     }
 
-    //tampil halaman form pengajuan ptsp03
+    //tampil halaman sop ptsp03
+    public function sop_ptsp03()
+    {
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $detailhere = array('id_pemohon' => $this->session->userdata('id_pemohon'));
+        $data_detail['detail_profil_saya'] = $this->m_pemohon->get_detail_profil_saya($detailhere, 'pemohon')->result();
+
+        $this->load->view('header');
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar', $data);
+        $this->load->view('pemohon/ptsp3/sop_ptsp03', $data_detail);
+        $this->load->view('footer');
+    }
+	
+	//tampil halaman form pengajuan ptsp03
     public function form_ptsp03()
     {
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
@@ -120,7 +137,7 @@ class Pemohon extends CI_Controller
         $this->load->view('header');
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('ptsp/form_ptsp03', $data_detail);
+        $this->load->view('pemohon/ptsp3/form_ptsp03', $data_detail);
         $this->load->view('footer');
     }
 
@@ -186,7 +203,7 @@ class Pemohon extends CI_Controller
         $this->load->view('header');
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('ptsp/detail_ptsp03');
+        $this->load->view('pemohon/ptsp3/detail_ptsp03');
         $this->load->view('footer');
     }
 
@@ -203,7 +220,7 @@ class Pemohon extends CI_Controller
         $this->load->view('header');
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('ptsp/form_ubah_ptsp03');
+        $this->load->view('pemohon/ptsp3/form_ubah_ptsp03');
         $this->load->view('footer');
     }
 

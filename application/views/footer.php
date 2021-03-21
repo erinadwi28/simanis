@@ -31,7 +31,18 @@
 <script src="<?= base_url('assets/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="<?= base_url('assets/js/sb-admin-2.min.js') ?>"></script>
+<link rel="stylesheet" href="<?= base_url('assets/js/sb-admin-2.min.js') ?>" />
+
+<!-- Lightbox Ekko -->
+<link rel="stylesheet" href="<?= base_url('assets/vendor/lightbox/dist/ekko-lightbox.min.js') ?>" />
+
+<!-- Script Lightbox Ekko -->
+<script>
+	$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+		event.preventDefault();
+		$(this).ekkoLightbox();
+	});
+</script>
 </body>
 
 </html>

@@ -20,6 +20,7 @@
   <!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('assets/css/dashboard.css') ?>" />
 	<link rel="stylesheet" href="<?= base_url('assets/css/sb-admin-2.min.css') ?>" />
+	<link rel="stylesheet" href="<?= base_url('assets/css/lightbox.min.css') ?>" />
 
 </head>
 
