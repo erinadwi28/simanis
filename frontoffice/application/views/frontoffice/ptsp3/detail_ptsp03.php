@@ -24,7 +24,7 @@
         				<center>
         					<div class="card-body" style="padding: 15px;">
         						<!-- <?php foreach ($foto_profil as $saya) { ?>
-                        <a href="<?= base_url(); ?>/assets/uploads/warga/<?= $saya->foto_profil_warga; ?>" data-gallery="mygallery" data-title="Foto Profil" data-toggle="lightbox">
+                        <a href="<?= base_url(); ?>/assets/uploads/warga/<?= $saya->foto_profil_warga; ?>" data-gallery="mygallery" data-title="Fotocopy Ijazah" data-toggle="lightbox">
                             <img src="<?= base_url(); ?>/assets/uploads/warga/<?= $saya->foto_profil_warga; ?>" alt="foto profil" class="img-fluid">
                         </a>
                     <?php } ?> -->
@@ -106,20 +106,16 @@
         				</div>
         				<div class="card-footer">
         					<div class="float-right">
-        						<!-- <?php foreach ($detail_suket as $w) { ?> -->
-        						<!-- <a href="<?= base_url() ?>warga/form_ubah_suket005/<?= $w->id_surat ?>"> -->
-        						<button id=" btn_tolak" class="btn btn-sm btn-danger" type="submit">
-        							<i class="fas fa-times-circle">
-        							</i> Tolak
-        						</button>
-        						<!-- </a> -->
-        						<!-- <a href="<?= base_url() ?>warga/update_status_permohonan/<?= $w->id_permohonan_surat ?>/<?= $warga['id_warga'] ?>"> -->
-        						<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
-        							<i class="fas fa-check-circle">
-        							</i> Terima
-        						</button>
-        						<!-- </a> -->
-        						<!-- <?php } ?> -->
+        							<button id=" btn_tolak" class="btn btn-sm btn-danger" type="submit">
+        								<i class="fas fa-times-circle">
+        								</i> Tolak
+        							</button>
+        							<!-- </a> -->
+        							<!-- <a href="<?= base_url() ?>warga/update_status_permohonan/<?= $w->id_permohonan_surat ?>/<?= $warga['id_warga'] ?>"> -->
+        							<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
+        								<i class="fas fa-check-circle">
+        								</i> Terima
+        							</button>
         					</div>
         				</div>
         			</div>

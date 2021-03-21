@@ -4,7 +4,7 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4 judullist">
             <h3>Form Permohonan Legalisir Ijazah<h3>
-            <!-- <a href="<?= base_url('warga') ?>"> -->
+            <!-- <a href=""> -->
               <button id="btn_kembali" class="btn btn-sm btn-warning" type="">
                 <i class="fa fa-arrow-left">
                 </i> Kembali
@@ -83,7 +83,7 @@
                       </div>
         
                       <!-- <input type="hidden" class="form-control" id="id_nama_surat" name="id_nama_surat" value="5">
-                      <input type="hidden" class="form-control" id="id_warga" name="id_warga" value="<?= $detail->id_warga; ?>">
+                      <input type="hidden" class="form-control" id="id_warga" name="id_warga" value=">
                       <input type="hidden" class="form-control" id="status" name="status" value="Belum Tuntas"> -->
                 </div>
                 <div class="card-footer">

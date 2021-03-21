@@ -20,10 +20,6 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <!-- <?php
-                    $no = 1;
-                    foreach ($data_sedang_proses as $permohonan) {
-                    ?> -->
                     <tr>
                       <td>1</td>
                       <td>Haji dan Umrah</td>
@@ -40,7 +36,6 @@
                         </div>
                       </td>
                     </tr>
-                    <!-- <?php } ?> -->
                   </tbody>
                 </table>
               </div>

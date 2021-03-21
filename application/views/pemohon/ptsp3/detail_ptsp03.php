@@ -27,8 +27,8 @@
 				</div>
 
 				<div class="card-footer py-3">
-					<form action="<?= base_url('warga/update_foto_ktp') ?>" enctype="multipart/form-data" method="post"
-						accept-charset="utf-8" id="form_upload_ktp_suket005">
+					<form action="" enctype="multipart/form-data" method="post"
+						accept-charset="utf-8" id="form_upload_ijazah">
 						<div class="form-group ml-2 mr-2">
 							<div class="input-group">
 								<div class="form-group-upload">
@@ -36,11 +36,11 @@
 										<label class="custom-file-label" for="file-upload-ktp">pilih fotocopy ijazah...</label>
 										<input type="file" class="custom-file-input" id="file-upload-ktp" name="berkas">
 										<input type="hidden" class="form-control form-user-input" name="id_surat" id="id_surat"
-											value="<?= $w->id_surat ?>">
+											value="">
 										<input type="hidden" class="form-control form-user-input" name="id_permohonan_surat"
-											id="id_permohonan_surat" value="<?= $w->id_permohonan_surat ?>">
+											id="id_permohonan_surat" value="">
 										<!-- <i class=" fas fa-exclamation-circle"></i>
-                              <h6>Error massage</h6> -->
+										<h6>Error massage</h6> -->
 									</div>
 								</div>
 							</div>
@@ -61,7 +61,7 @@
 				<div class="card-header py-3">
 					<h6 class="m-0 font-weight-bold text-center">Permohonan Legalisir Ijazah</h6>
 				</div>
-				<div class="card-body">->
+				<div class="card-body">
 					<table class="table-hover table-responsive">
 						<tbody>
 							<tr>
@@ -93,7 +93,7 @@
 				</div>
 				<div class="card-footer">
 					<div class="float-right">
-						<!-- <?php foreach ($detail_suket as $w) { ?> -->
+						
 						<!-- <a href="<?= base_url() ?>warga/form_ubah_suket005/<?= $w->id_surat ?>"> -->
 						<button id=" btn_ubah" class="btn btn-sm btn-primary" type="submit">
 							<i class="fa fa-edit nav-icon">
@@ -106,7 +106,7 @@
 							</i> Selesai
 						</button>
 						<!-- </a> -->
-						<!-- <?php } ?> -->
+					
 					</div>
 				</div>
 			</div>

@@ -27,19 +27,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <!-- <?php
-                    $no = 1;
-                    foreach ($data_permohonan_ditolak as $permohonan) {
-                    ?> -->
                       <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>1</td>
+                        <td>Haji dan Umrah</td>
+                        <td>24/03/2021</td>
+                        <td>25/03/2021</td>
                         <td><label class="badge badge-danger"><i class="far fa-times-circle">Pending</i></label></td>
-                        <td></td>
+                        <td>Dokumen Tidak Terbaca</td>
                         <td>
-                          <form role="form" action="<?= base_url() ?>warga/detail_data_permohonan/<?= $permohonan->id_permohonan_surat ?>/<?= $permohonan->id_nama_surat ?>" method="post" id="formUbah">
+                          <form role="form" action="" method="post" id="formUbah">
                             <div>
                               <div class="float-right">
                                 <a href="">
@@ -54,7 +50,6 @@
                           </form>
                         </td>
                       </tr>
-                    <!-- <?php } ?> -->
                   </tbody>
                 </table>
               </div>
