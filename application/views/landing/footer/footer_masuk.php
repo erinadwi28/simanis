@@ -4,6 +4,9 @@
     <script src="<?= base_url('assets/landing/libraries/owl_carousel/dist/owl.carousel.min.js') ?>"></script>
     <script src="<?= base_url('assets/landing/scripts/main.js') ?>"></script>
 
-</body>
+    <!--google recaptcha-->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
-</html>
+    </body>
+
+    </html>
