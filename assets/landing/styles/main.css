@@ -15,6 +15,15 @@ body {
   padding-top: 10px;
 }
 
+.top-navbar .top-info a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.top-navbar .top-info a:hover {
+  color: #F69D1B;
+}
+
 @media (max-width: 768px) {
   .navbar-expand-lg .container {
     padding-left: 25px;
@@ -213,6 +222,52 @@ body {
 
 .owl-next {
   right: 1%;
+}
+
+.haji-umrah .sticky-container {
+  padding: 0px;
+  margin: 0px;
+  position: fixed;
+  right: -123px;
+  top: 520px;
+  width: 210px;
+  z-index: 1100;
+  opacity: 90%;
+}
+
+.haji-umrah .sticky li {
+  border-radius: 10px;
+  list-style-type: none;
+  background-color: #F69D1B;
+  color: #efefef;
+  height: 43px;
+  padding: 0px;
+  margin: 0px 0px 1px 0px;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.haji-umrah .sticky li img {
+  float: left;
+  margin: 5px 4px;
+  margin-right: 5px;
+}
+
+.haji-umrah .sticky li p {
+  padding-top: 5px;
+  margin: 0px;
+  line-height: 16px;
+  font-size: 11px;
+}
+
+.haji-umrah .sticky li p a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.haji-umrah .sticky li p a:hover {
+  color: #007530;
 }
 
 .terkini-profile {
@@ -414,9 +469,23 @@ body {
   font-size: 18px;
 }
 
-.section-app .playstore:hover {
-  -webkit-box-shadow: 7px 7px 10px;
-          box-shadow: 7px 7px 10px;
+.section-app .btn-primary {
+  background-color: #007530;
+  border: 0px;
+}
+
+.section-app .btn-primary:hover {
+  background-color: #1A9D4F;
+}
+
+@media (max-width: 768px) {
+  .section-app {
+    margin-top: 40px;
+    text-align: center;
+  }
+  .section-app .image-app {
+    margin-top: 20px;
+  }
 }
 
 .section-footer {
@@ -478,14 +547,36 @@ body {
   }
 }
 
-.visimisi .card-header, .tugasfungsi .card-header, .struktur .card-header, .kontak .card-header {
+.visimisi .card-header,
+.tugasfungsi .card-header,
+.struktur .card-header,
+.kontak .card-header {
   background-color: #F69D1B;
   color: #fff;
   border: 0px;
 }
 
-.visimisi .card-body, .tugasfungsi .card-body, .struktur .card-body, .kontak .card-body {
+.visimisi .card-body,
+.tugasfungsi .card-body,
+.struktur .card-body,
+.kontak .card-body {
   border: 0px;
+}
+
+.visimisi .card-text,
+.tugasfungsi .card-text,
+.struktur .card-text,
+.kontak .card-text {
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .visimisi .card,
+  .tugasfungsi .card,
+  .struktur .card,
+  .kontak .card {
+    margin-top: 0px;
+  }
 }
 
 .ptsp .cari-permohonan {
@@ -507,6 +598,18 @@ body {
 
 .ptsp #button-cari:hover .fa-search {
   color: #fff;
+}
+
+.ptsp .item-ptsp .card-text {
+  text-align: left;
+}
+
+.ptsp .item-ptsp .card-body {
+  height: 129px;
+}
+
+.ptsp .item-ptsp .item-big {
+  height: 190px;
 }
 
 .ptsp .item-ptsp:hover .card {
@@ -532,6 +635,12 @@ body {
   }
   .ptsp .item-ptsp {
     margin-top: 65px;
+  }
+  .ptsp .item-ptsp .card-body {
+    height: 150px;
+  }
+  .ptsp .item-ptsp .item-big {
+    height: 210px;
   }
 }
 
@@ -571,66 +680,55 @@ body {
   color: #F69D1B;
 }
 
-.banner-detail-ptsp {
-  background-image: url("../images/ban_pelayanan.png");
-  margin-bottom: 30px;
-  height: 565px;
-  margin-top: -10px;
-  background-size: cover;
+.detail-ptsp-title .row {
+  padding-top: 20px;
 }
 
-.banner-detail-ptsp h1 {
+.detail-ptsp-title h4 {
   font-family: 'Playfair Display', serif;
-  margin-top: 170px;
-  color: #FFF;
-  margin-left: 90px;
+  font-weight: bold;
+  font-size: 30px;
 }
 
-.banner-detail-ptsp img {
-  margin-left: 850px;
-  margin-top: -150px;
-  height: 320px;
+.detail-ptsp img {
+  height: 350px;
+  width: auto;
 }
 
-@media (max-width: 768px) {
-  .banner-detail-ptsp {
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 200px;
-  }
-  .banner-detail-ptsp h1 {
-    font-family: 'Playfair Display', serif;
-    margin-top: 40px;
-    font-size: 16px;
-    color: #FFF;
-    margin-left: 20px;
-  }
-  .banner-detail-ptsp img {
-    display: none;
-  }
+.detail-ptsp .card-body {
+  border: 0px;
 }
 
 .detail-ptsp .card-header {
   background-color: #F69D1B;
   color: #fff;
+  border: 0px;
 }
 
 .detail-ptsp .card-text:hover {
   color: #007530;
 }
 
+.detail-ptsp li {
+  text-align: left;
+}
+
 @media (max-width: 768px) {
+  .detail-ptsp img {
+    height: 190px;
+    width: auto;
+  }
   .detail-ptsp .syarat .card {
     margin-top: 20px;
   }
-  .detail-ptsp h4 {
-    font-size: 16px;
-  }
-  .detail-ptsp .card-text {
-    font-size: 12px;
-  }
   .detail-ptsp .card-text:hover {
     color: #007530;
+  }
+  .detail-ptsp .content-detail {
+    margin-top: 80px;
+  }
+  .detail-ptsp .syarat {
+    margin-top: -20px;
   }
 }
 /*# sourceMappingURL=main.css.map */

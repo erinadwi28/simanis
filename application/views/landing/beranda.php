@@ -1,7 +1,7 @@
 <!-- Navbar -->
-<div class="row">
-	<div class="col-md-12 bg-white">
-		<nav class="row navbar navbar-expand-lg navbar-light bg-white shadow px-0 py-0">
+<div class="container-fluid">
+	<div class="row bg-white">
+		<nav class="col navbar navbar-expand-lg navbar-light bg-white shadow px-0 py-0">
 			<div class="container">
 				<a href="#" class="navbar-brand">
 					<img src="<?= base_url('assets/landing/images/logo.png')?>" alt="Logo SIMANIS" class="img-fluid">
@@ -39,11 +39,8 @@
 					</form>
 				</div>
 			</div>
-
 		</nav>
-
 	</div>
-
 </div>
 
 </div>
@@ -59,6 +56,18 @@
 		</div>
 	</div>
 </header>
+
+<!-- Chat Haji & Umrah -->
+<div class="container haji-umrah">
+	<div class="sticky-container">
+		<ul class="sticky">
+			<li>
+				<img src="<?= base_url('assets/landing/images/wa.png')?>" width="32" height="32">
+				<p><a href="https://api.whatsapp.com/send?phone=628112650662&text=Info" target="_blank">Chat Haji <br> & Umrah</a></p>
+			</li>
+		</ul>
+	</div>
+</div>
 
 <!-- Main Content -->
 <main>
@@ -80,14 +89,12 @@
 											<div class="col-md-11 justify terkini-list-title mb-0">
 												<a href="#">
 													<p class="card-text">
-														Sambutan Menteri Agama dan Doa
-														Pada Hari Amal Bhakti Kementerian
-														Agama Ke - 75
+														Peringati Milad ke 24, MTsN 5 Klaten Bagikan 305 Paket Sembako
 													</p>
 												</a>
 
 												<p class="terkini-date mb-0">
-													Senin, 8 Maret 2021
+													Sabtu, 13 Maret 2021
 												</p>
 											</div>
 										</div>
@@ -98,17 +105,12 @@
 											<div class="col-md-11 justify terkini-list-title mb-0">
 												<a href="#">
 													<p class="card-text">
-														Sambutan Menteri Agama dan Doa
-														Pada Hari Amal Bhakti Kementerian
-														Agama Ke - 75
-														Sambutan Menteri Agama dan Doa
-														Pada Hari Amal Bhakti Kementerian
-														Agama Ke - 75
+														Persiapan Ujian Madrasah, Kemenag Klaten Adakan Rakor
 													</p>
 												</a>
 
 												<p class="terkini-date mb-0">
-													Senin, 8 Maret 2021
+													Selasa, 9 Maret 2021
 												</p>
 											</div>
 										</div>
@@ -119,14 +121,13 @@
 											<div class="col-md-11 justify terkini-list-title mb-0">
 												<a href="#">
 													<p class="card-text">
-														Sambutan Menteri Agama dan Doa
-														Pada Hari Amal Bhakti Kementerian
-														Agama Ke - 75
+														Serahkan SK PAK Non PNS, Kakankemenag Minta Ciptakan Toleransi
+														dan Kerukunan
 													</p>
 												</a>
 
 												<p class="terkini-date mb-0">
-													Senin, 8 Maret 2021
+													Kamis, 4 Maret 2021
 												</p>
 											</div>
 										</div>
@@ -137,14 +138,12 @@
 											<div class="col-md-11 justify terkini-list-title mb-0">
 												<a href="#">
 													<p class="card-text">
-														Sambutan Menteri Agama dan Doa
-														Pada Hari Amal Bhakti Kementerian
-														Agama Ke - 75
+														Penggunaan BOP RA Harus Sesuai Juknis
 													</p>
 												</a>
 
 												<p class="terkini-date mb-0">
-													Senin, 8 Maret 2021
+													Kamis, 4 Maret 2021
 												</p>
 											</div>
 										</div>
@@ -155,14 +154,13 @@
 											<div class="col-md-11 justify terkini-list-title mb-0">
 												<a href="#">
 													<p class="card-text">
-														Sambutan Menteri Agama dan Doa
-														Pada Hari Amal Bhakti Kementerian
-														Agama Ke - 75
+														Verifikasi Rekomendasi IMB Rumah Ibadah, Kemenag Klaten Adakan
+														Survey Lapangan
 													</p>
 												</a>
 
 												<p class="terkini-date mb-0">
-													Senin, 8 Maret 2021
+													Rabu, 3 Maret 2021
 												</p>
 											</div>
 										</div>
@@ -173,14 +171,12 @@
 											<div class="col-md-11 justify terkini-list-title mb-0">
 												<a href="#">
 													<p class="card-text">
-														Sambutan Menteri Agama dan Doa
-														Pada Hari Amal Bhakti Kementerian
-														Agama Ke - 75
+														TPQ Tanamkan Akhlak Anak Bangsa
 													</p>
 												</a>
 
 												<p class="terkini-date mb-0">
-													Senin, 8 Maret 2021
+													Senin, 1 Maret 2021
 												</p>
 											</div>
 										</div>
@@ -221,7 +217,8 @@
 							<p class="my-0">
 								Selengkapnya klik dibawah ini:
 							</p>
-							<p><a href="<?= base_url('profil')?>">Sejarah, Visi & Misi, Struktur Organisasi, Kontak Kami, Peta Lokasi</a>
+							<p><a href="<?= base_url('profil')?>">Sejarah, Visi & Misi, Struktur Organisasi, Kontak
+									Kami, Peta Lokasi</a>
 							</p>
 						</div>
 					</div>
@@ -261,9 +258,9 @@
 								</div>
 								<div class="content-guide mb-0">
 									<p class="mb-0">
-										Pengguna masuk ke akunnya dengan
+										Pemohon masuk ke akunnya dengan
 										menggunakan Email dan Kata Sandi
-										yang telah terdaftar, Jika pengguna belum
+										yang telah terdaftar, Jika pemohon belum
 										memiliki akun maka harus mendaftar
 										terlebih dahulu.
 									</p>
@@ -285,7 +282,7 @@
 								</div>
 								<div class="content-guide mb-0">
 									<p class="mb-0">
-										Pengguna mencari dan memilih
+										Pemohon mencari dan memilih
 										jenis pelayanan yang dibutuhkan.
 										Kemudian memahami persyaratan
 										dan prosedur yang berlaku.
@@ -310,7 +307,7 @@
 								</div>
 								<div class="content-guide mb-0">
 									<p class="mb-0">
-										Pengguna mengajukan permohonan
+										Pemohon mengajukan permohonan
 										melalui dashboard masing-masing
 										dengan mengisi form yang
 										tersedia dan melengkapi
@@ -336,7 +333,7 @@
 								</div>
 								<div class="content-guide mb-0">
 									<p class="mb-0">
-										Pengguna menunggu notifikasi
+										Pemohon menunggu notifikasi
 										permohonan yang telah diajukan,
 										jika permohonan telah selesai
 										dapat di ambil maupun langsung
@@ -361,18 +358,26 @@
 						<br>
 						android di SmartPhone Anda. Silahkan
 						<br>
-						unduh terlebih dahulu. Hanya di Play Store.
+						unduh terlebih dahulu. di Play Store atau <br> tekan tombol Download dibawah.
 					</p>
-					<div class="image-playstore">
-						<a href="#">
-							<img src="<?= base_url('assets/landing/images/playstore.png')?>" alt="" class="img-fluid">
-						</a>
-
+					<div class="row">
+						<div class="download-apk">
+							<a href="#">
+								<img src="<?= base_url('assets/landing/images/playstore.png')?>" alt=""
+									class="img-fluid">
+							</a>
+							<a href="#">
+								<button type="submit" class="btn btn-primary float-right mt-3">Download
+									Sekarang</button>
+							</a>
+						</div>
 					</div>
+
 				</div>
-				<!-- <div class="col-md-8 text-center">
-                        <img src="frontend/images/apps.png" alt="logo partner" class="img-partner">
-                    </div> -->
+				<div class="col-md-8 text-center image-app">
+					<img class="img-fluid" src="<?= base_url('assets/landing/images/apps.png')?>" alt="logo partner"
+						class="img-partner">
+				</div>
 			</div>
 		</div>
 	</section>

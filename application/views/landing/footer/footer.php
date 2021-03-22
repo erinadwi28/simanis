@@ -8,20 +8,19 @@
                         <div class="col-12 col-lg-3">
                             <h5>MENU</h5>
                             <ul class="list-unstyled">
-                                <li><a href="#">Beranda</a></li>
-                                <li><a href="#">Profil</a></li>
-                                <li><a href="#">Tata Cara</a></li>
-                                <li><a href="#">Layanan PTSP</a></li>
-                                <li><a href="#">Pengaduan</a></li>
+                                <li><a href="<?= base_url('beranda')?>">Beranda</a></li>
+                                <li><a href="<?= base_url('profil')?>">Profil</a></li>
+                                <li><a href="<?= base_url('ptsp')?>">Layanan PTSP</a></li>
+                                <li><a href="<?= base_url('pengaduan')?>">Pengaduan</a></li>
                             </ul>
                         </div>
 
                         <div class="col-12 col-lg-3">
                             <h5>MEDIA SOSIAL </h5>
                             <ul class="list-unstyled">
-                                <li><a href="#">Facebook</a></li>
-                                <li><a href="#">Twitter</a></li>
-                                <li><a href="#">Instagram</a></li>
+                                <li><a href="https://web.facebook.com/kakankemenagklaten/">Facebook</a></li>
+                                <li><a href="https://twitter.com/KemenagKlaten">Twitter</a></li>
+                                <li><a href="https://www.instagram.com/kemenag.klaten/">Instagram</a></li>
                             </ul>
                         </div>
 
@@ -29,24 +28,25 @@
                             <h5>LINK APPS</h5>
                             <ul class="list-unstyled">
                                 <li><a href="#">Klik disini</a></li>
-                                <li><a href="#">V.1</a></li>
+                                <li>V.1</li>
                             </ul>
                         </div>
 
                         <div class="col-12 col-lg-3">
                             <h5>KANTOR</h5>
                             <ul class="list-unstyled">
-                                <li><a href="#">Jalan Ronggowarsito, Kab. Klaten,</a></li>
-                                <li><a href="#">Jawa Tengah, Indonesia</a></li>
-                                <li><a href="#">0272-321154</a></li>
-                                <li><a href="#">kabklaten@kemenag.go.id</a></li>
+                                <li><i class="fas fa-home"></i> Jalan Ronggowarsito, Kab. Klaten,</li>
+                                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jawa Tengah, Indonesia</li>
+                                <li><i class="fas fa-phone-volume"></i> 0272-321154</li>
+                                <li><i class="fas fa-envelope"></i> <a href="mailto:kabklaten@kemenag.go.id">kabklaten@kemenag.go.id</a></li>
+                                <li><i class="fas fa-globe"></i> <a href="http://klaten.kemenag.go.id/">klaten.kemenag.go.id</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid text-center">
             <div class="row border-top justify-content-center align-items-center pt-4">
                 <div class="col-auto text-gray-500 font-weight-light mb-4">
                     2021 Copyright Kementerian Agama Kab. Klaten • All rights reserved
@@ -56,7 +56,7 @@
     </footer>
     <script src="<?= base_url('assets/landing/libraries/jquery/jquery-3.5.1.min.js') ?>"></script>
     <script src="<?= base_url('assets/landing/libraries/bootstrap/js/bootstrap.js') ?>"></script>
-    <script src="<?= base_url('assets/landing/libraries/retina/retina.min.js') ?>"></script>
+    <!-- <script src="<?= base_url('assets/landing/libraries/retina/retina.min.js') ?>"></script> -->
     <script src="<?= base_url('assets/landing/libraries/owl_carousel/dist/owl.carousel.min.js') ?>"></script>
     <script src="<?= base_url('assets/landing/scripts/main.js') ?>"></script>
     <!-- Date -->
