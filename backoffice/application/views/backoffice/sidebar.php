@@ -45,39 +45,6 @@
           </div>
         </div>
       </li>
-      <li class="nav-item">
-		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#menuwarga" for="" aria-expanded="true" aria-controls="collapsePages">
-			<i class="fa fa-users"></i>
-			<span>Data Pemohon</span>
-		</a>
-		<div id="menuwarga" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-			<div class="bg-white py-2 collapse-inner rounded">
-				<a class="collapse-item" href="<?= base_url('admin/list_data_warga') ?>">Data Pemohon</a>
-				<a class="collapse-item" href="<?= base_url('admin/form_cari_nik_ubah_kata_sandi_warga') ?>">Ubah Password Pemohon</a>
-			</div>
-		</div>
-	</li>
-  <li class="nav-item">
-		<a class="nav-link " href="<?= base_url('admin/list_feedback') ?>">
-			<i class="fa fa-book"></i>
-			<span>Berita</span>
-		</a>
-	</li>
-  <li class="nav-item">
-        <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menulaporan" for=""
-          aria-expanded="true" aria-controls="collapsePages">
-          <i class="fa fa-book"></i>
-          <span>Laporan</span>
-        </a>
-        <div id="menulaporan" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="">Data Pengguna</a>
-            <a class="collapse-item"href="">Lap. Permohonan Masuk</a>
-            <a class="collapse-item" href="">Lap. Permohonan Selesai</a>
-            <a class="collapse-item" href="">Lap. Pengaduan</a>
-          </div>
-        </div>
-      </li>
   
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
