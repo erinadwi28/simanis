@@ -81,6 +81,58 @@ class M_pemohon extends CI_Model
         $this->db->update($table, $data);
     }
 
+    //aksi update notif
+    public function update_notif($data, $id)
+    {
+        $this->db->where('id_permohonan_ptsp', $id);
+        $this->db->update('permohonan_ptsp', $data);
+    }
+
+    //get data validasi kemenag
+    public function list_permohonan_validasi_kemenag()
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->where('permohonan_ptsp.id_pemohon', $this->session->userdata('id_pemohon'));
+        $this->db->where('permohonan_ptsp.status_delete', 0);
+        $this->db->where('permohonan_ptsp.status', 'Validasi Kemenag');
+        $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
+    //get data permohonan pending
+    public function list_permohonan_pending()
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->where('permohonan_ptsp.id_pemohon', $this->session->userdata('id_pemohon'));
+        $this->db->where('permohonan_ptsp.status_delete', 0);
+        $this->db->where('permohonan_ptsp.status', 'Pending');
+        $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
+    //get data permohonan selesai
+    public function list_permohonan_selesai()
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->where('permohonan_ptsp.id_pemohon', $this->session->userdata('id_pemohon'));
+        $this->db->where('permohonan_ptsp.status_delete', 0);
+        $this->db->where('permohonan_ptsp.status', 'Selesai');
+        $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
     // aksi tambah data permohonan
     public function tambah_permohonan($data_permohonan)
     {
@@ -130,6 +182,20 @@ class M_pemohon extends CI_Model
         $hasil = $this->db->get();
 
         return $hasil;
+    }
+
+    //aksi update data permohonan
+    public function update_ptsp($where, $data, $table)
+    {
+        $this->db->where('id_permohonan_ptsp', $where);
+        $this->db->update($table, $data);
+    }
+
+    //update status permohonan
+    public function update_status_permohonan($where, $data, $tabel)
+    {
+        $this->db->where('id_permohonan_ptsp ', $where);
+        $this->db->update($tabel, $data);
     }
 
     // //get list data permohonan yang belum dibaca

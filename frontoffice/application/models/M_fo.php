@@ -59,33 +59,64 @@ class M_fo extends CI_Model
         $this->db->update($table, $data);
     }
 
-    // //get list data permohonan yang belum dibaca
-    // public function get_permohonan_belum_dibaca($id_fo)
-    // {
-    //     $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
-    //     $this->db->from('permohonan_ptsp');
-    //     $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
-    //     $this->db->where('permohonan_ptsp.id_fo', $id_fo);
-    //     $this->db->where('permohonan_ptsp.status_delete', 0);
-    //     $this->db->where('permohonan_ptsp.notif', 'Belum Dibaca');
-    //     $this->db->where("(permohonan_ptsp.status = 'Validasi Kemenag' 
-    // 	OR permohonan_ptsp.status = 'Pending'
-    // 	OR permohonan_ptsp.status = 'Selesai')", null, false);
-    //     $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
+    //get list data permohonan yang belum dibaca
+    public function get_permohonan_belum_dibaca($id_fo)
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->where('permohonan_ptsp.id_fo', $id_fo);
+        $this->db->where('permohonan_ptsp.status_delete', 0);
+        $this->db->where('permohonan_ptsp.notif', 'Belum Dibaca');
+        $this->db->where("(permohonan_ptsp.status = 'Validasi Kemenag' 
+    	OR permohonan_ptsp.status = 'Pending'
+    	OR permohonan_ptsp.status = 'Selesai')", null, false);
+        $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
 
-    //     return $this->db->get();
-    // }
+        return $this->db->get();
+    }
 
-    // //get list data permohonan dengan status tertentu
-    // public function get_history_permohonan($id_fo, $status)
-    // {
-    //     $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
-    //     $this->db->from('permohonan_ptsp');
-    //     $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
-    //     $this->db->where('permohonan_ptsp.id_fo', $id_fo);
-    //     $this->db->where('permohonan_ptsp.status', $status);
-    //     $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
+    //get list data permohonan dengan status tertentu
+    public function get_list_data_permohonan($status)
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->where('permohonan_ptsp.status', $status);
+        $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
 
-    //     return $this->db->get();
-    // }
+        return $this->db->get();
+    }
+
+    public function get_data_permohonan($detailhere, $tabel)
+    {
+        $this->db->select('*');
+        $this->db->from($tabel);
+        $this->db->where('id_permohonan_ptsp', $detailhere);
+
+        $hasil = $this->db->get();
+
+        return $hasil;
+    }
+
+    //update status permohonan
+    public function update_status_permohonan($where, $data, $tabel)
+    {
+        $this->db->where('id_permohonan_ptsp ', $where);
+        $this->db->update($tabel, $data);
+    }
+
+    //detail permohonan ptsp03
+    public function get_detail_ptsp03($id_permohonan)
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan, ptsp03.*');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->join('ptsp03', 'permohonan_ptsp.id_permohonan_ptsp = ptsp03.id_permohonan_ptsp', 'INNER');
+        $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
+        $this->db->where('permohonan_ptsp.status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
 }

@@ -63,8 +63,7 @@ class Pemohon extends CI_Controller
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        $detailhere = array('id_pemohon' => $this->session->userdata('id_pemohon'));
-        $data_detail['detail_profil_saya'] = $this->m_pemohon->get_detail_profil_saya($detailhere, 'pemohon')->result();
+        $data_detail['data_permohonan'] = $this->m_pemohon->list_permohonan_validasi_kemenag()->result();
 
         $this->load->view('header');
         $this->load->view('pemohon/sidebar_pemohon');
@@ -80,8 +79,7 @@ class Pemohon extends CI_Controller
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        $detailhere = array('id_pemohon' => $this->session->userdata('id_pemohon'));
-        $data_detail['detail_profil_saya'] = $this->m_pemohon->get_detail_profil_saya($detailhere, 'pemohon')->result();
+        $data_detail['data_permohonan'] = $this->m_pemohon->list_permohonan_pending()->result();
 
         $this->load->view('header');
         $this->load->view('pemohon/sidebar_pemohon');
@@ -97,13 +95,45 @@ class Pemohon extends CI_Controller
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        $detailhere = array('id_pemohon' => $this->session->userdata('id_pemohon'));
-        $data_detail['detail_profil_saya'] = $this->m_pemohon->get_detail_profil_saya($detailhere, 'pemohon')->result();
+        $data_detail['data_permohonan'] = $this->m_pemohon->list_permohonan_selesai()->result();
 
         $this->load->view('header');
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
         $this->load->view('pemohon/list_permohonan_selesai', $data_detail);
+        $this->load->view('footer');
+    }
+
+    //detail data permohonan
+    public function detail_data_permohonan($id_permohonan_ptsp, $id_layanan)
+    {
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+
+        $data_notif = array(
+            'notif_pemohon' => 'Dibaca',
+        );
+
+        $this->m_pemohon->update_notif($data_notif, $id_permohonan_ptsp);
+
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $data_detail['detail_permohonan'] = $this->m_pemohon->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
+
+        if ($id_layanan == 1) {
+            $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp01($id_permohonan_ptsp)->result();
+        } elseif ($id_layanan == 3) {
+            $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp03($id_permohonan_ptsp)->result();
+        }
+
+        $this->load->view('header');
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar', $data);
+        if ($id_layanan == 1) {
+            $this->load->view('pemohon/ptsp3/detail_ptsp01', $data_detail);
+        } elseif ($id_layanan == 3) {
+            $this->load->view('pemohon/ptsp3/detail_ptsp03', $data_detail);
+        }
         $this->load->view('footer');
     }
 
@@ -114,17 +144,14 @@ class Pemohon extends CI_Controller
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        $detailhere = array('id_pemohon' => $this->session->userdata('id_pemohon'));
-        $data_detail['detail_profil_saya'] = $this->m_pemohon->get_detail_profil_saya($detailhere, 'pemohon')->result();
-
         $this->load->view('header');
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('pemohon/ptsp3/sop_ptsp03', $data_detail);
+        $this->load->view('pemohon/ptsp3/sop_ptsp03');
         $this->load->view('footer');
     }
-	
-	//tampil halaman form pengajuan ptsp03
+
+    //tampil halaman form pengajuan ptsp03
     public function form_ptsp03()
     {
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
@@ -152,7 +179,7 @@ class Pemohon extends CI_Controller
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
 
         $data_ptsp = array(
-            'id_permohonan_surat' => $id_permohonan,
+            'id_permohonan_ptsp' => $id_permohonan,
             'nama' => $this->input->post('nama'),
             'no_hp' => $this->input->post('no_hp'),
         );
@@ -168,12 +195,12 @@ class Pemohon extends CI_Controller
         redirect('pemohon/detail_ptsp03/' . $id_permohonan);
     }
 
-    //upload lampiran surat masuk langsung dari saat insert pertama kali
+    //upload ijazah ptsp03
     private function aksi_upload_ptsp03($id_ptsp03)
     {
         $config['upload_path']          = './assets/pemohon/ptsp/ptsp03/';
         $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|docx|doc|xlsx|xls';
-        $config['file_name']            = 'lampiran_surat_masuk-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+        $config['file_name']            = 'ijazah-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
 
         $this->load->library('upload', $config);
         if (!empty($_FILES['berkas']['name'])) {
@@ -189,43 +216,74 @@ class Pemohon extends CI_Controller
         }
     }
 
-    public function detail_ptsp03()
+    // upload ulang foto ktp
+    public function update_ijazah_ptsp03($id_ptsp)
+    {
+        if ($_FILES != null) {
+            $this->aksi_upload_ptsp03($id_ptsp);
+        }
+        $permohonan = $this->input->post('id_permohonan_ptsp');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('pemohon/detail_ptsp03/' . $permohonan);
+    }
+
+    public function detail_ptsp03($id_permohonan)
+    {
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        // $data_detail['detail_permohonan'] = $this->m_pemohon->get_data_permohonan($id_permohonan, 'ptsp03')->result();
+        $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp03($id_permohonan)->result();
+
+        $this->load->view('header');
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar', $data);
+        $this->load->view('pemohon/ptsp3/detail_ptsp03', $data_detail);
+        $this->load->view('footer');
+    }
+
+    public function form_ubah_ptsp03($id_permohonan)
     {
         // $id_permohonan
-
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
         // $data_detail['detail_permohonan'] = $this->m_pemohon->get_data_permohonan($id_permohonan, 'permohonan_ptsp')->result();
-        // $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp03($id_permohonan)->result();
+        $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp03($id_permohonan)->result();
 
         $this->load->view('header');
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('pemohon/ptsp3/detail_ptsp03');
+        $this->load->view('pemohon/ptsp3/form_ubah_ptsp03', $data_detail);
         $this->load->view('footer');
     }
 
-    public function form_ubah_ptsp03()
+    // aksi update permohonan
+    public function aksi_update_pengajuan_ptsp03($id_permohonan)
     {
-        // $id_permohonan
-        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
-        $this->session->userdata('id_pemohon')])->row_array();
-        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+        $data_ptsp = array(
+            'nama' => $this->input->post('nama'),
+            'no_hp' => $this->input->post('no_hp'),
+        );
 
-        // $data_detail['detail_permohonan'] = $this->m_pemohon->get_data_permohonan($id_permohonan, 'permohonan_ptsp')->result();
-        // $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp03($id_permohonan)->result();
+        $this->m_pemohon->update_ptsp($id_permohonan, $data_ptsp, 'ptsp03',);
 
-        $this->load->view('header');
-        $this->load->view('pemohon/sidebar_pemohon');
-        $this->load->view('topbar', $data);
-        $this->load->view('pemohon/ptsp3/form_ubah_ptsp03');
-        $this->load->view('footer');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('pemohon/detail_ptsp03/' . $id_permohonan);
     }
 
-    //aksi ubah
+    //update status permohonan
+    public function aksi_update_status_permohonan($id_permohonan_ptsp)
+    {
+        $data = array(
+            'status' => 'Validasi Kemenag',
+        );
 
+        $this->m_pemohon->update_status_permohonan($id_permohonan_ptsp, $data, 'permohonan_ptsp');
 
-
+        $this->session->set_flashdata('success', 'diajukan');
+        redirect('pemohon/list_permohonan_validasi_kemenag');
+    }
 }
