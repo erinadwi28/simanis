@@ -34,7 +34,7 @@
 					</div>
 
 					<div class="card-footer py-3">
-						<form action="<?= base_url('pemohon/update_ijazah_ptsp03/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_ijazah">
+						<form action="<?= base_url('dashboard/update_ijazah_ptsp03/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_ijazah">
 							<div class="form-group ml-2 mr-2">
 								<div class="input-group">
 									<div class="form-group-upload">
@@ -98,13 +98,13 @@
 				<div class="card-footer">
 					<div class="float-right">
 
-						<a href="<?= base_url() ?>pemohon/form_ubah_ptsp03/<?= $detail->id_permohonan_ptsp ?>">
+						<a href="<?= base_url() ?>dashboard/form_ubah_ptsp03/<?= $detail->id_permohonan_ptsp ?>">
 							<button id=" btn_ubah" class="btn btn-sm btn-primary" type="submit">
 								<i class="fa fa-edit nav-icon">
 								</i> Ubah
 							</button>
 						</a>
-						<a href="<?= base_url() ?>pemohon/aksi_update_status_permohonan/<?= $detail->id_permohonan_ptsp ?>">
+						<a href="<?= base_url() ?>dashboard/aksi_update_status_permohonan/<?= $detail->id_permohonan_ptsp ?>">
 							<button id="btn_selesai" class="btn btn-sm btn-success" type="submit">
 								<i class="far fa-save nav-icon">
 								</i> Selesai

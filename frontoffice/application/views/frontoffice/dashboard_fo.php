@@ -40,7 +40,7 @@
           </div>
           <div class="row mt-3">
             <div class="col-md-12">
-              <a href="<?= base_url('frontoffice/list_permohonan_masuk') ?>" class="btn btn-warning float-right"><i class="far fa-eye nav-icon"></i> Tampilkan</a>
+              <a href="<?= base_url('dashboard/list_permohonan_masuk') ?>" class="btn btn-warning float-right"><i class="far fa-eye nav-icon"></i> Tampilkan</a>
             </div>
           </div>
         </div>
@@ -68,7 +68,7 @@
           </div>
           <div class="row mt-3">
             <div class="col-md-12">
-              <a href="<?= base_url('frontoffice/list_permohonan_pending') ?>" class="btn btn-danger float-right"><i class="far fa-eye nav-icon"></i> Tampilkan</a>
+              <a href="<?= base_url('dashboard/list_permohonan_pending') ?>" class="btn btn-danger float-right"><i class="far fa-eye nav-icon"></i> Tampilkan</a>
             </div>
           </div>
         </div>
@@ -97,7 +97,7 @@
           <div class="row mt-3">
             <div class="col-md-12">
               <center>
-                <a href="<?= base_url('frontoffice/selesai') ?>" class="btn btn-success float-right"><i class="far fa-eye nav-icon"></i> Tampilkan</a>
+                <a href="<?= base_url('dashboard/selesai') ?>" class="btn btn-success float-right"><i class="far fa-eye nav-icon"></i> Tampilkan</a>
               </center>
             </div>
           </div>

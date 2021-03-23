@@ -72,13 +72,13 @@
         				</div>
         				<div class="card-footer">
         					<div class="float-right">
-        						<a href="<?= base_url() ?>frontoffice/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>">
+        						<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>">
         							<button id=" btn_tolak" class="btn btn-sm btn-danger" type="submit">
         								<i class="fas fa-times-circle">
         								</i> Tolak
         							</button>
         						</a>
-        						<a href="<?= base_url() ?>frontoffice/aksi_update_status_permohonan/<?= $detail->id_permohonan_ptsp ?>">
+        						<a href="<?= base_url() ?>dashboard/aksi_update_status_permohonan/<?= $detail->id_permohonan_ptsp ?>">
         							<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
         								<i class="fas fa-check-circle">
         								</i> Terima

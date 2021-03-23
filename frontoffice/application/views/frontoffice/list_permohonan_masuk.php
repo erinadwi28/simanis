@@ -32,7 +32,7 @@
                   </label></td>
                 <td>
                   <div>
-                    <a href="<?= base_url() ?>frontoffice/detail_data_permohonan/<?= $permohonan->id_permohonan_ptsp ?>/<?= $permohonan->id_layanan ?>" class="btn btn-primary btn-sm">
+                    <a href="<?= base_url() ?>dashboard/detail_data_permohonan/<?= $permohonan->id_permohonan_ptsp ?>/<?= $permohonan->id_layanan ?>" class="btn btn-primary btn-sm">
                       <i class="far fa-eye nav-icon"></i>
                       Detail
                     </a>

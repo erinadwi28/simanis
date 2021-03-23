@@ -6,7 +6,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
       <div class="">
-        <img src="<?= base_url() ?>../assets/img/logo_SIMANIS.png" width="90">
+        <img src="<?= base_url('../assets/landing/images/logo.png') ?>" width="90">
       </div>
       <div class="sidebar-brand-text mx-3">FRONT OFFICE</div>
     </a>
@@ -16,7 +16,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-      <a class="nav-link" href="<?= base_url('frontoffice') ?>">
+      <a class="nav-link" href="<?= base_url('dashboard') ?>">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
     </li>
@@ -37,9 +37,9 @@
       </a>
       <div id="menupermohonanptsp" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <a class="collapse-item" href="<?= base_url('frontoffice/list_permohonan_masuk') ?>">Proses KEMENAG</a>
-          <a class="collapse-item" href="<?= base_url('frontoffice/list_permohonan_pending') ?>">Pending</a>
-          <a class="collapse-item" href="<?= base_url('frontoffice/list_permohonan_selesai') ?>">Selesai</a>
+          <a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Proses KEMENAG</a>
+          <a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_pending') ?>">Pending</a>
+          <a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Selesai</a>
         </div>
       </div>
     </li>

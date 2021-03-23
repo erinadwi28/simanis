@@ -1,7 +1,7 @@
 <!-- Navbar -->
-<div class="row">
-	<div class="col-md-12 bg-white">
-		<nav class="row navbar navbar-expand-lg navbar-light bg-white shadow px-0 py-0">
+<div class="container-fluid">
+	<div class="row bg-white">
+		<nav class="col navbar navbar-expand-lg navbar-light bg-white shadow px-0 py-0">
 			<div class="container">
 				<a href="#" class="navbar-brand">
 					<img src="<?= base_url('assets/landing/images/logo.png')?>" alt="Logo SIMANIS" class="img-fluid">
@@ -28,12 +28,13 @@
 					</ul>
 
 					<!-- mobile button -->
-					<form class="form-inline d-sm-block d-md-none">
+					<form class="form-inline d-sm-block d-md-none" method="post" action="<?= base_url('masuk')?>">
 						<button class="btn btn-login my-2 my-sm-0 px-3">Masuk | Daftar</button>
 					</form>
 
 					<!-- desktop button -->
-					<form class="form-inline my-2 my-lg-0 d-none d-md-block">
+					<form class="form-inline my-2 my-lg-0 d-none d-md-block" method="post"
+						action="<?= base_url('masuk')?>">
 						<button class="btn btn-login btn-navbar-right my-2 my-sm-0 px-3">Masuk | Daftar</button>
 					</form>
 				</div>
@@ -45,12 +46,26 @@
 
 <!-- Header -->
 <header class="text-center header-profile">
+<div class="container-fluid">
 	<div class="row banner-profile">
 		<div class="col-md-12">
 			<h1>PROFIL</h1>
 		</div>
 	</div>
+</div>
 </header>
+
+<!-- Chat Haji & Umrah -->
+<div class="container haji-umrah">
+	<div class="sticky-container">
+		<ul class="sticky">
+			<li>
+				<img src="<?= base_url('assets/landing/images/wa.png')?>" width="32" height="32">
+				<p><a href="https://api.whatsapp.com/send?phone=628112650662&text=Info" target="_blank">Chat Haji <br> & Umrah</a></p>
+			</li>
+		</ul>
+	</div>
+</div>
 
 <!-- Main Content -->
 <main>

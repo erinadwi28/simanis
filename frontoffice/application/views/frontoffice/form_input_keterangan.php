@@ -27,7 +27,7 @@
                             <em class="float-center small text-danger">*Masukkan keterangan dengan lengkap, alasan ini akan
                                 dikirim ke pemohon agar mengetahuinya</em>
 
-                            <form role="form" action="<?= base_url('frontoffice/kirim_alasn_permohonan') ?>" method="post" id="formketerangan">
+                            <form role="form" action="<?= base_url('dashboard/kirim_alasn_permohonan') ?>" method="post" id="formketerangan">
                                 <div class="form-row align-items-center">
                                     <div class="col-md-2"></div>
                                     <div class="col-md-8 mt-4 mb-2">

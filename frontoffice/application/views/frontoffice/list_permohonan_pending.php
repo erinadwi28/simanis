@@ -36,7 +36,7 @@
                 <td><?= $permohonan->tgl_persetujuan_fo ?></td>
                 <td><label class="badge badge-danger"><i class="far fa-times-circle"><?= $permohonan->status ?></i></label></td>
                 <td>
-                  <a href="<?= base_url() ?>frontoffice/detail_data_permohonan/<?= $permohonan->id_permohonan_ptsp ?>/<?= $permohonan->id_layanan ?>">
+                  <a href="<?= base_url() ?>dashboard/detail_data_permohonan/<?= $permohonan->id_permohonan_ptsp ?>/<?= $permohonan->id_layanan ?>">
                     <button id="btn_simpan" class="btn btn-sm btn-primary" type="submit">
                       <i class="far fa-eye nav-icon"></i>
                       Detail

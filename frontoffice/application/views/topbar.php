@@ -12,7 +12,7 @@
 			<ul class="navbar-nav ml-auto">
 				<!-- Nav Item - Alerts -->
 				<li class="nav-item dropdown no-arrow mx-1">
-					<a class="nav-link " href="<?= base_url() ?>frontoffice/list_permohonan_masuk">
+					<a class="nav-link " href="<?= base_url() ?>dashboard/list_permohonan_masuk">
 						<i class="fas fa-bell fa-fw"></i>
 						<!-- Counter - Alerts -->
 						<span class="badge badge-danger badge-counter"><?php
@@ -33,7 +33,7 @@
 					</a>
 					<!-- Dropdown - User Information -->
 					<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-						<a class="dropdown-item" href="<?= base_url() ?>frontoffice/profil_fo">
+						<a class="dropdown-item" href="<?= base_url() ?>dashboard/profil_fo">
 							<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
 							Profile
 						</a>

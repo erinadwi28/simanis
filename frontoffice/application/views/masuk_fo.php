@@ -8,7 +8,7 @@
 				<div class="row justify-content-center">
 					<div class="col-md-8">
 						<div class="mb-4">
-							<h3>Masuk | Admin </h3>
+							<h3>Masuk | Front Office </h3>
 							<p class="mb-4">masuk ke akun Anda untuk menggunakan layanan ini.</p>
 						</div>
 						<?php if ($this->session->flashdata('success')) : ?>
@@ -26,7 +26,7 @@
 								</button>
 							</div>
 						<?php endif ?>
-						<form action="<?= base_url('masuk_fo/aksi_login'); ?>" method="post">
+						<form action="<?= base_url('masuk/aksi_login'); ?>" method="post">
 							<div class="form-group first shadow">
 								<label for="email">Email | contoh@email.com</label>
 								<input type="email" class="form-control" id="email" name="email">
@@ -51,17 +51,16 @@
 								</small>
 							</center>
 							<center class="mt-1">
-								<a href="<?= base_url('beranda') ?>"> <small>
+								<a href="<?= base_url('beranda') ?>">
+									<small>
 										<i class="fas fa-arrow-left"></i> Kembali Ke Beranda
 									</small>
-
 								</a>
 							</center>
 						</form>
 					</div>
 				</div>
-
 			</div>
-
 		</div>
 	</div>
+</div>

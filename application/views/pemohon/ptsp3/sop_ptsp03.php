@@ -29,7 +29,7 @@
                 </div>
                 <div class="card-footer">
                   <div class="float-right">
-                    <a href="<?= base_url('pemohon/form_ptsp03') ?>">
+                    <a href="<?= base_url('dashboard/form_ptsp03') ?>">
                       <button id="btn_kembali" class="btn btn-sm btn-success" type="submit">
                         <i class="far fa-edit nav-icon">
                         </i> Buat
