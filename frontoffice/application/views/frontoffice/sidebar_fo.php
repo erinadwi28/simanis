@@ -7,7 +7,7 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         <div class="">
-        <img src="assets/img/logo_SIMANIS.png" width="90">
+        <img src="<?= base_url('../assets/landing/images/logo.png') ?>" width="90">
         </div>
         <div class="sidebar-brand-text mx-3">FRONT OFFICE</div>
       </a>
