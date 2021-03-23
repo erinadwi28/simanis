@@ -7,7 +7,7 @@ class Beranda extends CI_Controller {
 	{   
         $this->load->view('landing/header/header');
         $this->load->view('landing/top_navbar/top_navbar');
-        $this->load->view('landing/landing');
+        $this->load->view('landing/beranda');
         $this->load->view('landing/footer/footer');
 	}
 }

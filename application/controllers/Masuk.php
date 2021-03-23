@@ -13,6 +13,10 @@ class Masuk extends CI_Controller
 
         public function index()
         {
+                if ($this->session->userdata('role_pemohon')) {
+                        redirect('dashboard');
+                }
+
                 $this->load->view('landing/header/header_login');
                 $this->load->view('landing/masuk');
                 $this->load->view('landing/footer/footer_masuk');
@@ -69,7 +73,7 @@ class Masuk extends CI_Controller
 
                                                 $this->session->set_userdata($data);
 
-                                                redirect('pemohon');
+                                                redirect('dashboard');
                                         } else {
                                                 //kata sandi salah
                                                 $this->session->set_flashdata('error', '<b>Kata Sandi</bIsi> salah');
@@ -93,7 +97,7 @@ class Masuk extends CI_Controller
         public function logout()
         {
                 //untuk membersihkan session dan mengembalikannya ke halaman login
-                $this->session->unset_userdata('role_warga');
+                $this->session->unset_userdata('role_pemohon');
 
                 $this->session->set_flashdata('success', 'Berhasil <b>Logout</b>');
                 redirect('masuk');

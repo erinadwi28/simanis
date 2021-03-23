@@ -4,37 +4,38 @@
 		<nav class="row navbar navbar-expand-lg navbar-light bg-white shadow px-0 py-0">
 			<div class="container">
 				<a href="#" class="navbar-brand">
-					<img src="<?= base_url('assets/landing/images/logo.png')?>" alt="Logo SIMANIS" class="img-fluid">
+					<img src="<?= base_url('assets/landing/images/logo.png') ?>" alt="Logo SIMANIS" class="img-fluid">
 				</a>
-				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-					data-target="#navb">
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
 				<div class="collapse navbar-collapse" id="navb">
 					<ul class="navbar-nav ml-auto mr-3">
 						<li class="nav-item mx-md-2">
-							<a href="<?= base_url('beranda')?>" class="nav-link active">Beranda</a>
+							<a href="<?= base_url('beranda') ?>" class="nav-link active">Beranda</a>
 						</li>
 						<li class="nav-item mx-md-2">
-							<a href="<?= base_url('profil')?>" class="nav-link">Profil</a>
+							<a href="<?= base_url('profil') ?>" class="nav-link">Profil</a>
 						</li>
 						<li class="nav-item mx-md-2">
-							<a href="<?= base_url('ptsp')?>" class="nav-link">Layanan PTSP</a>
+							<a href="<?= base_url('ptsp') ?>" class="nav-link">Layanan PTSP</a>
 						</li>
 						<li class="nav-item mx-md-2">
-							<a href="<?= base_url('pengaduan')?>" class="nav-link">Pengaduan</a>
+							<a href="<?= base_url('pengaduan') ?>" class="nav-link">Pengaduan</a>
+						</li>
+						<li class="nav-item mx-md-2">
+							<a href="https://api.whatsapp.com/send?phone=628112650662&text=Info" class="nav-link">Chat Umrah & Haji</a>
 						</li>
 					</ul>
 
 					<!-- mobile button -->
-					<form class="form-inline d-sm-block d-md-none" method="post" action="<?= base_url('masuk')?>">
+					<form class="form-inline d-sm-block d-md-none" method="post" action="<?= base_url('masuk') ?>">
 						<button class="btn btn-login my-2 my-sm-0 px-3">Masuk | Daftar</button>
 					</form>
 
 					<!-- desktop button -->
-					<form class="form-inline my-2 my-lg-0 d-none d-md-block" method="post"
-						action="<?= base_url('masuk')?>">
+					<form class="form-inline my-2 my-lg-0 d-none d-md-block" method="post" action="<?= base_url('masuk') ?>">
 						<button class="btn btn-login btn-navbar-right my-2 my-sm-0 px-3">Masuk | Daftar</button>
 					</form>
 				</div>
@@ -187,8 +188,7 @@
 									</div>
 								</div>
 							</div>
-							<a href="#" class="card-link float-right">Selengkapnya &nbsp;<i
-									class="fas fa-arrow-right"></i></a>
+							<a href="#" class="card-link float-right">Selengkapnya &nbsp;<i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -201,8 +201,7 @@
 								Kabupaten Klaten
 							</p>
 							<div class="image-office mb-2">
-								<img class="img-fluid" src="<?= base_url('assets/landing/images/kantor.png')?>"
-									alt="kantor kemenag">
+								<img class="img-fluid" src="<?= base_url('assets/landing/images/kantor.png') ?>" alt="kantor kemenag">
 								<center>
 									<figcaption>Kantor Kemenag Klaten</figcaption>
 								</center>
@@ -221,7 +220,7 @@
 							<p class="my-0">
 								Selengkapnya klik dibawah ini:
 							</p>
-							<p><a href="<?= base_url('profil')?>">Sejarah, Visi & Misi, Struktur Organisasi, Kontak Kami, Peta Lokasi</a>
+							<p><a href="<?= base_url('profil') ?>">Sejarah, Visi & Misi, Struktur Organisasi, Kontak Kami, Peta Lokasi</a>
 							</p>
 						</div>
 					</div>
@@ -253,8 +252,7 @@
 						<div class="card-body justify-content-center">
 							<div class="content-guide">
 								<div class="image-guide align-items-center px-2 py-3">
-									<img src="<?= base_url('assets/landing/images/login.png')?>" alt=""
-										class="img-fluid">
+									<img src="<?= base_url('assets/landing/images/login.png') ?>" alt="" class="img-fluid">
 								</div>
 								<div class="title-guide">
 									<h5>Masuk/Daftar</h5>
@@ -277,8 +275,7 @@
 						<div class="card-body justify-content-center">
 							<div class="content-guide">
 								<div class="image-guide align-items-center px-2 py-3">
-									<img src="<?= base_url('assets/landing/images/prosedur.png')?>" alt=""
-										class="img-fluid">
+									<img src="<?= base_url('assets/landing/images/prosedur.png') ?>" alt="" class="img-fluid">
 								</div>
 								<div class="title-guide">
 									<h5>Persyaratan Permohonan</h5>
@@ -302,8 +299,7 @@
 						<div class="card-body justify-content-center">
 							<div class="content-guide">
 								<div class="image-guide align-items-center px-2 py-3">
-									<img src="<?= base_url('assets/landing/images/isi_form.png')?>" alt=""
-										class="img-fluid">
+									<img src="<?= base_url('assets/landing/images/isi_form.png') ?>" alt="" class="img-fluid">
 								</div>
 								<div class="title-guide">
 									<h5>Ajukan Permohonan</h5>
@@ -328,8 +324,7 @@
 						<div class="card-body justify-content-center">
 							<div class="content-guide">
 								<div class="image-guide align-items-center px-2 py-3">
-									<img src="<?= base_url('assets/landing/images/notif.png')?>" alt=""
-										class="img-fluid">
+									<img src="<?= base_url('assets/landing/images/notif.png') ?>" alt="" class="img-fluid">
 								</div>
 								<div class="title-guide">
 									<h5>Hasil Permohonan</h5>
@@ -365,7 +360,7 @@
 					</p>
 					<div class="image-playstore">
 						<a href="#">
-							<img src="<?= base_url('assets/landing/images/playstore.png')?>" alt="" class="img-fluid">
+							<img src="<?= base_url('assets/landing/images/playstore.png') ?>" alt="" class="img-fluid">
 						</a>
 
 					</div>
