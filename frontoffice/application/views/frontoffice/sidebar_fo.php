@@ -38,40 +38,102 @@
       <div id="menupermohonanptsp" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Proses KEMENAG</a>
-          <a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_pending') ?>">Pending</a>
-          <a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Selesai</a>
+          <a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_pending') ?>">Proses Pending</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_backoffice') ?>">Proses Back Office</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_kasi') ?>">Proses Kasi</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_timteknis') ?>">Proses Tim Teknis</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_kasubag') ?>">Proses Kasubag</a>
+          <a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Proses Selesai</a>
         </div>
       </div>
     </li>
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#menuwarga" for="" aria-expanded="true" aria-controls="collapsePages">
-        <i class="fa fa-users"></i>
+		<li class="nav-item">
+      <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatapemohon" for="" aria-expanded="true" aria-controls="collapsePages">
+        <i class="fa fa-user"></i>
         <span>Data Pemohon</span>
       </a>
-      <div id="menuwarga" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+      <div id="menudatapemohon" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <a class="collapse-item" href="<?= base_url('admin/list_data_warga') ?>">Data Pemohon</a>
-          <a class="collapse-item" href="<?= base_url('admin/form_cari_nik_ubah_kata_sandi_warga') ?>">Ubah Password Pemohon</a>
+				<a class="collapse-item" href="<?= base_url('frontoffice/list_data_pemohon') ?>">Data Pemohon</a>
+          <a class="collapse-item" href="<?= base_url('frontoffice/form_cari_nik_ubah_kata_sandi_pemohon') ?>">Ubah Password Pemohon</a>
+        </div>
+      </div>
+    </li>
+		<li class="nav-item">
+      <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatabackoffice" for="" aria-expanded="true" aria-controls="collapsePages">
+        <i class="fa fa-user"></i>
+        <span>Data Back Office</span>
+      </a>
+      <div id="menudatabackoffice" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+				<a class="collapse-item" href="<?= base_url('frontoffice/list_data_backoffice') ?>">Data Back Office</a>
+          <a class="collapse-item" href="<?= base_url('frontoffice/form_cari_nik_ubah_kata_sandi_backoffice') ?>">Ubah Password Back Office</a>
+        </div>
+      </div>
+    </li>
+		<li class="nav-item">
+      <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatakasi" for="" aria-expanded="true" aria-controls="collapsePages">
+        <i class="fa fa-user"></i>
+        <span>Data Kasi</span>
+      </a>
+      <div id="menudatakasi" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+				<a class="collapse-item" href="<?= base_url('frontoffice/list_data_kasi') ?>">Data Kasi</a>
+          <a class="collapse-item" href="<?= base_url('frontoffice/form_cari_nik_ubah_kata_sandi_kasi') ?>">Ubah Password Kasi</a>
+        </div>
+      </div>
+    </li>
+		<li class="nav-item">
+      <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatatimteknis" for="" aria-expanded="true" aria-controls="collapsePages">
+        <i class="fa fa-user"></i>
+        <span>Data Tim Teknis</span>
+      </a>
+      <div id="menudatatimteknis" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+				<a class="collapse-item" href="<?= base_url('frontoffice/list_data_timteknis') ?>">Data Tim Teknis</a>
+          <a class="collapse-item" href="<?= base_url('frontoffice/form_cari_nik_ubah_kata_sandi_timteknis') ?>">Ubah Password Tim Teknis</a>
+        </div>
+      </div>
+    </li>
+		<li class="nav-item">
+      <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatakasubag" for="" aria-expanded="true" aria-controls="collapsePages">
+        <i class="fa fa-user"></i>
+        <span>Data Kasubag</span>
+      </a>
+      <div id="menudatakasubag" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+				<a class="collapse-item" href="<?= base_url('frontoffice/list_data_kasubag') ?>">Data Kasubag</a>
+          <a class="collapse-item" href="<?= base_url('frontoffice/form_cari_nik_ubah_kata_sandi_kasubag') ?>">Ubah Password Kasubag</a>
+        </div>
+      </div>
+    </li>
+		<li class="nav-item">
+      <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatakepala" for="" aria-expanded="true" aria-controls="collapsePages">
+        <i class="fa fa-user"></i>
+        <span>Data Kepala</span>
+      </a>
+      <div id="menudatakepala" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+				<a class="collapse-item" href="<?= base_url('frontoffice/list_data_kepala') ?>">Data Kepala</a>
+          <a class="collapse-item" href="<?= base_url('frontoffice/form_cari_nik_ubah_kata_sandi_kepala') ?>">Ubah Password Kepala</a>
         </div>
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link " href="<?= base_url('admin/list_feedback') ?>">
+      <a class="nav-link " href="<?= base_url('frontoffice/list_berita') ?>">
         <i class="fa fa-book"></i>
         <span>Berita</span>
       </a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menulayananaduan" for="" aria-expanded="true" aria-controls="collapsePages">
+		<li class="nav-item">
+      <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatalaporan" for="" aria-expanded="true" aria-controls="collapsePages">
         <i class="fa fa-book"></i>
         <span>Laporan</span>
       </a>
-      <div id="menulayananaduan" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+      <div id="menudatalaporan" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <a class="collapse-item" href="">Data Pengguna</a>
-          <a class="collapse-item" href="">Lap. Permohonan Masuk</a>
-          <a class="collapse-item" href="">Lap. Permohonan Selesai</a>
-          <a class="collapse-item" href="">Lap. Pengaduan</a>
+				<a class="collapse-item" href="<?= base_url('frontoffice/list_data_permohonan_selesai') ?>">Lap. Permohonan Selesai</a>
+          <a class="collapse-item" href="<?= base_url('frontoffice/lsit_data_pengaduan') ?>">Lap. Pengaduan</a>
         </div>
       </div>
     </li>
