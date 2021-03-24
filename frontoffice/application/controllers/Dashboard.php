@@ -161,25 +161,25 @@ class Dashboard extends CI_Controller
                         'crlf'    => "\r\n",
                         'newline' => "\r\n"
                 ];
-        
+
                 // Load library email dan konfigurasinya
                 $this->load->library('email', $config);
-        
+
                 // Email dan nama pengirim
                 $this->email->from('no-reply@simanisklaten.com', 'simanisklaten.com');
-        
+
                 // Email penerima
                 $this->email->to($email->email); // Ganti dengan email tujuan
-        
+
                 // Lampiran email, isi dengan url/path file
                 //     $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
-        
+
                 // Subject email
                 $this->email->subject('Informasi Permohonan Anda');
-        
+
                 // Isi email
-                $this->email->message('Halo Pak/Bu '.$email->nama.', <br><br> Diinformasikan kepada pemohon bahwasannya permohonan anda Berhasil<br><br>Salam,<br><br>Kementrian Agama Republik Indonesia');
-        
+                $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan bahwasannya permohonan <b>Legalisir Ijazah</b> anda telah <b>disetujui</b>, dan sudah bisa diambil di Kantor Kementrian Agama Kabupaten Klaten yang berada di JL.Ronggowarsito Klaten<br><br>Salam,<br><br>Kementrian Agama Kabupaten Klaten');
+
                 // Tampilkan pesan sukses atau error
                 if ($this->email->send()) {
                         echo 'Sukses! email berhasil dikirim.';
@@ -237,25 +237,25 @@ class Dashboard extends CI_Controller
                         'crlf'    => "\r\n",
                         'newline' => "\r\n"
                 ];
-        
+
                 // Load library email dan konfigurasinya
                 $this->load->library('email', $config);
-        
+
                 // Email dan nama pengirim
                 $this->email->from('no-reply@simanisklaten.com', 'simanisklaten.com');
-        
+
                 // Email penerima
                 $this->email->to($email->email); // Ganti dengan email tujuan
-        
+
                 // Lampiran email, isi dengan url/path file
                 //     $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
-        
+
                 // Subject email
                 $this->email->subject('Informasi Permohonan Anda');
-        
+
                 // Isi email
-                $this->email->message('Halo Pak/Bu '.$email->nama.', <br><br> Diinformasikan kepada pemohon bahwasannya permohonan anda dipending dikarenakan '.$this->input->post('keterangan').' <br><br>Salam,<br><br>Kementrian Agama Republik Indonesia');
-        
+                $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan kepada pemohon bahwasannya permohonan <b>Legalisir Ijazah</b> anda dipending dikarenakan ' . $this->input->post('keterangan') . ', mohon pemberitahuan ini untuk segera ditindak lanjuti. <br>Terimakasih<br>Salam,<br><br>Kementrian Agama Kabupaten Klaten');
+
                 // Tampilkan pesan sukses atau error
                 if ($this->email->send()) {
                         echo 'Sukses! email berhasil dikirim.';
