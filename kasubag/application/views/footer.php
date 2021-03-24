@@ -16,7 +16,7 @@
           <button class="btn btn-secondary" type="button" data-dismiss="modal">
             Cancel
           </button>
-          <a class="btn btn-primary" href="<?= base_url('masuk_fo/logout') ?>">Logout</a>
+          <a class="btn btn-primary" href="<?= base_url('masuk/logout') ?>">Logout</a>
         </div>
       </div>
     </div>
@@ -32,4 +32,5 @@
   <!-- Custom scripts for all pages-->
   <script src="<?= base_url('../assets/dashboard/js/sb-admin-2.min.js') ?>"></script>
   </body>
+
   </html>
