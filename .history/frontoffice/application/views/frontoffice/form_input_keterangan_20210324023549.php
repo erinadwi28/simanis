@@ -38,7 +38,6 @@
                                             <small> Error Message </small> -->
                                         </div>
                                         <input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="id_permohonan_ptsp" value="<?= $id_permohonan_ptsp['id_permohonan_ptsp']; ?>">
-                                        <input type="hidden" class="form-control form-user-input" name="id_pemohon" id="id_pemohon" value="<?= $id_permohonan_ptsp['id_pemohon']; ?>">
                                     </div>
                                     <div class="col-md-2"> </div>
                                 </div>

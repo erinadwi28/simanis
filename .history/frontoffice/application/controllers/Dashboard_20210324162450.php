@@ -146,8 +146,7 @@ class Dashboard extends CI_Controller
                         'status' => 'Selesai',
                         'tgl_persetujuan_fo' => date("Y/m/d")
                 );
-                $permohonan = $this->m_fo->get_data_permohonan_ptsp($id_permohonan_ptsp);
-                $email = $this->m_fo->get_data_pemohon($permohonan->id_pemohon);
+                $email = $this->m_fo->get_data_pemohon($this->input->post('id_pemohon'));
                 // Konfigurasi email
                 $config = [
                         'mailtype'  => 'html',
@@ -178,7 +177,7 @@ class Dashboard extends CI_Controller
                 $this->email->subject('Informasi Permohonan Anda');
         
                 // Isi email
-                $this->email->message('Halo Pak/Bu '.$email->nama.', <br><br> Diinformasikan kepada pemohon bahwasannya permohonan anda Berhasil<br><br>Salam,<br><br>Kementrian Agama Republik Indonesia');
+                $this->email->message('Halo Pak/Bu '.$email->nama.', <br><br> Diinformasikan kepada pemohon bahwasannya permohonan anda dipending dikarenakan '.$this->input->post('keterangan').' <br><br>Salam,<br><br>Kementrian Agama Republik Indonesia');
         
                 // Tampilkan pesan sukses atau error
                 if ($this->email->send()) {
@@ -186,7 +185,7 @@ class Dashboard extends CI_Controller
                 } else {
                         echo 'Error! email tidak dapat dikirim.';
                 }
-
+                
                 $this->m_fo->update_status_permohonan($id_permohonan_ptsp, $data, 'permohonan_ptsp');
 
                 $this->session->set_flashdata('success', 'permohonan sukses disetujui');

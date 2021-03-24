@@ -146,46 +146,6 @@ class Dashboard extends CI_Controller
                         'status' => 'Selesai',
                         'tgl_persetujuan_fo' => date("Y/m/d")
                 );
-                $permohonan = $this->m_fo->get_data_permohonan_ptsp($id_permohonan_ptsp);
-                $email = $this->m_fo->get_data_pemohon($permohonan->id_pemohon);
-                // Konfigurasi email
-                $config = [
-                        'mailtype'  => 'html',
-                        'charset'   => 'utf-8',
-                        'protocol'  => 'smtp',
-                        'smtp_host' => 'smtp.gmail.com',
-                        'smtp_user' => 'klatenkemenag7@gmail.com',  // Email gmail
-                        'smtp_pass'   => 'dpdzadjbieahxykx',  // Password gmail
-                        'smtp_crypto' => 'ssl',
-                        'smtp_port'   => 465,
-                        'crlf'    => "\r\n",
-                        'newline' => "\r\n"
-                ];
-        
-                // Load library email dan konfigurasinya
-                $this->load->library('email', $config);
-        
-                // Email dan nama pengirim
-                $this->email->from('no-reply@simanisklaten.com', 'simanisklaten.com');
-        
-                // Email penerima
-                $this->email->to($email->email); // Ganti dengan email tujuan
-        
-                // Lampiran email, isi dengan url/path file
-                //     $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
-        
-                // Subject email
-                $this->email->subject('Informasi Permohonan Anda');
-        
-                // Isi email
-                $this->email->message('Halo Pak/Bu '.$email->nama.', <br><br> Diinformasikan kepada pemohon bahwasannya permohonan anda Berhasil<br><br>Salam,<br><br>Kementrian Agama Republik Indonesia');
-        
-                // Tampilkan pesan sukses atau error
-                if ($this->email->send()) {
-                        echo 'Sukses! email berhasil dikirim.';
-                } else {
-                        echo 'Error! email tidak dapat dikirim.';
-                }
 
                 $this->m_fo->update_status_permohonan($id_permohonan_ptsp, $data, 'permohonan_ptsp');
 
@@ -214,6 +174,8 @@ class Dashboard extends CI_Controller
         //aksi tolak permohonan
         public function kirim_alasn_permohonan()
         {
+                
+                
                 $data = array(
                         'keterangan' => $this->input->post('keterangan'),
                         'notif_pemohon' => 'Belum Dibaca',
@@ -223,7 +185,8 @@ class Dashboard extends CI_Controller
 
                 $detailhere = $this->input->post('id_permohonan_ptsp');
 
-                $email = $this->m_fo->get_data_pemohon($this->input->post('id_pemohon'));
+                $email = $this->db->select('pemohon.email')->from('permohonan_ptsp')->join('pemohon', 'permohonan_ptsp.id_pemohon = pemohon.id_pemohon', 'INNER')
+                ->where('pemohon.id_pemohon', $detailhere->id_pemohon)->get();
                 // Konfigurasi email
                 $config = [
                         'mailtype'  => 'html',
@@ -251,10 +214,10 @@ class Dashboard extends CI_Controller
                 //     $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
         
                 // Subject email
-                $this->email->subject('Informasi Permohonan Anda');
+                $this->email->subject('gatau mau beli trek');
         
                 // Isi email
-                $this->email->message('Halo Pak/Bu '.$email->nama.', <br><br> Diinformasikan kepada pemohon bahwasannya permohonan anda dipending dikarenakan '.$this->input->post('keterangan').' <br><br>Salam,<br><br>Kementrian Agama Republik Indonesia');
+                $this->email->message($this->input->post('keterangan'));
         
                 // Tampilkan pesan sukses atau error
                 if ($this->email->send()) {
