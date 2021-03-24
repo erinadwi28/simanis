@@ -259,7 +259,7 @@ class Dashboard extends CI_Controller
             'no_hp' => $this->input->post('no_hp'),
         );
 
-        $this->m_pemohon->update_ptsp($id_permohonan, $data_ptsp, 'ptsp03');
+        $this->m_pemohon->update_ptsp($id_permohonan, $data_ptsp, 'ptsp03',);
 
         $this->session->set_flashdata('success', 'disimpan');
         redirect('dashboard/detail_ptsp03/' . $id_permohonan);

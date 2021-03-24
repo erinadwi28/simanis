@@ -129,13 +129,4 @@ class M_fo extends CI_Model
         return $this->db->get()->row();
 
     }
-    public function get_data_permohonan_ptsp($id_permohonan_ptsp){
-        $this->db->select('permohonan_ptsp.*');
-        $this->db->from('pemohon');
-        $this->db->join('permohonan_ptsp', 'pemohon.id_pemohon = permohonan_ptsp.id_pemohon','INNER');
-        $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan_ptsp);
-
-        return $this->db->get()->row();
-
-    }
 }

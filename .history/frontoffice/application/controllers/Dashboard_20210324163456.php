@@ -178,7 +178,7 @@ class Dashboard extends CI_Controller
                 $this->email->subject('Informasi Permohonan Anda');
         
                 // Isi email
-                $this->email->message('Halo Pak/Bu '.$email->nama.', <br><br> Diinformasikan kepada pemohon bahwasannya permohonan anda Berhasil<br><br>Salam,<br><br>Kementrian Agama Republik Indonesia');
+                $this->email->message('Halo Pak/Bu '.$email->nama.', <br><br> Diinformasikan kepada pemohon bahwasannya permohonan anda dipending dikarenakan '.$this->input->post('keterangan').' <br><br>Salam,<br><br>Kementrian Agama Republik Indonesia');
         
                 // Tampilkan pesan sukses atau error
                 if ($this->email->send()) {
