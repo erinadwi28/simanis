@@ -1,39 +1,111 @@
 body {
-    font-family: 'Assistant', sans-serif;
-    color: #007530;
-    font-size: 18px;
+	background-color: #fff;
+	font-family: 'Assistant', sans-serif;
+	color: #007530;
 }
 
 .card {
-    .card-header {
-        background-color: #F2FCEE;
+    border: 0px;
+	border-radius: 0px;
+}
 
-        h6 {
-            color: #007530;
-        }
-    }
+.nav-breadcrumb {
+	ol {
+		margin-bottom: 0;
 
-    .card-body {
-        color: #000000;
+		$breakpoint-tablet: 768px;
 
-        &:hover {
-            color: #007530;
+	@media (max-width: $breakpoint-tablet) {
+		padding: 0;
+		margin-top: 5px;
+		padding-bottom: 5px;
+	}
+	}
+}
+
+.topbar-welcome {
+	$breakpoint-tablet: 768px;
+
+	@media (max-width: $breakpoint-tablet) {
+		display: none;
+	}
+}
+
+.sidebar-toggle {
+	color: #007530;
+
+	&:hover {
+		color: #007530;
+	}
+}
+
+
+.scroll-to-top {
+	background-color: #F69D1B;
+
+	&:hover{
+		background-color: #F5C47B;
+	}
+}
+
+.sidebar {
+    background-color: #007530;
+	.nav-item {
+		.nav-link {
+			span {
+				font-size: 15px;
+			}
+		}
+
+		.collapse {
+			.collapse-inner {
+				.collapse-item {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+
+    .toggled {
+        .nav-item {
+            .nav-link {
+                span {
+                    font-size: 13px;
+                }
+            }
         }
-        table {
-            color: #000000;
-            } 
-        }
-        
-    .card-footer {
-        background-color: #F2FCEE;
     }
 }
 
-.container-fluid {
-    .judullist {
-        h3 {
-            color: #007530;
-        }
+.title-track {
+    color: #fff;
+    background-color: #007530;
+    border: 0px;
+    border-radius: 0px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
 
-    }
+.ptsp {
+	.border-left-success {
+		border-left : .25rem solid #F69D1B!important;
+	}
+
+	.text-success {
+		color: #007530!important;
+	}
+
+	.badge-warning {
+		background-color: #F69D1B;
+	}
+
+	&:hover {
+		.card-body {
+			background-color: #007530;
+		}
+
+		.text-success {
+		color: #Fff!important;
+	}
+	}
 }

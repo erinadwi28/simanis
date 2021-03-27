@@ -1,34 +1,90 @@
 body {
+  background-color: #fff;
   font-family: 'Assistant', sans-serif;
   color: #007530;
-  font-size: 18px;
 }
 
-.card .card-header {
-  background-color: #F2FCEE;
+.card {
+  border: 0px;
+  border-radius: 0px;
 }
 
-.card .card-header h6 {
+.nav-breadcrumb ol {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .nav-breadcrumb ol {
+    padding: 0;
+    margin-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar-welcome {
+    display: none;
+  }
+}
+
+.sidebar-toggle {
   color: #007530;
 }
 
-.card .card-body {
-  color: #000000;
-}
-
-.card .card-body:hover {
+.sidebar-toggle:hover {
   color: #007530;
 }
 
-.card .card-body table {
-  color: #000000;
+.scroll-to-top {
+  background-color: #F69D1B;
 }
 
-.card .card-footer {
-  background-color: #F2FCEE;
+.scroll-to-top:hover {
+  background-color: #F5C47B;
 }
 
-.container-fluid .judullist h3 {
-  color: #007530;
+.sidebar {
+  background-color: #007530;
+}
+
+.sidebar .nav-item .nav-link span {
+  font-size: 15px;
+}
+
+.sidebar .nav-item .collapse .collapse-inner .collapse-item {
+  font-size: 14px;
+}
+
+.sidebar .toggled .nav-item .nav-link span {
+  font-size: 13px;
+}
+
+.title-track {
+  color: #fff;
+  background-color: #007530;
+  border: 0px;
+  border-radius: 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.ptsp .border-left-success {
+  border-left: 0.25rem solid #F69D1B !important;
+}
+
+.ptsp .text-success {
+  color: #007530 !important;
+}
+
+.ptsp .badge-warning {
+  background-color: #F69D1B;
+}
+
+.ptsp:hover .card-body {
+  background-color: #007530;
+}
+
+.ptsp:hover .text-success {
+  color: #Fff !important;
 }
 /*# sourceMappingURL=dashboard.css.map */
