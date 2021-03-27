@@ -8,7 +8,7 @@
 			<div class="">
 				<img src="<?= base_url('../assets/landing/images/logo_dashboard.png') ?>" width="45">
 			</div>
-			<div class="sidebar-brand-text mx-3">FRONT OFFICE</div>
+			<div class="sidebar-brand-text mx-3">FRONT OFFICE </div>
 		</a>
 
 		<!-- Divider -->

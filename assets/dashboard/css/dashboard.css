@@ -9,6 +9,34 @@ body {
   border-radius: 0px;
 }
 
+.card .card-header {
+  background-color: #F2FCEE;
+}
+
+.card .card-header h6 {
+  color: #007530;
+}
+
+.card .card-body {
+  color: #000000;
+}
+
+.card .card-body:hover {
+  color: #007530;
+}
+
+.card .card-body table {
+  color: #000000;
+}
+
+.card .card-footer {
+  background-color: #F2FCEE;
+}
+
+.container-fluid .judullist h3 {
+  color: #007530;
+}
+
 .nav-breadcrumb ol {
   margin-bottom: 0;
 }
