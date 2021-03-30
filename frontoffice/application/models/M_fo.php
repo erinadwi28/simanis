@@ -10,6 +10,20 @@ class M_fo extends CI_Model
         return $query->row_array();
     }
 
+    //get data fo untuk ubah katasandi
+    public function get_fo($id)
+    {
+        $query = $this->db->get_where('fo', ['id_fo' => $id]);
+        return $query->row_array();
+    }
+
+    //aksi ubah kata sandi
+    public function update_sandi($where, $data, $table)
+    {
+        $this->db->where('id_fo', $where);
+        $this->db->update($table, $data);
+    }
+
     // jumlah notif permohonan masuk
     public function jml_notif()
     {

@@ -9,6 +9,20 @@ class M_kasubag extends CI_Model
         return $query->row_array();
     }
 
+    //get data kasubag untuk ubah katasandi
+    public function get_kasubag($id)
+    {
+        $query = $this->db->get_where('kasubag', ['id_kasubag' => $id]);
+        return $query->row_array();
+    }
+
+    //aksi ubah kata sandi
+    public function update_sandi($where, $data, $table)
+    {
+        $this->db->where('id_kasubag', $where);
+        $this->db->update($table, $data);
+    }
+
     // jumlah notif permohonan masuk
     public function jml_notif()
     {

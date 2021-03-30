@@ -9,6 +9,20 @@ class M_kepala extends CI_Model
         return $query->row_array();
     }
 
+    //get data kepala untuk ubah katasandi
+    public function get_kepala($id)
+    {
+        $query = $this->db->get_where('kepala', ['id_kepala' => $id]);
+        return $query->row_array();
+    }
+
+    //aksi ubah kata sandi
+    public function update_sandi($where, $data, $table)
+    {
+        $this->db->where('id_kepala', $where);
+        $this->db->update($table, $data);
+    }
+
     // jumlah notif permohonan masuk
     public function jml_notif()
     {

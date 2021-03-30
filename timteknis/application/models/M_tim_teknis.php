@@ -9,6 +9,20 @@ class M_tim_teknis extends CI_Model
         return $query->row_array();
     }
 
+    //get data pemohon untuk ubah katasandi
+    public function get_tim_teknis($id)
+    {
+        $query = $this->db->get_where('tim_teknis', ['id_tim_teknis' => $id]);
+        return $query->row_array();
+    }
+
+    //aksi ubah kata sandi
+    public function update_sandi($where, $data, $table)
+    {
+        $this->db->where('id_tim_teknis', $where);
+        $this->db->update($table, $data);
+    }
+
     // jumlah notif permohonan masuk
     public function jml_notif()
     {

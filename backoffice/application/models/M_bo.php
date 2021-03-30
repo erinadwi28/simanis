@@ -9,6 +9,20 @@ class M_bo extends CI_Model
         return $query->row_array();
     }
 
+    //get data bo untuk ubah katasandi
+    public function get_bo($id)
+    {
+        $query = $this->db->get_where('bo', ['id_bo' => $id]);
+        return $query->row_array();
+    }
+
+    //aksi ubah kata sandi
+    public function update_sandi($where, $data, $table)
+    {
+        $this->db->where('id_bo', $where);
+        $this->db->update($table, $data);
+    }
+
     // jumlah notif permohonan masuk
     public function jml_notif()
     {

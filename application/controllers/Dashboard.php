@@ -95,6 +95,57 @@ class Dashboard extends CI_Controller
         redirect('dashboard/profil_pemohon');
     }
 
+    //menampilkan halaman form ubah kata sandi
+    public function form_ubahsandi()
+    {
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $detailhere = array('id_pemohon' => $this->session->userdata('id_pemohon'));
+        $data_detail['detail_profil_saya'] = $this->m_pemohon->get_detail_profil_saya($detailhere, 'pemohon')->result();
+
+        $this->load->view('header');
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar', $data);
+        $this->load->view('pemohon/ubahsandi', $data_detail);
+        $this->load->view('footer');
+    }
+
+    // aksi ubah kata
+    public function ubah_sandi()
+    {
+        $kata_sandi_awal = $this->input->post('kata_sandi_awal');
+        $data_lama = sha1($kata_sandi_awal);
+
+        $kata_sandi_baru = $this->input->post('kata_sandi_baru');
+        $kata_sandi_hash = sha1($kata_sandi_baru);
+
+        $data_baru = array(
+            'kata_sandi' => $kata_sandi_hash,
+        );
+
+        $konfirmasi = $this->input->post('konfirmasi');
+
+        $where = $this->session->userdata('id_pemohon');
+
+        $fo = $this->m_pemohon->get_pemohon($where);
+
+        if ($konfirmasi === $kata_sandi_baru) {
+            if ($data_lama === $fo['kata_sandi']) {
+                $this->m_pemohon->update_sandi($where, $data_baru, 'pemohon');
+                $this->session->set_flashdata('success', '<b>Kata Sandi</b> Berhasil Diubah');
+                redirect('dashboard/form_ubahsandi');
+            } else {
+                $this->session->set_flashdata('error', '<b>Kata Sandi Lama</b> Salah');
+                redirect('dashboard/form_ubahsandi');
+            }
+        } else {
+            $this->session->set_flashdata('error', 'Konfirmasi Sandi<b> Tidak Sesuai</b>');
+            redirect('dashboard/form_ubahsandi');
+        }
+    }
+
     //list permohonan masuk
     public function list_permohonan_validasi_kemenag()
     {
@@ -285,8 +336,8 @@ class Dashboard extends CI_Controller
         $this->load->view('pemohon/ptsp3/detail_ptsp03', $data_detail);
         $this->load->view('footer');
     }
-	
-	//tampil form ubah ptsp03
+
+    //tampil form ubah ptsp03
     public function form_ubah_ptsp03($id_permohonan)
     {
         // $id_permohonan

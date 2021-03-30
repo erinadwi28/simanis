@@ -15,6 +15,20 @@ class M_pemohon extends CI_Model
         return $query->row_array();
     }
 
+    //get data pemohon untuk ubah katasandi
+    public function get_pemohon($id)
+    {
+        $query = $this->db->get_where('pemohon', ['id_pemohon' => $id]);
+        return $query->row_array();
+    }
+
+    //aksi ubah kata sandi
+    public function update_sandi($where, $data, $table)
+    {
+        $this->db->where('id_pemohon', $where);
+        $this->db->update($table, $data);
+    }
+
     // jumlah notif permohonan
     public function jml_notif()
     {
