@@ -27,4 +27,22 @@ class Dashboard extends CI_Controller
         $this->load->view('timteknis/dashboard', $data_permohonan);
         $this->load->view('footer');
     }
+	//profil
+	public function profil()
+        {
+                $this->load->view('header');
+                $this->load->view('timteknis/sidebar');
+                $this->load->view('topbar');
+                $this->load->view('timteknis/profil');
+                $this->load->view('footer');
+        }
+	//ubahsandi
+	public function ubahsandi()
+        {
+                $this->load->view('header');
+                $this->load->view('timteknis/sidebar');
+                $this->load->view('topbar');
+                $this->load->view('timteknis/ubahsandi');
+                $this->load->view('footer');
+        }
 }

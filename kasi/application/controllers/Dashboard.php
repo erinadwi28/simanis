@@ -27,4 +27,22 @@ class Dashboard extends CI_Controller
         $this->load->view('kasi/dashboard', $data_permohonan);
         $this->load->view('footer');
     }
+	//profil
+	public function profil()
+        {
+                $this->load->view('header');
+                $this->load->view('kasi/sidebar');
+                $this->load->view('topbar');
+                $this->load->view('kasi/profil');
+                $this->load->view('footer');
+        }
+	//ubahsandi
+	public function ubahsandi()
+        {
+                $this->load->view('header');
+                $this->load->view('kasi/sidebar');
+                $this->load->view('topbar');
+                $this->load->view('kasi/ubahsandi');
+                $this->load->view('footer');
+        }
 }

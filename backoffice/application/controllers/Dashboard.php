@@ -29,6 +29,23 @@ class Dashboard extends CI_Controller
     }
 
     //profil
+	public function profil()
+        {
+                $this->load->view('header');
+                $this->load->view('backoffice/sidebar');
+                $this->load->view('topbar');
+                $this->load->view('backoffice/profil');
+                $this->load->view('footer');
+        }
+	//ubahsandi
+	public function ubahsandi()
+        {
+                $this->load->view('header');
+                $this->load->view('backoffice/sidebar');
+                $this->load->view('topbar');
+                $this->load->view('backoffice/ubahsandi');
+                $this->load->view('footer');
+        }
 
     //list permohonan masuk
     public function list_permohonan_masuk()
