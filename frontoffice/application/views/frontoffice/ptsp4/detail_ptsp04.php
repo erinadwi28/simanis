@@ -3,7 +3,7 @@
 
         	<!-- Page Heading -->
         	<div class="d-sm-flex align-items-center justify-content-between mb-4 judullist">
-        		<h3>Detail Permohonan Legalisir Ijazah</h3>
+        		<h3>Detail Permohonan Legalisir Dokumen Kepegawaian, Surat, Piagam, Sertifikat</h3>
 
         	</div>
 
@@ -11,23 +11,23 @@
         		<div class="col-md-4 mb-4">
         			<?php
 					foreach ($detail_ptsp as $detail) { ?>
-        				<!-- ijazah -->
+        				<!-- dokumen -->
         				<div class="card shadow mb-4">
         					<div class="card-header py-3">
         						<center>
-        							<h6 class="m-0 font-weight-bold">Ijazah</h6>
+        							<h6 class="m-0 font-weight-bold">Dokumen</h6>
         						</center>
         					</div>
 
         					<div class="card-body" style="padding: 15px;">
         						<center>
-        							<?php if ($detail->ijazah != null) { ?>
-        								<p><?= $detail->ijazah; ?></p>
-        								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/pemohon/ptsp/ptsp03/<?= $detail->ijazah ?>" target="_blank">
+        							<?php if ($detail->dokumen != null) { ?>
+        								<p><?= $detail->dokumen; ?></p>
+        								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/pemohon/ptsp/ptsp04/<?= $detail->dokumen ?>" target="_blank">
         									<i class="fa fa-download nav-icon">
         									</i> Klik untuk melihat
         								</a>
-        							<?php } elseif ($sm->lampiran == null) { ?>
+        							<?php } elseif ($detail->dokumen == null) { ?>
         								<p>Belum ada lampiran</p>
         							<?php } ?>
         						</center>
@@ -38,7 +38,7 @@
         			<!-- Detail Data -->
         			<div class="card shadow mb-4">
         				<div class="card-header py-3">
-        					<h6 class="m-0 font-weight-bold text-center">Permohonan Legalisir Ijazah</h6>
+        					<h6 class="m-0 font-weight-bold text-center">Permohonan Legalisir Dokumen Kepegawaian, Surat, Piagam, Sertifikat</h6>
         				</div>
         				<div class="card-body">
         					<table class="table-hover table-responsive">

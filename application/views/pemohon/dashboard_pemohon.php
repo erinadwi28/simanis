@@ -1,6 +1,6 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-  <!-- Page Heading -->
+	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between mb-2">
 		<h1 class="h3 mb-0 text-gray-800">Halaman Utama Pemohon</h1>
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
@@ -12,49 +12,49 @@
 		</nav>
 	</div>
 
-  <!-- Page Heading Data Permohonan PTSP-->
-  <div class="card shadow h-100 p-0 mb-3">
-    <div class="card-body px-3 py-2 title-track">
-      <div class="align-items-center justify-content-between text-center">
-        <h1 class="h5 mb-0 text-bold text-light">Data Permohonan PTSP</h1>
-      </div>
-    </div>
-  </div>
+	<!-- Page Heading Data Permohonan PTSP-->
+	<div class="card shadow h-100 p-0 mb-3">
+		<div class="card-body px-3 py-2 title-track">
+			<div class="align-items-center justify-content-between text-center">
+				<h1 class="h5 mb-0 text-bold text-light">Data Permohonan PTSP</h1>
+			</div>
+		</div>
+	</div>
 
-  <!-- Content Row -->
-  <div class="row">
+	<!-- Content Row -->
+	<div class="row">
 
-    <!-- Data Proses Validasi Kemenag -->
-    <div class="col-xl-4 col-md-3 mb-3">
-      <div class="card border-left-primary shadow-lg">
-        <div class="card-body px-3">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-0">
-              <div class="h6 text-primary">
-                Proses Validasi Kemenag</div>
-              <div class="h4 mb-0 text-gray-800">
-                <?php
-                foreach ($permohonan_validasi_kemenag as $validasi_kemenag) { ?>
-                  <?= $validasi_kemenag->permohonan_validasi_kemenag; ?>
-                <?php } ?>
-              </div>
-            </div>
-            <div class="col-auto">
-              <i class="fas fa-envelope-open-text fa-2x text-gray-300"></i>
-            </div>
-          </div>
-          <div class="row mt-1">
-            <div class="col-md-12">
-              <a href="<?= base_url('dashboard/list_permohonan_validasi_kemenag') ?>" class="badge badge-primary float-right"><i class="far fa-eye nav-icon"></i>Lihat</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+		<!-- Data Proses Validasi Kemenag -->
+		<div class="col-xl-4 col-md-3 mb-3">
+			<div class="card border-left-primary shadow-lg">
+				<div class="card-body px-3">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-0">
+							<div class="h6 text-primary">
+								Proses Validasi Kemenag</div>
+							<div class="h4 mb-0 text-gray-800">
+								<?php
+								foreach ($permohonan_validasi_kemenag as $validasi_kemenag) { ?>
+									<?= $validasi_kemenag->permohonan_validasi_kemenag; ?>
+								<?php } ?>
+							</div>
+						</div>
+						<div class="col-auto">
+							<i class="fas fa-envelope-open-text fa-2x text-gray-300"></i>
+						</div>
+					</div>
+					<div class="row mt-1">
+						<div class="col-md-12">
+							<a href="<?= base_url('dashboard/list_permohonan_validasi_kemenag') ?>" class="badge badge-primary float-right"><i class="far fa-eye nav-icon"></i>Lihat</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
-    <!-- Data Permohonan Pending -->
-    <div class="col-xl-4 col-md-3 mb-3">
+		<!-- Data Permohonan Pending -->
+		<div class="col-xl-4 col-md-3 mb-3">
 			<div class="card border-left-warning shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
@@ -62,27 +62,27 @@
 							<div class="h6 text-warning">
 								Permohonan Pending</div>
 							<div class="h4 mb-0 text-gray-800">
-                <?php
-                foreach ($permohonan_pending as $pending) { ?>
-                  <?= $pending->permohonan_pending; ?>
-                <?php } ?>
-              </div>
-            </div>
-            <div class="col-auto">
-              <i class="fas fa-clock fa-2x text-gray-300"></i>
-            </div>
-          </div>
-          <div class="row mt-1">
-            <div class="col-md-12">
-              <a href="<?= base_url('dashboard/list_permohonan_pending') ?>" class="badge badge-warning float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+								<?php
+								foreach ($permohonan_pending as $pending) { ?>
+									<?= $pending->permohonan_pending; ?>
+								<?php } ?>
+							</div>
+						</div>
+						<div class="col-auto">
+							<i class="fas fa-clock fa-2x text-gray-300"></i>
+						</div>
+					</div>
+					<div class="row mt-1">
+						<div class="col-md-12">
+							<a href="<?= base_url('dashboard/list_permohonan_pending') ?>" class="badge badge-warning float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <!-- Data Permohonan Selesai -->
-    <div class="col-xl-4 col-md-3 mb-3">
+		<!-- Data Permohonan Selesai -->
+		<div class="col-xl-4 col-md-3 mb-3">
 			<div class="card border-left-success shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
@@ -90,40 +90,40 @@
 							<div class="h6 text-success">
 								Permohonan Selesai</div>
 							<div class="h4 mb-0 text-gray-800">
-                <?php
-                foreach ($permohonan_selesai as $selesai) { ?>
-                  <?= $selesai->permohonan_selesai; ?>
-                <?php } ?>
-              </div>
-            </div>
-            <div class="col-auto">
-              <i class="fas fa-check fa-2x text-gray-300"></i>
-            </div>
-          </div>
-          <div class="row mt-1">
-            <div class="col-md-12">
-              <center>
-                <a href="<?= base_url('dashboard/list_permohonan_selesai') ?>" class="badge badge-success float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
-              </center>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+								<?php
+								foreach ($permohonan_selesai as $selesai) { ?>
+									<?= $selesai->permohonan_selesai; ?>
+								<?php } ?>
+							</div>
+						</div>
+						<div class="col-auto">
+							<i class="fas fa-check fa-2x text-gray-300"></i>
+						</div>
+					</div>
+					<div class="row mt-1">
+						<div class="col-md-12">
+							<center>
+								<a href="<?= base_url('dashboard/list_permohonan_selesai') ?>" class="badge badge-success float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-  <!-- Page Heading Data Laynan PTSP-->
-  <div class="card shadow h-100 p-0 mb-3 mt-2">
-    <div class="card-body px-3 py-2 title-track">
-      <div class="align-items-center justify-content-between text-center">
-        <h1 class="h5 mb-0 text-light">Daftar Layanan PTSP</h1>
-      </div>
-    </div>
-  </div>
-  <!-- Content Row -->
-  <div class="row">
-    <!-- Data Permohonan Selesai -->
-    <div class="col-xl-4 col-md-6 mb-4 ptsp">
+	<!-- Page Heading Data Laynan PTSP-->
+	<div class="card shadow h-100 p-0 mb-3 mt-2">
+		<div class="card-body px-3 py-2 title-track">
+			<div class="align-items-center justify-content-between text-center">
+				<h1 class="h5 mb-0 text-light">Daftar Layanan PTSP</h1>
+			</div>
+		</div>
+	</div>
+	<!-- Content Row -->
+	<div class="row">
+		<!-- Data Permohonan Selesai -->
+		<div class="col-xl-4 col-md-6 mb-4 ptsp">
 			<div class="card border-left-success shadow-lg h-100 p-0">
 				<div class="card-body px-3 py-3 ">
 					<div class="row no-gutters align-items-center">
@@ -134,14 +134,13 @@
 					</div>
 					<div class="row mt-3">
 						<div class="col-md-12">
-							<a href="" class="badge badge-warning float-right">Selengkapnya <i
-									class="fas fa-arrow-right"></i></a>
+							<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-    <div class="col-xl-4 col-md-6 mb-4 ptsp">
+		<div class="col-xl-4 col-md-6 mb-4 ptsp">
 			<div class="card border-left-success shadow-lg h-100 p-0">
 				<div class="card-body px-3 py-3 ">
 					<div class="row no-gutters align-items-center">
@@ -153,8 +152,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -173,15 +171,14 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="<?= base_url('dashboard/sop_ptsp03') ?>" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="<?= base_url('dashboard/sop_ptsp03') ?>" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-  </div>
+	</div>
 	<div class="row">
 		<div class="col-xl-4 col-md-6 mb-4 ptsp">
 			<div class="card border-left-success shadow-lg h-100 p-0">
@@ -195,8 +192,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="<?= base_url('dashboard/sop_ptsp04') ?>" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -214,8 +210,7 @@
 					</div>
 					<div class="row mt-3">
 						<div class="col-md-12">
-							<a href="" class="badge badge-warning float-right">Selengkapnya <i
-									class="fas fa-arrow-right"></i></a>
+							<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -233,8 +228,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -256,8 +250,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -276,8 +269,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -296,8 +288,7 @@
 					<br>
 					<div class="row mt-3">
 						<div class="col-md-12">
-							<a href="" class="badge badge-warning float-right">Selengkapnya <i
-									class="fas fa-arrow-right"></i></a>
+							<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -317,8 +308,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -338,8 +328,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -359,8 +348,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -380,8 +368,7 @@
 					</div>
 					<div class="row mt-3">
 						<div class="col-md-12">
-							<a href="" class="badge badge-warning float-right">Selengkapnya <i
-									class="fas fa-arrow-right"></i></a>
+							<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -400,8 +387,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -421,8 +407,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -443,8 +428,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -462,8 +446,7 @@
 					</div>
 					<div class="row mt-3">
 						<div class="col-md-12">
-							<a href="" class="badge badge-warning float-right">Selengkapnya <i
-									class="fas fa-arrow-right"></i></a>
+							<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -481,8 +464,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -503,8 +485,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -523,8 +504,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -542,8 +522,7 @@
 					</div>
 					<div class="row mt-3">
 						<div class="col-md-12">
-							<a href="" class="badge badge-warning float-right">Selengkapnya <i
-									class="fas fa-arrow-right"></i></a>
+							<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -563,8 +542,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -584,8 +562,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -604,8 +581,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -625,8 +601,7 @@
 					</div>
 					<div class="row mt-3">
 						<div class="col-md-12">
-							<a href="" class="badge badge-warning float-right">Selengkapnya <i
-									class="fas fa-arrow-right"></i></a>
+							<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -644,8 +619,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -665,8 +639,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i
-										class="fas fa-arrow-right"></i></a>
+								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>

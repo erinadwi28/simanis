@@ -34,7 +34,7 @@
                                 <td><label class="badge badge-success"><i class="far fa-check-circle"><?= $permohonan->status ?></i></label></td>
                                 <td>
                                     <a href="<?= base_url() ?>dashboard/detail_data_permohonan/<?= $permohonan->id_permohonan_ptsp ?>/<?= $permohonan->id_layanan ?>">
-                                        <button id="btn_simpan" class="btn btn-sm btn-primary" type="submit">
+                                        <button id="btn_simpan" class="btn btn-sm btn-info" type="submit">
                                             <i class="far fa-eye nav-icon"></i>
                                             Detail
                                         </button>

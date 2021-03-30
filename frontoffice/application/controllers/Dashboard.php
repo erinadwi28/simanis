@@ -142,7 +142,7 @@ class Dashboard extends CI_Controller
                 $this->load->view('footer');
         }
 
-        //detail data permohonan
+        //menampilkan detail data permohonan dari list permohonan
         public function detail_data_permohonan($id_permohonan_ptsp, $id_layanan)
         {
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
@@ -155,6 +155,8 @@ class Dashboard extends CI_Controller
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp01($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 3) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp03($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 4) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp04($id_permohonan_ptsp)->result();
                 }
 
                 $this->load->view('header');
@@ -164,6 +166,8 @@ class Dashboard extends CI_Controller
                         $this->load->view('frontoffice/ptsp1/detail_ptsp01', $data_detail);
                 } elseif ($id_layanan == 3) {
                         $this->load->view('frontoffice/ptsp3/detail_ptsp03', $data_detail);
+                } elseif ($id_layanan == 4) {
+                        $this->load->view('frontoffice/ptsp4/detail_ptsp04', $data_detail);
                 }
                 $this->load->view('footer');
         }
@@ -227,7 +231,7 @@ class Dashboard extends CI_Controller
                 $this->email->subject('Informasi Permohonan Anda');
 
                 // Isi email
-                $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan bahwasannya permohonan <b>Legalisir Ijazah</b> anda telah <b>disetujui</b>, dan sudah bisa diambil di Kantor Kementrian Agama Kabupaten Klaten yang berada di JL.Ronggowarsito Klaten<br><br>Salam,<br><br>Kementrian Agama Kabupaten Klaten');
+                $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan bahwasannya permohonan anda telah <b>disetujui</b>, dan sudah bisa diambil di Kantor Kementrian Agama Kabupaten Klaten yang berada di JL.Ronggowarsito Klaten<br><br>Terimakasih<br>Salam,<br><br>Kementrian Agama Kabupaten Klaten');
 
                 // Tampilkan pesan sukses atau error
                 if ($this->email->send()) {
@@ -303,7 +307,7 @@ class Dashboard extends CI_Controller
                 $this->email->subject('Informasi Permohonan Anda');
 
                 // Isi email
-                $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan kepada pemohon bahwasannya permohonan <b>Legalisir Ijazah</b> anda dipending dikarenakan ' . $this->input->post('keterangan') . ', mohon pemberitahuan ini untuk segera ditindak lanjuti. <br>Terimakasih<br>Salam,<br><br>Kementrian Agama Kabupaten Klaten');
+                $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan kepada pemohon bahwasannya permohonan anda dipending dikarenakan ' . $this->input->post('keterangan') . ', mohon pemberitahuan ini untuk segera ditindak lanjuti. <br>Terimakasih<br>Salam,<br><br>Kementrian Agama Kabupaten Klaten');
 
                 // Tampilkan pesan sukses atau error
                 if ($this->email->send()) {
