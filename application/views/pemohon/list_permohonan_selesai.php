@@ -15,8 +15,8 @@
                         <tr>
                             <th>No</th>
                             <th>Jenis Layanan</th>
-                            <th>Tgl Permohonan</th>
-                            <th>Tgl Disetujui</th>
+                            <th>Tanggal Permohonan</th>
+                            <th>Tanggal Disetujui</th>
                             <th>Status</th>
                             <th>Aksi</th>
                         </tr>
@@ -29,23 +29,16 @@
                             <tr>
                                 <td><?= $no ?></td>
                                 <td><?= $permohonan->nama_layanan ?></td>
-                                <td><?= $permohonan->tgl_permohonan ?></td>
-                                <td><?= $permohonan->tgl_persetujuan_fo ?></td>
+                                <td><?= format_indo(date($permohonan->tgl_permohonan));  ?></td>
+                                <td><?= format_indo(date($permohonan->tgl_persetujuan_fo));  ?></td>
                                 <td><label class="badge badge-success"><i class="far fa-times-cicrle"><?= $permohonan->status ?></i></label></td>
                                 <td>
-                                    <form role="form" action="<?= base_url() ?>warga/lihat_surat/<?= $permohonan->id_permohonan_ptsp ?>/<?= $permohonan->id_layanan ?>" method="post" id="formUbah">
-                                        <div>
-                                            <div class="float-right">
-                                                <a href="">
-                                                    <button id="btn_simpan" class="btn btn-sm btn-info" type="submit">
-                                                        <i class="far fa-eye nav-icon"></i>
-                                                        Lihat Surat
-                                                    </button>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <input type="hidden" class="form-control form-user-input " name="notif" id="notif" value="Dibaca">
-                                    </form>
+                                    <div>
+                                        <a href="<?= base_url() ?>dashboard/detail_data_permohonan/<?= $permohonan->id_permohonan_ptsp ?>/<?= $permohonan->id_layanan ?>" class="btn btn-info btn-sm">
+                                            <i class="far fa-eye nav-icon"></i>
+                                            Detail
+                                        </a>
+                                    </div>
                                 </td>
                             </tr>
                         <?php } ?>

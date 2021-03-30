@@ -46,6 +46,54 @@ class Dashboard extends CI_Controller
                 $this->load->view('footer');
         }
 
+        //ubah foto profil
+        public function upload_foto_profil()
+        {
+
+                $id_fo = $this->session->userdata('id_fo');
+
+                $config['upload_path']          = './../assets/frontoffice/profil/';
+                $config['allowed_types']        = 'gif|jpg|png|jpeg';
+                $config['file_name']            = 'profil-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+                $this->load->library('upload', $config);
+                if (!empty($_FILES['berkas']['name'])) {
+                        if ($this->upload->do_upload('berkas')) {
+
+                                $uploadData = $this->upload->data();
+
+                                //Compres Foto
+                                $config['image_library'] = 'gd2';
+                                $config['source_image'] = './../assets/frontoffice/profil/' . $uploadData['file_name'];
+                                $config['create_thumb'] = FALSE;
+                                $config['maintain_ratio'] = TRUE;
+                                $config['quality'] = '100%';
+                                $config['width'] = 480;
+                                $config['height'] = 640;
+
+                                $config['new_image'] = './../assets/frontoffice/profil/' . $uploadData['file_name'];
+                                $this->load->library('image_lib', $config);
+                                $this->image_lib->resize();
+
+                                $item = $this->db->where('id_fo', $id_fo)->get('fo')->row();
+
+                                //replace foto lama 
+                                if ($item->foto_profil_fo != "placeholder_profil.png") {
+                                        $target_file = './../assets/frontoffice/profil/' . $item->foto_profil_fo;
+                                        unlink($target_file);
+                                }
+
+                                $data['foto_profil_fo'] = $uploadData['file_name'];
+
+                                $this->db->where('id_fo', $id_fo);
+                                $this->db->update('fo', $data);
+                        }
+                }
+
+                $this->session->set_flashdata('success', 'diubah');
+                redirect('dashboard/profil_fo');
+        }
+
         //list permohonan masuk
         public function list_permohonan_masuk()
         {
@@ -94,7 +142,7 @@ class Dashboard extends CI_Controller
                 $this->load->view('footer');
         }
 
-        //detail data permohonan
+        //menampilkan detail data permohonan dari list permohonan
         public function detail_data_permohonan($id_permohonan_ptsp, $id_layanan)
         {
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
@@ -107,6 +155,8 @@ class Dashboard extends CI_Controller
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp01($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 3) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp03($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 4) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp04($id_permohonan_ptsp)->result();
                 }
 
                 $this->load->view('header');
@@ -116,6 +166,8 @@ class Dashboard extends CI_Controller
                         $this->load->view('frontoffice/ptsp1/detail_ptsp01', $data_detail);
                 } elseif ($id_layanan == 3) {
                         $this->load->view('frontoffice/ptsp3/detail_ptsp03', $data_detail);
+                } elseif ($id_layanan == 4) {
+                        $this->load->view('frontoffice/ptsp4/detail_ptsp04', $data_detail);
                 }
                 $this->load->view('footer');
         }
@@ -137,9 +189,10 @@ class Dashboard extends CI_Controller
                 $this->load->view('footer');
         }
 
-        //aksi setujui
         //update status permohonan
-        public function aksi_update_status_permohonan($id_permohonan_ptsp)
+
+        //aksi setujui
+        public function aksi_setujui_permohonan($id_permohonan_ptsp)
         {
                 $data = array(
                         'notif_pemohon' => 'Belum Dibaca',
@@ -178,7 +231,7 @@ class Dashboard extends CI_Controller
                 $this->email->subject('Informasi Permohonan Anda');
 
                 // Isi email
-                $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan bahwasannya permohonan <b>Legalisir Ijazah</b> anda telah <b>disetujui</b>, dan sudah bisa diambil di Kantor Kementrian Agama Kabupaten Klaten yang berada di JL.Ronggowarsito Klaten<br><br>Salam,<br><br>Kementrian Agama Kabupaten Klaten');
+                $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan bahwasannya permohonan anda telah <b>disetujui</b>, dan sudah bisa diambil di Kantor Kementrian Agama Kabupaten Klaten yang berada di JL.Ronggowarsito Klaten<br><br>Terimakasih<br>Salam,<br><br>Kementrian Agama Kabupaten Klaten');
 
                 // Tampilkan pesan sukses atau error
                 if ($this->email->send()) {
@@ -254,7 +307,7 @@ class Dashboard extends CI_Controller
                 $this->email->subject('Informasi Permohonan Anda');
 
                 // Isi email
-                $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan kepada pemohon bahwasannya permohonan <b>Legalisir Ijazah</b> anda dipending dikarenakan ' . $this->input->post('keterangan') . ', mohon pemberitahuan ini untuk segera ditindak lanjuti. <br>Terimakasih<br>Salam,<br><br>Kementrian Agama Kabupaten Klaten');
+                $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan kepada pemohon bahwasannya permohonan anda dipending dikarenakan ' . $this->input->post('keterangan') . ', mohon pemberitahuan ini untuk segera ditindak lanjuti. <br>Terimakasih<br>Salam,<br><br>Kementrian Agama Kabupaten Klaten');
 
                 // Tampilkan pesan sukses atau error
                 if ($this->email->send()) {
