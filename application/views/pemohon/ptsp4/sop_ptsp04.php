@@ -19,11 +19,11 @@
                   <h6><b>Persyaratan :</b></h6>
                   <table>
 
-                    <tr>Pemohon adalah pemilih ijazah/STTB/SKP ijazah yang mengajukan permohonan pengesahan atau yang diberikan kuasa oleh pemiliknya (FM-PI-01 dan FM-PI-02). </tr> <br> <br>
-                    <tr>1. Mengisi dan menyelesaikan permohonan pengesahan fotocopi ijazah/STTB/SKP ijazah.</tr><br>
-                    <tr>2. Mengupload/Mengunggah dokumen fotocopy ijazah.</tr> <br>
-                    <tr>3. Menunggu pemberitahuan pihak kemenag.</tr>
-
+                    <tr>Pemohon adalah pemilik asli dokumen yang mengajukan permohonan pengesahan atau yang diberikan kuasa oleh pemiliknya (FM-PI-01 dan FM-PI-02). </tr> <br> <br>
+                    <tr>1. Mengisi dan menyelesaikan permohonan pengesahan Dokumen Kepegawaian, Surat, Piagam, Sertifikat.</tr><br>
+                    <tr>2. Mengupload/Mengunggah fotocopy dokumen yang akan dilakukan legalisir/pengesahan.</tr> <br>
+                    <tr>3. Menunggu pemberitahuan pihak kemenag bahwa proses pengesahan telah selesai.</tr> <br>
+										<tr>4. Mengambil dokumen legalisir dengan membawa dokumen asli </tr>
                   </table>
 
                 </div>

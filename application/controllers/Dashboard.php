@@ -285,7 +285,8 @@ class Dashboard extends CI_Controller
         $this->load->view('pemohon/ptsp3/detail_ptsp03', $data_detail);
         $this->load->view('footer');
     }
-
+	
+	//tampil form ubah ptsp03
     public function form_ubah_ptsp03($id_permohonan)
     {
         // $id_permohonan
