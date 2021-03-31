@@ -242,10 +242,11 @@ class Dashboard extends CI_Controller
 
         //update status permohonan
 
-        //aksi setujui
+        //update status permohonan menjadi selesai
         public function aksi_setujui_permohonan($id_permohonan_ptsp)
         {
                 $data = array(
+                        'id_fo' => $this->session->userdata('id_fo'),
                         'notif_pemohon' => 'Belum Dibaca',
                         'status' => 'Selesai',
                         'tgl_persetujuan_fo' => date("Y/m/d")
@@ -319,6 +320,7 @@ class Dashboard extends CI_Controller
         public function kirim_alasn_permohonan()
         {
                 $data = array(
+                        'id_fo' => $this->session->userdata('id_fo'),
                         'keterangan' => $this->input->post('keterangan'),
                         'notif_pemohon' => 'Belum Dibaca',
                         'status' => 'Pending',

@@ -20,6 +20,8 @@ class Dashboard extends CI_Controller
 
         $data['total_notif'] = $this->m_kasi->jml_notif()->result();
         $data_permohonan['total_notif'] = $this->m_kasi->jml_notif()->result();
+        $data_permohonan['permohonan_pending'] = $this->m_kasi->jml_permohonan_pending()->result();
+        $data_permohonan['permohonan_selesai'] = $this->m_kasi->jml_permohonan_selesai()->result();
 
         $this->load->view('header');
         $this->load->view('kasi/sidebar');
@@ -54,33 +56,33 @@ class Dashboard extends CI_Controller
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
         $config['file_name']            = 'profil-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
         $this->load->library('upload', $config);
-        
+
         if (!empty($_FILES['berkas']['name'])) {
-                if ($this->upload->do_upload('berkas')) {
-                        $uploadData = $this->upload->data();
+            if ($this->upload->do_upload('berkas')) {
+                $uploadData = $this->upload->data();
 
-                        //Compres Foto
-                        $config['image_library'] = 'gd2';
-                        $config['source_image'] = './../assets/kasi/profil/' . $uploadData['file_name'];
-                        $config['create_thumb'] = FALSE;
-                        $config['maintain_ratio'] = TRUE;
-                        $config['quality'] = '100%';
-                        $config['width'] = 480;
-                        $config['height'] = 640;
-                        $config['new_image'] = './../assets/kasi/profil/' . $uploadData['file_name'];
-                        $this->load->library('image_lib', $config);
-                        $this->image_lib->resize();
-                        $item = $this->db->where('id_kasi', $id_kasi)->get('kasi')->row();
+                //Compres Foto
+                $config['image_library'] = 'gd2';
+                $config['source_image'] = './../assets/kasi/profil/' . $uploadData['file_name'];
+                $config['create_thumb'] = FALSE;
+                $config['maintain_ratio'] = TRUE;
+                $config['quality'] = '100%';
+                $config['width'] = 480;
+                $config['height'] = 640;
+                $config['new_image'] = './../assets/kasi/profil/' . $uploadData['file_name'];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+                $item = $this->db->where('id_kasi', $id_kasi)->get('kasi')->row();
 
-                        //replace foto lama 
-                        if ($item->foto_profil_kasi != "placeholder_profil.png") {
-                                $target_file = './../assets/kasi/profil/' . $item->foto_profil_kasi;
-                                unlink($target_file);
-                        }
-                        $data['foto_profil_kasi'] = $uploadData['file_name'];
-                        $this->db->where('id_kasi', $id_kasi);
-                        $this->db->update('kasi', $data);
+                //replace foto lama 
+                if ($item->foto_profil_kasi != "placeholder_profil.png") {
+                    $target_file = './../assets/kasi/profil/' . $item->foto_profil_kasi;
+                    unlink($target_file);
                 }
+                $data['foto_profil_kasi'] = $uploadData['file_name'];
+                $this->db->where('id_kasi', $id_kasi);
+                $this->db->update('kasi', $data);
+            }
         }
         $this->session->set_flashdata('success', 'diubah');
         redirect('dashboard/profil');

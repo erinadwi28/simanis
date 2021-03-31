@@ -20,6 +20,8 @@ class Dashboard extends CI_Controller
 
         $data['total_notif'] = $this->m_bo->jml_notif()->result();
         $data_permohonan['total_notif'] = $this->m_bo->jml_notif()->result();
+        $data_permohonan['permohonan_pending'] = $this->m_bo->jml_permohonan_pending()->result();
+        $data_permohonan['permohonan_selesai'] = $this->m_bo->jml_permohonan_selesai()->result();
 
         $this->load->view('header');
         $this->load->view('backoffice/sidebar');
@@ -37,7 +39,7 @@ class Dashboard extends CI_Controller
         $data['total_notif'] = $this->m_bo->jml_notif()->result();
         $detailhere = array('id_bo' => $this->session->userdata('id_bo'));
         $data_detail['detail_profil_saya'] = $this->m_bo->get_detail_profil_saya($detailhere, 'bo')->result();
-        
+
         $this->load->view('header');
         $this->load->view('backoffice/sidebar');
         $this->load->view('topbar', $data);
@@ -54,33 +56,33 @@ class Dashboard extends CI_Controller
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
         $config['file_name']            = 'profil-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
         $this->load->library('upload', $config);
-        
+
         if (!empty($_FILES['berkas']['name'])) {
-                if ($this->upload->do_upload('berkas')) {
-                        $uploadData = $this->upload->data();
+            if ($this->upload->do_upload('berkas')) {
+                $uploadData = $this->upload->data();
 
-                        //Compres Foto
-                        $config['image_library'] = 'gd2';
-                        $config['source_image'] = './../assets/backoffice/profil/' . $uploadData['file_name'];
-                        $config['create_thumb'] = FALSE;
-                        $config['maintain_ratio'] = TRUE;
-                        $config['quality'] = '100%';
-                        $config['width'] = 480;
-                        $config['height'] = 640;
-                        $config['new_image'] = './../assets/backoffice/profil/' . $uploadData['file_name'];
-                        $this->load->library('image_lib', $config);
-                        $this->image_lib->resize();
-                        $item = $this->db->where('id_bo', $id_bo)->get('bo')->row();
+                //Compres Foto
+                $config['image_library'] = 'gd2';
+                $config['source_image'] = './../assets/backoffice/profil/' . $uploadData['file_name'];
+                $config['create_thumb'] = FALSE;
+                $config['maintain_ratio'] = TRUE;
+                $config['quality'] = '100%';
+                $config['width'] = 480;
+                $config['height'] = 640;
+                $config['new_image'] = './../assets/backoffice/profil/' . $uploadData['file_name'];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+                $item = $this->db->where('id_bo', $id_bo)->get('bo')->row();
 
-                        //replace foto lama 
-                        if ($item->foto_profil_bo != "placeholder_profil.png") {
-                                $target_file = './../assets/backoffice/profil/' . $item->foto_profil_bo;
-                                unlink($target_file);
-                        }
-                        $data['foto_profil_bo'] = $uploadData['file_name'];
-                        $this->db->where('id_bo', $id_bo);
-                        $this->db->update('bo', $data);
+                //replace foto lama 
+                if ($item->foto_profil_bo != "placeholder_profil.png") {
+                    $target_file = './../assets/backoffice/profil/' . $item->foto_profil_bo;
+                    unlink($target_file);
                 }
+                $data['foto_profil_bo'] = $uploadData['file_name'];
+                $this->db->where('id_bo', $id_bo);
+                $this->db->update('bo', $data);
+            }
         }
         $this->session->set_flashdata('success', 'diubah');
         redirect('dashboard/profil');

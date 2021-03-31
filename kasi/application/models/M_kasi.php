@@ -47,4 +47,32 @@ class M_kasi extends CI_Model
         $hasil = $this->db->get();
         return $hasil;
     }
+
+    // hitung jumlah permohonan status pending
+    public function jml_permohonan_pending()
+    {
+        $where = "id_kasi != 'null'";
+        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_pending');
+        $this->db->from('permohonan_ptsp');
+        $this->db->where('status', 'Pending');
+        $this->db->where($where);
+        $this->db->where('status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
+    // hitung jumlah permohonan status pending
+    public function jml_permohonan_selesai()
+    {
+        $where = "id_kasi != 'null'";
+        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_selesai');
+        $this->db->from('permohonan_ptsp');
+        $this->db->where('status', 'Selesai');
+        $this->db->where($where);
+        $this->db->where('status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
 }

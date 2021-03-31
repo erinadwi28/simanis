@@ -34,8 +34,8 @@
 								Permohonan Masuk</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
-                foreach ($total_notif as $total_notif) { ?>
-								<?= $total_notif->total_notif; ?>
+								foreach ($total_notif as $total_notif) { ?>
+									<?= $total_notif->total_notif; ?>
 								<?php } ?>
 							</div>
 						</div>
@@ -62,7 +62,10 @@
 							<div class="h6 text-warning">
 								Permohonan Pending</div>
 							<div class="h4 mb-0 text-gray-800">
-								12
+								<?php
+								foreach ($permohonan_pending as $data) { ?>
+									<?= $data->permohonan_pending; ?>
+								<?php } ?>
 							</div>
 						</div>
 						<div class="col-auto">
@@ -71,8 +74,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_permohonan_pending') ?>"
-								class="badge badge-warning float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
+							<a href="<?= base_url('dashboard/list_permohonan_pending') ?>" class="badge badge-warning float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
 						</div>
 					</div>
 				</div>
@@ -88,7 +90,10 @@
 							<div class="h6 text-success">
 								Permohonan Selesai</div>
 							<div class="h4 mb-0 text-gray-800">
-								12
+								<?php
+								foreach ($permohonan_selesai as $data) { ?>
+									<?= $data->permohonan_selesai; ?>
+								<?php } ?>
 							</div>
 						</div>
 						<div class="col-auto">
@@ -97,8 +102,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/selesai') ?>" class="badge badge-success float-right"><i
-									class="far fa-eye nav-icon"></i> Lihat</a>
+							<a href="<?= base_url('dashboard/selesai') ?>" class="badge badge-success float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
 						</div>
 					</div>
 				</div>
@@ -109,5 +113,3 @@
 <!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->
-
-

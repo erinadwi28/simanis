@@ -20,6 +20,8 @@ class Dashboard extends CI_Controller
 
         $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
         $data_permohonan['total_notif'] = $this->m_kasubag->jml_notif()->result();
+        $data_permohonan['permohonan_pending'] = $this->m_kasubag->jml_permohonan_pending()->result();
+        $data_permohonan['permohonan_selesai'] = $this->m_kasubag->jml_permohonan_selesai()->result();
 
         $this->load->view('header');
         $this->load->view('kasubag/sidebar');
@@ -36,7 +38,7 @@ class Dashboard extends CI_Controller
         $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
         $detailhere = array('id_kasubag' => $this->session->userdata('id_kasubag'));
         $data_detail['detail_profil_saya'] = $this->m_kasubag->get_detail_profil_saya($detailhere, 'kasubag')->result();
-        
+
         $this->load->view('header');
         $this->load->view('kasubag/sidebar');
         $this->load->view('topbar', $data);
@@ -53,38 +55,38 @@ class Dashboard extends CI_Controller
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
         $config['file_name']            = 'profil-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
         $this->load->library('upload', $config);
-        
+
         if (!empty($_FILES['berkas']['name'])) {
-                if ($this->upload->do_upload('berkas')) {
-                        $uploadData = $this->upload->data();
+            if ($this->upload->do_upload('berkas')) {
+                $uploadData = $this->upload->data();
 
-                        //Compres Foto
-                        $config['image_library'] = 'gd2';
-                        $config['source_image'] = './../assets/kasubag/profil/' . $uploadData['file_name'];
-                        $config['create_thumb'] = FALSE;
-                        $config['maintain_ratio'] = TRUE;
-                        $config['quality'] = '100%';
-                        $config['width'] = 480;
-                        $config['height'] = 640;
-                        $config['new_image'] = './../assets/kasubag/profil/' . $uploadData['file_name'];
-                        $this->load->library('image_lib', $config);
-                        $this->image_lib->resize();
-                        $item = $this->db->where('id_kasubag', $id_kasubag)->get('kasubag')->row();
+                //Compres Foto
+                $config['image_library'] = 'gd2';
+                $config['source_image'] = './../assets/kasubag/profil/' . $uploadData['file_name'];
+                $config['create_thumb'] = FALSE;
+                $config['maintain_ratio'] = TRUE;
+                $config['quality'] = '100%';
+                $config['width'] = 480;
+                $config['height'] = 640;
+                $config['new_image'] = './../assets/kasubag/profil/' . $uploadData['file_name'];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+                $item = $this->db->where('id_kasubag', $id_kasubag)->get('kasubag')->row();
 
-                        //replace foto lama 
-                        if ($item->foto_profil_kasubag != "placeholder_profil.png") {
-                                $target_file = './../assets/kasubag/profil/' . $item->foto_profil_kasubag;
-                                unlink($target_file);
-                        }
-                        $data['foto_profil_kasubag'] = $uploadData['file_name'];
-                        $this->db->where('id_kasubag', $id_kasubag);
-                        $this->db->update('kasubag', $data);
+                //replace foto lama 
+                if ($item->foto_profil_kasubag != "placeholder_profil.png") {
+                    $target_file = './../assets/kasubag/profil/' . $item->foto_profil_kasubag;
+                    unlink($target_file);
                 }
+                $data['foto_profil_kasubag'] = $uploadData['file_name'];
+                $this->db->where('id_kasubag', $id_kasubag);
+                $this->db->update('kasubag', $data);
+            }
         }
         $this->session->set_flashdata('success', 'diubah');
         redirect('dashboard/profil');
     }
-    
+
     //menampilkan halaman form ubah kata sandi
     public function form_ubahsandi()
     {
