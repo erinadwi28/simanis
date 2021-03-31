@@ -24,7 +24,7 @@
 	<!-- Content Row -->
 	<div class="row">
 
-		<!-- Data Proses Validasi Kemenag -->
+		<!-- Data Permohonan Masuk -->
 		<div class="col-xl-3 col-md-3 mb-3">
 			<div class="card border-left-primary shadow-lg">
 				<div class="card-body px-3">
@@ -33,10 +33,7 @@
 							<div class="h6 text-primary">
 								Permohonan Masuk</div>
 							<div class="h4 mb-0 text-gray-800">
-								<?php
-								foreach ($total_notif as $total_notif) { ?>
-									<?= $total_notif->total_notif; ?>
-								<?php } ?>
+								Xxx
 							</div>
 						</div>
 						<div class="col-auto">
@@ -53,19 +50,16 @@
 			</div>
 		</div>
 
-		<!-- Data Pending-->
+		<!-- Data Permohonan Selesai BO-->
 		<div class="col-xl-3 col-md-3 mb-3">
 			<div class="card border-left-warning shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-warning">
-								Permohonan Pending</div>
+								Permohonan Selesai</div>
 							<div class="h4 mb-0 text-gray-800">
-								<?php
-								foreach ($permohonan_pending as $data) { ?>
-									<?= $data->permohonan_pending; ?>
-								<?php } ?>
+								Xxx
 							</div>
 						</div>
 						<div class="col-auto">
@@ -74,26 +68,23 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_permohonan_pending') ?>" class="badge badge-warning float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
+							<a href="" class="badge badge-warning float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<!-- Data Selesai-->
+		<!-- Data Permohonan Proses Kasi-->
 		<div class="col-xl-3 col-md-3 mb-3">
 			<div class="card border-left-success shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-success">
-								Permohonan Selesai</div>
+								Permohonan Proses Kasubag</div>
 							<div class="h4 mb-0 text-gray-800">
-								<?php
-								foreach ($permohonan_selesai as $data) { ?>
-									<?= $data->permohonan_selesai; ?>
-								<?php } ?>
+								Xxx
 							</div>
 						</div>
 						<div class="col-auto">
@@ -102,7 +93,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/selesai') ?>" class="badge badge-success float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
+							<a href="" class="badge badge-success float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
 						</div>
 					</div>
 				</div>

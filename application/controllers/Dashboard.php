@@ -520,4 +520,44 @@ class Dashboard extends CI_Controller
         $this->session->set_flashdata('success', 'diajukan');
         redirect('dashboard/list_permohonan_validasi_kemenag');
     }
+
+	//tampil halaman sop ptsp05
+	public function sop_ptsp05()
+    {
+        $this->load->view('header');
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar');
+        $this->load->view('pemohon/ptsp5/sop_ptsp05');
+        $this->load->view('footer');
+    }
+
+	//tampil halaman form pengajuan ptsp05
+	public function form_ptsp05()
+    {
+        $this->load->view('header');
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar');
+        $this->load->view('pemohon/ptsp5/form_ptsp05');
+        $this->load->view('footer');
+    }
+
+    //tampil detail permohonan ptsp05
+    public function detail_ptsp05()
+    {
+        $this->load->view('header');
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar');
+        $this->load->view('pemohon/ptsp5/detail_ptsp05');
+        $this->load->view('footer');
+    }
+
+	//tampil form ubah ptsp05
+	public function form_ubah_ptsp05()
+    {
+        $this->load->view('header');
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar');
+        $this->load->view('pemohon/ptsp5/form_ubah_ptsp05');
+        $this->load->view('footer');
+    }
 }

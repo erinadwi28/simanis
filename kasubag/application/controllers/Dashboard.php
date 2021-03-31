@@ -135,4 +135,14 @@ class Dashboard extends CI_Controller
             redirect('dashboard/form_ubahsandi');
         }
     }
+
+	//tampil detail ptsp05
+    public function detail_ptsp05()
+        {
+                $this->load->view('header');
+                $this->load->view('kasubag/sidebar');
+                $this->load->view('topbar');
+                $this->load->view('kasubag/ptsp5/detail_ptsp05');
+                $this->load->view('footer');
+        }
 }

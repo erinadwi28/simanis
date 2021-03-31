@@ -223,7 +223,7 @@ class Dashboard extends CI_Controller
                 $this->load->view('footer');
         }
 
-        //tampil detail
+        //tampil detail ptsp03
         public function detail_ptsp03()
         {
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
@@ -237,6 +237,16 @@ class Dashboard extends CI_Controller
                 $this->load->view('frontoffice/sidebar_fo');
                 $this->load->view('topbar', $data);
                 $this->load->view('frontoffice/ptsp3/detail_ptsp03', $data_detail);
+                $this->load->view('footer');
+        }
+
+        //tampil detail ptsp05
+        public function detail_ptsp05()
+        {
+                $this->load->view('header');
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar');
+                $this->load->view('frontoffice/ptsp5/detail_ptsp05');
                 $this->load->view('footer');
         }
 

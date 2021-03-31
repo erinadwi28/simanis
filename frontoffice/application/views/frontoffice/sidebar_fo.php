@@ -38,12 +38,13 @@
 			</a>
 			<div id="menupermohonanptsp" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
-					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Proses KEMENAG</a>
-					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_pending') ?>">Proses Pending</a>
-					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_backoffice') ?>">Proses Back Office</a>
-					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_kasi') ?>">Proses Kasi</a>
-					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_timteknis') ?>">Proses Tim Teknis</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Permohonan Masuk</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_pending') ?>">Permohonan Pending</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_backoffice') ?>">Permohonan Selesai FO</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_kasi') ?>">Proses BO</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_timteknis') ?>">Proses Kasi</a>
 					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_kasubag') ?>">Proses Kasubag</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_kasubag') ?>">Proses Tim Teknis</a>
 					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Proses Selesai</a>
 				</div>
 			</div>

@@ -152,4 +152,14 @@ class Dashboard extends CI_Controller
         $this->load->view('backoffice/list_permohonan_masuk', $data_detail);
         $this->load->view('footer');
     }
+
+    //tampil detail ptsp05
+    public function detail_ptsp05()
+        {
+                $this->load->view('header');
+                $this->load->view('backoffice/sidebar');
+                $this->load->view('topbar');
+                $this->load->view('backoffice/ptsp5/detail_ptsp05');
+                $this->load->view('footer');
+        }
 }
