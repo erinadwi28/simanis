@@ -18,14 +18,15 @@ class Dashboard extends CI_Controller
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
-        $data['total_notif'] = $this->m_kasi->jml_notif()->result();
-        $data_permohonan['total_notif'] = $this->m_kasi->jml_notif()->result();
-        $data_permohonan['permohonan_pending'] = $this->m_kasi->jml_permohonan_pending()->result();
-        $data_permohonan['permohonan_selesai'] = $this->m_kasi->jml_permohonan_selesai()->result();
+        $sie = $this->session->userdata('sie');
+        $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
+        $data_permohonan['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
+        $data_permohonan['permohonan_selesaiKasi'] = $this->m_kasi->jml_permohonan_selesaiKasi($sie)->result();
+        $data_permohonan['permohonan_prosesKasubag'] = $this->m_kasi->jml_permohonan_prosesKasubag($sie)->result();
 
         $this->load->view('header');
-        $this->load->view('kasi/sidebar');
-        $this->load->view('topbar', $data);
+        $this->load->view('kasi/sidebar', $data);
+        $this->load->view('topbar');
         $this->load->view('kasi/dashboard', $data_permohonan);
         $this->load->view('footer');
     }
@@ -36,13 +37,14 @@ class Dashboard extends CI_Controller
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
-        $data['total_notif'] = $this->m_kasi->jml_notif()->result();
+        $sie = $this->session->userdata('sie');
+        $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
         $detailhere = array('id_kasi' => $this->session->userdata('id_kasi'));
         $data_detail['detail_profil_saya'] = $this->m_kasi->get_detail_profil_saya($detailhere, 'kasi')->result();
 
         $this->load->view('header');
-        $this->load->view('kasi/sidebar');
-        $this->load->view('topbar', $data);
+        $this->load->view('kasi/sidebar', $data);
+        $this->load->view('topbar');
         $this->load->view('kasi/profil', $data_detail);
         $this->load->view('footer');
     }
@@ -94,12 +96,13 @@ class Dashboard extends CI_Controller
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
-        $data['total_notif'] = $this->m_kasi->jml_notif()->result();
+        $sie = $this->session->userdata('sie');
+        $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
         $data_permohonan['total_notif'] = $this->m_kasi->jml_notif()->result();
 
         $this->load->view('header');
-        $this->load->view('kasi/sidebar');
-        $this->load->view('topbar', $data);
+        $this->load->view('kasi/sidebar', $data);
+        $this->load->view('topbar');
         $this->load->view('kasi/ubahsandi');
         $this->load->view('footer');
     }
@@ -138,13 +141,67 @@ class Dashboard extends CI_Controller
         }
     }
 
-	//tampil detail ptsp05
+    //list permohonan masuk
+    public function list_permohonan_masuk()
+    {
+        $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
+        $this->session->userdata('id_kasi')])->row_array();
+
+        $sie = $this->session->userdata('sie');
+        $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
+
+        $data_detail['data_permohonan'] = $this->m_kasi->get_list_data_permohonan('Proses Kasi', $sie)->result();
+
+        $this->load->view('header');
+        $this->load->view('kasi/sidebar', $data);
+        $this->load->view('topbar');
+        $this->load->view('kasi/list_permohonan_masuk', $data_detail);
+        $this->load->view('footer');
+    }
+
+    //list permohonan yang sudah disetujui kasi
+    public function list_permohonan_selesaiKasi()
+    {
+        $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
+        $this->session->userdata('id_kasi')])->row_array();
+
+        $sie = $this->session->userdata('sie');
+        $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
+
+        $data_detail['data_permohonan'] = $this->m_kasi->get_list_data_permohonan_selesaiKasi($sie)->result();
+
+        $this->load->view('header');
+        $this->load->view('kasi/sidebar', $data);
+        $this->load->view('topbar');
+        $this->load->view('kasi/list_permohonan_selesaiKasi', $data_detail);
+        $this->load->view('footer');
+    }
+
+    //list permohonan yang sudah disetujui kasi
+    public function list_permohonan_prosesKasubag()
+    {
+        $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
+        $this->session->userdata('id_kasi')])->row_array();
+
+        $sie = $this->session->userdata('sie');
+        $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
+
+        $data_detail['data_permohonan'] = $this->m_kasi->get_list_data_permohonan_prosesKasubag('Proses Kasubag')->result();
+
+        $this->load->view('header');
+        $this->load->view('kasi/sidebar', $data);
+        $this->load->view('topbar');
+        $this->load->view('kasi/list_permohonan_prosesKasubag', $data_detail);
+        $this->load->view('footer');
+    }
+
+    //tampil detail ptsp05
     public function detail_ptsp05()
-        {
-                $this->load->view('header');
-                $this->load->view('kasi/sidebar');
-                $this->load->view('topbar');
-                $this->load->view('kasi/ptsp5/detail_ptsp05');
-                $this->load->view('footer');
-        }
+    {
+        $this->load->view('header');
+        $this->load->view('kasi/sidebar');
+        $this->load->view('topbar');
+        $this->load->view('kasi/ptsp5/detail_ptsp05');
+        $this->load->view('footer');
+    }
 }

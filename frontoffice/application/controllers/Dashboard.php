@@ -21,6 +21,10 @@ class Dashboard extends CI_Controller
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
                 $data_permohonan['permohonan_validasi_kemenag'] = $this->m_fo->jml_notif()->result();
                 $data_permohonan['permohonan_pending'] = $this->m_fo->jml_permohonan_pending()->result();
+                $data_permohonan['permohonan_selesaiFO'] = $this->m_fo->jml_permohonan_selesaiFO()->result();
+                $data_permohonan['permohonan_prosesBO'] = $this->m_fo->jml_permohonan_prosesBO()->result();
+                $data_permohonan['permohonan_prosesKasi'] = $this->m_fo->jml_permohonan_prosesKasi()->result();
+                $data_permohonan['permohonan_prosesKasubag'] = $this->m_fo->jml_permohonan_prosesKasubag()->result();
                 $data_permohonan['permohonan_selesai'] = $this->m_fo->jml_permohonan_selesai()->result();
 
                 $this->load->view('header');
@@ -174,6 +178,70 @@ class Dashboard extends CI_Controller
                 $this->load->view('frontoffice/sidebar_fo');
                 $this->load->view('topbar', $data);
                 $this->load->view('frontoffice/list_permohonan_pending', $data_detail);
+                $this->load->view('footer');
+        }
+
+        //list permohonan yang sudah mendapat aksi fo
+        public function list_permohonan_selesaiFO()
+        {
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan_selesaiFO()->result();
+
+                $this->load->view('header');
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/list_permohonan_selesaiFO', $data_detail);
+                $this->load->view('footer');
+        }
+
+        //list permohonan proses bo
+        public function list_permohonan_prosesBO()
+        {
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan('Proses BO')->result();
+
+                $this->load->view('header');
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/list_permohonan_prosesBO', $data_detail);
+                $this->load->view('footer');
+        }
+
+        //list permohonan proses kasi
+        public function list_permohonan_prosesKasi()
+        {
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan('Proses Kasi')->result();
+
+                $this->load->view('header');
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/list_permohonan_prosesKasi', $data_detail);
+                $this->load->view('footer');
+        }
+
+        //list permohonan proses kasubag
+        public function list_permohonan_prosesKasubag()
+        {
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan('Proses Kasubag')->result();
+
+                $this->load->view('header');
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/list_permohonan_prosesKasubag', $data_detail);
                 $this->load->view('footer');
         }
 

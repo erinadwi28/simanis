@@ -51,31 +51,41 @@ class M_kasubag extends CI_Model
         return $hasil;
     }
 
-    // hitung jumlah permohonan status pending
-    public function jml_permohonan_pending()
+    // hitung jumlah permohonan yang sudah disetujui kasubag
+    public function jml_permohonan_selesaiKasubag()
     {
-        $where = "id_kasubag != 'null'";
-        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_pending');
+        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_selesaiKasubag');
         $this->db->from('permohonan_ptsp');
-        $this->db->where('status', 'Pending');
-        $this->db->where($where);
+        $this->db->where("(id_kasubag != 'null')");
+        $this->db->where("(status != 'Pending')");
         $this->db->where('status_delete', 0);
 
         $hasil = $this->db->get();
         return $hasil;
     }
 
-    // hitung jumlah permohonan status pending
-    public function jml_permohonan_selesai()
+    //get list data permohonan dengan status tertentu
+    public function get_list_data_permohonan($status)
     {
-        $where = "id_kasubag != 'null'";
-        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_selesai');
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
         $this->db->from('permohonan_ptsp');
-        $this->db->where('status', 'Selesai');
-        $this->db->where($where);
-        $this->db->where('status_delete', 0);
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->where('permohonan_ptsp.status', $status);
+        $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
 
-        $hasil = $this->db->get();
-        return $hasil;
+        return $this->db->get();
+    }
+
+    //get list data permohonan yang sudah disetujui kasubag
+    public function get_list_data_permohonan_selesaiKasubag()
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->where("(permohonan_ptsp.id_kasubag != 'null')");
+        $this->db->where("(permohonan_ptsp.status != 'Pending')");
+        $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
+
+        return $this->db->get();
     }
 }

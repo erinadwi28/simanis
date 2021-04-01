@@ -20,8 +20,8 @@ class Dashboard extends CI_Controller
 
         $data['total_notif'] = $this->m_bo->jml_notif()->result();
         $data_permohonan['total_notif'] = $this->m_bo->jml_notif()->result();
-        $data_permohonan['permohonan_pending'] = $this->m_bo->jml_permohonan_pending()->result();
-        $data_permohonan['permohonan_selesai'] = $this->m_bo->jml_permohonan_selesai()->result();
+        $data_permohonan['permohonan_selesaiBO'] = $this->m_bo->jml_permohonan_selesaiBO()->result();
+        $data_permohonan['permohonan_prosesKasi'] = $this->m_bo->jml_permohonan_prosesKasi()->result();
 
         $this->load->view('header');
         $this->load->view('backoffice/sidebar');
@@ -144,7 +144,7 @@ class Dashboard extends CI_Controller
         $this->session->userdata('id_bo')])->row_array();
         $data['total_notif'] = $this->m_bo->jml_notif()->result();
 
-        $data_detail['data_permohonan'] = $this->m_bo->get_list_data_permohonan('Proses Backoffice')->result();
+        $data_detail['data_permohonan'] = $this->m_bo->get_list_data_permohonan('Proses BO')->result();
 
         $this->load->view('header');
         $this->load->view('backoffice/sidebar');
@@ -153,13 +153,45 @@ class Dashboard extends CI_Controller
         $this->load->view('footer');
     }
 
+    //list permohonan yang sudah disetujui BO
+    public function list_permohonan_selesaiBO()
+    {
+        $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
+        $this->session->userdata('id_bo')])->row_array();
+        $data['total_notif'] = $this->m_bo->jml_notif()->result();
+
+        $data_detail['data_permohonan'] = $this->m_bo->get_list_data_permohonan_selesaiBO()->result();
+
+        $this->load->view('header');
+        $this->load->view('backoffice/sidebar');
+        $this->load->view('topbar', $data);
+        $this->load->view('backoffice/list_permohonan_selesaiBO', $data_detail);
+        $this->load->view('footer');
+    }
+
+    //list permohonan masuk
+    public function list_permohonan_prosesKasi()
+    {
+        $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
+        $this->session->userdata('id_bo')])->row_array();
+        $data['total_notif'] = $this->m_bo->jml_notif()->result();
+
+        $data_detail['data_permohonan'] = $this->m_bo->get_list_data_permohonan('Proses Kasi')->result();
+
+        $this->load->view('header');
+        $this->load->view('backoffice/sidebar');
+        $this->load->view('topbar', $data);
+        $this->load->view('backoffice/list_permohonan_prosesKasi', $data_detail);
+        $this->load->view('footer');
+    }
+
     //tampil detail ptsp05
     public function detail_ptsp05()
-        {
-                $this->load->view('header');
-                $this->load->view('backoffice/sidebar');
-                $this->load->view('topbar');
-                $this->load->view('backoffice/ptsp5/detail_ptsp05');
-                $this->load->view('footer');
-        }
+    {
+        $this->load->view('header');
+        $this->load->view('backoffice/sidebar');
+        $this->load->view('topbar');
+        $this->load->view('backoffice/ptsp5/detail_ptsp05');
+        $this->load->view('footer');
+    }
 }

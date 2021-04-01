@@ -37,42 +37,80 @@ class M_kasi extends CI_Model
     }
 
     // jumlah notif permohonan masuk
-    public function jml_notif()
+    public function jml_notif($sie)
     {
         $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as total_notif');
         $this->db->from('permohonan_ptsp');
         $this->db->where('status', 'Proses Kasi');
+        $this->db->where('sie', $sie);
         $this->db->where('status_delete', 0);
 
         $hasil = $this->db->get();
         return $hasil;
     }
 
-    // hitung jumlah permohonan status pending
-    public function jml_permohonan_pending()
+    // hitung jumlah permohonan yang sudah disetujui kasi
+    public function jml_permohonan_selesaiKasi($sie)
     {
-        $where = "id_kasi != 'null'";
-        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_pending');
+        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_selesaiKasi');
         $this->db->from('permohonan_ptsp');
-        $this->db->where('status', 'Pending');
-        $this->db->where($where);
+        $this->db->where("(id_kasi != 'null')");
+        $this->db->where('sie', $sie);
         $this->db->where('status_delete', 0);
 
         $hasil = $this->db->get();
         return $hasil;
     }
 
-    // hitung jumlah permohonan status pending
-    public function jml_permohonan_selesai()
+    //hitung jumlah permohonan Proses Kasubag
+    public function jml_permohonan_prosesKasubag($sie)
     {
-        $where = "id_kasi != 'null'";
-        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_selesai');
+        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_prosesKasubag');
         $this->db->from('permohonan_ptsp');
-        $this->db->where('status', 'Selesai');
-        $this->db->where($where);
+        $this->db->where('status', 'Proses Kasubag');
+        $this->db->where('sie', $sie);
         $this->db->where('status_delete', 0);
 
         $hasil = $this->db->get();
         return $hasil;
+    }
+
+    //get list data permohonan dengan status tertentu
+    public function get_list_data_permohonan($status, $sie)
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->where('permohonan_ptsp.status', $status);
+        $this->db->where('permohonan_ptsp.sie', $sie);
+        $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
+
+        return $this->db->get();
+    }
+
+    //get list data permohonan yang sudah disetujui kasi
+    public function get_list_data_permohonan_selesaiKasi($sie)
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->where("(permohonan_ptsp.id_fo != 'null')");
+        $this->db->where("(permohonan_ptsp.status != 'Pending')");
+        $this->db->where('permohonan_ptsp.sie', $sie);
+        $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
+
+        return $this->db->get();
+    }
+
+    //get list data permohonan dengan status tertentu
+    public function get_list_data_permohonan_prosesKasubag($status)
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->where('permohonan_ptsp.status', $status);
+        $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
+
+        return $this->db->get();
     }
 }

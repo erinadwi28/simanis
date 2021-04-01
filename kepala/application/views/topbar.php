@@ -19,19 +19,6 @@
 
 			<!-- Topbar Navbar -->
 			<ul class="navbar-nav ml-auto">
-				<!-- Nav Item - Alerts -->
-				<li class="nav-item dropdown no-arrow mx-1">
-					<a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<i class="fas fa-bell fa-fw"></i>
-						<!-- Counter - Alerts -->
-						<span class="badge badge-danger badge-counter">
-							<?php
-							foreach ($total_notif as $total_notif) { ?>
-								<?= $total_notif->total_notif; ?>
-							<?php } ?>
-						</span>
-					</a>
-				</li>
 
 				<!-- Nav Item - User Information -->
 				<li class="nav-item dropdown no-arrow">

@@ -2,7 +2,7 @@
         <div class="container-fluid">
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4 judullist">
-            <h3>Data Permohonan Surat Dalam Proses FO</h3>
+            <h3>Data Permohonan Surat Dalam Proses Kemenag</h3>
           </div>
 
           <!-- DataTables Warga -->

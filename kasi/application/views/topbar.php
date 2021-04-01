@@ -14,7 +14,7 @@
 
 			<!-- Topbar Welcome -->
 			<div class="topbar-welcome ml-2">
-				<p class="mb-0 ">Halo, Admin Kasi !</p>
+				<p class="mb-0 ">Halo, Admin Kasi <?= $kasi['sie'] ?> !</p>
 			</div>
 
 			<!-- Topbar Navbar -->

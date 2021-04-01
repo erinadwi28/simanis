@@ -20,8 +20,7 @@ class Dashboard extends CI_Controller
 
         $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
         $data_permohonan['total_notif'] = $this->m_kasubag->jml_notif()->result();
-        $data_permohonan['permohonan_pending'] = $this->m_kasubag->jml_permohonan_pending()->result();
-        $data_permohonan['permohonan_selesai'] = $this->m_kasubag->jml_permohonan_selesai()->result();
+        $data_permohonan['permohonan_selesaiKasubag'] = $this->m_kasubag->jml_permohonan_selesaiKasubag()->result();
 
         $this->load->view('header');
         $this->load->view('kasubag/sidebar');
@@ -136,13 +135,45 @@ class Dashboard extends CI_Controller
         }
     }
 
-	//tampil detail ptsp05
+    //list data permohonan masuk
+    public function list_permohonan_masuk()
+    {
+        $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
+        $this->session->userdata('id_kasubag')])->row_array();
+
+        $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
+        $data_detail['data_permohonan'] = $this->m_kasubag->get_list_data_permohonan('Proses Kasubag')->result();
+
+        $this->load->view('header');
+        $this->load->view('kasubag/sidebar');
+        $this->load->view('topbar', $data);
+        $this->load->view('kasubag/list_permohonan_masuk', $data_detail);
+        $this->load->view('footer');
+    }
+
+    //list data permohonan yang teralh disetujui
+    public function list_permohonan_selesaiKasubag()
+    {
+        $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
+        $this->session->userdata('id_kasubag')])->row_array();
+
+        $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
+        $data_detail['data_permohonan'] = $this->m_kasubag->get_list_data_permohonan_selesaiKasubag()->result();
+
+        $this->load->view('header');
+        $this->load->view('kasubag/sidebar');
+        $this->load->view('topbar', $data);
+        $this->load->view('kasubag/list_permohonan_selesaiKasubag', $data_detail);
+        $this->load->view('footer');
+    }
+
+    //tampil detail ptsp05
     public function detail_ptsp05()
-        {
-                $this->load->view('header');
-                $this->load->view('kasubag/sidebar');
-                $this->load->view('topbar');
-                $this->load->view('kasubag/ptsp5/detail_ptsp05');
-                $this->load->view('footer');
-        }
+    {
+        $this->load->view('header');
+        $this->load->view('kasubag/sidebar');
+        $this->load->view('topbar');
+        $this->load->view('kasubag/ptsp5/detail_ptsp05');
+        $this->load->view('footer');
+    }
 }
