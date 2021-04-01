@@ -11,12 +11,11 @@
 			</ol>
 		</nav>
 	</div>
-
 	<!-- Page Heading Data Permohonan PTSP-->
 	<div class="card shadow h-100 p-0 mb-3">
 		<div class="card-body px-3 py-2 title-track">
-			<div class="d-sm-flex align-items-center justify-content-between">
-				<h1 class="h5 mb-0 text-bold text-title">Data Permohonan PTSP</h1>
+			<div class="align-items-center justify-content-between text-center">
+					<h1 class="h5 mb-0 text-bold text-title">Data Permohonan PTSP</h1>
 			</div>
 		</div>
 	</div>
@@ -116,7 +115,7 @@
 	<!-- Page Heading Data Laynan PTSP-->
 	<div class="card shadow h-100 p-0 mb-3 mt-2">
 		<div class="card-body px-3 py-2 title-track">
-			<div class="d-sm-flex align-items-center justify-content-between">
+			<div class="align-items-center justify-content-between text-center">
 				<h1 class="h5 mb-0 text-light">Daftar Layanan PTSP</h1>
 			</div>
 		</div>
