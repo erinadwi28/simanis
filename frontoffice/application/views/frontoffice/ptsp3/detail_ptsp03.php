@@ -65,26 +65,48 @@
         								<td> </td>
         								<td>:</td>
         								<td> </td>
-        								<td><?= $detail->tgl_permohonan ?></td>
+        								<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
         							</tr>
+        							<?php if ($detail->tgl_persetujuan_fo != null) { ?>
+        								<tr>
+        									<td><b>Tanggal Persetujuan FO</b></td>
+        									<td> </td>
+        									<td> </td>
+        									<td>:</td>
+        									<td> </td>
+        									<td><?= format_indo(date($detail->tgl_persetujuan_fo)) ?></td>
+        								</tr>
+        							<?php } ?>
+        							<?php if ($detail->keterangan != null && $detail->status == 'Validasi Kemenag') { ?>
+        								<tr>
+        									<td><b>Keterangan Permohonan Pending</b></td>
+        									<td> </td>
+        									<td> </td>
+        									<td>:</td>
+        									<td> </td>
+        									<td><?= $detail->keterangan; ?></td>
+        								</tr>
+        							<?php } ?>
         						</tbody>
         					</table>
         				</div>
         				<div class="card-footer">
-        					<div class="float-right">
-        						<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>">
-        							<button id=" btn_tolak" class="btn btn-sm btn-danger" type="submit">
-        								<i class="fas fa-times-circle">
-        								</i> Tolak
-        							</button>
-        						</a>
-        						<a href="<?= base_url() ?>dashboard/aksi_update_status_permohonan/<?= $detail->id_permohonan_ptsp ?>">
-        							<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
-        								<i class="fas fa-check-circle">
-        								</i> Terima
-        							</button>
-        						</a>
-        					</div>
+        					<?php if ($detail->status == 'Validasi Kemenag') { ?>
+        						<div class="float-right">
+        							<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>">
+        								<button id=" btn_tolak" class="btn btn-sm btn-danger" type="submit">
+        									<i class="fas fa-times-circle">
+        									</i> Tolak
+        								</button>
+        							</a>
+        							<a href="<?= base_url() ?>dashboard/aksi_setujui_permohonan/<?= $detail->id_permohonan_ptsp ?>">
+        								<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
+        									<i class="fas fa-check-circle">
+        									</i> Terima
+        								</button>
+        							</a>
+        						</div>
+        					<?php } ?>
         				</div>
         			</div>
         		</div>

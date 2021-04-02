@@ -15,6 +15,20 @@ class M_pemohon extends CI_Model
         return $query->row_array();
     }
 
+    //get data pemohon untuk ubah katasandi
+    public function get_pemohon($id)
+    {
+        $query = $this->db->get_where('pemohon', ['id_pemohon' => $id]);
+        return $query->row_array();
+    }
+
+    //aksi ubah kata sandi
+    public function update_sandi($where, $data, $table)
+    {
+        $this->db->where('id_pemohon', $where);
+        $this->db->update($table, $data);
+    }
+
     // jumlah notif permohonan
     public function jml_notif()
     {
@@ -165,6 +179,20 @@ class M_pemohon extends CI_Model
         $this->db->from('permohonan_ptsp');
         $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
         $this->db->join('ptsp03', 'permohonan_ptsp.id_permohonan_ptsp = ptsp03.id_permohonan_ptsp', 'INNER');
+        $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
+        $this->db->where('permohonan_ptsp.status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
+    //detail permohonan ptsp04
+    public function get_detail_ptsp04($id_permohonan)
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan, ptsp04.*');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->join('ptsp04', 'permohonan_ptsp.id_permohonan_ptsp = ptsp04.id_permohonan_ptsp', 'INNER');
         $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
         $this->db->where('permohonan_ptsp.status_delete', 0);
 

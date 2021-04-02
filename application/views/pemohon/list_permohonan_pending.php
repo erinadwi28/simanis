@@ -33,24 +33,17 @@
               <tr>
                 <td><?= $no ?></td>
                 <td><?= $permohonan->nama_layanan ?></td>
-                <td><?= $permohonan->tgl_permohonan ?></td>
-                <td><?= $permohonan->tgl_persetujuan_fo ?></td>
+                <td><?= format_indo(date($permohonan->tgl_permohonan));  ?></td>
+                <td><?= format_indo(date($permohonan->tgl_persetujuan_fo));  ?></td>
                 <td><label class="badge badge-danger"><i class="far fa-times-circle"><?= $permohonan->status ?></i></label></td>
-                <td></td>
+                <td><?= character_limiter($permohonan->keterangan, 10); ?></td>
                 <td>
-                  <form role="form" action="<?= base_url() ?>warga/detail_data_permohonan/<?= $permohonan->id_permohonan_surat ?>/<?= $permohonan->id_nama_surat ?>" method="post" id="formUbah">
-                    <div>
-                      <div class="float-right">
-                        <a href="">
-                          <button id="btn_simpan" class="btn btn-sm btn-primary" type="submit">
-                            <i class="far fa-eye nav-icon"></i>
-                            Detail
-                          </button>
-                        </a>
-                      </div>
-                    </div>
-                    <input type="hidden" class="form-control form-user-input " name="notif" id="notif" value="Dibaca">
-                  </form>
+                  <div>
+                    <a href="<?= base_url() ?>dashboard/detail_data_permohonan/<?= $permohonan->id_permohonan_ptsp ?>/<?= $permohonan->id_layanan ?>" class="btn btn-primary btn-sm">
+                      <i class="far fa-eye nav-icon"></i>
+                      Detail
+                    </a>
+                  </div>
                 </td>
               </tr>
             <?php } ?>

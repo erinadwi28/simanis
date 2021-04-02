@@ -4,9 +4,41 @@ body {
 	color: #007530;
 }
 
+
 .card {
     border: 0px;
 	border-radius: 0px;
+	.card-header {
+        background-color: #F2FCEE;
+
+        h6 {
+            color: #007530;
+        }
+    }
+
+    .card-body {
+        color: #000000;
+
+        &:hover {
+            color: #007530;
+        }
+        table {
+            color: #000000;
+            } 
+        }
+        
+    .card-footer {
+        background-color: #F2FCEE;
+    }
+}
+
+.container-fluid {
+    .judullist {
+        h3 {
+            color: #007530;
+        }
+
+    }
 }
 
 .nav-breadcrumb {

@@ -10,6 +10,20 @@ class M_fo extends CI_Model
         return $query->row_array();
     }
 
+    //get data fo untuk ubah katasandi
+    public function get_fo($id)
+    {
+        $query = $this->db->get_where('fo', ['id_fo' => $id]);
+        return $query->row_array();
+    }
+
+    //aksi ubah kata sandi
+    public function update_sandi($where, $data, $table)
+    {
+        $this->db->where('id_fo', $where);
+        $this->db->update($table, $data);
+    }
+
     // jumlah notif permohonan masuk
     public function jml_notif()
     {
@@ -120,22 +134,36 @@ class M_fo extends CI_Model
         return $hasil;
     }
 
-    public function get_data_pemohon($id_pemohon){
+    //detail permohonan ptsp04
+    public function get_detail_ptsp04($id_permohonan)
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan, ptsp04.*');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->join('ptsp04', 'permohonan_ptsp.id_permohonan_ptsp = ptsp04.id_permohonan_ptsp', 'INNER');
+        $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
+        $this->db->where('permohonan_ptsp.status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
+    public function get_data_pemohon($id_pemohon)
+    {
         $this->db->select('pemohon.*');
         $this->db->from('permohonan_ptsp');
-        $this->db->join('pemohon', 'permohonan_ptsp.id_pemohon = pemohon.id_pemohon','INNER');
+        $this->db->join('pemohon', 'permohonan_ptsp.id_pemohon = pemohon.id_pemohon', 'INNER');
         $this->db->where('permohonan_ptsp.id_pemohon', $id_pemohon);
 
         return $this->db->get()->row();
-
     }
-    public function get_data_permohonan_ptsp($id_permohonan_ptsp){
+    public function get_data_permohonan_ptsp($id_permohonan_ptsp)
+    {
         $this->db->select('permohonan_ptsp.*');
         $this->db->from('pemohon');
-        $this->db->join('permohonan_ptsp', 'pemohon.id_pemohon = permohonan_ptsp.id_pemohon','INNER');
+        $this->db->join('permohonan_ptsp', 'pemohon.id_pemohon = permohonan_ptsp.id_pemohon', 'INNER');
         $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan_ptsp);
 
         return $this->db->get()->row();
-
     }
 }
