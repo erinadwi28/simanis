@@ -182,27 +182,15 @@ class M_fo extends CI_Model
         $this->db->update($tabel, $data);
     }
 
-    //detail permohonan ptsp03
-    public function get_detail_ptsp03($id_permohonan)
+
+
+    //detail permohonan ptsp 
+    public function get_detail_ptsp($id_permohonan, $tabel)
     {
-        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan, ptsp03.*');
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan, ' . $tabel . '.*');
         $this->db->from('permohonan_ptsp');
         $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
-        $this->db->join('ptsp03', 'permohonan_ptsp.id_permohonan_ptsp = ptsp03.id_permohonan_ptsp', 'INNER');
-        $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
-        $this->db->where('permohonan_ptsp.status_delete', 0);
-
-        $hasil = $this->db->get();
-        return $hasil;
-    }
-
-    //detail permohonan ptsp04
-    public function get_detail_ptsp04($id_permohonan)
-    {
-        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan, ptsp04.*');
-        $this->db->from('permohonan_ptsp');
-        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
-        $this->db->join('ptsp04', 'permohonan_ptsp.id_permohonan_ptsp = ptsp04.id_permohonan_ptsp', 'INNER');
+        $this->db->join($tabel, 'permohonan_ptsp.id_permohonan_ptsp = ' . $tabel . '.id_permohonan_ptsp', 'INNER');
         $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
         $this->db->where('permohonan_ptsp.status_delete', 0);
 

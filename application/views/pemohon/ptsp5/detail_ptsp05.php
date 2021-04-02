@@ -249,19 +249,35 @@
 								<td><?= $detail->nomor_porsi ?></td>
 							</tr>
 							<tr>
-								<td><b>Tahun Angkatan Haji Hijriah</b></td>
+								<td><b>Tahun Angkatan Haji</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td><?= $detail->tahun_hijriah ?></td>
+								<td><?= $detail->tahun_hijriah ?> H / <?= $detail->tahun_masehi ?> M</td>
 							</tr>
 							<tr>
-								<td><b>Tahun Angkatan Haji Masehi</b></td>
+								<td><b>No. Handphone</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td><?= $detail->tahun_masehi ?></td>
+								<td>nanti ditambahkan ya sementara gini dulu</td>
 							</tr>
+							<tr>
+								<td><b>Tanggal Permohonan</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
+							</tr>
+							<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
+								<tr>
+									<td><b>Keterangan Permohonan Pending</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->keterangan; ?></td>
+								</tr>
+							<?php } ?>
 						</tbody>
 					</table>
 				</div>

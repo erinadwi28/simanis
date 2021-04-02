@@ -271,11 +271,13 @@ class Dashboard extends CI_Controller
                 $data_detail['detail_permohonan'] = $this->m_fo->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
 
                 if ($id_layanan == 1) {
-                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp01($id_permohonan_ptsp)->result();
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp01')->result();
                 } elseif ($id_layanan == 3) {
-                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp03($id_permohonan_ptsp)->result();
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp03')->result();
                 } elseif ($id_layanan == 4) {
-                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp04($id_permohonan_ptsp)->result();
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp04')->result();
+                } elseif ($id_layanan == 5) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
                 }
 
                 $this->load->view('header');
@@ -287,38 +289,27 @@ class Dashboard extends CI_Controller
                         $this->load->view('frontoffice/ptsp3/detail_ptsp03', $data_detail);
                 } elseif ($id_layanan == 4) {
                         $this->load->view('frontoffice/ptsp4/detail_ptsp04', $data_detail);
+                } elseif ($id_layanan == 5) {
+                        $this->load->view('frontoffice/ptsp5/detail_ptsp05', $data_detail);
                 }
                 $this->load->view('footer');
         }
 
-        //tampil detail ptsp03
-        public function detail_ptsp03()
+        //update status permohonan menjadi Proses BO
+        public function aksi_update_status_setujui($id_permohonan_ptsp)
         {
-                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
-                $this->session->userdata('id_fo')])->row_array();
-                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data = array(
+                        'id_fo' => $this->session->userdata('id_fo'),
+                        'notif_pemohon' => 'Belum Dibaca',
+                        'status' => 'Proses BO',
+                        'tgl_persetujuan_fo' => date("Y/m/d")
+                );
 
-                $detailhere = array('id_fo' => $this->session->userdata('id_fo'));
-                $data_detail['detail_profil_saya'] = $this->m_fo->get_detail_profil_saya($detailhere, 'fo')->result();
+                $this->m_fo->update_status_permohonan($id_permohonan_ptsp, $data, 'permohonan_ptsp');
 
-                $this->load->view('header');
-                $this->load->view('frontoffice/sidebar_fo');
-                $this->load->view('topbar', $data);
-                $this->load->view('frontoffice/ptsp3/detail_ptsp03', $data_detail);
-                $this->load->view('footer');
+                $this->session->set_flashdata('success', 'permohonan sukses disetujui');
+                redirect('dashboard/list_permohonan_masuk');
         }
-
-        //tampil detail ptsp05
-        public function detail_ptsp05()
-        {
-                $this->load->view('header');
-                $this->load->view('frontoffice/sidebar_fo');
-                $this->load->view('topbar');
-                $this->load->view('frontoffice/ptsp5/detail_ptsp05');
-                $this->load->view('footer');
-        }
-
-        //update status permohonan
 
         //update status permohonan menjadi selesai
         public function aksi_setujui_permohonan($id_permohonan_ptsp)

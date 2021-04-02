@@ -96,4 +96,46 @@ class M_bo extends CI_Model
 
         return $this->db->get();
     }
+
+    public function get_data_pemohon($id_pemohon)
+    {
+        $this->db->select('pemohon.*');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('pemohon', 'permohonan_ptsp.id_pemohon = pemohon.id_pemohon', 'INNER');
+        $this->db->where('permohonan_ptsp.id_pemohon', $id_pemohon);
+
+        return $this->db->get()->row();
+    }
+
+    public function get_data_permohonan($detailhere, $tabel)
+    {
+        $this->db->select('*');
+        $this->db->from($tabel);
+        $this->db->where('id_permohonan_ptsp', $detailhere);
+
+        $hasil = $this->db->get();
+
+        return $hasil;
+    }
+
+    //detail permohonan ptsp 
+    public function get_detail_ptsp($id_permohonan, $tabel)
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan, ' . $tabel . '.*');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->join($tabel, 'permohonan_ptsp.id_permohonan_ptsp = ' . $tabel . '.id_permohonan_ptsp', 'INNER');
+        $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
+        $this->db->where('permohonan_ptsp.status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
+    //update status permohonan
+    public function update_status_permohonan($where, $data, $tabel)
+    {
+        $this->db->where('id_permohonan_ptsp ', $where);
+        $this->db->update($tabel, $data);
+    }
 }

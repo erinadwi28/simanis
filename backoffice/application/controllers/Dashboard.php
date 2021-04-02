@@ -194,4 +194,120 @@ class Dashboard extends CI_Controller
         $this->load->view('backoffice/ptsp5/detail_ptsp05');
         $this->load->view('footer');
     }
+
+    //menampilkan detail data permohonan dari list permohonan
+    public function detail_data_permohonan($id_permohonan_ptsp, $id_layanan)
+    {
+        $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
+        $this->session->userdata('id_bo')])->row_array();
+        $data['total_notif'] = $this->m_bo->jml_notif()->result();
+
+        $data_detail['detail_permohonan'] = $this->m_bo->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
+
+        if ($id_layanan == 5) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
+        }
+
+        $this->load->view('header');
+        $this->load->view('backoffice/sidebar');
+        $this->load->view('topbar', $data);
+        if ($id_layanan == 5) {
+            $this->load->view('backoffice/ptsp5/detail_ptsp05', $data_detail);
+        }
+        $this->load->view('footer');
+    }
+
+    //tampil form tolak permohonan
+    public function form_input_keterangan($id_permohonan_ptsp)
+    {
+        $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
+        $this->session->userdata('id_bo')])->row_array();
+        $data['total_notif'] = $this->m_bo->jml_notif()->result();
+
+        $data_detail['id_permohonan_ptsp'] = $this->db->get_where('permohonan_ptsp', ['id_permohonan_ptsp' =>
+        $id_permohonan_ptsp])->row_array();
+
+        $this->load->view('header');
+        $this->load->view('backoffice/sidebar');
+        $this->load->view('topbar', $data);
+        $this->load->view('backoffice/form_input_keterangan', $data_detail);
+        $this->load->view('footer');
+    }
+
+    //aksi tolak permohonan
+    public function kirim_alasn_permohonan()
+    {
+        $data = array(
+            'id_bo' => $this->session->userdata('id_bo'),
+            'keterangan' => $this->input->post('keterangan'),
+            'notif_pemohon' => 'Belum Dibaca',
+            'status' => 'Pending',
+            'tgl_persetujuan_fo' => date("Y/m/d")
+        );
+
+        $detailhere = $this->input->post('id_permohonan_ptsp');
+
+        $email = $this->m_bo->get_data_pemohon($this->input->post('id_pemohon'));
+        // Konfigurasi email
+        $config = [
+            'mailtype'  => 'html',
+            'charset'   => 'utf-8',
+            'protocol'  => 'smtp',
+            'smtp_host' => 'smtp.gmail.com',
+            'smtp_user' => 'klatenkemenag7@gmail.com',  // Email gmail
+            'smtp_pass'   => 'dpdzadjbieahxykx',  // Password gmail
+            'smtp_crypto' => 'ssl',
+            'smtp_port'   => 465,
+            'crlf'    => "\r\n",
+            'newline' => "\r\n"
+        ];
+
+        // Load library email dan konfigurasinya
+        $this->load->library('email', $config);
+
+        // Email dan nama pengirim
+        $this->email->from('no-reply@simanisklaten.com', 'simanisklaten.com');
+
+        // Email penerima
+        $this->email->to($email->email); // Ganti dengan email tujuan
+
+        // Lampiran email, isi dengan url/path file
+        //     $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
+
+        // Subject email
+        $this->email->subject('Informasi Permohonan Anda');
+
+        // Isi email
+        $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan kepada pemohon bahwasannya permohonan anda dipending dikarenakan ' . $this->input->post('keterangan') . ', mohon pemberitahuan ini untuk segera ditindak lanjuti. <br>Terimakasih<br>Salam,<br><br>Kementrian Agama Kabupaten Klaten');
+
+        // Tampilkan pesan sukses atau error
+        if ($this->email->send()) {
+            echo 'Sukses! email berhasil dikirim.';
+        } else {
+            echo 'Error! email tidak dapat dikirim.';
+        }
+
+        $this->m_bo->update_status_permohonan($detailhere, $data, 'permohonan_ptsp');
+
+        if ($this->m_bo->update_status_permohonan($detailhere, $data, 'permohonan_ptsp')); {
+            $this->session->set_flashdata('success', 'ditolak');
+            redirect('dashboard/list_permohonan_masuk');
+        }
+    }
+
+    //update status permohonan menjadi Proses Kasi
+    public function aksi_update_status_setujui($id_permohonan_ptsp)
+    {
+        $data = array(
+            'id_bo' => $this->session->userdata('id_bo'),
+            'notif_pemohon' => 'Belum Dibaca',
+            'status' => 'Proses Kasi',
+            'tgl_persetujuan_fo' => date("Y/m/d")
+        );
+
+        $this->m_bo->update_status_permohonan($id_permohonan_ptsp, $data, 'permohonan_ptsp');
+
+        $this->session->set_flashdata('success', 'permohonan sukses disetujui');
+        redirect('dashboard/list_permohonan_masuk');
+    }
 }
