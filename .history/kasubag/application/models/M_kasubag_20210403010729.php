@@ -75,7 +75,7 @@ class M_kasubag extends CI_Model
 
         return $this->db->get();
     }
-    
+
     //get list data permohonan yang sudah disetujui kasubag
     public function get_list_data_permohonan_selesaiKasubag()
     {

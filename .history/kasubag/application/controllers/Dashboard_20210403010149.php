@@ -151,22 +151,6 @@ class Dashboard extends CI_Controller
         $this->load->view('footer');
     }
 
-    //list data permohonan pending
-    public function list_permohonan_pending()
-    {
-        $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-        $this->session->userdata('id_kasubag')])->row_array();
-
-        $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-        $data_detail['data_permohonan'] = $this->m_kasubag->get_list_data_permohonan('Pending')->result();
-
-        $this->load->view('header');
-        $this->load->view('kasubag/sidebar');
-        $this->load->view('topbar', $data);
-        $this->load->view('kasubag/list_permohonan_masuk', $data_detail);
-        $this->load->view('footer');
-    }
-
     //list data permohonan yang teralh disetujui
     public function list_permohonan_selesaiKasubag()
     {
@@ -181,6 +165,22 @@ class Dashboard extends CI_Controller
         $this->load->view('topbar', $data);
         $this->load->view('kasubag/list_permohonan_selesaiKasubag', $data_detail);
         $this->load->view('footer');
+    }
+
+    //list permohonan selesai
+    public function list_permohonan_selesai()
+    {
+            $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+            $this->session->userdata('id_fo')])->row_array();
+            $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+            $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan('Selesai')->result();
+
+            $this->load->view('header');
+            $this->load->view('frontoffice/sidebar_fo');
+            $this->load->view('topbar', $data);
+            $this->load->view('frontoffice/list_permohonan_selesai', $data_detail);
+            $this->load->view('footer');
     }
 
     //menampilkan detail data permohonan dari list permohonan
@@ -203,16 +203,16 @@ class Dashboard extends CI_Controller
             }
 
             $this->load->view('header');
-            $this->load->view('kasubag/sidebar');
+            $this->load->view('frontoffice/sidebar_fo');
             $this->load->view('topbar', $data);
             if ($id_layanan == 1) {
-                    $this->load->view('kasubag/ptsp1/detail_ptsp01', $data_detail);
+                    $this->load->view('frontoffice/ptsp1/detail_ptsp01', $data_detail);
             } elseif ($id_layanan == 3) {
-                    $this->load->view('kasubag/ptsp3/detail_ptsp03', $data_detail);
+                    $this->load->view('frontoffice/ptsp3/detail_ptsp03', $data_detail);
             } elseif ($id_layanan == 4) {
-                    $this->load->view('kasubag/ptsp4/detail_ptsp04', $data_detail);
+                    $this->load->view('frontoffice/ptsp4/detail_ptsp04', $data_detail);
             } elseif ($id_layanan == 5) {
-                    $this->load->view('kasubag/ptsp5/detail_ptsp05', $data_detail);
+                    $this->load->view('frontoffice/ptsp5/detail_ptsp05', $data_detail);
             }
             $this->load->view('footer');
     }
@@ -277,17 +277,17 @@ class Dashboard extends CI_Controller
     //tampil form tolak permohonan
     public function form_input_keterangan($id_permohonan_ptsp)
     {
-            $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-            $this->session->userdata('id_kasubag')])->row_array();
-            $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
+            $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+            $this->session->userdata('id_fo')])->row_array();
+            $data['total_notif'] = $this->m_fo->jml_notif()->result();
 
             $data_detail['id_permohonan_ptsp'] = $this->db->get_where('permohonan_ptsp', ['id_permohonan_ptsp' =>
             $id_permohonan_ptsp])->row_array();
 
             $this->load->view('header');
-            $this->load->view('kasubag/sidebar');
+            $this->load->view('frontoffice/sidebar_fo');
             $this->load->view('topbar', $data);
-            $this->load->view('kasubag/form_input_keterangan', $data_detail);
+            $this->load->view('frontoffice/form_input_keterangan', $data_detail);
             $this->load->view('footer');
     }
 
@@ -295,16 +295,16 @@ class Dashboard extends CI_Controller
     public function kirim_alasn_permohonan()
     {
             $data = array(
-                    'id_kasubag' => $this->session->userdata('id_kasubag'),
+                    'id_fo' => $this->session->userdata('id_fo'),
                     'keterangan' => $this->input->post('keterangan'),
                     'notif_pemohon' => 'Belum Dibaca',
                     'status' => 'Pending',
-                    'tgl_persetujuan_kasubag' => date("Y/m/d")
+                    'tgl_persetujuan_fo' => date("Y/m/d")
             );
 
             $detailhere = $this->input->post('id_permohonan_ptsp');
 
-            $email = $this->m_kasubag->get_data_pemohon($this->input->post('id_pemohon'));
+            $email = $this->m_fo->get_data_pemohon($this->input->post('id_pemohon'));
             // Konfigurasi email
             $config = [
                     'mailtype'  => 'html',
@@ -344,9 +344,9 @@ class Dashboard extends CI_Controller
                     echo 'Error! email tidak dapat dikirim.';
             }
 
-            $this->m_kasubag->update_status_permohonan($detailhere, $data, 'permohonan_ptsp');
+            $this->m_fo->update_status_permohonan($detailhere, $data, 'permohonan_ptsp');
 
-            if ($this->m_kasubag->update_status_permohonan($detailhere, $data, 'permohonan_ptsp')); {
+            if ($this->m_fo->update_status_permohonan($detailhere, $data, 'permohonan_ptsp')); {
                     $this->session->set_flashdata('success', 'ditolak');
                     redirect('dashboard/list_permohonan_pending');
             }

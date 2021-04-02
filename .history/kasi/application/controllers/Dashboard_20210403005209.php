@@ -168,7 +168,7 @@ class Dashboard extends CI_Controller
         $sie = $this->session->userdata('sie');
         $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
 
-        $data_detail['data_permohonan'] = $this->m_kasi->get_list_data_permohonan('Pending', $sie)->result();
+        $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan('Pending', $sie)->result();
 
         $this->load->view('header');
         $this->load->view('kasi/sidebar', $data);

@@ -151,22 +151,6 @@ class Dashboard extends CI_Controller
         $this->load->view('footer');
     }
 
-    //list data permohonan pending
-    public function list_permohonan_pending()
-    {
-        $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-        $this->session->userdata('id_kasubag')])->row_array();
-
-        $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-        $data_detail['data_permohonan'] = $this->m_kasubag->get_list_data_permohonan('Pending')->result();
-
-        $this->load->view('header');
-        $this->load->view('kasubag/sidebar');
-        $this->load->view('topbar', $data);
-        $this->load->view('kasubag/list_permohonan_masuk', $data_detail);
-        $this->load->view('footer');
-    }
-
     //list data permohonan yang teralh disetujui
     public function list_permohonan_selesaiKasubag()
     {

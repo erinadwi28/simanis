@@ -178,7 +178,7 @@
         					</table>
         				</div>
         				<div class="card-footer">
-        					<?php if ($detail->status == 'Proses Kasi') { ?>
+        					<?php if ($detail->status == 'Validasi Kemenag') { ?>
         						<div class="float-right">
         							<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>">
         								<button id=" btn_tolak" class="btn btn-sm btn-danger" type="submit">
