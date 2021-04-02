@@ -34,7 +34,9 @@
                 <td><?= $no ?></td>
                 <td><?= $permohonan->nama_layanan ?></td>
                 <td><?= format_indo(date($permohonan->tgl_permohonan));  ?></td>
-                <td><?= format_indo(date($permohonan->tgl_persetujuan_fo));  ?></td>
+                <td><?php if ($permohonan->tgl_persetujuan_fo != null) {
+                      echo (format_indo(date($permohonan->tgl_persetujuan_fo)));
+                    } ?></td>
                 <td><label class="badge badge-danger"><i class="far fa-times-circle"><?= $permohonan->status ?></i></label></td>
                 <td><?= character_limiter($permohonan->keterangan, 10); ?></td>
                 <td>

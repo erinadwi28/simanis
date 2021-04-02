@@ -56,7 +56,7 @@
                             </div>
                           </div>
                         </div>
-												<div class="form-group">
+                        <div class="form-group">
                           <div class="form-group" style="margin-top: 15px;">
                             <div class="form-group row" style="margin-left: 10px;">
                               <label for="Tempat_lahir" class="col-sm-3 col-form-label">Tempat Lahir</label>
@@ -71,7 +71,7 @@
                             </div>
                           </div>
                         </div>
-												<div class="form-group">
+                        <div class="form-group">
                           <div class="form-group" style="margin-top: 15px;">
                             <div class="form-group row" style="margin-left: 10px;">
                               <label for="Tanggal_lahir" class="col-sm-3 col-form-label">Tanggal Lahir</label>
@@ -86,13 +86,13 @@
                             </div>
                           </div>
                         </div>
-												<div class="form-group">
+                        <div class="form-group">
                           <div class="form-group" style="margin-top: 15px;">
                             <div class="form-group row" style="margin-left: 10px;">
                               <label for="Alamat_lengkap" class="col-sm-3 col-form-label">Alamat Lengkap</label>
                               <div class="col-sm-8">
                                 <div class="form-line focused">
-																<textarea type="text" class="form-control" id="alamat" name="alamat" value=""></textarea>
+                                  <textarea type="text" class="form-control" id="alamat" name="alamat" value=""></textarea>
                                   <!-- <i class=" fas fa-check-circle"></i>
                                   <i class="fas fa-exclamation-circle"></i>
                                   <small>Error massage</small> -->
@@ -101,7 +101,7 @@
                             </div>
                           </div>
                         </div>
-												<div class="form-group">
+                        <div class="form-group">
                           <div class="form-group" style="margin-top: 15px;">
                             <div class="form-group row" style="margin-left: 10px;">
                               <label for="No_porsi" class="col-sm-3 col-form-label">No. Porsi</label>
@@ -116,7 +116,7 @@
                             </div>
                           </div>
                         </div>
-												<div class="form-group">
+                        <div class="form-group">
                           <div class="form-group" style="margin-top: 15px;">
                             <div class="form-group row" style="margin-left: 10px;">
                               <label for="Tahun_angkatan_haji" class="col-sm-3 col-form-label">Tahun Angkatan Haji Hijriah</label>
@@ -148,36 +148,11 @@
                         </div>
                       </div>
 
-                      <div class="form-group">
-                        <div class="form-group row" style="margin-left: 10px;">
-                          <label class="col-sm-3 col-form-label" for="file-upload-surat-permohonan">Surat Permohonan</label>
-                          <div class="custom-file col-sm-7 ml-3">
-                            <div class="form-line-upload">
-                              <label class="custom-file-label" for="file-upload-surat-permohonan">pilih file...</label>
-                              <input type="file" class="custom-file-input" id="file-upload-surat-permohonan" name="srt_permohonan">
-                              <!-- <small>Error massage</small> -->
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-											<div class="form-group">
-                        <div class="form-group row" style="margin-left: 10px;">
-                          <label class="col-sm-3 col-form-label" for="file-upload-surat-pernyataan">Surat Pernyataan</label>
-                          <div class="custom-file col-sm-7 ml-3">
-                            <div class="form-line-upload">
-                              <label class="custom-file-label" for="file-upload-surat-pernyataan">pilih file...</label>
-                              <input type="file" class="custom-file-input" id="file-upload-surat-pernyataan" name="srt_pernyataan">
-                              <!-- <small>Error massage</small> -->
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
                       <!-- <input type="hidden" class="form-control" id="id_nama_surat" name="id_nama_surat" value="5">
                       <input type="hidden" class="form-control" id="id_warga" name="id_warga" value=">
                       <input type="hidden" class="form-control" id="status" name="status" value="Belum Tuntas"> -->
                   </div>
-                  <?php } ?>
+                <?php } ?>
                 <div class="card-footer">
                   <div class="float-right">
                     <a href="#">

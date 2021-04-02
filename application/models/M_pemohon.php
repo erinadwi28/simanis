@@ -164,7 +164,6 @@ class M_pemohon extends CI_Model
     public function tambah_ptsp($data_ptsp, $tabel)
     {
         $this->db->insert($tabel, $data_ptsp);
-        return $this->db->insert_id();
     }
 
     public function get_data_permohonan($detailhere, $tabel)

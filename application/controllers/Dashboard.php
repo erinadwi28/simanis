@@ -525,8 +525,8 @@ class Dashboard extends CI_Controller
         redirect('dashboard/list_permohonan_validasi_kemenag');
     }
 
-	//tampil halaman sop ptsp05
-	public function sop_ptsp05()
+    //tampil halaman sop ptsp05
+    public function sop_ptsp05()
     {
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
@@ -539,8 +539,8 @@ class Dashboard extends CI_Controller
         $this->load->view('footer');
     }
 
-	//tampil halaman form pengajuan ptsp05
-	public function form_ptsp05()
+    //tampil halaman form pengajuan ptsp05
+    public function form_ptsp05()
     {
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
@@ -562,6 +562,7 @@ class Dashboard extends CI_Controller
         $data_permohonan = array(
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '5',
+            'sie' => 'PHU',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -577,23 +578,21 @@ class Dashboard extends CI_Controller
             'tahun_masehi' => $this->input->post('tahun_masehi'),
         );
 
-        $id_ptsp05 = $this->m_pemohon->tambah_ptsp($data_ptsp, 'ptsp05');
+        $this->m_pemohon->tambah_ptsp($data_ptsp, 'ptsp05');
 
-        if ($_FILES != null) {
-            $this->aksi_upload_ptsp05($id_ptsp05);
-        }
+
 
 
         $this->session->set_flashdata('success', 'disimpan');
         redirect('dashboard/detail_ptsp05/' . $id_permohonan);
     }
 
-    //upload dokumen legalisir ptsp05
-    private function aksi_upload_ptsp05($id_ptsp05)
+    //upload surat permohonan ptsp05
+    private function aksi_upload_srt_permohonan_ptsp05($id_ptsp05)
     {
-        $config['upload_path']          = './assets/dashboard/pemohon/ptsp/ptsp05/';
+        $config['upload_path']          = './assets/dashboard/pemohon/ptsp/ptsp05/srt_permohonan/';
         $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|docx|doc|xlsx|xls';
-        $config['file_name']            = 'dokumen-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+        $config['file_name']            = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
 
         $this->load->library('upload', $config);
         if (!empty($_FILES['srt_permohonan']['name'])) {
@@ -601,16 +600,53 @@ class Dashboard extends CI_Controller
 
                 $uploadData = $this->upload->data();
 
+                $item = $this->db->where('id_ptsp', $id_ptsp05)->get('ptsp05')->row();
+
+                //replace foto lama 
+                if ($item->srt_permohonan != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp05/srt_permohonan/' . $item->srt_permohonan;
+                    unlink($target_file);
+                }
+
                 $data['srt_permohonan'] = $uploadData['file_name'];
 
                 $this->db->where('id_ptsp', $id_ptsp05);
                 $this->db->update('ptsp05', $data);
             }
         }
+    }
+
+    // upload ulang surat permohonan ptsp05
+    public function update_srt_permohonan_ptsp05($id_ptsp)
+    {
+        if ($_FILES != null) {
+            $this->aksi_upload_srt_permohonan_ptsp05($id_ptsp);
+        }
+        $permohonan = $this->input->post('id_permohonan_ptsp');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('dashboard/detail_ptsp05/' . $permohonan);
+    }
+
+    //upload surat pernyataan ptsp05
+    private function aksi_upload_srt_pernyataan_ptsp05($id_ptsp05)
+    {
+        $config['upload_path']          = './assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|docx|doc|xlsx|xls';
+        $config['file_name']            = 'srt_pernyataan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+        $this->load->library('upload', $config);
         if (!empty($_FILES['srt_pernyataan']['name'])) {
             if ($this->upload->do_upload('srt_pernyataan')) {
 
                 $uploadData = $this->upload->data();
+
+                $item = $this->db->where('id_ptsp', $id_ptsp05)->get('ptsp05')->row();
+
+                //replace foto lama 
+                if ($item->srt_pernyataan != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/' . $item->srt_pernyataan;
+                    unlink($target_file);
+                }
 
                 $data['srt_pernyataan'] = $uploadData['file_name'];
 
@@ -618,6 +654,97 @@ class Dashboard extends CI_Controller
                 $this->db->update('ptsp05', $data);
             }
         }
+    }
+
+    // upload ulang surat pernyataan ptsp05
+    public function update_srt_pernyataan_ptsp05($id_ptsp)
+    {
+        if ($_FILES != null) {
+            $this->aksi_upload_srt_pernyataan_ptsp05($id_ptsp);
+        }
+        $permohonan = $this->input->post('id_permohonan_ptsp');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('dashboard/detail_ptsp05/' . $permohonan);
+    }
+
+    //upload fc ktp ptsp05
+    private function aksi_upload_fc_ktp_ptsp05($id_ptsp05)
+    {
+        $config['upload_path']          = './assets/dashboard/pemohon/ptsp/ptsp05/fc_ktp/';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|docx|doc|xlsx|xls';
+        $config['file_name']            = 'fc_ktp-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+        $this->load->library('upload', $config);
+        if (!empty($_FILES['fc_ktp']['name'])) {
+            if ($this->upload->do_upload('fc_ktp')) {
+
+                $uploadData = $this->upload->data();
+
+                $item = $this->db->where('id_ptsp', $id_ptsp05)->get('ptsp05')->row();
+
+                //replace foto lama 
+                if ($item->ktp != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp05/fc_ktp/' . $item->ktp;
+                    unlink($target_file);
+                }
+
+                $data['ktp'] = $uploadData['file_name'];
+
+                $this->db->where('id_ptsp', $id_ptsp05);
+                $this->db->update('ptsp05', $data);
+            }
+        }
+    }
+
+    // upload ulang fc ktp ptsp05
+    public function update_fc_ktp_ptsp05($id_ptsp)
+    {
+        if ($_FILES != null) {
+            $this->aksi_upload_fc_ktp_ptsp05($id_ptsp);
+        }
+        $permohonan = $this->input->post('id_permohonan_ptsp');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('dashboard/detail_ptsp05/' . $permohonan);
+    }
+
+    //upload surat bukti pelunasan ptsp05
+    private function aksi_upload_bukti_pelunasan_ptsp05($id_ptsp05)
+    {
+        $config['upload_path']          = './assets/dashboard/pemohon/ptsp/ptsp05/bukti_pelunasan/';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|docx|doc|xlsx|xls';
+        $config['file_name']            = 'bukti_pelunasan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+        $this->load->library('upload', $config);
+        if (!empty($_FILES['bukti_pelunasan']['name'])) {
+            if ($this->upload->do_upload('bukti_pelunasan')) {
+
+                $uploadData = $this->upload->data();
+
+                $item = $this->db->where('id_ptsp', $id_ptsp05)->get('ptsp05')->row();
+
+                //replace foto lama 
+                if ($item->bukti_pelunasan != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp05/bukti_pelunasan/' . $item->bukti_pelunasan;
+                    unlink($target_file);
+                }
+
+                $data['bukti_pelunasan'] = $uploadData['file_name'];
+
+                $this->db->where('id_ptsp', $id_ptsp05);
+                $this->db->update('ptsp05', $data);
+            }
+        }
+    }
+
+    // upload ulang bukti pelunasan ptsp05
+    public function update_bukti_pelunasan_ptsp05($id_ptsp)
+    {
+        if ($_FILES != null) {
+            $this->aksi_upload_bukti_pelunasan_ptsp05($id_ptsp);
+        }
+        $permohonan = $this->input->post('id_permohonan_ptsp');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('dashboard/detail_ptsp05/' . $permohonan);
     }
 
     //tampil detail permohonan ptsp05
@@ -635,8 +762,8 @@ class Dashboard extends CI_Controller
         $this->load->view('footer');
     }
 
-	//tampil form ubah ptsp05
-	public function form_ubah_ptsp05($id_permohonan)
+    //tampil form ubah ptsp05
+    public function form_ubah_ptsp05($id_permohonan)
     {
         // $id_permohonan
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
