@@ -21,10 +21,6 @@ body {
   color: #000000;
 }
 
-.card .card-body:hover {
-  color: #007530;
-}
-
 .card .card-body table {
   color: #000000;
 }
@@ -114,5 +110,96 @@ body {
 
 .ptsp:hover .text-success {
   color: #Fff !important;
+}
+
+.table-bordered td {
+  padding-bottom: 4px;
+  padding-top: 4px;
+}
+
+.table-bordered thead th {
+  padding-bottom: 7px;
+  padding-top: 7px;
+  text-align: center;
+  border-bottom: 0;
+  background-color: #F2FCEE;
+}
+
+.dataTables_wrapper .dataTables_length label {
+  color: gray;
+}
+
+.dataTables_wrapper .dataTables_length label:hover {
+  color: gray;
+}
+
+.dataTables_wrapper .dataTables_filter label {
+  color: gray;
+}
+
+.dataTables_wrapper .dataTables_filter label:hover {
+  color: gray;
+}
+
+.dataTables_wrapper .dataTables_info {
+  color: gray;
+}
+
+.dataTables_wrapper .dataTables_info:hover {
+  color: gray;
+}
+
+.text-status {
+  font-size: 14px;
+}
+
+a {
+  color: #007530;
+}
+
+a:hover {
+  color: #F69D1B;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #007530 !important;
+  border: 0;
+}
+
+.btn-primary:hover {
+  background-color: #1A9D4F !important;
+  border: 0;
+}
+
+.persyaratan {
+  text-align: justify;
+}
+
+.persyaratan .list-syarat {
+  text-align: justify;
+}
+
+.btn-buat {
+  background-color: #007530;
+  color: #fff;
+}
+
+.btn-buat:hover {
+  background-color: #1A9D4F;
+  color: #fff;
+}
+
+.modal-title-syarat {
+  color: #000000;
+}
+
+.modal-content-syarat {
+  color: #000000;
+}
+
+.lihat-sandi {
+  font-size: 12px;
 }
 /*# sourceMappingURL=dashboard.css.map */

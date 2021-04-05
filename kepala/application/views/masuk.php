@@ -8,7 +8,7 @@
 				<div class="row justify-content-center">
 					<div class="col-md-8">
 						<div class="mb-4">
-							<h3>Masuk | Kepala Kemenag</h3>
+							<h3>Masuk | Kepala</h3>
 							<p class="mb-4">masuk ke akun Anda untuk menggunakan layanan ini.</p>
 						</div>
 
@@ -35,7 +35,8 @@
 							</div>
 							<div class="form-group last mb-4 shadow">
 								<label for="kata_sandi">Kata Sandi</label>
-								<input type="password" class="form-control" id="kata_sandi" name="kata_sandi">
+								<input type="password" class="form-control" id="password-field" name="kata_sandi"> 
+								<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 							</div>
 
 							<div class="d-flex mb-3 align-items-center">

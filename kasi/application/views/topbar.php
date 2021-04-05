@@ -5,7 +5,7 @@
 	<div id="content">
 
 		<!-- Topbar -->
-		<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+		<nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow mb-2">
 
 			<!-- Sidebar Toggle (Topbar) -->
 			<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -14,7 +14,7 @@
 
 			<!-- Topbar Welcome -->
 			<div class="topbar-welcome ml-2">
-				<p class="mb-0 ">Halo, Admin Kasi !</p>
+				<p class="mb-0 ">Halo, Admin Kasi <?= $kasi['sie'] ?> !</p>
 			</div>
 
 			<!-- Topbar Navbar -->
@@ -38,7 +38,7 @@
 				<li class="nav-item dropdown no-arrow">
 					<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $kasi['nama'] ?></span>
-						<img class="img-profile rounded-circle" src="<?= base_url(); ?>../assets/kasi/profil/<?= $kasi['foto_profil_kasi'] ?>">
+						<img class="img-profile rounded-circle" src="<?= base_url(); ?>../assets/dashboard/images/kasi/profil/<?= $kasi['foto_profil_kasi'] ?>">
 					</a>
 					<!-- Dropdown - User Information -->
 					<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

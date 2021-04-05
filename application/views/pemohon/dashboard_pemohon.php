@@ -2,12 +2,12 @@
 <div class="container-fluid">
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between mb-2">
-		<h1 class="h3 mb-0 text-gray-800">Halaman Utama Pemohon</h1>
+		<h1 class="h3 mb-0">Dashboard</h1>
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
 				<li class="breadcrumb-item"><a href="#">Library</a></li> -->
-				<li class="breadcrumb-item active" aria-current="page">Halaman Utama</li>
+				<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
 			</ol>
 		</nav>
 	</div>
@@ -16,7 +16,7 @@
 	<div class="card shadow h-100 p-0 mb-3">
 		<div class="card-body px-3 py-2 title-track">
 			<div class="align-items-center justify-content-between text-center">
-				<h1 class="h5 mb-0 text-bold text-light">Data Permohonan PTSP</h1>
+				<h1 class="h5 mb-0 text-bold text-light">Proses Permohonan</h1>
 			</div>
 		</div>
 	</div>
@@ -55,11 +55,11 @@
 
 		<!-- Data Permohonan Pending -->
 		<div class="col-xl-4 col-md-3 mb-3">
-			<div class="card border-left-warning shadow-lg">
+			<div class="card border-left-danger shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
-							<div class="h6 text-warning">
+							<div class="h6 text-danger">
 								Permohonan Pending</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
@@ -74,7 +74,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_permohonan_pending') ?>" class="badge badge-warning float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
+							<a href="<?= base_url('dashboard/list_permohonan_pending') ?>" class="badge badge-danger float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
 						</div>
 					</div>
 				</div>

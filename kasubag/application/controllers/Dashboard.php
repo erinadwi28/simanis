@@ -15,15 +15,15 @@ class Dashboard extends CI_Controller
 
     public function index()
     {
+        $data_title['title'] = 'SIMANIS: Dashboard';                
         $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
         $this->session->userdata('id_kasubag')])->row_array();
 
         $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
         $data_permohonan['total_notif'] = $this->m_kasubag->jml_notif()->result();
-        $data_permohonan['permohonan_pending'] = $this->m_kasubag->jml_permohonan_pending()->result();
-        $data_permohonan['permohonan_selesai'] = $this->m_kasubag->jml_permohonan_selesai()->result();
+        $data_permohonan['permohonan_selesaiKasubag'] = $this->m_kasubag->jml_permohonan_selesaiKasubag()->result();
 
-        $this->load->view('header');
+        $this->load->view('header', $data_title);
         $this->load->view('kasubag/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('kasubag/dashboard', $data_permohonan);
@@ -32,6 +32,7 @@ class Dashboard extends CI_Controller
     //profil
     public function profil()
     {
+        $data_title['title'] = 'Profil Saya';                
         $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
         $this->session->userdata('id_kasubag')])->row_array();
 
@@ -39,7 +40,7 @@ class Dashboard extends CI_Controller
         $detailhere = array('id_kasubag' => $this->session->userdata('id_kasubag'));
         $data_detail['detail_profil_saya'] = $this->m_kasubag->get_detail_profil_saya($detailhere, 'kasubag')->result();
 
-        $this->load->view('header');
+        $this->load->view('header', $data_title);
         $this->load->view('kasubag/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('kasubag/profil', $data_detail);
@@ -51,7 +52,7 @@ class Dashboard extends CI_Controller
     {
         $id_kasubag = $this->session->userdata('id_kasubag');
 
-        $config['upload_path']          = './../assets/kasubag/profil/';
+        $config['upload_path']          = './../assets/dashboard/images/kasubag/profil/';
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
         $config['file_name']            = 'profil-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
         $this->load->library('upload', $config);
@@ -62,20 +63,20 @@ class Dashboard extends CI_Controller
 
                 //Compres Foto
                 $config['image_library'] = 'gd2';
-                $config['source_image'] = './../assets/kasubag/profil/' . $uploadData['file_name'];
+                $config['source_image'] = './../assets/dashboard/images/kasubag/profil/' . $uploadData['file_name'];
                 $config['create_thumb'] = FALSE;
                 $config['maintain_ratio'] = TRUE;
                 $config['quality'] = '100%';
                 $config['width'] = 480;
                 $config['height'] = 640;
-                $config['new_image'] = './../assets/kasubag/profil/' . $uploadData['file_name'];
+                $config['new_image'] = './../assets/dashboard/images/kasubag/profil/' . $uploadData['file_name'];
                 $this->load->library('image_lib', $config);
                 $this->image_lib->resize();
                 $item = $this->db->where('id_kasubag', $id_kasubag)->get('kasubag')->row();
 
                 //replace foto lama 
                 if ($item->foto_profil_kasubag != "placeholder_profil.png") {
-                    $target_file = './../assets/kasubag/profil/' . $item->foto_profil_kasubag;
+                    $target_file = './../assets/dashboard/images/kasubag/profil/' . $item->foto_profil_kasubag;
                     unlink($target_file);
                 }
                 $data['foto_profil_kasubag'] = $uploadData['file_name'];
@@ -90,12 +91,13 @@ class Dashboard extends CI_Controller
     //menampilkan halaman form ubah kata sandi
     public function form_ubahsandi()
     {
+        $data_title['title'] = 'Ubah Kata Sandi Saya';                
         $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
         $this->session->userdata('id_kasubag')])->row_array();
 
         $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
 
-        $this->load->view('header');
+        $this->load->view('header', $data_title);
         $this->load->view('kasubag/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('kasubag/ubahsandi');
@@ -136,13 +138,226 @@ class Dashboard extends CI_Controller
         }
     }
 
-	//tampil detail ptsp05
-    public function detail_ptsp05()
-        {
-                $this->load->view('header');
-                $this->load->view('kasubag/sidebar');
-                $this->load->view('topbar');
-                $this->load->view('kasubag/ptsp5/detail_ptsp05');
-                $this->load->view('footer');
-        }
+    //list data permohonan masuk
+    public function list_permohonan_masuk()
+    {
+        $data_title['title'] = 'List Permohonan Masuk';                
+        $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
+        $this->session->userdata('id_kasubag')])->row_array();
+
+        $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
+        $data_detail['data_permohonan'] = $this->m_kasubag->get_list_data_permohonan('Proses Kasubag')->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('kasubag/sidebar');
+        $this->load->view('topbar', $data);
+        $this->load->view('kasubag/list_permohonan_masuk', $data_detail);
+        $this->load->view('footer');
+    }
+
+    //list data permohonan pending
+    public function list_permohonan_pending()
+    {
+        $data_title['title'] = 'List Permohonan Pending';                
+        $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
+        $this->session->userdata('id_kasubag')])->row_array();
+
+        $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
+        $data_detail['data_permohonan'] = $this->m_kasubag->get_list_data_permohonan('Pending')->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('kasubag/sidebar');
+        $this->load->view('topbar', $data);
+        $this->load->view('kasubag/list_permohonan_masuk', $data_detail);
+        $this->load->view('footer');
+    }
+
+    //list data permohonan yang teralh disetujui
+    public function list_permohonan_selesaiKasubag()
+    {
+        $data_title['title'] = 'List Permohonan Selesai Kasubag';                
+        $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
+        $this->session->userdata('id_kasubag')])->row_array();
+
+        $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
+        $data_detail['data_permohonan'] = $this->m_kasubag->get_list_data_permohonan_selesaiKasubag()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('kasubag/sidebar');
+        $this->load->view('topbar', $data);
+        $this->load->view('kasubag/list_permohonan_selesaiKasubag', $data_detail);
+        $this->load->view('footer');
+    }
+
+    //menampilkan detail data permohonan dari list permohonan
+    public function detail_data_permohonan($id_permohonan_ptsp, $id_layanan)
+    {
+        $data_title['title'] = 'Detail Permohonan';                
+            $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
+            $this->session->userdata('id_kasubag')])->row_array();
+            $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
+
+            $data_detail['detail_permohonan'] = $this->m_kasubag->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
+
+            if ($id_layanan == 1) {
+                    $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp01')->result();
+            } elseif ($id_layanan == 3) {
+                    $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp03')->result();
+            } elseif ($id_layanan == 4) {
+                    $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp04')->result();
+            } elseif ($id_layanan == 5) {
+                    $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
+            }
+
+            $this->load->view('header',$data_title);
+            $this->load->view('kasubag/sidebar');
+            $this->load->view('topbar', $data);
+            if ($id_layanan == 1) {
+                    $this->load->view('kasubag/ptsp1/detail_ptsp01', $data_detail);
+            } elseif ($id_layanan == 3) {
+                    $this->load->view('kasubag/ptsp3/detail_ptsp03', $data_detail);
+            } elseif ($id_layanan == 4) {
+                    $this->load->view('kasubag/ptsp4/detail_ptsp04', $data_detail);
+            } elseif ($id_layanan == 5) {
+                    $this->load->view('kasubag/ptsp5/detail_ptsp05', $data_detail);
+            }
+            $this->load->view('footer');
+    }
+
+    //update status permohonan menjadi selesai
+    public function aksi_setujui_permohonan($id_permohonan_ptsp)
+    {
+            $data = array(
+                    'id_kasubag' => $this->session->userdata('id_kasubag'),
+                    'notif_pemohon' => 'Belum Dibaca',
+                    'status' => 'Selesai',
+                    'tgl_persetujuan_kasubag' => date("Y/m/d")
+            );
+            $permohonan = $this->m_kasubag->get_data_permohonan_ptsp($id_permohonan_ptsp);
+            $email = $this->m_kasubag->get_data_pemohon($permohonan->id_pemohon);
+            // Konfigurasi email
+            $config = [
+                    'mailtype'  => 'html',
+                    'charset'   => 'utf-8',
+                    'protocol'  => 'smtp',
+                    'smtp_host' => 'smtp.gmail.com',
+                    'smtp_user' => 'klatenkemenag7@gmail.com',  // Email gmail
+                    'smtp_pass'   => 'dpdzadjbieahxykx',  // Password gmail
+                    'smtp_crypto' => 'ssl',
+                    'smtp_port'   => 465,
+                    'crlf'    => "\r\n",
+                    'newline' => "\r\n"
+            ];
+
+            // Load library email dan konfigurasinya
+            $this->load->library('email', $config);
+
+            // Email dan nama pengirim
+            $this->email->from('no-reply@simanisklaten.com', 'simanisklaten.com');
+
+            // Email penerima
+            $this->email->to($email->email); // Ganti dengan email tujuan
+
+            // Lampiran email, isi dengan url/path file
+            //     $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
+
+            // Subject email
+            $this->email->subject('Informasi Permohonan Anda');
+
+            // Isi email
+            $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan bahwasannya permohonan anda telah <b>disetujui</b>, dan sudah bisa diambil di Kantor Kementrian Agama Kabupaten Klaten yang berada di JL.Ronggowarsito Klaten<br><br>Terimakasih<br>Salam,<br><br>Kementrian Agama Kabupaten Klaten');
+
+            // Tampilkan pesan sukses atau error
+            if ($this->email->send()) {
+                    echo 'Sukses! email berhasil dikirim.';
+            } else {
+                    echo 'Error! email tidak dapat dikirim.';
+            }
+
+            $this->m_kasubag->update_status_permohonan($id_permohonan_ptsp, $data, 'permohonan_ptsp');
+
+            $this->session->set_flashdata('success', 'permohonan sukses disetujui');
+            redirect('dashboard/list_permohonan_selesaiKasubag');
+    }
+
+    //aksi tolak
+    //tampil form tolak permohonan
+    public function form_input_keterangan($id_permohonan_ptsp)
+    {
+        $data_title['title'] = 'Form Keterangan Revisi Permohonan';                
+
+            $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
+            $this->session->userdata('id_kasubag')])->row_array();
+            $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
+
+            $data_detail['id_permohonan_ptsp'] = $this->db->get_where('permohonan_ptsp', ['id_permohonan_ptsp' =>
+            $id_permohonan_ptsp])->row_array();
+
+            $this->load->view('header', $data_detail);
+            $this->load->view('kasubag/sidebar');
+            $this->load->view('topbar', $data);
+            $this->load->view('kasubag/form_input_keterangan', $data_detail);
+            $this->load->view('footer');
+    }
+
+    //aksi tolak permohonan
+    public function kirim_alasn_permohonan()
+    {
+            $data = array(
+                    'id_kasubag' => $this->session->userdata('id_kasubag'),
+                    'keterangan' => $this->input->post('keterangan'),
+                    'notif_pemohon' => 'Belum Dibaca',
+                    'status' => 'Pending',
+                    'tgl_persetujuan_kasubag' => date("Y/m/d")
+            );
+
+            $detailhere = $this->input->post('id_permohonan_ptsp');
+
+            $email = $this->m_kasubag->get_data_pemohon($this->input->post('id_pemohon'));
+            // Konfigurasi email
+            $config = [
+                    'mailtype'  => 'html',
+                    'charset'   => 'utf-8',
+                    'protocol'  => 'smtp',
+                    'smtp_host' => 'smtp.gmail.com',
+                    'smtp_user' => 'klatenkemenag7@gmail.com',  // Email gmail
+                    'smtp_pass'   => 'dpdzadjbieahxykx',  // Password gmail
+                    'smtp_crypto' => 'ssl',
+                    'smtp_port'   => 465,
+                    'crlf'    => "\r\n",
+                    'newline' => "\r\n"
+            ];
+
+            // Load library email dan konfigurasinya
+            $this->load->library('email', $config);
+
+            // Email dan nama pengirim
+            $this->email->from('no-reply@simanisklaten.com', 'simanisklaten.com');
+
+            // Email penerima
+            $this->email->to($email->email); // Ganti dengan email tujuan
+
+            // Lampiran email, isi dengan url/path file
+            //     $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
+
+            // Subject email
+            $this->email->subject('Informasi Permohonan Anda');
+
+            // Isi email
+            $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan kepada pemohon bahwasannya permohonan anda dipending dikarenakan ' . $this->input->post('keterangan') . ', mohon pemberitahuan ini untuk segera ditindak lanjuti. <br>Terimakasih<br>Salam,<br><br>Kementrian Agama Kabupaten Klaten');
+
+            // Tampilkan pesan sukses atau error
+            if ($this->email->send()) {
+                    echo 'Sukses! email berhasil dikirim.';
+            } else {
+                    echo 'Error! email tidak dapat dikirim.';
+            }
+
+            $this->m_kasubag->update_status_permohonan($detailhere, $data, 'permohonan_ptsp');
+
+            if ($this->m_kasubag->update_status_permohonan($detailhere, $data, 'permohonan_ptsp')); {
+                    $this->session->set_flashdata('success', 'ditolak');
+                    redirect('dashboard/list_permohonan_pending');
+            }
+    }
 }

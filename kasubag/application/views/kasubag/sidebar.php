@@ -8,7 +8,7 @@
       <div class="">
         <img src="<?= base_url('../assets/landing/images/logo_dashboard.png') ?>" width="45">
       </div>
-      <div class="sidebar-brand-text mx-3">KASUBAG Xxx</div>
+      <div class="sidebar-brand-text mx-3">KASUBAG TU</div>
     </a>
 
     <!-- Divider -->
@@ -37,9 +37,8 @@
       </a>
       <div id="menupermohonanptsp" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_validasi_kemenag') ?>">Proses KEMENAG</a>
-          <a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_pending') ?>">Permohonan Pending</a>
-          <a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Permohonan Selesai</a>
+          <a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Permohonan Masuk</a>
+          <a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_selesaiKasubag') ?>">Permohonan Selesai</a>
         </div>
       </div>
     </li>

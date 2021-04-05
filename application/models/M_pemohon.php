@@ -49,7 +49,10 @@ class M_pemohon extends CI_Model
         $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_validasi_kemenag');
         $this->db->from('permohonan_ptsp');
         $this->db->where('id_pemohon', $this->session->userdata('id_pemohon'));
-        $this->db->where('status', 'Validasi Kemenag');
+        $this->db->where("(status = 'Validasi Kemenag'
+        OR status = 'Proses BO'
+        OR status = 'Proses Kasi'
+        OR status = 'Proses Kasubag')", null, false);
         $this->db->where('status_delete', 0);
 
         $hasil = $this->db->get();
@@ -110,7 +113,10 @@ class M_pemohon extends CI_Model
         $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
         $this->db->where('permohonan_ptsp.id_pemohon', $this->session->userdata('id_pemohon'));
         $this->db->where('permohonan_ptsp.status_delete', 0);
-        $this->db->where('permohonan_ptsp.status', 'Validasi Kemenag');
+        $this->db->where("(permohonan_ptsp.status = 'Validasi Kemenag'
+        OR permohonan_ptsp.status = 'Proses BO'
+        OR permohonan_ptsp.status = 'Proses Kasi'
+        OR permohonan_ptsp.status = 'Proses Kasubag')", null, false);
         $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
 
         $hasil = $this->db->get();
@@ -158,7 +164,6 @@ class M_pemohon extends CI_Model
     public function tambah_ptsp($data_ptsp, $tabel)
     {
         $this->db->insert($tabel, $data_ptsp);
-        return $this->db->insert_id();
     }
 
     public function get_data_permohonan($detailhere, $tabel)
@@ -193,6 +198,20 @@ class M_pemohon extends CI_Model
         $this->db->from('permohonan_ptsp');
         $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
         $this->db->join('ptsp04', 'permohonan_ptsp.id_permohonan_ptsp = ptsp04.id_permohonan_ptsp', 'INNER');
+        $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
+        $this->db->where('permohonan_ptsp.status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
+    //detail permohonan ptsp04
+    public function get_detail_ptsp05($id_permohonan)
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan, ptsp05.*');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->join('ptsp05', 'permohonan_ptsp.id_permohonan_ptsp = ptsp05.id_permohonan_ptsp', 'INNER');
         $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
         $this->db->where('permohonan_ptsp.status_delete', 0);
 

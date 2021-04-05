@@ -5,7 +5,7 @@
 	<div id="content">
 
 		<!-- Topbar -->
-		<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+		<nav class="navbar navbar-expand navbar-light bg-white topbar mb-2 static-top shadow">
 
 			<!-- Sidebar Toggle (Topbar) -->
 			<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -19,25 +19,12 @@
 
 			<!-- Topbar Navbar -->
 			<ul class="navbar-nav ml-auto">
-				<!-- Nav Item - Alerts -->
-				<li class="nav-item dropdown no-arrow mx-1">
-					<a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<i class="fas fa-bell fa-fw"></i>
-						<!-- Counter - Alerts -->
-						<span class="badge badge-danger badge-counter">
-							<?php
-							foreach ($total_notif as $total_notif) { ?>
-								<?= $total_notif->total_notif; ?>
-							<?php } ?>
-						</span>
-					</a>
-				</li>
 
 				<!-- Nav Item - User Information -->
 				<li class="nav-item dropdown no-arrow">
 					<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $kepala['nama'] ?></span>
-						<img class="img-profile rounded-circle" src="<?= base_url(); ?>../assets/kepala/profil/<?= $kepala['foto_profil_kepala'] ?>">
+						<img class="img-profile rounded-circle" src="<?= base_url(); ?>../assets/dashboard/images/kepala/profil/<?= $kepala['foto_profil_kepala'] ?>">
 					</a>
 					<!-- Dropdown - User Information -->
 					<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

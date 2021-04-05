@@ -33,11 +33,11 @@
 								<label for="email">Email | contoh@email.com</label>
 								<input type="email" class="form-control" id="email" name="email">
 							</div>
-							<div class="form-group last mb-4 shadow">
+							<div class="form-group last mb-1 shadow">
 								<label for="kata_sandi">Kata Sandi</label>
-								<input type="password" class="form-control" id="kata_sandi" name="kata_sandi">
+								<input type="password" class="form-control" id="password-field" name="kata_sandi"> 
+								<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 							</div>
-
 							<div class="d-flex mb-3 align-items-center">
 								<span class="ml-auto"><a href="#" class="lupa_sandi"> <small> Lupa Kata Sandi
 											?</small></a></span>

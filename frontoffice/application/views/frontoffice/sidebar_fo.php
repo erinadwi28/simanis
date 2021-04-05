@@ -31,8 +31,7 @@
 
 		<!-- Nav Item - Main Menu -->
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menupermohonanptsp" for=""
-				aria-expanded="true" aria-controls="collapsePages">
+			<a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menupermohonanptsp" for="" aria-expanded="true" aria-controls="collapsePages">
 				<i class="fa fa-book"></i>
 				<span>Permohonan PTSP</span>
 			</a>
@@ -40,18 +39,16 @@
 				<div class="bg-white py-2 collapse-inner rounded">
 					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Permohonan Masuk</a>
 					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_pending') ?>">Permohonan Pending</a>
-					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_backoffice') ?>">Permohonan Selesai FO</a>
-					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_kasi') ?>">Proses BO</a>
-					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_timteknis') ?>">Proses Kasi</a>
-					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_kasubag') ?>">Proses Kasubag</a>
-					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_kasubag') ?>">Proses Tim Teknis</a>
-					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Proses Selesai</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_selesaiFO') ?>">Permohonan Selesai FO</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_prosesBO') ?>">Proses BO</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_prosesKasi') ?>">Proses Kasi</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_prosesKasubag') ?>">Proses Kasubag</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Permohonan Selesai</a>
 				</div>
 			</div>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatapemohon" for=""
-				aria-expanded="true" aria-controls="collapsePages">
+			<a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatapemohon" for="" aria-expanded="true" aria-controls="collapsePages">
 				<i class="fa fa-user"></i>
 				<span>Data Pemohon</span>
 			</a>
@@ -64,8 +61,7 @@
 			</div>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatabackoffice" for=""
-				aria-expanded="true" aria-controls="collapsePages">
+			<a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatabackoffice" for="" aria-expanded="true" aria-controls="collapsePages">
 				<i class="fa fa-user"></i>
 				<span>Data Back Office</span>
 			</a>
@@ -78,8 +74,7 @@
 			</div>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatakasi" for=""
-				aria-expanded="true" aria-controls="collapsePages">
+			<a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatakasi" for="" aria-expanded="true" aria-controls="collapsePages">
 				<i class="fa fa-user"></i>
 				<span>Data Kasi</span>
 			</a>
@@ -92,8 +87,7 @@
 			</div>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatatimteknis" for=""
-				aria-expanded="true" aria-controls="collapsePages">
+			<a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatatimteknis" for="" aria-expanded="true" aria-controls="collapsePages">
 				<i class="fa fa-user"></i>
 				<span>Data Tim Teknis</span>
 			</a>
@@ -106,8 +100,7 @@
 			</div>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatakasubag" for=""
-				aria-expanded="true" aria-controls="collapsePages">
+			<a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatakasubag" for="" aria-expanded="true" aria-controls="collapsePages">
 				<i class="fa fa-user"></i>
 				<span>Data Kasubag</span>
 			</a>
@@ -120,8 +113,7 @@
 			</div>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatakepala" for=""
-				aria-expanded="true" aria-controls="collapsePages">
+			<a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatakepala" for="" aria-expanded="true" aria-controls="collapsePages">
 				<i class="fa fa-user"></i>
 				<span>Data Kepala</span>
 			</a>
@@ -140,8 +132,7 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatalaporan" for=""
-				aria-expanded="true" aria-controls="collapsePages">
+			<a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatalaporan" for="" aria-expanded="true" aria-controls="collapsePages">
 				<i class="fa fa-book"></i>
 				<span>Laporan</span>
 			</a>

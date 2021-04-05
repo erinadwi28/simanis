@@ -36,18 +36,102 @@ class M_kepala extends CI_Model
         $this->db->update($table, $data);
     }
 
-    // jumlah notif permohonan masuk
-    public function jml_notif()
+    // hitung jumlah permohonan status pending
+    public function jml_permohonan_pending()
     {
-        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as total_notif');
+        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_pending');
         $this->db->from('permohonan_ptsp');
         $this->db->where(
             'status',
-            'Proses Kepala Kemenag'
+            'Pending'
         );
         $this->db->where('status_delete', 0);
 
         $hasil = $this->db->get();
         return $hasil;
+    }
+
+    // hitung jumlah permohonan yang sudah disetujui fo
+    public function jml_permohonan_prosesFO()
+    {
+        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_prosesFO');
+        $this->db->from('permohonan_ptsp');
+        $this->db->where('status', 'Validasi Kemenag');
+        $this->db->where('status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
+    //hitung jumlah permohonan Proses BO
+    public function jml_permohonan_prosesBO()
+    {
+        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_prosesBO');
+        $this->db->from('permohonan_ptsp');
+        $this->db->where(
+            'status',
+            'Proses BO'
+        );
+        $this->db->where('status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
+    //hitung jumlah permohonan Proses Kasi
+    public function jml_permohonan_prosesKasi()
+    {
+        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_prosesKasi');
+        $this->db->from('permohonan_ptsp');
+        $this->db->where(
+            'status',
+            'Proses Kasi'
+        );
+        $this->db->where('status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
+    //hitung jumlah permohonan Proses Kasubag
+    public function jml_permohonan_prosesKasubag()
+    {
+        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_prosesKasubag');
+        $this->db->from('permohonan_ptsp');
+        $this->db->where(
+            'status',
+            'Proses Kasubag'
+        );
+        $this->db->where('status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
+    // hitung jumlah permohonan status pending
+    public function jml_permohonan_selesai()
+    {
+        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_selesai');
+        $this->db->from('permohonan_ptsp');
+        $this->db->where(
+            'status',
+            'Selesai'
+        );
+        $this->db->where('status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
+    //get list data permohonan dengan status tertentu
+    public function get_list_data_permohonan($status)
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->where('permohonan_ptsp.status', $status);
+        $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
+
+        return $this->db->get();
     }
 }

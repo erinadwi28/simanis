@@ -68,6 +68,7 @@ class Masuk extends CI_Controller
                         $data = [
                             'email' => $kasi['email'],
                             'id_kasi' => $kasi['id_kasi'],
+                            'sie' => $kasi['sie'],
                             'role_kasi' => $kasi['role_kasi'],
                         ];
 
