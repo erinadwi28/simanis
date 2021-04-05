@@ -2,7 +2,7 @@
 <div class="container-fluid">
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between mb-2">
-		<h1 class="h3 mb-0 text-gray-800">Dashboard Kasi</h1>
+		<h1 class="h3 mb-0">Dashboard Kasi</h1>
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -55,11 +55,11 @@
 
 		<!-- Data Permohonan Selesai BO-->
 		<div class="col-xl-3 col-md-3 mb-3">
-			<div class="card border-left-warning shadow-lg">
+			<div class="card border-left-success shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
-							<div class="h6 text-warning">
+							<div class="h6 text-success">
 								Permohonan Selesai Kasi <?= $kasi['sie'] ?></div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
@@ -69,12 +69,12 @@
 							</div>
 						</div>
 						<div class="col-auto">
-							<i class="fas fa-clock fa-2x text-gray-300"></i>
+							<i class="fas fa-check fa-2x text-gray-300"></i>
 						</div>
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_permohonan_selesaiKasi') ?>" class="badge badge-warning float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
+							<a href="<?= base_url('dashboard/list_permohonan_selesaiKasi') ?>" class="badge badge-success float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
 						</div>
 					</div>
 				</div>
@@ -83,11 +83,11 @@
 
 		<!-- Data Permohonan Proses Kasi-->
 		<div class="col-xl-3 col-md-3 mb-3">
-			<div class="card border-left-success shadow-lg">
+			<div class="card border-left-primary shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
-							<div class="h6 text-success">
+							<div class="h6 text-primary">
 								Permohonan Proses Kasubag TU</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
@@ -97,12 +97,12 @@
 							</div>
 						</div>
 						<div class="col-auto">
-							<i class="fas fa-check fa-2x text-gray-300"></i>
+							<i class="fas fa-clock fa-2x text-gray-300"></i>
 						</div>
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_permohonan_prosesKasubag') ?>" class="badge badge-success float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
+							<a href="<?= base_url('dashboard/list_permohonan_prosesKasubag') ?>" class="badge badge-primary float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
 						</div>
 					</div>
 				</div>

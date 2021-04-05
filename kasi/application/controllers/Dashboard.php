@@ -15,6 +15,7 @@ class Dashboard extends CI_Controller
 
     public function index()
     {
+        $data_title['title'] = 'SIMANIS: Dashboard';                
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
@@ -24,7 +25,7 @@ class Dashboard extends CI_Controller
         $data_permohonan['permohonan_selesaiKasi'] = $this->m_kasi->jml_permohonan_selesaiKasi($sie)->result();
         $data_permohonan['permohonan_prosesKasubag'] = $this->m_kasi->jml_permohonan_prosesKasubag($sie)->result();
 
-        $this->load->view('header');
+        $this->load->view('header', $data_title);
         $this->load->view('kasi/sidebar', $data);
         $this->load->view('topbar');
         $this->load->view('kasi/dashboard', $data_permohonan);
@@ -34,6 +35,7 @@ class Dashboard extends CI_Controller
     //profil
     public function profil()
     {
+        $data_title['title'] = 'Profil Saya';                
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
@@ -42,7 +44,7 @@ class Dashboard extends CI_Controller
         $detailhere = array('id_kasi' => $this->session->userdata('id_kasi'));
         $data_detail['detail_profil_saya'] = $this->m_kasi->get_detail_profil_saya($detailhere, 'kasi')->result();
 
-        $this->load->view('header');
+        $this->load->view('header', $data_title);
         $this->load->view('kasi/sidebar', $data);
         $this->load->view('topbar');
         $this->load->view('kasi/profil', $data_detail);
@@ -93,6 +95,7 @@ class Dashboard extends CI_Controller
     //menampilkan halaman form ubah kata sandi
     public function form_ubahsandi()
     {
+        $data_title['title'] = 'Ubah Kata Sandi Saya';                
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
@@ -100,7 +103,7 @@ class Dashboard extends CI_Controller
         $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
         $data_permohonan['total_notif'] = $this->m_kasi->jml_notif()->result();
 
-        $this->load->view('header');
+        $this->load->view('header', $data_title);
         $this->load->view('kasi/sidebar', $data);
         $this->load->view('topbar');
         $this->load->view('kasi/ubahsandi');
@@ -144,6 +147,7 @@ class Dashboard extends CI_Controller
     //list permohonan masuk
     public function list_permohonan_masuk()
     {
+        $data_title['title'] = 'List Permohonan Masuk';                
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
@@ -152,7 +156,7 @@ class Dashboard extends CI_Controller
 
         $data_detail['data_permohonan'] = $this->m_kasi->get_list_data_permohonan('Proses Kasi', $sie)->result();
 
-        $this->load->view('header');
+        $this->load->view('header',$data_title);
         $this->load->view('kasi/sidebar', $data);
         $this->load->view('topbar');
         $this->load->view('kasi/list_permohonan_masuk', $data_detail);
@@ -162,6 +166,7 @@ class Dashboard extends CI_Controller
     //list permohonan pending
     public function list_permohonan_pending()
     {
+        $data_title['title'] = 'List Permohonan Pending';                
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
@@ -170,7 +175,7 @@ class Dashboard extends CI_Controller
 
         $data_detail['data_permohonan'] = $this->m_kasi->get_list_data_permohonan('Pending', $sie)->result();
 
-        $this->load->view('header');
+        $this->load->view('header',$data_title);
         $this->load->view('kasi/sidebar', $data);
         $this->load->view('topbar');
         $this->load->view('kasi/list_permohonan_pending', $data_detail);
@@ -180,6 +185,7 @@ class Dashboard extends CI_Controller
     //list permohonan yang sudah disetujui kasi
     public function list_permohonan_selesaiKasi()
     {
+        $data_title['title'] = 'List Permohonan Selesai Kasi';                
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
@@ -188,7 +194,7 @@ class Dashboard extends CI_Controller
 
         $data_detail['data_permohonan'] = $this->m_kasi->get_list_data_permohonan_selesaiKasi($sie)->result();
 
-        $this->load->view('header');
+        $this->load->view('header',$data_title);
         $this->load->view('kasi/sidebar', $data);
         $this->load->view('topbar');
         $this->load->view('kasi/list_permohonan_selesaiKasi', $data_detail);
@@ -198,6 +204,7 @@ class Dashboard extends CI_Controller
     //list permohonan yang sudah disetujui kasi
     public function list_permohonan_prosesKasubag()
     {
+        $data_title['title'] = 'List Permohonan Proses Kasubag';                
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
@@ -206,7 +213,7 @@ class Dashboard extends CI_Controller
 
         $data_detail['data_permohonan'] = $this->m_kasi->get_list_data_permohonan_prosesKasubag('Proses Kasubag')->result();
 
-        $this->load->view('header');
+        $this->load->view('header',$data_title);
         $this->load->view('kasi/sidebar', $data);
         $this->load->view('topbar');
         $this->load->view('kasi/list_permohonan_prosesKasubag', $data_detail);
@@ -216,6 +223,7 @@ class Dashboard extends CI_Controller
     //tampil detail data permohonan
     public function detail_data_permohonan($id_permohonan_ptsp, $id_layanan)
     {
+        $data_title['title'] = 'Detail Permohonan';                
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
@@ -233,7 +241,7 @@ class Dashboard extends CI_Controller
             $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
         }
 
-        $this->load->view('header');
+        $this->load->view('header',$data_title);
         $this->load->view('kasi/sidebar', $data);
         $this->load->view('topbar');
         if ($id_layanan == 1) {
@@ -268,6 +276,7 @@ class Dashboard extends CI_Controller
     //tampil form tolak permohonan
     public function form_input_keterangan($id_permohonan_ptsp)
     {
+        $data_title['title'] = 'Form Keterangan Revisi';                
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
@@ -277,7 +286,7 @@ class Dashboard extends CI_Controller
         $data_detail['id_permohonan_ptsp'] = $this->db->get_where('permohonan_ptsp', ['id_permohonan_ptsp' =>
         $id_permohonan_ptsp])->row_array();
 
-        $this->load->view('header');
+        $this->load->view('header',$data_title);
         $this->load->view('kasi/sidebar', $data);
         $this->load->view('topbar');
         $this->load->view('kasi/form_input_keterangan', $data_detail);

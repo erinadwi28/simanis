@@ -15,6 +15,7 @@ class Dashboard extends CI_Controller
 
     public function index()
     {
+        $data_title['title'] = 'SIMANIS: Dashboard';                
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 
@@ -23,7 +24,7 @@ class Dashboard extends CI_Controller
         $data_permohonan['permohonan_selesaiBO'] = $this->m_bo->jml_permohonan_selesaiBO()->result();
         $data_permohonan['permohonan_prosesKasi'] = $this->m_bo->jml_permohonan_prosesKasi()->result();
 
-        $this->load->view('header');
+        $this->load->view('header', $data_title);
         $this->load->view('backoffice/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('backoffice/dashboard', $data_permohonan);
@@ -33,6 +34,7 @@ class Dashboard extends CI_Controller
     //profil
     public function profil()
     {
+        $data_title['title'] = 'Profil Saya';                
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 
@@ -40,7 +42,7 @@ class Dashboard extends CI_Controller
         $detailhere = array('id_bo' => $this->session->userdata('id_bo'));
         $data_detail['detail_profil_saya'] = $this->m_bo->get_detail_profil_saya($detailhere, 'bo')->result();
 
-        $this->load->view('header');
+        $this->load->view('header', $data_title);
         $this->load->view('backoffice/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('backoffice/profil', $data_detail);
@@ -91,12 +93,13 @@ class Dashboard extends CI_Controller
     //menampilkan halaman form ubah kata sandi
     public function form_ubahsandi()
     {
+        $data_title['title'] = 'Ubah Kata Sandi Saya';                
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 
         $data['total_notif'] = $this->m_bo->jml_notif()->result();
 
-        $this->load->view('header');
+        $this->load->view('header', $data_title);
         $this->load->view('backoffice/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('backoffice/ubahsandi');
@@ -140,13 +143,14 @@ class Dashboard extends CI_Controller
     //list permohonan masuk
     public function list_permohonan_masuk()
     {
+        $data_title['title'] = 'List Permohonan Masuk';                
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
         $data['total_notif'] = $this->m_bo->jml_notif()->result();
 
         $data_detail['data_permohonan'] = $this->m_bo->get_list_data_permohonan('Proses BO')->result();
 
-        $this->load->view('header');
+        $this->load->view('header',$data_title);
         $this->load->view('backoffice/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('backoffice/list_permohonan_masuk', $data_detail);
@@ -156,13 +160,14 @@ class Dashboard extends CI_Controller
     //list permohonan yang sudah disetujui BO
     public function list_permohonan_selesaiBO()
     {
+        $data_title['title'] = 'List Permohonan Proses BO';                
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
         $data['total_notif'] = $this->m_bo->jml_notif()->result();
 
         $data_detail['data_permohonan'] = $this->m_bo->get_list_data_permohonan_selesaiBO()->result();
 
-        $this->load->view('header');
+        $this->load->view('header',$data_title);
         $this->load->view('backoffice/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('backoffice/list_permohonan_selesaiBO', $data_detail);
@@ -172,13 +177,14 @@ class Dashboard extends CI_Controller
     //list permohonan masuk
     public function list_permohonan_prosesKasi()
     {
+        $data_title['title'] = 'List Permohonan Proses Kasi';                
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
         $data['total_notif'] = $this->m_bo->jml_notif()->result();
 
         $data_detail['data_permohonan'] = $this->m_bo->get_list_data_permohonan('Proses Kasi')->result();
 
-        $this->load->view('header');
+        $this->load->view('header',$data_title);
         $this->load->view('backoffice/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('backoffice/list_permohonan_prosesKasi', $data_detail);
@@ -198,6 +204,7 @@ class Dashboard extends CI_Controller
     //menampilkan detail data permohonan dari list permohonan
     public function detail_data_permohonan($id_permohonan_ptsp, $id_layanan)
     {
+        $data_title['title'] = 'Detail Permohonan';                
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
         $data['total_notif'] = $this->m_bo->jml_notif()->result();
@@ -208,7 +215,7 @@ class Dashboard extends CI_Controller
             $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
         }
 
-        $this->load->view('header');
+        $this->load->view('header',$data_title);
         $this->load->view('backoffice/sidebar');
         $this->load->view('topbar', $data);
         if ($id_layanan == 5) {
@@ -220,6 +227,7 @@ class Dashboard extends CI_Controller
     //tampil form tolak permohonan
     public function form_input_keterangan($id_permohonan_ptsp)
     {
+        $data_title['title'] = 'Form Keterangan Pending';                
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
         $data['total_notif'] = $this->m_bo->jml_notif()->result();
@@ -227,7 +235,7 @@ class Dashboard extends CI_Controller
         $data_detail['id_permohonan_ptsp'] = $this->db->get_where('permohonan_ptsp', ['id_permohonan_ptsp' =>
         $id_permohonan_ptsp])->row_array();
 
-        $this->load->view('header');
+        $this->load->view('header',$data_title);
         $this->load->view('backoffice/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('backoffice/form_input_keterangan', $data_detail);

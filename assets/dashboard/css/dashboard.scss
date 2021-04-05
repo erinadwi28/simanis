@@ -19,6 +19,12 @@ body {
     .card-body {
         color: #000000;
 
+<<<<<<< HEAD
+=======
+        // &:hover {
+        //     color: #007530;
+        // }
+>>>>>>> 8812c4252012a4db52f8fa5eed8a2047db6a624f
         table {
             color: #000000;
             } 
@@ -138,3 +144,102 @@ body {
 	}
 	}
 }
+<<<<<<< HEAD
+=======
+
+.table-bordered{
+	td {
+	padding-bottom: 4px;
+	padding-top: 4px;
+}
+thead{
+	th{
+		padding-bottom: 7px;
+		padding-top: 7px;
+		text-align: center;
+		border-bottom: 0;
+		background-color: #F2FCEE;
+	}
+}
+}
+
+.dataTables_wrapper {
+	.dataTables_length {
+		label {
+			color: gray;
+			&:hover {
+				color: gray;
+			}
+		}
+	}
+
+	.dataTables_filter {
+		label {
+			color: gray;
+			&:hover {
+				color: gray;
+			}
+		}
+	}
+
+	.dataTables_info {
+		color: gray;
+			&:hover {
+				color: gray;
+			}
+	}
+}
+
+.text-status {
+	font-size: 14px;
+}
+
+a {
+	color: #007530;
+	&:hover {
+		color: #F69D1B;
+		font-weight: bold;
+		text-decoration: none;
+	}
+}
+
+.btn-primary {
+	background-color: #007530 !important;
+	border: 0;
+	&:hover {
+		background-color: #1A9D4F !important;
+		border: 0;
+	}
+}
+
+.persyaratan {
+	text-align: justify;
+
+	.list-syarat {
+		text-align: justify;
+	}
+}
+
+.btn-buat {
+	background-color: #007530;
+	color: #fff;
+
+	&:hover {
+		background-color: #1A9D4F;
+		color: #fff;
+	}
+}
+
+.modal-title-syarat {
+	color: #000000;
+}
+
+.modal-content-syarat {
+	color: #000000;
+}
+
+.lihat-sandi {
+	font-size: 12px;
+}
+
+>>>>>>> 8812c4252012a4db52f8fa5eed8a2047db6a624f

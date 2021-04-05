@@ -16,6 +16,7 @@ class Dashboard extends CI_Controller
 
         public function index()
         {
+                $data_title['title'] = 'SIMANIS: Dashboard';                
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
@@ -27,7 +28,7 @@ class Dashboard extends CI_Controller
                 $data_permohonan['permohonan_prosesKasubag'] = $this->m_fo->jml_permohonan_prosesKasubag()->result();
                 $data_permohonan['permohonan_selesai'] = $this->m_fo->jml_permohonan_selesai()->result();
 
-                $this->load->view('header');
+                $this->load->view('header', $data_title);
                 $this->load->view('frontoffice/sidebar_fo', $data);
                 $this->load->view('topbar', $data);
                 $this->load->view('frontoffice/dashboard_fo', $data_permohonan);
@@ -36,6 +37,7 @@ class Dashboard extends CI_Controller
 
         public function profil_fo()
         {
+                $data_title['title'] = 'Profil Saya';                
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
@@ -43,7 +45,7 @@ class Dashboard extends CI_Controller
                 $detailhere = array('id_fo' => $this->session->userdata('id_fo'));
                 $data_detail['detail_profil_saya'] = $this->m_fo->get_detail_profil_saya($detailhere, 'fo')->result();
 
-                $this->load->view('header');
+                $this->load->view('header', $data_title);
                 $this->load->view('frontoffice/sidebar_fo');
                 $this->load->view('topbar', $data);
                 $this->load->view('frontoffice/profil_fo', $data_detail);
@@ -53,7 +55,6 @@ class Dashboard extends CI_Controller
         //ubah foto profil
         public function upload_foto_profil()
         {
-
                 $id_fo = $this->session->userdata('id_fo');
 
                 $config['upload_path']          = './../assets/dashboard/images/frontoffice/profil/';
@@ -101,6 +102,7 @@ class Dashboard extends CI_Controller
         //menampilkan halaman form ubah kata sandi
         public function form_ubahsandi()
         {
+                $data_title['title'] = 'Ubah Kata Sandi Saya';                
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
@@ -108,7 +110,7 @@ class Dashboard extends CI_Controller
                 $detailhere = array('id_fo' => $this->session->userdata('id_fo'));
                 $data_detail['detail_profil_saya'] = $this->m_fo->get_detail_profil_saya($detailhere, 'fo')->result();
 
-                $this->load->view('header');
+                $this->load->view('header', $data_title);
                 $this->load->view('frontoffice/sidebar_fo');
                 $this->load->view('topbar', $data);
                 $this->load->view('frontoffice/ubahsandifo', $data_detail);
@@ -152,13 +154,14 @@ class Dashboard extends CI_Controller
         //list permohonan masuk
         public function list_permohonan_masuk()
         {
+                $data_title['title'] = 'List Permohonan Masuk';                
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
 
                 $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan('Validasi Kemenag')->result();
 
-                $this->load->view('header');
+                $this->load->view('header',$data_title);
                 $this->load->view('frontoffice/sidebar_fo');
                 $this->load->view('topbar', $data);
                 $this->load->view('frontoffice/list_permohonan_masuk', $data_detail);
@@ -168,13 +171,14 @@ class Dashboard extends CI_Controller
         //list permohonan pending
         public function list_permohonan_pending()
         {
+                $data_title['title'] = 'List Permohonan Pending';                
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
 
                 $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan('Pending')->result();
 
-                $this->load->view('header');
+                $this->load->view('header',$data_title);
                 $this->load->view('frontoffice/sidebar_fo');
                 $this->load->view('topbar', $data);
                 $this->load->view('frontoffice/list_permohonan_pending', $data_detail);
@@ -184,13 +188,14 @@ class Dashboard extends CI_Controller
         //list permohonan yang sudah mendapat aksi fo
         public function list_permohonan_selesaiFO()
         {
+                $data_title['title'] = 'List Permohonan Selesai FO';                
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
 
                 $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan_selesaiFO()->result();
 
-                $this->load->view('header');
+                $this->load->view('header',$data_title);
                 $this->load->view('frontoffice/sidebar_fo');
                 $this->load->view('topbar', $data);
                 $this->load->view('frontoffice/list_permohonan_selesaiFO', $data_detail);
@@ -200,13 +205,14 @@ class Dashboard extends CI_Controller
         //list permohonan proses bo
         public function list_permohonan_prosesBO()
         {
+                $data_title['title'] = 'List Permohonan Proses BO';                
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
 
                 $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan('Proses BO')->result();
 
-                $this->load->view('header');
+                $this->load->view('header',$data_title);
                 $this->load->view('frontoffice/sidebar_fo');
                 $this->load->view('topbar', $data);
                 $this->load->view('frontoffice/list_permohonan_prosesBO', $data_detail);
@@ -216,13 +222,14 @@ class Dashboard extends CI_Controller
         //list permohonan proses kasi
         public function list_permohonan_prosesKasi()
         {
+                $data_title['title'] = 'List Permohonan Proses BO';                
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
 
                 $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan('Proses Kasi')->result();
 
-                $this->load->view('header');
+                $this->load->view('header',$data_title);
                 $this->load->view('frontoffice/sidebar_fo');
                 $this->load->view('topbar', $data);
                 $this->load->view('frontoffice/list_permohonan_prosesKasi', $data_detail);
@@ -232,13 +239,14 @@ class Dashboard extends CI_Controller
         //list permohonan proses kasubag
         public function list_permohonan_prosesKasubag()
         {
+                $data_title['title'] = 'List Permohonan Proses Kasubag';                
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
 
                 $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan('Proses Kasubag')->result();
 
-                $this->load->view('header');
+                $this->load->view('header',$data_title);
                 $this->load->view('frontoffice/sidebar_fo');
                 $this->load->view('topbar', $data);
                 $this->load->view('frontoffice/list_permohonan_prosesKasubag', $data_detail);
@@ -248,13 +256,14 @@ class Dashboard extends CI_Controller
         //list permohonan selesai
         public function list_permohonan_selesai()
         {
+                $data_title['title'] = 'List Permohonan Selesai';                
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
 
                 $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan('Selesai')->result();
 
-                $this->load->view('header');
+                $this->load->view('header',$data_title);
                 $this->load->view('frontoffice/sidebar_fo');
                 $this->load->view('topbar', $data);
                 $this->load->view('frontoffice/list_permohonan_selesai', $data_detail);
@@ -264,6 +273,7 @@ class Dashboard extends CI_Controller
         //menampilkan detail data permohonan dari list permohonan
         public function detail_data_permohonan($id_permohonan_ptsp, $id_layanan)
         {
+                $data_title['title'] = 'Detail Permohonan';                
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
@@ -280,7 +290,7 @@ class Dashboard extends CI_Controller
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
                 }
 
-                $this->load->view('header');
+                $this->load->view('header',$data_title);
                 $this->load->view('frontoffice/sidebar_fo');
                 $this->load->view('topbar', $data);
                 if ($id_layanan == 1) {
@@ -371,6 +381,7 @@ class Dashboard extends CI_Controller
         //tampil form tolak permohonan
         public function form_input_keterangan($id_permohonan_ptsp)
         {
+                $data_title['title'] = 'Form Keterangan Revisi Permohonan';                
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
@@ -378,7 +389,7 @@ class Dashboard extends CI_Controller
                 $data_detail['id_permohonan_ptsp'] = $this->db->get_where('permohonan_ptsp', ['id_permohonan_ptsp' =>
                 $id_permohonan_ptsp])->row_array();
 
-                $this->load->view('header');
+                $this->load->view('header', $data_detail);
                 $this->load->view('frontoffice/sidebar_fo');
                 $this->load->view('topbar', $data);
                 $this->load->view('frontoffice/form_input_keterangan', $data_detail);

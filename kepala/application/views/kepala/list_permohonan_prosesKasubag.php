@@ -1,9 +1,15 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-    <!-- Page Heading -->
-    <div class="judullist">
-        <h3>Data Permohonan PTSP Proses Kasubag</h3>
-    </div>
+<!-- Page Heading -->
+	<div class="d-sm-flex align-items-center justify-content-between">
+		<h3 class="judullist py-3">Data Permohonan Proses Kasubag</h3>
+		<nav aria-label="breadcrumb" class="nav-breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Permohonan Proses Kasubag</li>
+			</ol>
+		</nav>
+	</div>
 
     <!-- DataTables Warga -->
     <div class="card shadow mb-4">

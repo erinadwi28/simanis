@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SIMANIS - Dashboard</title>
+  <title><?= $title ?></title>
 
   <!--Tittle Icon-->
   <link rel="shortcut icon" href="<?= base_url('../assets/landing/images/') ?>title.png" />
@@ -22,7 +22,7 @@
   <!-- Custom styles for this template-->
   <link href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" rel="stylesheet" type="text/css" />
   <link href="<?= base_url('../assets/dashboard/css/dashboard.css') ?>" rel="stylesheet" type="text/css" />
-
+  <link href="<?= base_url('../assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.css') ?>" rel="stylesheet" type="text/css" />
 
 </head>
 

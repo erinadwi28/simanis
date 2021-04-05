@@ -43,7 +43,7 @@
 					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_prosesBO') ?>">Proses BO</a>
 					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_prosesKasi') ?>">Proses Kasi</a>
 					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_prosesKasubag') ?>">Proses Kasubag</a>
-					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Proses Selesai</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Permohonan Selesai</a>
 				</div>
 			</div>
 		</li>

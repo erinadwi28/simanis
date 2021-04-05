@@ -9,18 +9,20 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SIMANIS - Dashboard</title>
+  <title><?= $title ?></title>
 
-	 <!--Tittle Icon-->
-	 <link rel="shortcut icon" href="<?= base_url('assets/landing/images/') ?>title.png" />
+  <!--Tittle Icon-->
+  <link rel="shortcut icon" href="<?= base_url('assets/landing/images/') ?>title.png" />
 
   <!-- Custom fonts for this template-->
-	<link rel="stylesheet" href="<?= base_url('assets/vendor/fontawesome-free/css/all.min.css') ?>" />
+  <link rel="stylesheet" href="<?= base_url('assets/dashboard/vendor/fontawesome-free/css/all.min.css') ?>" />
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
   <!-- Custom styles for this template-->
-	<link rel="stylesheet" href="<?= base_url('assets/dashboard/css/dashboard.css') ?>" />
-	<link rel="stylesheet" href="<?= base_url('assets/dashboard/css/sb-admin-2.min.css') ?>" />
-	<link rel="stylesheet" href="<?= base_url('assets/dashboard/css/lightbox.min.css') ?>" />
+  <link href="<?= base_url('assets/dashboard/css/sb-admin-2.min.css') ?>" rel="stylesheet" type="text/css" />
+  <link href="<?= base_url('assets/dashboard/css/dashboard.css') ?>" rel="stylesheet" type="text/css" />
+  <link href="<?= base_url('assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.css') ?>" rel="stylesheet" type="text/css" />
 
 </head>
 

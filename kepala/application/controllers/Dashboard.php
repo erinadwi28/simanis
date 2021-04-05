@@ -15,6 +15,7 @@ class Dashboard extends CI_Controller
 
     public function index()
     {
+        $data_title['title'] = 'SIMANIS: Dashboard';                
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
 
@@ -25,7 +26,7 @@ class Dashboard extends CI_Controller
         $data_permohonan['permohonan_prosesKasubag'] = $this->m_kepala->jml_permohonan_prosesKasubag()->result();
         $data_permohonan['permohonan_selesai'] = $this->m_kepala->jml_permohonan_selesai()->result();
 
-        $this->load->view('header');
+        $this->load->view('header', $data_title);
         $this->load->view('kepala/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('kepala/dashboard', $data_permohonan);
@@ -34,13 +35,14 @@ class Dashboard extends CI_Controller
     //profil
     public function profil()
     {
+        $data_title['title'] = 'Profil Saya';                
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
 
         $detailhere = array('id_kepala' => $this->session->userdata('id_kepala'));
         $data_detail['detail_profil_saya'] = $this->m_kepala->get_detail_profil_saya($detailhere, 'kepala')->result();
 
-        $this->load->view('header');
+        $this->load->view('header', $data_title);
         $this->load->view('kepala/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('kepala/profil', $data_detail);
@@ -91,10 +93,11 @@ class Dashboard extends CI_Controller
     //menampilkan halaman form ubah kata sandi
     public function form_ubahsandi()
     {
+        $data_title['title'] = 'Ubah Kata Sandi Saya';                
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
 
-        $this->load->view('header');
+        $this->load->view('header', $data_title);
         $this->load->view('kepala/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('kepala/ubahsandi');
@@ -138,12 +141,13 @@ class Dashboard extends CI_Controller
     //list data permohonan pending
     public function list_permohonan_pending()
     {
+        $data_title['title'] = 'List Permohonan Pending';                
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
 
         $data_detail['data_permohonan'] = $this->m_kepala->get_list_data_permohonan('Pending')->result();
 
-        $this->load->view('header');
+        $this->load->view('header',$data_title);
         $this->load->view('kepala/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('kepala/list_permohonan_pending', $data_detail);
@@ -153,12 +157,13 @@ class Dashboard extends CI_Controller
     //list data permohonan proses FO
     public function list_permohonan_prosesFO()
     {
+        $data_title['title'] = 'List Permohonan Proses FO';                
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
 
         $data_detail['data_permohonan'] = $this->m_kepala->get_list_data_permohonan('Validasi Kemenag')->result();
 
-        $this->load->view('header');
+        $this->load->view('header',$data_title);
         $this->load->view('kepala/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('kepala/list_permohonan_prosesFO', $data_detail);
@@ -168,12 +173,13 @@ class Dashboard extends CI_Controller
     //list data permohonan proses BO
     public function list_permohonan_prosesBO()
     {
+        $data_title['title'] = 'List Permohonan Proses FO';                
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
 
         $data_detail['data_permohonan'] = $this->m_kepala->get_list_data_permohonan('Proses BO')->result();
 
-        $this->load->view('header');
+        $this->load->view('header',$data_title);
         $this->load->view('kepala/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('kepala/list_permohonan_prosesBO', $data_detail);
@@ -183,12 +189,13 @@ class Dashboard extends CI_Controller
     //list data permohonan proses Kasi
     public function list_permohonan_prosesKasi()
     {
+        $data_title['title'] = 'List Permohonan Proses Kasi';                
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
 
         $data_detail['data_permohonan'] = $this->m_kepala->get_list_data_permohonan('Proses Kasi')->result();
 
-        $this->load->view('header');
+        $this->load->view('header',$data_title);
         $this->load->view('kepala/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('kepala/list_permohonan_prosesKasi', $data_detail);
@@ -198,12 +205,13 @@ class Dashboard extends CI_Controller
     //list data permohonan proses Kasubag
     public function list_permohonan_prosesKasubag()
     {
+        $data_title['title'] = 'List Permohonan Proses Kasubag';                
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
 
         $data_detail['data_permohonan'] = $this->m_kepala->get_list_data_permohonan('Proses Kasubag')->result();
 
-        $this->load->view('header');
+        $this->load->view('header',$data_title);
         $this->load->view('kepala/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('kepala/list_permohonan_prosesKasubag', $data_detail);
@@ -213,12 +221,13 @@ class Dashboard extends CI_Controller
     //list data permohonan Selesai
     public function list_permohonan_selesai()
     {
+        $data_title['title'] = 'List Permohonan Selesai';                
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
 
         $data_detail['data_permohonan'] = $this->m_kepala->get_list_data_permohonan('Selesai')->result();
 
-        $this->load->view('header');
+        $this->load->view('header',$data_title);
         $this->load->view('kepala/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('kepala/list_permohonan_selesai', $data_detail);

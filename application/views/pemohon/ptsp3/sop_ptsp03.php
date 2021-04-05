@@ -1,48 +1,48 @@
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+<!-- Begin Page Content -->
+<div class="container-fluid">
+	<!-- Page Heading -->
+	<div class="d-sm-flex align-items-center justify-content-between">
+		<h3 class="judullist py-3">Standar Operasional Prosedur</h1>
+			<nav aria-label="breadcrumb" class="nav-breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+					<li class="breadcrumb-item active" aria-current="page">SOP</li>
+				</ol>
+			</nav>
+	</div>
 
-          <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4 judullist">
-            <h3>Standar Operasional Prosedur</h3>
-
-          </div>
-
-          <div class="row">
-            <div class="col-xs-12 col-sm-2"></div>
-            <div class="col-md-8 mb-4">
-              <!-- Detail Data -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-center">Legalisir Ijazah</h6>
-                </div>
-                <div class="card-body">
-                  <h6><b>Persyaratan :</b></h6>
-                  <table>
-
-                    <tr>Pemohon adalah pemilik ijazah/STTB/SKP ijazah yang mengajukan permohonan pengesahan atau yang diberikan kuasa oleh pemiliknya (FM-PI-01 dan FM-PI-02). </tr> <br> <br>
-                    <tr>1. Mengisi dan menyelesaikan permohonan pengesahan fotocopi ijazah/STTB/SKP ijazah.</tr><br>
-                    <tr>2. Mengupload/Mengunggah dokumen fotocopy ijazah.</tr> <br>
-										<tr>3. Menunggu pemberitahuan pihak kemenag bahwa proses pengesahan telah selesai.</tr> <br>
-										<tr>4. Mengambil dokumen legalisir dengan membawa dokumen asli </tr>
-
-                  </table>
-
-                </div>
-                <div class="card-footer">
-                  <div class="float-right">
-                    <a href="<?= base_url('dashboard/form_ptsp03') ?>">
-                      <button id="btn_kembali" class="btn btn-sm btn-success" type="submit">
-                        <i class="far fa-edit nav-icon">
-                        </i> Buat
-                      </button>
-                    </a>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /.container-fluid -->
-        </div>
-        <!-- End of Main Content -->
+	<div class="row">
+		<div class="col-xs-12 col-sm-2"></div>
+		<div class="col-md-8 mb-4">
+			<div class="card shadow mb-4 card-syarat">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-center">Legalisir Ijazah</h6>
+				</div>
+				<div class="card-body ">
+					<h6><b>Persyaratan :</b></h6>
+					<p class="persyaratan mb-0">
+						Pemohon adalah pemilik ijazah/STTB/SKP ijazah yang mengajukan permohonan pengesahan atau yang
+						diberikan kuasa oleh pemiliknya (FM-PI-01 dan FM-PI-02).
+						<ol type="1" class="ml-0 list-syarat">
+							<li>Mengisi dan menyelesaikan permohonan pengesahan fotocopi ijazah/STTB/SKP ijazah.</li>
+							<li>Mengupload/Mengunggah dokumen fotocopy ijazah.</li>
+							<li>Menunggu pemberitahuan pihak kemenag bahwa proses pengesahan telah selesai.</li>
+							<li>Mengambil dokumen legalisir dengan membawa dokumen asli.</li>
+						</ol>
+					</p>
+				</div>
+				<div class="card-footer">
+					<a href="<?= base_url('dashboard/form_ptsp03') ?>">
+						<button id="btn_buat" class="btn btn-sm btn-buat float-right" type="submit">
+							<i class="far fa-edit nav-icon">
+							</i> Buat
+						</button>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->

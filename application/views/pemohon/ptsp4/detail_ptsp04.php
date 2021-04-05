@@ -1,10 +1,16 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
 	<!-- Page Heading -->
-	<div class="d-sm-flex align-items-center justify-content-between mb-4 judullist">
-		<h3>Detail Permohonan Legalisir Dokumen Kepegawaian, Surat, Piagam, Sertifikat</h3>
-
+	<div class="d-sm-flex align-items-center justify-content-between">
+		<h3 class="judullist py-3">Detail Permohonan</h3>
+		<nav aria-label="breadcrumb" class="nav-breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+				<li class="breadcrumb-item active" aria-current="page">SOP</li>
+				<li class="breadcrumb-item active" aria-current="page">Form Permohonan</li>
+				<li class="breadcrumb-item active" aria-current="page">Detail Permohonan</li>
+			</ol>
+		</nav>
 	</div>
 
 	<div class="row">
@@ -33,15 +39,15 @@
 						</center>
 					</div>
 
+					<?php if ($detail->status == 'Pending') { ?>
 					<div class="card-footer py-3">
-						<?php if ($detail->status == 'Pending') { ?>
 							<form action="<?= base_url('dashboard/update_dokumen_ptsp04/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_ijazah">
 								<div class="form-group ml-2 mr-2">
 									<div class="input-group">
 										<div class="form-group-upload">
 											<div class="custom-file">
-												<label class="custom-file-label" for="file-upload-ktp">pilih file dokumen...</label>
-												<input type="file" class="custom-file-input" id="file-upload-ktp" name="berkas" value="<?= $detail->dokumen ?>">
+												<label class="custom-file-label" for="file-upload">pilih file dokumen...</label>
+												<input type="file" class="custom-file-input" id="file-upload" name="berkas" value="<?= $detail->dokumen ?>">
 												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="id_permohonan_ptsp" value="<?= $detail->id_permohonan_ptsp ?>">
 												<!-- <i class=" fas fa-exclamation-circle"></i>
 										<h6>Error massage</h6> -->
@@ -52,12 +58,12 @@
 								<center>
 									<button class="btn btn-sm btn-primary" type="submit">
 										<i class="fa fa-upload">
-										</i> Upload
+										</i>
 									</button>
 								</center>
 							</form>
-						<?php } ?>
-					</div>
+						</div>
+					<?php } ?>
 				</div>
 		</div>
 		<div class="col-md-8 mb-4">
@@ -107,24 +113,24 @@
 					</table>
 				</div>
 
+				<?php if ($detail->status == 'Pending') { ?>
 				<div class="card-footer">
 					<div class="float-right">
-						<?php if ($detail->status == 'Pending') { ?>
 							<a href="<?= base_url() ?>dashboard/form_ubah_ptsp04/<?= $detail->id_permohonan_ptsp ?>">
-								<button id=" btn_ubah" class="btn btn-sm btn-primary" type="submit">
+								<button id=" btn_ubah" class="btn btn-sm btn-warning" type="submit">
 									<i class="fa fa-edit nav-icon">
 									</i> Ubah
 								</button>
 							</a>
 							<a href="<?= base_url() ?>dashboard/aksi_update_status_permohonan/<?= $detail->id_permohonan_ptsp ?>">
-								<button id="btn_selesai" class="btn btn-sm btn-success" type="submit">
+								<button id="btn_selesai" class="btn btn-sm btn-primary" type="submit">
 									<i class="far fa-save nav-icon">
 									</i> Selesai
 								</button>
 							</a>
-						<?php } ?>
+						</div>
 					</div>
-				</div>
+				<?php } ?>
 			</div>
 		</div>
 	<?php } ?>
