@@ -234,11 +234,11 @@ class Dashboard extends CI_Controller
         if ($id_layanan == 1) {
             $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp01')->result();
         } elseif ($id_layanan == 3) {
-                $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp03')->result();
+            $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp03')->result();
         } elseif ($id_layanan == 4) {
-                $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp04')->result();
+            $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp04')->result();
         } elseif ($id_layanan == 5) {
-                $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
+            $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
         }
 
         $this->load->view('header',$data_title);
@@ -297,11 +297,11 @@ class Dashboard extends CI_Controller
     public function kirim_alasn_permohonan()
     {
         $data = array(
-                'id_kasi' => $this->session->userdata('id_kasi'),
-                'keterangan' => $this->input->post('keterangan'),
-                'notif_pemohon' => 'Belum Dibaca',
-                'status' => 'Pending',
-                'tgl_persetujuan_kasi' => date("Y/m/d")
+            'id_kasi' => $this->session->userdata('id_kasi'),
+            'keterangan' => $this->input->post('keterangan'),
+            'notif_pemohon' => 'Belum Dibaca',
+            'status' => 'Pending',
+            'tgl_persetujuan_kasi' => date("Y/m/d")
         );
 
         $detailhere = $this->input->post('id_permohonan_ptsp');
@@ -309,16 +309,16 @@ class Dashboard extends CI_Controller
         $email = $this->m_kasi->get_data_pemohon($this->input->post('id_pemohon'));
         // Konfigurasi email
         $config = [
-                'mailtype'  => 'html',
-                'charset'   => 'utf-8',
-                'protocol'  => 'smtp',
-                'smtp_host' => 'smtp.gmail.com',
-                'smtp_user' => 'klatenkemenag7@gmail.com',  // Email gmail
-                'smtp_pass'   => 'dpdzadjbieahxykx',  // Password gmail
-                'smtp_crypto' => 'ssl',
-                'smtp_port'   => 465,
-                'crlf'    => "\r\n",
-                'newline' => "\r\n"
+            'mailtype'  => 'html',
+            'charset'   => 'utf-8',
+            'protocol'  => 'smtp',
+            'smtp_host' => 'smtp.gmail.com',
+            'smtp_user' => 'klatenkemenag7@gmail.com',  // Email gmail
+            'smtp_pass'   => 'dpdzadjbieahxykx',  // Password gmail
+            'smtp_crypto' => 'ssl',
+            'smtp_port'   => 465,
+            'crlf'    => "\r\n",
+            'newline' => "\r\n"
         ];
 
         // Load library email dan konfigurasinya
@@ -341,16 +341,16 @@ class Dashboard extends CI_Controller
 
         // Tampilkan pesan sukses atau error
         if ($this->email->send()) {
-                echo 'Sukses! email berhasil dikirim.';
+            echo 'Sukses! email berhasil dikirim.';
         } else {
-                echo 'Error! email tidak dapat dikirim.';
+            echo 'Error! email tidak dapat dikirim.';
         }
 
         $this->m_kasi->update_status_permohonan($detailhere, $data, 'permohonan_ptsp');
 
         if ($this->m_kasi->update_status_permohonan($detailhere, $data, 'permohonan_ptsp')); {
-                $this->session->set_flashdata('success', 'ditolak');
-                redirect('dashboard/list_permohonan_pending');
+            $this->session->set_flashdata('success', 'ditolak');
+            redirect('dashboard/list_permohonan_masuk');
         }
     }
 }

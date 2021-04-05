@@ -145,4 +145,14 @@ class M_kasi extends CI_Model
         $this->db->where('id_permohonan_ptsp ', $where);
         $this->db->update($tabel, $data);
     }
+
+    public function get_data_pemohon($id_pemohon)
+    {
+        $this->db->select('pemohon.*');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('pemohon', 'permohonan_ptsp.id_pemohon = pemohon.id_pemohon', 'INNER');
+        $this->db->where('permohonan_ptsp.id_pemohon', $id_pemohon);
+
+        return $this->db->get()->row();
+    }
 }

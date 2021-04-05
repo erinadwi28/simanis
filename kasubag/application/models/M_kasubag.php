@@ -57,7 +57,7 @@ class M_kasubag extends CI_Model
         $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_selesaiKasubag');
         $this->db->from('permohonan_ptsp');
         $this->db->where("(id_kasubag != 'null')");
-        $this->db->where("(status != 'Pending')");
+        $this->db->where("(status = 'Selesai')");
         $this->db->where('status_delete', 0);
 
         $hasil = $this->db->get();
@@ -75,7 +75,7 @@ class M_kasubag extends CI_Model
 
         return $this->db->get();
     }
-    
+
     //get list data permohonan yang sudah disetujui kasubag
     public function get_list_data_permohonan_selesaiKasubag()
     {
@@ -83,7 +83,7 @@ class M_kasubag extends CI_Model
         $this->db->from('permohonan_ptsp');
         $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
         $this->db->where("(permohonan_ptsp.id_kasubag != 'null')");
-        $this->db->where("(permohonan_ptsp.status != 'Pending')");
+        $this->db->where("(permohonan_ptsp.status = 'Selesai')");
         $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
 
         return $this->db->get();
