@@ -797,4 +797,24 @@ class Dashboard extends CI_Controller
         $this->session->set_flashdata('success', 'disimpan');
         redirect('dashboard/detail_ptsp05/' . $id_permohonan);
     }
+
+	//tampil preview ptsp05
+    public function tampil_ptsp05()
+    { // $id_permohonan
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header');
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp5/tampil_ptsp05');
+        $this->load->view('footer');
+    }
+
+	//cetak ptsp05
+    public function cetak_ptsp05()
+    {
+        $this->load->view('pemohon/ptsp5/cetak_ptsp05');
+    }
 }

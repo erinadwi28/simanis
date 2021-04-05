@@ -21,10 +21,6 @@ body {
   color: #000000;
 }
 
-.card .card-body:hover {
-  color: #007530;
-}
-
 .card .card-body table {
   color: #000000;
 }
