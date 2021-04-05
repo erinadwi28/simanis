@@ -833,4 +833,57 @@ class Dashboard extends CI_Controller
     {
         $this->load->view('pemohon/ptsp5/cetak_ptsp05');
     }
+
+      	//tampil sop ptsp25
+          public function sop_ptsp25()
+          { // $id_permohonan
+              $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+              $this->session->userdata('id_pemohon')])->row_array();
+              $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+      
+              $this->load->view('header');
+              $this->load->view('pemohon/sidebar_pemohon');
+              $this->load->view('topbar',$data);
+              $this->load->view('pemohon/ptsp25/sop_ptsp25');
+              $this->load->view('footer');
+          }
+
+    	//tampil form ptsp25
+        public function form_ptsp25()
+        { // $id_permohonan
+            $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+            $this->session->userdata('id_pemohon')])->row_array();
+            $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+    
+            $this->load->view('header');
+            $this->load->view('pemohon/sidebar_pemohon');
+            $this->load->view('topbar',$data);
+            $this->load->view('pemohon/ptsp25/form_ptsp25');
+            $this->load->view('footer');
+        }
+
+        //tampil detail ptsp25
+
+        //tampil form ubah ptsp25
+
+        //tampil preview ptsp25
+    public function tampil_ptsp25()
+    { // $id_permohonan
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header');
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp25/tampil_ptsp25');
+        $this->load->view('footer');
+    }
+
+	//cetak ptsp05
+    public function cetak_ptsp25()
+    {
+        $this->load->view('pemohon/ptsp25/cetak_ptsp25');
+    }
+    
 }

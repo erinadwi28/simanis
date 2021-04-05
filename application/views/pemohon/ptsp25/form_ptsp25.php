@@ -16,11 +16,11 @@
 	<!--Begin Content Profile-->
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
-		<?php foreach ($detail_profil_saya as $detail) { ?>
+		
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Surat Keterangan Haji Pertama</h6>
+					<h6 class="m-0 font-weight-bold text-center">Konsultasi dan informasi sertifikasi halal,zakat dan wakaf</h6>
 				</div>
 				<div class="card-body">
 					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
@@ -31,7 +31,7 @@
 							<label for="Nama" class="col-sm-3 col-form-label">Nama Lengkap</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama" name="nama" value="<?= $detail->nama; ?>">
+									<input type="text" class="form-control" id="nama" name="nama" value="">
 								</div>
 							</div>
 						</div>
@@ -84,7 +84,6 @@
 							</div>
 						</div>
 				</div>
-				<?php } ?>
 				<div class="card-footer">
 					<div class="float-right">
 						<a href="#">
