@@ -132,7 +132,7 @@
 						<div class="badan_surat">
 							<div class="no_surat">
 								<center>
-									<p><u>SURAT KETERANGAN</u><br>
+									<p><u>SURAT KETERANGAN PTSP 25</u><br>
 										Nomor : </p>
 								</center>
 							</div>
