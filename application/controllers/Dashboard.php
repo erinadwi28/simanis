@@ -834,6 +834,78 @@ class Dashboard extends CI_Controller
         $this->load->view('pemohon/ptsp5/cetak_ptsp05');
     }
 
+	//tampil sop ptsp06
+	public function sop_ptsp06()
+    { // $id_permohonan
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header');
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp6/sop_ptsp06');
+        $this->load->view('footer');
+    }
+	//tampil form ptsp06
+	public function form_ptsp06()
+    { // $id_permohonan
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header');
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp6/form_ptsp06');
+        $this->load->view('footer');
+    }
+	//tampil detail ptsp06
+	public function detail_ptsp06()
+    { // $id_permohonan
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header');
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp6/detail_ptsp06');
+        $this->load->view('footer');
+    }
+	//tampil form ubah ptsp06
+	public function form_ubah_ptsp06()
+    { // $id_permohonan
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header');
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp6/form_ubah_ptsp06');
+        $this->load->view('footer');
+    }
+	// tampil preview ptsp06
+	public function tampil_ptsp06()
+    { // $id_permohonan
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header');
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp6/tampil_ptsp06');
+        $this->load->view('footer');
+    }
+
+	//cetak ptsp06
+	public function cetak_ptsp06()
+    {
+        $this->load->view('pemohon/ptsp6/cetak_ptsp06');
+    }
+
       	//tampil sop ptsp25
           public function sop_ptsp25()
           { // $id_permohonan

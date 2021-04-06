@@ -456,4 +456,20 @@ class Dashboard extends CI_Controller
                         redirect('dashboard/list_permohonan_pending');
                 }
         }
+
+	//tampil detail ptsp06
+	//list permohonan proses kasubag
+        public function detail_ptsp06()
+        {
+                $data_title['title'] = 'Detail Permohonan';                
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $this->load->view('header',$data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/detail_ptsp06');
+                $this->load->view('footer');
+        }
 }
