@@ -98,8 +98,8 @@
 			display: block;
 			position: absolute;
 			float: left;
-			margin-top: 200px;
-			margin-right: -500px;
+			margin-top: 65px;
+			margin-right: -300px;
 		}
 	</style>
 
@@ -189,7 +189,7 @@
 										mestinya
 									</p>
 								</div>
-								<div class="row">
+								<div class="row bawah">
 									<div class="col-md-6">
 									</div>
 									<div class="col-md-6">
@@ -211,7 +211,7 @@
 								</div>
 							</div>
 							<br> <br>
-							<div class="row">
+							<div class="row kepala">
 								<div class="col-md-6">
 								</div>
 								<div class="col-md-6">
