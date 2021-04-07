@@ -514,4 +514,38 @@ class Dashboard extends CI_Controller
                 $dompdf->render();
                 $dompdf->stream('Permohonan Surat Keterangan Haji Pertama');
         }
+
+	//tampil detail ptsp06
+	public function detail_ptsp06()
+        {
+                $data_title['title'] = 'Detail Permohonan';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/ptsp6/detail_ptsp06');
+                $this->load->view('footer');
+        }
+	//tampil preview ptsp06
+	public function tampil_ptsp06()
+        {
+                $data_title['title'] = 'Detail Permohonan';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/ptsp6/tampil_ptsp06');
+                $this->load->view('footer');
+        }
+	//tampil cetak ptsp06
+	public function cetak_ptsp06()
+        {
+                $this->load->view('frontoffice/ptsp6/cetak_ptsp06');
+        }
 }
