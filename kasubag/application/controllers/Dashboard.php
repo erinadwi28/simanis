@@ -14,38 +14,38 @@ class Dashboard extends CI_Controller
         }
 
         public function index()
-    {
-        $data_title['title'] = 'SIMANIS: Dashboard';                
-        $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-        $this->session->userdata('id_kasubag')])->row_array();
+        {
+                $data_title['title'] = 'SIMANIS: Dashboard';
+                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
+                $this->session->userdata('id_kasubag')])->row_array();
 
-        $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-        $data_permohonan['total_notif'] = $this->m_kasubag->jml_notif()->result();
-        $data_permohonan['permohonan_selesaiKasubag'] = $this->m_kasubag->jml_permohonan_selesaiKasubag()->result();
+                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
+                $data_permohonan['total_notif'] = $this->m_kasubag->jml_notif()->result();
+                $data_permohonan['permohonan_selesaiKasubag'] = $this->m_kasubag->jml_permohonan_selesaiKasubag()->result();
 
-        $this->load->view('header', $data_title);
-        $this->load->view('kasubag/sidebar');
-        $this->load->view('topbar', $data);
-        $this->load->view('kasubag/dashboard', $data_permohonan);
-        $this->load->view('footer');
-    }
-    //profil
-    public function profil()
-    {
-        $data_title['title'] = 'Profil Saya';                
-        $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-        $this->session->userdata('id_kasubag')])->row_array();
+                $this->load->view('header', $data_title);
+                $this->load->view('kasubag/sidebar');
+                $this->load->view('topbar', $data);
+                $this->load->view('kasubag/dashboard', $data_permohonan);
+                $this->load->view('footer');
+        }
+        //profil
+        public function profil()
+        {
+                $data_title['title'] = 'Profil Saya';
+                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
+                $this->session->userdata('id_kasubag')])->row_array();
 
-        $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-        $detailhere = array('id_kasubag' => $this->session->userdata('id_kasubag'));
-        $data_detail['detail_profil_saya'] = $this->m_kasubag->get_detail_profil_saya($detailhere, 'kasubag')->result();
+                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
+                $detailhere = array('id_kasubag' => $this->session->userdata('id_kasubag'));
+                $data_detail['detail_profil_saya'] = $this->m_kasubag->get_detail_profil_saya($detailhere, 'kasubag')->result();
 
-        $this->load->view('header', $data_title);
-        $this->load->view('kasubag/sidebar');
-        $this->load->view('topbar', $data);
-        $this->load->view('kasubag/profil', $data_detail);
-        $this->load->view('footer');
-    }
+                $this->load->view('header', $data_title);
+                $this->load->view('kasubag/sidebar');
+                $this->load->view('topbar', $data);
+                $this->load->view('kasubag/profil', $data_detail);
+                $this->load->view('footer');
+        }
 
         //ubah foto profil
         public function upload_foto_profil()
@@ -90,291 +90,295 @@ class Dashboard extends CI_Controller
 
         //menampilkan halaman form ubah kata sandi
         public function form_ubahsandi()
-    {
-        $data_title['title'] = 'Ubah Kata Sandi Saya';                
-        $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-        $this->session->userdata('id_kasubag')])->row_array();
+        {
+                $data_title['title'] = 'Ubah Kata Sandi Saya';
+                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
+                $this->session->userdata('id_kasubag')])->row_array();
 
-        $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
+                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
 
-        $this->load->view('header', $data_title);
-        $this->load->view('kasubag/sidebar');
-        $this->load->view('topbar', $data);
-        $this->load->view('kasubag/ubahsandi');
-        $this->load->view('footer');
-    }
-
-    // aksi ubah kata
-    public function ubah_sandi()
-    {
-        $kata_sandi_awal = $this->input->post('kata_sandi_awal');
-        $data_lama = sha1($kata_sandi_awal);
-
-        $kata_sandi_baru = $this->input->post('kata_sandi_baru');
-        $kata_sandi_hash = sha1($kata_sandi_baru);
-
-        $data_baru = array(
-            'kata_sandi' => $kata_sandi_hash,
-        );
-
-        $konfirmasi = $this->input->post('konfirmasi');
-
-        $where = $this->session->userdata('id_kasubag');
-
-        $fo = $this->m_kasubag->get_kasubag($where);
-
-        if ($konfirmasi === $kata_sandi_baru) {
-            if ($data_lama === $fo['kata_sandi']) {
-                $this->m_kasubag->update_sandi($where, $data_baru, 'kasubag');
-                $this->session->set_flashdata('success', '<b>Kata Sandi</b> Berhasil Diubah');
-                redirect('dashboard/form_ubahsandi');
-            } else {
-                $this->session->set_flashdata('error', '<b>Kata Sandi Lama</b> Salah');
-                redirect('dashboard/form_ubahsandi');
-            }
-        } else {
-            $this->session->set_flashdata('error', 'Konfirmasi Sandi<b> Tidak Sesuai</b>');
-            redirect('dashboard/form_ubahsandi');
+                $this->load->view('header', $data_title);
+                $this->load->view('kasubag/sidebar');
+                $this->load->view('topbar', $data);
+                $this->load->view('kasubag/ubahsandi');
+                $this->load->view('footer');
         }
-    }
+
+        // aksi ubah kata
+        public function ubah_sandi()
+        {
+                $kata_sandi_awal = $this->input->post('kata_sandi_awal');
+                $data_lama = sha1($kata_sandi_awal);
+
+                $kata_sandi_baru = $this->input->post('kata_sandi_baru');
+                $kata_sandi_hash = sha1($kata_sandi_baru);
+
+                $data_baru = array(
+                        'kata_sandi' => $kata_sandi_hash,
+                );
+
+                $konfirmasi = $this->input->post('konfirmasi');
+
+                $where = $this->session->userdata('id_kasubag');
+
+                $fo = $this->m_kasubag->get_kasubag($where);
+
+                if ($konfirmasi === $kata_sandi_baru) {
+                        if ($data_lama === $fo['kata_sandi']) {
+                                $this->m_kasubag->update_sandi($where, $data_baru, 'kasubag');
+                                $this->session->set_flashdata('success', '<b>Kata Sandi</b> Berhasil Diubah');
+                                redirect('dashboard/form_ubahsandi');
+                        } else {
+                                $this->session->set_flashdata('error', '<b>Kata Sandi Lama</b> Salah');
+                                redirect('dashboard/form_ubahsandi');
+                        }
+                } else {
+                        $this->session->set_flashdata('error', 'Konfirmasi Sandi<b> Tidak Sesuai</b>');
+                        redirect('dashboard/form_ubahsandi');
+                }
+        }
 
 
-    //list data permohonan masuk
-    public function list_permohonan_masuk()
-    {
-        $data_title['title'] = 'List Permohonan Masuk';                
-        $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-        $this->session->userdata('id_kasubag')])->row_array();
+        //list data permohonan masuk
+        public function list_permohonan_masuk()
+        {
+                $data_title['title'] = 'List Permohonan Masuk';
+                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
+                $this->session->userdata('id_kasubag')])->row_array();
 
-        $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-        $data_detail['data_permohonan'] = $this->m_kasubag->get_list_data_permohonan('Proses Kasubag')->result();
+                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
+                $data_detail['data_permohonan'] = $this->m_kasubag->get_list_data_permohonan('Proses Kasubag')->result();
 
-        $this->load->view('header',$data_title);
-        $this->load->view('kasubag/sidebar');
-        $this->load->view('topbar', $data);
-        $this->load->view('kasubag/list_permohonan_masuk', $data_detail);
-        $this->load->view('footer');
-    }
+                $this->load->view('header', $data_title);
+                $this->load->view('kasubag/sidebar');
+                $this->load->view('topbar', $data);
+                $this->load->view('kasubag/list_permohonan_masuk', $data_detail);
+                $this->load->view('footer');
+        }
 
-    //list data permohonan pending
-    public function list_permohonan_pending()
-    {
-        $data_title['title'] = 'List Permohonan Pending';                
-        $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-        $this->session->userdata('id_kasubag')])->row_array();
+        //list data permohonan pending
+        public function list_permohonan_pending()
+        {
+                $data_title['title'] = 'List Permohonan Pending';
+                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
+                $this->session->userdata('id_kasubag')])->row_array();
 
-        $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-        $data_detail['data_permohonan'] = $this->m_kasubag->get_list_data_permohonan('Pending')->result();
+                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
+                $data_detail['data_permohonan'] = $this->m_kasubag->get_list_data_permohonan('Pending')->result();
 
-        $this->load->view('header',$data_title);
-        $this->load->view('kasubag/sidebar');
-        $this->load->view('topbar', $data);
-        $this->load->view('kasubag/list_permohonan_masuk', $data_detail);
-        $this->load->view('footer');
-    }
+                $this->load->view('header', $data_title);
+                $this->load->view('kasubag/sidebar');
+                $this->load->view('topbar', $data);
+                $this->load->view('kasubag/list_permohonan_masuk', $data_detail);
+                $this->load->view('footer');
+        }
 
-    //list data permohonan yang teralh disetujui
-    public function list_permohonan_selesaiKasubag()
-    {
-        $data_title['title'] = 'List Permohonan Selesai Kasubag';                
-        $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-        $this->session->userdata('id_kasubag')])->row_array();
+        //list data permohonan yang teralh disetujui
+        public function list_permohonan_selesaiKasubag()
+        {
+                $data_title['title'] = 'List Permohonan Selesai Kasubag';
+                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
+                $this->session->userdata('id_kasubag')])->row_array();
 
-        $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-        $data_detail['data_permohonan'] = $this->m_kasubag->get_list_data_permohonan_selesaiKasubag()->result();
+                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
+                $data_detail['data_permohonan'] = $this->m_kasubag->get_list_data_permohonan_selesaiKasubag()->result();
 
-        $this->load->view('header',$data_title);
-        $this->load->view('kasubag/sidebar');
-        $this->load->view('topbar', $data);
-        $this->load->view('kasubag/list_permohonan_selesaiKasubag', $data_detail);
-        $this->load->view('footer');
-    }
+                $this->load->view('header', $data_title);
+                $this->load->view('kasubag/sidebar');
+                $this->load->view('topbar', $data);
+                $this->load->view('kasubag/list_permohonan_selesaiKasubag', $data_detail);
+                $this->load->view('footer');
+        }
 
-    //menampilkan detail data permohonan dari list permohonan
-    public function detail_data_permohonan($id_permohonan_ptsp, $id_layanan)
-    {
-        $data_title['title'] = 'Detail Permohonan';                
-            $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-            $this->session->userdata('id_kasubag')])->row_array();
-            $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
+        //menampilkan detail data permohonan dari list permohonan
+        public function detail_data_permohonan($id_permohonan_ptsp, $id_layanan)
+        {
+                $data_title['title'] = 'Detail Permohonan';
+                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
+                $this->session->userdata('id_kasubag')])->row_array();
+                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
 
-            $data_detail['detail_permohonan'] = $this->m_kasubag->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
+                $data_detail['detail_permohonan'] = $this->m_kasubag->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
 
-            if ($id_layanan == 1) {
-                    $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp01')->result();
-            } elseif ($id_layanan == 3) {
-                    $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp03')->result();
-            } elseif ($id_layanan == 4) {
-                    $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp04')->result();
-            } elseif ($id_layanan == 5) {
-                    $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
-            }
+                if ($id_layanan == 1) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp01')->result();
+                } elseif ($id_layanan == 3) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp03')->result();
+                } elseif ($id_layanan == 4) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp04')->result();
+                } elseif ($id_layanan == 5) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
+                } elseif ($id_layanan == 6) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp06')->result();
+                }
 
-            $this->load->view('header',$data_title);
-            $this->load->view('kasubag/sidebar');
-            $this->load->view('topbar', $data);
-            if ($id_layanan == 1) {
-                    $this->load->view('kasubag/ptsp1/detail_ptsp01', $data_detail);
-            } elseif ($id_layanan == 3) {
-                    $this->load->view('kasubag/ptsp3/detail_ptsp03', $data_detail);
-            } elseif ($id_layanan == 4) {
-                    $this->load->view('kasubag/ptsp4/detail_ptsp04', $data_detail);
-            } elseif ($id_layanan == 5) {
-                    $this->load->view('kasubag/ptsp5/detail_ptsp05', $data_detail);
-            }
-            $this->load->view('footer');
-    }
+                $this->load->view('header', $data_title);
+                $this->load->view('kasubag/sidebar');
+                $this->load->view('topbar', $data);
+                if ($id_layanan == 1) {
+                        $this->load->view('kasubag/ptsp1/detail_ptsp01', $data_detail);
+                } elseif ($id_layanan == 3) {
+                        $this->load->view('kasubag/ptsp3/detail_ptsp03', $data_detail);
+                } elseif ($id_layanan == 4) {
+                        $this->load->view('kasubag/ptsp4/detail_ptsp04', $data_detail);
+                } elseif ($id_layanan == 5) {
+                        $this->load->view('kasubag/ptsp5/detail_ptsp05', $data_detail);
+                } elseif ($id_layanan == 6) {
+                        $this->load->view('kasubag/ptsp6/detail_ptsp06', $data_detail);
+                }
+                $this->load->view('footer');
+        }
 
-    //update status permohonan menjadi selesai
-    public function aksi_setujui_permohonan($id_permohonan_ptsp)
-    {
-            $data = array(
-                    'id_kasubag' => $this->session->userdata('id_kasubag'),
-                    'notif_pemohon' => 'Belum Dibaca',
-                    'status' => 'Selesai',
-                    'tgl_persetujuan_kasubag' => date("Y/m/d")
-            );
-            $permohonan = $this->m_kasubag->get_data_permohonan_ptsp($id_permohonan_ptsp);
-            $email = $this->m_kasubag->get_data_pemohon($permohonan->id_pemohon);
-            // Konfigurasi email
-            $config = [
-                    'mailtype'  => 'html',
-                    'charset'   => 'utf-8',
-                    'protocol'  => 'smtp',
-                    'smtp_host' => 'smtp.gmail.com',
-                    'smtp_user' => 'klatenkemenag7@gmail.com',  // Email gmail
-                    'smtp_pass'   => 'dpdzadjbieahxykx',  // Password gmail
-                    'smtp_crypto' => 'ssl',
-                    'smtp_port'   => 465,
-                    'crlf'    => "\r\n",
-                    'newline' => "\r\n"
-            ];
+        //update status permohonan menjadi selesai
+        public function aksi_setujui_permohonan($id_permohonan_ptsp)
+        {
+                $data = array(
+                        'id_kasubag' => $this->session->userdata('id_kasubag'),
+                        'notif_pemohon' => 'Belum Dibaca',
+                        'status' => 'Selesai',
+                        'tgl_persetujuan_kasubag' => date("Y/m/d")
+                );
+                $permohonan = $this->m_kasubag->get_data_permohonan_ptsp($id_permohonan_ptsp);
+                $email = $this->m_kasubag->get_data_pemohon($permohonan->id_pemohon);
+                // Konfigurasi email
+                $config = [
+                        'mailtype'  => 'html',
+                        'charset'   => 'utf-8',
+                        'protocol'  => 'smtp',
+                        'smtp_host' => 'smtp.gmail.com',
+                        'smtp_user' => 'klatenkemenag7@gmail.com',  // Email gmail
+                        'smtp_pass'   => 'dpdzadjbieahxykx',  // Password gmail
+                        'smtp_crypto' => 'ssl',
+                        'smtp_port'   => 465,
+                        'crlf'    => "\r\n",
+                        'newline' => "\r\n"
+                ];
 
-            // Load library email dan konfigurasinya
-            $this->load->library('email', $config);
+                // Load library email dan konfigurasinya
+                $this->load->library('email', $config);
 
-            // Email dan nama pengirim
-            $this->email->from('no-reply@simanisklaten.com', 'simanisklaten.com');
+                // Email dan nama pengirim
+                $this->email->from('no-reply@simanisklaten.com', 'simanisklaten.com');
 
-            // Email penerima
-            $this->email->to($email->email); // Ganti dengan email tujuan
+                // Email penerima
+                $this->email->to($email->email); // Ganti dengan email tujuan
 
-            // Lampiran email, isi dengan url/path file
-            //     $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
+                // Lampiran email, isi dengan url/path file
+                //     $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
 
-            // Subject email
-            $this->email->subject('Informasi Permohonan Anda');
+                // Subject email
+                $this->email->subject('Informasi Permohonan Anda');
 
-            // Isi email
-            $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan bahwasannya permohonan anda telah <b>disetujui</b>, dan sudah bisa diambil di Kantor Kementrian Agama Kabupaten Klaten yang berada di JL.Ronggowarsito Klaten<br><br>Terimakasih<br>Salam,<br><br>Kementrian Agama Kabupaten Klaten');
+                // Isi email
+                $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan bahwasannya permohonan anda telah <b>disetujui</b>, dan sudah bisa diambil di Kantor Kementrian Agama Kabupaten Klaten yang berada di JL.Ronggowarsito Klaten<br><br>Terimakasih<br>Salam,<br><br>Kementrian Agama Kabupaten Klaten');
 
-            // Tampilkan pesan sukses atau error
-            if ($this->email->send()) {
-                    echo 'Sukses! email berhasil dikirim.';
-            } else {
-                    echo 'Error! email tidak dapat dikirim.';
-            }
+                // Tampilkan pesan sukses atau error
+                if ($this->email->send()) {
+                        echo 'Sukses! email berhasil dikirim.';
+                } else {
+                        echo 'Error! email tidak dapat dikirim.';
+                }
 
-            $this->m_kasubag->update_status_permohonan($id_permohonan_ptsp, $data, 'permohonan_ptsp');
+                $this->m_kasubag->update_status_permohonan($id_permohonan_ptsp, $data, 'permohonan_ptsp');
 
-            $this->session->set_flashdata('success', 'permohonan sukses disetujui');
-            redirect('dashboard/list_permohonan_selesaiKasubag');
-    }
+                $this->session->set_flashdata('success', 'permohonan sukses disetujui');
+                redirect('dashboard/list_permohonan_selesaiKasubag');
+        }
 
-    //aksi tolak
-    //tampil form tolak permohonan
-    public function form_input_keterangan($id_permohonan_ptsp)
-    {
-        $data_title['title'] = 'Form Keterangan Revisi Permohonan';                
+        //aksi tolak
+        //tampil form tolak permohonan
+        public function form_input_keterangan($id_permohonan_ptsp)
+        {
+                $data_title['title'] = 'Form Keterangan Revisi Permohonan';
 
-            $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-            $this->session->userdata('id_kasubag')])->row_array();
-            $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
+                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
+                $this->session->userdata('id_kasubag')])->row_array();
+                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
 
-            $data_detail['id_permohonan_ptsp'] = $this->db->get_where('permohonan_ptsp', ['id_permohonan_ptsp' =>
-            $id_permohonan_ptsp])->row_array();
+                $data_detail['id_permohonan_ptsp'] = $this->db->get_where('permohonan_ptsp', ['id_permohonan_ptsp' =>
+                $id_permohonan_ptsp])->row_array();
 
-            $this->load->view('header', $data_detail);
-            $this->load->view('kasubag/sidebar');
-            $this->load->view('topbar', $data);
-            $this->load->view('kasubag/form_input_keterangan', $data_detail);
-            $this->load->view('footer');
-    }
+                $this->load->view('header', $data_detail);
+                $this->load->view('kasubag/sidebar');
+                $this->load->view('topbar', $data);
+                $this->load->view('kasubag/form_input_keterangan', $data_detail);
+                $this->load->view('footer');
+        }
 
-    //aksi tolak permohonan
-    public function kirim_alasn_permohonan()
-    {
-            $data = array(
-                    'id_kasubag' => $this->session->userdata('id_kasubag'),
-                    'keterangan' => $this->input->post('keterangan'),
-                    'notif_pemohon' => 'Belum Dibaca',
-                    'status' => 'Pending',
-                    'tgl_persetujuan_kasubag' => date("Y/m/d")
-            );
+        //aksi tolak permohonan
+        public function kirim_alasn_permohonan()
+        {
+                $data = array(
+                        'id_kasubag' => $this->session->userdata('id_kasubag'),
+                        'keterangan' => $this->input->post('keterangan'),
+                        'notif_pemohon' => 'Belum Dibaca',
+                        'status' => 'Pending',
+                        'tgl_persetujuan_kasubag' => date("Y/m/d")
+                );
 
-            $detailhere = $this->input->post('id_permohonan_ptsp');
+                $detailhere = $this->input->post('id_permohonan_ptsp');
 
-            $email = $this->m_kasubag->get_data_pemohon($this->input->post('id_pemohon'));
-            // Konfigurasi email
-            $config = [
-                    'mailtype'  => 'html',
-                    'charset'   => 'utf-8',
-                    'protocol'  => 'smtp',
-                    'smtp_host' => 'smtp.gmail.com',
-                    'smtp_user' => 'klatenkemenag7@gmail.com',  // Email gmail
-                    'smtp_pass'   => 'dpdzadjbieahxykx',  // Password gmail
-                    'smtp_crypto' => 'ssl',
-                    'smtp_port'   => 465,
-                    'crlf'    => "\r\n",
-                    'newline' => "\r\n"
-            ];
+                $email = $this->m_kasubag->get_data_pemohon($this->input->post('id_pemohon'));
+                // Konfigurasi email
+                $config = [
+                        'mailtype'  => 'html',
+                        'charset'   => 'utf-8',
+                        'protocol'  => 'smtp',
+                        'smtp_host' => 'smtp.gmail.com',
+                        'smtp_user' => 'klatenkemenag7@gmail.com',  // Email gmail
+                        'smtp_pass'   => 'dpdzadjbieahxykx',  // Password gmail
+                        'smtp_crypto' => 'ssl',
+                        'smtp_port'   => 465,
+                        'crlf'    => "\r\n",
+                        'newline' => "\r\n"
+                ];
 
-            // Load library email dan konfigurasinya
-            $this->load->library('email', $config);
+                // Load library email dan konfigurasinya
+                $this->load->library('email', $config);
 
-            // Email dan nama pengirim
-            $this->email->from('no-reply@simanisklaten.com', 'simanisklaten.com');
+                // Email dan nama pengirim
+                $this->email->from('no-reply@simanisklaten.com', 'simanisklaten.com');
 
-            // Email penerima
-            $this->email->to($email->email); // Ganti dengan email tujuan
+                // Email penerima
+                $this->email->to($email->email); // Ganti dengan email tujuan
 
-            // Lampiran email, isi dengan url/path file
-            //     $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
+                // Lampiran email, isi dengan url/path file
+                //     $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
 
-            // Subject email
-            $this->email->subject('Informasi Permohonan Anda');
+                // Subject email
+                $this->email->subject('Informasi Permohonan Anda');
 
-            // Isi email
-            $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan kepada pemohon bahwasannya permohonan anda dipending dikarenakan ' . $this->input->post('keterangan') . ', mohon pemberitahuan ini untuk segera ditindak lanjuti. <br>Terimakasih<br>Salam,<br><br>Kementrian Agama Kabupaten Klaten');
+                // Isi email
+                $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan kepada pemohon bahwasannya permohonan anda dipending dikarenakan ' . $this->input->post('keterangan') . ', mohon pemberitahuan ini untuk segera ditindak lanjuti. <br>Terimakasih<br>Salam,<br><br>Kementrian Agama Kabupaten Klaten');
 
-            // Tampilkan pesan sukses atau error
-            if ($this->email->send()) {
-                    echo 'Sukses! email berhasil dikirim.';
-            } else {
-                    echo 'Error! email tidak dapat dikirim.';
-            }
+                // Tampilkan pesan sukses atau error
+                if ($this->email->send()) {
+                        echo 'Sukses! email berhasil dikirim.';
+                } else {
+                        echo 'Error! email tidak dapat dikirim.';
+                }
 
-            $this->m_kasubag->update_status_permohonan($detailhere, $data, 'permohonan_ptsp');
+                $this->m_kasubag->update_status_permohonan($detailhere, $data, 'permohonan_ptsp');
 
-            if ($this->m_kasubag->update_status_permohonan($detailhere, $data, 'permohonan_ptsp')); {
-                    $this->session->set_flashdata('success', 'ditolak');
-                    redirect('dashboard/list_permohonan_pending');
-            }
-    }
-    //tampil detail permohonan ptsp06
-    public function detail_ptsp06()
-    {
-        $data_title['title'] = 'Detail Permohonan';                
-        $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-        $this->session->userdata('id_kasubag')])->row_array();
+                if ($this->m_kasubag->update_status_permohonan($detailhere, $data, 'permohonan_ptsp')); {
+                        $this->session->set_flashdata('success', 'ditolak');
+                        redirect('dashboard/list_permohonan_pending');
+                }
+        }
+        //tampil detail permohonan ptsp06
+        public function detail_ptsp06()
+        {
+                $data_title['title'] = 'Detail Permohonan';
+                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
+                $this->session->userdata('id_kasubag')])->row_array();
 
-        $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-        
+                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
 
-        $this->load->view('header',$data_title);
-        $this->load->view('kasubag/sidebar');
-        $this->load->view('topbar', $data);
-        $this->load->view('kasubag/ptsp6/detail_ptsp06');
-        $this->load->view('footer');
-    }
+
+                $this->load->view('header', $data_title);
+                $this->load->view('kasubag/sidebar');
+                $this->load->view('topbar', $data);
+                $this->load->view('kasubag/ptsp6/detail_ptsp06');
+                $this->load->view('footer');
+        }
 }
