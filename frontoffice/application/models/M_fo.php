@@ -181,7 +181,7 @@ class M_fo extends CI_Model
         $this->db->where('id_permohonan_ptsp ', $where);
         $this->db->update($tabel, $data);
     }
-    
+
     //detail permohonan ptsp 
     public function get_detail_ptsp($id_permohonan, $tabel)
     {
@@ -213,5 +213,16 @@ class M_fo extends CI_Model
         $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan_ptsp);
 
         return $this->db->get()->row();
+    }
+
+    //get data pemohon yang mengajukan permohonan
+    public function get_data_pemohon_ptsp($id_permohonan_ptsp)
+    {
+        $this->db->select('pemohon.*');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('pemohon', 'permohonan_ptsp.id_pemohon = pemohon.id_pemohon', 'INNER');
+        $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan_ptsp);
+
+        return $this->db->get();
     }
 }

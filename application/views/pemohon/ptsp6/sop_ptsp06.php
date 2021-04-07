@@ -29,7 +29,7 @@
 							<li>Pemohon Mengunggah Fotocopyan SK Ijin Operasional</li>
 							<li>Pemohon Mengunggah Fotocopyan KTP</li>
 							<li>Pemohon Mengunggah Fotocopyan KK</li>
-							<li>Pemohon Mengisi dan Menlengkapi form pengajuan yang telah disediakan.</li>
+							<li>Pemohon Mengisi dan Melengkapi form pengajuan yang telah disediakan.</li>
 							<li>Pemohon Menunggu Informasi dari Kemenag terkait proses pengajuan permohonan.</li>
 						</ol>
 					</p>
