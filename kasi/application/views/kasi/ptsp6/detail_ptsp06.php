@@ -13,6 +13,8 @@
 	</div>
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
+		<?php
+		foreach ($detail_ptsp as $detail) { ?>
 		<div class="col-md-8 mb-4">
 			<div class="card shadow">
 				<div class="card-header py-3">
@@ -26,71 +28,75 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td></td>
+								<td><?= $detail->nama_jamaah_haji ?></td>
 							</tr>
 							<tr>
 								<td><b>Alamat Lengkap</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td></td>
+								<td><?= $detail->alamat ?></td>
 							</tr>
 							<tr>
 								<td><b>Tempat Lahir</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td></td>
+								<td><?= $detail->tempat_lahir ?></td>
 							</tr>
 							<tr>
 								<td><b>Tanggal Lahir</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td></td>
+								<td><?= $detail->tanggal_lahir ?></td>
 							</tr>
 							<tr>
 								<td><b>No. Handphone</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td></td>
+								<td><?= $detail->no_hp ?></td>
 							</tr>
 							<tr>
 								<td><b>Nama PPIU/PIHK</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td></td>
+								<td><?= $detail->nama_ppiu_pihk ?></td>
 							</tr>
 							<tr>
 								<td><b>No. SK PPIU/PIHK</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td></td>
+								<td><?= $detail->no_sk_ppiu_pihk ?></td>
 							</tr>
 							<tr>
 								<td><b>Tahun SK</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td></td>
+								<td><?= $detail->tahun_sk ?></td>
 							</tr>
 							<tr>
 								<td><b>Tanggal Permohonan</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td></td>
+								<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
 							</tr>
 
 							<tr>
-								<td><b>Keterangan Permohonan Pending</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td></td>
+								<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
+        							<tr>
+        								<td><b>Keterangan Permohonan Pending</b></td>
+        								<td> </td>
+        								<td> </td>
+        								<td>:</td>
+        								<td><?= $detail->keterangan; ?></td>
+        							</tr>
+        						<?php } ?>
 							</tr>
 						</tbody>
 					</table>
@@ -112,16 +118,15 @@
 
 				<div class="card-body">
 					<center>
-
-						<p></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary" href="" target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-
-						<p class="mb-0">Belum ada lampiran</p>
-
-
+						<?php if ($detail->srt_permohonan != null) { ?>
+        					<p><?= $detail->srt_permohonan; ?></p>
+        					<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
+        						<i class="fa fa-download nav-icon">
+        						</i> Klik untuk melihat
+        					</a>
+        				<?php } elseif ($detail->srt_permohonan == null) { ?>
+        					<p>Belum ada lampiran</p>
+        				<?php } ?>
 					</center>
 				</div>
 
@@ -141,15 +146,15 @@
 				</div>
 				<div class="card-body">
 					<center>
-
-						<p></p>
-						<a id="btn_upload" class="btn btn-sm btn-success" href="" target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-
-						<p class="mb-0">Belum ada lampiran</p>
-
+						<?php if ($detail->sk_ijin_oprasional != null) { ?>
+        					<p><?= $detail->sk_ijin_oprasional; ?></p>
+        					<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/sk_ijin_operasional/<?= $detail->sk_ijin_oprasional ?>" target="_blank">
+        						<i class="fa fa-download nav-icon">
+        						</i> Klik untuk melihat
+        					</a>
+        				<?php } elseif ($detail->sk_ijin_oprasional == null) { ?>
+        					<p>Belum ada lampiran</p>
+        				<?php } ?>
 					</center>
 				</div>
 
@@ -170,15 +175,15 @@
 
 				<div class="card-body">
 					<center>
-
-						<p></p>
-						<a id="btn_upload" class="btn btn-sm btn-success" href="" target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-
-						<p class="mb-0">Belum ada lampiran</p>
-
+						<?php if ($detail->ktp != null) { ?>
+        					<p><?= $detail->ktp; ?></p>
+        					<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/fc_ktp/<?= $detail->ktp ?>" target="_blank">
+        						<i class="fa fa-download nav-icon">
+        						</i> Klik untuk melihat
+        					</a>
+        				<?php } elseif ($detail->ktp == null) { ?>
+        					<p>Belum ada lampiran</p>
+        				<?php } ?>
 					</center>
 				</div>
 
@@ -199,15 +204,15 @@
 
 				<div class="card-body">
 					<center>
-
-						<p></p>
-						<a id="btn_upload" class="btn btn-sm btn-success" href="" target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-
-						<p class="mb-0">Belum ada lampiran</p>
-
+						<?php if ($detail->kk != null) { ?>
+        					<p><?= $detail->kk; ?></p>
+        					<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/fc_kk/<?= $detail->kk ?>" target="_blank">
+        						<i class="fa fa-download nav-icon">
+        						</i> Klik untuk melihat
+        					</a>
+        				<?php } elseif ($detail->kk == null) { ?>
+        					<p>Belum ada lampiran</p>
+        				<?php } ?>
 					</center>
 				</div>
 
@@ -220,20 +225,24 @@
 	</div>
 	<!-- Button Tolak & Setujui -->
 	<div class="row clearfix float-right px-2">
-
-		<a href="" class="mr-2">
-			<button id=" btn_tolak" class="btn btn-sm btn-danger" type="submit">
-				<i class="fas fa-times-circle">
-				</i> Tolak
-			</button>
-		</a>
-		<a href="">
-			<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
-				<i class="fas fa-check-circle">
-				</i> Terima
-			</button>
-		</a>
+		<?php if ($detail->status == 'Proses Kasi') { ?>
+        	<div class="float-right">
+        		<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>">
+        			<button id=" btn_tolak" class="btn btn-sm btn-danger" type="submit">
+        				<i class="fas fa-times-circle">
+        				</i> Tolak
+        			</button>
+        		</a>
+        		<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+        			<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
+        				<i class="fas fa-check-circle">
+        				</i> Terima
+        			</button>
+        		</a>
+        	</div>
+        <?php } ?>
 	</div>
+	<?php }?>
 	<!--End Content Profile-->
 </div>
 <!-- /.container-fluid -->
