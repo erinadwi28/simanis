@@ -117,6 +117,13 @@
         								<td><?= $detail->nama ?></td>
         							</tr>
         							<tr>
+        								<td><b>No. Handphone</b></td>
+        								<td> </td>
+        								<td> </td>
+        								<td>:</td>
+        								<td><?= $detail->no_hp ?></td>
+        							</tr>
+        							<tr>
         								<td><b>Tempat Lahir</b></td>
         								<td> </td>
         								<td> </td>

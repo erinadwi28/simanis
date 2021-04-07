@@ -601,7 +601,7 @@
 					</div>
 					<div class="row mt-3">
 						<div class="col-md-12">
-							<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+							<a href="<?= base_url('dashboard/sop_ptsp25') ?>" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
