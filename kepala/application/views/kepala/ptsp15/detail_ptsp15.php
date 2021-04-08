@@ -6,7 +6,7 @@
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Permohonan Masuk</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Permohonan Selesai</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Detail</li>
 			</ol>
 		</nav>
@@ -40,17 +40,17 @@
 		<div class="col-md-8 mb-2">
 			<div class="card shadow">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Ijop LPQ</h6>
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Ijop Madin</h6>
 				</div>
 				<div class="card-body">
 					<table class="table-hover table-responsive">
-						<tbody>
+					<tbody>
 							<tr>
-								<td><b>Nama LPQ</b></td>
+								<td><b>Nama Madrasah</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>LPQ Xxx</td>
+								<td>Madrasah Xxx</td>
 							</tr>
 							<tr>
 								<td><b>Alamat</b></td>
@@ -88,20 +88,6 @@
 								<td>Xxx</td>
 							</tr>
 							<tr>
-								<td><b>Yayasan</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td>Xxx</td>
-							</tr>
-							<tr>
-								<td><b>SK Menkumham</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td>Xxx</td>
-							</tr>
-							<tr>
 								<td><b>Tahun Berdiri</b></td>
 								<td> </td>
 								<td> </td>
@@ -109,7 +95,7 @@
 								<td>Xxx</td>
 							</tr>
 							<tr>
-								<td><b>Berlaku</b></td>
+								<td><b>No. Statistik</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
@@ -128,16 +114,6 @@
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-2"></div>
-	</div>
-	<!-- Button Tolak & Setujui -->
-	<div class="row clearfix float-right px-2">
-		<a href="">
-			<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
-				<i class="fas fa-check-circle">
-				</i> Terima
-			</button>
-		</a>
-
 	</div>
 
 	<!--End Content Profile-->

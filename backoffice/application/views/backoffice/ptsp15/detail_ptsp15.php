@@ -40,17 +40,17 @@
 		<div class="col-md-8 mb-2">
 			<div class="card shadow">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Ijop LPQ</h6>
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Ijop Madin</h6>
 				</div>
 				<div class="card-body">
 					<table class="table-hover table-responsive">
 						<tbody>
 							<tr>
-								<td><b>Nama LPQ</b></td>
+								<td><b>Nama Madrasah</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>LPQ Xxx</td>
+								<td>Madrasah Xxx</td>
 							</tr>
 							<tr>
 								<td><b>Alamat</b></td>
@@ -88,20 +88,6 @@
 								<td>Xxx</td>
 							</tr>
 							<tr>
-								<td><b>Yayasan</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td>Xxx</td>
-							</tr>
-							<tr>
-								<td><b>SK Menkumham</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td>Xxx</td>
-							</tr>
-							<tr>
 								<td><b>Tahun Berdiri</b></td>
 								<td> </td>
 								<td> </td>
@@ -109,7 +95,7 @@
 								<td>Xxx</td>
 							</tr>
 							<tr>
-								<td><b>Berlaku</b></td>
+								<td><b>No. Statistik</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
@@ -131,6 +117,13 @@
 	</div>
 	<!-- Button Tolak & Setujui -->
 	<div class="row clearfix float-right px-2">
+
+		<a href="" class="mr-2">
+			<button id=" btn_tolak" class="btn btn-sm btn-danger" type="submit">
+				<i class="fas fa-times-circle">
+				</i> Tolak
+			</button>
+		</a>
 		<a href="">
 			<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
 				<i class="fas fa-check-circle">

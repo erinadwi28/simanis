@@ -75,11 +75,11 @@
 					<table class="table-hover table-responsive">
 						<tbody>
 							<tr>
-								<td><b>Nama LPQ</b></td>
+								<td><b>Nama Madrasah</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>LPQ Xxx</td>
+								<td>Madrasah Xxx</td>
 							</tr>
 							<tr>
 								<td><b>Alamat</b></td>
@@ -117,20 +117,6 @@
 								<td>Xxx</td>
 							</tr>
 							<tr>
-								<td><b>Yayasan</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td>Xxx</td>
-							</tr>
-							<tr>
-								<td><b>SK Menkumham</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td>Xxx</td>
-							</tr>
-							<tr>
 								<td><b>Tahun Berdiri</b></td>
 								<td> </td>
 								<td> </td>
@@ -138,7 +124,7 @@
 								<td>Xxx</td>
 							</tr>
 							<tr>
-								<td><b>Berlaku</b></td>
+								<td><b>No. Statistik</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
@@ -168,6 +154,7 @@
 				</div>
 			</div>
 		</div>
+		<div class="col-xs-12 col-sm-2"></div>
 	</div>
 	<!-- Button Selesai -->
 	<div class="row clearfix float-right px-2">

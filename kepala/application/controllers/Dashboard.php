@@ -233,4 +233,43 @@ class Dashboard extends CI_Controller
         $this->load->view('kepala/list_permohonan_selesai', $data_detail);
         $this->load->view('footer');
     }
+	//Detail Permohonan ptsp06
+    public function detail_ptsp06()
+    {
+        $data_title['title'] = 'Detail Permohonan';                
+        $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
+        $this->session->userdata('id_kepala')])->row_array();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('kepala/sidebar');
+        $this->load->view('topbar', $data);
+        $this->load->view('kepala/ptsp6/detail_ptsp06');
+        $this->load->view('footer');
+    }
+	//Detail Permohonan ptsp14
+    public function detail_ptsp14()
+    {
+        $data_title['title'] = 'Detail Permohonan';                
+        $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
+        $this->session->userdata('id_kepala')])->row_array();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('kepala/sidebar');
+        $this->load->view('topbar', $data);
+        $this->load->view('kepala/ptsp14/detail_ptsp14');
+        $this->load->view('footer');
+    }
+	//Detail Permohonan ptsp15
+    public function detail_ptsp15()
+    {
+        $data_title['title'] = 'Detail Permohonan';                
+        $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
+        $this->session->userdata('id_kepala')])->row_array();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('kepala/sidebar');
+        $this->load->view('topbar', $data);
+        $this->load->view('kepala/ptsp15/detail_ptsp15');
+        $this->load->view('footer');
+    }
 }

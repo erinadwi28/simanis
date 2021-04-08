@@ -324,15 +324,14 @@ class Dashboard extends CI_Controller
         $this->session->set_flashdata('success', 'permohonan sukses disetujui');
         redirect('dashboard/list_permohonan_masuk');
     }
-
 	//tampil detail ptsp14
     public function detail_ptsp14()
-    {	$data_title['title'] = 'List Permohonan Masuk';                
+    {	$data_title['title'] = 'Detail Permohonan';                
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
         $data['total_notif'] = $this->m_bo->jml_notif()->result();
 
-        $this->load->view('header');
+        $this->load->view('header',$data_title);
         $this->load->view('backoffice/sidebar');
         $this->load->view('topbar',$data);
         $this->load->view('backoffice/ptsp14/detail_ptsp14');
@@ -340,12 +339,12 @@ class Dashboard extends CI_Controller
     }
 	//tampil detail ptsp15
     public function detail_ptsp15()
-    {	$data_title['title'] = 'List Permohonan Masuk';                
+    {	$data_title['title'] = 'Detail Permohonan';                
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
         $data['total_notif'] = $this->m_bo->jml_notif()->result();
 
-        $this->load->view('header');
+        $this->load->view('header',$data_title);
         $this->load->view('backoffice/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('backoffice/ptsp15/detail_ptsp15');
