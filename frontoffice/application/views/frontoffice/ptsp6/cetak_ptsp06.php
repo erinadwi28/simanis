@@ -124,12 +124,7 @@
 							<div class="kopsurat row">
 								<div class="col-md-12 mb-3">
 									<object data="" type="image">
-<<<<<<< HEAD
-										<img class="img-fluid" alt="logo_kop_surat"
-											src="<?= base_url('../assets/dashboard/') ?>images/kop_surat.png">
-=======
-										<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/') ?>images/kop_surat.jpg">
->>>>>>> bd1247cf35e1bf3416c2295d88f7f09cfefc5ba8
+										<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/') ?>images/kop_surat.png">
 									</object>
 								</div>
 							</div>
