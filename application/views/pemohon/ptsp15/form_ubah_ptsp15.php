@@ -18,17 +18,17 @@
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Ijop LPQ</h6>
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Ij Operasional Madin</h6>
 				</div>
 				<div class="card-body">
-					<form class="form-horizontal" id="form6" enctype="multipart/form-data"
+					<form class="form-horizontal" id="form15" enctype="multipart/form-data"
 						action=""
 						method="POST">
 						<div class="form-group row">
-							<label for="Nama_lpq" class="col-sm-3 col-form-label">Nama LPQ</label>
+							<label for="Nama_madarasah" class="col-sm-3 col-form-label">Nama Madrasah</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama_lpq" name="nama_lpq" value="Ambil data">
+									<input type="text" class="form-control" id="nama_madarasah" name="nama_madarasah" value="Ambil data">
 								</div>
 							</div>
 						</div>
@@ -73,22 +73,6 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="yayayan" class="col-sm-3 col-form-label">Yayayan</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="yayayan" name="yayayan" value="" placeholder="masukkan yayayan disini...">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="sk_menkumhan_ri" class="col-sm-3 col-form-label">SK Menkumham RI</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="sk_menkumhan_ri" name="sk_menkumhan_ri" value="" placeholder="masukkan no SK PPIU/PIHK disini...">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
 							<label for="Tahun_berdiri" class="col-sm-3 col-form-label">Tahun Berdiri</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
@@ -97,10 +81,10 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="berlaku" class="col-sm-3 col-form-label">Berlaku</label>
+							<label for="no_statistik" class="col-sm-3 col-form-label">No. Statistik</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="berlaku" name="berlaku" value="" placeholder="masukkan masa berlaku disini...">
+									<input type="text" class="form-control" id="no_statistik" name="no_statistik" value="" placeholder="masukkan nomor statistik disini...">
 								</div>
 							</div>
 						</div>

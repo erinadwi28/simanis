@@ -6,7 +6,7 @@
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Permohonan Masuk</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Permohonan Selesai</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Detail</li>
 			</ol>
 		</nav>
@@ -128,16 +128,6 @@
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-2"></div>
-	</div>
-	<!-- Button Tolak & Setujui -->
-	<div class="row clearfix float-right px-2">
-		<a href="">
-			<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
-				<i class="fas fa-check-circle">
-				</i> Terima
-			</button>
-		</a>
-
 	</div>
 
 	<!--End Content Profile-->
