@@ -16,6 +16,7 @@
 	<!--Begin Content Profile-->
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
+		<?php foreach ($detail_profil_saya as $detail) { ?>
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
@@ -25,7 +26,15 @@
 					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
 					<br>
 					<form class="form-horizontal mt-4" id="form5" enctype="multipart/form-data"
-						action="<?= base_url('dashboard/aksi_pengajuan_ptsp05') ?>" method="POST">
+						action="<?= base_url('dashboard/aksi_pengajuan_ptsp14') ?>" method="POST">
+						<div class="form-group row">
+							<label for="No_Surat" class="col-sm-3 col-form-label">No. Surat</label>
+							<div class="col-sm-9">
+								<div class="form-line focused">
+									<input type="text" class="form-control" id="no_surat" name="no_surat" value="" placeholder="masukkan nomor surat disini...">
+								</div>
+							</div>
+						</div>
 						<div class="form-group row">
 							<label for="Nama_lpq" class="col-sm-3 col-form-label">Nama LPQ</label>
 							<div class="col-sm-9">
@@ -75,18 +84,18 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="yayayan" class="col-sm-3 col-form-label">Yayayan</label>
+							<label for="yayasan" class="col-sm-3 col-form-label">Yayasan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="yayayan" name="yayayan" value="" placeholder="masukkan yayayan disini...">
+									<input type="text" class="form-control" id="yayasan" name="yayasan" value="" placeholder="masukkan yayayan disini...">
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="sk_menkumhan_ri" class="col-sm-3 col-form-label">SK Menkumham RI</label>
+							<label for="sk_menkumham" class="col-sm-3 col-form-label">SK Menkumham RI</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="sk_menkumhan_ri" name="sk_menkumhan_ri" value="" placeholder="masukkan no SK PPIU/PIHK disini...">
+									<input type="text" class="form-control" id="sk_menkumham" name="sk_menkumham" value="" placeholder="masukkan no SK PPIU/PIHK disini...">
 								</div>
 							</div>
 						</div>
@@ -102,7 +111,15 @@
 							<label for="berlaku" class="col-sm-3 col-form-label">Berlaku</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="berlaku" name="berlaku" value="" placeholder="masukkan masa berlaku disini...">
+									<input type="date" class="form-control" id="berlaku" name="berlaku" value="">
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="No_Statistik_Pendidikan_Alquran" class="col-sm-3 col-form-label">No. Statistik Pendidikan Alquran</label>
+							<div class="col-sm-9">
+								<div class="form-line focused">
+									<input type="text" class="form-control" id="no_statistik_pend_alquran" name="no_statistik_pend_alquran" value="" placeholder="masukkan no statistik pendidikan alquran disini...">
 								</div>
 							</div>
 						</div>
@@ -110,11 +127,12 @@
 							<label for="No_hp" class="col-sm-3 col-form-label">No. Handphone</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nomor_hp" name="nomor_hp" value="" placeholder="masukkan no handpone disini...">
+									<input type="text" class="form-control" id="no_hp" name="no_hp" value="" placeholder="masukkan no handpone disini...">
 								</div>
 							</div>
 						</div>	
 				</div>
+				<?php } ?>
 				<div class="card-footer">
 					<div class="float-right">
 						<a href="#">
