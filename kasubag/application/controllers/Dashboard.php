@@ -210,6 +210,48 @@ class Dashboard extends CI_Controller
                         $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
                 } elseif ($id_layanan == 6) {
                         $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp06')->result();
+                } elseif ($id_layanan == 7) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp07')->result();
+                } elseif ($id_layanan == 8) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp08')->result();
+                } elseif ($id_layanan == 9) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp09')->result();
+                } elseif ($id_layanan == 10) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp10')->result();
+                } elseif ($id_layanan == 11) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp11')->result();
+                } elseif ($id_layanan == 12) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp12')->result();
+                } elseif ($id_layanan == 13) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp13')->result();
+                } elseif ($id_layanan == 14) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp14')->result();
+                } elseif ($id_layanan == 15) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp15')->result();
+                } elseif ($id_layanan == 16) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp16')->result();
+                } elseif ($id_layanan == 17) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp17')->result();
+                } elseif ($id_layanan == 18) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp18')->result();
+                } elseif ($id_layanan == 19) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp19')->result();
+                } elseif ($id_layanan == 20) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp20')->result();
+                } elseif ($id_layanan == 21) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp21')->result();
+                } elseif ($id_layanan == 22) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp22')->result();
+                } elseif ($id_layanan == 23) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp23')->result();
+                } elseif ($id_layanan == 24) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp24')->result();
+                } elseif ($id_layanan == 25) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp25')->result();
+                } elseif ($id_layanan == 26) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp26')->result();
+                } elseif ($id_layanan == 27) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp27')->result();
                 }
 
                 $this->load->view('header', $data_title);
@@ -225,6 +267,48 @@ class Dashboard extends CI_Controller
                         $this->load->view('kasubag/ptsp5/detail_ptsp05', $data_detail);
                 } elseif ($id_layanan == 6) {
                         $this->load->view('kasubag/ptsp6/detail_ptsp06', $data_detail);
+                } elseif ($id_layanan == 7) {
+                        $this->load->view('kasubag/ptsp7/detail_ptsp07', $data_detail);
+                } elseif ($id_layanan == 8) {
+                        $this->load->view('kasubag/ptsp8/detail_ptsp08', $data_detail);
+                } elseif ($id_layanan == 9) {
+                        $this->load->view('kasubag/ptsp9/detail_ptsp09', $data_detail);
+                } elseif ($id_layanan == 10) {
+                        $this->load->view('kasubag/ptsp10/detail_ptsp10', $data_detail);
+                } elseif ($id_layanan == 11) {
+                        $this->load->view('kasubag/ptsp11/detail_ptsp11', $data_detail);
+                } elseif ($id_layanan == 12) {
+                        $this->load->view('kasubag/ptsp12/detail_ptsp12', $data_detail);
+                } elseif ($id_layanan == 13) {
+                        $this->load->view('kasubag/ptsp13/detail_ptsp13', $data_detail);
+                } elseif ($id_layanan == 14) {
+                        $this->load->view('kasubag/ptsp14/detail_ptsp14', $data_detail);
+                } elseif ($id_layanan == 15) {
+                        $this->load->view('kasubag/ptsp15/detail_ptsp15', $data_detail);
+                } elseif ($id_layanan == 16) {
+                        $this->load->view('kasubag/ptsp16/detail_ptsp16', $data_detail);
+                } elseif ($id_layanan == 17) {
+                        $this->load->view('kasubag/ptsp17/detail_ptsp17', $data_detail);
+                } elseif ($id_layanan == 18) {
+                        $this->load->view('kasubag/ptsp18/detail_ptsp18', $data_detail);
+                } elseif ($id_layanan == 19) {
+                        $this->load->view('kasubag/ptsp19/detail_ptsp19', $data_detail);
+                } elseif ($id_layanan == 20) {
+                        $this->load->view('kasubag/ptsp20/detail_ptsp20', $data_detail);
+                } elseif ($id_layanan == 21) {
+                        $this->load->view('kasubag/ptsp21/detail_ptsp21', $data_detail);
+                } elseif ($id_layanan == 22) {
+                        $this->load->view('kasubag/ptsp22/detail_ptsp22', $data_detail);
+                } elseif ($id_layanan == 23) {
+                        $this->load->view('kasubag/ptsp23/detail_ptsp23', $data_detail);
+                } elseif ($id_layanan == 24) {
+                        $this->load->view('kasubag/ptsp24/detail_ptsp24', $data_detail);
+                } elseif ($id_layanan == 25) {
+                        $this->load->view('kasubag/ptsp25/detail_ptsp25', $data_detail);
+                } elseif ($id_layanan == 26) {
+                        $this->load->view('kasubag/ptsp26/detail_ptsp26', $data_detail);
+                } elseif ($id_layanan == 27) {
+                        $this->load->view('kasubag/ptsp27/detail_ptsp27', $data_detail);
                 }
                 $this->load->view('footer');
         }
@@ -379,6 +463,38 @@ class Dashboard extends CI_Controller
                 $this->load->view('kasubag/sidebar');
                 $this->load->view('topbar', $data);
                 $this->load->view('kasubag/ptsp6/detail_ptsp06');
+                $this->load->view('footer');
+        }
+        //tampil detail permohonan ptsp14
+        public function detail_ptsp14()
+        {
+                $data_title['title'] = 'Detail Permohonan';
+                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
+                $this->session->userdata('id_kasubag')])->row_array();
+
+                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
+
+
+                $this->load->view('header', $data_title);
+                $this->load->view('kasubag/sidebar');
+                $this->load->view('topbar', $data);
+                $this->load->view('kasubag/ptsp14/detail_ptsp14');
+                $this->load->view('footer');
+        }
+        //tampil detail permohonan ptsp15
+        public function detail_ptsp15()
+        {
+                $data_title['title'] = 'Detail Permohonan';
+                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
+                $this->session->userdata('id_kasubag')])->row_array();
+
+                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
+
+
+                $this->load->view('header', $data_title);
+                $this->load->view('kasubag/sidebar');
+                $this->load->view('topbar', $data);
+                $this->load->view('kasubag/ptsp15/detail_ptsp15');
                 $this->load->view('footer');
         }
 }

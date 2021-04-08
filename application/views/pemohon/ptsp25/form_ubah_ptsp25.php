@@ -19,35 +19,18 @@
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Surat Keterangan Haji Pertama</h6>
+					<h6 class="m-0 font-weight-bold text-center">Konsultasi dan informasi sertifikasi halal,zakat dan wakaf</h6>
 				</div>
 				<div class="card-body">
 					<form class="form-horizontal" id="form5" enctype="multipart/form-data"
-						action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp05/<?= $detail->id_permohonan_ptsp ?>"
+						action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp25/<?= $detail->id_permohonan_ptsp ?>"
 						method="POST">
 						<div class="form-group row">
-							<label for="Nama" class="col-sm-3 col-form-label">Nama Lengkap</label>
+							<label for="Nama" class="col-sm-3 col-form-label">Nama</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama" name="nama" value="<?= $detail->nama ?>">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="Tempat_lahir" class="col-sm-3 col-form-label">Tempat Lahir</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir"
-										value="<?= $detail->tempat_lahir ?>">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="Tanggal_lahir" class="col-sm-3 col-form-label">Tanggal Lahir</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir"
-										value="<?= $detail->tanggal_lahir ?>">
+									<input type="text" class="form-control" id="nama" name="nama" value="<?= $detail->nama; ?>">
+									
 								</div>
 							</div>
 						</div>
@@ -55,35 +38,31 @@
 							<label for="Alamat_lengkap" class="col-sm-3 col-form-label">Alamat Lengkap</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<textarea type="text" class="form-control" id="alamat" name="alamat"
-										value="<?= $detail->alamat ?>"><?= $detail->alamat ?></textarea>
+									<textarea type="text" class="form-control" id="alamat" name="alamat" value="" placeholder="masukkan alamat disini..."><?= $detail->alamat ?></textarea>
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="No_porsi" class="col-sm-3 col-form-label">No. Porsi</label>
+							<label for="Pekerjaan" class="col-sm-3 col-form-label">Pekerjaan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nomor_porsi" name="nomor_porsi"
-										value="<?= $detail->nomor_porsi ?>">
+									<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" value="<?= $detail->pekerjaan ?>" placeholder="masukkan Pekerjaan disini...">
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="Tahun_angkatan_haji" class="col-sm-3 col-form-label">Tahun Angkatan Haji Hijriah</label>
+							<label for="no_hp_aktif" class="col-sm-3 col-form-label">No. Handphone</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="tahun_hijriah" name="tahun_hijriah"
-										value="<?= $detail->tahun_hijriah ?>">
+										<input type="text" class="form-control" id="no_hp" name="no_hp" value="<?= $detail->no_hp ?>">
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="Tahun_angkatan_haji" class="col-sm-3 col-form-label">Tahun Angkatan Haji Masehi</label>
+							<label for="Perihal_konsultasi" class="col-sm-3 col-form-label">Perihal Konsultasi</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="tahun_hijriah" name="tahun_masehi"
-										value="<?= $detail->tahun_masehi ?>">
+									<input type="text" class="form-control" id="perihal_konsultasi" name="perihal_konsultasi" value="<?= $detail->perihal_konsultasi ?>" placeholder="masukkan Perihal Konsultasi disini...">
 								</div>
 							</div>
 						</div>

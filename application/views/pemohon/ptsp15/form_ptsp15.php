@@ -19,18 +19,18 @@
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Ijin Operasional LPQ</h6>
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Ijin Operasional Madin</h6>
 				</div>
 				<div class="card-body">
 					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
 					<br>
 					<form class="form-horizontal mt-4" id="form5" enctype="multipart/form-data"
-						action="<?= base_url('dashboard/aksi_pengajuan_ptsp05') ?>" method="POST">
+						action="<?= base_url('dashboard/aksi_pengajuan_ptsp15') ?>" method="POST">
 						<div class="form-group row">
-							<label for="Nama_lpq" class="col-sm-3 col-form-label">Nama LPQ</label>
+							<label for="Nama_madrasah" class="col-sm-3 col-form-label">Nama Madrasah</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama_lpq" name="nama_lpq" value="" placeholder="masukkan nama lpq disini...">
+									<input type="text" class="form-control" id="nama_madrasah" name="nama_madrasah" value="" placeholder="masukkan nama madrasah disini...">
 								</div>
 							</div>
 						</div>
@@ -75,22 +75,6 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="yayayan" class="col-sm-3 col-form-label">Yayayan</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="yayayan" name="yayayan" value="" placeholder="masukkan yayayan disini...">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="sk_menkumhan_ri" class="col-sm-3 col-form-label">SK Menkumham RI</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="sk_menkumhan_ri" name="sk_menkumhan_ri" value="" placeholder="masukkan no SK PPIU/PIHK disini...">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
 							<label for="Tahun_berdiri" class="col-sm-3 col-form-label">Tahun Berdiri</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
@@ -99,10 +83,10 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="berlaku" class="col-sm-3 col-form-label">Berlaku</label>
+							<label for="no_statistik" class="col-sm-3 col-form-label">No. Statistik</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="berlaku" name="berlaku" value="" placeholder="masukkan masa berlaku disini...">
+									<input type="text" class="form-control" id="no_statistik" name="no_statistik" value="" placeholder="masukkan masa nomor statistik disini...">
 								</div>
 							</div>
 						</div>
