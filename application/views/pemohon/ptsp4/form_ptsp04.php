@@ -40,7 +40,7 @@
 							<div class="col-sm-9">
 								<div class="form-line">
 									<textarea class="form-control" id="no_hp" name="no_hp" rows="1"
-										placeholder="masukkan alamat disini dengan lengkap..."><?= $detail->no_hp; ?></textarea>
+										placeholder="masukkan alamat dengan lengkap disini..."><?= $detail->no_hp; ?></textarea>
 								</div>
 							</div>
 						</div>

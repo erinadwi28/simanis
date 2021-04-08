@@ -30,7 +30,7 @@
 							<label for="Nama_lpq" class="col-sm-3 col-form-label">Nama LPQ</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama_lpq" name="nama_lpq" value="">
+									<input type="text" class="form-control" id="nama_lpq" name="nama_lpq" value="" placeholder="masukkan nama lpq disini...">
 								</div>
 							</div>
 						</div>

@@ -22,7 +22,8 @@
 						<h6 class="m-0 font-weight-bold text-center">Permohonan Surat Keterangan Haji Pertama</h6>
 					</div>
 					<div class="card-body">
-						<form class="form-horizontal" id="form5" enctype="multipart/form-data" action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp05/<?= $detail->id_permohonan_ptsp ?>" method="POST">
+						<form class="form-horizontal" id="form5" enctype="multipart/form-data" 
+						action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp05/<?= $detail->id_permohonan_ptsp ?>" method="POST">
 							<div class="form-group row">
 								<label for="Nama" class="col-sm-3 col-form-label">Nama Lengkap</label>
 								<div class="col-sm-9">

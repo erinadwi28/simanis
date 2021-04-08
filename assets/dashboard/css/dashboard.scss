@@ -237,3 +237,26 @@ a {
 	font-size: 12px;
 }
 
+.klik-unduh {
+	color: #F69D1B;
+
+	&:hover {
+		font-weight: bold;
+	}
+}
+
+.table-preview {
+	thead {
+		th {
+			background-color: #Fff;
+		}
+	}
+}
+
+.card {
+	.card-preview {
+	padding: 50px;
+}
+}
+
+

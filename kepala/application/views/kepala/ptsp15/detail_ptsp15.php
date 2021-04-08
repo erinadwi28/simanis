@@ -14,7 +14,7 @@
 
 
 	<div class="row clearfix">
-		<div class="col-xs-12 col-sm-3">
+		<div class="col-md-4 mb-0">
 			<!-- Proposal Permohonan -->
 			<div class="card shadow mb-4">
 				<div class="card-header">
@@ -37,10 +37,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-9 mb-2">
+		<div class="col-md-8 mb-2">
 			<div class="card shadow">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Ijop LPQ</h6>
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Ijop Madin</h6>
 				</div>
 				<div class="card-body">
 					<table class="table-hover table-responsive">

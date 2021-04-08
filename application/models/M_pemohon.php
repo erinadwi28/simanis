@@ -205,13 +205,27 @@ class M_pemohon extends CI_Model
         return $hasil;
     }
 
-    //detail permohonan ptsp04
+    //detail permohonan ptsp05
     public function get_detail_ptsp05($id_permohonan)
     {
         $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan, ptsp05.*');
         $this->db->from('permohonan_ptsp');
         $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
         $this->db->join('ptsp05', 'permohonan_ptsp.id_permohonan_ptsp = ptsp05.id_permohonan_ptsp', 'INNER');
+        $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
+        $this->db->where('permohonan_ptsp.status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
+    //detail permohonan ptsp06
+    public function get_detail_ptsp06($id_permohonan)
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan, ptsp06.*');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->join('ptsp06', 'permohonan_ptsp.id_permohonan_ptsp = ptsp06.id_permohonan_ptsp', 'INNER');
         $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
         $this->db->where('permohonan_ptsp.status_delete', 0);
 

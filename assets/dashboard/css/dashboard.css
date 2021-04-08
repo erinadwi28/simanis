@@ -202,4 +202,20 @@ a:hover {
 .lihat-sandi {
   font-size: 12px;
 }
+
+.klik-unduh {
+  color: #F69D1B;
+}
+
+.klik-unduh:hover {
+  font-weight: bold;
+}
+
+.table-preview thead th {
+  background-color: #Fff;
+}
+
+.card .card-preview {
+  padding: 50px;
+}
 /*# sourceMappingURL=dashboard.css.map */

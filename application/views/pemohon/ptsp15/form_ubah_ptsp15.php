@@ -18,7 +18,7 @@
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Ij Operasional Madin</h6>
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Ijin Operasional Madin</h6>
 				</div>
 				<div class="card-body">
 					<form class="form-horizontal" id="form15" enctype="multipart/form-data"

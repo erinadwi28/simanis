@@ -16,7 +16,7 @@
 	<!-- Detail input -->
 	<div class="row clearfix">
 	<!-- Unggah Dokumen -->
-	<div class="col-xs-12 col-sm-3">
+	<div class="col-md-4 mb-0">
 			<!-- Proposal Permohonan -->
 			<div class="card shadow mb-4">
 				<div class="card-header">
@@ -65,7 +65,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-8 mb-2">
+		<div class="col-md-8 mb-0">
 			<!-- Detail Data -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">

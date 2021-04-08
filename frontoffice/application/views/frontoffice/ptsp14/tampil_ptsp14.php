@@ -2,7 +2,7 @@
         <div class="container-fluid">
         	<!-- Page Heading -->
         	<div class="d-sm-flex align-items-center justify-content-between mb-4 judullist">
-        		<h3>Tampil Permohonan Legalisir</h3>
+        		<h3>Tampil Permohonan</h3>
         		<a href="<?= base_url('warga') ?>">
         			<button id="btn_kembali" class="btn btn-sm btn-warning" type="submit">
         				<i class="fa fa-arrow-left">
@@ -27,21 +27,18 @@
         					<div class="card shadow mb-3">
         						<div class="card-header">
         							<center>
-        								<h6 class="m-0 font-weight-bold">Hasil Legalisir Ijazah</h6>
+        								<h6 class="m-0 font-weight-bold">Ijin Operasional LPQ</h6>
         							</center>
         						</div>
         						<div class="card-body">
         							<center>
-        								<a href="" data-gallery="mygallery" data-title="Fotocopy Ijazah"
-        									data-toggle="lightbox">
-        									<img src="" alt="Hasil Legalisir Ijazah" class="img-fluid" width="150px">
-        								</a>
+        								<h4>MASIH ON GOING</h4>
         							</center>
         						</div>
         						<div class="card-footer">
         							<center>
         								<a
-        									href="<?= base_url() ?>warga/cetak_surat/<?php foreach ($detail_suket as $w) { ?><?= $w->id_permohonan_surat ?> <?php } ?>">
+        									href="">
         									<button class="btn btn-sm btn-success" type="submit"><i
         											class="fa fa-print"></i>
         										Cetak</button>
