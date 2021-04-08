@@ -294,6 +294,8 @@ class Dashboard extends CI_Controller
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
                 } elseif ($id_layanan == 6) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp06')->result();
+                } elseif ($id_layanan == 25) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp25')->result();
                 }
 
                 $this->load->view('header', $data_title);
@@ -309,6 +311,8 @@ class Dashboard extends CI_Controller
                         $this->load->view('frontoffice/ptsp5/detail_ptsp05', $data_detail);
                 } elseif ($id_layanan == 6) {
                         $this->load->view('frontoffice/ptsp6/detail_ptsp06', $data_detail);
+                } elseif ($id_layanan == 25) {
+                        $this->load->view('frontoffice/ptsp25/detail_ptsp25', $data_detail);
                 }
                 $this->load->view('footer');
         }

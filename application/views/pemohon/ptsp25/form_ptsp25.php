@@ -7,7 +7,7 @@
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/sop_ptsp03') ?>">SOP</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/sop_ptsp25') ?>">SOP</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Form Permohonan</li>
 			</ol>
 		</nav>
@@ -16,7 +16,7 @@
 	<!--Begin Content Profile-->
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
-		
+		<?php foreach ($detail_profil_saya as $detail) { ?>
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
@@ -26,28 +26,13 @@
 					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
 					<br>
 					<form class="form-horizontal mt-4" id="form5" enctype="multipart/form-data"
-						action="<?= base_url('dashboard/aksi_pengajuan_ptsp05') ?>" method="POST">
+						action="<?= base_url('dashboard/aksi_pengajuan_ptsp25') ?>" method="POST">
 						<div class="form-group row">
-							<label for="Nama" class="col-sm-3 col-form-label">Nama Lengkap</label>
+							<label for="Nama" class="col-sm-3 col-form-label">Nama</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama" name="nama" value="">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="Tempat_lahir" class="col-sm-3 col-form-label">Tempat Lahir</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" value="" placeholder="masukkan tempat lahir disini...">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="Tanggal_lahir" class="col-sm-3 col-form-label">Tanggal Lahir</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" value="">
+									<input type="text" class="form-control" id="nama" name="nama" value="<?= $detail->nama; ?>">
+									
 								</div>
 							</div>
 						</div>
@@ -60,30 +45,31 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="No_porsi" class="col-sm-3 col-form-label">No. Porsi</label>
+							<label for="Pekerjaan" class="col-sm-3 col-form-label">Pekerjaan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nomor_porsi" name="nomor_porsi" value="" placeholder="masukkan no porsi disini...">
+									<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" value="" placeholder="masukkan Pekerjaan disini...">
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="Tahun_angkatan_haji" class="col-sm-3 col-form-label">Tahun Angkatan Haji Hijriah</label>
+							<label for="no_hp_aktif" class="col-sm-3 col-form-label">No. Handphone</label>
 							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="tahun_hijriah" name="tahun_hijriah" value="" placeholder="masukkan tahun Hijriah disini...">
+								<div class="form-line">
+									<textarea class="form-control" id="no_hp" name="no_hp" rows="1"
+										placeholder="masukkan no hp disini..."></textarea>
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="Tahun_angkatan_haji" class="col-sm-3 col-form-label">Tahun Angkatan Haji Masehi</label>
+							<label for="Perihal_konsultasi" class="col-sm-3 col-form-label">Perihal Konsultasi</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="tahun_masehi" name="tahun_masehi" value="" placeholder="masukkan tahun Masehi disini...">
+									<input type="text" class="form-control" id="perihal_konsultasi" name="perihal_konsultasi" value="" placeholder="masukkan Perihal Konsultasi disini...">
 								</div>
 							</div>
 						</div>
-				</div>
+				<?php } ?>
 				<div class="card-footer">
 					<div class="float-right">
 						<a href="#">
@@ -118,13 +104,8 @@
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
 					<ol type="1" class="ml-0 list-syarat modal-content-syarat">
-						<li>Pemohon Mengunduh Surat Permohonan ditujukan kepada Kepala Kantor Kemenag Klaten.</li>
-							<li>Pemohon Mengunduh Surat Pernyataan Pergi Haji Pertama Bermatrai Rp.10.000.</li>
-							<li>Pemohon Mengisi Surat Permohonan ditujukan kepada Kepala Kantor Kemenag Klaten.</li>
-							<li>Pemohon Mengisi Surat Pernyataan Pergi Haji Pertama Bermatrai Rp.10.000.</li>
-							<li>Pemohon Mengunggah Surat Permohonan dan Surat Pernyataan pada form pengajuan.</li>
-							<li>Pemohon Mengisi dan Menlengkapi form pengajuan yang telah disediakan.</li>
-							<li>Pemohon Menunggu Informasi dari Kemenag terkait proses pengajuan permohonan.</li>
+						<li>Surat Pemohon di tunjukan kepada kepala Kantor Kementrian Agama kab.Klaten.</li>
+						<li>Pemohon mengupload Surat Permohonan.</li>	
 					</ol>
 				</p>
 			</div>
