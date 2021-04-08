@@ -12,333 +12,215 @@
 		</nav>
 	</div>
 
-	
-	<div class="row clearfix">
-		<div class="col-xs-12 col-sm-2"></div>
-		<div class="col-md-8 mb-4">
-			<div class="card shadow">
-				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Paspor Haji dan Umrah</h6>
-				</div>
-				<div class="card-body">
-					<table class="table-hover table-responsive">
-						<tbody>
-							<tr>
-								<td><b>Nama Jamaah Haji</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td><b>Alamat Lengkap</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td><b>Tempat Lahir</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td><b>Tanggal Lahir</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td><b>No. Handphone</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td><b>Nama PPIU/PIHK</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td><b>No. SK PPIU/PIHK</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td><b>Tahun SK</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td><b>Tanggal Permohonan</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td></td>
-							</tr>
-							
-							<tr>
-								<td><b>Keterangan Permohonan Pending</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td></td>
-							</tr>
-						</tbody>
-					</table>
+	<?php foreach ($detail_ptsp as $detail) { ?>
+		<div class="row clearfix">
+			<div class="col-xs-12 col-sm-2"></div>
+			<div class="col-md-8 mb-4">
+				<div class="card shadow">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Paspor Haji dan Umrah</h6>
+					</div>
+					<div class="card-body">
+						<table class="table-hover table-responsive">
+							<tbody>
+								<tr>
+									<td><b>Nama Jamaah Haji</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->nama_jamaah_haji ?></td>
+								</tr>
+								<tr>
+									<td><b>Alamat Lengkap</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->alamat ?></td>
+								</tr>
+								<tr>
+									<td><b>Tempat Lahir</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->tempat_lahir ?></td>
+								</tr>
+								<tr>
+									<td><b>Tanggal Lahir</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->tanggal_lahir ?></td>
+								</tr>
+								<tr>
+									<td><b>No. Handphone</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->no_hp ?></td>
+								</tr>
+								<tr>
+									<td><b>Nama PPIU/PIHK</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->nama_ppiu_pihk ?></td>
+								</tr>
+								<tr>
+									<td><b>No. SK PPIU/PIHK</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->no_sk_ppiu_pihk ?></td>
+								</tr>
+								<tr>
+									<td><b>Tahun SK</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->tahun_sk ?></td>
+								</tr>
+								<tr>
+									<td><b>Tanggal Permohonan</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
+								</tr>
+								<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
+									<tr>
+										<td><b>Keterangan Permohonan Pending</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td><?= $detail->keterangan; ?></td>
+									</tr>
+								<?php } ?>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
+			<div class="col-xs-12 col-sm-2"></div>
 		</div>
-		<div class="col-xs-12 col-sm-2"></div>
-	</div>
-	<!-- Unggah dokumen -->
-	<div class="row clearfix">
-		<div class="col-xs-12 col-sm-3">
-			<!-- Surat Permohonan -->
-			<div class="card shadow mb-4">
-				<div class="card-header">
-					<center>
-						<h6 class="m-0 font-weight-bold">Surat Permohonan</h6>
-					</center>
-				</div>
-
-				<div class="card-body">
-					<center>
-						
-						<p></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href=""
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						
-						<p class="mb-0">Belum ada lampiran</p>
-						
-
-					</center>
-				</div>
-				
-				<div class="card-footer">
-					<form action=""
-						enctype="multipart/form-data" method="post" accept-charset="utf-8"
-						id="form_upload_srt_permohonan">
-						<div class="form-group">
-							<div class="input-group">
-								<div class="form-group-upload">
-									<div class="custom-file">
-										<label class="custom-file-label" for="file-upload">pilih
-											file...</label>
-										<input type="file" class="custom-file-input" id="file-upload"
-											name="srt_permohonan" value="">
-										<input type="hidden" class="form-control form-user-input"
-											name="id_permohonan_ptsp" id="file-upload"
-											value="">
-									</div>
-								</div>
-							</div>
-						</div>
+		<!-- Unggah dokumen -->
+		<div class="row clearfix">
+			<div class="col-xs-12 col-sm-3">
+				<!-- Surat Permohonan -->
+				<div class="card shadow mb-4">
+					<div class="card-header">
 						<center>
-							<button class="btn btn-sm btn-primary" type="submit">
-								<i class="fa fa-upload"></i>
-							</button>
+							<h6 class="m-0 font-weight-bold">Surat Permohonan</h6>
 						</center>
-					</form>
-				</div>
-				
-			</div>
-		</div>
-		<div class="col-xs-12 col-sm-3">
-			<!-- FC Surat Ijin Operasional -->
-			<div class="card shadow mb-4">
-				<div class="card-header">
-					<center>
-						<h6 class="m-0 font-weight-bold">FC Surat Ijin Operasional</h6>
-					</center>
-				</div>
-				<div class="card-body">
-					<center>
-						
-						<p></p>
-						<a id="btn_upload" class="btn btn-sm btn-success"
-							href=""
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						
-						<p class="mb-0">Belum ada lampiran</p>
-						
-					</center>
-				</div>
-				
-				<div class="card-footer">
-					<form action=""
-						enctype="multipart/form-data" method="post" accept-charset="utf-8"
-						id="form_upload_srt_ijop">
-						<div class="form-group">
-							<div class="input-group">
-								<div class="form-group-upload">
-									<div class="custom-file">
-										<label class="custom-file-label" for="file-upload">pilih
-											file...</label>
-										<input type="file" class="custom-file-input" id="file-upload"
-											name="srt_ijop" value="">
-										<input type="hidden" class="form-control form-user-input"
-											name="id_permohonan_ptsp" id="file-upload"
-											value="">
-									</div>
-								</div>
-							</div>
-						</div>
-						<center>
-							<button class="btn btn-sm btn-primary" type="submit">
-								<i class="fa fa-upload">
-								</i>
-							</button>
-						</center>
-					</form>
-				</div>
-				
-			</div>
-		</div>
-		<div class="col-xs-12 col-sm-3">
-			<!-- fc ktp -->
-			<div class="card shadow mb-4">
-				<div class="card-header">
-					<center>
-						<h6 class="m-0 font-weight-bold">FC KTP</h6>
-					</center>
-				</div>
+					</div>
 
-				<div class="card-body">
-					<center>
-						
-						<p></p>
-						<a id="btn_upload" class="btn btn-sm btn-success"
-							href=""
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						
-						<p class="mb-0">Belum ada lampiran</p>
-						
-					</center>
-				</div>
-				
-				<div class="card-footer">
-					<form action=""
-						enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_fc_ktp">
-						<div class="form-group">
-							<div class="input-group">
-								<div class="form-group-upload">
-									<div class="custom-file">
-										<label class="custom-file-label" for="file-upload">pilih file...</label>
-										<input type="file" class="custom-file-input" id="file-upload"
-											name="fc_ktp" value="">
-										<input type="hidden" class="form-control form-user-input"
-											name="id_permohonan_ptsp" id="file-upload"
-											value="">
-									</div>
-								</div>
-							</div>
-						</div>
+					<div class="card-body">
 						<center>
-							<button class="btn btn-sm btn-primary" type="submit">
-								<i class="fa fa-upload">
-								</i>
-							</button>
-						</center>
-					</form>
-				</div>
-				
-			</div>
-		</div>
-		<div class="col-xs-12 col-sm-3">
-			<!-- FC KK -->
-			<div class="card shadow mb-4">
-				<div class="card-header">
-					<center>
-						<h6 class="m-0 font-weight-bold">FC KK</h6>
-					</center>
-				</div>
+							<?php if ($detail->srt_permohonan != null) { ?>
+								<p><?= $detail->srt_permohonan; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->srt_permohonan == null) { ?>
+								<p class="mb-0">Belum ada lampiran</p>
+							<?php } ?>
 
-				<div class="card-body">
-					<center>
-						
-						<p></p>
-						<a id="btn_upload" class="btn btn-sm btn-success"
-							href=""
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						
-						<p class="mb-0">Belum ada lampiran</p>
-						
-					</center>
-				</div>
-				
-				<div class="card-footer">
-					<form action=""
-						enctype="multipart/form-data" method="post" accept-charset="utf-8"
-						id="form_upload_bukti_pelunasan">
-						<div class="form-group">
-							<div class="input-group">
-								<div class="form-group-upload">
-									<div class="custom-file">
-										<label class="custom-file-label" for="file-upload">pilih
-											file...</label>
-										<input type="file" class="custom-file-input" id="file-upload"
-											name="bukti_pelunasan" value="">
-										<input type="hidden" class="form-control form-user-input"
-											name="id_permohonan_ptsp" id="file-upload"
-											value="">
-									</div>
-								</div>
-							</div>
-						</div>
-						<center>
-							<button class="btn btn-sm btn-primary" type="submit">
-								<i class="fa fa-upload">
-								</i>
-							</button>
 						</center>
-					</form>
+					</div>
+
 				</div>
-				
+			</div>
+			<div class="col-xs-12 col-sm-3">
+				<!-- FC Surat Ijin Operasional -->
+				<div class="card shadow mb-4">
+					<div class="card-header">
+						<center>
+							<h6 class="m-0 font-weight-bold">FC Surat Ijin Operasional</h6>
+						</center>
+					</div>
+					<div class="card-body">
+						<center>
+							<?php if ($detail->sk_ijin_oprasional != null) { ?>
+								<p><?= $detail->sk_ijin_oprasional; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/sk_ijin_oprasional/<?= $detail->sk_ijin_oprasional ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->sk_ijin_oprasional == null) { ?>
+								<p class="mb-0">Belum ada lampiran</p>
+							<?php } ?>
+						</center>
+					</div>
+
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3">
+				<!-- fc ktp -->
+				<div class="card shadow mb-4">
+					<div class="card-header">
+						<center>
+							<h6 class="m-0 font-weight-bold">FC KTP</h6>
+						</center>
+					</div>
+
+					<div class="card-body">
+						<center>
+							<?php if ($detail->ktp != null) { ?>
+								<p><?= $detail->ktp; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/ktp/<?= $detail->ktp ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->ktp == null) { ?>
+								<p class="mb-0">Belum ada lampiran</p>
+							<?php } ?>
+						</center>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3">
+				<!-- FC KK -->
+				<div class="card shadow mb-4">
+					<div class="card-header">
+						<center>
+							<h6 class="m-0 font-weight-bold">FC KK</h6>
+						</center>
+					</div>
+
+					<div class="card-body">
+						<center>
+							<?php if ($detail->kk != null) { ?>
+								<p><?= $detail->kk; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/kk/<?= $detail->kk ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->kk == null) { ?>
+								<p class="mb-0">Belum ada lampiran</p>
+							<?php } ?>
+						</center>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-	<!-- Button Tolak & Setujui -->
-	<div class="row clearfix float-right px-2">
-					
-						<a href="" class="mr-2">
-							<button id=" btn_tolak" class="btn btn-sm btn-danger" type="submit">
-								<i class="fas fa-times-circle">
-								</i> Tolak
-							</button>
-						</a>
-						<a
-							href="">
-							<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
-								<i class="fas fa-check-circle">
-								</i> Terima
-							</button>
-						</a>
-	</div>
-	
+		<!-- Button Tolak & Setujui -->
+		<div class="row clearfix float-right px-2">
+			<?php if ($detail->status == 'Validasi Kemenag') { ?>
+				<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>" class="mr-2">
+					<button id=" btn_tolak" class="btn btn-sm btn-danger" type="submit">
+						<i class="fas fa-times-circle">
+						</i> Tolak
+					</button>
+				</a>
+				<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+					<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
+						<i class="fas fa-check-circle">
+						</i> Terima
+					</button>
+				</a>
+			<?php } ?>
+		</div>
+	<?php } ?>
 	<!--End Content Profile-->
 </div>
 <!-- /.container-fluid -->

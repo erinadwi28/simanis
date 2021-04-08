@@ -1,10 +1,6 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 	<!-- Page Heading -->
-	<div class="d-sm-flex align-items-center justify-content-between mb-4 judullist">
-		<h3>Detail Permohonan</h3>
-	</div>
-	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between">
 		<h3 class="judullist py-3">Form Permohonan</h3>
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">

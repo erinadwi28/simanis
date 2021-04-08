@@ -14,10 +14,9 @@
 		</nav>
 	</div>
 
+	<?php foreach ($detail_ptsp as $detail) { ?>
 	<div class="row">
 		<div class="col-md-4 mb-0">
-			<?php
-			foreach ($detail_ptsp as $detail) { ?>
 			<!-- ijazah -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
@@ -28,14 +27,15 @@
 
 				<div class="card-body">
 					<center>
-						<?php if ($detail->ijazah != null) { ?>
+						<?php if ($detail->ijazah != 'place_holder_ijazah.png') { ?>
 						<p><?= $detail->ijazah; ?></p>
 						<a id="btn_upload" class="btn btn-sm btn-success"
-							href="<?= base_url() ?>assets/pemohon/ptsp/ptsp03/<?= $detail->ijazah ?>" target="_blank">
+							href="<?= base_url() ?>assets/dashboard/pemohon/ptsp/ptsp03/<?= $detail->ijazah ?>"
+							target="_blank">
 							<i class="fa fa-download nav-icon">
 							</i> Klik untuk melihat
 						</a>
-						<?php } elseif ($detail->ijazah == null) { ?>
+						<?php } elseif ($detail->ijazah == 'place_holder_ijazah.png') { ?>
 						<p>Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
 						<?php } ?>
 					</center>
@@ -45,9 +45,9 @@
 				<div class="card-footer">
 					<form action="<?= base_url('dashboard/update_ijazah_ptsp03/' . $detail->id_ptsp) ?>"
 						enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_ijazah">
-						<div class="form-group ml-2 mr-2">
+						<div class="form-group">
 							<div class="input-group">
-								<div class="form-group-upload">
+								<div class="form-group-upload col-md-12">
 									<div class="custom-file">
 										<label class="custom-file-label" for="file-upload">pilih file...</label>
 										<input type="file" class="custom-file-input" id="file-upload" name="berkas"
@@ -61,8 +61,7 @@
 						</div>
 						<center>
 							<button class="btn btn-sm btn-primary" type="submit">
-								<i class="fa fa-upload">
-								</i>
+								<i class="fa fa-upload"></i>
 							</button>
 						</center>
 					</form>
@@ -134,7 +133,7 @@
 								</i> Selesai
 							</button>
 						</a>
-						
+
 					</div>
 				</div>
 				<?php } ?>
