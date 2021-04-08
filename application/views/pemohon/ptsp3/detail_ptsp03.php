@@ -18,57 +18,52 @@
 		<div class="col-md-4 mb-4">
 			<?php
 			foreach ($detail_ptsp as $detail) { ?>
-			<!-- ijazah -->
-			<div class="card shadow mb-4">
-				<div class="card-header py-3">
-					<center>
-						<h6 class="m-0 font-weight-bold">Dokumen</h6>
-					</center>
-				</div>
+				<!-- ijazah -->
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<center>
+							<h6 class="m-0 font-weight-bold">Dokumen</h6>
+						</center>
+					</div>
 
-				<div class="card-body" style="padding: 15px;">
-					<center>
-						<?php if ($detail->ijazah != null) { ?>
-						<p><?= $detail->ijazah; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-success"
-							href="<?= base_url() ?>assets/pemohon/ptsp/ptsp03/<?= $detail->ijazah ?>" target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->ijazah == null) { ?>
-						<p>Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
-						<?php } ?>
-					</center>
-				</div>
+					<div class="card-body" style="padding: 15px;">
+						<center>
+							<?php if ($detail->ijazah != 'place_holder_ijazah.png') { ?>
+								<p><?= $detail->ijazah; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>assets/dashboard/pemohon/ptsp/ptsp03/<?= $detail->ijazah ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->ijazah == 'place_holder_ijazah.png') { ?>
+								<p>Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
+							<?php } ?>
+						</center>
+					</div>
 
-				<?php if ($detail->status == 'Pending') { ?>
-				<div class="card-footer py-3">
-					<form action="<?= base_url('dashboard/update_ijazah_ptsp03/' . $detail->id_ptsp) ?>"
-						enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_ijazah">
-						<div class="form-group ml-2 mr-2">
-							<div class="input-group">
-								<div class="form-group-upload">
-									<div class="custom-file">
-										<label class="custom-file-label" for="file-upload">pilih file ijazah...</label>
-										<input type="file" class="custom-file-input" id="file-upload" name="berkas"
-											value="<?= $detail->ijazah ?>">
-										<input type="hidden" class="form-control form-user-input"
-											name="id_permohonan_ptsp" id="id_permohonan_ptsp"
-											value="<?= $detail->id_permohonan_ptsp ?>">
+					<?php if ($detail->status == 'Pending') { ?>
+						<div class="card-footer py-3">
+							<form action="<?= base_url('dashboard/update_ijazah_ptsp03/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_ijazah">
+								<div class="form-group ml-2 mr-2">
+									<div class="input-group">
+										<div class="form-group-upload">
+											<div class="custom-file">
+												<label class="custom-file-label" for="file-upload">pilih file ijazah...</label>
+												<input type="file" class="custom-file-input" id="file-upload" name="berkas" value="<?= $detail->ijazah ?>">
+												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="id_permohonan_ptsp" value="<?= $detail->id_permohonan_ptsp ?>">
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
+								<center>
+									<button class="btn btn-sm btn-primary" type="submit">
+										<i class="fa fa-upload">
+										</i>
+									</button>
+								</center>
+							</form>
 						</div>
-						<center>
-							<button class="btn btn-sm btn-primary" type="submit">
-								<i class="fa fa-upload">
-								</i>
-							</button>
-						</center>
-					</form>
+					<?php } ?>
 				</div>
-				<?php } ?>
-			</div>
 		</div>
 		<div class="col-md-8 mb-4">
 			<!-- Detail Data -->
@@ -104,43 +99,42 @@
 								<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
 							</tr>
 							<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
-							<tr>
-								<td><b>Keterangan Permohonan Pending</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td> </td>
-								<td><?= $detail->keterangan; ?></td>
-							</tr>
+								<tr>
+									<td><b>Keterangan Permohonan Pending</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td> </td>
+									<td><?= $detail->keterangan; ?></td>
+								</tr>
 							<?php } ?>
 						</tbody>
 					</table>
 				</div>
 
 				<?php if ($detail->status == 'Pending') { ?>
-				<div class="card-footer">
-					<div class="float-right">
+					<div class="card-footer">
+						<div class="float-right">
 
-						<a href="<?= base_url() ?>dashboard/form_ubah_ptsp03/<?= $detail->id_permohonan_ptsp ?>">
-							<button id=" btn_ubah" class="btn btn-sm btn-warning" type="submit">
-								<i class="fa fa-edit nav-icon">
-								</i> Ubah
-							</button>
-						</a>
-						<a
-							href="<?= base_url() ?>dashboard/aksi_update_status_permohonan/<?= $detail->id_permohonan_ptsp ?>">
-							<button id="btn_selesai" class="btn btn-sm btn-primary" type="submit">
-								<i class="far fa-save nav-icon">
-								</i> Selesai
-							</button>
-						</a>
-						
+							<a href="<?= base_url() ?>dashboard/form_ubah_ptsp03/<?= $detail->id_permohonan_ptsp ?>">
+								<button id=" btn_ubah" class="btn btn-sm btn-warning" type="submit">
+									<i class="fa fa-edit nav-icon">
+									</i> Ubah
+								</button>
+							</a>
+							<a href="<?= base_url() ?>dashboard/aksi_update_status_permohonan/<?= $detail->id_permohonan_ptsp ?>">
+								<button id="btn_selesai" class="btn btn-sm btn-primary" type="submit">
+									<i class="far fa-save nav-icon">
+									</i> Selesai
+								</button>
+							</a>
+
+						</div>
 					</div>
-				</div>
 				<?php } ?>
 			</div>
 		</div>
-		<?php } ?>
+	<?php } ?>
 	</div>
 	<!--End Content Profile-->
 </div>

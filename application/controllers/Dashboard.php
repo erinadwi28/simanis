@@ -295,11 +295,7 @@ class Dashboard extends CI_Controller
             'no_hp' => $this->input->post('no_hp'),
         );
 
-        $id_ptsp03 = $this->m_pemohon->tambah_ptsp($data_ptsp, 'ptsp03');
-
-        if ($_FILES != null) {
-            $this->aksi_upload_ptsp03($id_ptsp03);
-        }
+        $this->m_pemohon->tambah_ptsp($data_ptsp, 'ptsp03');
 
 
         $this->session->set_flashdata('success', 'disimpan');

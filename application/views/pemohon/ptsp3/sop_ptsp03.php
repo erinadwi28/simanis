@@ -22,13 +22,14 @@
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
 						Pemohon adalah pemilik ijazah/STTB/SKP ijazah yang mengajukan permohonan pengesahan atau yang
-						diberikan kuasa oleh pemiliknya (FM-PI-01 dan FM-PI-02).
-						<ol type="1" class="ml-0 list-syarat">
-							<li>Mengisi dan menyelesaikan permohonan pengesahan fotocopi ijazah/STTB/SKP ijazah.</li>
-							<li>Mengupload/Mengunggah dokumen fotocopy ijazah.</li>
-							<li>Menunggu pemberitahuan pihak kemenag bahwa proses pengesahan telah selesai.</li>
-							<li>Mengambil dokumen legalisir dengan membawa dokumen asli.</li>
-						</ol>
+						diberikan kuasa oleh pemiliknya (<b> <a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-01.pdf" target="_blank">FM-PI-01</a></b> dan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-02.pdf" target="_blank">FM-PI-02</a></b>).
+					<ol type="1" class="ml-0 list-syarat">
+						<li>Mengisi dan menyelesaikan permohonan pengesahan fotocopi ijazah/STTB/SKP ijazah.</li>
+						<li>Mengupload/Mengunggah dokumen fotocopy ijazah.</li>
+						<li>Menunggu pemberitahuan pihak kemenag bahwa proses pengesahan telah selesai.</li>
+						<li>Mengambil dokumen legalisir dengan membawa dokumen asli.</li>
+						<li>Jika Pengambilan dokumen legalisir diwakilkan maka wajib membawa <b> <a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-01.pdf" target="_blank">FM-PI-01</a></b> dan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-02.pdf" target="_blank">FM-PI-02</a></b>.</li>
+					</ol>
 					</p>
 				</div>
 				<div class="card-footer">
