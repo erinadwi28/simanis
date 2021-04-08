@@ -103,10 +103,6 @@
 			margin-top: 200px;
 			margin-right: -500px;
 		}
-		.table-bordered{
-			border-color: #000;
-			color: #000;
-		}
 
 	</style>
 
@@ -132,59 +128,61 @@
 								</div>
 							</div>
 						</center>
-						<em>//masih dalam perbaikan</em>
+
 						<div class="badan_surat">
 							<div class="no_surat">
 								<center>
-									<p><u>SURAT REKOMENDASI</u><br>
-										Nomor : </p>
+									<p><b>REKOMENDASI</b><br>
+										<b>Nomor :</b> </p>
 								</center>
 							</div>
-							<div class="isi_surat">
-								<p> <b> Assalamu'alaikum Wr. Wb</b></p>
-								<p>Kepala Kantor Kementerian Agama Kab. Klaten dengan ini menerangkan bahwa</p>
-
+							<div class="isi_surat paragraf">
+								<p class="text-justify">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Berdasarkan surat dari Takmir Masjid ....................... Nomor :
+									......................
+									tanggal ........................ perihal Permohonan Surat Rekomendasi dan
+									memperhatikan kelengkapan
+									proposal yang diajukan, dengan ini kami memberikan rekomendasi kepada :
+								</p>
 							</div>
-							<div class="">
-									<table class="table table-bordered ">
-										<thead>
-											<tr>
-												<th>No</th>
-												<th>Nama</th>
-												<th>Alamat</th>
-												<th>Tempat/Tgl Lahir</th>
-												<th>No.Telp</th>
-											</tr>
-										</thead>
+							<div class="isi_surat identitas">
+								<table class="table-responsive">
 										<tbody>
 											<tr>
-												<td>1.</td>
-												<td>Radma Maulani</td>
-												<td>Kiyudan,Selomartani,Kalasa,Sleman,Yogyakarta</td>
-												<td>Sleman, 22/07/2000</td>
-												<td>085712166795</td>
+												<td>Nama Masjid</td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td>..................................................................</td>
+											</tr>
+											<tr>
+												<td>Nama Ketua Takmir</td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td>..................................................................</td>
+											</tr>
+											<tr>
+												<td>Alamat Masjid</td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td>..................................................................</td>
+											</tr>
+											<tr>
+												<td>Nomor ID Masjid</td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td>..................................................................</td>
+											</tr>
 										</tbody>
-										</tr>
-									</table>
-								
+								</table>
 							</div>
 
 							<br>
 							<div class="isi_surat paragraf">
-								<p>Adalah calon Jamaah Umrah/Haji Khusus yang terdaftar di ...
-									sebagai Penyelenggara Ibadah Umrah/Haji Khusus yang terdaftar resmi pada
-									Kementerian Agama dengan SK Nomor ... Tahun ...
-								</p>
-								<p>
-									Rekomendasi ini dibuat sebagai pertimbangan dalam pembuatan paspor untuk
-									keperluan kepergian Ibadah Umrah/Haji Khusus yang bersangkutan.
-								</p>
-								<p>
-									Demikian rekomendasi ini kami buat untuk dipergunakan sebagimana mestinya.
-								</p>
-							</div>
-							<div class="isi_surat">
-								<p><b> Wassalmu'alaikum Wr. Wb.</b></p>
+								<p>untuk mendapatkan bantuan renovasi masjid dari Gubernur Jawa Tengah.</p>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Demikian rekomendasi ini kami buat untuk dipergunakan sebagimana mestinya.</p>
 							</div>
 							<div class="row">
 								<div class="col-md-6">

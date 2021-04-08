@@ -13,8 +13,8 @@
 
 	<!-- Content Row line 1-->
 	<div class="row">
-		<div class="col-md-1 mb-4"></div>
-		<div class="col-md-10 mb-4">
+		<div class="col-md-2 mb-4"></div>
+		<div class="col-md-8 mb-4">
 			<!-- Detail Data -->
 			<div class="row">
 				<div class="col-md-12 mb-3">
@@ -22,11 +22,10 @@
 					<div class="card shadow mb-3">
 						<div class="card-header">
 							<center>
-								<h6 class="m-0 font-weight-bold">Surat Permohonan Haji Pertama</h6>
+								<h6 class="m-0 font-weight-bold">Surat Rekomendasi Permohonan Bantuan Masjid</h6>
 							</center>
 						</div>
 						<div class="card-body card-preview">
-							<b>Noted: Masih Dibenerin</b>
 							<div class="kopsurat row">
 								<div class="col-md-12 mb-3">
 									<object data="" type="image">
@@ -37,54 +36,58 @@
 							</div>
 							<div class="no_surat">
 								<center>
-									<p><u><b>REKOMENDASI</b></u><br>
+									<p><b>REKOMENDASI</b><br>
 										<b>Nomor :</b> </p>
 								</center>
 							</div>
 							<div class="isi_surat">
-								<p> <b> Assalamu'alaikum Wr. Wb</b></p>
-								<p>Kepala Kantor Kementerian Agama Kab. Klaten dengan ini menerangkan bahwa</p>
+								<p class="text-justify">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Berdasarkan surat dari Takmir Masjid ....................... Nomor :
+									......................
+									tanggal ........................ perihal Permohonan Surat Rekomendasi dan
+									memperhatikan kelengkapan
+									proposal yang diajukan, dengan ini kami memberikan rekomendasi kepada :
+								</p>
 							</div>
-							<div class="isi_surat identitas">
+							<div class="isi_surat identitas ml-5">
 								<center>
-									<table class="table table-bordered table-preview">
-										<thead>
-											<tr>
-												<th>No</th>
-												<th>Nama</th>
-												<th>Alamat</th>
-												<th>Tempat/Tgl Lahir</th>
-												<th>No.Telp</th>
-											</tr>
-										</thead>
+									<table class="table-responsive">
 										<tbody>
 											<tr>
-												<td>1.</td>
-												<td>Radma Maulani</td>
-												<td>Kiyudan,Selomartani,Kalasa,Sleman,Yogyakarta</td>
-												<td>Sleman, 22/07/2000</td>
-												<td>085712166795</td>
+												<td>Nama Masjid</td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td>..................................................................</td>
+											</tr>
+											<tr>
+												<td>Nama Ketua Takmir</td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td>..................................................................</td>
+											</tr>
+											<tr>
+												<td>Alamat Masjid</td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td>..................................................................</td>
+											</tr>
+											<tr>
+												<td>Nomor ID Masjid</td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td>..................................................................</td>
+											</tr>
 										</tbody>
-										</tr>
 									</table>
 								</center>
 							</div>
 							<br>
 							<div class="isi_surat paragraf">
-								<p>Adalah calon Jamaah Umrah/Haji Khusus yang terdaftar di ...
-									sebagai Penyelenggara Ibadah Umrah/Haji Khusus yang terdaftar resmi pada
-									Kementerian Agama dengan SK Nomor ... Tahun ...
-								</p>
-								<p>
-									Rekomendasi ini dibuat sebagai pertimbangan dalam pembuatan paspor untuk
-									keperluan kepergian Ibadah Umrah/Haji Khusus yang bersangkutan.
-								</p>
-								<p>
-									Demikian rekomendasi ini kami buat untuk dipergunakan sebagimana mestinya.
-								</p>
-							</div>
-							<div class="isi_surat">
-								<p><b> Wassalmu'alaikum Wr. Wb.</b></p>
+								<p>untuk mendapatkan bantuan renovasi masjid dari Gubernur Jawa Tengah.</p>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Demikian rekomendasi ini kami buat untuk dipergunakan sebagimana mestinya.</p>
 							</div>
 
 							<div class="row">
@@ -114,9 +117,8 @@
 								<div class="col-md-6">
 									<div class="badan_surat isi_surat">
 										<center>
-
 											<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
-											Nip. 197004201995031003
+											NIP. 197004201995031003
 										</center>
 									</div>
 								</div>
@@ -136,7 +138,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-1 mb-4"></div>
+		<div class="col-md-2 mb-4"></div>
 	</div>
 </div>
 <!-- /.container-fluid -->

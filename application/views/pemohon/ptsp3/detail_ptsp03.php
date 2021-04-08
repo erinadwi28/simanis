@@ -15,7 +15,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col-md-4 mb-4">
+		<div class="col-md-4 mb-0">
 			<?php
 			foreach ($detail_ptsp as $detail) { ?>
 			<!-- ijazah -->
@@ -26,7 +26,7 @@
 					</center>
 				</div>
 
-				<div class="card-body" style="padding: 15px;">
+				<div class="card-body">
 					<center>
 						<?php if ($detail->ijazah != null) { ?>
 						<p><?= $detail->ijazah; ?></p>
@@ -42,14 +42,14 @@
 				</div>
 
 				<?php if ($detail->status == 'Pending') { ?>
-				<div class="card-footer py-3">
+				<div class="card-footer">
 					<form action="<?= base_url('dashboard/update_ijazah_ptsp03/' . $detail->id_ptsp) ?>"
 						enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_ijazah">
 						<div class="form-group ml-2 mr-2">
 							<div class="input-group">
 								<div class="form-group-upload">
 									<div class="custom-file">
-										<label class="custom-file-label" for="file-upload">pilih file ijazah...</label>
+										<label class="custom-file-label" for="file-upload">pilih file...</label>
 										<input type="file" class="custom-file-input" id="file-upload" name="berkas"
 											value="<?= $detail->ijazah ?>">
 										<input type="hidden" class="form-control form-user-input"
@@ -70,7 +70,7 @@
 				<?php } ?>
 			</div>
 		</div>
-		<div class="col-md-8 mb-4">
+		<div class="col-md-8 mb-0">
 			<!-- Detail Data -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">

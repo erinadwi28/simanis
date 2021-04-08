@@ -8,7 +8,7 @@
         	</div>
 
         	<div class="row">
-        		<div class="col-md-3 mb-4 ml-5">
+        		<div class="col-md-4 mb-0">
         			<?php
 					foreach ($detail_ptsp as $detail) { ?>
         				<!-- Surat Permohonan -->
@@ -100,7 +100,7 @@
         					</div>
         				</div>
         		</div>
-        		<div class="col-md-8 mb-4">
+        		<div class="col-md-8 mb-0">
         			<!-- Detail Data -->
         			<div class="card shadow mb-4">
         				<div class="card-header py-3">

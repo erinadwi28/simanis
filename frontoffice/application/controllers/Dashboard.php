@@ -529,6 +529,7 @@ class Dashboard extends CI_Controller
                 $this->load->view('frontoffice/ptsp6/detail_ptsp06');
                 $this->load->view('footer');
         }
+
 	//tampil preview ptsp06
 	public function tampil_ptsp06()
         {
@@ -543,6 +544,7 @@ class Dashboard extends CI_Controller
                 $this->load->view('frontoffice/ptsp6/tampil_ptsp06');
                 $this->load->view('footer');
         }
+        
 	//tampil cetak ptsp06
 	public function cetak_ptsp06()
         {

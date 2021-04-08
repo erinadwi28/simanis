@@ -342,7 +342,7 @@ class Dashboard extends CI_Controller
         // Tampilkan pesan sukses atau error
         if ($this->email->send()) {
             echo 'Sukses! email berhasil dikirim.';
-        } else {
+        } else { 
             echo 'Error! email tidak dapat dikirim.';
         }
 
