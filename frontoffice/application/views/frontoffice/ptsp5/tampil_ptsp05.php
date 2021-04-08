@@ -36,9 +36,11 @@
         							</div>
         							<div class="no_surat">
         								<center>
-        									<p><u><b>SURAT KETERANGAN</b></u><br>
-        										<b>Nomor :</b>
-        									</p>
+        									<?php foreach ($detail_ptsp as $detail) { ?>
+        										<p><u><b>SURAT KETERANGAN</b></u><br>
+        											<b>Nomor : <?= $detail->no_surat ?></b>
+        										</p>
+        									<?php } ?>
         								</center>
         							</div>
         							<div class="isi_surat">

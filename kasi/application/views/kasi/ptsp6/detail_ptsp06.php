@@ -15,95 +15,95 @@
 		<div class="col-xs-12 col-sm-2"></div>
 		<?php
 		foreach ($detail_ptsp as $detail) { ?>
-		<div class="col-md-8 mb-4">
-			<div class="card shadow">
-				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Paspor Haji dan Umrah</h6>
-				</div>
-				<div class="card-body">
-					<table class="table-hover table-responsive">
-						<tbody>
-							<tr>
-								<td><b>Nama Jamaah Haji</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td><?= $detail->nama_jamaah_haji ?></td>
-							</tr>
-							<tr>
-								<td><b>Alamat Lengkap</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td><?= $detail->alamat ?></td>
-							</tr>
-							<tr>
-								<td><b>Tempat Lahir</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td><?= $detail->tempat_lahir ?></td>
-							</tr>
-							<tr>
-								<td><b>Tanggal Lahir</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td><?= $detail->tanggal_lahir ?></td>
-							</tr>
-							<tr>
-								<td><b>No. Handphone</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td><?= $detail->no_hp ?></td>
-							</tr>
-							<tr>
-								<td><b>Nama PPIU/PIHK</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td><?= $detail->nama_ppiu_pihk ?></td>
-							</tr>
-							<tr>
-								<td><b>No. SK PPIU/PIHK</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td><?= $detail->no_sk_ppiu_pihk ?></td>
-							</tr>
-							<tr>
-								<td><b>Tahun SK</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td><?= $detail->tahun_sk ?></td>
-							</tr>
-							<tr>
-								<td><b>Tanggal Permohonan</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
-							</tr>
+			<div class="col-md-8 mb-4">
+				<div class="card shadow">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Paspor Haji dan Umrah</h6>
+					</div>
+					<div class="card-body">
+						<table class="table-hover table-responsive">
+							<tbody>
+								<tr>
+									<td><b>Nama Jamaah Haji</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->nama_jamaah_haji ?></td>
+								</tr>
+								<tr>
+									<td><b>Alamat Lengkap</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->alamat ?></td>
+								</tr>
+								<tr>
+									<td><b>Tempat Lahir</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->tempat_lahir ?></td>
+								</tr>
+								<tr>
+									<td><b>Tanggal Lahir</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->tanggal_lahir ?></td>
+								</tr>
+								<tr>
+									<td><b>No. Handphone</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->no_hp ?></td>
+								</tr>
+								<tr>
+									<td><b>Nama PPIU/PIHK</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->nama_ppiu_pihk ?></td>
+								</tr>
+								<tr>
+									<td><b>No. SK PPIU/PIHK</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->no_sk_ppiu_pihk ?></td>
+								</tr>
+								<tr>
+									<td><b>Tahun SK</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->tahun_sk ?></td>
+								</tr>
+								<tr>
+									<td><b>Tanggal Permohonan</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
+								</tr>
 
-							<tr>
-								<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
-        							<tr>
-        								<td><b>Keterangan Permohonan Pending</b></td>
-        								<td> </td>
-        								<td> </td>
-        								<td>:</td>
-        								<td><?= $detail->keterangan; ?></td>
-        							</tr>
-        						<?php } ?>
+								<tr>
+									<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
+								<tr>
+									<td><b>Keterangan Permohonan Pending</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->keterangan; ?></td>
+								</tr>
+							<?php } ?>
 							</tr>
-						</tbody>
-					</table>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="col-xs-12 col-sm-2"></div>
+			<div class="col-xs-12 col-sm-2"></div>
 	</div>
 	<!-- Unggah dokumen -->
 	<div class="row clearfix">
@@ -119,14 +119,14 @@
 				<div class="card-body">
 					<center>
 						<?php if ($detail->srt_permohonan != null) { ?>
-        					<p><?= $detail->srt_permohonan; ?></p>
-        					<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
-        						<i class="fa fa-download nav-icon">
-        						</i> Klik untuk melihat
-        					</a>
-        				<?php } elseif ($detail->srt_permohonan == null) { ?>
-        					<p>Belum ada lampiran</p>
-        				<?php } ?>
+							<p><?= $detail->srt_permohonan; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->srt_permohonan == null) { ?>
+							<p>Belum ada lampiran</p>
+						<?php } ?>
 					</center>
 				</div>
 
@@ -147,14 +147,14 @@
 				<div class="card-body">
 					<center>
 						<?php if ($detail->sk_ijin_oprasional != null) { ?>
-        					<p><?= $detail->sk_ijin_oprasional; ?></p>
-        					<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/sk_ijin_operasional/<?= $detail->sk_ijin_oprasional ?>" target="_blank">
-        						<i class="fa fa-download nav-icon">
-        						</i> Klik untuk melihat
-        					</a>
-        				<?php } elseif ($detail->sk_ijin_oprasional == null) { ?>
-        					<p>Belum ada lampiran</p>
-        				<?php } ?>
+							<p><?= $detail->sk_ijin_oprasional; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/sk_ijin_oprasional/<?= $detail->sk_ijin_oprasional ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->sk_ijin_oprasional == null) { ?>
+							<p>Belum ada lampiran</p>
+						<?php } ?>
 					</center>
 				</div>
 
@@ -176,14 +176,14 @@
 				<div class="card-body">
 					<center>
 						<?php if ($detail->ktp != null) { ?>
-        					<p><?= $detail->ktp; ?></p>
-        					<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/fc_ktp/<?= $detail->ktp ?>" target="_blank">
-        						<i class="fa fa-download nav-icon">
-        						</i> Klik untuk melihat
-        					</a>
-        				<?php } elseif ($detail->ktp == null) { ?>
-        					<p>Belum ada lampiran</p>
-        				<?php } ?>
+							<p><?= $detail->ktp; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/ktp/<?= $detail->ktp ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->ktp == null) { ?>
+							<p>Belum ada lampiran</p>
+						<?php } ?>
 					</center>
 				</div>
 
@@ -205,14 +205,14 @@
 				<div class="card-body">
 					<center>
 						<?php if ($detail->kk != null) { ?>
-        					<p><?= $detail->kk; ?></p>
-        					<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/fc_kk/<?= $detail->kk ?>" target="_blank">
-        						<i class="fa fa-download nav-icon">
-        						</i> Klik untuk melihat
-        					</a>
-        				<?php } elseif ($detail->kk == null) { ?>
-        					<p>Belum ada lampiran</p>
-        				<?php } ?>
+							<p><?= $detail->kk; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/kk/<?= $detail->kk ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->kk == null) { ?>
+							<p>Belum ada lampiran</p>
+						<?php } ?>
 					</center>
 				</div>
 
@@ -226,24 +226,18 @@
 	<!-- Button Tolak & Setujui -->
 	<div class="row clearfix float-right px-2">
 		<?php if ($detail->status == 'Proses Kasi') { ?>
-        	<div class="float-right">
-        		<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>">
-        			<button id=" btn_tolak" class="btn btn-sm btn-danger" type="submit">
-        				<i class="fas fa-times-circle">
-        				</i> Tolak
-        			</button>
-        		</a>
-        		<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
-        			<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
-        				<i class="fas fa-check-circle">
-        				</i> Terima
-        			</button>
-        		</a>
-        	</div>
-        <?php } ?>
+			<div class="float-right">
+				<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+					<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
+						<i class="fas fa-check-circle">
+						</i> Terima
+					</button>
+				</a>
+			</div>
+		<?php } ?>
 	</div>
-	<?php }?>
-	<!--End Content Profile-->
+<?php } ?>
+<!--End Content Profile-->
 </div>
 <!-- /.container-fluid -->
 </div>

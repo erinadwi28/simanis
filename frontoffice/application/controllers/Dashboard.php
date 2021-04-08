@@ -292,6 +292,8 @@ class Dashboard extends CI_Controller
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp04')->result();
                 } elseif ($id_layanan == 5) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
+                } elseif ($id_layanan == 6) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp06')->result();
                 }
 
                 $this->load->view('header', $data_title);
@@ -305,6 +307,8 @@ class Dashboard extends CI_Controller
                         $this->load->view('frontoffice/ptsp4/detail_ptsp04', $data_detail);
                 } elseif ($id_layanan == 5) {
                         $this->load->view('frontoffice/ptsp5/detail_ptsp05', $data_detail);
+                } elseif ($id_layanan == 6) {
+                        $this->load->view('frontoffice/ptsp6/detail_ptsp06', $data_detail);
                 }
                 $this->load->view('footer');
         }
@@ -393,7 +397,7 @@ class Dashboard extends CI_Controller
                 $data_detail['id_permohonan_ptsp'] = $this->db->get_where('permohonan_ptsp', ['id_permohonan_ptsp' =>
                 $id_permohonan_ptsp])->row_array();
 
-                $this->load->view('header', $data_detail);
+                $this->load->view('header', $data_title);
                 $this->load->view('frontoffice/sidebar_fo');
                 $this->load->view('topbar', $data);
                 $this->load->view('frontoffice/form_input_keterangan', $data_detail);
@@ -475,9 +479,18 @@ class Dashboard extends CI_Controller
                 if ($id_layanan == 1) {
                         $data_title['title'] = 'Previe Surat Permohonan Rohaniawan dan Petugas Doa';
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp01')->result();
+                } elseif ($id_layanan == 3) {
+                        $data_title['title'] = 'Permohonan Legalisir Ijazah';
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp03')->result();
+                } elseif ($id_layanan == 4) {
+                        $data_title['title'] = 'Permohonan Legalisir Dokumen Kepegawaian, Surat, Piagam, Sertifikat ';
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp04')->result();
                 } elseif ($id_layanan == 5) {
                         $data_title['title'] = 'Permohonan Surat Keterangan Haji Pertama';
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
+                } elseif ($id_layanan == 6) {
+                        $data_title['title'] = 'Permohonan Rekomendasi Paspor Haji dan Umrah';
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp06')->result();
                 }
 
                 $this->load->view('header', $data_title);
@@ -491,6 +504,8 @@ class Dashboard extends CI_Controller
                         $this->load->view('frontoffice/ptsp4/detail_ptsp04', $data_detail);
                 } elseif ($id_layanan == 5) {
                         $this->load->view('frontoffice/ptsp5/tampil_ptsp05', $data_detail);
+                } elseif ($id_layanan == 6) {
+                        $this->load->view('frontoffice/ptsp6/tampil_ptsp06', $data_detail);
                 }
                 $this->load->view('footer');
         }
@@ -514,38 +529,23 @@ class Dashboard extends CI_Controller
                 $dompdf->render();
                 $dompdf->stream('Permohonan Surat Keterangan Haji Pertama');
         }
-
-	//tampil detail ptsp06
-	public function detail_ptsp06()
+        public function cetak_ptsp06($id_permohonan_ptsp)
         {
-                $data_title['title'] = 'Detail Permohonan';
+
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
-                $data['total_notif'] = $this->m_fo->jml_notif()->result();
 
-                $this->load->view('header', $data_title);
-                $this->load->view('frontoffice/sidebar_fo');
-                $this->load->view('topbar', $data);
-                $this->load->view('frontoffice/ptsp6/detail_ptsp06');
-                $this->load->view('footer');
-        }
-	//tampil preview ptsp06
-	public function tampil_ptsp06()
-        {
-                $data_title['title'] = 'Detail Permohonan';
-                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
-                $this->session->userdata('id_fo')])->row_array();
-                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data_detail['data_pemohon'] = $this->m_fo->get_data_pemohon_ptsp($id_permohonan_ptsp)->result();
+                $data_detail['detail_permohonan'] = $this->m_fo->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
+                $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp06')->result();
 
-                $this->load->view('header', $data_title);
-                $this->load->view('frontoffice/sidebar_fo');
-                $this->load->view('topbar', $data);
-                $this->load->view('frontoffice/ptsp6/tampil_ptsp06');
-                $this->load->view('footer');
-        }
-	//tampil cetak ptsp06
-	public function cetak_ptsp06()
-        {
-                $this->load->view('frontoffice/ptsp6/cetak_ptsp06');
+
+                $dompdf = new Dompdf();
+
+                $html = $this->load->view('frontoffice/ptsp6/cetak_ptsp06', $data_detail, true);
+                $dompdf->loadHtml($html);
+                $dompdf->setPaper('A4', 'portrait');
+                $dompdf->render();
+                $dompdf->stream('Permohonan Rekomendasi Paspor Haji dan Umrah');
         }
 }

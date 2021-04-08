@@ -16,9 +16,7 @@
 
 	<!-- Custom fonts for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/vendor/fontawesome-free/css/all.min.css') ?>" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
@@ -100,14 +98,14 @@
 			display: block;
 			position: absolute;
 			float: left;
-			margin-top: 200px;
-			margin-right: -500px;
+			margin-top: 65px;
+			margin-right: -300px;
 		}
-		.table-bordered{
+
+		.table-bordered {
 			border-color: #000;
 			color: #000;
 		}
-
 	</style>
 
 </head>
@@ -126,8 +124,7 @@
 							<div class="kopsurat row">
 								<div class="col-md-12 mb-3">
 									<object data="" type="image">
-										<img class="img-fluid" alt="logo_kop_surat"
-											src="<?= base_url('../assets/dashboard/') ?>images/kop_surat.jpg">
+										<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/') ?>images/kop_surat.jpg">
 									</object>
 								</div>
 							</div>
@@ -135,10 +132,11 @@
 						<em>//masih dalam perbaikan</em>
 						<div class="badan_surat">
 							<div class="no_surat">
-								<center>
-									<p><u>SURAT REKOMENDASI</u><br>
-										Nomor : </p>
-								</center>
+								<?php foreach ($detail_ptsp as $detail) { ?>
+									<center>
+										<p><u>SURAT REKOMENDASI</u><br>
+											Nomor : <?= $detail->no_surat ?></p>
+									</center>
 							</div>
 							<div class="isi_surat">
 								<p> <b> Assalamu'alaikum Wr. Wb</b></p>
@@ -146,34 +144,34 @@
 
 							</div>
 							<div class="">
-									<table class="table table-bordered ">
-										<thead>
-											<tr>
-												<th>No</th>
-												<th>Nama</th>
-												<th>Alamat</th>
-												<th>Tempat/Tgl Lahir</th>
-												<th>No.Telp</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>1.</td>
-												<td>Radma Maulani</td>
-												<td>Kiyudan,Selomartani,Kalasa,Sleman,Yogyakarta</td>
-												<td>Sleman, 22/07/2000</td>
-												<td>085712166795</td>
-										</tbody>
+								<table class="table table-bordered ">
+									<thead>
+										<tr>
+											<th>No</th>
+											<th>Nama</th>
+											<th>Alamat</th>
+											<th>Tempat/Tgl Lahir</th>
+											<th>No.Telp</th>
 										</tr>
-									</table>
-								
+									</thead>
+									<tbody>
+										<tr>
+											<td>1.</td>
+											<td><?= $detail->nama_jamaah_haji ?></td>
+											<td><?= $detail->alamat ?></td>
+											<td><?= $detail->tempat_lahir ?>, <?= $detail->tanggal_lahir ?></td>
+											<td><?= $detail->no_hp ?></td>
+									</tbody>
+									</tr>
+								</table>
+
 							</div>
 
 							<br>
 							<div class="isi_surat paragraf">
-								<p>Adalah calon Jamaah Umrah/Haji Khusus yang terdaftar di ...
+								<p>Adalah calon Jamaah Umrah/Haji Khusus yang terdaftar di <?= $detail->nama_ppiu_pihk ?>
 									sebagai Penyelenggara Ibadah Umrah/Haji Khusus yang terdaftar resmi pada
-									Kementerian Agama dengan SK Nomor ... Tahun ...
+									Kementerian Agama dengan SK Nomor <?= $detail->no_sk_ppiu_pihk ?> Tahun <?= $detail->tahun_sk ?>
 								</p>
 								<p>
 									Rekomendasi ini dibuat sebagai pertimbangan dalam pembuatan paspor untuk
@@ -186,13 +184,13 @@
 							<div class="isi_surat">
 								<p><b> Wassalmu'alaikum Wr. Wb.</b></p>
 							</div>
-							<div class="row">
+							<div class="row bawah">
 								<div class="col-md-6">
 								</div>
 								<div class="col-md-6">
 									<div class="isi_surat">
 										<center>
-
+											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 											Klaten, 03 Maret 2020<br>
 											Kepala
 										</center>
@@ -207,17 +205,19 @@
 								</div>
 							</div>
 							<br> <br>
-							<div class="row">
+							<div class="row kepala">
 								<div class="col-md-6">
 								</div>
 								<div class="col-md-6">
 									<div class="isi_surat">
 										<center>
+											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
 											<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
 											Nip. 197004201995031003
 										</center>
 									</div>
 								</div>
+							<?php } ?>
 							</div>
 						</div>
 					</div>

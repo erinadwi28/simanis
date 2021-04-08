@@ -128,8 +128,10 @@
 						<div class="badan_surat">
 							<div class="no_surat">
 								<center>
-									<p><u>SURAT KETERANGAN</u><br>
-										Nomor : </p>
+									<?php foreach ($detail_ptsp as $detail) { ?>
+										<p><u>SURAT KETERANGAN</u><br>
+											Nomor : </p>
+									<?php } ?>
 								</center>
 							</div>
 							<div class="isi_surat paragraf">
