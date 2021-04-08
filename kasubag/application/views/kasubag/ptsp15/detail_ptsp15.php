@@ -1,18 +1,32 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-	<!-- Page Heading -->
-	<div class="d-sm-flex align-items-center justify-content-between">
-		<h3 class="judullist py-3">Detail</h3>
-		<nav aria-label="breadcrumb" class="nav-breadcrumb">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Permohonan Masuk</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Detail</li>
-			</ol>
-		</nav>
-	</div>
-
-
+	<?php
+	foreach ($detail_ptsp as $detail) { ?>
+    	<?php if ($detail->status === 'Proses Kasubag') { ?>
+    		<!-- Page Heading -->
+    		<div class="d-sm-flex align-items-center justify-content-between">
+    			<h3 class="judullist py-3">Detail</h3>
+    			<nav aria-label="breadcrumb" class="nav-breadcrumb">
+    				<ol class="breadcrumb">
+    					<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+    					<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Permohonan Masuk</a></li>
+    					<li class="breadcrumb-item active" aria-current="page">Detail</li>
+    				</ol>
+    			</nav>
+    		</div>
+    	<?php } elseif ($detail->status === 'Selesai') { ?>
+    		<!-- Page Heading -->
+    		<div class="d-sm-flex align-items-center justify-content-between">
+    			<h3 class="judullist py-3">Detail</h3>
+    			<nav aria-label="breadcrumb" class="nav-breadcrumb">
+    				<ol class="breadcrumb">
+    					<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+    					<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesaiKasubag') ?>">Permohonan Selesai</a></li>
+    					<li class="breadcrumb-item active" aria-current="page">Detail</li>
+    				</ol>
+    			</nav>
+    		</div>
+    	<?php } ?>
 	<div class="row clearfix">
 		<div class="col-md-4 mb-0">
 			<!-- Proposal Permohonan -->
@@ -25,11 +39,15 @@
 
 				<div class="card-body">
 					<center>
-						<a id="btn_upload" class="btn btn-sm btn-primary" href="" target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-
+						<?php if ($detail->proposal_permohonan != null) { ?>
+							<p><?= $detail->proposal_permohonan; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp15/proposal_permohonan/<?= $detail->proposal_permohonan ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->proposal_permohonan == null) { ?>
+							<p>Belum ada lampiran</p>
+						<?php } ?>
 					</center>
 				</div>
 				<div class="card-footer">
@@ -40,92 +58,103 @@
 		<div class="col-md-8 mb-2">
 			<div class="card shadow">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Ijop LPQ</h6>
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Ijop Madin</h6>
 				</div>
 				<div class="card-body">
 					<table class="table-hover table-responsive">
-					<tbody>
+						<tbody>
 							<tr>
 								<td><b>Nama Madrasah</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>Madrasah Xxx</td>
+								<td><?= $detail->nama_madrasah ?></td>
 							</tr>
 							<tr>
 								<td><b>Alamat</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>Xxxx</td>
+								<td><?= $detail->alamat ?></td>
 							</tr>
 							<tr>
 								<td><b>Desa</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>Xxx</td>
+								<td><?= $detail->desa ?></td>
 							</tr>
 							<tr>
 								<td><b>Kecamatan</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>Xxx</td>
+								<td><?= $detail->kecamatan ?></td>
 							</tr>
 							<tr>
 								<td><b>Kabupaten</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>Xxx</td>
+								<td><?= $detail->kabupaten ?></td>
 							</tr>
 							<tr>
 								<td><b>Provinsi</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>Xxx</td>
+								<td><?= $detail->provinsi ?></td>
 							</tr>
 							<tr>
 								<td><b>Tahun Berdiri</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>Xxx</td>
+								<td><?= $detail->tahun_berdiri ?></td>
 							</tr>
 							<tr>
 								<td><b>No. Statistik</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>Xxx</td>
+								<td><?= $detail->nomor_statistik ?></td>
 							</tr>
 							<tr>
 								<td><b>No. Handphone</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>085712166795</td>
+								<td><?= $detail->no_hp ?></td>
 							</tr>
+							<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
+								<tr>
+									<td><b>Keterangan Permohonan Pending</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->keterangan; ?></td>
+								</tr>
+							<?php } ?>
 						</tbody>
 					</table>
+				</div>
+				<div class="card-footer">
+					<?php if ($detail->status == 'Proses Kasubag') { ?>
+						<div class="float-right">
+							<a href="<?= base_url() ?>dashboard/aksi_setujui_permohonan/<?= $detail->id_permohonan_ptsp ?>">
+								<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
+									<i class="fas fa-check-circle">
+									</i> Terima
+								</button>
+							</a>
+						</div>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-2"></div>
 	</div>
-	<!-- Button Tolak & Setujui -->
-	<div class="row clearfix float-right px-2">
-		<a href="">
-			<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
-				<i class="fas fa-check-circle">
-				</i> Terima
-			</button>
-		</a>
-
-	</div>
-
+	<?php }?>
 	<!--End Content Profile-->
 </div>
 <!-- /.container-fluid -->

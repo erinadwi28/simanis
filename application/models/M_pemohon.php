@@ -233,6 +233,48 @@ class M_pemohon extends CI_Model
         return $hasil;
     }
 
+    //detail permohonan ptsp14
+    public function get_detail_ptsp14($id_permohonan)
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan, ptsp14.*');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->join('ptsp14', 'permohonan_ptsp.id_permohonan_ptsp = ptsp14.id_permohonan_ptsp', 'INNER');
+        $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
+        $this->db->where('permohonan_ptsp.status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
+    //detail permohonan ptsp15
+    public function get_detail_ptsp15($id_permohonan)
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan, ptsp15.*');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->join('ptsp15', 'permohonan_ptsp.id_permohonan_ptsp = ptsp15.id_permohonan_ptsp', 'INNER');
+        $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
+        $this->db->where('permohonan_ptsp.status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
+    //detail permohonan ptsp18
+    public function get_detail_ptsp18($id_permohonan)
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan, ptsp18.*');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->join('ptsp18', 'permohonan_ptsp.id_permohonan_ptsp = ptsp18.id_permohonan_ptsp', 'INNER');
+        $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
+        $this->db->where('permohonan_ptsp.status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
     //detail permohonan ptsp25
     public function get_detail_ptsp25($id_permohonan)
     {

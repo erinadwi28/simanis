@@ -88,18 +88,15 @@
 									<td>:</td>
 									<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
 								</tr>
-
-								<tr>
-									<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
-								<tr>
-									<td><b>Keterangan Permohonan Pending</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td><?= $detail->keterangan; ?></td>
-								</tr>
-							<?php } ?>
-							</tr>
+								<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
+									<tr>
+										<td><b>Keterangan Permohonan Pending</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td><?= $detail->keterangan; ?></td>
+									</tr>
+								<?php } ?>
 							</tbody>
 						</table>
 					</div>
