@@ -1,21 +1,21 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
+<?php foreach ($detail_ptsp as $detail) { ?>
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between mb-4 judullist">
 		<h3>Form Ubah Permohonan</h3>
-		<!-- <a href="<?= base_url('warga') ?>"> -->
+				<a href="<?= base_url() ?>dashboard/detail_ptsp26/<?= $detail->id_permohonan_ptsp ?>">
 		<button id="btn_kembali" class="btn btn-sm btn-warning" type="">
 			<i class="fa fa-arrow-left">
 			</i> Kembali
 		</button>
-		<!-- </a> -->
+		</a>
 	</div>
 
 	<!--Begin Content Profile-->
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
-		<?php foreach ($detail_ptsp as $detail) { ?>
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
