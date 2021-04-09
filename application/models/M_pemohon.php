@@ -275,6 +275,20 @@ class M_pemohon extends CI_Model
         return $hasil;
     }
 
+    //detail permohonan ptsp20
+    public function get_detail_ptsp20($id_permohonan)
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan, ptsp20.*');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->join('ptsp20', 'permohonan_ptsp.id_permohonan_ptsp = ptsp20.id_permohonan_ptsp', 'INNER');
+        $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
+        $this->db->where('permohonan_ptsp.status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
     //detail permohonan ptsp25
     public function get_detail_ptsp25($id_permohonan)
     {
