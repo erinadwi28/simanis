@@ -27,105 +27,15 @@
         				</nav>
         			</div>
         		<?php } ?>
+				
         		<!-- Page Heading -->
         		<div class="d-sm-flex align-items-center justify-content-between mb-4 judullist">
-        			<h3>Detail Permohonan Surat Keterangan Haji Pertama</h3>
+        			<h3>Detail Permohonan</h3>
 
         		</div>
-
-        		<div class="row">
-        			<div class="col-md-3 mb-4 ml-5">
-
-        				<!-- Surat Permohonan -->
-        				<div class="card shadow mb-4">
-        					<div class="card-header py-3">
-        						<center>
-        							<h6 class="m-0 font-weight-bold">Surat Permohonan</h6>
-        						</center>
-        					</div>
-
-        					<div class="card-body" style="padding: 15px;">
-        						<center>
-        							<?php if ($detail->srt_permohonan != null) { ?>
-        								<p><?= $detail->srt_permohonan; ?></p>
-        								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
-        									<i class="fa fa-download nav-icon">
-        									</i> Klik untuk melihat
-        								</a>
-        							<?php } elseif ($detail->srt_permohonan == null) { ?>
-        								<p>Belum ada lampiran</p>
-        							<?php } ?>
-        						</center>
-        					</div>
-        				</div>
-        				<!-- Surat Pernyataan -->
-        				<div class="card shadow mb-4">
-        					<div class="card-header py-3">
-        						<center>
-        							<h6 class="m-0 font-weight-bold">Surat Pernyataan</h6>
-        						</center>
-        					</div>
-
-        					<div class="card-body" style="padding: 15px;">
-        						<center>
-        							<?php if ($detail->srt_pernyataan != null) { ?>
-        								<p><?= $detail->srt_pernyataan; ?></p>
-        								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>" target="_blank">
-        									<i class="fa fa-download nav-icon">
-        									</i> Klik untuk melihat
-        								</a>
-        							<?php } elseif ($detail->srt_pernyataan == null) { ?>
-        								<p>Belum ada lampiran</p>
-        							<?php } ?>
-        						</center>
-        					</div>
-        				</div>
-        				<!-- FC KTP -->
-        				<div class="card shadow mb-4">
-        					<div class="card-header py-3">
-        						<center>
-        							<h6 class="m-0 font-weight-bold">FC KTP</h6>
-        						</center>
-        					</div>
-
-        					<div class="card-body" style="padding: 15px;">
-        						<center>
-        							<?php if ($detail->ktp != null) { ?>
-        								<p><?= $detail->ktp; ?></p>
-        								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/fc_ktp/<?= $detail->ktp ?>" target="_blank">
-        									<i class="fa fa-download nav-icon">
-        									</i> Klik untuk melihat
-        								</a>
-        							<?php } elseif ($detail->ktp == null) { ?>
-        								<p>Belum ada lampiran</p>
-        							<?php } ?>
-        						</center>
-        					</div>
-        				</div>
-        				<!-- Bukti Pelunasan -->
-        				<div class="card shadow mb-4">
-        					<div class="card-header py-3">
-        						<center>
-        							<h6 class="m-0 font-weight-bold">Bukti Pelunasan</h6>
-        						</center>
-        					</div>
-
-        					<div class="card-body" style="padding: 15px;">
-        						<center>
-        							<?php if ($detail->bukti_pelunasan != null) { ?>
-        								<p><?= $detail->bukti_pelunasan; ?></p>
-        								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/bukti_pelunasan/<?= $detail->bukti_pelunasan ?>" target="_blank">
-        									<i class="fa fa-download nav-icon">
-        									</i> Klik untuk melihat
-        								</a>
-        							<?php } elseif ($detail->bukti_pelunasan == null) { ?>
-        								<p>Belum ada lampiran</p>
-        							<?php } ?>
-        						</center>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-md-8 mb-4">
+				<div class="row clearfix">
+				<div class="col-xs-12 col-sm-2"></div>
+				<div class="col-md-8 mb-4">
         				<!-- Detail Data -->
         				<div class="card shadow mb-4">
         					<div class="card-header py-3">
@@ -209,7 +119,112 @@
         							</tbody>
         						</table>
         					</div>
-        					<div class="card-footer">
+        					
+        				</div>
+        			</div>
+				</div>
+        		<div class="row clearfix">
+				<div class="col-xs-12 col-sm-3">
+        				<!-- Surat Permohonan -->
+        				<div class="card shadow mb-4">
+        					<div class="card-header py-3">
+        						<center>
+        							<h6 class="m-0 font-weight-bold">Surat Permohonan</h6>
+        						</center>
+        					</div>
+
+        					<div class="card-body" style="padding: 15px;">
+        						<center>
+        							<?php if ($detail->srt_permohonan != null) { ?>
+        								<p><?= $detail->srt_permohonan; ?></p>
+        								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
+        									<i class="fa fa-download nav-icon">
+        									</i> Klik untuk melihat
+        								</a>
+        							<?php } elseif ($detail->srt_permohonan == null) { ?>
+        								<p>Belum ada lampiran</p>
+        							<?php } ?>
+        						</center>
+        					</div>
+        				</div>
+				</div>
+				<div class="col-xs-12 col-sm-3">
+        				<!-- Surat Pernyataan -->
+        				<div class="card shadow mb-4">
+        					<div class="card-header py-3">
+        						<center>
+        							<h6 class="m-0 font-weight-bold">Surat Pernyataan</h6>
+        						</center>
+        					</div>
+
+        					<div class="card-body" style="padding: 15px;">
+        						<center>
+        							<?php if ($detail->srt_pernyataan != null) { ?>
+        								<p><?= $detail->srt_pernyataan; ?></p>
+        								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>" target="_blank">
+        									<i class="fa fa-download nav-icon">
+        									</i> Klik untuk melihat
+        								</a>
+        							<?php } elseif ($detail->srt_pernyataan == null) { ?>
+        								<p>Belum ada lampiran</p>
+        							<?php } ?>
+        						</center>
+        					</div>
+        				</div>
+				</div>
+				<div class="col-xs-12 col-sm-3">
+        				<!-- FC KTP -->
+        				<div class="card shadow mb-4">
+        					<div class="card-header py-3">
+        						<center>
+        							<h6 class="m-0 font-weight-bold">FC KTP</h6>
+        						</center>
+        					</div>
+
+        					<div class="card-body" style="padding: 15px;">
+        						<center>
+        							<?php if ($detail->ktp != null) { ?>
+        								<p><?= $detail->ktp; ?></p>
+        								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/fc_ktp/<?= $detail->ktp ?>" target="_blank">
+        									<i class="fa fa-download nav-icon">
+        									</i> Klik untuk melihat
+        								</a>
+        							<?php } elseif ($detail->ktp == null) { ?>
+        								<p>Belum ada lampiran</p>
+        							<?php } ?>
+        						</center>
+        					</div>
+        				</div>
+				</div>
+				<div class="col-xs-12 col-sm-3">
+        				<!-- Bukti Pelunasan -->
+        				<div class="card shadow mb-4">
+        					<div class="card-header py-3">
+        						<center>
+        							<h6 class="m-0 font-weight-bold">Bukti Pelunasan</h6>
+        						</center>
+        					</div>
+
+        					<div class="card-body" style="padding: 15px;">
+        						<center>
+        							<?php if ($detail->bukti_pelunasan != null) { ?>
+        								<p><?= $detail->bukti_pelunasan; ?></p>
+        								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/bukti_pelunasan/<?= $detail->bukti_pelunasan ?>" target="_blank">
+        									<i class="fa fa-download nav-icon">
+        									</i> Klik untuk melihat
+        								</a>
+        							<?php } elseif ($detail->bukti_pelunasan == null) { ?>
+        								<p>Belum ada lampiran</p>
+        							<?php } ?>
+        						</center>
+        					</div>
+        				</div>
+				</div>
+        			
+        			
+        		</div>
+				<!-- Button Setujui -->
+				<div class="row clearfix float-right px-2">
         						<?php if ($detail->status == 'Proses Kasubag') { ?>
         							<div class="float-right">
         								<a href="<?= base_url() ?>dashboard/aksi_setujui_permohonan/<?= $detail->id_permohonan_ptsp ?>">
@@ -221,9 +236,6 @@
         							</div>
         						<?php } ?>
         					</div>
-        				</div>
-        			</div>
-        		</div>
         	<?php } ?>
         	<!--End Content Profile-->
         </div>
