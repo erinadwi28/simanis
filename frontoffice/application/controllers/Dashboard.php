@@ -615,23 +615,28 @@ class Dashboard extends CI_Controller
                 $this->load->view('footer');
         }
         //tampil cetak ptsp14
-        public function cetak_ptsp14($id_permohonan_ptsp)
+        // public function cetak_ptsp14($id_permohonan_ptsp)
+        // {
+        //         $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+        //         $this->session->userdata('id_fo')])->row_array();
+
+        //         $data_detail['data_pemohon'] = $this->m_fo->get_data_pemohon_ptsp($id_permohonan_ptsp)->result();
+        //         $data_detail['detail_permohonan'] = $this->m_fo->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
+        //         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp14')->result();
+
+
+        //         $dompdf = new Dompdf();
+
+        //         $html = $this->load->view('frontoffice/ptsp14/cetak_ptsp14', $data_detail, true);
+        //         $dompdf->loadHtml($html);
+        //         $dompdf->setPaper('A4', 'portrait');
+        //         $dompdf->render();
+        //         $dompdf->stream('Permohonan Ijop LPQ');
+        // }
+	public function cetak_ptsp14()
         {
-                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
-                $this->session->userdata('id_fo')])->row_array();
-
-                $data_detail['data_pemohon'] = $this->m_fo->get_data_pemohon_ptsp($id_permohonan_ptsp)->result();
-                $data_detail['detail_permohonan'] = $this->m_fo->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
-                $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp14')->result();
-
-
-                $dompdf = new Dompdf();
-
-                $html = $this->load->view('frontoffice/ptsp14/cetak_ptsp14', $data_detail, true);
-                $dompdf->loadHtml($html);
-                $dompdf->setPaper('A4', 'portrait');
-                $dompdf->render();
-                $dompdf->stream('Permohonan Ijop LPQ');
+                
+                $this->load->view('frontoffice/ptsp14/cetak_ptsp14');
         }
         //tampil detail ptsp15
         public function detail_ptsp15()
@@ -662,23 +667,27 @@ class Dashboard extends CI_Controller
                 $this->load->view('footer');
         }
         //tampil cetak ptsp15
-        public function cetak_ptsp15($id_permohonan_ptsp)
+        // public function cetak_ptsp15($id_permohonan_ptsp)
+        // {
+        //         $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+        //         $this->session->userdata('id_fo')])->row_array();
+
+        //         $data_detail['data_pemohon'] = $this->m_fo->get_data_pemohon_ptsp($id_permohonan_ptsp)->result();
+        //         $data_detail['detail_permohonan'] = $this->m_fo->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
+        //         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp15')->result();
+
+
+        //         $dompdf = new Dompdf();
+
+        //         $html = $this->load->view('frontoffice/ptsp15/cetak_ptsp15', $data_detail, true);
+        //         $dompdf->loadHtml($html);
+        //         $dompdf->setPaper('A4', 'portrait');
+        //         $dompdf->render();
+        //         $dompdf->stream('Permohonan Ijop Madin');
+        // }
+	public function cetak_ptsp15()
         {
-                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
-                $this->session->userdata('id_fo')])->row_array();
-
-                $data_detail['data_pemohon'] = $this->m_fo->get_data_pemohon_ptsp($id_permohonan_ptsp)->result();
-                $data_detail['detail_permohonan'] = $this->m_fo->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
-                $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp15')->result();
-
-
-                $dompdf = new Dompdf();
-
-                $html = $this->load->view('frontoffice/ptsp15/cetak_ptsp15', $data_detail, true);
-                $dompdf->loadHtml($html);
-                $dompdf->setPaper('A4', 'portrait');
-                $dompdf->render();
-                $dompdf->stream('Permohonan Ijop Madin');
+                $this->load->view('frontoffice/ptsp15/cetak_ptsp15');
         }
         // Tampil cetak  Ptsp18
         public function cetak_ptsp18($id_permohonan_ptsp)
