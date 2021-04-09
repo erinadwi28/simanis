@@ -232,4 +232,8 @@
 	<!-- End of Main Content -->
 </body>
 
+<<<<<<< HEAD </html>
+	=======
+
 </html>
+>>>>>>> edd33503935bd484c3806bb33c524fdffe50412a

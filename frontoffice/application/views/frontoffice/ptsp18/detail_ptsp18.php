@@ -72,7 +72,7 @@
 					<table class="table-hover table-responsive">
 						<tbody>
 							<tr>
-								<td><b>No. Surat Takmir Masjid</b></td>
+								<td><b>No Surat Takmir Masjid</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>

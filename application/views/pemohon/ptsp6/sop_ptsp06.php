@@ -22,16 +22,16 @@
 				<div class="card-body ">
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
-						<ol type="1" class="ml-0 list-syarat">
-							<li>Pemohon Mengunduh Surat Permohonan ditujukan kepada Kepala Kantor Kemenag Klaten. <br> <a href="">Klik disini!!!</a> </li>
-							<li>Pemohon Mengisi surat permohonan yang telah diunduh.</li>
-							<li>Pemohon Mengunggah Surat Permohonan yang telah disi</li>
-							<li>Pemohon Mengunggah Fotocopyan SK Ijin Operasional</li>
-							<li>Pemohon Mengunggah Fotocopyan KTP</li>
-							<li>Pemohon Mengunggah Fotocopyan KK</li>
-							<li>Pemohon Mengisi dan Melengkapi form pengajuan yang telah disediakan.</li>
-							<li>Pemohon Menunggu Informasi dari Kemenag terkait proses pengajuan permohonan.</li>
-						</ol>
+					<ol type="1" class="ml-0 list-syarat">
+						<li>Pemohon Mengunduh Surat Permohonan ditujukan kepada Kepala Kantor Kemenag Klaten yang bisa di dowload <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp06/srt_permohonan.pdf" target="_blank">[di sini]</a></b></li>
+						<li>Pemohon Mengisi surat permohonan yang telah diunduh.</li>
+						<li>Pemohon Mengunggah Surat Permohonan yang telah disi</li>
+						<li>Pemohon Mengunggah Fotocopyan SK Ijin Operasional</li>
+						<li>Pemohon Mengunggah Fotocopyan KTP</li>
+						<li>Pemohon Mengunggah Fotocopyan KK</li>
+						<li>Pemohon Mengisi dan Melengkapi form pengajuan yang telah disediakan.</li>
+						<li>Pemohon Menunggu Informasi dari Kemenag terkait proses pengajuan permohonan.</li>
+					</ol>
 					</p>
 				</div>
 				<div class="card-footer">

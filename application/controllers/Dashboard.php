@@ -449,11 +449,7 @@ class Dashboard extends CI_Controller
             'no_hp' => $this->input->post('no_hp'),
         );
 
-        $id_ptsp04 = $this->m_pemohon->tambah_ptsp($data_ptsp, 'ptsp04');
-
-        if ($_FILES != null) {
-            $this->aksi_upload_ptsp04($id_ptsp04);
-        }
+        $this->m_pemohon->tambah_ptsp($data_ptsp, 'ptsp04');
 
 
         $this->session->set_flashdata('success', 'disimpan');
@@ -603,6 +599,7 @@ class Dashboard extends CI_Controller
         $data_ptsp = array(
             'id_permohonan_ptsp' => $id_permohonan,
             'nama' => $this->input->post('nama'),
+            'no_hp' => $this->input->post('no_hp'),
             'tempat_lahir' => $this->input->post('tempat_lahir'),
             'tanggal_lahir' => $this->input->post('tanggal_lahir'),
             'alamat' => $this->input->post('alamat'),
@@ -816,6 +813,7 @@ class Dashboard extends CI_Controller
     {
         $data_ptsp = array(
             'nama' => $this->input->post('nama'),
+            'no_hp' => $this->input->post('no_hp'),
             'tempat_lahir' => $this->input->post('tempat_lahir'),
             'tanggal_lahir' => $this->input->post('tanggal_lahir'),
             'alamat' => $this->input->post('alamat'),
@@ -832,13 +830,13 @@ class Dashboard extends CI_Controller
 
     //tampil preview ptsp05
     public function tampil_ptsp05()
-    { 
-        $data_title['title'] = 'Preview Surat'; 
+    {
+        $data_title['title'] = 'Preview Surat';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
         $this->load->view('pemohon/ptsp5/tampil_ptsp05');
@@ -854,7 +852,7 @@ class Dashboard extends CI_Controller
     //tampil sop ptsp06
     public function sop_ptsp06()
     { // $id_permohonan
-        $data_title['title'] = 'Standar Operasional Prosedur';                
+        $data_title['title'] = 'Standar Operasional Prosedur';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
@@ -1121,7 +1119,7 @@ class Dashboard extends CI_Controller
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
         $this->load->view('pemohon/ptsp14/sop_ptsp14');
@@ -1138,10 +1136,10 @@ class Dashboard extends CI_Controller
         $detailhere = array('id_pemohon' => $this->session->userdata('id_pemohon'));
         $data_detail['detail_profil_saya'] = $this->m_pemohon->get_detail_profil_saya($detailhere, 'pemohon')->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('pemohon/ptsp14/form_ptsp14',$data_detail);
+        $this->load->view('pemohon/ptsp14/form_ptsp14', $data_detail);
         $this->load->view('footer');
     }
     // aksi pengajuan ptsp14
@@ -1233,17 +1231,17 @@ class Dashboard extends CI_Controller
     //tampil form ubah ptsp14
     public function form_ubah_ptsp14($id_permohonan)
     { // $id_permohonan
-        $data_title['title'] = 'Form Ubah Permohonan'; 
+        $data_title['title'] = 'Form Ubah Permohonan';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
         $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp14($id_permohonan)->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('pemohon/ptsp14/form_ubah_ptsp14',$data_detail);
+        $this->load->view('pemohon/ptsp14/form_ubah_ptsp14', $data_detail);
         $this->load->view('footer');
     }
     // aksi update permohonan pts14
@@ -1275,12 +1273,12 @@ class Dashboard extends CI_Controller
     //tampil sop ptsp15
     public function sop_ptsp15()
     { // $id_permohonan
-        $data_title['title'] = 'Standar Operasional Prosedur';        
+        $data_title['title'] = 'Standar Operasional Prosedur';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
         $this->load->view('pemohon/ptsp15/sop_ptsp15');
@@ -1297,10 +1295,10 @@ class Dashboard extends CI_Controller
         $detailhere = array('id_pemohon' => $this->session->userdata('id_pemohon'));
         $data_detail['detail_profil_saya'] = $this->m_pemohon->get_detail_profil_saya($detailhere, 'pemohon')->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('pemohon/ptsp15/form_ptsp15',$data_detail);
+        $this->load->view('pemohon/ptsp15/form_ptsp15', $data_detail);
         $this->load->view('footer');
     }
     // aksi pengajuan ptsp15
@@ -1342,10 +1340,10 @@ class Dashboard extends CI_Controller
 
         $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp15($id_permohonan)->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('pemohon/ptsp15/detail_ptsp15',$data_detail);
+        $this->load->view('pemohon/ptsp15/detail_ptsp15', $data_detail);
         $this->load->view('footer');
     }
     //upload proposal permohonan ptsp15
@@ -1389,17 +1387,17 @@ class Dashboard extends CI_Controller
     //tampil form ubah ptsp15
     public function form_ubah_ptsp15($id_permohonan)
     { // $id_permohonan
-        $data_title['title'] = 'Form Ubah Permohonan'; 
+        $data_title['title'] = 'Form Ubah Permohonan';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
         $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp15($id_permohonan)->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('pemohon/ptsp15/form_ubah_ptsp15',$data_detail);
+        $this->load->view('pemohon/ptsp15/form_ubah_ptsp15', $data_detail);
         $this->load->view('footer');
     }
     // aksi update permohonan pts15
@@ -1426,23 +1424,23 @@ class Dashboard extends CI_Controller
     }
 
     //tampil sop ptsp18
-	public function sop_ptsp18()
-    { 
-        $data_title['title'] = 'Standar Operasional Prosedur';                
+    public function sop_ptsp18()
+    {
+        $data_title['title'] = 'Standar Operasional Prosedur';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
-        $this->load->view('topbar',$data);
+        $this->load->view('topbar', $data);
         $this->load->view('pemohon/ptsp18/sop_ptsp18');
         $this->load->view('footer');
     }
     //tampil halaman form pengajuan ptsp18
     public function form_ptsp18()
     {
-        $data_title['title'] = 'Form Permohonan';                
+        $data_title['title'] = 'Form Permohonan';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
@@ -1450,7 +1448,7 @@ class Dashboard extends CI_Controller
         $detailhere = array('id_pemohon' => $this->session->userdata('id_pemohon'));
         $data_detail['detail_profil_saya'] = $this->m_pemohon->get_detail_profil_saya($detailhere, 'pemohon')->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
         $this->load->view('pemohon/ptsp18/form_ptsp18', $data_detail);
@@ -1493,10 +1491,10 @@ class Dashboard extends CI_Controller
 
         $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp18($id_permohonan)->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('pemohon/ptsp18/detail_ptsp18',$data_detail);
+        $this->load->view('pemohon/ptsp18/detail_ptsp18', $data_detail);
         $this->load->view('footer');
     }
     //upload surat permohonan ptsp18
@@ -1578,7 +1576,7 @@ class Dashboard extends CI_Controller
     //tampil form ubah ptsp18
     public function form_ubah_ptsp18($id_permohonan)
     {
-        $data_title['title'] = 'Form Ubah Permohonan';                
+        $data_title['title'] = 'Form Ubah Permohonan';
         // $id_permohonan
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
@@ -1586,23 +1584,19 @@ class Dashboard extends CI_Controller
 
         $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp18($id_permohonan)->result();
 
-        $this->load->view('header',$data_title);
-        $this->load->view('pemohon/sidebar_pemohon');
-        $this->load->view('topbar', $data);
-        $this->load->view('pemohon/ptsp18/form_ubah_ptsp18', $data_detail);
-        $this->load->view('footer');
+        $this->load->view('header', $data_title);
     }
-	//tampil preview ptsp18
+    //tampil preview ptsp18
     public function tampil_ptsp18()
-    { 
-        $data_title['title'] = 'Preview Surat'; 
+    {
+        $data_title['title'] = 'Preview Surat';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
-        $this->load->view('topbar',$data);
+        $this->load->view('topbar', $data);
         $this->load->view('pemohon/ptsp18/tampil_ptsp18');
         $this->load->view('footer');
     }
@@ -1635,9 +1629,9 @@ class Dashboard extends CI_Controller
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
-        $this->load->view('topbar',$data);
+        $this->load->view('topbar', $data);
         $this->load->view('pemohon/ptsp25/sop_ptsp25');
         $this->load->view('footer');
     }
@@ -1652,10 +1646,10 @@ class Dashboard extends CI_Controller
         $detailhere = array('id_pemohon' => $this->session->userdata('id_pemohon'));
         $data_detail['detail_profil_saya'] = $this->m_pemohon->get_detail_profil_saya($detailhere, 'pemohon')->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
-        $this->load->view('topbar',$data);
-        $this->load->view('pemohon/ptsp25/form_ptsp25',$data_detail);
+        $this->load->view('topbar', $data);
+        $this->load->view('pemohon/ptsp25/form_ptsp25', $data_detail);
         $this->load->view('footer');
     }
     // aksi pengajuan ptsp25
@@ -1685,13 +1679,13 @@ class Dashboard extends CI_Controller
     //tampil detail permohonan ptsp25
     public function detail_ptsp25($id_permohonan)
     {
-        $data_title['title'] = 'Detail Permohonan';                
+        $data_title['title'] = 'Detail Permohonan';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
         $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp25($id_permohonan)->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
         $this->load->view('pemohon/ptsp25/detail_ptsp25', $data_detail);
@@ -1730,6 +1724,4 @@ class Dashboard extends CI_Controller
         $this->session->set_flashdata('success', 'disimpan');
         redirect('dashboard/detail_ptsp25/' . $id_permohonan);
     }
-    
-
 }

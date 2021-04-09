@@ -132,10 +132,13 @@
 						</div>
 						<div class="card-footer">
 							<center>
-								<a href="<?= base_url() ?>dashboard/cetak_ptsp18/<?php foreach ($detail_ptsp as $detail) { ?><?= $detail->id_permohonan_ptsp ?> <?php } ?>">
-									<button class="btn btn-sm btn-success" type="submit"><i class="fa fa-print"></i>
-										Cetak</button>
-								</a>
+								<<<<<<< HEAD <a href="<?= base_url() ?>dashboard/cetak_ptsp18/<?php foreach ($detail_ptsp as $detail) { ?><?= $detail->id_permohonan_ptsp ?> <?php } ?>">
+									=======
+									<a href="">
+										>>>>>>> edd33503935bd484c3806bb33c524fdffe50412a
+										<button class="btn btn-sm btn-success" type="submit"><i class="fa fa-print"></i>
+											Cetak</button>
+									</a>
 							</center>
 						</div>
 
@@ -149,4 +152,7 @@
 </div>
 <!-- /.container-fluid -->
 </div>
-<!-- End of Main Content -->
+<<<<<<< HEAD <!-- End of Main Content -->
+	=======
+	<!-- End of Main Content -->
+	>>>>>>> edd33503935bd484c3806bb33c524fdffe50412a
