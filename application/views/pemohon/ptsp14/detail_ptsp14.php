@@ -46,9 +46,9 @@
 					<form action="<?= base_url('dashboard/update_proposal_permohonan_ptsp14/' . $detail->id_ptsp) ?>"
 						enctype="multipart/form-data" method="post" accept-charset="utf-8"
 						id="form_upload_proposal_permohonan">
-						<div class="form-group">
+						<div class="form-group ">
 							<div class="input-group">
-								<div class="form-group-upload">
+								<div class="form-group-upload col-md-12">
 									<div class="custom-file">
 										<label class="custom-file-label" for="file-upload">pilih
 											file...</label>
@@ -75,7 +75,7 @@
 			<!-- Detail Data -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Ijop LPQ</h6>
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Ijin Operasional LPQ</h6>
 				</div>
 				<div class="card-body">
 					<table class="table-hover table-responsive">
@@ -173,8 +173,6 @@
 							</tr>	
 						</tbody>
 					</table>
-					<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen
-						dibawah</em>
 				</div>
 			
 			<?php if ($detail->status == 'Pending') { ?>
@@ -196,7 +194,7 @@
 	<div class="row clearfix float-right px-2">
 		<?php if ($detail->status == 'Pending') { ?>
 		<a href="<?= base_url() ?>dashboard/aksi_update_status_permohonan/<?= $detail->id_permohonan_ptsp ?>">
-			<button id="btn_selesai" class="btn btn-sm btn-primary" type="submit">
+			<button id="btn_selesai" class="btn btn-primary" type="submit">
 				<i class="far fa-save nav-icon">
 				</i> Selesai
 			</button>

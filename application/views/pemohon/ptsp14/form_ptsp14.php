@@ -87,7 +87,7 @@
 							<label for="yayasan" class="col-sm-3 col-form-label">Yayasan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="yayasan" name="yayasan" value="" placeholder="masukkan yayayan disini...">
+									<input type="text" class="form-control" id="yayasan" name="yayasan" value="" placeholder="masukkan yayasan disini...">
 								</div>
 							</div>
 						</div>
@@ -124,10 +124,10 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="No_hp" class="col-sm-3 col-form-label">No. Handphone</label>
+							<label for="No_hp" class="col-sm-3 col-form-label">No. HandPhone</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="no_hp" name="no_hp" value="" placeholder="masukkan no handpone disini...">
+									<input type="text" class="form-control" id="no_hp" name="no_hp" value="" placeholder="masukkan no handphone disini...">
 								</div>
 							</div>
 						</div>	

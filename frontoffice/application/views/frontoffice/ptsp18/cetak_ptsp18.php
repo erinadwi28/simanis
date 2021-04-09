@@ -148,7 +148,7 @@
 								<table class="table-responsive">
 										<tbody>
 											<tr>
-												<td>Nama Masjid</td>
+												<td>Nama Masjid</td> 
 												<td> </td>
 												<td>:</td>
 												<td> </td>

@@ -20,14 +20,12 @@
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
-		.kopsurat p {
-			font-weight: bold;
-			line-height: 1em;
+		.kopsurat  {
+			width: 700px;
 		}
 
 		.card-body {
-			padding: 5rem;
-			color: black;
+			margin-right: 50px;
 		}
 
 		.badan_surat {
@@ -41,6 +39,8 @@
 		.no_surat {
 			font-weight: bold;
 			font-size: 12pt;
+			text-align: center;
+			margin-left: 110px;
 		}
 
 		.paragraf {
@@ -48,6 +48,7 @@
 			text-align: justify;
 			font-family: 'Arial';
 			text-indent: 50px;
+			color: #000000 !important;
 		}
 
 		.isi_surat {
@@ -88,7 +89,6 @@
 		}
 
 		.bawah {
-			display: block;
 			position: absolute;
 			float: right;
 			margin-right: 160px;
@@ -101,11 +101,20 @@
 			margin-top: 65px;
 			margin-right: -300px;
 		}
+
+		.nama-terang {
+			margin-left: 220px !important;
+		}
+
+		table {
+			margin-left: 30px;
+		}
+		
 	</style>
 
 </head>
 
-<body class="body" id="page-top">
+<body class="body" id="page-top" >
 	<!-- Begin Page Content -->
 	<div class="container-fluid">
 		<!-- Page Heading -->
@@ -119,7 +128,7 @@
 							<div class="kopsurat row">
 								<div class="col-md-12 mb-3">
 									<object data="" type="image">
-										<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/') ?>images/kop_surat.jpg">
+										<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
 									</object>
 								</div>
 							</div>
@@ -127,16 +136,14 @@
 
 						<div class="badan_surat">
 							<div class="no_surat">
-								<center>
 									<?php foreach ($detail_ptsp as $detail) { ?>
 										<p><u>SURAT KETERANGAN</u><br>
 											Nomor : </p>
 									<?php } ?>
-								</center>
 							</div>
 							<div class="isi_surat paragraf">
 								<?php foreach ($data_pemohon as $detail) { ?>
-									<p> Menindaklanjuti surat permohonan dari Saudara <?= $detail->nama ?> tentang
+									<p>Menindaklanjuti surat permohonan dari Saudara <?= $detail->nama ?> tentang
 										Permohonan Surat Keterangan Haji Pertama, dengan ini Kepala Kantor
 										Kementrian Agama Kabupaten Klaten menerangkan bahwa :</p>
 								<?php } ?>
@@ -146,7 +153,7 @@
 									<table class="table-responsive">
 										<tbody>
 											<tr>
-												<td><b>Nama</b></td>
+												<td>Nama</td>
 												<td> </td>
 												<td> </td>
 												<td>:</td>
@@ -154,7 +161,7 @@
 												<td><?= $detail->nama ?></td>
 											</tr>
 											<tr>
-												<td><b>Tempat dan Tanggal Lahir</b></td>
+												<td>Tempat dan Tanggal Lahir</td>
 												<td> </td>
 												<td> </td>
 												<td>:</td>
@@ -162,7 +169,7 @@
 												<td><?= $detail->tempat_lahir ?>, <?= $detail->tanggal_lahir ?> </td>
 											</tr>
 											<tr>
-												<td><b>Alamat</b></td>
+												<td>Alamat</td>
 												<td> </td>
 												<td> </td>
 												<td>:</td>
@@ -170,7 +177,7 @@
 												<td><?= $detail->alamat ?></td>
 											</tr>
 											<tr>
-												<td><b>Nomor Porsi</b></td>
+												<td>Nomor Porsi</td>
 												<td> </td>
 												<td> </td>
 												<td>:</td>
@@ -180,7 +187,6 @@
 										</tbody>
 									</table>
 								</div>
-								<br>
 								<div class="isi_surat paragraf">
 									<p>Adalah jemaah haji Kabupaten Klaten Tahun <?= $detail->tahun_hijriah ?> H / <?= $detail->tahun_masehi ?> M dan perjalanan
 										ibadah hajinya merupakan yang pertama.
@@ -195,7 +201,7 @@
 									<div class="col-md-6">
 									</div>
 									<div class="col-md-6">
-										<div class="badan_surat isi_surat">
+										<div class="badan_surat isi_surat" >
 											<center>
 												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 												Klaten, 03 Maret 2020<br>
@@ -214,16 +220,15 @@
 							</div>
 							<br> <br>
 							<div class="row kepala">
-								<div class="col-md-6">
+								<div class="col-md-6 ">
 								</div>
-								<div class="col-md-6">
-									<div class="isi_surat">
-										<center>
-											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-											<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
-											Nip. 197004201995031003
-										</center>
-									</div>
+								<div class="col-md-6 nama-terang">
+									<center>
+										<div class="isi_surat">
+												<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
+												NIP. 197004201995031003
+										</div>
+									</center>
 								</div>
 							</div>
 						</div>

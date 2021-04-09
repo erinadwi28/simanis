@@ -108,6 +108,12 @@
 			color: #000;
 		}
 
+		.card {
+position: relative;
+  background: url(<?= base_url('../assets/dashboard/images/frontoffice/ptsp/bg_ptsp15.png') ?>) no-repeat;
+  background-size: cover;
+  overflow: hidden;		}
+
 	</style>
 
 </head>
@@ -119,11 +125,11 @@
 		<div class="row">
 			<div class="col-md-2">
 			</div>
-			<div class="col-md-8">
+			<div class="col-md-8" >
 				<div class="card shadow mb-4">
-					<div class="card-body" style="background-image: <?= base_url('../assets/dashboard/') ?>images/frontoffice/ptsp/sertifikat_ijop_lpq.jpg;">
-						
-					</div>
+					<div class="card-body">
+						AAAAAAAAAAAA
+					</div> 
 				</div>
 			</div>
 		</div>
