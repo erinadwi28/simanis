@@ -210,20 +210,6 @@ class Dashboard extends CI_Controller
                         $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
                 } elseif ($id_layanan == 6) {
                         $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp06')->result();
-                } elseif ($id_layanan == 7) {
-                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp07')->result();
-                } elseif ($id_layanan == 8) {
-                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp08')->result();
-                } elseif ($id_layanan == 9) {
-                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp09')->result();
-                } elseif ($id_layanan == 10) {
-                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp10')->result();
-                } elseif ($id_layanan == 11) {
-                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp11')->result();
-                } elseif ($id_layanan == 12) {
-                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp12')->result();
-                } elseif ($id_layanan == 13) {
-                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp13')->result();
                 } elseif ($id_layanan == 14) {
                         $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp14')->result();
                 } elseif ($id_layanan == 15) {

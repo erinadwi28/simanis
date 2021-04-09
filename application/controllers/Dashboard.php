@@ -1589,10 +1589,6 @@ class Dashboard extends CI_Controller
         $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp18($id_permohonan)->result();
 
         $this->load->view('header', $data_title);
-        $this->load->view('pemohon/sidebar_pemohon');
-        $this->load->view('topbar', $data);
-        $this->load->view('pemohon/ptsp18/form_ubah_ptsp18', $data_detail);
-        $this->load->view('footer');
     }
     //tampil preview ptsp18
     public function tampil_ptsp18()
