@@ -26,14 +26,6 @@
 						action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp15/<?= $detail->id_permohonan_ptsp ?>"
 						method="POST">
 						<div class="form-group row">
-							<label for="No_Surat" class="col-sm-3 col-form-label">No. Surat</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="no_surat" name="no_surat" value="<?= $detail->no_surat ?>" placeholder="masukkan nomor surat disini...">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
 							<label for="nama_madrasah" class="col-sm-3 col-form-label">Nama Madrasah</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
@@ -86,14 +78,6 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="tahun_berdiri" name="tahun_berdiri" value="<?= $detail->tahun_berdiri ?>" placeholder="masukkan tahun SK PPIU/PIHK disini...">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="nomor_statistik" class="col-sm-3 col-form-label">No. Statistik</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="nomor_statistik" name="nomor_statistik" value="<?= $detail->nomor_statistik ?>" placeholder="masukkan nomor statistik disini...">
 								</div>
 							</div>
 						</div>

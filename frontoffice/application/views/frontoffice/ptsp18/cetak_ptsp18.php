@@ -16,9 +16,7 @@
 
 	<!-- Custom fonts for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/vendor/fontawesome-free/css/all.min.css') ?>" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
@@ -103,7 +101,6 @@
 			margin-top: 200px;
 			margin-right: -500px;
 		}
-
 	</style>
 
 </head>
@@ -122,8 +119,7 @@
 							<div class="kopsurat row">
 								<div class="col-md-12 mb-3">
 									<object data="" type="image">
-										<img class="img-fluid" alt="logo_kop_surat"
-											src="<?= base_url('../assets/dashboard/') ?>images/kop_surat.png">
+										<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/') ?>images/kop_surat.png">
 									</object>
 								</div>
 							</div>
@@ -132,51 +128,58 @@
 						<div class="badan_surat">
 							<div class="no_surat">
 								<center>
-									<p><b>REKOMENDASI</b><br>
-										<b>Nomor :</b> </p>
+									<?php foreach ($detail_ptsp as $detail) { ?>
+										<p><b>REKOMENDASI</b><br>
+											<b>Nomor : <?= $detail->no_surat ?></b>
+										</p>
+									<?php } ?>
 								</center>
 							</div>
 							<div class="isi_surat paragraf">
-								<p class="text-justify">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Berdasarkan surat dari Takmir Masjid ....................... Nomor :
-									......................
-									tanggal ........................ perihal Permohonan Surat Rekomendasi dan
-									memperhatikan kelengkapan
-									proposal yang diajukan, dengan ini kami memberikan rekomendasi kepada :
-								</p>
+								<?php foreach ($detail_ptsp as $detail) { ?>
+									<p class="text-justify">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Berdasarkan surat dari Takmir Masjid <?= $detail->nama_masjid ?> Nomor :
+										<?= $detail->no_surat_permohonan ?>
+										tanggal <?= $detail->tgl_surat_permohonan ?> perihal Permohonan Surat Rekomendasi dan
+										memperhatikan kelengkapan
+										proposal yang diajukan, dengan ini kami memberikan rekomendasi kepada :
+									</p>
+								<?php } ?>
 							</div>
 							<div class="isi_surat identitas">
-								<table class="table-responsive">
+								<?php foreach ($detail_ptsp as $detail) { ?>
+									<table class="table-responsive">
 										<tbody>
 											<tr>
 												<td>Nama Masjid</td> 
 												<td> </td>
 												<td>:</td>
 												<td> </td>
-												<td>..................................................................</td>
+												<td><?= $detail->nama_masjid ?></td>
 											</tr>
 											<tr>
 												<td>Nama Ketua Takmir</td>
 												<td> </td>
 												<td>:</td>
 												<td> </td>
-												<td>..................................................................</td>
+												<td><?= $detail->nama_ketua_takmir ?></td>
 											</tr>
 											<tr>
 												<td>Alamat Masjid</td>
 												<td> </td>
 												<td>:</td>
 												<td> </td>
-												<td>..................................................................</td>
+												<td><?= $detail->alamat_masjid ?></td>
 											</tr>
 											<tr>
 												<td>Nomor ID Masjid</td>
 												<td> </td>
 												<td>:</td>
 												<td> </td>
-												<td>..................................................................</td>
+												<td><?= $detail->no_id_masjid ?></td>
 											</tr>
 										</tbody>
-								</table>
+									</table>
+								<?php } ?>
 							</div>
 
 							<br>

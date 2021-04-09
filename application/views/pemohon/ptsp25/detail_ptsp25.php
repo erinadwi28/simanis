@@ -60,9 +60,27 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->perihal_konsultasi ?></td>
 							</tr>
-								
+							<tr>
+								<td><b>Tanggal Permohonan</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
+							</tr>
+							<?php if ($detail->keterangan != null && $detail->status == 'Pending') { ?>
+							<tr>
+								<td><b>Keterangan Permohonan Pending</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= $detail->keterangan; ?></td>
+							</tr>
+							<?php } ?>
 						</tbody>
 					</table>
 					<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen dibawah</em>

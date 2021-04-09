@@ -28,14 +28,6 @@
 					<form class="form-horizontal mt-4" id="form5" enctype="multipart/form-data"
 						action="<?= base_url('dashboard/aksi_pengajuan_ptsp14') ?>" method="POST">
 						<div class="form-group row">
-							<label for="No_Surat" class="col-sm-3 col-form-label">No. Surat</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="no_surat" name="no_surat" value="" placeholder="masukkan nomor surat disini...">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
 							<label for="Nama_lpq" class="col-sm-3 col-form-label">Nama LPQ</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
@@ -116,15 +108,7 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="No_Statistik_Pendidikan_Alquran" class="col-sm-3 col-form-label">No. Statistik Pendidikan Alquran</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="no_statistik_pend_alquran" name="no_statistik_pend_alquran" value="" placeholder="masukkan no statistik pendidikan alquran disini...">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="No_hp" class="col-sm-3 col-form-label">No. HandPhone</label>
+							<label for="No_hp" class="col-sm-3 col-form-label">No. Handphone</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="no_hp" name="no_hp" value="" placeholder="masukkan no handphone disini...">

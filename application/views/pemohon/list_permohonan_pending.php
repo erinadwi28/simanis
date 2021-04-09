@@ -26,7 +26,7 @@
               <th>No</th>
               <th>Jenis Layanan PTSP</th>
               <th>Tanggal Permohonan</th>
-              <th>Tanggal Pengecekan</th>
+              <!-- <th>Tanggal Pengecekan</th> -->
               <th>Status</th>
               <th>Keterangan</th>
               <th>Aksi</th>
@@ -41,9 +41,9 @@
                 <td class="text-center"><?= $no ?></td>
                 <td><?= $permohonan->nama_layanan ?></td>
                 <td><?= format_indo(date($permohonan->tgl_permohonan));  ?></td>
-                <td><?php if ($permohonan->tgl_persetujuan_fo != null) {
+                <!-- <td><?php if ($permohonan->tgl_persetujuan_fo != null) {
                       echo (format_indo(date($permohonan->tgl_persetujuan_fo)));
-                    } ?></td>
+                    } ?></td> -->
                 <td><label class="badge badge-danger"><i class="far fa-clock text-status"> <?= $permohonan->status ?></i></label></td>
                 <td><?= character_limiter($permohonan->keterangan, 10); ?></td>
                 <td class="text-center">

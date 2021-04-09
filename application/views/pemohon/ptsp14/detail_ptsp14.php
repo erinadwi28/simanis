@@ -81,17 +81,11 @@
 					<table class="table-hover table-responsive">
 						<tbody>
 							<tr>
-								<td><b>No. Surat</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td><?= $detail->no_surat ?></td>
-							</tr>
-							<tr>
 								<td><b>Nama LPQ</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->nama_lpq ?></td>
 							</tr>
 							<tr>
@@ -99,6 +93,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->alamat ?></td>
 							</tr>
 							<tr>
@@ -106,6 +101,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->desa ?></td>
 							</tr>
 							<tr>
@@ -113,6 +109,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->kecamatan ?></td>
 							</tr>
 							<tr>
@@ -120,6 +117,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->kabupaten ?></td>
 							</tr>
 							<tr>
@@ -127,6 +125,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->provinsi ?></td>
 							</tr>
 							<tr>
@@ -134,6 +133,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->yayasan ?></td>
 							</tr>
 							<tr>
@@ -141,6 +141,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->sk_menkumham ?></td>
 							</tr>
 							<tr>
@@ -148,6 +149,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->tahun_berdiri ?></td>
 							</tr>
 							<tr>
@@ -155,22 +157,35 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td><?= $detail->berlaku ?></td>
-							</tr>
-							<tr>
-								<td><b>No Statistik Pend Alquran</b></td>
 								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td><?= $detail->no_statistik_pend_alquran ?></td>
+								<td><?= format_indo(date($detail->berlaku)); ?></td>
 							</tr>
 							<tr>
 								<td><b>No. Handphone</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->no_hp ?></td>
 							</tr>	
+							<tr>
+								<td><b>Tanggal Permohonan</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
+							</tr>
+							<?php if ($detail->keterangan != null && $detail->status == 'Pending') { ?>
+							<tr>
+								<td><b>Keterangan Permohonan Pending</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= $detail->keterangan; ?></td>
+							</tr>
+							<?php } ?>
 						</tbody>
 					</table>
 				</div>

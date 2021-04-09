@@ -29,59 +29,65 @@
 							<div class="kopsurat row">
 								<div class="col-md-12 mb-3">
 									<object data="" type="image">
-										<img class="img-fluid" alt="logo_kop_surat"
-											src="<?= base_url('../assets/dashboard/') ?>images/kop_surat.png">
+										<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/') ?>images/kop_surat.png">
 									</object>
 								</div>
 							</div>
 							<div class="no_surat">
 								<center>
-									<p><b>REKOMENDASI</b><br>
-										<b>Nomor :</b> </p>
+									<?php foreach ($detail_ptsp as $detail) { ?>
+										<p><b>REKOMENDASI</b><br>
+											<b>Nomor : <?= $detail->no_surat ?></b>
+										</p>
+									<?php } ?>
 								</center>
 							</div>
 							<div class="isi_surat">
-								<p class="text-justify">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Berdasarkan surat dari Takmir Masjid ....................... Nomor :
-									......................
-									tanggal ........................ perihal Permohonan Surat Rekomendasi dan
-									memperhatikan kelengkapan
-									proposal yang diajukan, dengan ini kami memberikan rekomendasi kepada :
-								</p>
+								<?php foreach ($detail_ptsp as $detail) { ?>
+									<p class="text-justify">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Berdasarkan surat dari Takmir Masjid <?= $detail->nama_masjid ?> Nomor :
+										<?= $detail->no_surat_permohonan ?>
+										tanggal <?= $detail->tgl_surat_permohonan ?> perihal Permohonan Surat Rekomendasi dan
+										memperhatikan kelengkapan
+										proposal yang diajukan, dengan ini kami memberikan rekomendasi kepada :
+									</p>
+								<?php } ?>
 							</div>
 							<div class="isi_surat identitas ml-5">
 								<center>
-									<table class="table-responsive">
-										<tbody>
-											<tr>
-												<td>Nama Masjid</td>
-												<td> </td>
-												<td>:</td>
-												<td> </td>
-												<td>..................................................................</td>
-											</tr>
-											<tr>
-												<td>Nama Ketua Takmir</td>
-												<td> </td>
-												<td>:</td>
-												<td> </td>
-												<td>..................................................................</td>
-											</tr>
-											<tr>
-												<td>Alamat Masjid</td>
-												<td> </td>
-												<td>:</td>
-												<td> </td>
-												<td>..................................................................</td>
-											</tr>
-											<tr>
-												<td>Nomor ID Masjid</td>
-												<td> </td>
-												<td>:</td>
-												<td> </td>
-												<td>..................................................................</td>
-											</tr>
-										</tbody>
-									</table>
+									<?php foreach ($detail_ptsp as $detail) { ?>
+										<table class="table-responsive">
+											<tbody>
+												<tr>
+													<td>Nama Masjid</td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->nama_masjid ?></td>
+												</tr>
+												<tr>
+													<td>Nama Ketua Takmir</td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->nama_ketua_takmir ?></td>
+												</tr>
+												<tr>
+													<td>Alamat Masjid</td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->alamat_masjid ?></td>
+												</tr>
+												<tr>
+													<td>Nomor ID Masjid</td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->no_id_masjid ?></td>
+												</tr>
+											</tbody>
+										</table>
+									<?php } ?>
 								</center>
 							</div>
 							<br>
@@ -126,10 +132,13 @@
 						</div>
 						<div class="card-footer">
 							<center>
-								<a href="">
-									<button class="btn btn-sm btn-success" type="submit"><i class="fa fa-print"></i>
-										Cetak</button>
-								</a>
+								<<<<<<< HEAD <a href="<?= base_url() ?>dashboard/cetak_ptsp18/<?php foreach ($detail_ptsp as $detail) { ?><?= $detail->id_permohonan_ptsp ?> <?php } ?>">
+									=======
+									<a href="">
+										>>>>>>> edd33503935bd484c3806bb33c524fdffe50412a
+										<button class="btn btn-sm btn-success" type="submit"><i class="fa fa-print"></i>
+											Cetak</button>
+									</a>
 							</center>
 						</div>
 
@@ -143,4 +152,7 @@
 </div>
 <!-- /.container-fluid -->
 </div>
-<!-- End of Main Content -->
+<<<<<<< HEAD <!-- End of Main Content -->
+	=======
+	<!-- End of Main Content -->
+	>>>>>>> edd33503935bd484c3806bb33c524fdffe50412a
