@@ -22,7 +22,7 @@
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
 						<ol type="1" class="ml-0 list-syarat">
-						<li>Surat Pemohon di tunjukan kepada kepala Kantor Kementrian Agama kab.Klaten.</li>
+						<li>Pemohon mengisi dan melengkapi form pengajuan yang di sediakan.</li>
 						</ol>
 					</p>
 				</div>

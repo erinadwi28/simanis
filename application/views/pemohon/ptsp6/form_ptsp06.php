@@ -103,10 +103,14 @@
 					</div>
 				</div>
 				</form>
+				<<<<<<< HEAD </div>
 				</div>
+				=======
 			</div>
 	</div>
-	<!--End Content Profile-->
+	>>>>>>> edd33503935bd484c3806bb33c524fdffe50412a
+</div>
+<!--End Content Profile-->
 </div>
 <!-- /.container-fluid -->
 </div>
@@ -125,15 +129,26 @@
 			<div class="modal-body">
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
-				<ol type="1" class="ml-0 list-syarat modal-content-syarat">
-					<li>Pemohon Mengunduh Surat Permohonan ditujukan kepada Kepala Kantor Kemenag Klaten yang bisa di dowload <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp06/srt_permohonan.pdf" target="_blank">[di sini]</a></b></li>
-					<li>Pemohon Mengunduh Surat Pernyataan Pergi Haji Pertama Bermatrai Rp.10.000.</li>
-					<li>Pemohon Mengisi Surat Permohonan ditujukan kepada Kepala Kantor Kemenag Klaten.</li>
-					<li>Pemohon Mengisi Surat Pernyataan Pergi Haji Pertama Bermatrai Rp.10.000.</li>
-					<li>Pemohon Mengunggah Surat Permohonan dan Surat Pernyataan pada form pengajuan.</li>
-					<li>Pemohon Mengisi dan Menlengkapi form pengajuan yang telah disediakan.</li>
-					<li>Pemohon Menunggu Informasi dari Kemenag terkait proses pengajuan permohonan.</li>
-				</ol>
+					<<<<<<< HEAD <ol type="1" class="ml-0 list-syarat modal-content-syarat">
+						<li>Pemohon Mengunduh Surat Permohonan ditujukan kepada Kepala Kantor Kemenag Klaten.</li>
+						<li>Pemohon Mengunduh Surat Pernyataan Pergi Haji Pertama Bermatrai Rp.10.000.</li>
+						<li>Pemohon Mengisi Surat Permohonan ditujukan kepada Kepala Kantor Kemenag Klaten.</li>
+						<li>Pemohon Mengisi Surat Pernyataan Pergi Haji Pertama Bermatrai Rp.10.000.</li>
+						<li>Pemohon Mengunggah Surat Permohonan dan Surat Pernyataan pada form pengajuan.</li>
+						<li>Pemohon Mengisi dan Menlengkapi form pengajuan yang telah disediakan.</li>
+						<li>Pemohon Menunggu Informasi dari Kemenag terkait proses pengajuan permohonan.</li>
+						</ol>
+						=======
+						<ol type="1" class="ml-0 list-syarat modal-content-syarat">
+							<li>Pemohon Mengunduh Surat Permohonan ditujukan kepada Kepala Kantor Kemenag Klaten yang bisa di dowload <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp06/srt_permohonan.pdf" target="_blank">[di sini]</a></b></li>
+							<li>Pemohon Mengunduh Surat Pernyataan Pergi Haji Pertama Bermatrai Rp.10.000.</li>
+							<li>Pemohon Mengisi Surat Permohonan ditujukan kepada Kepala Kantor Kemenag Klaten.</li>
+							<li>Pemohon Mengisi Surat Pernyataan Pergi Haji Pertama Bermatrai Rp.10.000.</li>
+							<li>Pemohon Mengunggah Surat Permohonan dan Surat Pernyataan pada form pengajuan.</li>
+							<li>Pemohon Mengisi dan Menlengkapi form pengajuan yang telah disediakan.</li>
+							<li>Pemohon Menunggu Informasi dari Kemenag terkait proses pengajuan permohonan.</li>
+						</ol>
+						>>>>>>> edd33503935bd484c3806bb33c524fdffe50412a
 				</p>
 			</div>
 			<div class="modal-footer">

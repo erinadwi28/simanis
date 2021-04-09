@@ -46,9 +46,9 @@
 					<form action="<?= base_url('dashboard/update_proposal_permohonan_ptsp14/' . $detail->id_ptsp) ?>"
 						enctype="multipart/form-data" method="post" accept-charset="utf-8"
 						id="form_upload_proposal_permohonan">
-						<div class="form-group">
+						<div class="form-group ">
 							<div class="input-group">
-								<div class="form-group-upload">
+								<div class="form-group-upload col-md-12">
 									<div class="custom-file">
 										<label class="custom-file-label" for="file-upload">pilih
 											file...</label>
@@ -75,23 +75,17 @@
 			<!-- Detail Data -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Ijop LPQ</h6>
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Ijin Operasional LPQ</h6>
 				</div>
 				<div class="card-body">
 					<table class="table-hover table-responsive">
 						<tbody>
 							<tr>
-								<td><b>No. Surat</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td><?= $detail->no_surat ?></td>
-							</tr>
-							<tr>
 								<td><b>Nama LPQ</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->nama_lpq ?></td>
 							</tr>
 							<tr>
@@ -99,6 +93,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->alamat ?></td>
 							</tr>
 							<tr>
@@ -106,6 +101,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->desa ?></td>
 							</tr>
 							<tr>
@@ -113,6 +109,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->kecamatan ?></td>
 							</tr>
 							<tr>
@@ -120,6 +117,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->kabupaten ?></td>
 							</tr>
 							<tr>
@@ -127,6 +125,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->provinsi ?></td>
 							</tr>
 							<tr>
@@ -134,6 +133,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->yayasan ?></td>
 							</tr>
 							<tr>
@@ -141,6 +141,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->sk_menkumham ?></td>
 							</tr>
 							<tr>
@@ -148,6 +149,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->tahun_berdiri ?></td>
 							</tr>
 							<tr>
@@ -155,26 +157,37 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td><?= $detail->berlaku ?></td>
-							</tr>
-							<tr>
-								<td><b>No Statistik Pend Alquran</b></td>
 								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td><?= $detail->no_statistik_pend_alquran ?></td>
+								<td><?= format_indo(date($detail->berlaku)); ?></td>
 							</tr>
 							<tr>
 								<td><b>No. Handphone</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->no_hp ?></td>
 							</tr>	
+							<tr>
+								<td><b>Tanggal Permohonan</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
+							</tr>
+							<?php if ($detail->keterangan != null && $detail->status == 'Pending') { ?>
+							<tr>
+								<td><b>Keterangan Permohonan Pending</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= $detail->keterangan; ?></td>
+							</tr>
+							<?php } ?>
 						</tbody>
 					</table>
-					<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen
-						dibawah</em>
 				</div>
 			
 			<?php if ($detail->status == 'Pending') { ?>
@@ -196,7 +209,7 @@
 	<div class="row clearfix float-right px-2">
 		<?php if ($detail->status == 'Pending') { ?>
 		<a href="<?= base_url() ?>dashboard/aksi_update_status_permohonan/<?= $detail->id_permohonan_ptsp ?>">
-			<button id="btn_selesai" class="btn btn-sm btn-primary" type="submit">
+			<button id="btn_selesai" class="btn btn-primary" type="submit">
 				<i class="far fa-save nav-icon">
 				</i> Selesai
 			</button>

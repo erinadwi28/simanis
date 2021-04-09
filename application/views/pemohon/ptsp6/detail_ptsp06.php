@@ -31,6 +31,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->nama_jamaah_haji ?></td>
 								</tr>
 								<tr>
@@ -38,6 +39,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->alamat ?></td>
 								</tr>
 								<tr>
@@ -45,6 +47,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->tempat_lahir ?></td>
 								</tr>
 								<tr>
@@ -52,13 +55,15 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
-									<td><?= $detail->tanggal_lahir ?></td>
+									<td> </td>
+									<td><?= format_indo(date($detail->tanggal_lahir)); ?></td>
 								</tr>
 								<tr>
 									<td><b>No. Handphone</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->no_hp ?></td>
 								</tr>
 								<tr>
@@ -66,6 +71,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->nama_ppiu_pihk ?></td>
 								</tr>
 								<tr>
@@ -73,6 +79,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->no_sk_ppiu_pihk ?></td>
 								</tr>
 								<tr>
@@ -80,16 +87,26 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->tahun_sk ?></td>
 								</tr>
-								<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
-									<tr>
-										<td><b>Keterangan Permohonan Pending</b></td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td><?= $detail->keterangan; ?></td>
-									</tr>
+								<tr>
+									<td><b>Tanggal Permohonan</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td> </td>
+									<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
+								</tr>
+								<?php if ($detail->keterangan != null && $detail->status == 'Pending') { ?>
+								<tr>
+									<td><b>Keterangan Permohonan Pending</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td> </td>
+									<td><?= $detail->keterangan; ?></td>
+								</tr>
 								<?php } ?>
 							</tbody>
 						</table>
@@ -128,12 +145,8 @@
 					<center>
 						<?php if ($detail->srt_permohonan != null) { ?>
 							<p><?= $detail->srt_permohonan; ?></p>
-<<<<<<< HEAD
-							<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp06/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
-=======
 							<a id="btn_upload" class="btn btn-sm btn-primary" 
 							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp06/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
->>>>>>> c6a2de7035b95e5d7521b413c86ceba01c032669
 								<i class="fa fa-download nav-icon">
 								</i> Klik untuk melihat
 							</a>

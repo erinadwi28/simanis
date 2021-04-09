@@ -99,7 +99,7 @@
 								<td> </td>
 								<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
 							</tr>
-							<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
+							<?php if ($detail->keterangan != null && $detail->status == 'Pending') { ?>
 								<tr>
 									<td><b>Keterangan Permohonan Pending</b></td>
 									<td> </td>

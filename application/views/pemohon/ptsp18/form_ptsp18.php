@@ -47,15 +47,6 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="no_surat_permohonan" class="col-sm-3 col-form-label">No. Surat Permohonan</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="no_surat_permohonan" name="no_surat_permohonan"
-										value="" placeholder="masukkan no surat takmir disini...">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
 							<label for="tgl_surat_permohonan" class="col-sm-3 col-form-label">Tgl. Surat Permohonan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
