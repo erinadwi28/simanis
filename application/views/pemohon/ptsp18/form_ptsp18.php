@@ -20,19 +20,19 @@
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Surat Rekomendasi Permohonan Bantuan Masjid</h6>
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Surat Rekomendasi Bantuan Masjid</h6>
 				</div>
 				<div class="card-body">
 					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i
 							class="fas fa-info-circle"></i></button>
 					<br>
 					<form class="form-horizontal mt-4" id="form5" enctype="multipart/form-data"
-						action="<?= base_url('dashboard/detail_ptsp18') ?>" method="POST">
+						action="<?= base_url('dashboard/aksi_pengajuan_ptsp18') ?>" method="POST">
 						<div class="form-group row">
-							<label for="no_surat_takmir" class="col-sm-3 col-form-label">No Surat Takmir Masjid</label>
+							<label for="no_surat_takmir" class="col-sm-3 col-form-label">No. Surat Takmir Masjid</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="no_surat_takmir" name="no_surat_takmir"
+									<input type="text" class="form-control" id="no_surat" name="no_surat"
 										value="" placeholder="masukkan no surat takmir disini...">
 								</div>
 							</div>
@@ -47,10 +47,18 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="nama_ketua" class="col-sm-3 col-form-label">Nama Ketua Takmir</label>
+							<label for="tgl_surat_permohonan" class="col-sm-3 col-form-label">Tgl. Surat Permohonan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama_ketua" name="nama_ketua"
+									<input type="date" class="form-control" id="tgl_surat_permohonan" name="tgl_surat_permohonan" value="">
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="nama_ketua_takmir" class="col-sm-3 col-form-label">Nama Ketua Takmir</label>
+							<div class="col-sm-9">
+								<div class="form-line focused">
+									<input type="text" class="form-control" id="nama_ketua_takmir" name="nama_ketua_takmir"
 										value="" placeholder="masukkan tempat lahir disini...">
 								</div>
 							</div>
@@ -65,7 +73,7 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="no_id_masjid" class="col-sm-3 col-form-label">No ID Masjid</label>
+							<label for="no_id_masjid" class="col-sm-3 col-form-label">No. ID Masjid</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="no_id_masjid" name="no_id_masjid" value=""
@@ -73,6 +81,14 @@
 								</div>
 							</div>
 						</div>
+						<div class="form-group row">
+							<label for="No_hp" class="col-sm-3 col-form-label">No. Handphone</label>
+							<div class="col-sm-9">
+								<div class="form-line focused">
+									<input type="text" class="form-control" id="no_hp" name="no_hp" value="" placeholder="masukkan no handpone disini...">
+								</div>
+							</div>
+						</div>	
 				</div>
 				<?php } ?>
 				<div class="card-footer">

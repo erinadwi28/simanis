@@ -17,14 +17,14 @@
 		<div class="col-md-8 mb-4">
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Surat Rekomendasi Permohonan Bantuan Masjid</h6>
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Surat Rekomendasi Bantuan Masjid</h6>
 				</div>
 				<div class="card-body ">
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
 						<ol type="1" class="ml-0 list-syarat">
 							<li>Pemohon mengunduh surat permohonan ditujukan kepada Kepala Kantor Kemenag Klaten ditandatangani oleh 
-							takmir masjid yang bersangkutan. Untuk mengunduh <br> <a href="#" class="klik-unduh">Klik disini!</a></li>
+							takmir masjid yang bersangkutan. Untuk mengunduh <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp18/srt_permohonan.doc" target="_blank">[di sini]</a></b></li>
 							<li>Pemohon mengisi surat permohonan yang telah diunduh tersebut.</li>
 							<li>Pemohon membuat proposal yang memuat:
 								<ol type="a">

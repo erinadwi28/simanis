@@ -16,6 +16,7 @@
 	<!--Begin Content Profile-->
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
+		<?php foreach ($detail_profil_saya as $detail) { ?>
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
@@ -83,22 +84,15 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="no_statistik" class="col-sm-3 col-form-label">No. Statistik</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="no_statistik" name="no_statistik" value="" placeholder="masukkan masa nomor statistik disini...">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
 							<label for="No_hp" class="col-sm-3 col-form-label">No. Handphone</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nomor_hp" name="nomor_hp" value="" placeholder="masukkan no handpone disini...">
+									<input type="text" class="form-control" id="no_hp" name="no_hp" value="" placeholder="masukkan no handpone disini...">
 								</div>
 							</div>
 						</div>	
 				</div>
+				<?php } ?>
 				<div class="card-footer">
 					<div class="float-right">
 						<a href="#">

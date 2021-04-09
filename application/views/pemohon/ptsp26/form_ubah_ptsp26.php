@@ -19,11 +19,11 @@
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Konsultasi dan informasi sertifikasi halal,zakat dan wakaf</h6>
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Data Lembaga Agama dan Keagamaan, Rumah Ibadah, Peristiwa Nikah, Jumlah Guru , Haji</h6>
 				</div>
 				<div class="card-body">
 					<form class="form-horizontal" id="form5" enctype="multipart/form-data"
-						action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp25/<?= $detail->id_permohonan_ptsp ?>"
+						action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp26/<?= $detail->id_permohonan_ptsp ?>"
 						method="POST">
 						<div class="form-group row">
 							<label for="Nama" class="col-sm-3 col-form-label">Nama</label>
@@ -59,10 +59,10 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="Perihal_konsultasi" class="col-sm-3 col-form-label">Perihal Konsultasi</label>
+							<label for="Tujuan_permohonan" class="col-sm-3 col-form-label">Tujuan permohonan data</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="perihal_konsultasi" name="perihal_konsultasi" value="<?= $detail->perihal_konsultasi ?>" placeholder="masukkan Perihal Konsultasi disini...">
+									<input type="text" class="form-control" id="tujuan_permohonan_data" name="tujuan_permohonan_data" value="<?= $detail->tujuan_permohonan_data ?>" placeholder="masukkan Permohonan data disini...">
 								</div>
 							</div>
 						</div>

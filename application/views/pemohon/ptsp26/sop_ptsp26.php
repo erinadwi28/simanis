@@ -16,7 +16,7 @@
 		<div class="col-md-8 mb-4">
 			<div class="card shadow mb-4 card-syarat">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Data Lembaga Agama dan Keagamaan, Rumah Ibadah, Peristiwa Nikah, Jumlah Guru , Haji,</h6>
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Data Lembaga Agama dan Keagamaan, Rumah Ibadah, Peristiwa Nikah, Jumlah Guru , Haji</h6>
 				</div>
 				<div class="card-body ">
 					<h6><b>Persyaratan :</b></h6>

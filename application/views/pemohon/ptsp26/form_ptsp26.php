@@ -20,13 +20,13 @@
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Data Lembaga Agama dan Keagamaan, Rumah Ibadah, Peristiwa Nikah, Jumlah Guru , Haji,  </h6>
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Data Lembaga Agama dan Keagamaan, Rumah Ibadah, Peristiwa Nikah, Jumlah Guru , Haji</h6>
 				</div>
 				<div class="card-body">
 					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
 					<br>
 					<form class="form-horizontal mt-4" id="form5" enctype="multipart/form-data"
-						action="<?= base_url('dashboard/aksi_pengajuan_ptsp25') ?>" method="POST">
+						action="<?= base_url('dashboard/aksi_pengajuan_ptsp26') ?>" method="POST">
 						<div class="form-group row">
 							<label for="Nama" class="col-sm-3 col-form-label">Nama</label>
 							<div class="col-sm-9">
@@ -65,7 +65,7 @@
 							<label for="Tujuan_permohonan" class="col-sm-3 col-form-label">Tujuan permohonan data</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="tujuan_permohonan" name="tujuan_permohonan" value="" placeholder="masukkan Permohonan data disini...">
+									<input type="text" class="form-control" id="tujuan_permohonan_data" name="tujuan_permohonan_data" value="" placeholder="masukkan Permohonan data disini...">
 								</div>
 							</div>
 						</div>

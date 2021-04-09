@@ -213,9 +213,14 @@ class Dashboard extends CI_Controller
 
         if ($id_layanan == 5) {
             $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
-        }
-        if ($id_layanan == 6) {
+        } elseif ($id_layanan == 6) {
             $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp06')->result();
+        } elseif ($id_layanan == 14) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp14')->result();
+        } elseif ($id_layanan == 15) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp15')->result();
+        } elseif ($id_layanan == 18) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp18')->result();
         }
 
         $this->load->view('header',$data_title);
@@ -223,9 +228,14 @@ class Dashboard extends CI_Controller
         $this->load->view('topbar', $data);
         if ($id_layanan == 5) {
             $this->load->view('backoffice/ptsp5/detail_ptsp05', $data_detail);
-        }
-        if ($id_layanan == 6) {
+        } elseif ($id_layanan == 6) {
             $this->load->view('backoffice/ptsp6/detail_ptsp06', $data_detail);
+        } elseif ($id_layanan == 14) {
+            $this->load->view('backoffice/ptsp14/detail_ptsp14', $data_detail);
+        } elseif ($id_layanan == 15) {
+            $this->load->view('backoffice/ptsp15/detail_ptsp15', $data_detail);
+        } elseif ($id_layanan == 18) {
+            $this->load->view('backoffice/ptsp18/detail_ptsp18', $data_detail);
         }
         $this->load->view('footer');
     }
@@ -316,7 +326,7 @@ class Dashboard extends CI_Controller
             'id_bo' => $this->session->userdata('id_bo'),
             'notif_pemohon' => 'Belum Dibaca',
             'status' => 'Proses Kasi',
-            'tgl_persetujuan_fo' => date("Y/m/d")
+            'tgl_persetujuan_bo' => date("Y/m/d")
         );
 
         $this->m_bo->update_status_permohonan($id_permohonan_ptsp, $data, 'permohonan_ptsp');
@@ -324,6 +334,7 @@ class Dashboard extends CI_Controller
         $this->session->set_flashdata('success', 'permohonan sukses disetujui');
         redirect('dashboard/list_permohonan_masuk');
     }
+<<<<<<< HEAD
 	//tampil detail ptsp14
     public function detail_ptsp14()
     {	$data_title['title'] = 'Detail Permohonan';                
@@ -363,4 +374,6 @@ class Dashboard extends CI_Controller
         $this->load->view('backoffice/ptsp26/detail_ptsp26');
         $this->load->view('footer');
     }
+=======
+>>>>>>> edd33503935bd484c3806bb33c524fdffe50412a
 }
