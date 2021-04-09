@@ -1,14 +1,25 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 	<!-- Page Heading -->
+	<?php foreach ($detail_ptsp as $detail) { ?>
 	<div class="d-sm-flex align-items-center justify-content-between">
 		<h3 class="judullist py-3">Detail Permohonan</h3>
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-				<li class="breadcrumb-item active" aria-current="page">SOP</li>
-				<li class="breadcrumb-item active" aria-current="page">Form Permohonan</li>
-				<li class="breadcrumb-item active" aria-current="page">Detail Permohonan</li>
+				<?php if ($detail->status == 'Validasi Kemenag') { ?>
+					<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+					<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_validasi_kemenag') ?>">Permohonan Proses Kemenag</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Detail Permohonan</li>
+				<?php } elseif ($detail->status == 'Selesai') { ?>
+					<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+					<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Permohonan Selesai</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Detail Permohonan</li>
+				<?php } else{ ?>
+					<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+					<li class="breadcrumb-item active" aria-current="page">SOP</li>
+					<li class="breadcrumb-item active" aria-current="page">Form Permohonan</li>
+					<li class="breadcrumb-item active" aria-current="page">Detail Permohonan</li>
+				<?php } ?>
 			</ol>
 		</nav>
 	</div>
@@ -17,7 +28,6 @@
 	<!-- Detail input -->
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
-		<?php foreach ($detail_ptsp as $detail) { ?>
 		<div class="col-md-8 mb-2">
 			<!-- Detail Data -->
 			<div class="card shadow mb-4">
@@ -32,6 +42,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->nama ?></td>
 							</tr>
 							<tr>
@@ -39,6 +50,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->alamat ?></td>
 							</tr>
 							<tr>
@@ -46,6 +58,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->pekerjaan ?></td>
 							</tr>
 							<tr>
@@ -53,6 +66,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->no_hp ?></td>
 							</tr>
 							<tr>
@@ -60,6 +74,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td> </td>
 								<td><?= $detail->perihal_konsultasi ?></td>
 							</tr>
@@ -71,6 +86,47 @@
 								<td> </td>
 								<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
 							</tr>
+							
+							<?php if ($detail->tgl_persetujuan_fo != null) { ?>
+							<tr>
+								<td><b>Tanggal Persetujuan Front Office</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= format_indo(date($detail->tgl_persetujuan_fo)); ?></td>
+							</tr>
+							<?php } ?>
+							<?php if ($detail->tgl_persetujuan_bo != null) { ?>
+							<tr>
+								<td><b>Tanggal Persetujuan Back Office</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
+							</tr>
+							<?php } ?>
+							<?php if ($detail->tgl_persetujuan_kasi != null) { ?>
+							<tr>
+								<td><b>Tanggal Persetujuan Kasi</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= format_indo(date($detail->tgl_persetujuan_kasi)); ?></td>
+							</tr>
+							<?php } ?>
+							<?php if ($detail->tgl_persetujuan_kasubag != null) { ?>
+							<tr>
+								<td><b>Tanggal Persetujuan Kasubag</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
+							</tr>
+							<?php } ?>
 							<?php if ($detail->keterangan != null && $detail->status == 'Pending') { ?>
 							<tr>
 								<td><b>Keterangan Permohonan Pending</b></td>

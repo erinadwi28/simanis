@@ -16,7 +16,7 @@
 	<!--Begin Content Profile-->
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
-		
+		<?php foreach ($detail_profil_saya as $detail) { ?>
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
@@ -26,7 +26,7 @@
 					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
 					<br>
 					<form class="form-horizontal mt-4" id="form20" enctype="multipart/form-data"
-						action="" method="POST">
+						action="<?= base_url('dashboard/aksi_pengajuan_ptsp20') ?>" method="POST">
 						<div class="form-group row">
 							<label for="Nama_majlis_taklim" class="col-sm-3 col-form-label">Nama Majlis Taklim</label>
 							<div class="col-sm-9">
@@ -92,6 +92,7 @@
 							</div>
 						</div>	
 				</div>
+				<?php } ?>
 				<div class="card-footer">
 					<div class="float-right">
 						<a href="#">
