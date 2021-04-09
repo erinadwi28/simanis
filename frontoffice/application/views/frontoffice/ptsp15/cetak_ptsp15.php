@@ -16,9 +16,7 @@
 
 	<!-- Custom fonts for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/vendor/fontawesome-free/css/all.min.css') ?>" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
@@ -138,7 +136,6 @@
 			background-size: cover;
 			overflow: hidden;
 		}
-
 	</style>
 
 </head>
@@ -158,130 +155,131 @@
 								<div class="logosurat row">
 									<div class="col-md-12 mb-3">
 										<object data="" type="image">
-											<img class="logosurat" alt="logo_kop_surat"
-												src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag.png') ?>">
+											<img class="logosurat" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag.png') ?>">
 										</object>
 									</div>
 								</div>
 							</center>
 
-							<div class="badan_surat">
-								<center>
-									<div class="kepala_Sertifikat">
-										<h5 style="margin-top: 20px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></h5>
-										<h6><b>KANTOR KABUPATEN KLATEN </b></h6>
-										<p>Jalan Ronggowarsito Klaten <br>
-											Telepon/Faksimili (0272)321154 <br>
-											Website : http://klaten.kemenag.go.id <br> <br> </p>
+							<?php foreach ($detail_ptsp as $detail) { ?>
+								<div class="badan_surat">
+									<center>
+										<div class="kepala_Sertifikat">
+											<h5 style="margin-top: 20px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></h5>
+											<h6><b>KANTOR KABUPATEN KLATEN </b></h6>
+											<p>Jalan Ronggowarsito Klaten <br>
+												Telepon/Faksimili (0272)321154 <br>
+												Website : http://klaten.kemenag.go.id <br> <br> </p>
+										</div>
+									</center>
+									<center>
+										<div class="no_surat">
+											<h5><b>PIAGAM PENYELENGARAAN</b></h5>
+											<h5><b>MADRASAH DINIYAH TAKMILIYAH (MDT)</b></h5>
+											<p><b> Nomor:.../Kk.11.10/3/PP.00.1/.../......</b></p>
+										</div>
+									</center>
+									<br>
+									<div class="isi_surat">
+										<p>Dengan ini Kepala Kantor Kementerian Agama Kabupaten Klaten <br> memberikan NSMDT
+											kepada :</p>
 									</div>
-								</center>
-								<center>
-									<div class="no_surat">
-										<h5><b>PIAGAM PENYELENGARAAN</b></h5>
-										<h5><b>MADRASAH DINIYAH TAKMILIYAH (MDT)</b></h5>
-										<p><b> Nomor:.../Kk.11.10/3/PP.00.1/.../......</b></p>
+									<div class="isi_surat identitas">
+										<table class="table-responsive">
+											<tbody>
+												<tr>
+													<td>Nama MDT</td>
+													<td> </td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->nama_madrasah ?></td>
+												</tr>
+												<tr>
+													<td>Alamat</td>
+													<td> </td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->alamat ?></td>
+												</tr>
+												<tr>
+													<td>Desa</td>
+													<td> </td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->desa ?></td>
+												</tr>
+												<tr>
+													<td>Kecamatan</td>
+													<td> </td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->kecamatan ?></td>
+												</tr>
+												<tr>
+													<td>Kabupaten</td>
+													<td> </td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->kabupaten ?></td>
+												</tr>
+												<tr>
+													<td>Provinsi</td>
+													<td> </td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->provinsi ?></td>
+												</tr>
+												<tr>
+													<td>Tahun Berdiri</td>
+													<td> </td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->tahun_berdiri ?></td>
+												</tr>
+												<tr>
+													<td>No Telp</td>
+													<td> </td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->no_hp ?></td>
+												</tr>
+
+											</tbody>
+										</table>
 									</div>
-								</center>
-								<br>
-								<div class="isi_surat">
-									<p>Dengan ini Kepala Kantor Kementerian Agama Kabupaten Klaten <br> memberikan NSMDT
-										kepada :</p>
-								</div>
-								<div class="isi_surat identitas">
-									<table class="table-responsive">
-										<tbody>
-											<tr>
-												<td>Nama MDT</td>
-												<td> </td>
-												<td> </td>
-												<td>:</td>
-												<td> </td>
-												<td>Madrasah Al-Ikhlas</td>
-											</tr>
-											<tr>
-												<td>Alamat</td>
-												<td> </td>
-												<td> </td>
-												<td>:</td>
-												<td> </td>
-												<td>Jalan Merdeka 56</td>
-											</tr>
-											<tr>
-												<td>Desa</td>
-												<td> </td>
-												<td> </td>
-												<td>:</td>
-												<td> </td>
-												<td>Purwomartani</td>
-											</tr>
-											<tr>
-												<td>Kecamatan</td>
-												<td> </td>
-												<td> </td>
-												<td>:</td>
-												<td> </td>
-												<td>Kalasan</td>
-											</tr>
-											<tr>
-												<td>Kabupaten</td>
-												<td> </td>
-												<td> </td>
-												<td>:</td>
-												<td> </td>
-												<td>Klaten</td>
-											</tr>
-											<tr>
-												<td>Provinsi</td>
-												<td> </td>
-												<td> </td>
-												<td>:</td>
-												<td> </td>
-												<td>Jawa Tengah</td>
-											</tr>
-											<tr>
-												<td>Tahun Berdiri</td>
-												<td> </td>
-												<td> </td>
-												<td>:</td>
-												<td> </td>
-												<td>2015</td>
-											</tr>
-											<tr>
-												<td>No Telp</td>
-												<td> </td>
-												<td> </td>
-												<td>:</td>
-												<td> </td>
-												<td>027267890</td>
-											</tr>
+									<br>
+									<div class="isi_surat">
+										<p>Madrasah Diniyah Taklimiyah (MDT) tersebut telah terdaftar di <br>
+											Kantor Kementerian Agama Kabupaten Klaten sebagai Lembaga <br>
+											Pendidikan Keagamaan Islam.</p>
+										<p>Demikian untuk dapat digunakan sebagaimana mestinya.</p>
+									</div>
+									<div class="no_statistik">
 
-										</tbody>
-									</table>
-								</div>
-								<br>
-								<div class="isi_surat">
-									<p>Madrasah Diniyah Taklimiyah (MDT) tersebut telah terdaftar di <br>
-								Kantor Kementerian Agama Kabupaten Klaten sebagai Lembaga <br>
-							Pendidikan Keagamaan Islam.</p>
-							<p>Demikian untuk dapat digunakan sebagaimana mestinya.</p>
-								</div>
-								<div class="no_statistik">
-
-								</div>
-								<br> <br>
-								<div class="row">
-									<div class="col-md-6"></div>
-									<div class="col-md-6">
-										<div class="badan_surat isi_surat">
-											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-											<p>Ditetapkan di : Klaten <br>
-										       Pada Tanggal  : &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; 20     <br>
-											   Kepala </p><br><br><br><br>
-											<b>Anif Solikhin</b><br>
+									</div>
+									<br> <br>
+									<div class="row">
+										<div class="col-md-6"></div>
+										<div class="col-md-6">
+											<div class="badan_surat isi_surat">
+												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+												<p>Ditetapkan di : Klaten <br>
+													Pada Tanggal : &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; 20 <br>
+													Kepala </p><br><br><br><br>
+												<b>Anif Solikhin</b><br>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
+							<?php } ?>
 						</div>
 					</div>
 				</div>

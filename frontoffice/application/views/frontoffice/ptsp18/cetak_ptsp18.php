@@ -126,31 +126,27 @@
 						</center>
 
 						<div class="badan_surat">
-							<div class="no_surat">
-								<center>
-									<?php foreach ($detail_ptsp as $detail) { ?>
+							<?php foreach ($detail_ptsp as $detail) { ?>
+								<div class="no_surat">
+									<center>
 										<p><b>REKOMENDASI</b><br>
 											<b>Nomor : <?= $detail->no_surat ?></b>
 										</p>
-									<?php } ?>
-								</center>
-							</div>
-							<div class="isi_surat paragraf">
-								<?php foreach ($detail_ptsp as $detail) { ?>
+									</center>
+								</div>
+								<div class="isi_surat paragraf">
 									<p class="text-justify">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Berdasarkan surat dari Takmir Masjid <?= $detail->nama_masjid ?> Nomor :
 										<?= $detail->no_surat_permohonan ?>
 										tanggal <?= $detail->tgl_surat_permohonan ?> perihal Permohonan Surat Rekomendasi dan
 										memperhatikan kelengkapan
 										proposal yang diajukan, dengan ini kami memberikan rekomendasi kepada :
 									</p>
-								<?php } ?>
-							</div>
-							<div class="isi_surat identitas">
-								<?php foreach ($detail_ptsp as $detail) { ?>
+								</div>
+								<div class="isi_surat identitas">
 									<table class="table-responsive">
 										<tbody>
 											<tr>
-												<td>Nama Masjid</td> 
+												<td>Nama Masjid</td>
 												<td> </td>
 												<td>:</td>
 												<td> </td>
@@ -179,47 +175,46 @@
 											</tr>
 										</tbody>
 									</table>
-								<?php } ?>
-							</div>
-
-							<br>
-							<div class="isi_surat paragraf">
-								<p>untuk mendapatkan bantuan renovasi masjid dari Gubernur Jawa Tengah.</p>
-								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Demikian rekomendasi ini kami buat untuk dipergunakan sebagimana mestinya.</p>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
 								</div>
-								<div class="col-md-6">
-									<div class="isi_surat">
-										<center>
 
-											Klaten, 03 Maret 2020<br>
-											Kepala
-										</center>
+								<br>
+								<div class="isi_surat paragraf">
+									<p>untuk mendapatkan bantuan renovasi masjid dari Gubernur Jawa Tengah.</p>
+									<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Demikian rekomendasi ini kami buat untuk dipergunakan sebagimana mestinya.</p>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+									</div>
+									<div class="col-md-6">
+										<div class="isi_surat">
+											<center>
+												Klaten, 03 Maret 2020<br>
+												Kepala
+											</center>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="row ttd_kades">
-								<div class="col-md-6 ">
-								</div>
-								<div class="col-md-6">
+								<div class="row ttd_kades">
+									<div class="col-md-6 ">
+									</div>
+									<div class="col-md-6">
 
-								</div>
-							</div>
-							<br> <br>
-							<div class="row">
-								<div class="col-md-6">
-								</div>
-								<div class="col-md-6">
-									<div class="isi_surat">
-										<center>
-											<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
-											Nip. 197004201995031003
-										</center>
 									</div>
 								</div>
-							</div>
+								<br> <br>
+								<div class="row">
+									<div class="col-md-6">
+									</div>
+									<div class="col-md-6">
+										<div class="isi_surat">
+											<center>
+												<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
+												Nip. 197004201995031003
+											</center>
+										</div>
+									</div>
+								</div>
+							<?php } ?>
 						</div>
 					</div>
 				</div>
