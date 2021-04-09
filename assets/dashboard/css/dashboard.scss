@@ -1,0 +1,262 @@
+body {
+	background-color: #fff;
+	font-family: 'Assistant', sans-serif;
+	color: #007530;
+}
+
+
+.card {
+    border: 0px;
+	border-radius: 0px;
+	.card-header {
+        background-color: #F2FCEE;
+
+        h6 {
+            color: #007530;
+        }
+    }
+
+    .card-body {
+        color: #000000;
+
+        // &:hover {
+        //     color: #007530;
+        // }
+        table {
+            color: #000000;
+            } 
+        }
+        
+    .card-footer {
+        background-color: #F2FCEE;
+    }
+}
+
+.container-fluid {
+    .judullist {
+        h3 {
+            color: #007530;
+        }
+
+    }
+}
+
+.nav-breadcrumb {
+	ol {
+		margin-bottom: 0;
+
+		$breakpoint-tablet: 768px;
+
+	@media (max-width: $breakpoint-tablet) {
+		padding: 0;
+		margin-top: 5px;
+		padding-bottom: 5px;
+	}
+	}
+}
+
+.topbar-welcome {
+	$breakpoint-tablet: 768px;
+
+	@media (max-width: $breakpoint-tablet) {
+		display: none;
+	}
+}
+
+.sidebar-toggle {
+	color: #007530;
+
+	&:hover {
+		color: #007530;
+	}
+}
+
+
+.scroll-to-top {
+	background-color: #F69D1B;
+
+	&:hover{
+		background-color: #F5C47B;
+	}
+}
+
+.sidebar {
+    background-color: #007530;
+	.nav-item {
+		.nav-link {
+			span {
+				font-size: 15px;
+			}
+		}
+
+		.collapse {
+			.collapse-inner {
+				.collapse-item {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+
+    .toggled {
+        .nav-item {
+            .nav-link {
+                span {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}
+
+.title-track {
+    color: #fff;
+    background-color: #007530;
+    border: 0px;
+    border-radius: 0px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.ptsp {
+	.border-left-success {
+		border-left : .25rem solid #F69D1B!important;
+	}
+
+	.text-success {
+		color: #007530!important;
+	}
+
+	.badge-warning {
+		background-color: #F69D1B;
+	}
+
+	&:hover {
+		.card-body {
+			background-color: #007530;
+		}
+
+		.text-success {
+		color: #Fff!important;
+	}
+	}
+}
+
+.table-bordered{
+	td {
+	padding-bottom: 4px;
+	padding-top: 4px;
+}
+thead{
+	th{
+		padding-bottom: 7px;
+		padding-top: 7px;
+		text-align: center;
+		border-bottom: 0;
+		background-color: #F2FCEE;
+	}
+}
+}
+
+.dataTables_wrapper {
+	.dataTables_length {
+		label {
+			color: gray;
+			&:hover {
+				color: gray;
+			}
+		}
+	}
+
+	.dataTables_filter {
+		label {
+			color: gray;
+			&:hover {
+				color: gray;
+			}
+		}
+	}
+
+	.dataTables_info {
+		color: gray;
+			&:hover {
+				color: gray;
+			}
+	}
+}
+
+.text-status {
+	font-size: 14px;
+}
+
+a {
+	color: #007530;
+	&:hover {
+		color: #F69D1B;
+		font-weight: bold;
+		text-decoration: none;
+	}
+}
+
+.btn-primary {
+	background-color: #007530 !important;
+	border: 0;
+	&:hover {
+		background-color: #1A9D4F !important;
+		border: 0;
+	}
+}
+
+.persyaratan {
+	text-align: justify;
+
+	.list-syarat {
+		text-align: justify;
+	}
+}
+
+.btn-buat {
+	background-color: #007530;
+	color: #fff;
+
+	&:hover {
+		background-color: #1A9D4F;
+		color: #fff;
+	}
+}
+
+.modal-title-syarat {
+	color: #000000;
+}
+
+.modal-content-syarat {
+	color: #000000;
+}
+
+.lihat-sandi {
+	font-size: 12px;
+}
+
+.klik-unduh {
+	color: #F69D1B;
+
+	&:hover {
+		font-weight: bold;
+	}
+}
+
+.table-preview {
+	thead {
+		th {
+			background-color: #Fff;
+		}
+	}
+}
+
+.card {
+	.card-preview {
+	padding: 50px;
+}
+}
+
+

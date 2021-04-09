@@ -1,0 +1,221 @@
+body {
+  background-color: #fff;
+  font-family: 'Assistant', sans-serif;
+  color: #007530;
+}
+
+.card {
+  border: 0px;
+  border-radius: 0px;
+}
+
+.card .card-header {
+  background-color: #F2FCEE;
+}
+
+.card .card-header h6 {
+  color: #007530;
+}
+
+.card .card-body {
+  color: #000000;
+}
+
+.card .card-body table {
+  color: #000000;
+}
+
+.card .card-footer {
+  background-color: #F2FCEE;
+}
+
+.container-fluid .judullist h3 {
+  color: #007530;
+}
+
+.nav-breadcrumb ol {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .nav-breadcrumb ol {
+    padding: 0;
+    margin-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar-welcome {
+    display: none;
+  }
+}
+
+.sidebar-toggle {
+  color: #007530;
+}
+
+.sidebar-toggle:hover {
+  color: #007530;
+}
+
+.scroll-to-top {
+  background-color: #F69D1B;
+}
+
+.scroll-to-top:hover {
+  background-color: #F5C47B;
+}
+
+.sidebar {
+  background-color: #007530;
+}
+
+.sidebar .nav-item .nav-link span {
+  font-size: 15px;
+}
+
+.sidebar .nav-item .collapse .collapse-inner .collapse-item {
+  font-size: 14px;
+}
+
+.sidebar .toggled .nav-item .nav-link span {
+  font-size: 13px;
+}
+
+.title-track {
+  color: #fff;
+  background-color: #007530;
+  border: 0px;
+  border-radius: 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.ptsp .border-left-success {
+  border-left: 0.25rem solid #F69D1B !important;
+}
+
+.ptsp .text-success {
+  color: #007530 !important;
+}
+
+.ptsp .badge-warning {
+  background-color: #F69D1B;
+}
+
+.ptsp:hover .card-body {
+  background-color: #007530;
+}
+
+.ptsp:hover .text-success {
+  color: #Fff !important;
+}
+
+.table-bordered td {
+  padding-bottom: 4px;
+  padding-top: 4px;
+}
+
+.table-bordered thead th {
+  padding-bottom: 7px;
+  padding-top: 7px;
+  text-align: center;
+  border-bottom: 0;
+  background-color: #F2FCEE;
+}
+
+.dataTables_wrapper .dataTables_length label {
+  color: gray;
+}
+
+.dataTables_wrapper .dataTables_length label:hover {
+  color: gray;
+}
+
+.dataTables_wrapper .dataTables_filter label {
+  color: gray;
+}
+
+.dataTables_wrapper .dataTables_filter label:hover {
+  color: gray;
+}
+
+.dataTables_wrapper .dataTables_info {
+  color: gray;
+}
+
+.dataTables_wrapper .dataTables_info:hover {
+  color: gray;
+}
+
+.text-status {
+  font-size: 14px;
+}
+
+a {
+  color: #007530;
+}
+
+a:hover {
+  color: #F69D1B;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #007530 !important;
+  border: 0;
+}
+
+.btn-primary:hover {
+  background-color: #1A9D4F !important;
+  border: 0;
+}
+
+.persyaratan {
+  text-align: justify;
+}
+
+.persyaratan .list-syarat {
+  text-align: justify;
+}
+
+.btn-buat {
+  background-color: #007530;
+  color: #fff;
+}
+
+.btn-buat:hover {
+  background-color: #1A9D4F;
+  color: #fff;
+}
+
+.modal-title-syarat {
+  color: #000000;
+}
+
+.modal-content-syarat {
+  color: #000000;
+}
+
+.lihat-sandi {
+  font-size: 12px;
+}
+
+.klik-unduh {
+  color: #F69D1B;
+}
+
+.klik-unduh:hover {
+  font-weight: bold;
+}
+
+.table-preview thead th {
+  background-color: #Fff;
+}
+
+.card .card-preview {
+  padding: 50px;
+}
+/*# sourceMappingURL=dashboard.css.map */
