@@ -391,4 +391,21 @@ class Dashboard extends CI_Controller
         $this->load->view('kasi/ptsp15/detail_ptsp15');
         $this->load->view('footer');
     }
+    //tampil detail ptsp26
+    public function detail_ptsp26()
+    {
+        $data_title['title'] = 'Detail Permohonan';                
+        $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
+        $this->session->userdata('id_kasi')])->row_array();
+
+        $sie = $this->session->userdata('sie');
+        $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
+
+
+        $this->load->view('header', $data_title);
+        $this->load->view('kasi/sidebar', $data);
+        $this->load->view('topbar');
+        $this->load->view('kasi/ptsp26/detail_ptsp26');
+        $this->load->view('footer');
+    }
 }

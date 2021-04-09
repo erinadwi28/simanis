@@ -1396,6 +1396,58 @@ class Dashboard extends CI_Controller
         $this->session->set_flashdata('success', 'disimpan');
         redirect('dashboard/detail_ptsp25/' . $id_permohonan);
     }
+
+
+    //tampil sop ptsp26
+    public function sop_ptsp26()
+    { // $id_permohonan
+        $data_title['title'] = 'Standar Operasional Prosedur';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp26/sop_ptsp26');
+        $this->load->view('footer');
+    }
+    //tampil form ptsp26
+    public function form_ptsp26()
+    { // $id_permohonan
+        $data_title['title'] = 'Form Permohonan';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $detailhere = array('id_pemohon' => $this->session->userdata('id_pemohon'));
+        $data_detail['detail_profil_saya'] = $this->m_pemohon->get_detail_profil_saya($detailhere, 'pemohon')->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp26/form_ptsp26',$data_detail);
+        $this->load->view('footer');
+    }
+    //tampil detail permohonan ptsp26
+    public function detail_ptsp26()
+    {
+        $data_title['title'] = 'Detail Permohonan';                
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+        //$data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp26($id_permohonan)->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar', $data);
+        $this->load->view('pemohon/ptsp26/detail_ptsp26');
+        $this->load->view('footer');
+    }
+    
+    
+    
+    
     
 
 }

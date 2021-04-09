@@ -314,6 +314,7 @@ class Dashboard extends CI_Controller
                 } elseif ($id_layanan == 25) {
                         $this->load->view('frontoffice/ptsp25/detail_ptsp25', $data_detail);
                 }
+               
                 $this->load->view('footer');
         }
 
@@ -617,5 +618,20 @@ class Dashboard extends CI_Controller
 	public function cetak_ptsp15()
         {
                 $this->load->view('frontoffice/ptsp15/cetak_ptsp15');
+        }
+
+        //tampil detail ptsp26
+	public function detail_ptsp26()
+        {
+                $data_title['title'] = 'Detail Permohonan';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/ptsp26/detail_ptsp26');
+                $this->load->view('footer');
         }
 }
