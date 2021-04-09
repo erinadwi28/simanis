@@ -81,13 +81,6 @@
 					<table class="table-hover table-responsive">
 						<tbody>
 							<tr>
-								<td><b>No. Surat</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td><?= $detail->no_surat ?></td>
-							</tr>
-							<tr>
 								<td><b>Nama Madrasah</b></td>
 								<td> </td>
 								<td> </td>
@@ -137,19 +130,31 @@
 								<td><?= $detail->tahun_berdiri ?></td>
 							</tr>
 							<tr>
-								<td><b>No. Statistik</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td><?= $detail->nomor_statistik ?></td>
-							</tr>
-							<tr>
 								<td><b>No. Handphone</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->no_hp ?></td>
 							</tr>	
+							<tr>
+								<td><b>Tanggal Permohonan</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
+							</tr>
+							<?php if ($detail->keterangan != null && $detail->status == 'Pending') { ?>
+							<tr>
+								<td><b>Keterangan Permohonan Pending</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= $detail->keterangan; ?></td>
+							</tr>
+							<?php } ?>
 						</tbody>
 					</table>
 					<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen

@@ -133,6 +133,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->no_surat ?></td>
 							</tr>
 							<tr>
@@ -140,20 +141,15 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->nama_masjid ?></td>
-							</tr>
-							<tr>
-								<td><b>No. Surat Permohonan</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td><?= $detail->no_surat_permohonan ?></td>
 							</tr>
 							<tr>
 								<td><b>Tgl. Surat Permohonan</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->tgl_surat_permohonan ?></td>
 							</tr>
 							<tr>
@@ -161,6 +157,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->nama_ketua_takmir ?></td>
 							</tr>
 							<tr>
@@ -168,6 +165,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->alamat_masjid ?></td>
 							</tr>
 							<tr>
@@ -175,6 +173,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->no_id_masjid ?></td>
 							</tr>
 							<tr>
@@ -182,6 +181,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->no_hp ?></td>
 							</tr>
 						</tbody>

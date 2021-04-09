@@ -28,14 +28,6 @@
 					<form class="form-horizontal mt-4" id="form5" enctype="multipart/form-data"
 						action="<?= base_url('dashboard/aksi_pengajuan_ptsp15') ?>" method="POST">
 						<div class="form-group row">
-							<label for="No_Surat" class="col-sm-3 col-form-label">No. Surat</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="no_surat" name="no_surat" value="" placeholder="masukkan nomor surat disini...">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
 							<label for="Nama_madrasah" class="col-sm-3 col-form-label">Nama Madrasah</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
@@ -88,14 +80,6 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="tahun_berdiri" name="tahun_berdiri" value="" placeholder="masukkan tahun SK PPIU/PIHK disini...">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="no_statistik" class="col-sm-3 col-form-label">No. Statistik</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="nomor_statistik" name="nomor_statistik" value="" placeholder="masukkan masa nomor statistik disini...">
 								</div>
 							</div>
 						</div>

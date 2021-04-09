@@ -139,4 +139,7 @@
 </div>
 <!-- /.container-fluid -->
 </div>
-<!-- End of Main Content -->
+<<<<<<< HEAD <!-- End of Main Content -->
+	=======
+	<!-- End of Main Content -->
+	>>>>>>> edd33503935bd484c3806bb33c524fdffe50412a

@@ -99,9 +99,17 @@
 				</div>
 			</div>
 		</div>
-		<!--End Content-->
-	<?php } ?>
+		<<<<<<< HEAD </div>
+			<!--End Content-->
 </div>
 <!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->
+=======
+<!--End Content-->
+<?php } ?>
+</div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->
+>>>>>>> edd33503935bd484c3806bb33c524fdffe50412a

@@ -26,14 +26,6 @@
 						action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp14/<?= $detail->id_permohonan_ptsp ?>"
 						method="POST">
 						<div class="form-group row">
-							<label for="No_Surat" class="col-sm-3 col-form-label">No. Surat</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="no_surat" name="no_surat" value="<?= $detail->no_surat ?>" placeholder="masukkan nomor surat disini...">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
 							<label for="Nama_lpq" class="col-sm-3 col-form-label">Nama LPQ</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
@@ -110,14 +102,6 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="date" class="form-control" id="berlaku" name="berlaku" value="<?= $detail->berlaku ?>">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="No_Statistik_Pendidikan_Alquran" class="col-sm-3 col-form-label">No. Statistik Pendidikan Alquran</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="no_statistik_pend_alquran" name="no_statistik_pend_alquran" value="<?= $detail->no_statistik_pend_alquran ?>" placeholder="masukkan no statistik pendidikan alquran disini...">
 								</div>
 							</div>
 						</div>
