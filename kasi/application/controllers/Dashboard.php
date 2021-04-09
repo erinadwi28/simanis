@@ -369,4 +369,21 @@ class Dashboard extends CI_Controller
             redirect('dashboard/list_permohonan_masuk');
         }
     }
+
+	//tampil detail ptsp20
+    public function detail_ptsp20()
+    {
+        $data_title['title'] = 'Detail Permohonan';                
+        $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
+        $this->session->userdata('id_kasi')])->row_array();
+
+        $sie = $this->session->userdata('sie');
+        $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('kasi/sidebar', $data);
+        $this->load->view('topbar');
+        $this->load->view('kasi/ptsp20/detail_ptsp20');
+        $this->load->view('footer');
+    }
 }
