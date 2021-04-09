@@ -26,76 +26,76 @@
         							</center>
         						</div>
         						<div class="card-body">
-        							
-        								<div class="kopsurat row">
-        									<div class="col-md-12 mb-3">
-        										<object data="" type="image">
-        											<img class="img-fluid" alt="logo_kop_surat"
-        												src="<?= base_url('assets/dashboard/') ?>images/kop_surat.jpg">
-        										</object>
-        									</div>
+
+        							<div class="kopsurat row">
+        								<div class="col-md-12 mb-3">
+        									<object data="" type="image">
+        										<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('assets/dashboard/') ?>images/kop_surat.png">
+        									</object>
         								</div>
-        								<div class="no_surat">
-        									<center>
-        										<p><u><b>SURAT KETERANGAN</b></u><br>
-        											<b>Nomor :</b>  </p>
-        									</center>
-        								</div>
-        								<div class="isi_surat">
-        									<p> Menindaklanjuti surat permohonan dari Saudara ... tentang
-        										Permohonan Surat Keterangan Haji Pertama, dengan ini Kepala Kantor
-        										Kementrian Agama Kabupaten Klaten menerangkan bahwa :</p>
-        								</div>
-        								<div class="isi_surat identitas">
-        									<table class="table-responsive">
-        										<tbody>
-        											<tr>
-        												<td><b>Nama</b></td>
-        												<td> </td>
-        												<td> </td>
-        												<td>:</td>
-        												<td> </td>
-        												<td> </td>
-        											</tr>
-        											<tr>
-        												<td><b>Tempat dan Tanggal Lahir</b></td>
-        												<td> </td>
-        												<td> </td>
-        												<td>:</td>
-        												<td> </td>
-        												<td> </td>
-        											</tr>
-        											<tr>
-        												<td><b>Alamat</b></td>
-        												<td> </td>
-        												<td> </td>
-        												<td>:</td>
-        												<td> </td>
-        												<td> </td>
-        											</tr>
-        											<tr>
-        												<td><b>Nomor Porsi</b></td>
-        												<td> </td>
-        												<td> </td>
-        												<td>:</td>
-        												<td> </td>
-        												<td> </td>
-        											</tr>
-        										</tbody>
-        									</table>
-        								</div>
-        								<br>
-        								<div class="isi_surat paragraf">
-        									<p>Adalah jemaah haji Kabupaten Klaten Tahun ... H / ... M dan perjalanan
-        										ibadah hajinya merupakan yang pertama.
+        							</div>
+        							<div class="no_surat">
+        								<center>
+        									<p><u><b>SURAT KETERANGAN</b></u><br>
+        										<b>Nomor :</b>
         									</p>
-        									<p>
-        										Demikian surat keterangan ini dibuat untuk dapat dipergunakan
-        										sebagaimana
-        										mestinya
-        									</p>
-        								</div>
-        							
+        								</center>
+        							</div>
+        							<div class="isi_surat">
+        								<p> Menindaklanjuti surat permohonan dari Saudara ... tentang
+        									Permohonan Surat Keterangan Haji Pertama, dengan ini Kepala Kantor
+        									Kementrian Agama Kabupaten Klaten menerangkan bahwa :</p>
+        							</div>
+        							<div class="isi_surat identitas">
+        								<table class="table-responsive">
+        									<tbody>
+        										<tr>
+        											<td><b>Nama</b></td>
+        											<td> </td>
+        											<td> </td>
+        											<td>:</td>
+        											<td> </td>
+        											<td> </td>
+        										</tr>
+        										<tr>
+        											<td><b>Tempat dan Tanggal Lahir</b></td>
+        											<td> </td>
+        											<td> </td>
+        											<td>:</td>
+        											<td> </td>
+        											<td> </td>
+        										</tr>
+        										<tr>
+        											<td><b>Alamat</b></td>
+        											<td> </td>
+        											<td> </td>
+        											<td>:</td>
+        											<td> </td>
+        											<td> </td>
+        										</tr>
+        										<tr>
+        											<td><b>Nomor Porsi</b></td>
+        											<td> </td>
+        											<td> </td>
+        											<td>:</td>
+        											<td> </td>
+        											<td> </td>
+        										</tr>
+        									</tbody>
+        								</table>
+        							</div>
+        							<br>
+        							<div class="isi_surat paragraf">
+        								<p>Adalah jemaah haji Kabupaten Klaten Tahun ... H / ... M dan perjalanan
+        									ibadah hajinya merupakan yang pertama.
+        								</p>
+        								<p>
+        									Demikian surat keterangan ini dibuat untuk dapat dipergunakan
+        									sebagaimana
+        									mestinya
+        								</p>
+        							</div>
+
         							<div class="row">
         								<div class="col-md-6">
         								</div>
@@ -116,8 +116,8 @@
 
         								</div>
         							</div>
-									<br> <br>
-									<div class="row">
+        							<br> <br>
+        							<div class="row">
         								<div class="col-md-6">
         								</div>
         								<div class="col-md-6">
@@ -131,23 +131,23 @@
         								</div>
         							</div>
         						</div>
-								<div class="card-footer">
-        						<center>
-        							<a href="">
-        								<button class="btn btn-sm btn-success" type="submit"><i class="fa fa-print"></i>
-        									Cetak</button>
-        							</a>
-        						</center>
+        						<div class="card-footer">
+        							<center>
+        								<a href="">
+        									<button class="btn btn-sm btn-success" type="submit"><i class="fa fa-print"></i>
+        										Cetak</button>
+        								</a>
+        							</center>
+        						</div>
+
         					</div>
-        						
-        					</div>
-        					
+
         				</div>
         			</div>
         		</div>
         	</div>
         </div>
-        
+
         <!-- /.container-fluid -->
         </div>
         <!-- End of Main Content -->
