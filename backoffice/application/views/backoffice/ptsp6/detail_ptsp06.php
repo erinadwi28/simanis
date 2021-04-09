@@ -1,22 +1,85 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 	<!-- Page Heading -->
-	<div class="d-sm-flex align-items-center justify-content-between">
-		<h3 class="judullist py-3">Detail</h3>
-		<nav aria-label="breadcrumb" class="nav-breadcrumb">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Permohonan Masuk</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Detail</li>
-			</ol>
-		</nav>
-	</div>
+	<?php
+	foreach ($detail_ptsp as $detail) { ?>
+		<?php if ($detail->status === 'Pending') { ?>
+			<!-- Page Heading -->
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail</h3>
+				<nav aria-label="breadcrumb" class="nav-breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesaiBO') ?>">Permohonan Selesai BO</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Detail</li>
+					</ol>
+				</nav>
+			</div>
+		<?php } elseif ($detail->status === 'Validasi Kemenag') { ?>
+			<!-- Page Heading -->
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail</h3>
+				<nav aria-label="breadcrumb" class="nav-breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesaiBO') ?>">Permohonan SelesaiBO</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Detail</li>
+					</ol>
+				</nav>
+			</div>
+		<?php } elseif ($detail->status === 'Proses BO') { ?>
+			<!-- Page Heading -->
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail</h3>
+				<nav aria-label="breadcrumb" class="nav-breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Permohonan Masuk</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Detail</li>
+					</ol>
+				</nav>
+			</div>
+		<?php } elseif ($detail->status === 'Proses Kasi') { ?>
+			<!-- Page Heading -->
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail</h3>
+				<nav aria-label="breadcrumb" class="nav-breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_prosesKasi') ?>">Permohonan Proses Kasi</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Detail</li>
+					</ol>
+				</nav>
+			</div>
+		<?php } elseif ($detail->status === 'Selesai') { ?>
+			<!-- Page Heading -->
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail</h3>
+				<nav aria-label="breadcrumb" class="nav-breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesaiBO') ?>">Permohonan Proses BO</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Detail</li>
+					</ol>
+				</nav>
+			</div>
+		<?php } elseif ($detail->status === 'Proses Kasubag') { ?>
+			<!-- Page Heading -->
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail</h3>
+				<nav aria-label="breadcrumb" class="nav-breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesaiBO') ?>">Permohonan Proses BO</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Detail</li>
+					</ol>
+				</nav>
+			</div>
+		<?php } ?>
 
 
-	<div class="row clearfix">
-		<div class="col-xs-12 col-sm-2"></div>
-		<?php
-		foreach ($detail_ptsp as $detail) { ?>
+		<div class="row clearfix">
+			<div class="col-xs-12 col-sm-2"></div>
 			<div class="col-md-8 mb-4">
 				<div class="card shadow">
 					<div class="card-header py-3">
@@ -103,146 +166,146 @@
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-2"></div>
-	</div>
-	<!-- Unggah dokumen -->
-	<div class="row clearfix">
-		<div class="col-xs-12 col-sm-3">
-			<!-- Surat Permohonan -->
-			<div class="card shadow mb-4">
-				<div class="card-header">
-					<center>
-						<h6 class="m-0 font-weight-bold">Surat Permohonan</h6>
-					</center>
+		</div>
+		<!-- Unggah dokumen -->
+		<div class="row clearfix">
+			<div class="col-xs-12 col-sm-3">
+				<!-- Surat Permohonan -->
+				<div class="card shadow mb-4">
+					<div class="card-header">
+						<center>
+							<h6 class="m-0 font-weight-bold">Surat Permohonan</h6>
+						</center>
+					</div>
+
+					<div class="card-body">
+						<center>
+							<?php if ($detail->srt_permohonan != null) { ?>
+								<p><?= $detail->srt_permohonan; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->srt_permohonan == null) { ?>
+								<p>Belum ada lampiran</p>
+							<?php } ?>
+						</center>
+					</div>
+
+					<div class="card-footer">
+
+					</div>
+
 				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3">
+				<!-- FC Surat Ijin Operasional -->
+				<div class="card shadow mb-4">
+					<div class="card-header">
+						<center>
+							<h6 class="m-0 font-weight-bold">FC Surat Ijin Operasional</h6>
+						</center>
+					</div>
+					<div class="card-body">
+						<center>
+							<?php if ($detail->sk_ijin_oprasional != null) { ?>
+								<p><?= $detail->sk_ijin_oprasional; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/sk_ijin_oprasional/<?= $detail->sk_ijin_oprasional ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->sk_ijin_oprasional == null) { ?>
+								<p>Belum ada lampiran</p>
+							<?php } ?>
+						</center>
+					</div>
 
-				<div class="card-body">
-					<center>
-						<?php if ($detail->srt_permohonan != null) { ?>
-							<p><?= $detail->srt_permohonan; ?></p>
-							<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
-								<i class="fa fa-download nav-icon">
-								</i> Klik untuk melihat
-							</a>
-						<?php } elseif ($detail->srt_permohonan == null) { ?>
-							<p>Belum ada lampiran</p>
-						<?php } ?>
-					</center>
+					<div class="card-footer">
+
+					</div>
+
 				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3">
+				<!-- fc ktp -->
+				<div class="card shadow mb-4">
+					<div class="card-header">
+						<center>
+							<h6 class="m-0 font-weight-bold">FC KTP</h6>
+						</center>
+					</div>
 
-				<div class="card-footer">
+					<div class="card-body">
+						<center>
+							<?php if ($detail->ktp != null) { ?>
+								<p><?= $detail->ktp; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/ktp/<?= $detail->ktp ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->ktp == null) { ?>
+								<p>Belum ada lampiran</p>
+							<?php } ?>
+						</center>
+					</div>
+
+					<div class="card-footer">
+
+					</div>
 
 				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3">
+				<!-- FC KK -->
+				<div class="card shadow mb-4">
+					<div class="card-header">
+						<center>
+							<h6 class="m-0 font-weight-bold">FC KK</h6>
+						</center>
+					</div>
 
+					<div class="card-body">
+						<center>
+							<?php if ($detail->kk != null) { ?>
+								<p><?= $detail->kk; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/kk/<?= $detail->kk ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->kk == null) { ?>
+								<p>Belum ada lampiran</p>
+							<?php } ?>
+						</center>
+					</div>
+
+					<div class="card-footer">
+
+					</div>
+
+				</div>
 			</div>
 		</div>
-		<div class="col-xs-12 col-sm-3">
-			<!-- FC Surat Ijin Operasional -->
-			<div class="card shadow mb-4">
-				<div class="card-header">
-					<center>
-						<h6 class="m-0 font-weight-bold">FC Surat Ijin Operasional</h6>
-					</center>
+		<!-- Button Tolak & Setujui -->
+		<div class="row clearfix float-right px-2">
+			<?php if ($detail->status == 'Proses BO') { ?>
+				<div class="float-right">
+					<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>">
+						<button id=" btn_tolak" class="btn btn-sm btn-danger" type="submit">
+							<i class="fas fa-times-circle">
+							</i> Tolak
+						</button>
+					</a>
+					<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+						<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
+							<i class="fas fa-check-circle">
+							</i> Terima
+						</button>
+					</a>
 				</div>
-				<div class="card-body">
-					<center>
-						<?php if ($detail->sk_ijin_oprasional != null) { ?>
-							<p><?= $detail->sk_ijin_oprasional; ?></p>
-							<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/sk_ijin_oprasional/<?= $detail->sk_ijin_oprasional ?>" target="_blank">
-								<i class="fa fa-download nav-icon">
-								</i> Klik untuk melihat
-							</a>
-						<?php } elseif ($detail->sk_ijin_oprasional == null) { ?>
-							<p>Belum ada lampiran</p>
-						<?php } ?>
-					</center>
-				</div>
-
-				<div class="card-footer">
-
-				</div>
-
-			</div>
+			<?php } ?>
 		</div>
-		<div class="col-xs-12 col-sm-3">
-			<!-- fc ktp -->
-			<div class="card shadow mb-4">
-				<div class="card-header">
-					<center>
-						<h6 class="m-0 font-weight-bold">FC KTP</h6>
-					</center>
-				</div>
-
-				<div class="card-body">
-					<center>
-						<?php if ($detail->ktp != null) { ?>
-							<p><?= $detail->ktp; ?></p>
-							<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/ktp/<?= $detail->ktp ?>" target="_blank">
-								<i class="fa fa-download nav-icon">
-								</i> Klik untuk melihat
-							</a>
-						<?php } elseif ($detail->ktp == null) { ?>
-							<p>Belum ada lampiran</p>
-						<?php } ?>
-					</center>
-				</div>
-
-				<div class="card-footer">
-
-				</div>
-
-			</div>
-		</div>
-		<div class="col-xs-12 col-sm-3">
-			<!-- FC KK -->
-			<div class="card shadow mb-4">
-				<div class="card-header">
-					<center>
-						<h6 class="m-0 font-weight-bold">FC KK</h6>
-					</center>
-				</div>
-
-				<div class="card-body">
-					<center>
-						<?php if ($detail->kk != null) { ?>
-							<p><?= $detail->kk; ?></p>
-							<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/kk/<?= $detail->kk ?>" target="_blank">
-								<i class="fa fa-download nav-icon">
-								</i> Klik untuk melihat
-							</a>
-						<?php } elseif ($detail->kk == null) { ?>
-							<p>Belum ada lampiran</p>
-						<?php } ?>
-					</center>
-				</div>
-
-				<div class="card-footer">
-
-				</div>
-
-			</div>
-		</div>
-	</div>
-	<!-- Button Tolak & Setujui -->
-	<div class="row clearfix float-right px-2">
-		<?php if ($detail->status == 'Proses BO') { ?>
-			<div class="float-right">
-				<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>">
-					<button id=" btn_tolak" class="btn btn-sm btn-danger" type="submit">
-						<i class="fas fa-times-circle">
-						</i> Tolak
-					</button>
-				</a>
-				<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
-					<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
-						<i class="fas fa-check-circle">
-						</i> Terima
-					</button>
-				</a>
-			</div>
-		<?php } ?>
-	</div>
-<?php } ?>
-<!--End Content Profile-->
+	<?php } ?>
+	<!--End Content Profile-->
 </div>
 <!-- /.container-fluid -->
 </div>
