@@ -25,23 +25,23 @@
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
 						Pemohon adalah pemilik asli dokumen yang mengajukan permohonan pengesahan atau yang diberikan
-							kuasa oleh pemiliknya (FM-PI-01 dan FM-PI-02). 
-						<ol type="1" class="ml-0 list-syarat">
-							<li>Mengisi dan menyelesaikan permohonan pengesahan Dokumen Kepegawaian, Surat, Piagam,
+						kuasa oleh pemiliknya (<b> <a href="<?= base_url() ?>assets/pemohon/sop/ptsp04/FM-PI-01.pdf" target="_blank">FM-PI-01</a></b> dan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-02.pdf" target="_blank">FM-PI-02</a></b>).
+					<ol type="1" class="ml-0 list-syarat">
+						<li>Mengisi dan menyelesaikan permohonan pengesahan Dokumen Kepegawaian, Surat, Piagam,
 							Sertifikat.</li>
-							<li>Mengupload/Mengunggah fotocopy dokumen yang akan dilakukan legalisir/pengesahan.</li>
-							<li>Menunggu pemberitahuan pihak kemenag bahwa proses pengesahan telah selesai.</li>
-							<li>Mengambil dokumen legalisir dengan membawa dokumen asli.</li>
-						</ol>
+						<li>Mengupload/Mengunggah fotocopy dokumen yang akan dilakukan legalisir/pengesahan.</li>
+						<li>Menunggu pemberitahuan pihak kemenag bahwa proses pengesahan telah selesai.</li>
+						<li>Mengambil dokumen legalisir dengan membawa dokumen asli.</li>
+					</ol>
 					</p>
 				</div>
 				<div class="card-footer">
-						<a href="<?= base_url('dashboard/form_ptsp04') ?>">
-							<button id="btn_kembali" class="btn btn-sm btn-buat float-right" type="submit">
-								<i class="far fa-edit nav-icon">
-								</i> Buat
-							</button>
-						</a>
+					<a href="<?= base_url('dashboard/form_ptsp04') ?>">
+						<button id="btn_kembali" class="btn btn-sm btn-buat float-right" type="submit">
+							<i class="far fa-edit nav-icon">
+							</i> Buat
+						</button>
+					</a>
 				</div>
 			</div>
 		</div>

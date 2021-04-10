@@ -81,7 +81,7 @@
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
 					Pemohon adalah pemilik asli dokumen yang mengajukan permohonan pengesahan atau yang diberikan
-					kuasa oleh pemiliknya (FM-PI-01 dan FM-PI-02).
+					kuasa oleh pemiliknya (<b> <a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-01.pdf" target="_blank">FM-PI-01</a></b> dan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-02.pdf" target="_blank">FM-PI-02</a></b>).
 				<ol type="1" class="ml-0 list-syarat modal-content-syarat">
 					<li>Mengisi dan menyelesaikan permohonan pengesahan Dokumen Kepegawaian, Surat, Piagam,
 						Sertifikat.</li>

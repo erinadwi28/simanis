@@ -86,6 +86,15 @@
 					<div class="card-body">
 						<table class="table-hover table-responsive">
 							<tbody>
+								<?php if ($detail->no_surat != null) { ?>
+									<tr>
+										<td><b>Nomor Surat</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td><?= $detail->no_surat ?></td>
+									</tr>
+								<?php } ?>
 								<tr>
 									<td><b>Nama Jamaah Haji</b></td>
 									<td> </td>
@@ -149,18 +158,51 @@
 									<td>:</td>
 									<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
 								</tr>
-
+								<?php if ($detail->tgl_persetujuan_fo != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Front Office</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_fo)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_persetujuan_bo != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Back Office</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_persetujuan_kasi != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Kasi</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_kasi)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_persetujuan_kasubag != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Kasubag</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
+									</tr>
+								<?php } ?>
 								<tr>
 									<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
-								<tr>
-									<td><b>Keterangan Permohonan Pending</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td><?= $detail->keterangan; ?></td>
+										<td><b>Keterangan Permohonan Pending</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td><?= $detail->keterangan; ?></td>
 								</tr>
 							<?php } ?>
-							</tr>
 							</tbody>
 						</table>
 					</div>
@@ -286,21 +328,26 @@
 				</div>
 			</div>
 		</div>
-		<!-- Button Tolak & Setujui -->
-		<div class="row clearfix float-right px-2">
-			<?php if ($detail->status == 'Proses Kasi') { ?>
-				<div class="float-right">
-					<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
-						<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
-							<i class="fas fa-check-circle">
-							</i> Terima
-						</button>
-					</a>
-				</div>
-			<?php } ?>
+		<!-- Button Setujui -->
+		<div class="row">
+			<div class="col-md-6"></div>
+			<div class="col-md-5">
+				<?php if ($detail->status == 'Proses Kasi') { ?>
+					<form class="form-horizontal mt-2" id="form4" enctype="multipart/form-data" action="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>/<?= $detail->id_layanan ?>" method="POST">
+
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" id="no_surat" name="no_surat" value=".../Kk.11.10/05/Hj.09/<?= date("m/Y") ?>">
+							<button class="btn btn-sm btn-success" type="submit" id="button-addon2"><i class="fas fa-check-circle">
+								</i> Terima</button>
+						</div>
+					</form>
+			</div>
+			<div class="col-md-1"></div>
 		</div>
+
 	<?php } ?>
-	<!--End Content Profile-->
+<?php } ?>
+<!--End Content Profile-->
 </div>
 <!-- /.container-fluid -->
 </div>

@@ -148,6 +148,16 @@
 									<td> </td>
 									<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
 								</tr>
+								<?php if ($detail->tgl_persetujuan_fo != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Front Office</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_fo)); ?></td>
+									</tr>
+								<?php } ?>
 								<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
 									<tr>
 										<td><b>Keterangan Permohonan Pending</b></td>

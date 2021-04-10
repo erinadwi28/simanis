@@ -97,6 +97,15 @@
         					<div class="card-body">
         						<table class="table-hover table-responsive">
         							<tbody>
+        								<?php if ($detail->no_surat != null) { ?>
+        									<tr>
+        										<td><b>Nomor Surat</b></td>
+        										<td> </td>
+        										<td> </td>
+        										<td>:</td>
+        										<td><?= $detail->no_surat ?></td>
+        									</tr>
+        								<?php } ?>
         								<tr>
         									<td><b>Nama Jamaah Haji</b></td>
         									<td> </td>
@@ -160,6 +169,42 @@
         									<td>:</td>
         									<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
         								</tr>
+        								<?php if ($detail->tgl_persetujuan_fo != null) { ?>
+        									<tr>
+        										<td><b>Tanggal Persetujuan Front Office</b></td>
+        										<td> </td>
+        										<td> </td>
+        										<td>:</td>
+        										<td><?= format_indo(date($detail->tgl_persetujuan_fo)); ?></td>
+        									</tr>
+        								<?php } ?>
+        								<?php if ($detail->tgl_persetujuan_bo != null) { ?>
+        									<tr>
+        										<td><b>Tanggal Persetujuan Back Office</b></td>
+        										<td> </td>
+        										<td> </td>
+        										<td>:</td>
+        										<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
+        									</tr>
+        								<?php } ?>
+        								<?php if ($detail->tgl_persetujuan_kasi != null) { ?>
+        									<tr>
+        										<td><b>Tanggal Persetujuan Kasi</b></td>
+        										<td> </td>
+        										<td> </td>
+        										<td>:</td>
+        										<td><?= format_indo(date($detail->tgl_persetujuan_kasi)); ?></td>
+        									</tr>
+        								<?php } ?>
+        								<?php if ($detail->tgl_persetujuan_kasubag != null) { ?>
+        									<tr>
+        										<td><b>Tanggal Persetujuan Kasubag</b></td>
+        										<td> </td>
+        										<td> </td>
+        										<td>:</td>
+        										<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
+        									</tr>
+        								<?php } ?>
         								<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
         									<tr>
         										<td><b>Keterangan Permohonan Pending</b></td>

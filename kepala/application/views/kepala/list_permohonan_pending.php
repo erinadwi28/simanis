@@ -26,7 +26,6 @@
               <th>No</th>
               <th>Jenis Layanan PTSP</th>
               <th>Tanggal Permohonan</th>
-              <th>Tanggal Pengecekan</th>
               <th>Status</th>
               <th>Aksi</th>
             </tr>
@@ -40,7 +39,6 @@
                 <td><?= $no++ ?></td>
                 <td><?= $permohonan->nama_layanan ?></td>
                 <td><?= format_indo(date($permohonan->tgl_permohonan)); ?></td>
-                <td><?= format_indo(date($permohonan->tgl_persetujuan_fo)) ?></td>
                 <td><label class="badge badge-danger"><i class="far fa-times-circle"><?= $permohonan->status ?></i></label></td>
                 <td>
                   <a href="<?= base_url() ?>dashboard/detail_data_permohonan/<?= $permohonan->id_permohonan_ptsp ?>/<?= $permohonan->id_layanan ?>">

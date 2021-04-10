@@ -110,10 +110,22 @@
 				<div class="card shadow">
 					<div class="card-header py-3">
 						<h6 class="m-0 font-weight-bold text-center">Permohonan Ijop Madin</h6>
+						<b>
+							<p>//note. Nomor Statistik</p>
+						</b>
 					</div>
 					<div class="card-body">
 						<table class="table-hover table-responsive">
 							<tbody>
+								<?php if ($detail->no_surat != null) { ?>
+									<tr>
+										<td><b>Nomor Surat</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td><?= $detail->no_surat ?></td>
+									</tr>
+								<?php } ?>
 								<tr>
 									<td><b>Nama Madrasah</b></td>
 									<td> </td>
@@ -163,13 +175,15 @@
 									<td>:</td>
 									<td><?= $detail->tahun_berdiri ?></td>
 								</tr>
-								<tr>
-									<td><b>No. Statistik</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td><?= $detail->nomor_statistik ?></td>
-								</tr>
+								<?php if ($detail->nomor_statistik != null) { ?>
+									<tr>
+										<td><b>No. Statistik</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td><?= $detail->nomor_statistik ?></td>
+									</tr>
+								<?php } ?>
 								<tr>
 									<td><b>No. Handphone</b></td>
 									<td> </td>
@@ -177,6 +191,50 @@
 									<td>:</td>
 									<td><?= $detail->no_hp ?></td>
 								</tr>
+								<tr>
+									<td><b>Tanggal Permohonan</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
+								</tr>
+
+								<?php if ($detail->tgl_persetujuan_fo != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Front Office</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_fo)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_persetujuan_bo != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Back Office</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_persetujuan_kasi != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Kasi</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_kasi)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_persetujuan_kasubag != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Kasubag</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
+									</tr>
+								<?php } ?>
 								<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
 									<tr>
 										<td><b>Keterangan Permohonan Pending</b></td>

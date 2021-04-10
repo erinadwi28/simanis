@@ -74,7 +74,7 @@
 					</i> Tolak
 				</button>
 			</a>
-			<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+			<a href="<?= base_url() ?>dashboard/aksi_setujui_permohonan/<?= $detail->id_permohonan_ptsp ?>">
 				<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
 					<i class="fas fa-check-circle">
 					</i> Terima

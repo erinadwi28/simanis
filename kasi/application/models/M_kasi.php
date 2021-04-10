@@ -155,4 +155,11 @@ class M_kasi extends CI_Model
 
         return $this->db->get()->row();
     }
+
+    //input nomor surat
+    public function insert_no_surat($id_permohonan_ptsp, $tabel, $no_surat)
+    {
+        $this->db->where('id_permohonan_ptsp ', $id_permohonan_ptsp);
+        $this->db->update($tabel, $no_surat);
+    }
 }
