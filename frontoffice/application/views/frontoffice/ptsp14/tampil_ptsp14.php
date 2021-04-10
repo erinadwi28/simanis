@@ -56,7 +56,7 @@
 										<div class="no_surat">
 											<h5><b>PIAGAM TANDA DAFTAR</b></h5>
 											<h5><b>LEMBAGA PENDIDIKAN AL-QUR'AN (LPQ)</b></h5>
-											<p><b> Nomor:.../Kk.11.10/.../PP.00.1/.../......</b></p>
+											<p><b> Nomor:<?= $detail->no_surat ?></b></p>
 										</div>
 									</center>
 									<br>

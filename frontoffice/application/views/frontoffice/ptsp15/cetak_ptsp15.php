@@ -176,7 +176,7 @@
 										<div class="no_surat">
 											<h5><b>PIAGAM PENYELENGARAAN</b></h5>
 											<h5><b>MADRASAH DINIYAH TAKMILIYAH (MDT)</b></h5>
-											<p><b> Nomor:.../Kk.11.10/3/PP.00.1/.../......</b></p>
+											<p><b> Nomor:<?= $detail->no_surat ?></b></p>
 										</div>
 									</center>
 									<br>

@@ -31,7 +31,7 @@
 						foreach ($data_permohonan as $permohonan) {
 						?>
 							<tr>
-								<td class="text-center"><?= $no ?></td>
+								<td class="text-center"><?= $no++ ?></td>
 								<td><?= $permohonan->nama_layanan ?></td>
 								<td><?= format_indo(date($permohonan->tgl_permohonan)); ?></td>
 								<td><label class="badge badge-success"><i class="far fa-check-circle text-status">
