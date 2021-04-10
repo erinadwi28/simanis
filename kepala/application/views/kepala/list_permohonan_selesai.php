@@ -1,15 +1,15 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-  <!-- Page Heading -->
-	<div class="d-sm-flex align-items-center justify-content-between">
-		<h3 class="judullist py-3">Data Permohonan Selesai</h3>
-		<nav aria-label="breadcrumb" class="nav-breadcrumb">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Permohonan Selesai</li>
-			</ol>
-		</nav>
-	</div>
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between">
+        <h3 class="judullist py-3">Data Permohonan Selesai</h3>
+        <nav aria-label="breadcrumb" class="nav-breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Permohonan Selesai</li>
+            </ol>
+        </nav>
+    </div>
 
     <!-- DataTables Warga -->
     <div class="card shadow mb-4">
@@ -22,7 +22,6 @@
                             <th>No</th>
                             <th>Jenis Layanan</th>
                             <th>Tanggal Permohonan</th>
-                            <th>Tanggal Disetujui</th>
                             <th>Status</th>
                             <th>Aksi</th>
                         </tr>
@@ -33,10 +32,9 @@
                         foreach ($data_permohonan as $permohonan) {
                         ?>
                             <tr>
-                                <td><?= $no ?></td>
+                                <td><?= $no++ ?></td>
                                 <td><?= $permohonan->nama_layanan ?></td>
                                 <td><?= format_indo(date($permohonan->tgl_permohonan)); ?></td>
-                                <td><?= format_indo(date($permohonan->tgl_persetujuan_fo)) ?></td>
                                 <td><label class="badge badge-success"><i class="far fa-check-circle"><?= $permohonan->status ?></i></label></td>
                                 <td>
                                     <a href="<?= base_url() ?>dashboard/detail_data_permohonan/<?= $permohonan->id_permohonan_ptsp ?>/<?= $permohonan->id_layanan ?>">

@@ -20,7 +20,7 @@
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
-		.kopsurat  {
+		.kopsurat {
 			width: 700px;
 		}
 
@@ -29,7 +29,7 @@
 		}
 
 		.badan_surat {
-			opacity: 0.8;
+			color: #000;
 		}
 
 		.badan_surat {
@@ -109,12 +109,11 @@
 		table {
 			margin-left: 30px;
 		}
-		
 	</style>
 
 </head>
 
-<body class="body" id="page-top" >
+<body class="body" id="page-top">
 	<!-- Begin Page Content -->
 	<div class="container-fluid">
 		<!-- Page Heading -->
@@ -136,10 +135,10 @@
 
 						<div class="badan_surat">
 							<div class="no_surat">
-									<?php foreach ($detail_ptsp as $detail) { ?>
-										<p><u>SURAT KETERANGAN</u><br>
-											Nomor : </p>
-									<?php } ?>
+								<?php foreach ($detail_ptsp as $detail) { ?>
+									<p><u>SURAT KETERANGAN</u><br>
+										Nomor : <?= $detail->no_surat ?> </p>
+								<?php } ?>
 							</div>
 							<div class="isi_surat paragraf">
 								<?php foreach ($data_pemohon as $detail) { ?>
@@ -201,7 +200,7 @@
 									<div class="col-md-6">
 									</div>
 									<div class="col-md-6">
-										<div class="badan_surat isi_surat" >
+										<div class="badan_surat isi_surat">
 											<center>
 												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 												Klaten, 03 Maret 2020<br>
@@ -225,8 +224,8 @@
 								<div class="col-md-6 nama-terang">
 									<center>
 										<div class="isi_surat">
-												<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
-												NIP. 197004201995031003
+											<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
+											NIP. 197004201995031003
 										</div>
 									</center>
 								</div>

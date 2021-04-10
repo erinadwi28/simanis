@@ -28,74 +28,75 @@
 						<div class="card-body card-preview">
 							<div class="kopsurat row">
 								<div class="col-md-12 mb-3">
-									
+
 								</div>
 							</div>
-							<div class="no_surat">
-								<center>
-									<p><b>MASIH ON GOING</b><br>
-										<b></b> </p>
-								</center>
-							</div>
-							<div class="isi_surat">
-								<p class="text-justify">
-								</p>
-							</div>
-							<div class="isi_surat identitas ml-5">
-								<center>
-									<table class="table-responsive">
-										
-									</table>
-								</center>
-							</div>
-							<br>
-							<div class="isi_surat paragraf">
-								
-							</div>
-
-							<div class="row">
-								<div class="col-md-6">
+							<?php foreach ($detail_ptsp as $detail) { ?>
+								<div class="no_surat">
+									<center>
+										<p><b>MASIH ON GOING</b><br>
+											<b></b>
+										</p>
+									</center>
 								</div>
-								<div class="col-md-6">
-									<div class="badan_surat isi_surat">
-										<center>
+								<div class="isi_surat">
+									<p class="text-justify">
+									</p>
+								</div>
+								<div class="isi_surat identitas ml-5">
+									<center>
+										<table class="table-responsive">
 
-										
-										</center>
+										</table>
+									</center>
+								</div>
+								<br>
+								<div class="isi_surat paragraf">
+
+								</div>
+
+								<div class="row">
+									<div class="col-md-6">
+									</div>
+									<div class="col-md-6">
+										<div class="badan_surat isi_surat">
+											<center>
+
+
+											</center>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="row ttd_kades">
-								<div class="col-md-6 ">
-								</div>
-								<div class="col-md-6">
+								<div class="row ttd_kades">
+									<div class="col-md-6 ">
+									</div>
+									<div class="col-md-6">
 
-								</div>
-							</div>
-							<br> <br>
-							<div class="row">
-								<div class="col-md-6">
-								</div>
-								<div class="col-md-6">
-									<div class="badan_surat isi_surat">
-										<center>
-											
-										</center>
 									</div>
 								</div>
-							</div>
+								<br> <br>
+								<div class="row">
+									<div class="col-md-6">
+									</div>
+									<div class="col-md-6">
+										<div class="badan_surat isi_surat">
+											<center>
+
+											</center>
+										</div>
+									</div>
+								</div>
 						</div>
 						<div class="card-footer">
 							<center>
-								<a href="">
+								<a href="<?= base_url() ?>dashboard/cetak_ptsp20/<?= $detail->id_permohonan_ptsp ?>">
 									<button class="btn btn-sm btn-success" type="submit"><i class="fa fa-print"></i>
 										Cetak</button>
 								</a>
 							</center>
 						</div>
-
+					<?php } ?>
 					</div>
-
 				</div>
 			</div>
 		</div>
