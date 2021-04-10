@@ -29,7 +29,7 @@
 		}
 
 		.badan_surat {
-			opacity: 0.8;
+			color: #000;
 		}
 
 		.badan_surat {

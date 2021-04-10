@@ -24,30 +24,188 @@
 				<div class="row">
 					<div class="col-md-12 mb-3">
 						<!-- Detail Data -->
-						<div class="card shadow mb-3">
-							<div class="card-header">
-								<center>
-									<h6 class="m-0 font-weight-bold">Ijin Operasional LPQ</h6>
-								</center>
-							</div>
-							<div class="card-body">
-								<center>
-									<h4>MASIH ON GOING</h4>
-								</center>
-							</div>
-							<div class="card-footer">
-								<center>
-									<a href="<?= base_url() ?>dashboard/cetak_ptsp14/<?php foreach ($detail_ptsp as $detail) { ?><?= $detail->id_permohonan_ptsp ?> <?php } ?>">
-										<button class="btn btn-sm btn-success" type="submit"><i class="fa fa-print"></i>
-											Cetak</button>
-									</a>
-								</center>
+						<div class="card shadow mb-3"">
+							<div class=" card-header">
+							<center>
+								<h6 class="m-0 font-weight-bold">Ijin Operasional LPQ</h6>
+							</center>
+						</div>
+						<div class="card-body">
+							<center>
+								<div class="logosurat row">
+									<div class="col-md-12 mb-3">
+										<object data="" type="image">
+											<img class="logosurat" alt="logo_kop_surat" style="width: 80px" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag.png') ?>">
+										</object>
+									</div>
+								</div>
+							</center>
+
+							<div class="badan_surat">
+								<?php foreach ($detail_ptsp as $detail) { ?>
+									<center>
+										<div class="kepala_Sertifikat">
+											<h5 style="margin-top: 20px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></h5>
+											<h6><b>KANTOR KABUPATEN KLATEN </b></h6>
+											<p>Jalan Ronggowarsito Klaten <br>
+												Telepon/Faksimili (0272)321154 <br>
+												Website : http://klaten.kemenag.go.id <br> <br> </p>
+										</div>
+									</center>
+									<center>
+										<div class="no_surat">
+											<h5><b>PIAGAM TANDA DAFTAR</b></h5>
+											<h5><b>LEMBAGA PENDIDIKAN AL-QUR'AN (LPQ)</b></h5>
+											<p><b> Nomor:.../Kk.11.10/.../PP.00.1/.../......</b></p>
+										</div>
+									</center>
+									<br>
+									<div class="isi_surat">
+										<p>&nbsp; &nbsp; &nbsp; Diberikan kepada :</p>
+									</div>
+									<div class="isi_surat identitas">
+										<table class="table-responsive">
+											<tbody>
+												<tr>
+													<td>Nama LPQ</td>
+													<td> </td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->nama_lpq ?></td>
+												</tr>
+												<tr>
+													<td>Alamat</td>
+													<td> </td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->alamat ?></td>
+												</tr>
+												<tr>
+													<td>Desa</td>
+													<td> </td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->desa ?></td>
+												</tr>
+												<tr>
+													<td>Kecamatan</td>
+													<td> </td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->kecamatan ?></td>
+												</tr>
+												<tr>
+													<td>Kabupaten</td>
+													<td> </td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->kabupaten ?></td>
+												</tr>
+												<tr>
+													<td>Provinsi</td>
+													<td> </td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->provinsi ?></td>
+												</tr>
+												<tr>
+													<td>Yayasan</td>
+													<td> </td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->yayasan ?></td>
+												</tr>
+												<tr>
+													<td>SK Menkumham RI</td>
+													<td> </td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->sk_menkumham ?></td>
+												</tr>
+												<tr>
+													<td>Tahun Berdiri</td>
+													<td> </td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->tahun_berdiri ?></td>
+												</tr>
+												<tr>
+													<td>Berlaku</td>
+													<td> </td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->berlaku ?></td>
+												</tr>
+
+											</tbody>
+										</table>
+									</div>
+									<div class="isi_surat">
+										<p>&nbsp;&nbsp; &nbsp; Dengan Nomor Statistik Pendidikan Al-Qur'an :</p>
+									</div>
+									<div class="">
+										<table class="table table-bordered " <tbody>
+											<tr>
+												<td>xx</td>
+												<td>xx</td>
+												<td>xx</td>
+												<td>xx</td>
+												<td>xx</td>
+												<td>xx</td>
+												<td>xx</td>
+												<td>xx</td>
+												<td>xx</td>
+												<td>xx</td>
+												<td>xx</td>
+												<td>xx</td>
+												</tbody>
+											</tr>
+										</table>
+
+									</div>
+									<div class="no_statistik">
+
+									</div>
+									<br>
+									<div class="row">
+										<div class="col-md-6"></div>
+										<div class="col-md-6">
+											<div class="badan_surat isi_surat">
+												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+												<p>Klaten, 03 Maret 2020</p>
+												<h6>MENTERI AGAMA</h6>
+												Kepala Kantor Kementerian Agama
+												Kabupaten Klaten<br><br> <br>
+												<b>Anif Solikhin</b><br>
+											</div>
+										</div>
+									</div>
 							</div>
 						</div>
+						<div class="card-footer">
+							<center>
+								<a href="<?= base_url() ?>dashboard/cetak_ptsp14/<?= $detail->id_permohonan_ptsp ?>">
+									<button class="btn btn-sm btn-success" type="submit"><i class="fa fa-print"></i>
+										Cetak</button>
+								</a>
+							</center>
+						</div>
+					<?php } ?>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<!-- /.container-fluid -->
 	</div>
