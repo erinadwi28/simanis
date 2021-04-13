@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <!-- Page Heading -->
-	<div class="d-sm-flex align-items-center justify-content-between mb-4 judullist">
+	<div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4 judullist">
 		<h3>Form Keterangan Revisi Permohonan</h3>
 		<!-- <a href="<?= base_url('warga') ?>"> -->
 		<button id="btn_kembali" class="btn btn-sm btn-warning" type="">
@@ -10,7 +10,7 @@
 		<!-- </a> -->
 	</div>
 
-<div class="row py-2 px-3">
+<div class="row px-3">
     <div class="col-md-2">
     </div>
     <div class="col-md-8">

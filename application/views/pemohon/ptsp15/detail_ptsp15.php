@@ -134,7 +134,6 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td> </td>
 								<td><?= $detail->no_hp ?></td>
 							</tr>	
 							<tr>
@@ -142,7 +141,6 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td> </td>
 								<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
 							</tr>
 							<?php if ($detail->keterangan != null && $detail->status == 'Pending') { ?>
@@ -151,14 +149,11 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td> </td>
 								<td><?= $detail->keterangan; ?></td>
 							</tr>
 							<?php } ?>
 						</tbody>
 					</table>
-					<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen
-						dibawah</em>
 				</div>
 				
 			<?php if ($detail->status == 'Pending') { ?>

@@ -110,10 +110,7 @@
 						<center>
 							<?php if ($detail->srt_permohonan != null) { ?>
 								<p><?= $detail->srt_permohonan; ?></p>
-								<<<<<<< HEAD <a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
-									=======
 									<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
-										>>>>>>> edd33503935bd484c3806bb33c524fdffe50412a
 										<i class="fa fa-download nav-icon">
 										</i> Klik untuk melihat
 									</a>
@@ -123,7 +120,7 @@
 
 						</center>
 					</div>
-					<<<<<<< HEAD <?php if ($detail->status == 'Pending') { ?> <div class="card-footer">
+					<?php if ($detail->status == 'Pending') { ?> <div class="card-footer">
 						<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_srt_permohonan">
 							<div class="form-group">
 								<div class="input-group">
@@ -145,8 +142,6 @@
 						</form>
 				</div>
 			<?php } ?>
-			=======
-			>>>>>>> edd33503935bd484c3806bb33c524fdffe50412a
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-3">
@@ -161,10 +156,7 @@
 					<center>
 						<?php if ($detail->srt_pernyataan != null) { ?>
 							<p><?= $detail->srt_pernyataan; ?></p>
-							<<<<<<< HEAD <a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>" target="_blank">
-								=======
 								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>" target="_blank">
-									>>>>>>> edd33503935bd484c3806bb33c524fdffe50412a
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
@@ -173,7 +165,7 @@
 							<?php } ?>
 					</center>
 				</div>
-				<<<<<<< HEAD <?php if ($detail->status == 'Pending') { ?> <div class="card-footer">
+				<?php if ($detail->status == 'Pending') { ?> <div class="card-footer">
 					<form action="<?= base_url('dashboard/update_srt_pernyataan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_srt_pernyataan">
 						<div class="form-group">
 							<div class="input-group">
@@ -196,8 +188,6 @@
 					</form>
 			</div>
 		<?php } ?>
-		=======
-		>>>>>>> edd33503935bd484c3806bb33c524fdffe50412a
 		</div>
 </div>
 <div class="col-xs-12 col-sm-3">
@@ -213,10 +203,7 @@
 			<center>
 				<?php if ($detail->ktp != null) { ?>
 					<p><?= $detail->ktp; ?></p>
-					<<<<<<< HEAD <a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/fc_ktp/<?= $detail->ktp ?>" target="_blank">
-						=======
 						<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/fc_ktp/<?= $detail->ktp ?>" target="_blank">
-							>>>>>>> edd33503935bd484c3806bb33c524fdffe50412a
 							<i class="fa fa-download nav-icon">
 							</i> Klik untuk melihat
 						</a>
@@ -225,7 +212,7 @@
 					<?php } ?>
 			</center>
 		</div>
-		<<<<<<< HEAD <?php if ($detail->status == 'Pending') { ?> <div class="card-footer">
+		<?php if ($detail->status == 'Pending') { ?> <div class="card-footer">
 			<form action="<?= base_url('dashboard/update_fc_ktp_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_fc_ktp">
 				<div class="form-group">
 					<div class="input-group">
@@ -247,8 +234,6 @@
 			</form>
 	</div>
 <?php } ?>
-=======
->>>>>>> edd33503935bd484c3806bb33c524fdffe50412a
 </div>
 </div>
 <div class="col-xs-12 col-sm-3">
