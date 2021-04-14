@@ -1,15 +1,15 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-<!-- Page Heading -->
-	<div class="d-sm-flex align-items-center justify-content-between">
-		<h3 class="judullist py-3">Data Permohonan Proses Kasubag</h3>
-		<nav aria-label="breadcrumb" class="nav-breadcrumb">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Permohonan Proses Kasubag</li>
-			</ol>
-		</nav>
-	</div>
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between">
+        <h3 class="judullist py-3">Data Permohonan Proses Kasubag</h3>
+        <nav aria-label="breadcrumb" class="nav-breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Permohonan Proses Kasubag</li>
+            </ol>
+        </nav>
+    </div>
 
     <!-- DataTables Warga -->
     <div class="card shadow mb-4">
@@ -31,7 +31,7 @@
                         foreach ($data_permohonan as $permohonan) {
                         ?>
                             <tr>
-                                <td><?= $no ?></td>
+                                <td><?= $no++ ?></td>
                                 <td><?= $permohonan->nama_layanan ?></td>
                                 <td><?= format_indo(date($permohonan->tgl_permohonan)); ?></td>
                                 <td><label class="badge badge-info"><i class="far fa-clock"><?= $permohonan->status ?></i>

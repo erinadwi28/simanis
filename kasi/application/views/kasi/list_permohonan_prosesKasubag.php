@@ -25,7 +25,7 @@
                         foreach ($data_permohonan as $permohonan) {
                         ?>
                             <tr>
-                                <td><?= $no ?></td>
+                                <td><?= $no++ ?></td>
                                 <td><?= $permohonan->nama_layanan ?></td>
                                 <td><?= format_indo(date($permohonan->tgl_permohonan)); ?></td>
                                 <td><label class="badge badge-info"><i class="far fa-clock"><?= $permohonan->status ?></i>

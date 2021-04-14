@@ -60,6 +60,11 @@
 <!-- Page level custom scripts -->
 <script src="<?= base_url('assets/dashboard/js/demo/datatables-demo.js') ?>"></script>
 
+<!-- Parsley -->
+<script src="<?= base_url('assets/dashboard/library/parsley/parsley.js') ?>"></script>
+
+<script src="<?= base_url('assets/dashboard/js/script.js') ?>"></script>
+
 <!-- Change label form upload -->
 <script>
 	$('#file-upload').change(function () {

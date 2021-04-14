@@ -27,23 +27,21 @@
 					</thead>
 					<tbody>
 						<?php
-                        $no = 1;
-                        foreach ($data_permohonan as $permohonan) {
-                        ?>
-						<tr>
-							<td class="text-center"><?= $no ?></td>
-							<td><?= $permohonan->nama_layanan ?></td>
-							<td><?= format_indo(date($permohonan->tgl_permohonan)); ?></td>
-							<td><label class="badge badge-info"><i
-										class="far fa-clock text-status"> <?= $permohonan->status ?></i>
-								</label></td>
-							<td class="text-center">
-								<a href="<?= base_url() ?>dashboard/detail_data_permohonan/<?= $permohonan->id_permohonan_ptsp ?>/<?= $permohonan->id_layanan ?>"
-									class="btn btn-primary btn-sm">
-									<i class="fas fa-search"></i>
-								</a>
-							</td>
-						</tr>
+						$no = 1;
+						foreach ($data_permohonan as $permohonan) {
+						?>
+							<tr>
+								<td class="text-center"><?= $no++ ?></td>
+								<td><?= $permohonan->nama_layanan ?></td>
+								<td><?= format_indo(date($permohonan->tgl_permohonan)); ?></td>
+								<td><label class="badge badge-info"><i class="far fa-clock text-status"> <?= $permohonan->status ?></i>
+									</label></td>
+								<td class="text-center">
+									<a href="<?= base_url() ?>dashboard/detail_data_permohonan/<?= $permohonan->id_permohonan_ptsp ?>/<?= $permohonan->id_layanan ?>" class="btn btn-primary btn-sm">
+										<i class="fas fa-search"></i>
+									</a>
+								</td>
+							</tr>
 						<?php } ?>
 					</tbody>
 				</table>

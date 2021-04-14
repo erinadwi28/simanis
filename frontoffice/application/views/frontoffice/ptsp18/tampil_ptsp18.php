@@ -33,28 +33,24 @@
 									</object>
 								</div>
 							</div>
-							<div class="no_surat">
-								<center>
-									<?php foreach ($detail_ptsp as $detail) { ?>
+							<?php foreach ($detail_ptsp as $detail) { ?>
+								<div class="no_surat">
+									<center>
 										<p><b>REKOMENDASI</b><br>
 											<b>Nomor : <?= $detail->no_surat ?></b>
 										</p>
-									<?php } ?>
-								</center>
-							</div>
-							<div class="isi_surat">
-								<?php foreach ($detail_ptsp as $detail) { ?>
+									</center>
+								</div>
+								<div class="isi_surat">
 									<p class="text-justify">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Berdasarkan surat dari Takmir Masjid <?= $detail->nama_masjid ?> Nomor :
 										<?= $detail->no_surat_permohonan ?>
 										tanggal <?= $detail->tgl_surat_permohonan ?> perihal Permohonan Surat Rekomendasi dan
 										memperhatikan kelengkapan
 										proposal yang diajukan, dengan ini kami memberikan rekomendasi kepada :
 									</p>
-								<?php } ?>
-							</div>
-							<div class="isi_surat identitas ml-5">
-								<center>
-									<?php foreach ($detail_ptsp as $detail) { ?>
+								</div>
+								<div class="isi_surat identitas ml-5">
+									<center>
 										<table class="table-responsive">
 											<tbody>
 												<tr>
@@ -87,63 +83,58 @@
 												</tr>
 											</tbody>
 										</table>
-									<?php } ?>
-								</center>
-							</div>
-							<br>
-							<div class="isi_surat paragraf">
-								<p>untuk mendapatkan bantuan renovasi masjid dari Gubernur Jawa Tengah.</p>
-								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Demikian rekomendasi ini kami buat untuk dipergunakan sebagimana mestinya.</p>
-							</div>
-
-							<div class="row">
-								<div class="col-md-6">
+									</center>
 								</div>
-								<div class="col-md-6">
-									<div class="badan_surat isi_surat">
-										<center>
+								<br>
+								<div class="isi_surat paragraf">
+									<p>untuk mendapatkan bantuan renovasi masjid dari Gubernur Jawa Tengah.</p>
+									<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Demikian rekomendasi ini kami buat untuk dipergunakan sebagimana mestinya.</p>
+								</div>
 
-											Klaten, 03 Maret 2020<br>
-											Kepala
-										</center>
+								<div class="row">
+									<div class="col-md-6">
+									</div>
+									<div class="col-md-6">
+										<div class="badan_surat isi_surat">
+											<center>
+
+												Klaten, 03 Maret 2020<br>
+												Kepala
+											</center>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="row ttd_kades">
-								<div class="col-md-6 ">
-								</div>
-								<div class="col-md-6">
+								<div class="row ttd_kades">
+									<div class="col-md-6 ">
+									</div>
+									<div class="col-md-6">
 
-								</div>
-							</div>
-							<br> <br>
-							<div class="row">
-								<div class="col-md-6">
-								</div>
-								<div class="col-md-6">
-									<div class="badan_surat isi_surat">
-										<center>
-											<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
-											NIP. 197004201995031003
-										</center>
 									</div>
 								</div>
-							</div>
+								<br> <br>
+								<div class="row">
+									<div class="col-md-6">
+									</div>
+									<div class="col-md-6">
+										<div class="badan_surat isi_surat">
+											<center>
+												<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
+												NIP. 197004201995031003
+											</center>
+										</div>
+									</div>
+								</div>
 						</div>
 						<div class="card-footer">
 							<center>
-								<<<<<<< HEAD <a href="<?= base_url() ?>dashboard/cetak_ptsp18/<?php foreach ($detail_ptsp as $detail) { ?><?= $detail->id_permohonan_ptsp ?> <?php } ?>">
-									=======
-									<a href="">
-										>>>>>>> edd33503935bd484c3806bb33c524fdffe50412a
-										<button class="btn btn-sm btn-success" type="submit"><i class="fa fa-print"></i>
-											Cetak</button>
-									</a>
+								<a href="<?= base_url() ?>dashboard/cetak_ptsp18/<?= $detail->id_permohonan_ptsp ?>">
+									<button class="btn btn-sm btn-success" type="submit"><i class="fa fa-print"></i>
+										Cetak</button>
+								</a>
 							</center>
 						</div>
-
+					<?php } ?>
 					</div>
-
 				</div>
 			</div>
 		</div>
@@ -152,7 +143,4 @@
 </div>
 <!-- /.container-fluid -->
 </div>
-<<<<<<< HEAD <!-- End of Main Content -->
-	=======
-	<!-- End of Main Content -->
-	>>>>>>> edd33503935bd484c3806bb33c524fdffe50412a
+<!-- End of Main Content -->
