@@ -255,7 +255,7 @@
 							<?php } ?>
 						</tbody>
 					</table>
-					<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen dibawah</em>
+					<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen disamping</em>
 				</div>
 
 				<?php if ($detail->status == 'Pending') { ?>

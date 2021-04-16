@@ -21,7 +21,7 @@
 					<h6 class="m-0 font-weight-bold text-center">Legalisir Ijazah</h6>
 				</div>
 				<div class="card-body">
-					<form class="form-horizontal" id="form3" enctype="multipart/form-data"
+					<form class="form-horizontal" id="formubah_ptsp03" enctype="multipart/form-data"
 						action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp03/<?= $detail->id_permohonan_ptsp ?>"
 						method="POST">
 						<div class="form-group row">
@@ -29,7 +29,7 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="nama" name="nama"
-										value="<?= $detail->nama ?>">
+										value="<?= $detail->nama ?>" required>
 								</div>
 							</div>
 						</div>
@@ -38,7 +38,8 @@
 							<div class="col-sm-9">
 								<div class="form-line">
 									<textarea class="form-control" id="no_hp" name="no_hp" rows="1"
-										placeholder="masukkan nomor yang dapat dihubungi"><?= $detail->no_hp ?></textarea>
+										placeholder="masukkan no hp disini..." required 
+										data-parsley-type="number" minlength="11"><?= $detail->no_hp ?></textarea>
 								</div>
 							</div>
 						</div>

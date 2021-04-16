@@ -185,7 +185,7 @@
 											kepada :</p>
 									</div>
 									<div class="isi_surat identitas">
-										<table class="table-responsive">
+										<table>
 											<tbody>
 												<tr>
 													<td>Nama MDT</td>
@@ -251,7 +251,6 @@
 													<td> </td>
 													<td><?= $detail->no_hp ?></td>
 												</tr>
-
 											</tbody>
 										</table>
 									</div>

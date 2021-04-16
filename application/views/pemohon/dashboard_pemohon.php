@@ -40,7 +40,7 @@
 							</div>
 						</div>
 						<div class="col-auto">
-							<i class="fas fa-envelope-open-text fa-2x text-gray-300"></i>
+							<i class="fas fa-clock fa-2x text-gray-300"></i>
 						</div>
 					</div>
 					<div class="row mt-1">

@@ -45,7 +45,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="" class="badge badge-primary float-right"><i class="far fa-eye nav-icon"></i>
+							<a href="<?= base_url('dashboard/list_permohonan_masuk') ?>" class="badge badge-primary float-right"><i class="far fa-eye nav-icon"></i>
 								Lihat</a>
 						</div>
 					</div>
@@ -62,7 +62,10 @@
 							<div class="h6 text-warning">
 								Permohonan Pending</div>
 							<div class="h4 mb-0 text-gray-800">
-								12
+							<?php
+								foreach ($permohonan_pending as $pending) { ?>
+									<?= $pending->permohonan_pending; ?>
+								<?php } ?>
 							</div>
 						</div>
 						<div class="col-auto">
@@ -88,7 +91,10 @@
 							<div class="h6 text-success">
 								Permohonan Selesai</div>
 							<div class="h4 mb-0 text-gray-800">
-								12
+							<?php
+								foreach ($permohonan_selesai as $selesai) { ?>
+									<?= $selesai->permohonan_selesai; ?>
+								<?php } ?>
 							</div>
 						</div>
 						<div class="col-auto">
@@ -97,7 +103,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/selesai') ?>" class="badge badge-success float-right"><i
+							<a href="<?= base_url('dashboard/list_permohonan_selesai') ?>" class="badge badge-success float-right"><i
 									class="far fa-eye nav-icon"></i> Lihat</a>
 						</div>
 					</div>

@@ -17,33 +17,37 @@
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
 		<?php foreach ($detail_profil_saya as $detail) { ?>
-			<div class="col-xs col-sm-8">
-				<div class="card shadow mb-5">
-					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-center">Permohonan Legalisir Ijazah</h6>
-					</div>
-					<div class="card-body">
-						<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
-						<br>
-						<form class="form-horizontal mt-4" id="form3" enctype="multipart/form-data" action="<?= base_url('dashboard/aksi_pengajuan_ptsp03') ?>" method="POST">
-							<div class="form-group row">
-								<label for="Nama" class="col-sm-3 col-form-label">Nama</label>
-								<div class="col-sm-9">
-									<div class="form-line focused">
-										<input type="text" class="form-control" id="nama" name="nama" value="<?= $detail->nama; ?>">
-									</div>
+		<div class="col-xs col-sm-8">
+			<div class="card shadow mb-5">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Legalisir Ijazah</h6>
+				</div>
+				<div class="card-body">
+					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i
+							class="fas fa-info-circle"></i></button>
+					<br>
+					<form class="form-horizontal mt-4" id="form_ptsp03" enctype="multipart/form-data"
+						action="<?= base_url('dashboard/aksi_pengajuan_ptsp03') ?>" method="POST">
+						<div class="form-group row">
+							<label for="Nama" class="col-sm-3 col-form-label">Nama</label>
+							<div class="col-sm-9">
+								<div class="form-line focused">
+									<input type="text" class="form-control" id="nama" name="nama"
+										value="<?= $detail->nama; ?>" required>
 								</div>
 							</div>
-							<div class="form-group row">
-								<label for="no_hp_aktif" class="col-sm-3 col-form-label">No. Handphone</label>
-								<div class="col-sm-9">
-									<div class="form-line">
-										<textarea class="form-control" id="no_hp" name="no_hp" rows="1" placeholder="masukkan no hp disini..."><?= $detail->no_hp; ?></textarea>
-									</div>
+						</div>
+						<div class="form-group row">
+							<label for="no_hp_aktif" class="col-sm-3 col-form-label">No. Handphone</label>
+							<div class="col-sm-9">
+								<div class="form-line">
+									<input class="form-control" id="no_hp" name="no_hp" rows="1"
+										placeholder="masukkan no hp disini..." 
+										required data-parsley-type="number" minlength="11" value="<?= $detail->no_hp; ?>">
 								</div>
 							</div>
-
-					</div>
+						</div>
+				</div>
 				<?php } ?>
 				<div class="card-footer">
 					<a href="#">
@@ -53,11 +57,10 @@
 						</button>
 					</a>
 				</div>
-				</form>
-				</div>
-				</form>
 			</div>
-			<div class="col-xs-12 col-sm-2"></div>
+			</form>
+		</div>
+		<div class="col-xs-12 col-sm-2"></div>
 	</div>
 	<!--End Content Profile-->
 </div>
@@ -79,14 +82,22 @@
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="persyaratan mb-0">
 					Pemohon adalah pemilik ijazah/STTB/SKP ijazah yang mengajukan permohonan pengesahan atau yang
-					diberikan kuasa oleh pemiliknya (<b> <a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-01.pdf" target="_blank">FM-PI-01</a></b> dan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-02.pdf" target="_blank">FM-PI-02</a></b>).
-				<ol type="1" class="ml-0 list-syarat modal-content-syarat">
-					<li>Mengisi dan menyelesaikan permohonan pengesahan fotocopi ijazah/STTB/SKP ijazah.</li>
-					<li>Mengupload/Mengunggah dokumen fotocopy ijazah.</li>
-					<li>Menunggu pemberitahuan pihak kemenag bahwa proses pengesahan telah selesai.</li>
-					<li>Mengambil dokumen legalisir dengan membawa dokumen asli.</li>
-					<li>Jika Pengambilan dokumen legalisir diwakilkan maka wajib membawa <b> <a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-01.pdf" target="_blank">FM-PI-01</a></b> dan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-02.pdf" target="_blank">FM-PI-02</a></b>.</li>
-				</ol>
+					diberikan kuasa oleh pemiliknya (<b> <a
+							href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-01.pdf"
+							target="_blank">FM-PI-01</a></b> dan <b><a
+							href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-02.pdf"
+							target="_blank">FM-PI-02</a></b>).
+					<ol type="1" class="ml-0 list-syarat modal-content-syarat">
+						<li>Mengisi dan menyelesaikan permohonan pengesahan fotocopi ijazah/STTB/SKP ijazah.</li>
+						<li>Mengupload/Mengunggah dokumen fotocopy ijazah.</li>
+						<li>Menunggu pemberitahuan pihak kemenag bahwa proses pengesahan telah selesai.</li>
+						<li>Mengambil dokumen legalisir dengan membawa dokumen asli.</li>
+						<li>Jika Pengambilan dokumen legalisir diwakilkan maka wajib membawa <b> <a
+									href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-01.pdf"
+									target="_blank">FM-PI-01</a></b> dan <b><a
+									href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-02.pdf"
+									target="_blank">FM-PI-02</a></b>.</li>
+					</ol>
 				</p>
 			</div>
 			<div class="modal-footer">

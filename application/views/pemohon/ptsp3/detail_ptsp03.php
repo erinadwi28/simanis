@@ -51,13 +51,13 @@
 
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_ijazah_ptsp03/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_ijazah">
+							<form action="<?= base_url('dashboard/update_ijazah_ptsp03/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp03">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload col-md-12">
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload">pilih file...</label>
-												<input type="file" class="custom-file-input" id="file-upload" name="berkas" value="<?= $detail->ijazah ?>">
+												<input type="file" class="custom-file-input" id="file-upload" name="berkas" value="<?= $detail->ijazah ?>" required>
 												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="id_permohonan_ptsp" value="<?= $detail->id_permohonan_ptsp ?>">
 											</div>
 										</div>
@@ -165,7 +165,6 @@
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
 							<div class="float-right">
-
 								<a href="<?= base_url() ?>dashboard/form_ubah_ptsp03/<?= $detail->id_permohonan_ptsp ?>">
 									<button id=" btn_ubah" class="btn btn-sm btn-warning" type="submit">
 										<i class="fa fa-edit nav-icon">
