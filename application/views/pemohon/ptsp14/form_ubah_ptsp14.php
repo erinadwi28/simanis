@@ -2,7 +2,7 @@
 <div class="container-fluid">
 
 	<!-- Page Heading -->
-	<div class="d-sm-flex align-items-center justify-content-between mb-4 judullist">
+	<div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4 judullist">
 		<h3>Form Ubah Permohonan</h3>
 		<!-- <a href="<?= base_url('warga') ?>"> -->
 		<button id="btn_kembali" class="btn btn-sm btn-warning" type="">
@@ -19,7 +19,7 @@
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Ijop LPQ</h6>
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Ijin Operasional LPQ</h6>
 				</div>
 				<div class="card-body">
 					<form class="form-horizontal" id="form6" enctype="multipart/form-data"

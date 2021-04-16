@@ -150,7 +150,7 @@
 									<table class="table-responsive">
 										<tbody>
 											<tr>
-												<td>Nama Masjid</td>
+												<td>Nama Masjid</td> 
 												<td> </td>
 												<td>:</td>
 												<td> </td>
@@ -232,8 +232,4 @@
 	<!-- End of Main Content -->
 </body>
 
-<<<<<<< HEAD </html>
-	=======
-
 </html>
->>>>>>> edd33503935bd484c3806bb33c524fdffe50412a
