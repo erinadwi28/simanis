@@ -217,14 +217,14 @@
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_srt_permohonan">
+							<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp05_1">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload">pilih
 													file...</label>
-												<input type="file" class="custom-file-input" id="file-upload" name="srt_permohonan" value="<?= $detail->srt_permohonan ?>">
+												<input type="file" class="custom-file-input" id="file-upload" name="srt_permohonan" value="<?= $detail->srt_permohonan ?>" required>
 												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
 											</div>
 										</div>
@@ -263,14 +263,14 @@
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_srt_pernyataan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_srt_pernyataan">
+							<form action="<?= base_url('dashboard/update_srt_pernyataan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp05_2">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload-2">pilih
 													file...</label>
-												<input type="file" class="custom-file-input" id="file-upload-2" name="srt_pernyataan" value="<?= $detail->srt_pernyataan ?>">
+												<input type="file" class="custom-file-input" id="file-upload-2" name="srt_pernyataan" value="<?= $detail->srt_pernyataan ?>" required>
 												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload-2" value="<?= $detail->id_permohonan_ptsp ?>">
 											</div>
 										</div>
@@ -311,13 +311,13 @@
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_fc_ktp_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_fc_ktp">
+							<form action="<?= base_url('dashboard/update_fc_ktp_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp05_3">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload-3">pilih file...</label>
-												<input type="file" class="custom-file-input" id="file-upload-3" name="fc_ktp" value="<?= $detail->ktp ?>">
+												<input type="file" class="custom-file-input" id="file-upload-3" name="fc_ktp" value="<?= $detail->ktp ?>" required>
 												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload-3" value="<?= $detail->id_permohonan_ptsp ?>">
 											</div>
 										</div>
@@ -358,14 +358,14 @@
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_bukti_pelunasan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_bukti_pelunasan">
+							<form action="<?= base_url('dashboard/update_bukti_pelunasan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp05_4">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload-4">pilih
 													file...</label>
-												<input type="file" class="custom-file-input" id="file-upload-4" name="bukti_pelunasan" value="<?= $detail->bukti_pelunasan ?>">
+												<input type="file" class="custom-file-input" id="file-upload-4" name="bukti_pelunasan" value="<?= $detail->bukti_pelunasan ?>" required>
 												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload-4" value="<?= $detail->id_permohonan_ptsp ?>">
 											</div>
 										</div>

@@ -108,11 +108,7 @@
 			</div>
 	</div>
 </div>
-<!--End Content Profile-->
-</div>
-<!-- /.container-fluid -->
-</div>
-<!-- End of Main Content -->
+
 
 <!-- Modal -->
 <div class="modal fade" id="sopModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

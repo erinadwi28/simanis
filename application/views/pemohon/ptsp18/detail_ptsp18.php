@@ -7,18 +7,21 @@
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<?php if ($detail->status == 'Validasi Kemenag') { ?>
-					<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-					<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_validasi_kemenag') ?>">Permohonan Proses Kemenag</a></li>
-					<li class="breadcrumb-item active" aria-current="page">Detail Permohonan</li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item"><a
+						href="<?= base_url('dashboard/list_permohonan_validasi_kemenag') ?>">Permohonan Proses
+						Kemenag</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Detail Permohonan</li>
 				<?php } elseif ($detail->status == 'Selesai') { ?>
-					<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-					<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Permohonan Selesai</a></li>
-					<li class="breadcrumb-item active" aria-current="page">Detail Permohonan</li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Permohonan
+						Selesai</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Detail Permohonan</li>
 				<?php } else{ ?>
-					<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-					<li class="breadcrumb-item active" aria-current="page">SOP</li>
-					<li class="breadcrumb-item active" aria-current="page">Form Permohonan</li>
-					<li class="breadcrumb-item active" aria-current="page">Detail Permohonan</li>
+				<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+				<li class="breadcrumb-item active" aria-current="page">SOP</li>
+				<li class="breadcrumb-item active" aria-current="page">Form Permohonan</li>
+				<li class="breadcrumb-item active" aria-current="page">Detail Permohonan</li>
 				<?php } ?>
 			</ol>
 		</nav>
@@ -41,7 +44,8 @@
 						<?php if ($detail->srt_permohonan != null) { ?>
 						<p><?= $detail->srt_permohonan; ?></p>
 						<a id="btn_upload" class="btn btn-sm btn-success"
-							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp18/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
+							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp18/srt_permohonan/<?= $detail->srt_permohonan ?>"
+							target="_blank">
 							<i class="fa fa-download nav-icon">
 							</i> Klik untuk melihat
 						</a>
@@ -53,16 +57,18 @@
 
 				<?php if ($detail->status == 'Pending') { ?>
 				<div class="card-footer">
-					<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp18/' . $detail->id_ptsp) ?>" 
-					enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_srt_permohonan">
-							<div class="form-group">
+					<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp18/' . $detail->id_ptsp) ?>"
+						enctype="multipart/form-data" method="post" accept-charset="utf-8"
+						id="form_upload_srt_permohonan">
+						<div class="form-group">
 							<div class="input-group">
 								<div class="form-group-upload">
 									<div class="custom-file">
 										<label class="custom-file-label" for="file-upload">pilih file...</label>
-											<input type="file" class="custom-file-input" id="file-upload" name="srt_permohonan" 
-											value="<?= $detail->srt_permohonan ?>">
-											<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" 
+										<input type="file" class="custom-file-input" id="file-upload"
+											name="srt_permohonan" value="<?= $detail->srt_permohonan ?>">
+										<input type="hidden" class="form-control form-user-input"
+											name="id_permohonan_ptsp" id="file-upload"
 											value="<?= $detail->id_permohonan_ptsp ?>">
 									</div>
 								</div>
@@ -91,28 +97,31 @@
 					<center>
 						<?php if ($detail->proposal != null) { ?>
 						<p><?= $detail->proposal; ?></p>
-							<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp18/proposal/<?= $detail->proposal ?>" target="_blank">
-								<i class="fa fa-download nav-icon">
-								</i> Klik untuk melihat
-							</a>
+						<a id="btn_upload" class="btn btn-sm btn-success"
+							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp18/proposal/<?= $detail->proposal ?>"
+							target="_blank">
+							<i class="fa fa-download nav-icon">
+							</i> Klik untuk melihat
+						</a>
 						<?php } elseif ($detail->proposal == null) { ?>
-							<p>Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
+						<p>Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
 						<?php } ?>
 					</center>
 				</div>
 
 				<?php if ($detail->status == 'Pending') { ?>
 				<div class="card-footer">
-					<form action="<?= base_url('dashboard/update_proposal_ptsp18/' . $detail->id_ptsp) ?>" 
-					enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_proposal">
-							<div class="form-group">
-								<div class="input-group">
-									<div class="form-group-upload">
-										<div class="custom-file">
-											<label class="custom-file-label" for="file-upload-2">pilih file...</label>
-											<input type="file" class="custom-file-input" id="file-upload-2" name="proposal" 
+					<form action="<?= base_url('dashboard/update_proposal_ptsp18/' . $detail->id_ptsp) ?>"
+						enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_proposal">
+						<div class="form-group">
+							<div class="input-group">
+								<div class="form-group-upload">
+									<div class="custom-file">
+										<label class="custom-file-label" for="file-upload-2">pilih file...</label>
+										<input type="file" class="custom-file-input" id="file-upload-2" name="proposal"
 											value="<?= $detail->proposal ?>">
-											<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" 
+										<input type="hidden" class="form-control form-user-input"
+											name="id_permohonan_ptsp" id="file-upload"
 											value="<?= $detail->id_permohonan_ptsp ?>">
 									</div>
 								</div>
@@ -202,7 +211,7 @@
 								<td> </td>
 								<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
 							</tr>
-							
+
 							<?php if ($detail->tgl_persetujuan_fo != null) { ?>
 							<tr>
 								<td><b>Tanggal Persetujuan Front Office</b></td>
@@ -255,7 +264,8 @@
 							<?php } ?>
 						</tbody>
 					</table>
-					<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen disamping</em>
+					<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen
+						disamping</em>
 				</div>
 
 				<?php if ($detail->status == 'Pending') { ?>
@@ -267,23 +277,19 @@
 								</i> Ubah
 							</button>
 						</a>
+						<a
+							href="<?= base_url() ?>dashboard/aksi_update_status_permohonan/<?= $detail->id_permohonan_ptsp ?>">
+							<button id="btn_selesai" class="btn btn-sm btn-primary" type="submit">
+								<i class="far fa-save nav-icon">
+								</i> Selesai
+							</button>
+						</a>
+
 					</div>
 				</div>
 				<?php } ?>
 			</div>
 		</div>
-	</div>
-
-	<!-- Button Selesai -->
-	<div class="row clearfix float-right px-2">
-		<?php if ($detail->status == 'Pending') { ?>
-		<a href="<?= base_url() ?>dashboard/aksi_update_status_permohonan/<?= $detail->id_permohonan_ptsp ?>">
-			<button id="btn_selesai" class="btn btn-sm btn-primary" type="submit">
-				<i class="far fa-save nav-icon">
-				</i> Selesai
-			</button>
-		</a>
-		<?php } ?>
 	</div>
 	<?php } ?>
 	<!--End Content-->

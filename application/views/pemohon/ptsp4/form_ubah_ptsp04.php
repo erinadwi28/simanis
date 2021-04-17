@@ -22,14 +22,15 @@
 						Sertifikat</h6>
 				</div>
 				<div class="card-body">
-					<form class="form-horizontal" id="form3" enctype="multipart/form-data"
+					<form class="form-horizontal" id="formubah_ptsp04" enctype="multipart/form-data"
 						action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp04/<?= $detail->id_permohonan_ptsp ?>"
 						method="POST">
 						<div class="form-group row">
 							<label for="Nama" class="col-sm-3 col-form-label">Nama</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama" name="nama" value="<?= $detail->nama ?>">
+									<input type="text" class="form-control" id="nama" name="nama" 
+									value="<?= $detail->nama ?>" required>
 								</div>
 							</div>
 						</div>
@@ -37,8 +38,9 @@
 							<label for="no_hp" class="col-sm-3 col-form-label">No. Handphone</label>
 							<div class="col-sm-9">
 								<div class="form-line">
-									<textarea class="form-control" id="no_hp" name="no_hp" rows="1"
-										placeholder="masukkan nomor yang dapat dihubungi"><?= $detail->no_hp ?></textarea>
+									<input class="form-control" id="no_hp" name="no_hp" rows="1"
+										placeholder="masukkan no hp disini..." required 
+										data-parsley-type="number" minlength="11" value="<?= $detail->no_hp ?>">
 								</div>
 							</div>
 						</div>

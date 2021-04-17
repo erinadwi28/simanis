@@ -34,12 +34,8 @@
 						</a>
 					</center>
 				</div>
-			
-				<div class="card-footer">
-					
-				</div>
-			
 			</div>
+			
 			<!-- Surat Rekomendasi KUA -->
 			<div class="card shadow mb-4">
 				<div class="card-header">
@@ -50,22 +46,14 @@
 
 				<div class="card-body">
 					<center>
-					
-						<p></p>
 						<a id="btn_upload" class="btn btn-sm btn-primary"
 							href=""
 							target="_blank">
 							<i class="fa fa-download nav-icon">
 							</i> Klik untuk melihat
 						</a>
-					
 					</center>
 				</div>
-			
-				<div class="card-footer">
-					
-				</div>
-			
 			</div>
 		</div>
 		<div class="col-md-8 mb-0">
@@ -144,17 +132,18 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="card-footer">
-				<!-- Button Tolak & Setujui -->
-						<div class="float-right">
-							<a href="">
-								<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
-									<i class="fas fa-check-circle">
-									</i> Terima
-								</button>
-							</a>
-						</div>
-				</div>
+			</div>
+
+			<!-- Button Setujui -->
+			<div class="row clearfix float-right px-2">
+				<?php if ($detail->status == 'Proses Kasi') { ?>
+				<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+					<button id="btn_termia" class="btn btn-sm btn-primary" type="submit">
+						<i class="fas fa-check-circle">
+						</i> Terima
+					</button>
+				</a>
+				<?php } ?>
 			</div>
 		</div>
 	</div>

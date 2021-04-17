@@ -65,27 +65,19 @@
 								
 						</tbody>
 					</table>
-					
 				</div>
+			</div>
 
-				
-				<div class="card-footer">
-					<div class="float-right">
-						<a href=" ">
-							<button id=" btn_ubah" class="btn btn-sm btn-warning" type="submit">
-								<i class="fa fa-edit nav-icon">
-								</i> Ubah
-							</button>
-						</a>
-						<a href=" ">
-							<button id="btn_selesai" class="btn btn-sm btn-primary" type="submit">
-								<i class="far fa-save nav-icon">
-								</i> Selesai
-							</button>
-						</a>
-					</div>
-				</div>
-				
+			<!-- Button Setujui -->
+			<div class="row clearfix float-right px-2">
+				<?php if ($detail->status == 'Proses Kasi') { ?>
+				<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+					<button id="btn_termia" class="btn btn-sm btn-primary" type="submit">
+						<i class="fas fa-check-circle">
+						</i> Terima
+					</button>
+				</a>
+				<?php } ?>
 			</div>
 		</div>
 	</div>
