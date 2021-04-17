@@ -25,20 +25,23 @@
 					<div class="card-body">
 						<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
 						<br>
-						<form class="form-horizontal mt-4" id="form4" enctype="multipart/form-data" action="<?= base_url('dashboard/aksi_pengajuan_ptsp04') ?>" method="POST">
+						<form class="form-horizontal mt-4" id="form_ptsp04" enctype="multipart/form-data" action="<?= base_url('dashboard/aksi_pengajuan_ptsp04') ?>" method="POST">
 							<div class="form-group row">
 								<label for="Nama" class="col-sm-3 col-form-label">Nama</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="nama" name="nama" value="<?= $detail->nama; ?>">
+										<input type="text" class="form-control" id="nama" name="nama" 
+										value="<?= $detail->nama; ?>" required>
 									</div>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="no_hp_aktif" class="col-sm-3 col-form-label">No. Handphone</label>
+								<label for="no_hp_aktif" class="col-sm-3 col-form-label">No. HandPhone</label>
 								<div class="col-sm-9">
 									<div class="form-line">
-										<textarea class="form-control" id="no_hp" name="no_hp" rows="1" placeholder="masukkan alamat dengan lengkap disini..."><?= $detail->no_hp; ?></textarea>
+									<input class="form-control" id="no_hp" name="no_hp" rows="1"
+										placeholder="masukkan no hp disini..." 
+										required data-parsley-type="number" minlength="11" value="<?= $detail->no_hp; ?>">
 									</div>
 								</div>
 							</div>

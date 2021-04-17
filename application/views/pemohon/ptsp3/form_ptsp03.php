@@ -38,7 +38,7 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="no_hp_aktif" class="col-sm-3 col-form-label">No. Handphone</label>
+							<label for="no_hp_aktif" class="col-sm-3 col-form-label">No. HandPhone</label>
 							<div class="col-sm-9">
 								<div class="form-line">
 									<input class="form-control" id="no_hp" name="no_hp" rows="1"

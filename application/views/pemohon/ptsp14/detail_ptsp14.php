@@ -253,22 +253,17 @@
 										</i> Ubah
 									</button>
 								</a>
+								<a href="<?= base_url() ?>dashboard/aksi_update_status_permohonan/<?= $detail->id_permohonan_ptsp ?>">
+									<button id="btn_selesai" class="btn btn-sm btn-primary" type="submit">
+										<i class="far fa-save nav-icon">
+										</i> Selesai
+									</button>
+								</a>
 							</div>
 						</div>
 					<?php } ?>
 				</div>
 			</div>
-		</div>
-		<!-- Button Selesai -->
-		<div class="row clearfix float-right px-2">
-			<?php if ($detail->status == 'Pending') { ?>
-				<a href="<?= base_url() ?>dashboard/aksi_update_status_permohonan/<?= $detail->id_permohonan_ptsp ?>">
-					<button id="btn_selesai" class="btn btn-primary" type="submit">
-						<i class="far fa-save nav-icon">
-						</i> Selesai
-					</button>
-				</a>
-			<?php } ?>
 		</div>
 	<?php } ?>
 	<!--End Content-->

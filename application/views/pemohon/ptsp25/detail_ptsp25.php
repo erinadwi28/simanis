@@ -75,7 +75,6 @@
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td> </td>
 								<td><?= $detail->perihal_konsultasi ?></td>
 							</tr>
 							<tr>
@@ -139,7 +138,6 @@
 							<?php } ?>
 						</tbody>
 					</table>
-					<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen dibawah</em>
 				</div>
 
 				<?php if ($detail->status == 'Pending') { ?>

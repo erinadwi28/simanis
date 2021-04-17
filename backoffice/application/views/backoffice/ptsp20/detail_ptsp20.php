@@ -14,7 +14,7 @@
 
 
 	<div class="row clearfix">
-		
+
 		<div class="col-md-4 mb-0">
 			<!-- Surat Permohonan -->
 			<div class="card shadow mb-4">
@@ -26,21 +26,14 @@
 
 				<div class="card-body">
 					<center>
-					
+
 						<p></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href=""
-							target="_blank">
+						<a id="btn_upload" class="btn btn-sm btn-primary" href="" target="_blank">
 							<i class="fa fa-download nav-icon">
 							</i> Klik untuk melihat
 						</a>
 					</center>
 				</div>
-			
-				<div class="card-footer">
-					
-				</div>
-			
 			</div>
 			<!-- Surat Rekomendasi KUA -->
 			<div class="card shadow mb-4">
@@ -52,32 +45,30 @@
 
 				<div class="card-body">
 					<center>
-					
+
 						<p></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href=""
-							target="_blank">
+						<a id="btn_upload" class="btn btn-sm btn-primary" href="" target="_blank">
 							<i class="fa fa-download nav-icon">
 							</i> Klik untuk melihat
 						</a>
-					
+
 					</center>
 				</div>
-			
+
 				<div class="card-footer">
-					
+
 				</div>
-			
+
 			</div>
 		</div>
 		<div class="col-md-8 mb-2">
-			<div class="card shadow">
+			<div class="card shadow mb-4">
 				<div class="card-header py-3">
 					<h6 class="m-0 font-weight-bold text-center">Permohonan Ijin Operasional Majelis Taklim</h6>
 				</div>
 				<div class="card-body">
 					<table class="table-hover table-responsive">
-					<tbody>
+						<tbody>
 							<tr>
 								<td><b>Nama Majelis Taklim</b></td>
 								<td> </td>
@@ -140,30 +131,31 @@
 								<td> </td>
 								<td>:</td>
 								<td>123</td>
-							</tr>	
+							</tr>
 						</tbody>
 					</table>
 				</div>
-				<div class="card-footer">
-				
-						<div class="float-right">
-							<a href="">
-								<button id=" btn_tolak" class="btn btn-sm btn-danger" type="submit">
-									<i class="fas fa-times-circle">
-									</i> Tolak
-								</button>
-							</a>
-							<a href="">
-								<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
-									<i class="fas fa-check-circle">
-									</i> Terima
-								</button>
-							</a>
-						</div>
-				</div>
+			</div>
+
+			<!-- Button Tolak & Setujui Awal Surat Masuk -->
+			<div class="row clearfix float-right px-2">
+				<?php if ($detail->status == 'Proses BO') { ?>
+				<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>"
+					class="mr-2">
+					<button id=" btn_tolak" class="btn btn-sm btn-tolak" type="submit">
+						<i class="fas fa-times-circle">
+						</i> Tolak
+					</button>
+				</a>
+				<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+					<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
+						<i class="fas fa-check-circle">
+						</i> Terima
+					</button>
+				</a>
+				<?php } ?>
 			</div>
 		</div>
-		<div class="col-xs-12 col-sm-2"></div>
 	</div>
 	<!--End Content Profile-->
 </div>

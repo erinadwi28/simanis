@@ -34,7 +34,7 @@
 							<td class="text-center"><?=  $no++ ?></td>
 							<td><?= $permohonan->nama_layanan ?></td>
 							<td><?= format_indo(date($permohonan->tgl_permohonan)); ?></td>
-							<td><label class="badge badge-info"><i class="far fa-clock"><?= $permohonan->status ?></i>
+							<td><label class="badge badge-info"><i class="far fa-clock"> <?= $permohonan->status ?></i>
 								</label></td>
 							<td>
 								<div class="text-center">

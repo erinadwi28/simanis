@@ -177,7 +177,6 @@
 										</i> Selesai
 									</button>
 								</a>
-
 							</div>
 						</div>
 					<?php } ?>

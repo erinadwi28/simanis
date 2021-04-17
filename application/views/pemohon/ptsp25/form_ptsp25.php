@@ -20,10 +20,12 @@
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Konsultasi dan informasi sertifikasi halal,zakat dan wakaf</h6>
+					<h6 class="m-0 font-weight-bold text-center">Konsultasi dan informasi sertifikasi halal,zakat dan
+						wakaf</h6>
 				</div>
 				<div class="card-body">
-					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
+					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i
+							class="fas fa-info-circle"></i></button>
 					<br>
 					<form class="form-horizontal mt-4" id="form5" enctype="multipart/form-data"
 						action="<?= base_url('dashboard/aksi_pengajuan_ptsp25') ?>" method="POST">
@@ -31,8 +33,9 @@
 							<label for="Nama" class="col-sm-3 col-form-label">Nama</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama" name="nama" value="<?= $detail->nama; ?>">
-									
+									<input type="text" class="form-control" id="nama" name="nama"
+										value="<?= $detail->nama; ?>">
+
 								</div>
 							</div>
 						</div>
@@ -40,7 +43,8 @@
 							<label for="Alamat_lengkap" class="col-sm-3 col-form-label">Alamat Lengkap</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<textarea type="text" class="form-control" id="alamat" name="alamat" value="" placeholder="masukkan alamat disini..."></textarea>
+									<textarea type="text" class="form-control" id="alamat" name="alamat" value=""
+										placeholder="masukkan alamat disini..."></textarea>
 								</div>
 							</div>
 						</div>
@@ -48,7 +52,8 @@
 							<label for="Pekerjaan" class="col-sm-3 col-form-label">Pekerjaan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" value="" placeholder="masukkan Pekerjaan disini...">
+									<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" value=""
+										placeholder="masukkan pekerjaan disini...">
 								</div>
 							</div>
 						</div>
@@ -65,11 +70,14 @@
 							<label for="Perihal_konsultasi" class="col-sm-3 col-form-label">Perihal Konsultasi</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="perihal_konsultasi" name="perihal_konsultasi" value="" placeholder="masukkan Perihal Konsultasi disini...">
+									<input type="text" class="form-control" id="perihal_konsultasi"
+										name="perihal_konsultasi" value=""
+										placeholder="masukkan Perihal Konsultasi disini...">
 								</div>
 							</div>
 						</div>
-				<?php } ?>
+						<?php } ?>
+				</div>
 				<div class="card-footer">
 					<div class="float-right">
 						<a href="#">
@@ -83,10 +91,9 @@
 				</form>
 			</div>
 		</div>
+		<!--End Content Profile-->
 	</div>
-	<!--End Content Profile-->
-</div>
-<!-- /.container-fluid -->
+	<!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->
 
@@ -105,7 +112,7 @@
 				<p class="modal-content-syarat mb-0">
 					<ol type="1" class="ml-0 list-syarat modal-content-syarat">
 						<li>Surat Pemohon di tunjukan kepada kepala Kantor Kementrian Agama kab.Klaten.</li>
-						<li>Pemohon mengupload Surat Permohonan.</li>	
+						<li>Pemohon mengupload Surat Permohonan.</li>
 					</ol>
 				</p>
 			</div>
