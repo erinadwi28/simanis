@@ -25,14 +25,14 @@
 				<div class="card-body">
 					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
 					<br>
-					<form class="form-horizontal mt-4" id="form5" enctype="multipart/form-data"
+					<form class="form-horizontal mt-4" id="form_ptsp25" enctype="multipart/form-data"
 						action="<?= base_url('dashboard/aksi_pengajuan_ptsp25') ?>" method="POST">
 						<div class="form-group row">
 							<label for="Nama" class="col-sm-3 col-form-label">Nama</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama" name="nama" value="<?= $detail->nama; ?>">
-									
+								<input type="text" class="form-control" id="nama" name="nama"
+										value="<?= $detail->nama; ?>" required>
 								</div>
 							</div>
 						</div>
@@ -40,7 +40,9 @@
 							<label for="Alamat_lengkap" class="col-sm-3 col-form-label">Alamat Lengkap</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<textarea type="text" class="form-control" id="alamat" name="alamat" value="" placeholder="masukkan alamat disini..."></textarea>
+									<textarea type="text" class="form-control" id="alamat" name="alamat"  
+									placeholder="masukkan alamat disini..."
+									value=" " required></textarea>
 								</div>
 							</div>
 						</div>
@@ -48,16 +50,19 @@
 							<label for="Pekerjaan" class="col-sm-3 col-form-label">Pekerjaan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" value="" placeholder="masukkan Pekerjaan disini...">
+									<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" 
+									placeholder="masukkan Pekerjaan disini..."
+									 value=" " required>
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="no_hp_aktif" class="col-sm-3 col-form-label">No. Handphone</label>
 							<div class="col-sm-9">
-								<div class="form-line">
-									<textarea class="form-control" id="no_hp" name="no_hp" rows="1"
-										placeholder="masukkan no hp disini..."></textarea>
+							<div class="form-line">
+									<input class="form-control" id="no_hp" name="no_hp" rows="1"
+										placeholder="masukkan no hp disini..." 
+										required data-parsley-type="number" minlength="11" value="<?= $detail->no_hp; ?>">
 								</div>
 							</div>
 						</div>
@@ -65,10 +70,14 @@
 							<label for="Perihal_konsultasi" class="col-sm-3 col-form-label">Perihal Konsultasi</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="perihal_konsultasi" name="perihal_konsultasi" value="" placeholder="masukkan Perihal Konsultasi disini...">
+									<input type="text" class="form-control" id="perihal_konsultasi" name="perihal_konsultasi"
+									 placeholder="masukkan Perihal Konsultasi disini..." 
+									 value="" required>
+									
 								</div>
 							</div>
 						</div>
+				</div>
 				<?php } ?>
 				<div class="card-footer">
 					<div class="float-right">

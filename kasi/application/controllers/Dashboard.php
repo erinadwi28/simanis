@@ -15,7 +15,7 @@ class Dashboard extends CI_Controller
 
     public function index()
     {
-        $data_title['title'] = 'SIMANIS: Dashboard';                
+        $data_title['title'] = 'SIMANIS: Dashboard';
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
@@ -35,7 +35,7 @@ class Dashboard extends CI_Controller
     //profil
     public function profil()
     {
-        $data_title['title'] = 'Profil Saya';                
+        $data_title['title'] = 'Profil Saya';
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
@@ -95,7 +95,7 @@ class Dashboard extends CI_Controller
     //menampilkan halaman form ubah kata sandi
     public function form_ubahsandi()
     {
-        $data_title['title'] = 'Ubah Kata Sandi Saya';                
+        $data_title['title'] = 'Ubah Kata Sandi Saya';
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
@@ -147,7 +147,7 @@ class Dashboard extends CI_Controller
     //list permohonan masuk
     public function list_permohonan_masuk()
     {
-        $data_title['title'] = 'List Permohonan Masuk';                
+        $data_title['title'] = 'List Permohonan Masuk';
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
@@ -156,7 +156,7 @@ class Dashboard extends CI_Controller
 
         $data_detail['data_permohonan'] = $this->m_kasi->get_list_data_permohonan('Proses Kasi', $sie)->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('kasi/sidebar', $data);
         $this->load->view('topbar');
         $this->load->view('kasi/list_permohonan_masuk', $data_detail);
@@ -166,7 +166,7 @@ class Dashboard extends CI_Controller
     //list permohonan pending
     public function list_permohonan_pending()
     {
-        $data_title['title'] = 'List Permohonan Pending';                
+        $data_title['title'] = 'List Permohonan Pending';
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
@@ -175,7 +175,7 @@ class Dashboard extends CI_Controller
 
         $data_detail['data_permohonan'] = $this->m_kasi->get_list_data_permohonan('Pending', $sie)->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('kasi/sidebar', $data);
         $this->load->view('topbar');
         $this->load->view('kasi/list_permohonan_pending', $data_detail);
@@ -185,7 +185,7 @@ class Dashboard extends CI_Controller
     //list permohonan yang sudah disetujui kasi
     public function list_permohonan_selesaiKasi()
     {
-        $data_title['title'] = 'List Permohonan Selesai Kasi';                
+        $data_title['title'] = 'List Permohonan Selesai Kasi';
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
@@ -194,7 +194,7 @@ class Dashboard extends CI_Controller
 
         $data_detail['data_permohonan'] = $this->m_kasi->get_list_data_permohonan_selesaiKasi($sie)->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('kasi/sidebar', $data);
         $this->load->view('topbar');
         $this->load->view('kasi/list_permohonan_selesaiKasi', $data_detail);
@@ -204,7 +204,7 @@ class Dashboard extends CI_Controller
     //list permohonan yang sudah disetujui kasi
     public function list_permohonan_prosesKasubag()
     {
-        $data_title['title'] = 'List Permohonan Proses Kasubag';                
+        $data_title['title'] = 'List Permohonan Proses Kasubag';
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
@@ -213,7 +213,7 @@ class Dashboard extends CI_Controller
 
         $data_detail['data_permohonan'] = $this->m_kasi->get_list_data_permohonan_prosesKasubag('Proses Kasubag')->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('kasi/sidebar', $data);
         $this->load->view('topbar');
         $this->load->view('kasi/list_permohonan_prosesKasubag', $data_detail);
@@ -223,7 +223,7 @@ class Dashboard extends CI_Controller
     //tampil detail data permohonan
     public function detail_data_permohonan($id_permohonan_ptsp, $id_layanan)
     {
-        $data_title['title'] = 'Detail Permohonan';                
+        $data_title['title'] = 'Detail Permohonan';
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
@@ -247,11 +247,9 @@ class Dashboard extends CI_Controller
             $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp15')->result();
         } elseif ($id_layanan == 18) {
             $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp18')->result();
-        } elseif ($id_layanan == 26) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp26')->result();
-        } 
+        }
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('kasi/sidebar', $data);
         $this->load->view('topbar');
         if ($id_layanan == 1) {
@@ -277,16 +275,69 @@ class Dashboard extends CI_Controller
     }
 
     //update status permohonan menjadi Proses kasubag
-    public function aksi_update_status_setujui($id_permohonan_ptsp)
+    public function aksi_update_status_setujui($id_permohonan_ptsp, $id_layanan)
     {
         $data = array(
             'id_kasi' => $this->session->userdata('id_kasi'),
             'notif_pemohon' => 'Belum Dibaca',
             'status' => 'Proses Kasubag',
-            'tgl_persetujuan_kasi' => date("Y/m/d")
+            'tgl_persetujuan_kasi' => date("Y/m/d"),
+
+        );
+
+        $no_surat = array(
+            'no_surat' => $this->input->post('no_surat'),
         );
 
         $this->m_kasi->update_status_permohonan($id_permohonan_ptsp, $data, 'permohonan_ptsp');
+
+        if ($id_layanan == 5) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp05', $no_surat);
+        } elseif ($id_layanan == 6) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp06', $no_surat);
+        } elseif ($id_layanan == 7) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp07', $no_surat);
+        } elseif ($id_layanan == 8) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp08', $no_surat);
+        } elseif ($id_layanan == 9) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp09', $no_surat);
+        } elseif ($id_layanan == 10) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp10', $no_surat);
+        } elseif ($id_layanan == 11) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp11', $no_surat);
+        } elseif ($id_layanan == 12) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp12', $no_surat);
+        } elseif ($id_layanan == 13) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp13', $no_surat);
+        } elseif ($id_layanan == 14) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp14', $no_surat);
+        } elseif ($id_layanan == 15) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp15', $no_surat);
+        } elseif ($id_layanan == 16) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp16', $no_surat);
+        } elseif ($id_layanan == 17) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp17', $no_surat);
+        } elseif ($id_layanan == 18) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp18', $no_surat);
+        } elseif ($id_layanan == 19) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp19', $no_surat);
+        } elseif ($id_layanan == 20) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp20', $no_surat);
+        } elseif ($id_layanan == 21) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp21', $no_surat);
+        } elseif ($id_layanan == 22) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp22', $no_surat);
+        } elseif ($id_layanan == 23) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp23', $no_surat);
+        } elseif ($id_layanan == 24) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp24', $no_surat);
+        } elseif ($id_layanan == 25) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp25', $no_surat);
+        } elseif ($id_layanan == 26) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp26', $no_surat);
+        } elseif ($id_layanan == 27) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp27', $no_surat);
+        }
 
         $this->session->set_flashdata('success', 'permohonan sukses disetujui');
         redirect('dashboard/list_permohonan_masuk');
@@ -296,7 +347,7 @@ class Dashboard extends CI_Controller
     //tampil form tolak permohonan
     public function form_input_keterangan($id_permohonan_ptsp)
     {
-        $data_title['title'] = 'Form Keterangan Revisi';                
+        $data_title['title'] = 'Form Keterangan Revisi';
         $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
         $this->session->userdata('id_kasi')])->row_array();
 
@@ -306,7 +357,7 @@ class Dashboard extends CI_Controller
         $data_detail['id_permohonan_ptsp'] = $this->db->get_where('permohonan_ptsp', ['id_permohonan_ptsp' =>
         $id_permohonan_ptsp])->row_array();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('kasi/sidebar', $data);
         $this->load->view('topbar');
         $this->load->view('kasi/form_input_keterangan', $data_detail);
@@ -362,7 +413,7 @@ class Dashboard extends CI_Controller
         // Tampilkan pesan sukses atau error
         if ($this->email->send()) {
             echo 'Sukses! email berhasil dikirim.';
-        } else { 
+        } else {
             echo 'Error! email tidak dapat dikirim.';
         }
 

@@ -6,7 +6,7 @@
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Permohonan Masuk</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Permohonan Masuk</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Detail</li>
 			</ol>
 		</nav>
@@ -28,7 +28,7 @@
 						<center>
 							<?php if ($detail->proposal_permohonan != null) { ?>
 								<p><?= $detail->proposal_permohonan; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/pemohon/ptsp/ptsp14/proposal_permohonan/<?= $detail->proposal_permohonan ?>" target="_blank">
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp14/proposal_permohonan/<?= $detail->proposal_permohonan ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
@@ -50,6 +50,15 @@
 				<div class="card-body">
 					<table class="table-hover table-responsive">
 						<tbody>
+							<?php if ($detail->no_surat != null) { ?>
+								<tr>
+									<td><b>Nomor Surat</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->no_surat ?></td>
+								</tr>
+							<?php } ?>
 							<tr>
 								<td><b>Nama LPQ</b></td>
 								<td> </td>
@@ -127,6 +136,59 @@
 								<td>:</td>
 								<td><?= $detail->no_hp ?></td>
 							</tr>
+							<tr>
+								<td><b>Tanggal Permohonan</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
+							</tr>
+
+							<?php if ($detail->tgl_persetujuan_fo != null) { ?>
+								<tr>
+									<td><b>Tanggal Persetujuan Front Office</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= format_indo(date($detail->tgl_persetujuan_fo)); ?></td>
+								</tr>
+							<?php } ?>
+							<?php if ($detail->tgl_persetujuan_bo != null) { ?>
+								<tr>
+									<td><b>Tanggal Persetujuan Back Office</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
+								</tr>
+							<?php } ?>
+							<?php if ($detail->tgl_persetujuan_kasi != null) { ?>
+								<tr>
+									<td><b>Tanggal Persetujuan Kasi</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= format_indo(date($detail->tgl_persetujuan_kasi)); ?></td>
+								</tr>
+							<?php } ?>
+							<?php if ($detail->tgl_persetujuan_kasubag != null) { ?>
+								<tr>
+									<td><b>Tanggal Persetujuan Kasubag</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
+								</tr>
+							<?php } ?>
+							<?php if ($detail->keterangan != null && $detail->status == 'Pending') { ?>
+								<tr>
+									<td><b>Keterangan Permohonan Pending</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->keterangan; ?></td>
+								</tr>
+							<?php } ?>
 						</tbody>
 					</table>
 				</div>

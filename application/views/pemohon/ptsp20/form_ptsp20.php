@@ -16,7 +16,7 @@
 	<!--Begin Content Profile-->
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
-		
+		<?php foreach ($detail_profil_saya as $detail) { ?>
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
@@ -25,13 +25,15 @@
 				<div class="card-body">
 					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
 					<br>
-					<form class="form-horizontal mt-4" id="form20" enctype="multipart/form-data"
-						action="" method="POST">
+					<form class="form-horizontal mt-4" id="form_ptsp20" enctype="multipart/form-data"
+						action="<?= base_url('dashboard/aksi_pengajuan_ptsp20') ?>" method="POST">
 						<div class="form-group row">
 							<label for="Nama_majlis_taklim" class="col-sm-3 col-form-label">Nama Majlis Taklim</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama_majlis_taklim" name="nama_majlis_taklim" value="" placeholder="masukkan nama majelis taklim disini...">
+									<input type="text" class="form-control" id="nama_majlis_taklim" name="nama_majlis_taklim"
+									  placeholder="masukkan nama majelis taklim disini..." 
+									  value="" required>
 								</div>
 							</div>
 						</div>
@@ -39,7 +41,9 @@
 							<label for="Alamat" class="col-sm-3 col-form-label">Alamat</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="alamat" name="alamat" value="" placeholder="masukkan alamat disini...">
+									<input type="text" class="form-control" id="alamat" name="alamat"
+									 placeholder="masukkan alamat disini..."
+									 value="" required>
 								</div>
 							</div>
 						</div>
@@ -47,7 +51,9 @@
 							<label for="desa" class="col-sm-3 col-form-label">Desa</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="desa" name="desa" value="" placeholder="masukkan desa disini...">
+									<input type="text" class="form-control" id="desa" name="desa"
+									 placeholder="masukkan desa disini..."
+									 value="" required>
 								</div>
 							</div>
 						</div>
@@ -55,7 +61,9 @@
 							<label for="kecamatan" class="col-sm-3 col-form-label">Kecamatan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="kecamatan" name="kecamatan" value="" placeholder="masukkan kecamatan disini...">
+									<input type="text" class="form-control" id="kecamatan" name="kecamatan" 
+									 placeholder="masukkan kecamatan disini..."
+									 value="" required>
 								</div>
 							</div>
 						</div>
@@ -63,7 +71,9 @@
 							<label for="kabupaten" class="col-sm-3 col-form-label">Kabupaten</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="kabupaten" name="kabupaten" value="" placeholder="masukkan kabupaten disini...">
+									<input type="text" class="form-control" id="kabupaten" name="kabupaten" 
+									placeholder="masukkan kabupaten disini..."
+									value="" required>
 								</div>
 							</div>
 						</div>
@@ -71,7 +81,9 @@
 							<label for="provinsi" class="col-sm-3 col-form-label">Provinsi</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="provinsi" name="provinsi" value="" placeholder="masukkan provinsi disini...">
+									<input type="text" class="form-control" id="provinsi" name="provinsi" 
+									placeholder="masukkan provinsi disini..."
+									value="" required>
 								</div>
 							</div>
 						</div>
@@ -79,7 +91,8 @@
 							<label for="Tahun_berdiri" class="col-sm-3 col-form-label">Tahun Berdiri</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="tahun_berdiri" name="tahun_berdiri" value="" placeholder="masukkan tahun SK PPIU/PIHK disini...">
+									<input type="text" class="form-control" id="tahun_berdiri" name="tahun_berdiri" 
+									required data-parsley-type="number" value="" placeholder="masukkan tahun SK PPIU/PIHK disini...">
 								</div>
 							</div>
 						</div>
@@ -87,11 +100,13 @@
 							<label for="No_hp" class="col-sm-3 col-form-label">No. Handphone</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="no_hp" name="no_hp" value="" placeholder="masukkan no handpone disini...">
+									<input type="text" class="form-control" id="no_hp" name="no_hp" 
+									required data-parsley-type="number" minlength="11" value="" placeholder="masukkan no handpone disini...">
 								</div>
 							</div>
 						</div>	
 				</div>
+				<?php } ?>
 				<div class="card-footer">
 					<div class="float-right">
 						<a href="#">

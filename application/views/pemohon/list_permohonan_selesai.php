@@ -1,15 +1,15 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <!-- Page Heading -->
-	<div class="d-sm-flex align-items-center justify-content-between">
-		<h3 class="judullist py-3">Data Permohonan Selesai</h1>
-		<nav aria-label="breadcrumb" class="nav-breadcrumb">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Permohonan Selesai</li>
-			</ol>
-		</nav>
-	</div>
+    <div class="d-sm-flex align-items-center justify-content-between">
+        <h3 class="judullist py-3">Data Permohonan Selesai</h1>
+            <nav aria-label="breadcrumb" class="nav-breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Permohonan Selesai</li>
+                </ol>
+            </nav>
+    </div>
 
     <!-- DataTables Warga -->
     <div class="card shadow mb-4">
@@ -20,7 +20,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
-							<th>Jenis Layanan PTSP</th>
+                            <th>Jenis Layanan PTSP</th>
                             <th>Tanggal Permohonan</th>
                             <!-- <th>Tanggal Disetujui</th> -->
                             <th>Status</th>
@@ -33,7 +33,7 @@
                         foreach ($data_permohonan as $permohonan) {
                         ?>
                             <tr>
-                                <td class="text-center"><?= $no ?></td>
+                                <td class="text-center"><?= $no++ ?></td>
                                 <td><?= $permohonan->nama_layanan ?></td>
                                 <td><?= format_indo(date($permohonan->tgl_permohonan));  ?></td>
                                 <!-- <td><?= format_indo(date($permohonan->tgl_persetujuan_fo));  ?></td> -->
