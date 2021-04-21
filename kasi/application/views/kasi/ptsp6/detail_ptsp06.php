@@ -124,7 +124,7 @@
 									<td><?= $detail->tanggal_lahir ?></td>
 								</tr>
 								<tr>
-									<td><b>No. Handphone</b></td>
+									<td><b>No. HandPhone</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
@@ -225,7 +225,7 @@
 						<center>
 							<?php if ($detail->srt_permohonan != null) { ?>
 								<p><?= $detail->srt_permohonan; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
@@ -253,7 +253,7 @@
 						<center>
 							<?php if ($detail->sk_ijin_oprasional != null) { ?>
 								<p><?= $detail->sk_ijin_oprasional; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/sk_ijin_oprasional/<?= $detail->sk_ijin_oprasional ?>" target="_blank">
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/sk_ijin_oprasional/<?= $detail->sk_ijin_oprasional ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
@@ -282,7 +282,7 @@
 						<center>
 							<?php if ($detail->ktp != null) { ?>
 								<p><?= $detail->ktp; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/ktp/<?= $detail->ktp ?>" target="_blank">
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/ktp/<?= $detail->ktp ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
@@ -311,7 +311,7 @@
 						<center>
 							<?php if ($detail->kk != null) { ?>
 								<p><?= $detail->kk; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/kk/<?= $detail->kk ?>" target="_blank">
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/kk/<?= $detail->kk ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>

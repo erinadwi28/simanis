@@ -134,7 +134,7 @@
 				<div class="card-footer">
 					<div class="float-right">
 						<a href="">
-							<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
+							<button id="btn_termia" class="btn btn-sm btn-primary" type="submit">
 								<i class="fas fa-check-circle">
 								</i> Terima
 							</button>

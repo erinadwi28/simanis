@@ -134,7 +134,7 @@
 								<div class="card-footer">
         						<center>
         							<a href="">
-        								<button class="btn btn-sm btn-success" type="submit"><i class="fa fa-print"></i>
+        								<button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-print"></i>
         									Cetak</button>
         							</a>
         						</center>

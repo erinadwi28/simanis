@@ -907,7 +907,7 @@ class Dashboard extends CI_Controller
             'alamat' => $this->input->post('alamat'),
             'tempat_lahir' => $this->input->post('tempat_lahir'),
             'tanggal_lahir' => $this->input->post('tanggal_lahir'),
-            'no_hp' => $this->input->post('nomor_hp'),
+            'no_hp' => $this->input->post('no_hp'),
             'nama_ppiu_pihk' => $this->input->post('nama_agen'),
             'no_sk_ppiu_pihk' => $this->input->post('no_sk_agen'),
             'tahun_sk' => $this->input->post('tahun_sk_agen'),
@@ -1110,7 +1110,7 @@ class Dashboard extends CI_Controller
             'alamat' => $this->input->post('alamat'),
             'tempat_lahir' => $this->input->post('tempat_lahir'),
             'tanggal_lahir' => $this->input->post('tanggal_lahir'),
-            'no_hp' => $this->input->post('nomor_hp'),
+            'no_hp' => $this->input->post('no_hp'),
             'nama_ppiu_pihk' => $this->input->post('nama_agen'),
             'no_sk_ppiu_pihk' => $this->input->post('no_sk_agen'),
             'tahun_sk' => $this->input->post('tahun_sk_agen'),
@@ -2046,7 +2046,6 @@ class Dashboard extends CI_Controller
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        $this->load->view('header',$data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar',$data);
         $this->load->view('pemohon/ptsp10/sop_ptsp10');
@@ -2390,3 +2389,5 @@ class Dashboard extends CI_Controller
     }
 
 }
+
+
