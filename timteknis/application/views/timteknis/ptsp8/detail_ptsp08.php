@@ -1,11 +1,8 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-	<?php
-			foreach ($detail_ptsp as $detail) { ?>
-	<?php if ($detail->status === 'Proses Kasubag') { ?>
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between">
-		<h3 class="judullist py-3">Detail</h3>
+		<h3 class="judullist py-3">Detail Permohonan</h3>
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
@@ -15,31 +12,14 @@
 			</ol>
 		</nav>
 	</div>
-	<?php } elseif ($detail->status === 'Selesai') { ?>
-	<!-- Page Heading -->
-	<div class="d-sm-flex align-items-center justify-content-between">
-		<h3 class="judullist py-3">Detail</h3>
-		<nav aria-label="breadcrumb" class="nav-breadcrumb">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a
-						href="<?= base_url('dashboard/list_permohonan_selesaiKasubag') ?>">Permohonan
-						Selesai</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Detail</li>
-			</ol>
-		</nav>
-	</div>
-	<?php } ?>
 
-
+	<?php foreach ($detail_ptsp as $detail) { ?>
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
 		<div class="col-md-8 mb-4">
-			<!-- Detail Data -->
-			<div class="card shadow mb-4">
+			<div class="card shadow">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Izin Perpanjangan Operasional
-						KBIHU</h6>
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Izin Perpanjangan Operasional KBIHU</h6>
 				</div>
 				<div class="card-body">
 					<table class="table-hover table-responsive">
@@ -156,9 +136,9 @@
 						</tbody>
 					</table>
 				</div>
-
 			</div>
 		</div>
+		<div class="col-xs-12 col-sm-2"></div>
 	</div>
 
 	<!-- Unggah dokumen -->
@@ -374,6 +354,7 @@
 						<?php } ?>
 					</center>
 				</div>
+
 			</div>
 		</div>
 	</div>
@@ -431,47 +412,76 @@
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<!-- Berita Acara -->
-		<div class="col-xs-12 col-sm-3">
+	<!-- Unggah Berita Acara -->
+	<div class="row clearfix">
+		<div class="col-xs-12 col-sm-6"></div>
+		<div class="col-xs-12 col-sm-6">
 			<div class="card shadow mb-4">
 				<div class="card-header">
 					<center>
-						<h6 class="m-0 font-weight-bold">Berita Acara</h6>
+						<h6 class="m-0 font-weight-bold">Unggah Berita Acara terlebih dahulu untuk menyetujui</h6>
 					</center>
 				</div>
+
 				<div class="card-body">
 					<center>
-						<?php if ($detail->srt_pernyataan != null) { ?>
-						<p><?= $detail->srt_pernyataan; ?></p>
+						<?php if ($detail->bukti_pelunasan != null) { ?>
+						<p><?= $detail->bukti_pelunasan; ?></p>
 						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>"
+							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/bukti_pelunasan/<?= $detail->bukti_pelunasan ?>"
 							target="_blank">
 							<i class="fa fa-download nav-icon">
 							</i> Klik untuk melihat
 						</a>
-						<?php } elseif ($detail->srt_pernyataan == null) { ?>
-						<p class="mb-0">Belum ada</p>
+						<?php } elseif ($detail->bukti_pelunasan == null) { ?>
+						<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
+				</div>
+
+				<div class="card-footer">
+					<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp05/' . $detail->id_ptsp) ?>"
+						enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp07_1">
+						<div class="input-group px-4">
+							<div class="custom-file">
+								<label class="custom-file-label" for="file-upload">pilih
+									file...</label>
+								<input type="file" class="custom-file-input" id="file-upload" name="srt_permohonan"
+									value="<?= $detail->srt_permohonan ?>" required>
+								<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp"
+									id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
+							</div>
+							<div class="input-group-append">
+								<button class="btn btn-sm btn-primary" type="submit" id="inputGroupFileAddon04">
+								<i class="fa fa-upload"></i></button>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- Button Setujui -->
+	<!-- Button Tolak & Setujui Awal Surat Masuk -->
 	<div class="row clearfix float-right px-2">
-		<?php if ($detail->status == 'Proses Kasubag') { ?>
-		<div class="float-right">
-			<a href="<?= base_url() ?>dashboard/aksi_setujui_permohonan/<?= $detail->id_permohonan_ptsp ?>">
-				<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
-					<i class="fas fa-check-circle">
-					</i> Terima
-				</button>
-			</a>
-		</div>
+		<?php if ($detail->status == 'Validasi Kemenag') { ?>
+		<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>" class="mr-2">
+			<button id=" btn_tolak" class="btn btn-sm btn-tolak" type="submit">
+				<i class="fas fa-times-circle">
+				</i> Tolak
+			</button>
+		</a>
+		<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+			<button id="btn_termia" class="btn btn-sm btn-primary" type="submit">
+				<i class="fas fa-check-circle">
+				</i> Terima
+			</button>
+		</a>
 		<?php } ?>
 	</div>
+	
 	<?php } ?>
 	<!--End Content Profile-->
 </div>

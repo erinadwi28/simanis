@@ -349,6 +349,24 @@
 		</a>
 		<?php } ?>
 	</div>
+
+	<!-- Button Setujui Final & No Surat -->
+	<div class="row clearfix">
+		<div class="col-md-12">
+			<form class="form-horizontal" id="no_surat_ptsp07" enctype="multipart/form-data"
+				action="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>/<?= $detail->id_layanan ?>"
+				method="POST">
+				<div class="input-group mb-3 col-md-4 float-right p-0">
+					<input type="text" class="form-control " id="no_surat" name="no_surat"
+						value="" required>
+					<button class="btn btn-sm btn-primary" type="submit" id="button-addon2"><i
+							class="fas fa-check-circle">
+						</i> Terima</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
 	<?php } ?>
 	<!--End Content Profile-->
 </div>

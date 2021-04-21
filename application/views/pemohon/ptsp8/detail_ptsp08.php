@@ -31,7 +31,7 @@
 				<!-- Detail Data -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Izin Pendirian KBIHU</h6>
+						<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Izin Perpanjangan Operasional KBIHU</h6>
 					</div>
 					<div class="card-body">
 						<table class="table-hover table-responsive">
@@ -467,6 +467,224 @@
 							</form>
 						</div>
 					<?php } ?>
+				</div>
+			</div>
+
+			<!-- Laporan Pelaksanaan Bimbingan -->
+			<div class="col-xs-12 col-sm-3">
+				<div class="card shadow mb-4">
+					<div class="card-header">
+						<center>
+							<h6 class="m-0 font-weight-bold">Lap. Pelaksanaan Bimbingan</h6>
+						</center>
+					</div>
+					<div class="card-body">
+						<center>
+							<?php if ($detail->srt_pernyataan != null) { ?>
+								<p><?= $detail->srt_pernyataan; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->srt_pernyataan == null) { ?>
+								<p class="mb-0">Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
+							<?php } ?>
+						</center>
+					</div>
+					<?php if ($detail->status == 'Pending') { ?>
+						<div class="card-footer">
+							<form action="<?= base_url('dashboard/update_srt_pernyataan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp05_2">
+								<div class="form-group">
+									<div class="input-group">
+										<div class="form-group-upload">
+											<div class="custom-file">
+												<label class="custom-file-label" for="file-upload-7">pilih
+													file...</label>
+												<input type="file" class="custom-file-input" id="file-upload-7" name="srt_pernyataan" value="<?= $detail->srt_pernyataan ?>" required>
+												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload-2" value="<?= $detail->id_permohonan_ptsp ?>">
+											</div>
+										</div>
+									</div>
+								</div>
+								<center>
+									<button class="btn btn-sm btn-primary" type="submit">
+										<i class="fa fa-upload">
+										</i>
+									</button>
+								</center>
+							</form>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+
+			<!-- Sertifikat AKreditasi -->
+			<div class="col-xs-12 col-sm-3">
+				<div class="card shadow mb-4">
+					<div class="card-header">
+						<center>
+							<h6 class="m-0 font-weight-bold">Sertifikat Akreditasi</h6>
+						</center>
+					</div>
+					<div class="card-body">
+						<center>
+							<?php if ($detail->srt_pernyataan != null) { ?>
+								<p><?= $detail->srt_pernyataan; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->srt_pernyataan == null) { ?>
+								<p class="mb-0">Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
+							<?php } ?>
+						</center>
+					</div>
+					<?php if ($detail->status == 'Pending') { ?>
+						<div class="card-footer">
+							<form action="<?= base_url('dashboard/update_srt_pernyataan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp05_2">
+								<div class="form-group">
+									<div class="input-group">
+										<div class="form-group-upload">
+											<div class="custom-file">
+												<label class="custom-file-label" for="file-upload-8">pilih
+													file...</label>
+												<input type="file" class="custom-file-input" id="file-upload-8" name="srt_pernyataan" value="<?= $detail->srt_pernyataan ?>" required>
+												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload-2" value="<?= $detail->id_permohonan_ptsp ?>">
+											</div>
+										</div>
+									</div>
+								</div>
+								<center>
+									<button class="btn btn-sm btn-primary" type="submit">
+										<i class="fa fa-upload">
+										</i>
+									</button>
+								</center>
+							</form>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
+
+		<div class="row clearfix">
+			<!-- SK terakhir pendirian KBIHU -->
+			<div class="col-xs-12 col-sm-3">
+				<div class="card shadow mb-4">
+					<div class="card-header">
+						<center>
+							<h6 class="m-0 font-weight-bold">SK terakhir izin pendirian KBIHU</h6>
+						</center>
+					</div>
+
+					<div class="card-body">
+						<center>
+							<?php if ($detail->srt_permohonan != null) { ?>
+								<p><?= $detail->srt_permohonan; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->srt_permohonan == null) { ?>
+								<p class="mb-0">Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
+							<?php } ?>
+						</center>
+					</div>
+					<?php if ($detail->status == 'Pending') { ?>
+						<div class="card-footer">
+							<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp05_1">
+								<div class="form-group">
+									<div class="input-group">
+										<div class="form-group-upload">
+											<div class="custom-file">
+												<label class="custom-file-label" for="file-upload-9">pilih
+													file...</label>
+												<input type="file" class="custom-file-input" id="file-upload-9" name="srt_permohonan" value="<?= $detail->srt_permohonan ?>" required>
+												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
+											</div>
+										</div>
+									</div>
+								</div>
+								<center>
+									<button class="btn btn-sm btn-primary" type="submit">
+										<i class="fa fa-upload"></i>
+									</button>
+								</center>
+							</form>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+
+			<!-- Rincian penggunaan biaya bimbingan -->
+			<div class="col-xs-12 col-sm-3">
+				<div class="card shadow mb-4">
+					<div class="card-header">
+						<center>
+							<h6 class="m-0 font-weight-bold">Rincian Penggunaan Biaya Bimbingan</h6>
+						</center>
+					</div>
+					<div class="card-body">
+						<center>
+							<?php if ($detail->srt_pernyataan != null) { ?>
+								<p><?= $detail->srt_pernyataan; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->srt_pernyataan == null) { ?>
+								<p class="mb-0">Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
+							<?php } ?>
+						</center>
+					</div>
+					<?php if ($detail->status == 'Pending') { ?>
+						<div class="card-footer">
+							<form action="<?= base_url('dashboard/update_srt_pernyataan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp05_2">
+								<div class="form-group">
+									<div class="input-group">
+										<div class="form-group-upload">
+											<div class="custom-file">
+												<label class="custom-file-label" for="file-upload-10">pilih
+													file...</label>
+												<input type="file" class="custom-file-input" id="file-upload-10" name="srt_pernyataan" value="<?= $detail->srt_pernyataan ?>" required>
+												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload-2" value="<?= $detail->id_permohonan_ptsp ?>">
+											</div>
+										</div>
+									</div>
+								</div>
+								<center>
+									<button class="btn btn-sm btn-primary" type="submit">
+										<i class="fa fa-upload">
+										</i>
+									</button>
+								</center>
+							</form>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+
+			<!-- Berita Acara -->
+			<div class="col-xs-12 col-sm-3">
+				<div class="card shadow mb-4">
+					<div class="card-header">
+						<center>
+							<h6 class="m-0 font-weight-bold">Berita Acara</h6>
+						</center>
+					</div>
+					<div class="card-body">
+						<center>
+							<?php if ($detail->srt_pernyataan != null) { ?>
+								<p><?= $detail->srt_pernyataan; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->srt_pernyataan == null) { ?>
+								<p class="mb-0">Belum ada</p>
+							<?php } ?>
+						</center>
+					</div>
 				</div>
 			</div>
 		</div>

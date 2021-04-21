@@ -6,12 +6,13 @@
 			<nav aria-label="breadcrumb" class="nav-breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-					<li class="breadcrumb-item" aria-current="page"><a href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Permohonan Masuk</a></li>
+					<li class="breadcrumb-item" aria-current="page"><a
+							href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Permohonan Masuk</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Detail</li>
 				</ol>
 			</nav>
 	</div>
-	
+
 	<?php foreach ($detail_ptsp as $detail) { ?>
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
@@ -19,7 +20,8 @@
 			<!-- Detail Data -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Izin Pendirian KBIHU</h6>
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Izin Perpanjangan Operasional
+						KBIHU</h6>
 				</div>
 				<div class="card-body">
 					<table class="table-hover table-responsive">
@@ -298,6 +300,140 @@
 						</a>
 						<?php } elseif ($detail->srt_pernyataan == null) { ?>
 						<p class="mb-0">Belum ada lampiran</p>
+						<?php } ?>
+					</center>
+				</div>
+			</div>
+		</div>
+
+		<!-- Laporan Pelaksanaan Bimbingan -->
+		<div class="col-xs-12 col-sm-3">
+			<div class="card shadow mb-4">
+				<div class="card-header">
+					<center>
+						<h6 class="m-0 font-weight-bold">Lap. Pelaksanaan Bimbingan</h6>
+					</center>
+				</div>
+				<div class="card-body">
+					<center>
+						<?php if ($detail->srt_pernyataan != null) { ?>
+						<p><?= $detail->srt_pernyataan; ?></p>
+						<a id="btn_upload" class="btn btn-sm btn-primary"
+							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>"
+							target="_blank">
+							<i class="fa fa-download nav-icon">
+							</i> Klik untuk melihat
+						</a>
+						<?php } elseif ($detail->srt_pernyataan == null) { ?>
+						<p class="mb-0">Belum ada lampiran</p>
+						<?php } ?>
+					</center>
+				</div>
+			</div>
+		</div>
+
+		<!-- Sertifikat AKreditasi -->
+		<div class="col-xs-12 col-sm-3">
+			<div class="card shadow mb-4">
+				<div class="card-header">
+					<center>
+						<h6 class="m-0 font-weight-bold">Sertifikat Akreditasi</h6>
+					</center>
+				</div>
+				<div class="card-body">
+					<center>
+						<?php if ($detail->srt_pernyataan != null) { ?>
+						<p><?= $detail->srt_pernyataan; ?></p>
+						<a id="btn_upload" class="btn btn-sm btn-primary"
+							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>"
+							target="_blank">
+							<i class="fa fa-download nav-icon">
+							</i> Klik untuk melihat
+						</a>
+						<?php } elseif ($detail->srt_pernyataan == null) { ?>
+						<p class="mb-0">Belum ada lampiran</p>
+						<?php } ?>
+					</center>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="row clearfix">
+		<!-- SK terakhir pendirian KBIHU -->
+		<div class="col-xs-12 col-sm-3">
+			<div class="card shadow mb-4">
+				<div class="card-header">
+					<center>
+						<h6 class="m-0 font-weight-bold">SK terakhir izin pendirian KBIHU</h6>
+					</center>
+				</div>
+
+				<div class="card-body">
+					<center>
+						<?php if ($detail->srt_permohonan != null) { ?>
+						<p><?= $detail->srt_permohonan; ?></p>
+						<a id="btn_upload" class="btn btn-sm btn-primary"
+							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_permohonan/<?= $detail->srt_permohonan ?>"
+							target="_blank">
+							<i class="fa fa-download nav-icon">
+							</i> Klik untuk melihat
+						</a>
+						<?php } elseif ($detail->srt_permohonan == null) { ?>
+						<p class="mb-0">Belum ada lampiran</p>
+						<?php } ?>
+					</center>
+				</div>
+			</div>
+		</div>
+
+		<!-- Rincian penggunaan biaya bimbingan -->
+		<div class="col-xs-12 col-sm-3">
+			<div class="card shadow mb-4">
+				<div class="card-header">
+					<center>
+						<h6 class="m-0 font-weight-bold">Rincian Penggunaan Biaya Bimbingan</h6>
+					</center>
+				</div>
+				<div class="card-body">
+					<center>
+						<?php if ($detail->srt_pernyataan != null) { ?>
+						<p><?= $detail->srt_pernyataan; ?></p>
+						<a id="btn_upload" class="btn btn-sm btn-primary"
+							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>"
+							target="_blank">
+							<i class="fa fa-download nav-icon">
+							</i> Klik untuk melihat
+						</a>
+						<?php } elseif ($detail->srt_pernyataan == null) { ?>
+						<p class="mb-0">Belum ada lampiran</p>
+						<?php } ?>
+					</center>
+				</div>
+			</div>
+		</div>
+
+		<!-- Berita Acara -->
+		<div class="col-xs-12 col-sm-3">
+			<div class="card shadow mb-4">
+				<div class="card-header">
+					<center>
+						<h6 class="m-0 font-weight-bold">Berita Acara</h6>
+					</center>
+				</div>
+				<div class="card-body">
+					<center>
+						<?php if ($detail->srt_pernyataan != null) { ?>
+						<p><?= $detail->srt_pernyataan; ?></p>
+						<a id="btn_upload" class="btn btn-sm btn-primary"
+							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>"
+							target="_blank">
+							<i class="fa fa-download nav-icon">
+							</i> Klik untuk melihat
+						</a>
+						<?php } elseif ($detail->srt_pernyataan == null) { ?>
+						<p class="mb-0">Belum ada</p>
 						<?php } ?>
 					</center>
 				</div>

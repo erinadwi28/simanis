@@ -1,11 +1,8 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-	<?php
-			foreach ($detail_ptsp as $detail) { ?>
-	<?php if ($detail->status === 'Proses Kasubag') { ?>
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between">
-		<h3 class="judullist py-3">Detail</h3>
+		<h3 class="judullist py-3">Detail Permohonan</h3>
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
@@ -15,28 +12,12 @@
 			</ol>
 		</nav>
 	</div>
-	<?php } elseif ($detail->status === 'Selesai') { ?>
-	<!-- Page Heading -->
-	<div class="d-sm-flex align-items-center justify-content-between">
-		<h3 class="judullist py-3">Detail</h3>
-		<nav aria-label="breadcrumb" class="nav-breadcrumb">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a
-						href="<?= base_url('dashboard/list_permohonan_selesaiKasubag') ?>">Permohonan
-						Selesai</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Detail</li>
-			</ol>
-		</nav>
-	</div>
-	<?php } ?>
 
-
+	<?php foreach ($detail_ptsp as $detail) { ?>
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
 		<div class="col-md-8 mb-4">
-			<!-- Detail Data -->
-			<div class="card shadow mb-4">
+			<div class="card shadow">
 				<div class="card-header py-3">
 					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Izin Perpanjangan Operasional
 						KBIHU</h6>
@@ -62,36 +43,36 @@
 								<td><?= $detail->nama_pemohon ?></td>
 							</tr>
 							<tr>
-								<td><b>Nama Yayasan</b></td>
+								<td><b>Nama Perusahaan</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->nama_yayasan ?></td>
+								<td><?= $detail->nama_pt ?></td>
 							</tr>
 							<tr>
-								<td><b>Nama Kelompok Bimbingan</b></td>
+								<td><b>Nama Kantor Cabang</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->nama_kelompok_bimbingan ?></td>
+								<td><?= $detail->nama_kantor_cabang ?></td>
 							</tr>
 							<tr>
-								<td><b>Domisili Kelompok Bimbingan</b></td>
+								<td><b>Domisili Kantor Cabang</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->domisili_kelompok_bimbingan ?></td>
+								<td><?= $detail->domisili_kantor_cabang ?></td>
 							</tr>
 							<tr>
-								<td><b>Alamat Kantor</b></td>
+								<td><b>Alamat Kantor Cabang</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->alamat_kantor ?></td>
+								<td><?= $detail->alamat_kantor_cabang ?></td>
 							</tr>
 							<tr>
 								<td><b>No. HandPhone</b></td>
@@ -156,9 +137,9 @@
 						</tbody>
 					</table>
 				</div>
-
 			</div>
 		</div>
+		<div class="col-xs-12 col-sm-2"></div>
 	</div>
 
 	<!-- Unggah dokumen -->
@@ -216,12 +197,12 @@
 			</div>
 		</div>
 
-		<!-- Bukti foto kantor -->
+		<!-- Izin usaha pendirian perjalanan wisata -->
 		<div class="col-xs-12 col-sm-3">
 			<div class="card shadow mb-4">
 				<div class="card-header">
 					<center>
-						<h6 class="m-0 font-weight-bold">Bukti Kantor Sekretariat</h6>
+						<h6 class="m-0 font-weight-bold">Izin usaha pendirian perjalanan wisata</h6>
 					</center>
 				</div>
 
@@ -243,12 +224,12 @@
 			</div>
 		</div>
 
-		<!-- Dokumen susunan pengurus -->
+		<!-- Surat Keterangan Domisili Usaha -->
 		<div class="col-xs-12 col-sm-3">
 			<div class="card shadow mb-4">
 				<div class="card-header">
 					<center>
-						<h6 class="m-0 font-weight-bold">Dokumen susunan pengurus</h6>
+						<h6 class="m-0 font-weight-bold">Surat Keterangan Domisili Usaha</h6>
 					</center>
 				</div>
 
@@ -272,12 +253,12 @@
 	</div>
 
 	<div class="row clearfix">
-		<!-- Sertifikat pembimbing -->
+		<!-- NPWP Perusahaan dan Pimpinan -->
 		<div class="col-xs-12 col-sm-3">
 			<div class="card shadow mb-4">
 				<div class="card-header">
 					<center>
-						<h6 class="m-0 font-weight-bold">Sertifikat Pembimbing</h6>
+						<h6 class="m-0 font-weight-bold">NPWP Perusahaan dan Pimpinan</h6>
 					</center>
 				</div>
 				<div class="card-body">
@@ -298,12 +279,12 @@
 			</div>
 		</div>
 
-		<!-- Dokumen rencana program manasik -->
+		<!-- Surat Rekomendasi dari Instansi Pemkab setempat -->
 		<div class="col-xs-12 col-sm-3">
 			<div class="card shadow mb-4">
 				<div class="card-header">
 					<center>
-						<h6 class="m-0 font-weight-bold">Rencana Program Manasik</h6>
+						<h6 class="m-0 font-weight-bold">Surat Rekomendasi dari Instansi Pemkab setempat</h6>
 					</center>
 				</div>
 				<div class="card-body">
@@ -325,12 +306,12 @@
 			</div>
 		</div>
 
-		<!-- Laporan Pelaksanaan Bimbingan -->
+		<!-- Laporan keuangan perusahaan yang sehat selama 1 tahun terakhir -->
 		<div class="col-xs-12 col-sm-3">
 			<div class="card shadow mb-4">
 				<div class="card-header">
 					<center>
-						<h6 class="m-0 font-weight-bold">Lap. Pelaksanaan Bimbingan</h6>
+						<h6 class="m-0 font-weight-bold">Laporan keuangan perusahaan</h6>
 					</center>
 				</div>
 				<div class="card-body">
@@ -351,12 +332,12 @@
 			</div>
 		</div>
 
-		<!-- Sertifikat AKreditasi -->
+		<!-- Susunan Pengurus Perusahaan -->
 		<div class="col-xs-12 col-sm-3">
 			<div class="card shadow mb-4">
 				<div class="card-header">
 					<center>
-						<h6 class="m-0 font-weight-bold">Sertifikat Akreditasi</h6>
+						<h6 class="m-0 font-weight-bold">Susunan Pengurus Perusahaan</h6>
 					</center>
 				</div>
 				<div class="card-body">
@@ -379,12 +360,12 @@
 	</div>
 
 	<div class="row clearfix">
-		<!-- SK terakhir pendirian KBIHU -->
+		<!-- Data Pemegang Saham -->
 		<div class="col-xs-12 col-sm-3">
 			<div class="card shadow mb-4">
 				<div class="card-header">
 					<center>
-						<h6 class="m-0 font-weight-bold">SK terakhir izin pendirian KBIHU</h6>
+						<h6 class="m-0 font-weight-bold">Data Pemegang Saham</h6>
 					</center>
 				</div>
 
@@ -406,12 +387,12 @@
 			</div>
 		</div>
 
-		<!-- Rincian penggunaan biaya bimbingan -->
+		<!-- Anggota direksi dan komisaris -->
 		<div class="col-xs-12 col-sm-3">
 			<div class="card shadow mb-4">
 				<div class="card-header">
 					<center>
-						<h6 class="m-0 font-weight-bold">Rincian Penggunaan Biaya Bimbingan</h6>
+						<h6 class="m-0 font-weight-bold">Anggota Direksi dan Komisaris</h6>
 					</center>
 				</div>
 				<div class="card-body">
@@ -459,18 +440,39 @@
 		</div>
 	</div>
 
-	<!-- Button Setujui -->
+
+	<!-- Button Tolak & Setujui Awal Surat Masuk -->
 	<div class="row clearfix float-right px-2">
-		<?php if ($detail->status == 'Proses Kasubag') { ?>
-		<div class="float-right">
-			<a href="<?= base_url() ?>dashboard/aksi_setujui_permohonan/<?= $detail->id_permohonan_ptsp ?>">
-				<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
-					<i class="fas fa-check-circle">
-					</i> Terima
-				</button>
-			</a>
-		</div>
+		<?php if ($detail->status == 'Validasi Kemenag') { ?>
+		<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>" class="mr-2">
+			<button id=" btn_tolak" class="btn btn-sm btn-tolak" type="submit">
+				<i class="fas fa-times-circle">
+				</i> Tolak
+			</button>
+		</a>
+		<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+			<button id="btn_termia" class="btn btn-sm btn-primary" type="submit">
+				<i class="fas fa-check-circle">
+				</i> Terima
+			</button>
+		</a>
 		<?php } ?>
+	</div>
+
+	<!-- Button Setujui Final & No Surat -->
+	<div class="row clearfix">
+		<div class="col-md-12">
+			<form class="form-horizontal" id="no_surat_ptsp09" enctype="multipart/form-data"
+				action="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>/<?= $detail->id_layanan ?>"
+				method="POST">
+				<div class="input-group mb-3 col-md-4 float-right p-0">
+					<input type="text" class="form-control " id="no_surat" name="no_surat" value="" required>
+					<button class="btn btn-sm btn-primary" type="submit" id="button-addon2"><i
+							class="fas fa-check-circle">
+						</i> Terima</button>
+				</div>
+			</form>
+		</div>
 	</div>
 	<?php } ?>
 	<!--End Content Profile-->

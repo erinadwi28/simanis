@@ -35,6 +35,30 @@ $('#file-upload-6').change(function () {
 	$(this).prev('label').text(file);
 });
 
+$('#file-upload-7').change(function () {
+	var i = $(this).prev('label').clone();
+	var file = $('#file-upload-7')[0].files[0].name;
+	$(this).prev('label').text(file);
+});
+
+$('#file-upload-8').change(function () {
+	var i = $(this).prev('label').clone();
+	var file = $('#file-upload-8')[0].files[0].name;
+	$(this).prev('label').text(file);
+});
+
+$('#file-upload-9').change(function () {
+	var i = $(this).prev('label').clone();
+	var file = $('#file-upload-9')[0].files[0].name;
+	$(this).prev('label').text(file);
+});
+
+$('#file-upload-10').change(function () {
+	var i = $(this).prev('label').clone();
+	var file = $('#file-upload-10')[0].files[0].name;
+	$(this).prev('label').text(file);
+});
+
 // PTSP01
 $('#form_ptsp01').parsley();
 
