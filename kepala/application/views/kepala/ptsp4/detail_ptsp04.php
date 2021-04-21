@@ -103,7 +103,7 @@
 						<center>
 							<?php if ($detail->dokumen != null) { ?>
 								<p><?= $detail->dokumen; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp04/<?= $detail->dokumen ?>" target="_blank">
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp04/<?= $detail->dokumen ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
@@ -139,6 +139,14 @@
 									<td>:</td>
 									<td> </td>
 									<td><?= $detail->no_hp; ?></td>
+								</tr>
+								<tr>
+									<td><b>Keperluan Untuk</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td> </td>
+									<td><?= $detail->keperluan_legalisir_dokumen; ?></td>
 								</tr>
 								<tr>
 									<td><b>Tanggal Permohonan</b></td>

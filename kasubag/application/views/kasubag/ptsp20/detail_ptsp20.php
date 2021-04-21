@@ -138,6 +138,19 @@
 						</tbody>
 					</table>
 				</div>
+<<<<<<< HEAD
+=======
+				<div class="card-footer">
+					<div class="float-right">
+						<a href="">
+							<button id="btn_termia" class="btn btn-sm btn-primary" type="submit">
+								<i class="fas fa-check-circle">
+								</i> Terima
+							</button>
+						</a>
+					</div>
+				</div>
+>>>>>>> b2b4ea864b93c266de3ded4460a8a898b854a1c1
 			</div>
 
 		<!-- Button Tolak & Setujui Awal Surat Masuk -->

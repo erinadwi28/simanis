@@ -16,37 +16,50 @@
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
 		<?php foreach ($detail_profil_saya as $detail) { ?>
-			<div class="col-xs col-sm-8">
-				<div class="card shadow mb-5">
-					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-center">Permohonan Legalisir Dokumen Kepegawaian, Surat, Piagam,
-							Sertifikat</h6>
-					</div>
-					<div class="card-body">
-						<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
-						<br>
-						<form class="form-horizontal mt-4" id="form_ptsp04" enctype="multipart/form-data" action="<?= base_url('dashboard/aksi_pengajuan_ptsp04') ?>" method="POST">
-							<div class="form-group row">
-								<label for="Nama" class="col-sm-3 col-form-label">Nama</label>
-								<div class="col-sm-9">
-									<div class="form-line focused">
-										<input type="text" class="form-control" id="nama" name="nama" 
+		<div class="col-xs col-sm-8">
+			<div class="card shadow mb-5">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Legalisir Dokumen Kepegawaian, Surat,
+						Piagam,
+						Sertifikat</h6>
+				</div>
+				<div class="card-body">
+					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i
+							class="fas fa-info-circle"></i></button>
+					<br>
+					<form class="form-horizontal mt-4" id="form_ptsp04" enctype="multipart/form-data"
+						action="<?= base_url('dashboard/aksi_pengajuan_ptsp04') ?>" method="POST">
+						<div class="form-group row">
+							<label for="Nama" class="col-sm-3 col-form-label">Nama</label>
+							<div class="col-sm-9">
+								<div class="form-line focused">
+									<input type="text" class="form-control" id="nama" name="nama"
 										value="<?= $detail->nama; ?>" required>
-									</div>
 								</div>
 							</div>
-							<div class="form-group row">
-								<label for="no_hp_aktif" class="col-sm-3 col-form-label">No. HandPhone</label>
-								<div class="col-sm-9">
-									<div class="form-line">
+						</div>
+						<div class="form-group row">
+							<label for="no_hp_aktif" class="col-sm-3 col-form-label">No. HandPhone</label>
+							<div class="col-sm-9">
+								<div class="form-line">
 									<input class="form-control" id="no_hp" name="no_hp" rows="1"
-										placeholder="masukkan no hp disini..." 
-										required data-parsley-type="number" minlength="11" value="<?= $detail->no_hp; ?>">
-									</div>
+										placeholder="masukkan no hp disini..." required data-parsley-type="number"
+										minlength="11" value="<?= $detail->no_hp; ?>">
 								</div>
 							</div>
-
-					</div>
+						</div>
+						<div class="form-group row">
+							<label for="keperluan_legalisir_dokumen" class="col-sm-3 col-form-label">Keperluan
+								Untuk</label>
+							<div class="col-sm-9">
+								<div class="form-line">
+									<input class="form-control" id="keperluan_legalisir_dokumen"
+										name="keperluan_legalisir_dokumen" rows="1"
+										placeholder="masukkan keperluan legalisir disini..." required value="">
+								</div>
+							</div>
+						</div>
+				</div>
 				<?php } ?>
 				<div class="card-footer">
 					<div class="float-right">
@@ -59,10 +72,10 @@
 					</div>
 				</div>
 				</form>
-				</div>
-				</form>
 			</div>
-			<div class="col-xs-12 col-sm-2"></div>
+			</form>
+		</div>
+		<div class="col-xs-12 col-sm-2"></div>
 	</div>
 	<!--End Content Profile-->
 </div>
@@ -83,16 +96,19 @@
 			<div class="modal-body">
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
-					Pemohon adalah pemilik asli dokumen yang mengajukan permohonan pengesahan atau yang diberikan
-					kuasa oleh pemiliknya (<b> <a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-01.pdf" target="_blank">FM-PI-01</a></b> dan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-02.pdf" target="_blank">FM-PI-02</a></b>).
-				<ol type="1" class="ml-0 list-syarat modal-content-syarat">
-					<li>Mengisi dan menyelesaikan permohonan pengesahan Dokumen Kepegawaian, Surat, Piagam,
-						Sertifikat.</li>
-					<li>Mengupload/Mengunggah fotocopy dokumen yang akan dilakukan legalisir/pengesahan.</li>
-					<li>Menunggu pemberitahuan pihak kemenag bahwa proses pengesahan telah selesai.</li>
-					<li>Mengambil dokumen legalisir dengan membawa dokumen asli.</li>
-				</ol>
+						Pemohon adalah pemilik asli dokumen yang mengajukan permohonan pengesahan atau yang diberikan
+						kuasa oleh pemiliknya.
+					<ol type="1" class="ml-0 list-syarat modal-content-syarat">
+						<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+						<li>Pemohon mengunggah FC (Fotocopy) dokumen yang akan disahkan. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses pengesahan telah selesai.</li>
+						<li>Pemohon mengambil dokumen legalisir dengan membawa dokumen asli.</li>
+					</ol>
 				</p>
+				<h6 class="modal-title-syarat"><b>Catatan :</b></h6>
+					<ol type="1" class="ml-0 list-syarat modal-content-syarat">
+						<li>Kejuaraan yang bisa dilegalisir adalah kejuaraan yang diakui oleh kementerian agama. </li>
+					</ol>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Tutup</button>

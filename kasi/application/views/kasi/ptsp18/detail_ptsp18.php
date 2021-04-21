@@ -97,7 +97,7 @@
 					<center>
 						<?php if ($detail->srt_permohonan != null) { ?>
 						<p><?= $detail->srt_permohonan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-success"
+						<a id="btn_upload" class="btn btn-sm btn-primary"
 							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp18/srt_permohonan/<?= $detail->srt_permohonan ?>"
 							target="_blank">
 							<i class="fa fa-download nav-icon">

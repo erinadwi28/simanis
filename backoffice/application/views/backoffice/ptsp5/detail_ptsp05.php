@@ -1,11 +1,17 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
 	<!-- Page Heading -->
-	<div class="d-sm-flex align-items-center justify-content-between mb-4 judullist">
-		<h3>Detail Permohonan</h3>
-
+	<div class="d-sm-flex align-items-center justify-content-between">
+		<h3 class="judullist py-3">Detail Permohonan</h1>
+			<nav aria-label="breadcrumb" class="nav-breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+					<li class="breadcrumb-item" aria-current="page"><a href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Permohonan Masuk</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Detail Permohonan</li>
+				</ol>
+			</nav>
 	</div>
+	
 	<?php foreach ($detail_ptsp as $detail) { ?>
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
@@ -152,11 +158,11 @@
 					</center>
 				</div>
 
-				<div class="card-body" style="padding: 15px;">
+				<div class="card-body">
 					<center>
 						<?php if ($detail->srt_permohonan != null) { ?>
 						<p><?= $detail->srt_permohonan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-success"
+						<a id="btn_upload" class="btn btn-sm btn-primary"
 							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/srt_permohonan/<?= $detail->srt_permohonan ?>"
 							target="_blank">
 							<i class="fa fa-download nav-icon">
@@ -178,7 +184,7 @@
 					</center>
 				</div>
 
-				<div class="card-body" style="padding: 15px;">
+				<div class="card-body">
 					<center>
 						<?php if ($detail->srt_pernyataan != null) { ?>
 						<p><?= $detail->srt_pernyataan; ?></p>
@@ -204,7 +210,7 @@
 					</center>
 				</div>
 
-				<div class="card-body" style="padding: 15px;">
+				<div class="card-body">
 					<center>
 						<?php if ($detail->ktp != null) { ?>
 						<p><?= $detail->ktp; ?></p>
@@ -230,7 +236,7 @@
 					</center>
 				</div>
 
-				<div class="card-body" style="padding: 15px;">
+				<div class="card-body">
 					<center>
 						<?php if ($detail->bukti_pelunasan != null) { ?>
 						<p><?= $detail->bukti_pelunasan; ?></p>
@@ -267,7 +273,6 @@
 		<?php } ?>
 	</div>
 	<?php } ?>
-	<!--End Content Profile-->
 </div>
 <!-- /.container-fluid -->
 </div>

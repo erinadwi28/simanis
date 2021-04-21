@@ -25,13 +25,18 @@
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
 						Pemohon adalah pemilik asli dokumen yang mengajukan permohonan pengesahan atau yang diberikan
-						kuasa oleh pemiliknya (<b> <a href="<?= base_url() ?>assets/pemohon/sop/ptsp04/FM-PI-01.pdf" target="_blank">FM-PI-01</a></b> dan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-02.pdf" target="_blank">FM-PI-02</a></b>).
+						kuasa oleh pemiliknya.
 					<ol type="1" class="ml-0 list-syarat">
-						<li>Mengisi dan menyelesaikan permohonan pengesahan Dokumen Kepegawaian, Surat, Piagam,
-							Sertifikat.</li>
-						<li>Mengupload/Mengunggah fotocopy dokumen yang akan dilakukan legalisir/pengesahan.</li>
-						<li>Menunggu pemberitahuan pihak kemenag bahwa proses pengesahan telah selesai.</li>
-						<li>Mengambil dokumen legalisir dengan membawa dokumen asli.</li>
+						<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+						<li>Pemohon mengunggah FC (Fotocopy) dokumen yang akan disahkan. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses pengesahan telah selesai.</li>
+						<li>Pemohon mengambil dokumen legalisir dengan membawa dokumen asli.</li>
+					</ol>
+					</p>
+					<h6><b>Catatan :</b></h6>
+					<p class="persyaratan mb-0">
+					<ol type="1" class="ml-0 list-syarat">
+						<li>Kejuaraan yang bisa dilegalisir adalah kejuaraan yang diakui oleh kementerian agama. </li>
 					</ol>
 					</p>
 				</div>

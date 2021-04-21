@@ -25,11 +25,11 @@
 					<form class="form-horizontal" id="form_ptsp20" enctype="multipart/form-data"
 						action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp20/<?= $detail->id_permohonan_ptsp ?>" method="POST">
 						<div class="form-group row">
-							<label for="Nama_majlis_taklim" class="col-sm-3 col-form-label">Nama Majlis Taklim</label>
+							<label for="nama_majelis_taklim" class="col-sm-3 col-form-label">Nama Majlis Taklim</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama_majlis_taklim" name="nama_majlis_taklim"
-									 value="<?= $detail->nama_majlis_taklim ?>" required
+									<input type="text" class="form-control" id="nama_majelis_taklim" name="nama_majelis_taklim"
+									 value="<?= $detail->nama_majelis_taklim ?>" required
 									 placeholder="masukkan nama majelis taklim disini...">
 								</div>
 							</div>

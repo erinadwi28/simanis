@@ -1,16 +1,16 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-<?php foreach ($detail_ptsp as $detail) { ?>
+	<?php foreach ($detail_ptsp as $detail) { ?>
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4 judullist">
 		<h3>Form Ubah Permohonan</h3>
-				<a href="<?= base_url() ?>dashboard/detail_ptsp03/<?= $detail->id_permohonan_ptsp ?>">
-				<button id="btn_kembali" class="btn btn-sm btn-warning" type="">
-					<i class="fa fa-arrow-left">
-					</i> Kembali
-				</button>
-				</a>
+		<a href="<?= base_url() ?>dashboard/detail_ptsp03/<?= $detail->id_permohonan_ptsp ?>">
+			<button id="btn_kembali" class="btn btn-sm btn-warning" type="">
+				<i class="fa fa-arrow-left">
+				</i> Kembali
+			</button>
+		</a>
 	</div>
 
 	<div class="row clearfix">
@@ -38,8 +38,19 @@
 							<div class="col-sm-9">
 								<div class="form-line">
 									<input class="form-control" id="no_hp" name="no_hp" rows="1"
-										placeholder="masukkan no hp disini..." required 
-										data-parsley-type="number" minlength="11" value="<?= $detail->no_hp ?>">
+										placeholder="masukkan no hp disini..." required data-parsley-type="number"
+										minlength="11" value="<?= $detail->no_hp ?>">
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="keperluan_legalisir_ijazah" class="col-sm-3 col-form-label">Keperluan
+								Untuk</label>
+							<div class="col-sm-9">
+								<div class="form-line">
+									<input class="form-control" id="keperluan_legalisir_ijazah"
+										name="keperluan_legalisir_ijazah" rows="1"
+										placeholder="masukkan keperluan legalisir disini..." required value="<?= $detail->keperluan_legalisir_ijazah ?>">
 								</div>
 							</div>
 						</div>

@@ -931,7 +931,7 @@ class Dashboard extends CI_Controller
             'alamat' => $this->input->post('alamat'),
             'tempat_lahir' => $this->input->post('tempat_lahir'),
             'tanggal_lahir' => $this->input->post('tanggal_lahir'),
-            'no_hp' => $this->input->post('nomor_hp'),
+            'no_hp' => $this->input->post('no_hp'),
             'nama_ppiu_pihk' => $this->input->post('nama_agen'),
             'no_sk_ppiu_pihk' => $this->input->post('no_sk_agen'),
             'tahun_sk' => $this->input->post('tahun_sk_agen'),
@@ -1134,7 +1134,7 @@ class Dashboard extends CI_Controller
             'alamat' => $this->input->post('alamat'),
             'tempat_lahir' => $this->input->post('tempat_lahir'),
             'tanggal_lahir' => $this->input->post('tanggal_lahir'),
-            'no_hp' => $this->input->post('nomor_hp'),
+            'no_hp' => $this->input->post('no_hp'),
             'nama_ppiu_pihk' => $this->input->post('nama_agen'),
             'no_sk_ppiu_pihk' => $this->input->post('no_sk_agen'),
             'tahun_sk' => $this->input->post('tahun_sk_agen'),
@@ -1892,7 +1892,7 @@ class Dashboard extends CI_Controller
 
         $data_ptsp = array(
             'id_permohonan_ptsp' => $id_permohonan,
-            'nama_majlis_taklim' => $this->input->post('nama_majlis_taklim'),
+            'nama_majelis_taklim' => $this->input->post('nama_majelis_taklim'),
             'alamat' => $this->input->post('alamat'),
             'desa' => $this->input->post('desa'),
             'kecamatan' => $this->input->post('kecamatan'),
@@ -1962,27 +1962,27 @@ class Dashboard extends CI_Controller
         redirect('dashboard/detail_ptsp20/' . $permohonan);
     }
     //upload surat rekomendasi ptsp20
-    private function aksi_upload_surat_rekomendasi_ptsp20($id_ptsp20)
+    private function aksi_upload_srt_rek_kua_ptsp20($id_ptsp20)
     {
-        $config['upload_path']          = './assets/dashboard/pemohon/ptsp/ptsp20/surat_rekomendasi/';
+        $config['upload_path']          = './assets/dashboard/pemohon/ptsp/ptsp20/srt_rek_kua/';
         $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|docx|doc|xlsx|xls';
-        $config['file_name']            = 'surat_rekomendasi-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+        $config['file_name']            = 'srt_rek_kua-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
 
         $this->load->library('upload', $config);
-        if (!empty($_FILES['surat_rekomendasi']['name'])) {
-            if ($this->upload->do_upload('surat_rekomendasi')) {
+        if (!empty($_FILES['srt_rek_kua']['name'])) {
+            if ($this->upload->do_upload('srt_rek_kua')) {
 
                 $uploadData = $this->upload->data();
 
                 $item = $this->db->where('id_ptsp', $id_ptsp20)->get('ptsp20')->row();
 
                 //replace foto lama 
-                if ($item->surat_rekomendasi != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp20/surat_rekomendasi/' . $item->surat_rekomendasi;
+                if ($item->srt_rek_kua != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp20/srt_rek_kua/' . $item->srt_rek_kua;
                     unlink($target_file);
                 }
 
-                $data['surat_rekomendasi'] = $uploadData['file_name'];
+                $data['srt_rek_kua'] = $uploadData['file_name'];
 
                 $this->db->where('id_ptsp', $id_ptsp20);
                 $this->db->update('ptsp20', $data);
@@ -1990,10 +1990,10 @@ class Dashboard extends CI_Controller
         }
     }
     // upload ulang surat rekomendasi ptsp20
-    public function update_surat_rekomendasi_ptsp20($id_ptsp)
+    public function update_srt_rek_kua_ptsp20($id_ptsp)
     {
         if ($_FILES != null) {
-            $this->aksi_upload_surat_rekomendasi_ptsp20($id_ptsp);
+            $this->aksi_upload_srt_rek_kua_ptsp20($id_ptsp);
         }
         $permohonan = $this->input->post('id_permohonan_ptsp');
         $this->session->set_flashdata('success', 'disimpan');
@@ -2020,7 +2020,7 @@ class Dashboard extends CI_Controller
     {
         $data_ptsp = array(
             'id_permohonan_ptsp' => $id_permohonan,
-            'nama_majlis_taklim' => $this->input->post('nama_majlis_taklim'),
+            'nama_majelis_taklim' => $this->input->post('nama_majelis_taklim'),
             'alamat' => $this->input->post('alamat'),
             'desa' => $this->input->post('desa'),
             'kecamatan' => $this->input->post('kecamatan'),
@@ -3068,3 +3068,5 @@ class Dashboard extends CI_Controller
     }
 
 }
+
+

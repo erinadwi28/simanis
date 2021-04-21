@@ -28,10 +28,10 @@
 					<form class="form-horizontal mt-4" id="form_ptsp20" enctype="multipart/form-data"
 						action="<?= base_url('dashboard/aksi_pengajuan_ptsp20') ?>" method="POST">
 						<div class="form-group row">
-							<label for="Nama_majlis_taklim" class="col-sm-3 col-form-label">Nama Majlis Taklim</label>
+							<label for="nama_majelis_taklim" class="col-sm-3 col-form-label">Nama Majlis Taklim</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama_majlis_taklim" name="nama_majlis_taklim"
+									<input type="text" class="form-control" id="nama_majelis_taklim" name="nama_majelis_taklim"
 									  placeholder="masukkan nama majelis taklim disini..." 
 									  value="" required>
 								</div>
