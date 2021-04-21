@@ -27,14 +27,14 @@
 					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i
 							class="fas fa-info-circle"></i></button>
 					<br>
-					<form class="form-horizontal mt-4" id="form5" enctype="multipart/form-data"
+					<form class="form-horizontal mt-4" id="form_ptsp26" enctype="multipart/form-data"
 						action="<?= base_url('dashboard/aksi_pengajuan_ptsp26') ?>" method="POST">
 						<div class="form-group row">
 							<label for="Nama" class="col-sm-3 col-form-label">Nama</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="nama" name="nama"
-										value="<?= $detail->nama; ?>">
+										value="<?= $detail->nama; ?>" required>
 
 								</div>
 							</div>
@@ -43,8 +43,9 @@
 							<label for="Alamat_lengkap" class="col-sm-3 col-form-label">Alamat</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<textarea type="text" class="form-control" id="alamat" name="alamat" value=""
-										placeholder="masukkan alamat disini..."></textarea>
+									<textarea type="text" class="form-control" id="alamat" name="alamat"
+									value="" required
+									placeholder="masukkan alamat disini..."></textarea>
 								</div>
 							</div>
 						</div>
@@ -52,17 +53,19 @@
 							<label for="Pekerjaan" class="col-sm-3 col-form-label">Pekerjaan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" value=""
-										placeholder="masukkan pekerjaan disini...">
+									<input type="text" class="form-control" id="pekerjaan" name="pekerjaan"
+									value="" required
+									placeholder="masukkan pekerjaan disini...">
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="no_hp_aktif" class="col-sm-3 col-form-label">No. Handphone</label>
 							<div class="col-sm-9">
-								<div class="form-line">
-									<textarea class="form-control" id="no_hp" name="no_hp" rows="1"
-										placeholder="masukkan no hp disini..."></textarea>
+							<div class="form-line">
+									<input class="form-control" id="no_hp" name="no_hp" rows="1"
+										placeholder="masukkan no hp disini..." 
+										required data-parsley-type="number" minlength="11" value="<?= $detail->no_hp; ?>">
 								</div>
 							</div>
 						</div>
@@ -72,7 +75,7 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="tujuan_permohonan_data"
-										name="tujuan_permohonan_data" value=""
+										name="tujuan_permohonan_data" value="" required
 										placeholder="masukkan Permohonan data disini...">
 								</div>
 							</div>
@@ -90,8 +93,6 @@
 					</div>
 				</div>
 				</form>
-
-
 			</div>
 		</div>
 		<!--End Content Profile-->
@@ -114,7 +115,9 @@
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
 					<ol type="1" class="ml-0 list-syarat modal-content-syarat">
-						<li>Pemohon mengisi dan melengkapi form pengajuan yang di sediakan</li>
+						<li>Pemohon membuat surat permohonan ditujukan kepada Kepala Kantor Kementerian Agama Kab. Klaten</li>
+						<li>Pemohon mengunggah surat permohonan yang telah dibuat. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.</li>
 
 					</ol>
 				</p>

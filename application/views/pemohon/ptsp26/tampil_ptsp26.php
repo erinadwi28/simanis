@@ -42,7 +42,7 @@
         									</center>
         								</div>
         								<div class="isi_surat">
-        									<p> Menindaklanjuti surat permohonan dari Saudara ... tentang
+        									<p> Menindak lanjuti surat permohonan dari Saudara ... tentang
         										Permohonan Surat Keterangan Haji Pertama, dengan ini Kepala Kantor
         										Kementrian Agama Kabupaten Klaten menerangkan bahwa :</p>
         								</div>

@@ -139,21 +139,21 @@
 
 			<!-- Button Tolak & Setujui Awal Surat Masuk -->
 			<div class="row clearfix float-right px-2">
-				<?php if ($detail->status == 'Proses BO') { ?>
-				<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>"
+				
+				<a href=""
 					class="mr-2">
 					<button id=" btn_tolak" class="btn btn-sm btn-tolak" type="submit">
 						<i class="fas fa-times-circle">
 						</i> Tolak
 					</button>
 				</a>
-				<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+				<a href="">
 					<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
 						<i class="fas fa-check-circle">
 						</i> Terima
 					</button>
 				</a>
-				<?php } ?>
+				
 			</div>
 		</div>
 	</div>

@@ -1,8 +1,6 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-	<?php
-	foreach ($detail_ptsp as $detail) { ?>
-	<?php if ($detail->status === 'Proses Kasubag') { ?>
+	
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between">
 		<h3 class="judullist py-3">Detail</h3>
@@ -15,20 +13,7 @@
 			</ol>
 		</nav>
 	</div>
-	<?php } elseif ($detail->status === 'Selesai') { ?>
-	<!-- Page Heading -->
-	<div class="d-sm-flex align-items-center justify-content-between">
-		<h3 class="judullist py-3">Detail</h3>
-		<nav aria-label="breadcrumb" class="nav-breadcrumb">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a
-						href="<?= base_url('dashboard/list_permohonan_selesaiKasubag') ?>">Permohonan Selesai</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Detail</li>
-			</ol>
-		</nav>
-	</div>
-	<?php } ?>
+	
 
 	<!-- Detail input -->
 	<div class="row clearfix">
@@ -48,35 +33,35 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td><?= $detail->nama ?></td>
+								<td></td>
 							</tr>
 							<tr>
 								<td><b>Alamat</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td><?= $detail->alamat ?></td>
+								<td></td>
 							</tr>
 							<tr>
 								<td><b>Pekerjaan</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td><?= $detail->pekerjaan ?></td>
+								<td></td>
 							</tr>
 							<tr>
 								<td><b>No.handphone</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td><?= $detail->no_hp ?></td>
+								<td></td>
 							</tr>
 							<tr>
 								<td><b>Perihal Konsultasi</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td><?= $detail->perihal_konsultasi ?></td>
+								<td></td>
 							</tr>
 
 						</tbody>
@@ -86,16 +71,16 @@
 			
 			<!-- Button Setujui -->
 			<div class="row clearfix float-right px-2">
-				<?php if ($detail->status == 'Proses Kasubag') { ?>
+				
 				<div class="float-right">
-					<a href="<?= base_url() ?>dashboard/aksi_setujui_permohonan/<?= $detail->id_permohonan_ptsp ?>">
+					<a href="">
 						<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
 							<i class="fas fa-check-circle">
 							</i> Terima
 						</button>
 					</a>
 				</div>
-				<?php } ?>
+				
 			</div>
 		</div>
 	</div>
@@ -103,4 +88,4 @@
 <!--End Content-->
 </div>
 <!--End Main Content-->
-<?php } ?>
+

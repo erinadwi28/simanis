@@ -16,7 +16,7 @@
 		<div class="col-md-4 mb-0">
 			<!-- Surat Permohonan -->
 			<div class="card shadow mb-4">
-				<div class="card-header">
+				<div class="card-header py-3">
 					<center>
 						<h6 class="m-0 font-weight-bold">Surat Permohonan</h6>
 					</center>
@@ -24,34 +24,41 @@
 
 				<div class="card-body">
 					<center>
-
-						<p></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary" href="" target="_blank">
+						
+						
+						<a id="btn_upload" class="btn btn-sm btn-success"
+							href=""
+							target="_blank">
 							<i class="fa fa-download nav-icon">
 							</i> Klik untuk melihat
 						</a>
+						
+						<p>Belum ada lampiran</p>
+						
 					</center>
 				</div>
-
-				<div class="card-footer">
-
-				</div>
-
 			</div>
-			<!-- Surat Rekomendasi KUA -->
+
+			<!-- Jadwal Siaran -->
 			<div class="card shadow mb-4">
-				<div class="card-header">
+				<div class="card-header py-3">
 					<center>
-						<h6 class="m-0 font-weight-bold">Surat Rekomendasi KUA</h6>
+						<h6 class="m-0 font-weight-bold">Jadwal dan ketentuan siaran.</h6>
 					</center>
 				</div>
 
 				<div class="card-body">
 					<center>
-						<a id="btn_upload" class="btn btn-sm btn-primary" href="" target="_blank">
+						
+						<a id="btn_upload" class="btn btn-sm btn-success"
+							href=""
+							target="_blank">
 							<i class="fa fa-download nav-icon">
 							</i> Klik untuk melihat
 						</a>
+						
+						<p>Belum ada lampiran</p>
+						
 					</center>
 				</div>
 			</div>
@@ -60,77 +67,79 @@
 			<!-- Detail Data -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Ijin Operasional Majelis Taklim</h6>
+					<h6 class="m-0 font-weight-bold text-center">Ijin Operasional Majlis Taklim</h6>
 				</div>
 				<div class="card-body">
 					<table class="table-hover table-responsive">
 						<tbody>
-							<tr>
+						<tr>
 								<td><b>Nama Majelis Taklim</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>Majelis Taklim Al-Hidayah</td>
+								<td></td>
 							</tr>
 							<tr>
 								<td><b>Alamat</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>Tempel</td>
+								<td></td>
 							</tr>
 							<tr>
 								<td><b>Desa</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>Selomartani</td>
+								<td></td>
 							</tr>
 							<tr>
 								<td><b>Kecamatan</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>Kalasan</td>
+								<td></td>
 							</tr>
 							<tr>
 								<td><b>Kabupaten</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>Sleman</td>
+								<td></td>
 							</tr>
 							<tr>
 								<td><b>Provinsi</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>Yk</td>
+								<td></td>
 							</tr>
 							<tr>
 								<td><b>Tahun Berdiri</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>2000</td>
+								<td></td>
 							</tr>
 							<tr>
 								<td><b>No. Statistik</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>ST0123</td>
+								<td></td>
 							</tr>
 							<tr>
 								<td><b>No. Handphone</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
-								<td>123</td>
+								<td></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
+<<<<<<< HEAD
+=======
 				<div class="card-footer">
 					<div class="float-right">
 						<a href="">
@@ -141,21 +150,19 @@
 						</a>
 					</div>
 				</div>
+>>>>>>> b2b4ea864b93c266de3ded4460a8a898b854a1c1
 			</div>
 
-			<!-- Button Setujui -->
-			<div class="row clearfix float-right px-2">
-				<?php if ($detail->status == 'Proses Kasubag') { ?>
-				<div class="float-right">
-					<a href="<?= base_url() ?>dashboard/aksi_setujui_permohonan/<?= $detail->id_permohonan_ptsp ?>">
-						<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
-							<i class="fas fa-check-circle">
-							</i> Terima
-						</button>
-					</a>
-				</div>
-				<?php } ?>
-			</div>
+		<!-- Button Tolak & Setujui Awal Surat Masuk -->
+		<div class="row clearfix float-right px-2">
+		
+			<div class="float-right">
+			<a href="">
+				<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
+					<i class="fas fa-check-circle">
+					</i> Terima
+				</button>
+			</a>
 		</div>
 	</div>
 	<!--End Content Profile-->

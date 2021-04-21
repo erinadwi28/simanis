@@ -69,16 +69,16 @@
 
 			<!-- Button Setujui -->
 			<div class="row clearfix float-right px-2">
-				<?php if ($detail->status == 'Proses Kasubag') { ?>
+				
 				<div class="float-right">
-					<a href="<?= base_url() ?>dashboard/aksi_setujui_permohonan/<?= $detail->id_permohonan_ptsp ?>">
+					<a href="">
 						<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
 							<i class="fas fa-check-circle">
 							</i> Terima
 						</button>
 					</a>
 				</div>
-				<?php } ?>
+				
 			</div>
 		</div>
 	</div>
