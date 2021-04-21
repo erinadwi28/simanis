@@ -98,7 +98,7 @@
 					<center>
 						<?php if ($detail->proposal_permohonan != null) { ?>
 						<p><?= $detail->proposal_permohonan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-success"
+						<a id="btn_upload" class="btn btn-sm btn-primary"
 							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp15/proposal_permohonan/<?= $detail->proposal_permohonan ?>"
 							target="_blank">
 							<i class="fa fa-download nav-icon">

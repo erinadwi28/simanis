@@ -907,7 +907,7 @@ class Dashboard extends CI_Controller
             'alamat' => $this->input->post('alamat'),
             'tempat_lahir' => $this->input->post('tempat_lahir'),
             'tanggal_lahir' => $this->input->post('tanggal_lahir'),
-            'no_hp' => $this->input->post('nomor_hp'),
+            'no_hp' => $this->input->post('no_hp'),
             'nama_ppiu_pihk' => $this->input->post('nama_agen'),
             'no_sk_ppiu_pihk' => $this->input->post('no_sk_agen'),
             'tahun_sk' => $this->input->post('tahun_sk_agen'),
@@ -1110,7 +1110,7 @@ class Dashboard extends CI_Controller
             'alamat' => $this->input->post('alamat'),
             'tempat_lahir' => $this->input->post('tempat_lahir'),
             'tanggal_lahir' => $this->input->post('tanggal_lahir'),
-            'no_hp' => $this->input->post('nomor_hp'),
+            'no_hp' => $this->input->post('no_hp'),
             'nama_ppiu_pihk' => $this->input->post('nama_agen'),
             'no_sk_ppiu_pihk' => $this->input->post('no_sk_agen'),
             'tahun_sk' => $this->input->post('tahun_sk_agen'),
@@ -2038,4 +2038,38 @@ class Dashboard extends CI_Controller
         redirect('dashboard/detail_ptsp26/' . $id_permohonan);
     }
 
+    //tampil sop ptsp25
+    public function sop_ptsp07()
+    { // $id_permohonan
+        $data_title['title'] = 'Standar Operasional Prosedur';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header', $data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar', $data);
+        $this->load->view('pemohon/ptsp7/sop_ptsp07');
+        $this->load->view('footer');
+    }
+    //tampil form ptsp25
+    public function form_ptsp07()
+    { // $id_permohonan
+        $data_title['title'] = 'Form Permohonan';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $detailhere = array('id_pemohon' => $this->session->userdata('id_pemohon'));
+        $data_detail['detail_profil_saya'] = $this->m_pemohon->get_detail_profil_saya($detailhere, 'pemohon')->result();
+
+        $this->load->view('header', $data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar', $data);
+        $this->load->view('pemohon/ptsp7/form_ptsp07', $data_detail);
+        $this->load->view('footer');
+    }
+
 }
+
+

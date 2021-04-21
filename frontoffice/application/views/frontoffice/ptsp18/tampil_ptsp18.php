@@ -128,7 +128,7 @@
 						<div class="card-footer">
 							<center>
 								<a href="<?= base_url() ?>dashboard/cetak_ptsp18/<?= $detail->id_permohonan_ptsp ?>">
-									<button class="btn btn-sm btn-success" type="submit"><i class="fa fa-print"></i>
+									<button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-print"></i>
 										Cetak</button>
 								</a>
 							</center>

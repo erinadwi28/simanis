@@ -91,7 +91,6 @@
 
 		<div class="row">
 			<div class="col-md-4 mb-4">
-
 				<!-- ijazah -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
@@ -104,7 +103,7 @@
 						<center>
 							<?php if ($detail->ijazah != null) { ?>
 								<p><?= $detail->ijazah; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp03/<?= $detail->ijazah ?>" target="_blank">
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp03/<?= $detail->ijazah ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
@@ -139,6 +138,14 @@
 									<td>:</td>
 									<td> </td>
 									<td><?= $detail->no_hp; ?></td>
+								</tr>
+								<tr>
+									<td><b>Keperluan Untuk</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td> </td>
+									<td><?= $detail->keperluan_legalisir_ijazah; ?></td>
 								</tr>
 								<tr>
 									<td><b>Tanggal Permohonan</b></td>
