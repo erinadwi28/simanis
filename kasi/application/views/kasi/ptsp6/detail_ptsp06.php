@@ -328,25 +328,20 @@
 				</div>
 			</div>
 		</div>
-		<!-- Button Setujui -->
-		<div class="row">
-			<div class="col-md-6"></div>
-			<div class="col-md-5">
-				<?php if ($detail->status == 'Proses Kasi') { ?>
-					<form class="form-horizontal mt-2" id="form4" enctype="multipart/form-data" action="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>/<?= $detail->id_layanan ?>" method="POST">
 
-						<div class="input-group mb-3">
-							<input type="text" class="form-control" id="no_surat" name="no_surat" value=".../Kk.11.10/05/Hj.09/<?= date("m/Y") ?>">
-							<button class="btn btn-sm btn-success" type="submit" id="button-addon2"><i class="fas fa-check-circle">
-								</i> Terima</button>
-						</div>
-					</form>
-			</div>
-			<div class="col-md-1"></div>
-		</div>
+	<!-- Button Setujui -->
+	<div class="row clearfix float-right px-2">
+		<?php if ($detail->status == 'Proses Kasi') { ?>
+		<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+			<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
+				<i class="fas fa-check-circle">
+				</i> Terima
+			</button>
+		</a>
+		<?php } ?>
+	</div>
 
 	<?php } ?>
-<?php } ?>
 <!--End Content Profile-->
 </div>
 <!-- /.container-fluid -->

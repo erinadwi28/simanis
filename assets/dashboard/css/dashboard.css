@@ -163,14 +163,28 @@ a:hover {
   text-decoration: none;
 }
 
+.btn-tolak {
+  background-color: #e74a3b !important;
+  border: 0;
+  color: #fff;
+}
+
+.btn-tolak:hover {
+  background-color: #f06255 !important;
+  border: 0;
+  color: #fff;
+}
+
 .btn-primary {
   background-color: #007530 !important;
   border: 0;
+  color: #fff;
 }
 
 .btn-primary:hover {
   background-color: #1A9D4F !important;
   border: 0;
+  color: #fff;
 }
 
 .persyaratan {

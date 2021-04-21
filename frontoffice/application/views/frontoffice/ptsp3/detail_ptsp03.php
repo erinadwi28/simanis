@@ -12,7 +12,7 @@
 			</nav>
 	</div>
 
-	<div class="row">
+	<div class="row clearfix">
 		<div class="col-md-4 mb-4">
 			<?php
 			foreach ($detail_ptsp as $detail) { ?>
@@ -95,23 +95,24 @@
 						</tbody>
 					</table>
 				</div>
+			</div>
+
+			<!-- Button Tolak & Setujui Awal Surat Masuk -->
+			<div class="row clearfix float-right px-2">
 				<?php if ($detail->status == 'Validasi Kemenag') { ?>
-					<div class="card-footer">
-						<div class="float-right">
-							<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>">
-								<button id=" btn_tolak" class="btn btn-sm btn-danger" type="submit">
-									<i class="fas fa-times-circle">
-									</i> Tolak
-								</button>
-							</a>
-							<a href="<?= base_url() ?>dashboard/aksi_setujui_permohonan/<?= $detail->id_permohonan_ptsp ?>">
-								<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
-									<i class="fas fa-check-circle">
-									</i> Terima
-								</button>
-							</a>
-						</div>
-					</div>
+				<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>"
+					class="mr-2">
+					<button id=" btn_tolak" class="btn btn-sm btn-tolak" type="submit">
+						<i class="fas fa-times-circle">
+						</i> Tolak
+					</button>
+				</a>
+				<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+					<button id="btn_termia" class="btn btn-sm btn-primary" type="submit">
+						<i class="fas fa-check-circle">
+						</i> Terima
+					</button>
+				</a>
 				<?php } ?>
 			</div>
 		</div>

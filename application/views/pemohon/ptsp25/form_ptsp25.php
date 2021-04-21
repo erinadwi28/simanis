@@ -20,10 +20,12 @@
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Konsultasi dan informasi sertifikasi halal,zakat dan wakaf</h6>
+					<h6 class="m-0 font-weight-bold text-center">Konsultasi dan informasi sertifikasi halal,zakat dan
+						wakaf</h6>
 				</div>
 				<div class="card-body">
-					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
+					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i
+							class="fas fa-info-circle"></i></button>
 					<br>
 					<form class="form-horizontal mt-4" id="form_ptsp25" enctype="multipart/form-data"
 						action="<?= base_url('dashboard/aksi_pengajuan_ptsp25') ?>" method="POST">
@@ -31,8 +33,9 @@
 							<label for="Nama" class="col-sm-3 col-form-label">Nama</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-								<input type="text" class="form-control" id="nama" name="nama"
+									<input type="text" class="form-control" id="nama" name="nama"
 										value="<?= $detail->nama; ?>" required>
+
 								</div>
 							</div>
 						</div>
@@ -40,9 +43,9 @@
 							<label for="Alamat_lengkap" class="col-sm-3 col-form-label">Alamat Lengkap</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<textarea type="text" class="form-control" id="alamat" name="alamat"  
-									placeholder="masukkan alamat disini..."
-									value=" " required></textarea>
+									<textarea type="text" class="form-control" id="alamat" name="alamat" 
+									value="" required
+									placeholder="masukkan alamat disini..."></textarea>
 								</div>
 							</div>
 						</div>
@@ -51,34 +54,33 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" 
-									placeholder="masukkan Pekerjaan disini..."
-									 value=" " required>
+										value="" required
+										placeholder="masukkan pekerjaan disini...">
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="no_hp_aktif" class="col-sm-3 col-form-label">No. Handphone</label>
-							<div class="col-sm-9">
-							<div class="form-line">
-									<input class="form-control" id="no_hp" name="no_hp" rows="1"
+								<label for="no_hp" class="col-sm-3 col-form-label">No. HandPhone</label>
+								<div class="col-sm-9">
+									<div class="form-line focused">
+										<input type="text" class="form-control" id="no_hp" name="no_hp" value="<?= $detail->no_hp; ?>"
 										placeholder="masukkan no hp disini..." 
-										required data-parsley-type="number" minlength="11" value="<?= $detail->no_hp; ?>">
-								</div>
+										required data-parsley-type="number" minlength="11">
+									</div>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="Perihal_konsultasi" class="col-sm-3 col-form-label">Perihal Konsultasi</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="perihal_konsultasi" name="perihal_konsultasi"
-									 placeholder="masukkan Perihal Konsultasi disini..." 
-									 value="" required>
-									
+									<input type="text" class="form-control" id="perihal_konsultasi"
+										name="perihal_konsultasi" value="" required
+										placeholder="masukkan Perihal Konsultasi disini...">
 								</div>
 							</div>
 						</div>
+						<?php } ?>
 				</div>
-				<?php } ?>
 				<div class="card-footer">
 					<div class="float-right">
 						<a href="#">
@@ -92,10 +94,9 @@
 				</form>
 			</div>
 		</div>
+		<!--End Content Profile-->
 	</div>
-	<!--End Content Profile-->
-</div>
-<!-- /.container-fluid -->
+	<!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->
 
@@ -113,8 +114,9 @@
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
 					<ol type="1" class="ml-0 list-syarat modal-content-syarat">
-						<li>Surat Pemohon di tunjukan kepada kepala Kantor Kementrian Agama kab.Klaten.</li>
-						<li>Pemohon mengupload Surat Permohonan.</li>	
+					<li>Pemohon membuat surat permohonan ditujukan kepada Kepala Kantor Kementerian Agama Kab. Klaten</li>
+						<li>Pemohon mengunggah surat permohonan yang telah dibuat. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.</li>
 					</ol>
 				</p>
 			</div>

@@ -222,7 +222,25 @@ class Dashboard extends CI_Controller
             $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp15')->result();
         } elseif ($id_layanan == 18) {
             $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp18')->result();
-        }
+        } elseif ($id_layanan == 19) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp19')->result();
+        } elseif ($id_layanan == 20) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp20')->result();
+        } elseif ($id_layanan == 21) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp21')->result();
+        } elseif ($id_layanan == 22) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp22')->result();
+        } elseif ($id_layanan == 23) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp23')->result();
+        } elseif ($id_layanan == 24) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp24')->result();
+        } elseif ($id_layanan == 25) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp25')->result();
+        } elseif ($id_layanan == 26) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp26')->result();
+        } elseif ($id_layanan == 27) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp27')->result();
+        } 
 
         $this->load->view('header',$data_title);
         $this->load->view('backoffice/sidebar');
@@ -237,6 +255,24 @@ class Dashboard extends CI_Controller
             $this->load->view('backoffice/ptsp15/detail_ptsp15', $data_detail);
         } elseif ($id_layanan == 18) {
             $this->load->view('backoffice/ptsp18/detail_ptsp18', $data_detail);
+        } elseif ($id_layanan == 19) {
+            $this->load->view('backoffice/ptsp19/detail_ptsp19', $data_detail);
+        } elseif ($id_layanan == 20) {
+            $this->load->view('backoffice/ptsp20/detail_ptsp20', $data_detail);
+        } elseif ($id_layanan == 21) {
+            $this->load->view('backoffice/ptsp21/detail_ptsp21', $data_detail);
+        } elseif ($id_layanan == 22) {
+            $this->load->view('backoffice/ptsp22/detail_ptsp22', $data_detail);
+        } elseif ($id_layanan == 23) {
+            $this->load->view('backoffice/ptsp23/detail_ptsp23', $data_detail);
+        } elseif ($id_layanan == 24) {
+            $this->load->view('backoffice/ptsp24/detail_ptsp24', $data_detail);
+        } elseif ($id_layanan == 25) {
+            $this->load->view('backoffice/ptsp25/detail_ptsp25', $data_detail);
+        } elseif ($id_layanan == 26) {
+            $this->load->view('backoffice/ptsp26/detail_ptsp26', $data_detail);
+        } elseif ($id_layanan == 27) {
+            $this->load->view('backoffice/ptsp27detail_ptsp27', $data_detail);
         }
         $this->load->view('footer');
     }

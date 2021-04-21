@@ -336,4 +336,21 @@ class Dashboard extends CI_Controller
         $this->session->set_flashdata('success', 'permohonan sukses disetujui');
         redirect('dashboard/list_permohonan_masuk');
     }
+
+
+     //tampil detail ptsp20
+     public function detail_ptsp20()
+     {
+            $data_title['title'] = 'List Permohonan Masuk';                
+            $data['tim_teknis'] = $this->db->get_where('tim_teknis', ['id_tim_teknis' =>
+            $this->session->userdata('id_tim_teknis')])->row_array();
+             
+             //$sie = $this->session->userdata('sie');
+
+             $this->load->view('header', $data_title);
+             $this->load->view('timteknis/sidebar');
+             $this->load->view('topbar', $data);
+             $this->load->view('timteknis/ptsp20/detail_ptsp20');
+             $this->load->view('footer');
+     }
 }

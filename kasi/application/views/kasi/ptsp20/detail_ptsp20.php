@@ -1,15 +1,9 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 	<!-- Page Heading -->
-	<div class="d-sm-flex align-items-center justify-content-between">
-		<h3 class="judullist py-3">Detail</h1>
-		<nav aria-label="breadcrumb" class="nav-breadcrumb">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item" aria-current="page"><a href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Permohonan Masuk</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Detail Permohonan</li>
-			</ol>
-		</nav>
+	<div class="d-sm-flex align-items-center justify-content-between mb-4 judullist">
+		<h3>Detail Permohonan</h3>
+
 	</div>
 
 	<div class="row">
@@ -34,12 +28,8 @@
 						</a>
 					</center>
 				</div>
-			
-				<div class="card-footer">
-					
-				</div>
-			
 			</div>
+			
 			<!-- Surat Rekomendasi KUA -->
 			<div class="card shadow mb-4">
 				<div class="card-header">
@@ -50,22 +40,14 @@
 
 				<div class="card-body">
 					<center>
-					
-						<p></p>
 						<a id="btn_upload" class="btn btn-sm btn-primary"
 							href=""
 							target="_blank">
 							<i class="fa fa-download nav-icon">
 							</i> Klik untuk melihat
 						</a>
-					
 					</center>
 				</div>
-			
-				<div class="card-footer">
-					
-				</div>
-			
 			</div>
 		</div>
 		<div class="col-md-8 mb-0">
@@ -144,17 +126,18 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="card-footer">
-				<!-- Button Tolak & Setujui -->
-						<div class="float-right">
-							<a href="">
-								<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
-									<i class="fas fa-check-circle">
-									</i> Terima
-								</button>
-							</a>
-						</div>
-				</div>
+			</div>
+
+			<!-- Button Setujui -->
+			<div class="row clearfix float-right px-2">
+				
+				<a href="">
+					<button id="btn_termia" class="btn btn-sm btn-primary" type="submit">
+						<i class="fas fa-check-circle">
+						</i> Terima
+					</button>
+				</a>
+				
 			</div>
 		</div>
 	</div>

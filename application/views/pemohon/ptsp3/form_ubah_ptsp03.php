@@ -3,7 +3,7 @@
 
 <?php foreach ($detail_ptsp as $detail) { ?>
 	<!-- Page Heading -->
-	<div class="d-sm-flex align-items-center justify-content-between mb-4 judullist">
+	<div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4 judullist">
 		<h3>Form Ubah Permohonan</h3>
 				<a href="<?= base_url() ?>dashboard/detail_ptsp03/<?= $detail->id_permohonan_ptsp ?>">
 				<button id="btn_kembali" class="btn btn-sm btn-warning" type="">
@@ -37,9 +37,9 @@
 							<label for="no_hp" class="col-sm-3 col-form-label">No. Handphone</label>
 							<div class="col-sm-9">
 								<div class="form-line">
-									<textarea class="form-control" id="no_hp" name="no_hp" rows="1"
+									<input class="form-control" id="no_hp" name="no_hp" rows="1"
 										placeholder="masukkan no hp disini..." required 
-										data-parsley-type="number" minlength="11"><?= $detail->no_hp ?></textarea>
+										data-parsley-type="number" minlength="11" value="<?= $detail->no_hp ?>">
 								</div>
 							</div>
 						</div>

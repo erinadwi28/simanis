@@ -2,7 +2,7 @@
 <div class="container-fluid">
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between">
-		<h3 class="judullist py-3">Standar Operasional Prosedur</h1>
+		<h3 class="judullist py-3">Petugas Siaran Keagamaan</h1>
 			<nav aria-label="breadcrumb" class="nav-breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
@@ -16,24 +16,21 @@
 		<div class="col-md-8 mb-4">
 			<div class="card shadow mb-4 card-syarat">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Legalisir Ijazah</h6>
+					<h6 class="m-0 font-weight-bold text-center">Petugas Siaran Keagamaan</h6>
 				</div>
 				<div class="card-body ">
 					<h6><b>Persyaratan :</b></h6>
-					<p class="persyaratan mb-0">
-						Pemohon adalah pemilik ijazah/STTB/SKP ijazah yang mengajukan permohonan pengesahan atau yang
-						diberikan kuasa oleh pemiliknya (<b> <a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-01.pdf" target="_blank">FM-PI-01</a></b> dan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-02.pdf" target="_blank">FM-PI-02</a></b>).
+					
 					<ol type="1" class="ml-0 list-syarat">
-						<li>Mengisi dan menyelesaikan permohonan pengesahan fotocopi ijazah/STTB/SKP ijazah.</li>
-						<li>Mengupload/Mengunggah dokumen fotocopy ijazah.</li>
-						<li>Menunggu pemberitahuan pihak kemenag bahwa proses pengesahan telah selesai.</li>
-						<li>Mengambil dokumen legalisir dengan membawa dokumen asli.</li>
-						<li>Jika Pengambilan dokumen legalisir diwakilkan maka wajib membawa <b> <a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-01.pdf" target="_blank">FM-PI-01</a></b> dan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-02.pdf" target="_blank">FM-PI-02</a></b>.</li>
+					<li>Pemohon membuat surat permohonan ditujukan kepada Kepala Kantor Kementerian Agama Kab. Klaten</li>
+					<li>Pemohon mengisi Jadwal dan ketentuan Siaran.</li>
+					<li>Pemohon mengunggah surat permohonan yang telah dibuat. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+					<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.</li>
 					</ol>
-					</p>
+					
 				</div>
 				<div class="card-footer">
-					<a href="<?= base_url('dashboard/form_ptsp03') ?>">
+					<a href="<?= base_url('dashboard/form_ptsp19') ?>">
 						<button id="btn_buat" class="btn btn-sm btn-buat float-right" type="submit">
 							<i class="far fa-edit nav-icon">
 							</i> Buat

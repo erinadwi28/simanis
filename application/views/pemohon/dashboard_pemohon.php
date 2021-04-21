@@ -45,7 +45,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_permohonan_validasi_kemenag') ?>" class="badge badge-primary float-right"><i class="far fa-eye nav-icon"></i>Lihat</a>
+							<a href="<?= base_url('dashboard/list_permohonan_validasi_kemenag') ?>" class="badge badge-primary float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
 						</div>
 					</div>
 				</div>
@@ -129,7 +129,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Rohaniawan dan Petugas Do'a</div>
+								1. Rohaniawan dan Petugas Do'a</div>
 						</div>
 					</div>
 					<div class="row mt-3">
@@ -146,7 +146,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Rek. Keg. Keagamaan</div>
+								2. Rek. Keg. Keagamaan</div>
 						</div>
 					</div>
 					<div class="row mt-3">
@@ -165,7 +165,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Legalisir Ijazah</div>
+								3. Legalisir Ijazah</div>
 						</div>
 					</div>
 					<div class="row mt-3">
@@ -186,7 +186,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Legalisir Dokumen</div>
+								4. Legalisir Dokumen</div>
 						</div>
 					</div>
 					<div class="row mt-3">
@@ -205,7 +205,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Suket. Haji Pertama</div>
+								5. Suket. Haji Pertama</div>
 						</div>
 					</div>
 					<div class="row mt-3">
@@ -222,7 +222,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Rek. Paspor Haji & Umrah</div>
+								6. Rek. Paspor Haji & Umrah</div>
 						</div>
 					</div>
 					<div class="row mt-3">
@@ -243,7 +243,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Rek. Izin Pendirian KBIHU</div>
+								7. Rek. Izin Pendirian KBIHU</div>
 						</div>
 					</div>
 					<br>
@@ -263,7 +263,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Rek. Izin Perpanjang Operasional KBIHU</div>
+								8. Rek. Izin Perpanjang Operasional KBIHU</div>
 						</div>
 					</div>
 					<div class="row mt-3">
@@ -282,7 +282,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Rek. Izin Pendirian PPIU & PIHK</div>
+								9. Rek. Izin Pendirian PPIU & PIHK</div>
 						</div>
 					</div>
 					<br>
@@ -302,7 +302,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Rek. Izin Perpanjang Operasional PPIU & PIHK</div>
+								10. Rek. Izin Perpanjang Operasional PPIU & PIHK</div>
 						</div>
 					</div>
 					<div class="row mt-3">
@@ -321,7 +321,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Rek. Pindah Siswa Madrasah</div>
+								11. Rek. Pindah Siswa Madrasah</div>
 						</div>
 					</div>
 					<br>
@@ -341,7 +341,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Rek. Bantuan RA/Madrasah</div>
+								12. Rek. Bantuan RA/Madrasah</div>
 						</div>
 					</div>
 					<br>
@@ -363,7 +363,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Rek. Izin Operasional Lembaga Baru</div>
+								13. Rek. Izin Operasional Lembaga Baru</div>
 						</div>
 					</div>
 					<div class="row mt-3">
@@ -380,7 +380,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Izin Operasional LPQ</div>
+								14. Izin Operasional LPQ</div>
 						</div>
 					</div>
 					<br>
@@ -400,7 +400,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Izin Operasioanl Madin</div>
+								15. Izin Operasioanl Madin</div>
 						</div>
 					</div>
 					<br>
@@ -422,7 +422,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Rek. Proposal Pontren</div>
+								16. Rek. Proposal Pontren</div>
 						</div>
 					</div>
 					<div class="row mt-3">
@@ -441,7 +441,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Tambahan Jam Mengajar Guru</div>
+								17. Tambahan Jam Mengajar Guru</div>
 						</div>
 					</div>
 					<div class="row mt-3">
@@ -458,7 +458,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Rek. Bantuan Masjid</div>
+								18. Rek. Bantuan Masjid</div>
 						</div>
 					</div>
 					<div class="row mt-3">
@@ -479,13 +479,13 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Petugas Siaran Keagamaan</div>
+								19. Petugas Siaran Keagamaan</div>
 						</div>
 					</div>
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+								<a href="<?= base_url('dashboard/sop_ptsp19') ?>" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -498,7 +498,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Ijin Operasional Majlis Taklim</div>
+								20. Ijin Operasional Majlis Taklim</div>
 						</div>
 					</div>
 					<div class="row mt-3">
@@ -517,12 +517,12 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Arah Ukur Kiblat</div>
+								21. Arah Ukur Kiblat</div>
 						</div>
 					</div>
 					<div class="row mt-3">
 						<div class="col-md-12">
-							<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+							<a href="<?= base_url('dashboard/sop_ptsp21') ?>" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -536,13 +536,13 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Rek. ID Masjid & Musala</div>
+								22. Rek. ID Masjid & Musala</div>
 						</div>
 					</div>
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+								<a href="<?= base_url('dashboard/sop_ptsp22') ?>" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -555,14 +555,14 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Mutasi GPAI PNS</div>
+								23. Mutasi GPAI PNS</div>
 						</div>
 					</div>
 					<br>
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+								<a href="<?= base_url('dashboard/sop_ptsp23') ?>" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -575,13 +575,13 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Rek. Pajak Bendaraan Bermotor Layanan Sosial Rumah Ibadah</div>
+								24. Rek. Pajak Bendaraan Bermotor Layanan Sosial Rumah Ibadah</div>
 						</div>
 					</div>
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+								<a href="<?= base_url('dashboard/sop_ptsp24') ?>" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -596,7 +596,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Konsultasi & Informasi Sertifikasi Halal, Zakat & Wakaf</div>
+								25. Konsultasi & Informasi Sertifikasi Halal, Zakat & Wakaf</div>
 						</div>
 					</div>
 					<div class="row mt-3">
@@ -613,7 +613,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Data Lembaga Agama & Keagamaan</div>
+								26. Data Lembaga Agama & Keagamaan</div>
 						</div>
 					</div>
 					<div class="row mt-3">
@@ -632,14 +632,14 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								Suket. Tambahan Penghasilan</div>
+								27. Suket. Tambahan Penghasilan</div>
 						</div>
 					</div>
 					<br>
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+								<a href="<?= base_url('dashboard/sop_ptsp27') ?>" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
