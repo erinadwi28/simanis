@@ -58,14 +58,14 @@
 				<div class="card-footer">
 					<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp18/' . $detail->id_ptsp) ?>"
 						enctype="multipart/form-data" method="post" accept-charset="utf-8"
-						id="form_upload_srt_permohonan">
+						id="formupload_ptsp18_1">
 						<div class="form-group">
 							<div class="input-group">
-								<div class="form-group-upload">
+								<div class="form-group-upload col-md-12">
 									<div class="custom-file">
 										<label class="custom-file-label" for="file-upload">pilih file...</label>
 										<input type="file" class="custom-file-input" id="file-upload"
-											name="srt_permohonan" value="<?= $detail->srt_permohonan ?>">
+											name="srt_permohonan" value="<?= $detail->srt_permohonan ?>" required>
 										<input type="hidden" class="form-control form-user-input"
 											name="id_permohonan_ptsp" id="file-upload"
 											value="<?= $detail->id_permohonan_ptsp ?>">
@@ -111,14 +111,14 @@
 				<?php if ($detail->status == 'Pending') { ?>
 				<div class="card-footer">
 					<form action="<?= base_url('dashboard/update_proposal_ptsp18/' . $detail->id_ptsp) ?>"
-						enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_proposal">
+						enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp18_2">
 						<div class="form-group">
 							<div class="input-group">
-								<div class="form-group-upload">
+								<div class="form-group-upload col-md-12">
 									<div class="custom-file">
 										<label class="custom-file-label" for="file-upload-2">pilih file...</label>
 										<input type="file" class="custom-file-input" id="file-upload-2" name="proposal"
-											value="<?= $detail->proposal ?>">
+											value="<?= $detail->proposal ?>" required>
 										<input type="hidden" class="form-control form-user-input"
 											name="id_permohonan_ptsp" id="file-upload"
 											value="<?= $detail->id_permohonan_ptsp ?>">
@@ -146,14 +146,6 @@
 				<div class="card-body">
 					<table class="table-hover table-responsive">
 						<tbody>
-							<tr>
-								<td><b>No. Surat Takmir Masjid</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td> </td>
-								<td><?= $detail->no_surat ?></td>
-							</tr>
 							<tr>
 								<td><b>Nama Masjid</b></td>
 								<td> </td>

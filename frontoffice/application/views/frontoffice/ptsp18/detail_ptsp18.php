@@ -171,13 +171,18 @@
 					<form class="form-horizontal" id="no_surat_ptsp18" enctype="multipart/form-data"
 						action="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>/<?= $detail->id_layanan ?>"
 						method="POST">
-						<div class="input-group mb-3 col-md-6 float-right p-0">
-							<input type="text" class="form-control " id="no_surat" name="no_surat"
-								value=".../Kk.11.10/06/HM.01/<?= date("m/Y") ?>" required>
-							<button class="btn btn-sm btn-primary" type="submit" id="button-addon2"><i
-									class="fas fa-check-circle">
-								</i> Terima</button>
-						</div>
+						<div class="row clearfix">
+					<div class="col-md-1"></div>
+					<div class="input-group col-md-3 px-2 mb-2">
+					</div>
+					<div class="input-group col-md-6 px-2 mb-2">
+						<input type="text" class="form-control " id="no_surat" name="no_surat"
+							value=".../Kk.11.10/6/HM.01/bln/tahun" required>
+					</div>
+					<button class="btn btn-sm btn-primary mb-2 float-right px-2" type="submit" id="button-addon2"><i
+							class="fas fa-check-circle">
+						</i> Terima</button>
+				</div>
 					</form>
 				</div>
 			</div>

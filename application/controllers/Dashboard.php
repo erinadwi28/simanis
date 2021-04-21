@@ -2930,7 +2930,6 @@ class Dashboard extends CI_Controller
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
         $this->load->view('pemohon/ptsp27/sop_ptsp27');
@@ -2944,13 +2943,24 @@ class Dashboard extends CI_Controller
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        $detailhere = array('id_pemohon' => $this->session->userdata('id_pemohon'));
-        $data_detail['detail_profil_saya'] = $this->m_pemohon->get_detail_profil_saya($detailhere, 'pemohon')->result();
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp10/form_ptsp10');
+        $this->load->view('footer');
+    }
+	//tampil detail ptsp10
+    public function detail_ptsp10()
+    { // $id_permohonan
+        $data_title['title'] = 'Detail Permohonan';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        $this->load->view('header', $data_title);
+        $this->load->view('header',$data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('pemohon/ptsp27/form_ptsp27', $data_detail);
+        $this->load->view('pemohon/ptsp27/form_ptsp27');
         $this->load->view('footer');
     }
     // aksi pengajuan ptsp27

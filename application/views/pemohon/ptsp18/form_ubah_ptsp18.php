@@ -22,24 +22,15 @@
 					<h6 class="m-0 font-weight-bold text-center">Permohonan Surat Rekomendasi Bantuan Masjid</h6>
 				</div>
 				<div class="card-body">
-					<form class="form-horizontal" id="form5" enctype="multipart/form-data"
+					<form class="form-horizontal" id="formubah_ptsp18" enctype="multipart/form-data"
 						action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp18/<?= $detail->id_permohonan_ptsp ?>"
 						method="POST">
-						<div class="form-group row">
-							<label for="no_surat_takmir" class="col-sm-3 col-form-label">No. Surat Takmir Masjid</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="no_surat" name="no_surat"
-										value="<?= $detail->no_surat ?>" placeholder="masukkan no surat takmir disini...">
-								</div>
-							</div>
-						</div>
 						<div class="form-group row">
 							<label for="nama_masjid" class="col-sm-3 col-form-label">Nama Masjid</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="nama_masjid" name="nama_masjid"
-										value="<?= $detail->nama_masjid ?>" placeholder="masukkan nama masjid disini...">
+										value="<?= $detail->nama_masjid ?>" placeholder="masukkan nama masjid disini..." required>
 								</div>
 							</div>
 						</div>
@@ -48,7 +39,7 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="date" class="form-control" id="tgl_surat_permohonan" name="tgl_surat_permohonan" 
-									value="<?= $detail->tgl_surat_permohonan ?>">
+									value="<?= $detail->tgl_surat_permohonan ?>" required> 
 								</div>
 							</div>
 						</div>
@@ -57,7 +48,7 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="nama_ketua_takmir" name="nama_ketua_takmir"
-										value="<?= $detail->nama_ketua_takmir ?>" placeholder="masukkan tempat lahir disini...">
+										value="<?= $detail->nama_ketua_takmir ?>" placeholder="masukkan tempat lahir disini..." required>
 								</div>
 							</div>
 						</div>
@@ -66,7 +57,7 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<textarea type="text" class="form-control" id="alamat_masjid" name="alamat_masjid" value=""
-										placeholder="masukkan alamat masjid disini..."><?= $detail->alamat_masjid ?></textarea>
+										placeholder="masukkan alamat masjid disini..." required><?= $detail->alamat_masjid ?></textarea>
 								</div>
 							</div>
 						</div>
@@ -75,7 +66,7 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="no_id_masjid" name="no_id_masjid" 
-									value="<?= $detail->no_id_masjid ?>" placeholder="masukkan no ID masjid disini...">
+									value="<?= $detail->no_id_masjid ?>" placeholder="masukkan no ID masjid disini..." required>
 								</div>
 							</div>
 						</div>
@@ -84,7 +75,8 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="no_hp" name="no_hp" 
-									value="<?= $detail->no_hp ?>" placeholder="masukkan no handpone disini...">
+									value="<?= $detail->no_hp ?>" placeholder="masukkan no handpone disini..." required data-parsley-type="number"
+										minlength="11">
 								</div>
 							</div>
 						</div>	

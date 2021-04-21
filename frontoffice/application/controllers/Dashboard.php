@@ -832,88 +832,209 @@ class Dashboard extends CI_Controller
                 $dompdf->render();
                 $dompdf->stream('Permohonan Ijin Operasional Majlis Taklim');
         }
-         //tampil detail ptsp21
-         public function detail_ptsp21()
-         {
-                 $data_title['title'] = 'Detail Permohonan';
-                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
-                 $this->session->userdata('id_fo')])->row_array();
-                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
- 
-                 $this->load->view('header', $data_title);
-                 $this->load->view('frontoffice/sidebar_fo');
-                 $this->load->view('topbar', $data);
-                 $this->load->view('frontoffice/ptsp21/detail_ptsp21');
-                 $this->load->view('footer');
-         }
-         //tampil detail ptsp21
-         public function detail_ptsp22()
-         {
-                 $data_title['title'] = 'Detail Permohonan';
-                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
-                 $this->session->userdata('id_fo')])->row_array();
-                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
- 
-                 $this->load->view('header', $data_title);
-                 $this->load->view('frontoffice/sidebar_fo');
-                 $this->load->view('topbar', $data);
-                 $this->load->view('frontoffice/ptsp22/detail_ptsp22');
-                 $this->load->view('footer');
-         }
-         //tampil detail ptsp23
-         public function detail_ptsp23()
-         {
-                 $data_title['title'] = 'Detail Permohonan';
-                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
-                 $this->session->userdata('id_fo')])->row_array();
-                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
- 
-                 $this->load->view('header', $data_title);
-                 $this->load->view('frontoffice/sidebar_fo');
-                 $this->load->view('topbar', $data);
-                 $this->load->view('frontoffice/ptsp23/detail_ptsp23');
-                 $this->load->view('footer');
-         }
-         //tampil detail ptsp24
-         public function detail_ptsp24()
-         {
-                 $data_title['title'] = 'Detail Permohonan';
-                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
-                 $this->session->userdata('id_fo')])->row_array();
-                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
- 
-                 $this->load->view('header', $data_title);
-                 $this->load->view('frontoffice/sidebar_fo');
-                 $this->load->view('topbar', $data);
-                 $this->load->view('frontoffice/ptsp24/detail_ptsp24');
-                 $this->load->view('footer');
-         }
-         //tampil detail ptsp25
-         public function detail_ptsp25()
-         {
-                 $data_title['title'] = 'Detail Permohonan';
-                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
-                 $this->session->userdata('id_fo')])->row_array();
-                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
- 
-                 $this->load->view('header', $data_title);
-                 $this->load->view('frontoffice/sidebar_fo');
-                 $this->load->view('topbar', $data);
-                 $this->load->view('frontoffice/ptsp25/detail_ptsp25');
-                 $this->load->view('footer');
-         }
-         //tampil detail ptsp27
-         public function detail_ptsp27()
-         {
-                 $data_title['title'] = 'Detail Permohonan';
-                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
-                 $this->session->userdata('id_fo')])->row_array();
-                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
- 
-                 $this->load->view('header', $data_title);
-                 $this->load->view('frontoffice/sidebar_fo');
-                 $this->load->view('topbar', $data);
-                 $this->load->view('frontoffice/ptsp27/detail_ptsp27');
-                 $this->load->view('footer');
-         }
+
+	//tampil detail ptsp10
+        public function detail_ptsp10()
+        {
+                $data_title['title'] = 'Detail Permohonan';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/ptsp10/detail_ptsp10');
+                $this->load->view('footer');
+        }
+	//tampil preview ptsp10
+        public function tampil_ptsp10()
+        {
+                $data_title['title'] = 'Tampil Permohonan';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/ptsp10/tampil_ptsp10');
+                $this->load->view('footer');
+        }
+	//tampil cetaj ptsp10
+        public function cetak_ptsp10()
+        {
+                $this->load->view('frontoffice/ptsp10/cetak_ptsp10');
+        }
+
+	//tampil detail ptsp11
+        public function detail_ptsp11()
+        {
+                $data_title['title'] = 'Detail Permohonan';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/ptsp11/detail_ptsp11');
+                $this->load->view('footer');
+        }
+	//tampil preview ptsp11
+        public function tampil_ptsp11()
+        {
+                $data_title['title'] = 'Tampil Permohonan';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/ptsp11/tampil_ptsp11');
+                $this->load->view('footer');
+        }
+	//tampil cetaj ptsp11
+        public function cetak_ptsp11()
+        {
+                $this->load->view('frontoffice/ptsp11/cetak_ptsp11');
+        }
+
+	
+        //tampil detail ptsp12
+        public function detail_ptsp12()
+        {
+                $data_title['title'] = 'Detail Permohonan';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/ptsp12/detail_ptsp12');
+                $this->load->view('footer');
+        }
+	//tampil preview ptsp12
+        public function tampil_ptsp12()
+        {
+                $data_title['title'] = 'Tampil Permohonan';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/ptsp12/tampil_ptsp12');
+                $this->load->view('footer');
+        }
+	//tampil cetak ptsp12
+        public function cetak_ptsp12()
+        {
+                $this->load->view('frontoffice/ptsp12/cetak_ptsp12');
+        }
+
+	//tampil detail ptsp13
+        public function detail_ptsp13()
+        {
+                $data_title['title'] = 'Detail Permohonan';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/ptsp13/detail_ptsp13');
+                $this->load->view('footer');
+        }
+	//tampil preview ptsp13
+        public function tampil_ptsp13()
+        {
+                $data_title['title'] = 'Tampil Permohonan';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/ptsp13/tampil_ptsp13');
+                $this->load->view('footer');
+        }
+	//tampil cetak ptsp13
+        public function cetak_ptsp13()
+        {
+                $this->load->view('frontoffice/ptsp13/cetak_ptsp13');
+        }
+
+	//tampil detail ptsp16
+        public function detail_ptsp16()
+        {
+                $data_title['title'] = 'Detail Permohonan';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/ptsp16/detail_ptsp16');
+                $this->load->view('footer');
+        }
+	//tampil preview ptsp16
+        public function tampil_ptsp16()
+        {
+                $data_title['title'] = 'Tampil Permohonan';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/ptsp16/tampil_ptsp16');
+                $this->load->view('footer');
+        }
+	//tampil cetak ptsp16
+        public function cetak_ptsp16()
+        {
+                $this->load->view('frontoffice/ptsp16/cetak_ptsp16');
+        }
+
+	//tampil detail ptsp17
+        public function detail_ptsp17()
+        {
+                $data_title['title'] = 'Detail Permohonan';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/ptsp17/detail_ptsp17');
+                $this->load->view('footer');
+        }
+	//tampil preview ptsp17
+        public function tampil_ptsp17()
+        {
+                $data_title['title'] = 'Tampil Permohonan';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/ptsp17/tampil_ptsp17');
+                $this->load->view('footer');
+        }
+	//tampil cetak ptsp17
+        public function cetak_ptsp17()
+        {
+                $this->load->view('frontoffice/ptsp17/cetak_ptsp17');
+        }
 }

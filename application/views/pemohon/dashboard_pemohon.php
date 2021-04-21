@@ -308,7 +308,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+								<a href="<?= base_url('dashboard/sop_ptsp10') ?>" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -328,7 +328,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+								<a href="<?= base_url('dashboard/sop_ptsp11') ?>" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -348,7 +348,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+								<a href="<?= base_url('dashboard/sop_ptsp12') ?>" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -368,7 +368,7 @@
 					</div>
 					<div class="row mt-3">
 						<div class="col-md-12">
-							<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+							<a href="<?= base_url('dashboard/sop_ptsp13') ?>" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -428,7 +428,7 @@
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>
-								<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+								<a href="<?= base_url('dashboard/sop_ptsp16') ?>" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 							</center>
 						</div>
 					</div>
@@ -446,7 +446,7 @@
 					</div>
 					<div class="row mt-3">
 						<div class="col-md-12">
-							<a href="" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+							<a href="<?= base_url('dashboard/sop_ptsp17') ?>" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
