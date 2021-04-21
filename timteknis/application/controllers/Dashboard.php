@@ -336,4 +336,69 @@ class Dashboard extends CI_Controller
         $this->session->set_flashdata('success', 'permohonan sukses disetujui');
         redirect('dashboard/list_permohonan_masuk');
     }
+
+	 //tampil detail ptsp10
+	 public function detail_ptsp10()
+	 {
+		 $data_title['title'] = 'Detail Permohonan';
+		 $data['tim_teknis'] = $this->db->get_where('tim_teknis', ['id_tim_teknis' =>
+		 $this->session->userdata('id_tim_teknis')])->row_array();
+ 
+		 $sie = $this->session->userdata('sie');
+		 $data['total_notif'] = $this->m_tim_teknis->jml_notif($sie)->result();
+		 
+		 $this->load->view('header', $data_title);
+		 $this->load->view('timteknis/sidebar');
+		 $this->load->view('topbar', $data);
+		 $this->load->view('timteknis/ptsp10/detail_ptsp10');
+		 $this->load->view('footer');
+	 }
+	 //tampil detail ptsp13
+	 public function detail_ptsp13()
+	 {
+		 $data_title['title'] = 'Detail Permohonan';
+		 $data['tim_teknis'] = $this->db->get_where('tim_teknis', ['id_tim_teknis' =>
+		 $this->session->userdata('id_tim_teknis')])->row_array();
+ 
+		 $sie = $this->session->userdata('sie');
+		 $data['total_notif'] = $this->m_tim_teknis->jml_notif($sie)->result();
+		 
+		 $this->load->view('header', $data_title);
+		 $this->load->view('timteknis/sidebar');
+		 $this->load->view('topbar', $data);
+		 $this->load->view('timteknis/ptsp13/detail_ptsp13');
+		 $this->load->view('footer');
+	 }
+	 //tampil detail ptsp14
+	 public function detail_ptsp14()
+	 {
+		 $data_title['title'] = 'Detail Permohonan';
+		 $data['tim_teknis'] = $this->db->get_where('tim_teknis', ['id_tim_teknis' =>
+		 $this->session->userdata('id_tim_teknis')])->row_array();
+ 
+		 $sie = $this->session->userdata('sie');
+		 $data['total_notif'] = $this->m_tim_teknis->jml_notif($sie)->result();
+		 
+		 $this->load->view('header', $data_title);
+		 $this->load->view('timteknis/sidebar');
+		 $this->load->view('topbar', $data);
+		 $this->load->view('timteknis/ptsp14/detail_ptsp14');
+		 $this->load->view('footer');
+	 }
+	 //tampil detail ptsp15
+	 public function detail_ptsp15()
+	 {
+		 $data_title['title'] = 'Detail Permohonan';
+		 $data['tim_teknis'] = $this->db->get_where('tim_teknis', ['id_tim_teknis' =>
+		 $this->session->userdata('id_tim_teknis')])->row_array();
+ 
+		 $sie = $this->session->userdata('sie');
+		 $data['total_notif'] = $this->m_tim_teknis->jml_notif($sie)->result();
+		 
+		 $this->load->view('header', $data_title);
+		 $this->load->view('timteknis/sidebar');
+		 $this->load->view('topbar', $data);
+		 $this->load->view('timteknis/ptsp15/detail_ptsp15');
+		 $this->load->view('footer');
+	 }
 }

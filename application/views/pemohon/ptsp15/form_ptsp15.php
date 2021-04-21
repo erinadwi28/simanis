@@ -25,13 +25,13 @@
 				<div class="card-body">
 					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
 					<br>
-					<form class="form-horizontal mt-4" id="form5" enctype="multipart/form-data"
+					<form class="form-horizontal mt-4" id="form_ptsp15" enctype="multipart/form-data"
 						action="<?= base_url('dashboard/aksi_pengajuan_ptsp15') ?>" method="POST">
 						<div class="form-group row">
 							<label for="Nama_madrasah" class="col-sm-3 col-form-label">Nama Madrasah</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama_madrasah" name="nama_madrasah" value="" placeholder="masukkan nama madrasah disini...">
+									<input type="text" class="form-control" id="nama_madrasah" name="nama_madrasah" value="" placeholder="masukkan nama madrasah disini..." required>
 								</div>
 							</div>
 						</div>
@@ -39,7 +39,7 @@
 							<label for="Alamat" class="col-sm-3 col-form-label">Alamat</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="alamat" name="alamat" value="" placeholder="masukkan alamat disini...">
+									<input type="text" class="form-control" id="alamat" name="alamat" value="" placeholder="masukkan alamat disini..." required>
 								</div>
 							</div>
 						</div>
@@ -47,7 +47,7 @@
 							<label for="desa" class="col-sm-3 col-form-label">Desa</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="desa" name="desa" value="" placeholder="masukkan desa disini...">
+									<input type="text" class="form-control" id="desa" name="desa" value="" placeholder="masukkan desa disini..." required>
 								</div>
 							</div>
 						</div>
@@ -55,7 +55,7 @@
 							<label for="kecamatan" class="col-sm-3 col-form-label">Kecamatan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="kecamatan" name="kecamatan" value="" placeholder="masukkan kecamatan disini...">
+									<input type="text" class="form-control" id="kecamatan" name="kecamatan" value="" placeholder="masukkan kecamatan disini..." required>
 								</div>
 							</div>
 						</div>
@@ -63,7 +63,7 @@
 							<label for="kabupaten" class="col-sm-3 col-form-label">Kabupaten</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="kabupaten" name="kabupaten" value="" placeholder="masukkan kabupaten disini...">
+									<input type="text" class="form-control" id="kabupaten" name="kabupaten" value="" placeholder="masukkan kabupaten disini..." required>
 								</div>
 							</div>
 						</div>
@@ -71,7 +71,7 @@
 							<label for="provinsi" class="col-sm-3 col-form-label">Provinsi</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="provinsi" name="provinsi" value="" placeholder="masukkan provinsi disini...">
+									<input type="text" class="form-control" id="provinsi" name="provinsi" value="" placeholder="masukkan provinsi disini..." required>
 								</div>
 							</div>
 						</div>
@@ -79,7 +79,7 @@
 							<label for="Tahun_berdiri" class="col-sm-3 col-form-label">Tahun Berdiri</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="tahun_berdiri" name="tahun_berdiri" value="" placeholder="masukkan tahun SK PPIU/PIHK disini...">
+									<input type="text" class="form-control" id="tahun_berdiri" name="tahun_berdiri" value="" placeholder="masukkan tahun SK PPIU/PIHK disini..." required>
 								</div>
 							</div>
 						</div>
@@ -87,7 +87,8 @@
 							<label for="No_hp" class="col-sm-3 col-form-label">No. Handphone</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="no_hp" name="no_hp" value="" placeholder="masukkan no handpone disini...">
+									<input type="text" class="form-control" id="no_hp" name="no_hp" value="" placeholder="masukkan no handpone disini..." required data-parsley-type="number"
+										minlength="11">
 								</div>
 							</div>
 						</div>	

@@ -2038,4 +2038,355 @@ class Dashboard extends CI_Controller
         redirect('dashboard/detail_ptsp26/' . $id_permohonan);
     }
 
+	//tampil sop ptsp10
+    public function sop_ptsp10()
+    { // $id_permohonan
+        $data_title['title'] = 'Standar Operasional Prosedur';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp10/sop_ptsp10');
+        $this->load->view('footer');
+    }
+
+	//tampil form pengajuan ptsp10
+    public function form_ptsp10()
+    { // $id_permohonan
+        $data_title['title'] = 'Form Pengajuan';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp10/form_ptsp10');
+        $this->load->view('footer');
+    }
+	//tampil detail ptsp10
+    public function detail_ptsp10()
+    { // $id_permohonan
+        $data_title['title'] = 'Detail Permohonan';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp10/detail_ptsp10');
+        $this->load->view('footer');
+    }
+
+	//tampil form ubah ptsp10
+    public function form_ubah_ptsp10()
+    { // $id_permohonan
+        $data_title['title'] = 'Form Ubah';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp10/form_ubah_ptsp10');
+        $this->load->view('footer');
+    }
+
+	//tampil sop ptsp11
+    public function sop_ptsp11()
+    { // $id_permohonan
+        $data_title['title'] = 'Standar Operasional Prosedur';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp11/sop_ptsp11');
+        $this->load->view('footer');
+    }
+
+	//tampil form pengajuan ptsp11
+    public function form_ptsp11()
+    { // $id_permohonan
+        $data_title['title'] = 'Form Pengajuan';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp11/form_ptsp11');
+        $this->load->view('footer');
+    }
+	//tampil detail ptsp11
+    public function detail_ptsp11()
+    { // $id_permohonan
+        $data_title['title'] = 'Detail Permohonan';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp11/detail_ptsp11');
+        $this->load->view('footer');
+    }
+
+	//tampil form ubah ptsp11
+    public function form_ubah_ptsp11()
+    { // $id_permohonan
+        $data_title['title'] = 'Form Ubah';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp11/form_ubah_ptsp11');
+        $this->load->view('footer');
+    }
+
+	//tampil sop ptsp12
+    public function sop_ptsp12()
+    { // $id_permohonan
+        $data_title['title'] = 'Standar Operasional Prosedur';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp12/sop_ptsp12');
+        $this->load->view('footer');
+    }
+	//tampil form pengajuan ptsp12
+    public function form_ptsp12()
+    { // $id_permohonan
+        $data_title['title'] = 'Form Pengajuan';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp12/form_ptsp12');
+        $this->load->view('footer');
+    }
+	//tampil detail ptsp12
+    public function detail_ptsp12()
+    { // $id_permohonan
+        $data_title['title'] = 'Detail Permohonan';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp12/detail_ptsp12');
+        $this->load->view('footer');
+    }
+
+	//tampil form ubah ptsp12
+    public function form_ubah_ptsp12()
+    { // $id_permohonan
+        $data_title['title'] = 'Form Ubah';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp12/form_ubah_ptsp12');
+        $this->load->view('footer');
+    }
+
+	//tampil sop ptsp13
+    public function sop_ptsp13()
+    { // $id_permohonan
+        $data_title['title'] = 'Standar Operasional Prosedur';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp13/sop_ptsp13');
+        $this->load->view('footer');
+    }
+	//tampil form pengajuan ptsp13
+    public function form_ptsp13()
+    { // $id_permohonan
+        $data_title['title'] = 'Form Pengajuan';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp13/form_ptsp13');
+        $this->load->view('footer');
+    }
+	//tampil detail ptsp13
+    public function detail_ptsp13()
+    { // $id_permohonan
+        $data_title['title'] = 'Detail Permohonan';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp13/detail_ptsp13');
+        $this->load->view('footer');
+    }
+
+	//tampil form ubah ptsp13
+    public function form_ubah_ptsp13()
+    { // $id_permohonan
+        $data_title['title'] = 'Form Ubah';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp13/form_ubah_ptsp13');
+        $this->load->view('footer');
+    }
+
+    //tampil sop ptsp16
+    public function sop_ptsp16()
+    { // $id_permohonan
+        $data_title['title'] = 'Standar Operasional Prosedur';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp16/sop_ptsp16');
+        $this->load->view('footer');
+    }
+	//tampil form pengajuan ptsp16
+    public function form_ptsp16()
+    { // $id_permohonan
+        $data_title['title'] = 'Form Pengajuan';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp16/form_ptsp16');
+        $this->load->view('footer');
+    }
+	//tampil detail ptsp16
+    public function detail_ptsp16()
+    { // $id_permohonan
+        $data_title['title'] = 'Detail Permohonan';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp16/detail_ptsp16');
+        $this->load->view('footer');
+    }
+
+	//tampil form ubah ptsp16
+    public function form_ubah_ptsp16()
+    { // $id_permohonan
+        $data_title['title'] = 'Form Ubah';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp16/form_ubah_ptsp16');
+        $this->load->view('footer');
+    }
+
+
+	//tampil sop ptsp17
+    public function sop_ptsp17()
+    { // $id_permohonan
+        $data_title['title'] = 'Standar Operasional Prosedur';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp17/sop_ptsp17');
+        $this->load->view('footer');
+    }
+	//tampil form pengajuan ptsp17
+    public function form_ptsp17()
+    { // $id_permohonan
+        $data_title['title'] = 'Form Pengajuan';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp17/form_ptsp17');
+        $this->load->view('footer');
+    }
+	//tampil detail ptsp17
+    public function detail_ptsp17()
+    { // $id_permohonan
+        $data_title['title'] = 'Detail Permohonan';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp17/detail_ptsp17');
+        $this->load->view('footer');
+    }
+
+	//tampil form ubah ptsp17
+    public function form_ubah_ptsp17()
+    { // $id_permohonan
+        $data_title['title'] = 'Form Ubah';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $this->load->view('header',$data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar',$data);
+        $this->load->view('pemohon/ptsp17/form_ubah_ptsp17');
+        $this->load->view('footer');
+    }
+
 }

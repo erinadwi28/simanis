@@ -23,10 +23,9 @@
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
 						<ol type="1" class="ml-0 list-syarat">
-							<li>Pemohon mengunduh surat permohonan ditujukan kepada Kepala Kantor Kemenag Klaten ditandatangani oleh 
-							takmir masjid yang bersangkutan. <br> Untuk mengunduh <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp18/srt_permohonan.doc" target="_blank">[klik disini]</a></b></li>
-							<li>Pemohon mengisi surat permohonan yang telah diunduh tersebut.</li>
-							<li>Pemohon membuat proposal yang memuat:
+						<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+						<li>Pemohon mengunggah surat permohonan yang ditujukan kepada Kepala Kemenag Kab. Kalten ditandatangi oleh takmir masjid. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+							<li>Pemohon mengunggah Proposal Memuat:<br></li>
 								<ol type="a">
 									<li>Surat Permohonan Bantuan ditanda tangan Lurah, Camat, Kepala KUA.</li>
 									<li>RAB.</li>
@@ -39,9 +38,9 @@
 									<li>Fotocopy sertifikat wakaf/ Ikrar wakaf/ surat keterangan dari pejabat berwenang jika tanah kas.</li>
 								</ol>
 							</li>
-							<li>Pemohon mengisi dan melengkapi form pengajuan yang telah disediakan.</li>
-							<li>Pemohon mengunggah surat permohonan dan proposal pada form pengajuan.</li>
-							<li>Pemohon menunggu informasi dari Kemenag terkait proses pengajuan permohonan dan pengambilan surat yang sudah jadi.</li>
+							(Format: PDF, Ukuran: Max 10 MB)
+							<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
+							</li>
 						</ol>
 					</p>
 				</div>

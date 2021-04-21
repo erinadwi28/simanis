@@ -23,7 +23,8 @@
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
 						<ol type="1" class="ml-0 list-syarat">
-							<li>Pemohon Mengunggah Proposal Memuat:<br></li>
+						<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+							<li>Pemohon mengunggah Proposal Memuat:<br></li>
 							<ol type="a" class="ml-0 list-syarat">
 							<li>Surat Permohonan yang ditujukan Kepala Kemenag Kab. Klaten</li>
 							<li>Surat Keterangan dari Yayasan/Badan Hukum beserta FC Akta Kemenkumhamnya</li>
@@ -41,8 +42,9 @@
 							<li>Santri Aktif Minimal 15 Orang</li>
 							<li>Pernyataan Setia pada NKRI Bermaterai</li>
 							</ol>
-							<li>Pemohon Mengisi dan Melengkapi form pengajuan yang telah disediakan.</li>
-							<li>Pemohon Menunggu Informasi dari Kemenag terkait proses pengajuan permohonan.</li>
+							(Format: PDF, Ukuran: Max 10 MB)
+							<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
+							</li>
 						</ol>
 					</p>
 				</div>
