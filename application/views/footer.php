@@ -60,33 +60,10 @@
 <!-- Page level custom scripts -->
 <script src="<?= base_url('assets/dashboard/js/demo/datatables-demo.js') ?>"></script>
 
-<!-- Change label form upload -->
-<script>
-	$('#file-upload').change(function () {
-		var i = $(this).prev('label').clone();
-		var file = $('#file-upload')[0].files[0].name;
-		$(this).prev('label').text(file);
-	});
-	
-	$('#file-upload-2').change(function () {
-		var i = $(this).prev('label').clone();
-		var file = $('#file-upload-2')[0].files[0].name;
-		$(this).prev('label').text(file);
-	});
+<!-- Parsley -->
+<script src="<?= base_url('assets/dashboard/library/parsley/parsley.js') ?>"></script>
 
-	$('#file-upload-3').change(function () {
-		var i = $(this).prev('label').clone();
-		var file = $('#file-upload-3')[0].files[0].name;
-		$(this).prev('label').text(file);
-	});
-
-	$('#file-upload-4').change(function () {
-		var i = $(this).prev('label').clone();
-		var file = $('#file-upload-4')[0].files[0].name;
-		$(this).prev('label').text(file);
-	});
-
-</script>
+<script src="<?= base_url('assets/dashboard/js/script.js') ?>"></script>
 </body>
 
 </html>

@@ -25,68 +25,74 @@
 					<div class="card-body">
 						<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
 						<br>
-						<form class="form-horizontal mt-4" id="form5" enctype="multipart/form-data" action="<?= base_url('dashboard/aksi_pengajuan_ptsp05') ?>" method="POST">
+						<form class="form-horizontal mt-4" id="form_ptsp05" enctype="multipart/form-data" action="<?= base_url('dashboard/aksi_pengajuan_ptsp05') ?>" method="POST">
 							<div class="form-group row">
-								<label for="Nama" class="col-sm-3 col-form-label">Nama Lengkap</label>
+								<label for="nama" class="col-sm-3 col-form-label">Nama Lengkap</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="nama" name="nama" value="<?= $detail->nama; ?>">
+										<input type="text" class="form-control" id="nama" name="nama" value="<?= $detail->nama; ?>" required>
 									</div>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="Nama" class="col-sm-3 col-form-label">Nomor HP</label>
+								<label for="no_hp" class="col-sm-3 col-form-label">No. HandPhone</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="no_hp" name="no_hp" value="<?= $detail->no_hp; ?>">
+										<input type="text" class="form-control" id="no_hp" name="no_hp" value="<?= $detail->no_hp; ?>"
+										placeholder="masukkan no hp disini..." 
+										required data-parsley-type="number" minlength="11">
 									</div>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="Tempat_lahir" class="col-sm-3 col-form-label">Tempat Lahir</label>
+								<label for="tempat_lahir" class="col-sm-3 col-form-label">Tempat Lahir</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" value="" placeholder="masukkan tempat lahir disini...">
+										<input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" value="" placeholder="masukkan tempat lahir disini..." required>
 									</div>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="Tanggal_lahir" class="col-sm-3 col-form-label">Tanggal Lahir</label>
+								<label for="tanggal_lahir" class="col-sm-3 col-form-label">Tanggal Lahir</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" value="">
+										<input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" value="" required>
 									</div>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="Alamat_lengkap" class="col-sm-3 col-form-label">Alamat Lengkap</label>
+								<label for="alamat" class="col-sm-3 col-form-label">Alamat Lengkap</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<textarea type="text" class="form-control" id="alamat" name="alamat" value="" placeholder="masukkan alamat disini..."></textarea>
+										<textarea type="text" class="form-control" id="alamat" name="alamat" value="" placeholder="masukkan alamat disini..."
+										required></textarea>
 									</div>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="No_porsi" class="col-sm-3 col-form-label">No. Porsi</label>
+								<label for="nomor_porsi" class="col-sm-3 col-form-label">No. Porsi</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="nomor_porsi" name="nomor_porsi" value="" placeholder="masukkan no porsi disini...">
+										<input type="text" class="form-control" id="nomor_porsi" name="nomor_porsi" value="" placeholder="masukkan no porsi disini..."
+										required data-parsley-type="number">
 									</div>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="Tahun_angkatan_haji" class="col-sm-3 col-form-label">Tahun Angkatan Haji Hijriah</label>
+								<label for="tahun_hijriah" class="col-sm-3 col-form-label">Tahun Angkatan Haji Hijriah</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="tahun_hijriah" name="tahun_hijriah" value="" placeholder="masukkan tahun Hijriah disini...">
+										<input type="text" class="form-control" id="tahun_hijriah" name="tahun_hijriah" value="" placeholder="masukkan tahun Hijriah disini..."
+										required data-parsley-type="number">
 									</div>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="Tahun_angkatan_haji" class="col-sm-3 col-form-label">Tahun Angkatan Haji Masehi</label>
+								<label for="tahun_masehi" class="col-sm-3 col-form-label">Tahun Angkatan Haji Masehi</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="tahun_masehi" name="tahun_masehi" value="" placeholder="masukkan tahun Masehi disini...">
+										<input type="text" class="form-control" id="tahun_masehi" name="tahun_masehi" value="" placeholder="masukkan tahun Masehi disini..."
+										required data-parsley-type="number">
 									</div>
 								</div>
 							</div>
@@ -126,13 +132,15 @@
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
 				<ol type="1" class="ml-0 list-syarat modal-content-syarat">
-					<li>Pemohon Mengunduh Surat Permohonan ditujukan kepada Kepala Kantor Kemenag Klaten yang bisa di dowload <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp05/srt_permohonan.pdf" target="_blank">[di sini]</a></b></li>
-					<li>Pemohon Mengunduh Surat Pernyataan Pergi Haji Pertama Bermatrai Rp.10.000 yang bisa di dowload <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp05/srt_pernyataan.pdf" target="_blank">[di sini]</a></b></li>
-					<li>Pemohon Mengisi Surat Permohonan ditujukan kepada Kepala Kantor Kemenag Klaten.</li>
-					<li>Pemohon Mengisi Surat Pernyataan Pergi Haji Pertama Bermatrai Rp.10.000.</li>
-					<li>Pemohon Mengunggah Surat Permohonan dan Surat Pernyataan pada form pengajuan.</li>
-					<li>Pemohon Mengisi dan Menlengkapi form pengajuan yang telah disediakan.</li>
-					<li>Pemohon Menunggu Informasi dari Kemenag terkait proses pengajuan permohonan.</li>
+						<li>Pemohon mengunduh Surat Permohonan, <br> unduh dengan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp05/srt_permohonan.pdf" target="_blank">[klik disini]</a></b></li>
+						<li>Pemohon mengunduh Surat Pernyataan Pergi Haji Pertama, <br> unduh dengan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp05/srt_pernyataan.pdf" target="_blank">[klik disini]</a></b></li>
+						<li>Pemohon mengisi Surat Permohonan yang ditujukan kepada Kepala Kantor Kemenag Klaten.</li>
+						<li>Pemohon mengisi Surat Pernyataan Pergi Haji Pertama dengan memberikan materai Rp.10.000.</li>
+						<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+						<li>Pemohon mengunggah Surat Permohonan dan Surat Pernyataan yang telah diisi. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon mengunggah FC (Fotocopy) KTP (Kartu Tanda Penduduk). <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon mengunggah bukti pelunasan. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.</li>
 				</ol>
 				</p>
 			</div>

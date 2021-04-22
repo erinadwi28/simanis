@@ -23,6 +23,7 @@
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
 						<ol type="1" class="ml-0 list-syarat">
+						<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
 							<li>Pemohon mengunggah proposal yang memuat:<br></li>
 							<ol type="a" class="ml-0 list-syarat">
 							<li>Surat Permohonan yang ditujukan Kepala Kemenag, Cq Kasi PD Pontren, diketahui oleh Kepala Desa setempat, dan Kepala KUA</li>
@@ -40,8 +41,9 @@
 							<li>Membuat Surat Pernyataan Setia pada NKRI Bermaterai</li>
 							<li>Mencantumkan nomor yang dapat dihubungi untuk keperluan survey lapangan</li>
 							</ol>
-							<li>Pemohon Mengisi dan Melengkapi form pengajuan yang telah disediakan.</li>
-							<li>Pemohon Menunggu Informasi dari Kemenag terkait proses pengajuan permohonan.</li>
+							(Format: PDF, Ukuran: Max 10 MB)
+							<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
+							</li>
 						</ol>
 					</p>
 				</div>

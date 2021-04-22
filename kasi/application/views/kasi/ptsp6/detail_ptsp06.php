@@ -124,7 +124,7 @@
 									<td><?= $detail->tanggal_lahir ?></td>
 								</tr>
 								<tr>
-									<td><b>No. Handphone</b></td>
+									<td><b>No. HandPhone</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
@@ -225,7 +225,7 @@
 						<center>
 							<?php if ($detail->srt_permohonan != null) { ?>
 								<p><?= $detail->srt_permohonan; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
@@ -253,7 +253,7 @@
 						<center>
 							<?php if ($detail->sk_ijin_oprasional != null) { ?>
 								<p><?= $detail->sk_ijin_oprasional; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/sk_ijin_oprasional/<?= $detail->sk_ijin_oprasional ?>" target="_blank">
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/sk_ijin_oprasional/<?= $detail->sk_ijin_oprasional ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
@@ -282,7 +282,7 @@
 						<center>
 							<?php if ($detail->ktp != null) { ?>
 								<p><?= $detail->ktp; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/ktp/<?= $detail->ktp ?>" target="_blank">
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/ktp/<?= $detail->ktp ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
@@ -311,7 +311,7 @@
 						<center>
 							<?php if ($detail->kk != null) { ?>
 								<p><?= $detail->kk; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/kk/<?= $detail->kk ?>" target="_blank">
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/kk/<?= $detail->kk ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
@@ -328,25 +328,20 @@
 				</div>
 			</div>
 		</div>
-		<!-- Button Setujui -->
-		<div class="row">
-			<div class="col-md-6"></div>
-			<div class="col-md-5">
-				<?php if ($detail->status == 'Proses Kasi') { ?>
-					<form class="form-horizontal mt-2" id="form4" enctype="multipart/form-data" action="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>/<?= $detail->id_layanan ?>" method="POST">
 
-						<div class="input-group mb-3">
-							<input type="text" class="form-control" id="no_surat" name="no_surat" value=".../Kk.11.10/05/Hj.09/<?= date("m/Y") ?>">
-							<button class="btn btn-sm btn-success" type="submit" id="button-addon2"><i class="fas fa-check-circle">
-								</i> Terima</button>
-						</div>
-					</form>
-			</div>
-			<div class="col-md-1"></div>
-		</div>
+	<!-- Button Setujui -->
+	<div class="row clearfix float-right px-2">
+		<?php if ($detail->status == 'Proses Kasi') { ?>
+		<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+			<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
+				<i class="fas fa-check-circle">
+				</i> Terima
+			</button>
+		</a>
+		<?php } ?>
+	</div>
 
 	<?php } ?>
-<?php } ?>
 <!--End Content Profile-->
 </div>
 <!-- /.container-fluid -->

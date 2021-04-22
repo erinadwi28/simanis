@@ -26,23 +26,26 @@
 					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i
 							class="fas fa-info-circle"></i></button>
 					<br>
-					<form class="form-horizontal mt-4" id="form5" enctype="multipart/form-data"
+					<form class="form-horizontal mt-4" id="form_ptsp18" enctype="multipart/form-data"
 						action="<?= base_url('dashboard/aksi_pengajuan_ptsp18') ?>" method="POST">
 						<div class="form-group row">
+<<<<<<< HEAD
 							<label for="no_surat_takmir" class="col-sm-3 col-form-label">No. Surat Takmir Masjid</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="no_surat" name="no_surat"
-										value="" placeholder="masukkan no surat takmir disini...">
+									value="" placeholder="masukkan no surat takmir disini...">
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
+=======
+>>>>>>> 7b2436dc30e21e27a7bd3403ac2220b60795a61c
 							<label for="nama_masjid" class="col-sm-3 col-form-label">Nama Masjid</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="nama_masjid" name="nama_masjid"
-										value="" placeholder="masukkan nama masjid disini...">
+										value="" placeholder="masukkan nama masjid disini..." required>
 								</div>
 							</div>
 						</div>
@@ -50,7 +53,12 @@
 							<label for="tgl_surat_permohonan" class="col-sm-3 col-form-label">Tgl. Surat Permohonan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="date" class="form-control" id="tgl_surat_permohonan" name="tgl_surat_permohonan" value="">
+<<<<<<< HEAD
+									<input type="date" class="form-control" id="tgl_surat_permohonan" name="tgl_surat_permohonan" 
+									value="" >
+=======
+									<input type="date" class="form-control" id="tgl_surat_permohonan" name="tgl_surat_permohonan" value="" required>
+>>>>>>> 7b2436dc30e21e27a7bd3403ac2220b60795a61c
 								</div>
 							</div>
 						</div>
@@ -59,7 +67,7 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="nama_ketua_takmir" name="nama_ketua_takmir"
-										value="" placeholder="masukkan tempat lahir disini...">
+										value="" placeholder="masukkan tempat lahir disini..." required>
 								</div>
 							</div>
 						</div>
@@ -67,8 +75,13 @@
 							<label for="alamat_masjid" class="col-sm-3 col-form-label">Alamat Masjid</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
+<<<<<<< HEAD
+									<textarea type="text" class="form-control" id="alamat_masjid" name="alamat_masjid"
+									value="" placeholder="masukkan alamat masjid disini..."></textarea>
+=======
 									<textarea type="text" class="form-control" id="alamat_masjid" name="alamat_masjid" value=""
-										placeholder="masukkan alamat masjid disini..."></textarea>
+										placeholder="masukkan alamat masjid disini..." required></textarea>
+>>>>>>> 7b2436dc30e21e27a7bd3403ac2220b60795a61c
 								</div>
 							</div>
 						</div>
@@ -76,8 +89,13 @@
 							<label for="no_id_masjid" class="col-sm-3 col-form-label">No. ID Masjid</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
+<<<<<<< HEAD
+									<input type="text" class="form-control" id="no_id_masjid" name="no_id_masjid"
+									value=""  placeholder="masukkan no ID masjid disini...">
+=======
 									<input type="text" class="form-control" id="no_id_masjid" name="no_id_masjid" value=""
-										placeholder="masukkan no ID masjid disini...">
+										placeholder="masukkan no ID masjid disini..." required>
+>>>>>>> 7b2436dc30e21e27a7bd3403ac2220b60795a61c
 								</div>
 							</div>
 						</div>
@@ -85,7 +103,13 @@
 							<label for="No_hp" class="col-sm-3 col-form-label">No. Handphone</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="no_hp" name="no_hp" value="" placeholder="masukkan no handpone disini...">
+<<<<<<< HEAD
+									<input type="text" class="form-control" id="no_hp" name="no_hp" 
+									value="" placeholder="masukkan no handpone disini...">
+=======
+									<input type="text" class="form-control" id="no_hp" name="no_hp" value="" placeholder="masukkan no handpone disini..." required data-parsley-type="number"
+										minlength="11">
+>>>>>>> 7b2436dc30e21e27a7bd3403ac2220b60795a61c
 								</div>
 							</div>
 						</div>	

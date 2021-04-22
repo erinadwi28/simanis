@@ -198,17 +198,32 @@ a {
 	}
 }
 
+.btn-tolak {
+	background-color: #e74a3b !important;
+	border: 0;
+	color: #fff;
+	&:hover {
+		background-color: #f06255 !important;
+		border: 0;
+		color: #fff;
+
+	}
+}
+
 .btn-primary {
 	background-color: #007530 !important;
 	border: 0;
+	color: #fff;
 	&:hover {
 		background-color: #1A9D4F !important;
 		border: 0;
+	color: #fff;
 	}
 }
 
 .persyaratan {
 	text-align: justify;
+	color: #000000;
 
 	.list-syarat {
 		text-align: justify;

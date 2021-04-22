@@ -1,0 +1,45 @@
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+	color: #007530;
+	/* background-color: #DFF0D8; */
+	border: 1.3px solid #007530;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+	color: #e74a3b;
+	/* background-color: #F2DEDE; */
+	border: 1.3px solid #e74a3b;
+}
+
+.parsley-errors-list {
+	margin: 2px 0 3px;
+	padding: 0;
+	list-style-type: none;
+	font-size: 0.9em;
+	line-height: 0.9em;
+	opacity: 0;
+	color: #e74a3b;
+
+	transition: all .3s ease-in;
+	-o-transition: all .3s ease-in;
+	-moz-transition: all .3s ease-in;
+	-webkit-transition: all .3s ease-in;
+}
+
+input.parsley-error:focus, select.parsley-error:focus, textarea.parsley-error:focus {
+	border: 1.9px solid #e74a3b;
+    box-shadow: none;
+}
+
+input.parsley-success:focus, select.parsley-success:focus, textarea.parsley-success:focus {
+	border: 1.3px solid #007530;
+    box-shadow: none;
+}
+
+.parsley-errors-list.filled {
+	opacity: 1;
+    margin-top: 7px;
+}

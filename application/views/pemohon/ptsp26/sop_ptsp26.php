@@ -23,7 +23,9 @@
 					<p class="persyaratan mb-0">
 						<ol type="1" class="ml-0 list-syarat">
 						
-						<li>Pemohon mengisi dan melengkapi form pengajuan yang di sediakan</li>
+						<li>Pemohon membuat surat permohonan ditujukan kepada Kepala Kantor Kementerian Agama Kab. Klaten</li>
+						<li>Pemohon mengunggah surat permohonan yang telah dibuat. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.</li>
 						</ol>
 					</p>
 				</div>

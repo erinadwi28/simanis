@@ -37,19 +37,13 @@
 							<?php } ?>
 						</center>
 					</div>
-					<div class="card-footer">
-
-					</div>
 				</div>
 		</div>
 		<div class="col-md-8 mb-2">
-			<div class="card shadow">
+			<div class="card shadow mb-4">
 				<div class="card-header py-3">
 					<h6 class="m-0 font-weight-bold text-center">Permohonan Ijop Madin</h6>
 				</div>
-				<b>
-					<p>//note. Nomor Statistik</p>
-				</b>
 				<div class="card-body">
 					<table class="table-hover table-responsive">
 						<tbody>
@@ -184,25 +178,48 @@
 					</table>
 				</div>
 			</div>
+
+			<!-- Button Tolak & Setujui Awal Surat Masuk -->
+			<div class="row clearfix float-right px-2">
+				<?php if ($detail->status == 'Validasi Kemenag') { ?>
+				<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>"
+					class="mr-2">
+					<button id=" btn_tolak" class="btn btn-sm btn-tolak" type="submit">
+						<i class="fas fa-times-circle">
+						</i> Tolak
+					</button>
+				</a>
+				<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+					<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
+						<i class="fas fa-check-circle">
+						</i> Terima
+					</button>
+				</a>
+				<?php } ?>
+			</div>
+
+			<!-- Button Setujui Final & No Surat -->
+			<div class="row clearfix">
+				<div class="col-md-12">
+					<form class="form-horizontal" id="no_surat_ptsp15" enctype="multipart/form-data"
+						action="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>/<?= $detail->id_layanan ?>"
+						method="POST">
+						<div class="row clearfix">
+							<div class="col-md-1"></div>
+							<div class="input-group col-md-3 px-2 mb-2">
+							</div>
+							<div class="input-group col-md-6 px-2 mb-2">
+								<input type="text" class="form-control " id="no_surat" name="no_surat"
+									value=".../Kk.11.10/3/PP.00.1/bln/tahun" required>
+							</div>
+							<button class="btn btn-sm btn-primary mb-2 float-right px-2" type="submit"
+								id="button-addon2"><i class="fas fa-check-circle">
+								</i> Terima</button>
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
-		<div class="col-xs-12 col-sm-2"></div>
-	</div>
-	<!-- Button Tolak & Setujui -->
-	<div class="row clearfix float-right px-2">
-		<?php if ($detail->status == 'Validasi Kemenag') { ?>
-			<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>" class="mr-2">
-				<button id=" btn_tolak" class="btn btn-sm btn-danger" type="submit">
-					<i class="fas fa-times-circle">
-					</i> Tolak
-				</button>
-			</a>
-			<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
-				<button id="btn_termia" class="btn btn-sm btn-success" type="submit">
-					<i class="fas fa-check-circle">
-					</i> Terima
-				</button>
-			</a>
-		<?php } ?>
 	</div>
 <?php } ?>
 <!--End Content Profile-->

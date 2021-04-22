@@ -22,14 +22,15 @@
 					<h6 class="m-0 font-weight-bold text-center">Permohonan Data Lembaga Agama dan Keagamaan, Rumah Ibadah, Peristiwa Nikah, Jumlah Guru , Haji</h6>
 				</div>
 				<div class="card-body">
-					<form class="form-horizontal" id="form5" enctype="multipart/form-data"
+					<form class="form-horizontal" id="form_ptsp26" enctype="multipart/form-data"
 						action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp26/<?= $detail->id_permohonan_ptsp ?>"
 						method="POST">
 						<div class="form-group row">
 							<label for="Nama" class="col-sm-3 col-form-label">Nama</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama" name="nama" value="<?= $detail->nama; ?>">
+									<input type="text" class="form-control" id="nama" name="nama" 
+									value="<?= $detail->nama; ?>" required>
 									
 								</div>
 							</div>
@@ -38,7 +39,8 @@
 							<label for="Alamat_lengkap" class="col-sm-3 col-form-label">Alamat Lengkap</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<textarea type="text" class="form-control" id="alamat" name="alamat" value="" placeholder="masukkan alamat disini..."><?= $detail->alamat ?></textarea>
+									<textarea type="text" class="form-control" id="alamat" name="alamat" 
+									value="" required placeholder="masukkan alamat disini..."><?= $detail->alamat ?></textarea>
 								</div>
 							</div>
 						</div>
@@ -46,7 +48,8 @@
 							<label for="Pekerjaan" class="col-sm-3 col-form-label">Pekerjaan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" value="<?= $detail->pekerjaan ?>" placeholder="masukkan Pekerjaan disini...">
+									<input type="text" class="form-control" id="pekerjaan" name="pekerjaan"
+									 value="<?= $detail->pekerjaan ?>" required placeholder="masukkan Pekerjaan disini...">
 								</div>
 							</div>
 						</div>
@@ -54,7 +57,8 @@
 							<label for="no_hp_aktif" class="col-sm-3 col-form-label">No. Handphone</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-										<input type="text" class="form-control" id="no_hp" name="no_hp" value="<?= $detail->no_hp ?>">
+										<input type="text" class="form-control" id="no_hp" name="no_hp"
+										required data-parsley-type="number" minlength="11" value="<?= $detail->no_hp ?>">
 								</div>
 							</div>
 						</div>
@@ -62,7 +66,9 @@
 							<label for="Tujuan_permohonan" class="col-sm-3 col-form-label">Tujuan permohonan data</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="tujuan_permohonan_data" name="tujuan_permohonan_data" value="<?= $detail->tujuan_permohonan_data ?>" placeholder="masukkan Permohonan data disini...">
+									<input type="text" class="form-control" id="tujuan_permohonan_data" name="tujuan_permohonan_data"
+									 value="<?= $detail->tujuan_permohonan_data ?>" required
+									 placeholder="masukkan Permohonan data disini...">
 								</div>
 							</div>
 						</div>

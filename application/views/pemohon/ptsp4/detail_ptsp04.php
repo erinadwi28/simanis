@@ -34,11 +34,11 @@
 						</center>
 					</div>
 
-					<div class="card-body" style="padding: 15px;">
+					<div class="card-body">
 						<center>
 							<?php if ($detail->dokumen != null) { ?>
 								<p><?= $detail->dokumen; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-success" href="<?= base_url() ?>assets/dashboard/pemohon/ptsp/ptsp04/<?= $detail->dokumen ?>" target="_blank">
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>assets/dashboard/pemohon/ptsp/ptsp04/<?= $detail->dokumen ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
@@ -50,16 +50,14 @@
 
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer py-3">
-							<form action="<?= base_url('dashboard/update_dokumen_ptsp04/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_ijazah">
+							<form action="<?= base_url('dashboard/update_dokumen_ptsp04/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp04_1">
 								<div class="form-group ml-2 mr-2">
 									<div class="input-group">
 										<div class="form-group-upload">
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload">pilih file dokumen...</label>
-												<input type="file" class="custom-file-input" id="file-upload" name="berkas" value="<?= $detail->dokumen ?>">
+												<input type="file" class="custom-file-input" id="file-upload" name="berkas" required value="<?= $detail->dokumen ?>" >
 												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="id_permohonan_ptsp" value="<?= $detail->id_permohonan_ptsp ?>">
-												<!-- <i class=" fas fa-exclamation-circle"></i>
-										<h6>Error massage</h6> -->
 											</div>
 										</div>
 									</div>
@@ -99,6 +97,14 @@
 									<td>:</td>
 									<td> </td>
 									<td><?= $detail->no_hp; ?></td>
+								</tr>
+								<tr>
+									<td><b>Keperluan Untuk</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td> </td>
+									<td><?= $detail->keperluan_legalisir_dokumen; ?></td>
 								</tr>
 								<tr>
 									<td><b>Tanggal Permohonan</b></td>

@@ -22,13 +22,15 @@
 					<h6 class="m-0 font-weight-bold text-center">Permohonan Ijin Operasional Majelis Taklim</h6>
 				</div>
 				<div class="card-body">
-					<form class="form-horizontal" id="form15" enctype="multipart/form-data"
+					<form class="form-horizontal" id="form_ptsp20" enctype="multipart/form-data"
 						action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp20/<?= $detail->id_permohonan_ptsp ?>" method="POST">
 						<div class="form-group row">
-							<label for="Nama_majlis_taklim" class="col-sm-3 col-form-label">Nama Majlis Taklim</label>
+							<label for="nama_majelis_taklim" class="col-sm-3 col-form-label">Nama Majlis Taklim</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama_majlis_taklim" name="nama_majlis_taklim" value="<?= $detail->nama_majlis_taklim ?>" placeholder="masukkan nama majelis taklim disini...">
+									<input type="text" class="form-control" id="nama_majelis_taklim" name="nama_majelis_taklim"
+									 value="<?= $detail->nama_majelis_taklim ?>" required
+									 placeholder="masukkan nama majelis taklim disini...">
 								</div>
 							</div>
 						</div>
@@ -36,7 +38,9 @@
 							<label for="Alamat" class="col-sm-3 col-form-label">Alamat</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="alamat" name="alamat" value="<?= $detail->alamat ?>" placeholder="masukkan alamat disini...">
+									<input type="text" class="form-control" id="alamat" name="alamat"
+									value="<?= $detail->alamat ?>" required 
+									placeholder="masukkan alamat disini...">
 								</div>
 							</div>
 						</div>
@@ -44,7 +48,9 @@
 							<label for="desa" class="col-sm-3 col-form-label">Desa</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="desa" name="desa" value="<?= $detail->desa ?>" placeholder="masukkan desa disini...">
+									<input type="text" class="form-control" id="desa" name="desa" 
+									value="<?= $detail->desa ?>" required
+									placeholder="masukkan desa disini...">
 								</div>
 							</div>
 						</div>
@@ -52,7 +58,9 @@
 							<label for="kecamatan" class="col-sm-3 col-form-label">Kecamatan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="kecamatan" name="kecamatan" value="<?= $detail->kecamatan ?>" placeholder="masukkan kecamatan disini...">
+									<input type="text" class="form-control" id="kecamatan" name="kecamatan" 
+									value="<?= $detail->kecamatan ?>" required
+									placeholder="masukkan kecamatan disini...">
 								</div>
 							</div>
 						</div>
@@ -60,7 +68,9 @@
 							<label for="kabupaten" class="col-sm-3 col-form-label">Kabupaten</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="kabupaten" name="kabupaten" value="<?= $detail->kabupaten ?>" placeholder="masukkan kabupaten disini...">
+									<input type="text" class="form-control" id="kabupaten" name="kabupaten"
+									value="<?= $detail->kabupaten ?>" required
+									placeholder="masukkan kabupaten disini...">
 								</div>
 							</div>
 						</div>
@@ -68,7 +78,9 @@
 							<label for="provinsi" class="col-sm-3 col-form-label">Provinsi</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="provinsi" name="provinsi" value="<?= $detail->provinsi ?>" placeholder="masukkan provinsi disini...">
+									<input type="text" class="form-control" id="provinsi" name="provinsi"
+									value="<?= $detail->provinsi ?>" required 
+									placeholder="masukkan provinsi disini...">
 								</div>
 							</div>
 						</div>
@@ -76,7 +88,9 @@
 							<label for="Tahun_berdiri" class="col-sm-3 col-form-label">Tahun Berdiri</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="tahun_berdiri" name="tahun_berdiri" value="<?= $detail->tahun_berdiri ?>" placeholder="masukkan tahun SK PPIU/PIHK disini...">
+									<input type="text" class="form-control" id="tahun_berdiri" name="tahun_berdiri" 
+									required data-parsley-type="number" value="<?= $detail->tahun_berdiri ?>"
+									placeholder="masukkan tahun SK PPIU/PIHK disini...">
 								</div>
 							</div>
 						</div>
@@ -84,7 +98,9 @@
 							<label for="No_hp" class="col-sm-3 col-form-label">No. Handphone</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="no_hp" name="no_hp" value="<?= $detail->no_hp ?>" placeholder="masukkan no handpone disini...">
+									<input type="text" class="form-control" id="no_hp" name="no_hp"
+									required data-parsley-type="number" minlength="11" value="<?= $detail->no_hp ?>"
+									placeholder="masukkan no handpone disini...">
 								</div>
 							</div>
 						</div>	
