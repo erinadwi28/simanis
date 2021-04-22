@@ -217,7 +217,7 @@
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp06/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_srt_permohonan">
+							<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp06/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp06_1">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">
@@ -264,7 +264,7 @@
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_sk_ijin_oprasional_ptsp06/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_sk_ijin_oprasional">
+							<form action="<?= base_url('dashboard/update_sk_ijin_oprasional_ptsp06/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp06_2">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">
@@ -311,7 +311,7 @@
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_ktp_ptsp06/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_fc_ktp">
+							<form action="<?= base_url('dashboard/update_ktp_ptsp06/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp06_3">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">
@@ -358,7 +358,7 @@
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_kk_ptsp06/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_fc_kk">
+							<form action="<?= base_url('dashboard/update_kk_ptsp06/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp06_4">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">

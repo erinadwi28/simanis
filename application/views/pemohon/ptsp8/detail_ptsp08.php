@@ -202,7 +202,7 @@
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp05_1">
+							<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_1">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">
@@ -249,7 +249,7 @@
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_srt_pernyataan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp05_2">
+							<form action="<?= base_url('dashboard/update_srt_pernyataan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_2">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">
@@ -298,7 +298,7 @@
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_fc_ktp_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp05_3">
+							<form action="<?= base_url('dashboard/update_fc_ktp_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_3">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">
@@ -346,7 +346,7 @@
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_bukti_pelunasan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp05_4">
+							<form action="<?= base_url('dashboard/update_bukti_pelunasan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_4">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">
@@ -398,7 +398,7 @@
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp05_1">
+							<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_5">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">
@@ -445,7 +445,7 @@
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_srt_pernyataan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp05_2">
+							<form action="<?= base_url('dashboard/update_srt_pernyataan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_6">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">
@@ -493,7 +493,7 @@
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_srt_pernyataan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp05_2">
+							<form action="<?= base_url('dashboard/update_srt_pernyataan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_7">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">
@@ -541,7 +541,7 @@
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_srt_pernyataan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp05_2">
+							<form action="<?= base_url('dashboard/update_srt_pernyataan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_8">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">
@@ -592,7 +592,7 @@
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp05_1">
+							<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_9">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">
@@ -639,7 +639,7 @@
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_srt_pernyataan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp05_2">
+							<form action="<?= base_url('dashboard/update_srt_pernyataan_ptsp05/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_10">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">

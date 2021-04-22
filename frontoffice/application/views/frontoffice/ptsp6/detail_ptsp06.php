@@ -276,7 +276,7 @@
 	<!-- Button Setujui Final & No Surat -->
 	<div class="row clearfix">
 		<div class="col-md-12">
-			<form class="form-horizontal" id="no_surat_ptsp05" enctype="multipart/form-data"
+			<form class="form-horizontal" id="no_surat_ptsp06" enctype="multipart/form-data"
 				action="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>/<?= $detail->id_layanan ?>"
 				method="POST">
 				<div class="input-group mb-3 col-md-4 float-right p-0">

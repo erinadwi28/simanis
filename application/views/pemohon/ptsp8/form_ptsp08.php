@@ -25,7 +25,7 @@
 					<div class="card-body">
 						<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
 						<br>
-						<form class="form-horizontal mt-4" id="form_ptsp07" enctype="multipart/form-data" action="<?= base_url('dashboard/aksi_pengajuan_ptsp05') ?>" method="POST">
+						<form class="form-horizontal mt-4" id="form_ptsp08" enctype="multipart/form-data" action="<?= base_url('dashboard/aksi_pengajuan_ptsp05') ?>" method="POST">
 							<div class="form-group row">
 								<label for="nama_pemohon" class="col-sm-3 col-form-label">Nama Lengkap</label>
 								<div class="col-sm-9">

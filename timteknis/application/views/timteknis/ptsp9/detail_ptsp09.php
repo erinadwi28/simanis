@@ -468,7 +468,7 @@
 
 				<div class="card-footer">
 					<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp05/' . $detail->id_ptsp) ?>"
-						enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp07_1">
+						enctype="multipart/form-data" method="post" accept-charset="utf-8" id="ba_ptsp09">
 						<div class="input-group px-4">
 							<div class="custom-file">
 								<label class="custom-file-label" for="file-upload">pilih
