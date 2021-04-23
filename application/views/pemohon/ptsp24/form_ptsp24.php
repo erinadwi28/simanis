@@ -29,6 +29,16 @@
 					<form class="form-horizontal mt-4" id="form_ptsp24" enctype="multipart/form-data"
 						action="<?= base_url('dashboard/aksi_pengajuan_ptsp24') ?>" method="POST">
 						<div class="form-group row">
+							<label for="pemilik_kendaraan" class="col-sm-3 col-form-label">Pemilik Kendaraan</label>
+							<div class="col-sm-9">
+								<div class="form-line focused">
+									<input type="text" class="form-control" id="pemilik_kendaraan" name="pemilik_kendaraan"
+									 placeholder="masukkan nama disini..."
+									 value="<?= $detail->nama; ?>" required>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
 							<label for="jml_roda_kendaraan" class="col-sm-3 col-form-label">Jumlah Roda Kendaraan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
@@ -54,16 +64,6 @@
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="no_polisi" name="no_polisi" value=""
 									placeholder="masukkan no polisi disini..." required >
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="pemilik_kendaraan" class="col-sm-3 col-form-label">Pemilik Kendaraan</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="pemilik_kendaraan" name="pemilik_kendaraan"
-									 placeholder="masukkan pemilik kendaraan disini..."
-									 value="" required>
 								</div>
 							</div>
 						</div>

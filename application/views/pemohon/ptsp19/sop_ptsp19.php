@@ -20,7 +20,6 @@
 				</div>
 				<div class="card-body ">
 					<h6><b>Persyaratan :</b></h6>
-					
 					<ol type="1" class="ml-0 list-syarat">
 					<li>Pemohon membuat surat permohonan ditujukan kepada Kepala Kantor Kementerian Agama Kab. Klaten</li>
 					<li>Pemohon mengisi Jadwal dan ketentuan Siaran.</li>

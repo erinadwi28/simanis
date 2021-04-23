@@ -19,18 +19,18 @@
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Data Lembaga Agama dan Keagamaan, Rumah Ibadah, Peristiwa Nikah, Jumlah Guru , Haji</h6>
+					<h6 class="m-0 font-weight-bold text-center">Data Lembaga Agama & Keagamaan</h6>
 				</div>
 				<div class="card-body">
 					<form class="form-horizontal" id="form_ptsp26" enctype="multipart/form-data"
 						action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp26/<?= $detail->id_permohonan_ptsp ?>"
 						method="POST">
 						<div class="form-group row">
-							<label for="Nama" class="col-sm-3 col-form-label">Nama</label>
+							<label for="nama_pemohon" class="col-sm-3 col-form-label">Nama</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama" name="nama" 
-									value="<?= $detail->nama; ?>" required>
+									<input type="text" class="form-control" id="nama_pemohon" name="nama_pemohon" 
+									value="<?= $detail->nama_pemohon; ?>" required>
 									
 								</div>
 							</div>

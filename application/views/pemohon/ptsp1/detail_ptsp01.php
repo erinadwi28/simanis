@@ -30,7 +30,7 @@
 
 	<div class="row">
 		<div class="col-md-4 mb-0">
-			<!-- ijazah -->
+			<!-- Upload Surat Permohonan -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
 					<center>
@@ -38,18 +38,17 @@
 					</center>
 				</div>
 
-				<!-- DISESUAIKAN BE YA -->
 				<div class="card-body">
 					<center>
-						<?php if ($detail->ijazah != 'place_holder_ijazah.png') { ?>
-						<p><?= $detail->ijazah; ?></p>
+						<?php if ($detail->srt_permohonan != null) { ?>
+						<p><?= $detail->srt_permohonan; ?></p>
 						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>assets/dashboard/pemohon/ptsp/ptsp03/<?= $detail->ijazah ?>"
+							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp01/srt_permohonan/<?= $detail->srt_permohonan ?>"
 							target="_blank">
 							<i class="fa fa-download nav-icon">
 							</i> Klik untuk melihat
 						</a>
-						<?php } elseif ($detail->ijazah == 'place_holder_ijazah.png') { ?>
+						<?php } elseif ($detail->srt_permohonan == null) { ?>
 						<p>Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
 						<?php } ?>
 					</center>
@@ -57,17 +56,18 @@
 
 				<?php if ($detail->status == 'Pending') { ?>
 				<div class="card-footer">
-					<form action="<?= base_url('dashboard/update_ijazah_ptsp01/' . $detail->id_ptsp) ?>"
-						enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp01_1">
+					<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp01/' . $detail->id_ptsp) ?>"
+						enctype="multipart/form-data" method="post" accept-charset="utf-8"
+						id="form_upload_srt_permohonan">
 						<div class="form-group">
 							<div class="input-group">
-								<div class="form-group-upload col-md-12">
+								<div class="form-group-upload">
 									<div class="custom-file">
 										<label class="custom-file-label" for="file-upload">pilih file...</label>
-										<input type="file" class="custom-file-input" id="file-upload" name="berkas"
-											value="<?= $detail->ijazah ?>" required>
+										<input type="file" class="custom-file-input" id="file-upload"
+											name="srt_permohonan" value="<?= $detail->srt_permohonan ?>">
 										<input type="hidden" class="form-control form-user-input"
-											name="id_permohonan_ptsp" id="id_permohonan_ptsp"
+											name="id_permohonan_ptsp" id="file-upload"
 											value="<?= $detail->id_permohonan_ptsp ?>">
 									</div>
 								</div>
@@ -75,7 +75,8 @@
 						</div>
 						<center>
 							<button class="btn btn-sm btn-primary" type="submit">
-								<i class="fa fa-upload"></i>
+								<i class="fa fa-upload">
+								</i>
 							</button>
 						</center>
 					</form>
@@ -114,7 +115,7 @@
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->tgl_srt_permohonan; ?></td>
+								<td><?= format_indo(date($detail->tgl_srt_permohonan)); ?></td>
 							</tr>
 							<tr>
 								<td><b>No Surat Permohonan</b></td>
@@ -123,6 +124,14 @@
 								<td>:</td>
 								<td> </td>
 								<td><?= $detail->no_srt_permohonan; ?></td>
+							</tr>
+							<tr>
+								<td><b>Nama Acara</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= $detail->nama_acara; ?></td>
 							</tr>
 							<tr>
 								<td><b>Hari Acara</b></td>
@@ -138,7 +147,7 @@
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->tgl_acara; ?></td>
+								<td><?= format_indo(date($detail->tgl_acara)); ?></td>
 							</tr>
 							<tr>
 								<td><b>Waktu Acara</b></td>
@@ -166,6 +175,7 @@
 							</tr>
 
 							<!-- DINAMIS MENYESUAIKAN JUMLAH PETUGAS DOA -->
+							<!-- <?php if ($detail->nama_petugas_doa != null) { ?>
 							<tr>
 								<td><b>Nama Petugas Do'a 1</b></td>
 								<td> </td>
@@ -174,6 +184,8 @@
 								<td> </td>
 								<td><?= $detail->nama_petugas_doa; ?></td>
 							</tr>
+							<?php } ?>
+							<?php if ($detail->nip_petugas_doa != null) { ?>
 							<tr>
 								<td><b>NIP Petugas Do'a 1</b></td>
 								<td> </td>
@@ -182,6 +194,8 @@
 								<td> </td>
 								<td><?= $detail->nip_petugas_doa; ?></td>
 							</tr>
+							<?php } ?>
+							<?php if ($detail->pangkat_doa != null) { ?>
 							<tr>
 								<td><b>Pangkat Doa Petugas Do'a 1</b></td>
 								<td> </td>
@@ -190,6 +204,8 @@
 								<td> </td>
 								<td><?= $detail->pangkat_doa; ?></td>
 							</tr>
+							<?php } ?>
+							<?php if ($detail->jabatan_petugas_doa != null) { ?>
 							<tr>
 								<td><b>Jabatan Petugas Do'a 1</b></td>
 								<td> </td>
@@ -198,7 +214,8 @@
 								<td> </td>
 								<td><?= $detail->jabatan_petugas_doa; ?></td>
 							</tr>
-
+							<?php } ?> -->
+							
 							<tr>
 								<td><b>Tanggal Permohonan</b></td>
 								<td> </td>

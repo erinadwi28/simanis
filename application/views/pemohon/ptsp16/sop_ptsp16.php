@@ -25,8 +25,8 @@
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
 						<ol type="1" class="ml-0 list-syarat">
-						<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
-						<li>Pemohon mengunggah surat permohonan yang ditujukan kepada Kepala Kemenag Kab. Kalten. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+							<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+							<li>Pemohon mengunggah surat permohonan yang ditujukan kepada Kepala Kemenag Kab. Kalten. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
 							<li>Pemohon mengunggah proposal bantuan yang dilampiri:<br></li>
 							<ol type="a" class="ml-0 list-syarat">
 							<li>FC sertifikat tanah wakaf/hak milik yayasan atau lembaga</li>
@@ -35,7 +35,7 @@
 							(Format: PDF, Ukuran: Max 10 MB)
 							<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
 							</li>
-						</li>
+						</ol>
 					</p>
 				</div>
 				<div class="card-footer">

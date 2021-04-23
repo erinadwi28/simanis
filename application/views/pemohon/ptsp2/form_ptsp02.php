@@ -7,7 +7,7 @@
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/sop_ptsp01') ?>">SOP</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/sop_ptsp02') ?>">SOP</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Form Permohonan</li>
 			</ol>
 		</nav>
@@ -26,13 +26,13 @@
 					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i
 							class="fas fa-info-circle"></i></button>
 					<br>
-					<form class="form-horizontal mt-4" id="form_ptsp01" enctype="multipart/form-data"
-						action="<?= base_url('dashboard/aksi_pengajuan_ptsp01') ?>" method="POST">
+					<form class="form-horizontal mt-4" id="form_ptsp02" enctype="multipart/form-data"
+						action="<?= base_url('dashboard/aksi_pengajuan_ptsp02') ?>" method="POST">
 						<div class="form-group row">
 							<label for="pemohon" class="col-sm-3 col-form-label">Nama</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="pemohon" name="pemohon" value=""
+									<input type="text" class="form-control" id="pemohon" name="pemohon" value="<?= $detail->nama ?>"
 										placeholder="masukkan nama disini..." required>
 								</div>
 							</div>
@@ -43,7 +43,7 @@
 								<div class="form-line">
 									<input class="form-control" id="no_hp" name="no_hp" rows="1"
 										placeholder="masukkan no hp disini..." required data-parsley-type="number"
-										minlength="11" value="<?= $detail->no_hp; ?>">
+										minlength="11" value="">
 								</div>
 							</div>
 						</div>

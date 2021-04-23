@@ -51,10 +51,10 @@
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= $detail->nama ?></td>
+									<td><?= $detail->nama_pemohon ?></td>
 								</tr>
 								<tr>
-									<td><b>Nomor HP</b></td>
+									<td><b>No. Handphone</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
@@ -99,15 +99,7 @@
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= $detail->tahun_hijriah ?> H / <?= $detail->tahun_masehi ?> M</td>
-								</tr>
-								<tr>
-									<td><b>No. Handphone</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td> </td>
-									<td><?= $detail->no_hp ?></td>
+									<td><?= $detail->tahun_angkatan_haji_hijriah ?> H / <?= $detail->tahun_angkatan_haji_masehi ?> M</td>
 								</tr>
 								<tr>
 									<td><b>Tanggal Permohonan</b></td>
@@ -170,8 +162,9 @@
 								<?php } ?>
 							</tbody>
 						</table>
-						<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen
-							dibawah</em>
+						<?php if ($detail->status == 'Pending') { ?>
+							<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen dibawah</em>
+						<?php } ?>
 					</div>
 
 					<?php if ($detail->status == 'Pending') { ?>
@@ -298,13 +291,13 @@
 
 					<div class="card-body">
 						<center>
-							<?php if ($detail->ktp != null) { ?>
-								<p><?= $detail->ktp; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/fc_ktp/<?= $detail->ktp ?>" target="_blank">
+							<?php if ($detail->fc_ktp != null) { ?>
+								<p><?= $detail->fc_ktp; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/fc_ktp/<?= $detail->fc_ktp ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
-							<?php } elseif ($detail->ktp == null) { ?>
+							<?php } elseif ($detail->fc_ktp == null) { ?>
 								<p class="mb-0">Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
 							<?php } ?>
 						</center>
@@ -317,7 +310,7 @@
 										<div class="form-group-upload">
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload-3">pilih file...</label>
-												<input type="file" class="custom-file-input" id="file-upload-3" name="fc_ktp" value="<?= $detail->ktp ?>" required>
+												<input type="file" class="custom-file-input" id="file-upload-3" name="fc_ktp" value="<?= $detail->fc_ktp ?>" required>
 												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload-3" value="<?= $detail->id_permohonan_ptsp ?>">
 											</div>
 										</div>

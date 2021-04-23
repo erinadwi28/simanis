@@ -24,7 +24,7 @@
 					<p class="persyaratan mb-0">
 						<ol type="1" class="ml-0 list-syarat">
 							<li>Pemohon mengunduh Surat Permohonan, unduh dengan <b><a
-										href="<?= base_url() ?>assets/pemohon/sop/ptsp07/srt_permohonan.pdf"
+										href="<?= base_url() ?>assets/pemohon/sop/ptsp08/srt_permohonan.pdf"
 										target="_blank">[klik disini]</a></b></li>
 							<li>Pemohon mengisi Surat Permohonan yang ditujukan kepada Kepala Kantor Kemenag Klaten.
 							</li>
@@ -49,7 +49,7 @@
 					</p>
 				</div>
 				<div class="card-footer">
-					<a href="<?= base_url('dashboard/form_ptsp07') ?>">
+					<a href="<?= base_url('dashboard/form_ptsp08') ?>">
 						<button id="btn_kembali" class="btn btn-sm btn-primary float-right" type="submit">
 							<i class="far fa-edit nav-icon">
 							</i> Buat

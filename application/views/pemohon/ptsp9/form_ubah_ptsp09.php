@@ -5,7 +5,7 @@
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between mt-4 mb-4 judullist">
 		<h3>Form Ubah Permohonan</h3>
-				<a href="<?= base_url() ?>dashboard/detail_ptsp07/<?= $detail->id_permohonan_ptsp ?>">
+				<a href="<?= base_url() ?>dashboard/detail_ptsp09/<?= $detail->id_permohonan_ptsp ?>">
 		<button id="btn_kembali" class="btn btn-sm btn-warning" type="">
 			<i class="fa fa-arrow-left">
 			</i> Kembali
@@ -23,13 +23,13 @@
 					</div>
 					<div class="card-body">
 						<form class="form-horizontal" id="formubah_ptsp09" enctype="multipart/form-data" 
-						action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp05/<?= $detail->id_permohonan_ptsp ?>" method="POST">
+						action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp09/<?= $detail->id_permohonan_ptsp ?>" method="POST">
 						<div class="form-group row">
 							<label for="nama_pemohon" class="col-sm-3 col-form-label">Nama Lengkap</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="nama_pemohon" name="nama_pemohon"
-										value="<?= $detail->nama; ?>" required>
+										value="<?= $detail->nama_pemohon; ?>" required>
 								</div>
 							</div>
 						</div>
@@ -37,7 +37,7 @@
 							<label for="nama_pt" class="col-sm-3 col-form-label">Nama Perusahaan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama_pt" name="nama_pt" value=""
+									<input type="text" class="form-control" id="nama_pt" name="nama_pt" value="<?= $detail->nama_pt; ?>"
 										placeholder="masukkan nama perusahaan disini..." required>
 								</div>
 							</div>
@@ -47,7 +47,7 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="nama_kantor_cabang"
-										name="nama_kantor_cabang" value=""
+										name="nama_kantor_cabang" value="<?= $detail->nama_kantor_cabang; ?>"
 										placeholder="masukkan nama kantor cabang disini..." required>
 								</div>
 							</div>
@@ -59,7 +59,7 @@
 								<div class="form-line focused">
 									<textarea type="text" class="form-control" id="domisili_kantor_cabang"
 										name="domisili_kantor_cabang" value=""
-										placeholder="masukkan domisili kel.bimbingan disini..." required></textarea>
+										placeholder="masukkan domisili kel.bimbingan disini..." required><?= $detail->domisili_kantor_cabang; ?></textarea>
 								</div>
 							</div>
 						</div>
@@ -70,7 +70,7 @@
 								<div class="form-line focused">
 									<textarea type="text" class="form-control" id="alamat_kantor_cabang"
 										name="alamat_kantor_cabang" value=""
-										placeholder="masukkan alamat kantor disini..." required></textarea>
+										placeholder="masukkan alamat kantor disini..." required><?= $detail->alamat_kantor_cabang; ?></textarea>
 								</div>
 							</div>
 						</div>

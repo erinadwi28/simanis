@@ -28,8 +28,18 @@
 							<label for="pemohon" class="col-sm-3 col-form-label">Nama</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="pemohon" name="pemohon" value=""
+									<input type="text" class="form-control" id="pemohon" name="pemohon" value="<?= $detail->pemohon ?>"
 										placeholder="masukkan nama disini..." required>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="no_hp" class="col-sm-3 col-form-label">No. Handphone</label>
+							<div class="col-sm-9">
+								<div class="form-line focused">
+									<input type="text" class="form-control" id="no_hp" name="no_hp" value="<?= $detail->no_hp ?>"
+										placeholder="masukkan no handphone disini..." required data-parsley-type="number"
+										minlength="11">
 								</div>
 							</div>
 						</div>
@@ -39,7 +49,7 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="date" class="form-control" id="tgl_srt_permohonan"
-										name="tgl_srt_permohonan" value=""
+										name="tgl_srt_permohonan" value="<?= $detail->tgl_srt_permohonan ?>"
 										placeholder="masukkan tgl surat permohonan disini..." required>
 								</div>
 							</div>
@@ -49,8 +59,18 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="no_srt_permohonan"
-										name="no_srt_permohonan" value=""
+										name="no_srt_permohonan" value="<?= $detail->no_srt_permohonan ?>"
 										placeholder="masukkan nomor surat permohonan disini..." required>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="nama_acara" class="col-sm-3 col-form-label">Nama Acara</label>
+							<div class="col-sm-9">
+								<div class="form-line focused">
+									<input type="text" class="form-control" id="nama_acara"
+										name="nama_acara" value="<?= $detail->nama_acara ?>"
+										placeholder="masukkan nama acara disini..." required>
 								</div>
 							</div>
 						</div>
@@ -59,7 +79,7 @@
 							<div class="col-sm-9">
 								<div class="form-line">
 									<select class="form-control" id="hari_acara" name="hari_acara" required>
-										<option selected value="" class="form-user-input">pilih hari...</option>
+										<option selected value="<?= $detail->hari_acara ?>" class="form-user-input">pilih hari...</option>
 										<option value="Senin" class="form-user-input">Senin</option>
 										<option value="Selasa" class="form-user-input">Selasa</option>
 										<option value="Rabu" class="form-user-input">Rabu</option>
@@ -75,7 +95,7 @@
 							<label for="tgl_acara" class="col-sm-3 col-form-label">Tanggal Acara</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="date" class="form-control" id="tgl_acara" name="tgl_acara" value=""
+									<input type="date" class="form-control" id="tgl_acara" name="tgl_acara" value="<?= $detail->tgl_acara ?>"
 										placeholder="masukkan tgl acara disini..." required>
 								</div>
 							</div>
@@ -84,7 +104,7 @@
 							<label for="waktu_acara" class="col-sm-3 col-form-label">Waktu Acara</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="waktu_acara" name="waktu_acara" value=""
+									<input type="text" class="form-control" id="waktu_acara" name="waktu_acara" value="<?= $detail->waktu_acara ?>"
 										placeholder="contoh: 12.00" required>
 								</div>
 							</div>
@@ -94,17 +114,18 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="tempat_acara" name="tempat_acara"
-										value="" placeholder="masukkan tempat acara disini..." required>
+										value="<?= $detail->tempat_acara ?>" placeholder="masukkan tempat acara disini..." required>
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="jml_petugas_doa" class="col-sm-3 col-form-label">Jumlah Petugas Do'a</label>
+							<label for="Jml_petugas_doa" class="col-sm-3 col-form-label">Jumlah Petugas Do'a</label>
 							<div class="col-sm-9">
 								<div class="form-line">
-									<input type="number" min="1" max="5" class="form-control" id="jml_petugas_doa"
-										name="jml_petugas_doa" rows="1" placeholder="masukkan jumlah petugas disini..."
-										required data-parsley-type="number" value="">
+									<input type="text" min="1" max="5" class="form-control" id="Jml_petugas_doa"
+										name="Jml_petugas_doa" rows="1" value="<?= $detail->jml_petugas_doa ?>"
+										placeholder="masukkan jumlah petugas disini..." required data-parsley-type="number">
+
 								</div>
 							</div>
 						</div>

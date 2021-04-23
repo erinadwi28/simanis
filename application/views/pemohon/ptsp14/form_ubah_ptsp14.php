@@ -74,18 +74,18 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="yayasan" class="col-sm-3 col-form-label">Yayasan</label>
+							<label for="nama_yayasan" class="col-sm-3 col-form-label">Nama Yayasan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="yayasan" name="yayasan" value="<?= $detail->yayasan ?>" placeholder="masukkan yayayan disini..." required>
+									<input type="text" class="form-control" id="nama_yayasan" name="nama_yayasan" value="<?= $detail->nama_yayasan ?>" placeholder="masukkan yayayan disini..." required>
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="sk_menkumham" class="col-sm-3 col-form-label">SK Menkumham RI</label>
+							<label for="no_sk_menkumham_ri" class="col-sm-3 col-form-label">SK Menkumham RI</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="sk_menkumham" name="sk_menkumham" value="<?= $detail->sk_menkumham ?>" placeholder="masukkan no SK PPIU/PIHK disini..." required>
+									<input type="text" class="form-control" id="no_sk_menkumham_ri" name="no_sk_menkumham_ri" value="<?= $detail->no_sk_menkumham_ri ?>" placeholder="masukkan no SK PPIU/PIHK disini..." required>
 								</div>
 							</div>
 						</div>

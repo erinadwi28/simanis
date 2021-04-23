@@ -68,9 +68,8 @@
 							<label for="tgl_srt_persetujuan_pengawas_pai" class="col-sm-3 col-form-label">Tgl. srt Persetujuan Pengawas PAI</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="tgl_srt_persetujuan_pengawas_pai" name="tgl_srt_persetujuan_pengawas_pai" 
-										value="<?= $detail->tgl_srt_persetujuan_pengawas_pai ?>" required
-										placeholder="masukkan tgl persetujuan disini...">
+									<input type="date" class="form-control" id="tgl_srt_persetujuan_pengawas_pai" name="tgl_srt_persetujuan_pengawas_pai" 
+									value="<?= $detail->tgl_srt_persetujuan_pengawas_pai ?>" required >
 								</div>
 							</div>
 						</div>

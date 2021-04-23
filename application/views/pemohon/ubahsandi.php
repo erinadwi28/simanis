@@ -3,7 +3,7 @@
   <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4 judullist">
     <h3>Form Ubah Kata Sandi Saya</h3>
-    <a href="">
+    <a href="<?= base_url('dashboard') ?>">
       <button id="btn_kembali" class="btn btn-sm btn-warning" type="submit">
         <i class="fa fa-arrow-left">
         </i> Kembali

@@ -30,11 +30,12 @@
 					<form class="form-horizontal mt-4" id="form_ptsp25" enctype="multipart/form-data"
 						action="<?= base_url('dashboard/aksi_pengajuan_ptsp25') ?>" method="POST">
 						<div class="form-group row">
-							<label for="Nama" class="col-sm-3 col-form-label">Nama</label>
+							<label for="nama_pemohon" class="col-sm-3 col-form-label">Nama</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama" name="nama"
-										value="<?= $detail->nama; ?>" required>
+									<input type="text" class="form-control" id="nama_pemohon" name="nama_pemohon"
+										value="<?= $detail->nama; ?>" 
+										placeholder="masukkan nama disini..." required>
 
 								</div>
 							</div>
@@ -63,7 +64,7 @@
 								<label for="no_hp" class="col-sm-3 col-form-label">No. HandPhone</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="no_hp" name="no_hp" value="<?= $detail->no_hp; ?>"
+										<input type="text" class="form-control" id="no_hp" name="no_hp" value=""
 										placeholder="masukkan no hp disini..." 
 										required data-parsley-type="number" minlength="11">
 									</div>

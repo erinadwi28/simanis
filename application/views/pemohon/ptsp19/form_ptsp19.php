@@ -127,17 +127,15 @@
 			</div>
 			<div class="modal-body">
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
-				
-
-					<ol type="1" class="ml-0 list-syarat">
-
+				<p class="modal-content-syarat mb-0">
+				<ol type="1" class="ml-0 list-syarat modal-content-syarat">
 					<li>Pemohon membuat surat permohonan ditujukan kepada Kepala Kantor Kementerian Agama Kab. Klaten</li>
 					<li>Pemohon mengisi Jadwal dan ketentuan Siaran.</li>
 					<li>Pemohon mengunggah surat permohonan yang telah dibuat. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
 					<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.</li>
-									
 					</ol>
-				
+				</ol>
+				</p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Tutup</button>

@@ -68,12 +68,11 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="tgl_srt_persetujuan_pengawas_pai" class="col-sm-3 col-form-label"> Tgl srt Persetujuan Pengawas PAI</label>
+							<label for="tgl_srt_persetujuan_pengawas_pai" class="col-sm-3 col-form-label">Tgl. srt Persetujuan Pengawas PAI</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="tgl_srt_persetujuan_pengawas_pai" name="tgl_srt_persetujuan_pengawas_pai" 
-										value="" required
-										placeholder="masukkan tgl persetujuan disini...">
+									<input type="date" class="form-control" id="tgl_srt_persetujuan_pengawas_pai" name="tgl_srt_persetujuan_pengawas_pai" 
+									value="" required >
 								</div>
 							</div>
 						</div>
@@ -200,8 +199,9 @@
 			<div class="modal-body">
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
+					Pemohon membuat surat permohonan beserta lampiran sesuai persyaratan dalam 1 file PDF
 					<ol type="1" class="ml-0 list-syarat modal-content-syarat">
-					<li> Surat permohonan ditujukan kepada Kepala Kantor Kemenag Kab. Klaten dilampiri </li>
+						<li> Surat permohonan ditujukan kepada Kepala Kantor Kemenag Kab. Klaten dilampiri </li>
 						<li> Surat permohonan penambahan tugas mengajar dari GPAI PNS.</li>
 						<li> Surat pernyataan tidak berkeberatan dari Kepala Sekolah Satminkal.</li>
 						<li> Surat pernyataan tidak berkeberatan menerima GPAI PNS dari Kepala Sekolah Satminkal tambahan mengajar.</li>

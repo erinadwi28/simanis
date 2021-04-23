@@ -29,20 +29,21 @@
 					<form class="form-horizontal mt-4" id="form_ptsp27" enctype="multipart/form-data"
 						action="<?= base_url('dashboard/aksi_pengajuan_ptsp27') ?>" method="POST">
 						<div class="form-group row">
-							<label for="Nama_pemohon" class="col-sm-3 col-form-label">Nama Pemohon</label>
+							<label for="nama_pemohon" class="col-sm-3 col-form-label">Nama</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="nama_pemohon" name="nama_pemohon"
-										value="<?= $detail->nama; ?>" required>
+										value="<?= $detail->nama; ?>" 
+										placeholder="masukkan nama disini..." required>
 
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="Alamat_lengkap" class="col-sm-3 col-form-label">Alamat Lengkap</label>
+							<label for="Alamat_lengkap" class="col-sm-3 col-form-label">Alamat</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<textarea type="text" class="form-control" id="alamat" name="alamat" 
+									<textarea type="text" class="form-control" id="alamat" name="alamat"
 									value="" required
 									placeholder="masukkan alamat disini..."></textarea>
 								</div>
@@ -52,29 +53,30 @@
 							<label for="Pekerjaan" class="col-sm-3 col-form-label">Pekerjaan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" 
-										value="" required
-										placeholder="masukkan pekerjaan disini...">
+									<input type="text" class="form-control" id="pekerjaan" name="pekerjaan"
+									value="" required
+									placeholder="masukkan pekerjaan disini...">
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
-								<label for="no_hp" class="col-sm-3 col-form-label">No. HandPhone</label>
-								<div class="col-sm-9">
-									<div class="form-line focused">
-										<input type="text" class="form-control" id="no_hp" name="no_hp" value="<?= $detail->no_hp; ?>"
+							<label for="no_hp_aktif" class="col-sm-3 col-form-label">No. Handphone</label>
+							<div class="col-sm-9">
+							<div class="form-line">
+									<input class="form-control" id="no_hp" name="no_hp" rows="1"
 										placeholder="masukkan no hp disini..." 
-										required data-parsley-type="number" minlength="11">
-									</div>
+										required data-parsley-type="number" minlength="11" value="">
+								</div>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="tujuan_permohonan_suket_penghasilan" class="col-sm-3 col-form-label">Tujuan Permohonan Suket Penghasilan</label>
+							<label for="Tujuan_permohonan" class="col-sm-3 col-form-label">Tujuan permohonan
+								data</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="tujuan_permohonan_suket_penghasilan"
 										name="tujuan_permohonan_suket_penghasilan" value="" required
-										placeholder="masukkan Perihal Konsultasi disini...">
+										placeholder="masukkan Permohonan data disini...">
 								</div>
 							</div>
 						</div>
@@ -116,6 +118,7 @@
 						<li>Pemohon membuat surat permohonan ditujukan kepada Kepala Kantor Kementerian Agama Kab. Klaten</li>
 						<li>Pemohon mengunggah surat permohonan yang telah dibuat. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
 						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.</li>
+
 					</ol>
 				</p>
 			</div>

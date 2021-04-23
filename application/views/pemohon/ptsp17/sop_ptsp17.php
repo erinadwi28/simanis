@@ -23,15 +23,15 @@
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
 					<ol type="1" class="ml-0 list-syarat">
-					<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
-							<li>Pemohon mengunggah surat permohonan kepada Kepala Kantor Kemenag Kab. Klaten <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon mengunggah surat persetujuan dari kepala sekolah satminkal dan jadwal mengajarnya. <br> (Format: PDF, Ukuran: Max 10 MB)
-							</li>
-							<li>Pemohon mengunggah surat persetujuan dari kepala sekolah sekolah yang dituju dengan menyebutkan jumlah jam mengajar dari Pengawas Pendidikan Agama <br> (Format: PDF, Ukuran: Max 10
-								MB)
-							</li>
-							<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
-							</li>
+						<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+						<li>Pemohon mengunggah surat permohonan kepada Kepala Kantor Kemenag Kab. Klaten <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon mengunggah surat persetujuan dari kepala sekolah satminkal dan jadwal mengajarnya. <br> (Format: PDF, Ukuran: Max 10 MB)
+						</li>
+						<li>Pemohon mengunggah surat persetujuan dari kepala sekolah sekolah yang dituju dengan menyebutkan jumlah jam mengajar dari Pengawas Pendidikan Agama <br> (Format: PDF, Ukuran: Max 10
+							MB)
+						</li>
+						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
+						</li>
 					</ol>
 					</p>
 				</div>

@@ -16,7 +16,7 @@
 	<!--Begin Content Profile-->
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
-
+		<?php foreach ($detail_profil_saya as $detail) { ?>
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
@@ -28,7 +28,7 @@
 							class="fas fa-info-circle"></i></button>
 					<br>
 					<form class="form-horizontal mt-4" id="form_ptsp16" enctype="multipart/form-data"
-						action="" method="POST">
+						action="<?= base_url('dashboard/aksi_pengajuan_ptsp16') ?>" method="POST">
 						<div class="form-group row">
 							<label for="nama_tujuan" class="col-sm-3 col-form-label">Nama Tujuan</label>
 							<div class="col-sm-9">
@@ -105,6 +105,7 @@
 							</div>
 						</div>
 				</div>
+				<?php } ?>
 				<div class="card-footer">
 					<div class="float-right">
 						<a href="#">
@@ -139,26 +140,16 @@
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
 					<ol type="1" class="ml-0 list-syarat modal-content-syarat">
-						<li>Pemohon Mengunggah Proposal Memuat:<br></li>
+						<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+						<li>Pemohon mengunggah surat permohonan yang ditujukan kepada Kepala Kemenag Kab. Kalten. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon mengunggah proposal bantuan yang dilampiri:<br></li>
 						<ol type="a" class="ml-0 list-syarat">
-							<li>Surat Permohonan yang ditujukan Kepala Kemenag Kab. Klaten</li>
-							<li>Surat Keterangan dari Yayasan/Badan Hukum beserta FC Akta Kemenkumhamnya</li>
-							<li>Visi dan Misi</li>
-							<li>Susunan Kepengurusan</li>
-							<li>FC KTP Susunan Kepengurusan</li>
-							<li>FC KTP Guru</li>
-							<li>Kurikulum Pelajaran</li>
-							<li>Jadwal Pelajaran</li>
-							<li>Daftar Santri</li>
-							<li>Sarana Prasarana yang Di Miliki</li>
-							<li>Foto Gedung</li>
-							<li>Kegiatan dan Papan Nama</li>
-							<li>Memiliki Guru</li>
-							<li>Santri Aktif Minimal 15 Orang</li>
-							<li>Pernyataan Setia pada NKRI Bermaterai</li>
+						<li>FC sertifikat tanah wakaf/hak milik yayasan atau lembaga</li>
+						<li>Surat pernyataan membuat LPJ sesuai juknis bermaterai</li>
 						</ol>
-						<li>Pemohon Mengisi dan Melengkapi form pengajuan yang telah disediakan.</li>
-						<li>Pemohon Menunggu Informasi dari Kemenag terkait proses pengajuan permohonan.</li>
+						(Format: PDF, Ukuran: Max 10 MB)
+						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
+						</li>
 					</ol>
 				</p>
 			</div>

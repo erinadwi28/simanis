@@ -26,11 +26,11 @@
 						action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp25/<?= $detail->id_permohonan_ptsp ?>"
 						method="POST">
 						<div class="form-group row">
-							<label for="Nama" class="col-sm-3 col-form-label">Nama</label>
+							<label for="nama_pemohon" class="col-sm-3 col-form-label">Nama</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama" name="nama"
-									 value="<?= $detail->nama; ?>" required>
+									<input type="text" class="form-control" id="nama_pemohon" name="nama_pemohon"
+									 value="<?= $detail->nama_pemohon; ?>" required>
 									
 								</div>
 							</div>

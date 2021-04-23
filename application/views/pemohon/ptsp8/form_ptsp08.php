@@ -7,7 +7,7 @@
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/sop_ptsp05') ?>">SOP</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/sop_ptsp08') ?>">SOP</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Form Permohonan</li>
 			</ol>
 		</nav>
@@ -25,7 +25,7 @@
 					<div class="card-body">
 						<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
 						<br>
-						<form class="form-horizontal mt-4" id="form_ptsp08" enctype="multipart/form-data" action="<?= base_url('dashboard/aksi_pengajuan_ptsp05') ?>" method="POST">
+						<form class="form-horizontal mt-4" id="form_ptsp08" enctype="multipart/form-data" action="<?= base_url('dashboard/aksi_pengajuan_ptsp08') ?>" method="POST">
 							<div class="form-group row">
 								<label for="nama_pemohon" class="col-sm-3 col-form-label">Nama Lengkap</label>
 								<div class="col-sm-9">
@@ -72,7 +72,7 @@
 								<label for="no_hp" class="col-sm-3 col-form-label">No. HandPhone</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="no_hp" name="no_hp" value="<?= $detail->no_hp; ?>"
+										<input type="text" class="form-control" id="no_hp" name="no_hp" value=""
 										placeholder="masukkan no hp disini..." 
 										required data-parsley-type="number" minlength="11">
 									</div>
@@ -114,28 +114,28 @@
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
 				<ol type="1" class="ml-0 list-syarat modal-content-syarat">
-							<li>Pemohon mengunduh Surat Permohonan, unduh dengan <b><a
-										href="<?= base_url() ?>assets/pemohon/sop/ptsp07/srt_permohonan.pdf"
-										target="_blank">[klik disini]</a></b></li>
-							<li>Pemohon mengisi Surat Permohonan yang ditujukan kepada Kepala Kantor Kemenag Klaten.
-							</li>
-							<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
-							<li>Pemohon mengunggah Surat Permohonan. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon mengunggah Akte Notaris Pendirian Yayasan. <br> (Format: PDF, Ukuran: Max 1 MB)
-							</li>
-							<li>Pemohon mengunggah bukti foto kantor sekretariat tetap dan ruang kegiatan bimbingan.
-								<br> (Format: PDF, Ukuran: Max 10 MB)</li>
-							<li>Pemohon mengunggah dokumen susunan pengurus. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon mengunggah sertifikat pembimbing haji. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon mengunggah dokumen rencana program bimbingan manasik. <br> (Format: PDF, Ukuran:
-								Max 1 MB)</li>
-							<li>Pemohon mengunggah laporan pelaksanaan bimbingan 2(dua) tahun terakhir. <br> (Format: PDF, Ukuran:
-								Max 10 MB)</li>
-							<li>Pemohon mengunggah sertifikat akreditasi KBIHU. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon mengunggah SK terakhir izin pendirian KBIHU. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon mengunggah rincian penggunaan biaya bimbingan. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
-							</li>
+					<li>Pemohon mengunduh Surat Permohonan, unduh dengan <b><a
+								href="<?= base_url() ?>assets/pemohon/sop/ptsp08/srt_permohonan.pdf"
+								target="_blank">[klik disini]</a></b></li>
+					<li>Pemohon mengisi Surat Permohonan yang ditujukan kepada Kepala Kantor Kemenag Klaten.
+					</li>
+					<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+					<li>Pemohon mengunggah Surat Permohonan. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+					<li>Pemohon mengunggah Akte Notaris Pendirian Yayasan. <br> (Format: PDF, Ukuran: Max 1 MB)
+					</li>
+					<li>Pemohon mengunggah bukti foto kantor sekretariat tetap dan ruang kegiatan bimbingan.
+						<br> (Format: PDF, Ukuran: Max 10 MB)</li>
+					<li>Pemohon mengunggah dokumen susunan pengurus. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+					<li>Pemohon mengunggah sertifikat pembimbing haji. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+					<li>Pemohon mengunggah dokumen rencana program bimbingan manasik. <br> (Format: PDF, Ukuran:
+						Max 1 MB)</li>
+					<li>Pemohon mengunggah laporan pelaksanaan bimbingan 2(dua) tahun terakhir. <br> (Format: PDF, Ukuran:
+						Max 10 MB)</li>
+					<li>Pemohon mengunggah sertifikat akreditasi KBIHU. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+					<li>Pemohon mengunggah SK terakhir izin pendirian KBIHU. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+					<li>Pemohon mengunggah rincian penggunaan biaya bimbingan. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+					<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
+					</li>
 				</ol>
 				</p>
 			</div>

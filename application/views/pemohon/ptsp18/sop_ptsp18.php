@@ -23,8 +23,8 @@
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
 						<ol type="1" class="ml-0 list-syarat">
-						<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
-						<li>Pemohon mengunggah surat permohonan yang ditujukan kepada Kepala Kemenag Kab. Kalten ditandatangi oleh takmir masjid. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+							<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+							<li>Pemohon mengunggah surat permohonan yang ditujukan kepada Kepala Kemenag Kab. Kalten ditandatangi oleh takmir masjid. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
 							<li>Pemohon mengunggah Proposal Memuat:<br></li>
 								<ol type="a">
 									<li>Surat Permohonan Bantuan ditanda tangan Lurah, Camat, Kepala KUA.</li>

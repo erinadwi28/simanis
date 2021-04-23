@@ -7,7 +7,7 @@
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/sop_ptsp05') ?>">SOP</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/sop_ptsp09') ?>">SOP</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Form Permohonan</li>
 			</ol>
 		</nav>
@@ -27,7 +27,7 @@
 							class="fas fa-info-circle"></i></button>
 					<br>
 					<form class="form-horizontal mt-4" id="form_ptsp09" enctype="multipart/form-data"
-						action="<?= base_url('dashboard/aksi_pengajuan_ptsp05') ?>" method="POST">
+						action="<?= base_url('dashboard/aksi_pengajuan_ptsp09') ?>" method="POST">
 						<div class="form-group row">
 							<label for="nama_pemohon" class="col-sm-3 col-form-label">Nama Lengkap</label>
 							<div class="col-sm-9">
@@ -83,7 +83,7 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="no_hp" name="no_hp"
-										value="<?= $detail->no_hp; ?>" placeholder="masukkan no hp disini..." required
+										value="" placeholder="masukkan no hp disini..." required
 										data-parsley-type="number" minlength="11">
 								</div>
 							</div>
@@ -135,25 +135,17 @@
 						</li>
 						<li>Pemohon mengunggah Izin usaha pendirian perjalanan wisata paling singkat 2 (dua) tahun.
 							<br> (Format: PDF, Ukuran: Max 1 MB)</li>
-						<li>Pemohon mengunggah Surat Keterangan Domisili Usaha (SKDU). <br> (Format: PDF, Ukuran: Max 1
-							MB)</li>
-						<li>Pemohon mengunggah NPWP Perusahaan dan pimpinan perusahaan. <br> (Format: PDF, Ukuran: Max 1
-							MB)</li>
-						<li>Pemohon mengunggah Surat Rekomendasi dari Instansi Pemkab setempat yang membidangi
-							pariwisata yang masih berlaku. <br> (Format: PDF, Ukuran:
+						<li>Pemohon mengunggah Surat Keterangan Domisili Usaha (SKDU). <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon mengunggah NPWP Perusahaan dan pimpinan perusahaan. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon mengunggah Surat Rekomendasi dari Instansi Pemkab setempat yang membidangi pariwisata yang masih berlaku. <br> (Format: PDF, Ukuran:
 							Max 1 MB)</li>
-						<li>Pemohon mengunggah laporan pelaksanaan bimbingan 2(dua) tahun terakhir. <br> (Format: PDF,
-							Ukuran:
+						<li>Pemohon mengunggah laporan pelaksanaan bimbingan 2(dua) tahun terakhir. <br> (Format: PDF, Ukuran:
 							Max 10 MB)</li>
-						<li>Pemohon mengunggah laporan keuangan perusahaan yang sehat selama 1 (satu) tahun terakhir dan
-							telah diaudit akuntan publik yang terdaftar dengan opini minimal Wajar Dengan Pengecualian
-							(WDP).
-							<br> (Format: PDF, Ukuran: Max 1 MB)</li>
-						<li>Pemohon mengunggah dokumen susunan pengurus perusahaan. <br> (Format: PDF, Ukuran: Max 1 MB)
-						</li>
+						<li>Pemohon mengunggah laporan keuangan perusahaan yang sehat selama 1 (satu) tahun terakhir dan telah diaudit akuntan publik yang terdaftar dengan opini minimal Wajar Dengan Pengecualian (WDP). 
+						<br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon mengunggah dokumen susunan pengurus perusahaan. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
 						<li>Pemohon mengunggah data pemegang saham. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-						<li>Pemohon mengunggah dokumen anggota direksi dan komisaris. <br> (Format: PDF, Ukuran: Max 1
-							MB)</li>
+						<li>Pemohon mengunggah dokumen anggota direksi dan komisaris. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
 						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
 						</li>
 					</ol>

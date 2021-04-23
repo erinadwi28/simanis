@@ -93,10 +93,10 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="tahun_sk_agen" class="col-sm-3 col-form-label">Tahun SK</label>
+							<label for="tahun_sk" class="col-sm-3 col-form-label">Tahun SK</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="tahun_sk_agen" name="tahun_sk_agen"
+									<input type="text" class="form-control" id="tahun_sk" name="tahun_sk"
 										value="" placeholder="masukkan tahun SK PPIU/PIHK disini..." required data-parsley-type="number" minlength="4">
 								</div>
 							</div>

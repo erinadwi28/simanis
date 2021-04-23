@@ -51,7 +51,7 @@
 					</p>
 				</div>
 				<div class="card-footer">
-					<a href="<?= base_url('dashboard/form_ptsp07') ?>">
+					<a href="<?= base_url('dashboard/form_ptsp09') ?>">
 						<button id="btn_kembali" class="btn btn-sm btn-primary float-right" type="submit">
 							<i class="far fa-edit nav-icon">
 							</i> Buat

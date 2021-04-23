@@ -142,12 +142,12 @@
 									<td><?= $detail->provinsi ?></td>
 								</tr>
 								<tr>
-									<td><b>Yayasan</b></td>
+									<td><b>Nama Yayasan</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= $detail->yayasan ?></td>
+									<td><?= $detail->nama_yayasan ?></td>
 								</tr>
 								<tr>
 									<td><b>SK Menkumham</b></td>
@@ -155,7 +155,7 @@
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= $detail->sk_menkumham ?></td>
+									<td><?= $detail->no_sk_menkumham_ri ?></td>
 								</tr>
 								<tr>
 									<td><b>Tahun Berdiri</b></td>
@@ -242,6 +242,9 @@
 								<?php } ?>
 							</tbody>
 						</table>
+						<?php if ($detail->status == 'Pending') { ?>
+							<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen dibawah</em>
+						<?php } ?>
 					</div>
 
 					<?php if ($detail->status == 'Pending') { ?>

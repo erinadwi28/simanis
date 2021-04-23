@@ -27,7 +27,7 @@
 	
 	<!-- Detail input -->
 	<div class="row clearfix">
-	<div class="col-md-4 mb-0">
+		<div class="col-md-4 mb-0">
 			<!-- Upload Surat Permohonan -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
@@ -40,7 +40,7 @@
 					<center>
 						<?php if ($detail->srt_permohonan != null) { ?>
 						<p><?= $detail->srt_permohonan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-success"
+						<a id="btn_upload" class="btn btn-sm btn-primary"
 							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp24/srt_permohonan/<?= $detail->srt_permohonan ?>"
 							target="_blank">
 							<i class="fa fa-download nav-icon">
@@ -94,7 +94,7 @@
 					<center>
 						<?php if ($detail->fc_dokumen != null) { ?>
 						<p><?= $detail->fc_dokumen; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-success"
+						<a id="btn_upload" class="btn btn-sm btn-primary"
 							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp24/fc_dokumen/<?= $detail->fc_dokumen ?>"
 							target="_blank">
 							<i class="fa fa-download nav-icon">
@@ -144,6 +144,23 @@
 				<div class="card-body">
 					<table class="table-hover table-responsive">
 						<tbody>
+							<?php if ($detail->no_surat != null && $detail->status == 'Selesai') { ?>
+								<tr>
+									<td><b>Nomor Surat</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->no_surat ?></td>
+								</tr>
+							<?php } ?>
+							<tr>
+								<td><b>Pemilik Kendaraan</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= $detail->pemilik_kendaraan ?></td>
+							</tr>
 							<tr>
 								<td><b>Jumlah Roda Kendaraan</b></td>
 								<td> </td>
@@ -167,14 +184,6 @@
 								<td>:</td>
 								<td> </td>
 								<td><?= $detail->no_polisi ?></td>
-							</tr>
-							<tr>
-								<td><b>Pemilik Kendaraan</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td> </td>
-								<td><?= $detail->pemilik_kendaraan ?></td>
 							</tr>
 							<tr>
 								<td><b>Fungsional Kendaraan</b></td>
@@ -253,6 +262,9 @@
 							<?php } ?>
 						</tbody>
 					</table>
+					<?php if ($detail->status == 'Pending') { ?>
+						<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen dibawah</em>
+					<?php } ?>
 				</div>
 
 				<?php if ($detail->status == 'Pending') { ?>
