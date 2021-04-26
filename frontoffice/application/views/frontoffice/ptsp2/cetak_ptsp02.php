@@ -156,7 +156,7 @@
         }
 
         .pelaksanaan {
-            margin-left: 0px;
+            margin-left: 50px;
         }
 
         .ketentuan {
@@ -170,10 +170,6 @@
 		.kpl {
 			margin-left: 509px;
 		}
-
-		.rekomendasi {
-			text-align: center;
-		}		
 	</style>
 
 </head>
@@ -200,27 +196,73 @@
 
 						<!-- NO SURAT -->
 						<div class="no_surat row">
-							<div class="col-12 rekomendasi">
-								<p><b>REKOMENDASI</b></p>
-								<p>Nomor: xxx</p>
+							<div class="col-9">
+								<table>
+									<tbody>
+										<tr>
+											<td>Nomor</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td> </td>
+											<td>4763/Kk.11.10/8/HM.00/06/2021</td>
+										</tr>
+										<tr>
+											<td>Sifat</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td> </td>
+											<td>Segera</td>
+										</tr>
+										<tr>
+											<td>Lampiran</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td> </td>
+											<td>2 lembar</td>
+										</tr>
+										<tr>
+											<td>Hal</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td> </td>
+											<td>Surat Ijin Rekomendasi Kegiatan</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="col-3">
+								<p class="float-right">Januari 2021</p>
 							</div>
 						</div>
 
-						<!-- PEMBUKA -->
+						<!-- KEPADA -->
 						<div class="no_surat">
 							<br>
-							<p>Assalamu'alaikum Wr.Wb</p>
-							<br>
+							<p>Kepada Yth. <br>
+								Panitia PRE-EVENT ASIAN YOTUH DAY III <br>
+								Orang Muda Katolik (OMK)
+								Rayon Klaten <br>
+								Di tempat
+							</p>
 						</div>
+
+                        <br>
 
                         <!-- Paragraf 1 -->
 						<div class="isi_surat">
-							<p>&emsp;&emsp;&emsp;Berdasarkan permohonan dari Saudara xxx selaku ketua Yayasan xxx perihal Rekomendasi
-							Perpanjangan Izin Operasional Kelompok Bimbingan xxx. Setelah dilakukan peninjauan terhadap Kantor Sekretariat Kelompok Bimbingan
-							xxx yang berdomisili di xxx maka Kepala Kantor Kementerian Agama Kab. Klaten dengan ini memberikan rekomendasi
-							kepada:
+							<p>&emsp;&emsp;&emsp;Diberitahukan dengan hormay, setelah membaca an memperhatikan surat permohonan Rekomendasi
+							dari Pantia PRE-EVEN ASIAN YOUTH DAY III Orang Muda Katolik (OMK) Rayon Klaten, Nomor
+							A/32/BYGK/OMK-RK/V/2017, tanggal 09 Juni 2017 perihal seperti pokok surat dengan mengadakan
+							kegiatan yang akan dilaksanakan pada:
 							</p>
-							<br>
 						</div>
 
                         <!-- Pelaksanaan -->
@@ -228,7 +270,7 @@
 							<table>
 								<tbody>
 									<tr>
-										<td>Nama Kelompok Bimbingan</td>
+										<td>Hari</td>
 										<td> </td>
 										<td> </td>
 										<td>:</td>
@@ -236,12 +278,44 @@
 										<td>xxx</td>
 									</tr>
 									<tr>
-										<td>Alamat Kantor</td>
+										<td>Tempat</td>
 										<td> </td>
 										<td> </td>
 										<td>:</td>
 										<td> </td>
 										<td>xxx</td>
+									</tr>
+									<tr>
+										<td>Waktu</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>xxx WIB</td>
+									</tr>
+									<tr>
+										<td>Acara</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>xxxx</td>
+									</tr>
+									<tr>
+										<td>Jumlah Peserta</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>xxxx</td>
+									</tr>
+									<tr>
+										<td>Agenda Kegiatan</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>xxxx</td>
 									</tr>
 								</tbody>
 							</table>
@@ -249,22 +323,26 @@
 
                         <br>
 
-						
-
-                        <!-- Paragraf 2 -->
 						<div class="isi_surat">
-						<p>&emsp;&emsp;&emsp;Rekomendasi ini dibuat sebagai pertimbangan untuk mendapatkan Perpanjangan Izin Operasional 
-						Kelompok BimbinRekomendasi ini dibuat sebagai pertimbangan untuk mendapatkan Perpanjangan Izin Operasional 
-						Kelompok Bimbingan xxx sebagai Penyelenggara Bimbingan Ibadah Haji di Kabupaten Klaten.</p>
-							<p>&emsp;&emsp;&emsp;Demikian surat ini kami sampaikan untuk dapat dipergunakan sebagaimana
-                                mestinya.
+							<p><b>Maka dengan ini kami memberi Rekomendasi atas kegiatan tersebut dengan ketentuan:</b>
 							</p>
 						</div>
 
-						<!-- PENUTUP -->
-						<div class="no_surat">
-							<br>
-							<p>Wassalamu'alaikum Wr.Wb</p>
+						<!-- ketentuan -->
+						<div class="ketentuan">
+							<ol type="1">
+								<li>Tetap menjaga persatuan dan kesatuan dalam kegiatan dan masyarakat.</li>
+								<li>Menjaga kondusifitas lingkungan / wilayah Kabupaten Klaten.</li>
+								<li>Agar tetap berkoordinasi dengan pihak keamanan serta pihak terkait.</li>
+								<li>Agar menjauhkan dari paham-paham Radikalisme serta menghindari dari unsur SARA.</li>
+							</ol>
+						</div>
+
+                        <!-- Paragraf 2 -->
+						<div class="isi_surat">
+							<p>&emsp;&emsp;Demikian surat ini kami sampaikan untuk dapat dipergunakan sebagaimana
+                                mestinya.
+							</p>
 						</div>
 
                         <br>
