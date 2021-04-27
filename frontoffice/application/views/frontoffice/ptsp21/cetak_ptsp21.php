@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>SIMANIS - Dashboard</title>
+	<title>SIMELATI: Cetak Surat</title>
 
 	<!--Tittle Icon-->
 	<link rel="shortcut icon" href="<?= base_url('../assets/landing/images/') ?>title.png" />
@@ -23,6 +23,7 @@
 		.body {
 			color: #000;
 		}
+		
 
 		.logosurat {
 			height: 130px;
@@ -130,12 +131,6 @@
 			color: #000;
 		}
 
-		.card {
-			position: relative;
-			background: url(<?= base_url('../assets/dashboard/images/frontoffice/ptsp/bg_ptsp15.png') ?>) no-repeat;
-			background-size: cover;
-			overflow: hidden;
-		}
 	</style>
 
 </head>
@@ -160,8 +155,6 @@
 									</div>
 								</div>
 							</center>
-
-							<?php foreach ($detail_ptsp as $detail) { ?>
 								<div class="badan_surat">
 									<center>
 										<div class="kepala_Sertifikat">
@@ -278,7 +271,6 @@
 										</div>
 									</div>
 								</div>
-							<?php } ?>
 						</div>
 					</div>
 				</div>

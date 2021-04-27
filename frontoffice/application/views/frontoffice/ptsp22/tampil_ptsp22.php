@@ -22,7 +22,7 @@
 					<div class="card shadow mb-3">
 						<div class="card-header">
 							<center>
-								<h6 class="m-0 font-weight-bold">Arah Ukur Kiblat</h6>
+								<h6 class="m-0 font-weight-bold">Rek. ID Masjid & Musala</h6>
 							</center>
 						</div>
 						<div class="card-body p-4">
