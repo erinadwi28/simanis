@@ -137,10 +137,44 @@ class M_bo extends CI_Model
         return $hasil;
     }
 
+    //detail permohonan ptsp 
+    public function data_petugas_doa($id_permohonan)
+    {
+        $this->db->select('petugas_doa.*');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('ptsp01', 'permohonan_ptsp.id_permohonan_ptsp = ptsp01.id_permohonan_ptsp', 'INNER');
+        $this->db->join('petugas_doa', 'ptsp01.id_ptsp = petugas_doa.id_ptsp', 'INNER');
+        $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
+        $this->db->where('permohonan_ptsp.status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
+    //insert petugas doa
+    public function insert_petugas_doa($data, $tabel)
+    {
+        return $this->db->insert($tabel, $data);
+    }
+
+    //delete petugas_doa
+    public function delete_petugas_doa($id_petugas_doa)
+    {
+        $this->db->where('id_petugas_doa', $id_petugas_doa);
+        $this->db->delete('petugas_doa');
+    }
+
     //update status permohonan
     public function update_status_permohonan($where, $data, $tabel)
     {
         $this->db->where('id_permohonan_ptsp ', $where);
+        $this->db->update($tabel, $data);
+    }
+
+    //tambah jadwal konsultasi ptsp25
+    public function tambah_jadwal_konsultasi($where, $data, $tabel)
+    {
+        $this->db->where('id_ptsp ', $where);
         $this->db->update($tabel, $data);
     }
 }

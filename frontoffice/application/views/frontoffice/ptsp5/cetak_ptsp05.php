@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>SIMANIS - Dashboard</title>
+	<title>SIMELATI: Cetak Surat</title>
 
 	<!--Tittle Icon-->
 	<link rel="shortcut icon" href="<?= base_url('assets/landing/images/') ?>title.png" />

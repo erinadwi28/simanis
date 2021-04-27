@@ -218,6 +218,7 @@ class Dashboard extends CI_Controller
         $data_detail['detail_permohonan'] = $this->m_pemohon->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
 
         if ($id_layanan == 1) {
+            $data_detail['data_petugas_doa'] = $this->m_pemohon->data_petugas_doa($id_permohonan_ptsp)->result();
             $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp01($id_permohonan_ptsp)->result();
         } elseif ($id_layanan == 2) {
             $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp02($id_permohonan_ptsp)->result();
