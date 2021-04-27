@@ -1032,9 +1032,4 @@ class Dashboard extends CI_Controller
                 $this->load->view('frontoffice/ptsp17/tampil_ptsp17');
                 $this->load->view('footer');
         }
-	//tampil cetak ptsp17
-        public function cetak_ptsp17()
-        {
-                $this->load->view('frontoffice/ptsp17/cetak_ptsp17');
-        }
 }

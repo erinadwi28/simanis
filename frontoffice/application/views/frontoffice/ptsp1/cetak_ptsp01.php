@@ -156,11 +156,7 @@
         }
 
         .pelaksanaan {
-            margin-left: 0px;
-        }
-
-        .ketentuan {
-            margin-left: 10px;
+            margin-left: 30px;
         }
 
 		.tgl {
@@ -170,10 +166,6 @@
 		.kpl {
 			margin-left: 509px;
 		}
-
-		.rekomendasi {
-			text-align: center;
-		}		
 	</style>
 
 </head>
@@ -200,48 +192,206 @@
 
 						<!-- NO SURAT -->
 						<div class="no_surat row">
-							<div class="col-12 rekomendasi">
-								<p><b>REKOMENDASI</b></p>
-								<p>Nomor: xxx</p>
+							<div class="col-9">
+								<table>
+									<tbody>
+										<tr>
+											<td>Nomor</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td> </td>
+											<td>.../Kk.11.10/1/BA.05/1/2021</td>
+										</tr>
+										<tr>
+											<td>Sifat</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td> </td>
+											<td>Penting</td>
+										</tr>
+										<tr>
+											<td>Lampiran</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td> </td>
+											<td>-</td>
+										</tr>
+										<tr>
+											<td>Hal</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td> </td>
+											<td>Petugas Rohaniawan dan Petugas Do'a</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="col-3">
+								<p class="float-right">Januari 2021</p>
 							</div>
 						</div>
 
-						<!-- PEMBUKA -->
+						<!-- KEPADA -->
 						<div class="no_surat">
 							<br>
-							<p>Assalamu'alaikum Wr.Wb</p>
-							<br>
+							<p>Kepada <br>
+								Yth. Erina Dwi Utami <br>
+								Di Tempat
+							</p>
 						</div>
+
+                        <br>
 
                         <!-- Paragraf 1 -->
 						<div class="isi_surat">
-							<p>&emsp;&emsp;&emsp;Berdasarkan permohonan dari Saudara xxx selaku ketua Yayasan xxx perihal Rekomendasi
-							Perpanjangan Izin Operasional Kelompok Bimbingan xxx. Setelah dilakukan peninjauan terhadap Kantor Sekretariat Kelompok Bimbingan
-							xxx yang berdomisili di xxx maka Kepala Kantor Kementerian Agama Kab. Klaten dengan ini memberikan rekomendasi
-							kepada:
+							<p>&emsp;&emsp;&emsp;Berkenaan dengan surat Saudara Nomor .../Kk.11.10/1/BA.05/1/2021 tanggal 24 April 2021 perihal
+                                Permohonan Petugas Rohaniawan dan Pembaca Do'a, dengan ini kami sampaikan Petugas
+                                sebagai berikut:
 							</p>
-							<br>
 						</div>
 
-                        <!-- Pelaksanaan -->
+                        <!-- Petugas -->
+						<div class="petugas row">
+                            <div class="col-1 nomor">
+                                1.
+                            </div>
+                            <div class="col-11 data">
+                                <table>
+								<tbody>
+									<tr>
+										<td>Nama</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>xx</td>
+									</tr>
+									<tr>
+										<td>NIP</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>xx
+										</td>
+									</tr>
+									<tr>
+										<td>Pangkat, Gol/Ruang</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>xx</td>
+									</tr>
+									<tr>
+										<td>Jabatan</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>xx</td>
+									</tr>
+								</tbody>
+							</table>
+                            </div>
+							
+						</div>
+						<div class="petugas row">
+                            <div class="col-1 nomor">
+                                2.
+                            </div>
+                            <div class="col-11 data">
+                                <table>
+								<tbody>
+									<tr>
+										<td>Nama</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>xx</td>
+									</tr>
+									<tr>
+										<td>NIP</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>xx
+										</td>
+									</tr>
+									<tr>
+										<td>Pangkat, Gol/Ruang</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>xx</td>
+									</tr>
+									<tr>
+										<td>Jabatan</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>xx</td>
+									</tr>
+								</tbody>
+							</table>
+                            </div>
+							
+						</div>
+
+                        <br>
+
+						<div class="isi_surat">
+							<p>untuk menjadi Petugas Rohaniawan dan Pembaca Do'a dalam Acara
+                                Buka bersama seluruh pegawai xxx, pada:
+							</p>
+						</div>
+
 						<div class="pelaksanaan">
 							<table>
 								<tbody>
 									<tr>
-										<td>Nama Kelompok Bimbingan</td>
+										<td>Hari</td>
 										<td> </td>
 										<td> </td>
 										<td>:</td>
 										<td> </td>
-										<td>xxx</td>
+										<td>Senin</td>
 									</tr>
 									<tr>
-										<td>Alamat Kantor</td>
+										<td>Tanggal</td>
 										<td> </td>
 										<td> </td>
 										<td>:</td>
 										<td> </td>
-										<td>xxx</td>
+										<td>03 Mei 2021</td>
+									</tr>
+									<tr>
+										<td>Waktu</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>15.00 WIB</td>
+									</tr>
+									<tr>
+										<td>Tempat</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>Masjid Ahmad Husain</td>
 									</tr>
 								</tbody>
 							</table>
@@ -249,22 +399,11 @@
 
                         <br>
 
-						
-
                         <!-- Paragraf 2 -->
 						<div class="isi_surat">
-						<p>&emsp;&emsp;&emsp;Rekomendasi ini dibuat sebagai pertimbangan untuk mendapatkan Perpanjangan Izin Operasional 
-						Kelompok BimbinRekomendasi ini dibuat sebagai pertimbangan untuk mendapatkan Perpanjangan Izin Operasional 
-						Kelompok Bimbingan xxx sebagai Penyelenggara Bimbingan Ibadah Haji di Kabupaten Klaten.</p>
-							<p>&emsp;&emsp;&emsp;Demikian surat ini kami sampaikan untuk dapat dipergunakan sebagaimana
+							<p>&emsp;&emsp;Demikian surat ini kami sampaikan untuk dapat dipergunakan sebagaimana
                                 mestinya.
 							</p>
-						</div>
-
-						<!-- PENUTUP -->
-						<div class="no_surat">
-							<br>
-							<p>Wassalamu'alaikum Wr.Wb</p>
 						</div>
 
                         <br>

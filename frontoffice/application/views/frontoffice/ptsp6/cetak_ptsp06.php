@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>SIMANIS - Dashboard</title>
+	<title>SIMELATI: Cetak Surat</title>
 
 	<!--Tittle Icon-->
 	<link rel="shortcut icon" href="<?= base_url('../assets/landing/images/') ?>title.png" />
@@ -129,7 +129,6 @@
 								</div>
 							</div>
 						</center>
-						<em>//masih dalam perbaikan</em>
 						<div class="badan_surat">
 							<div class="no_surat">
 								<?php foreach ($detail_ptsp as $detail) { ?>
@@ -190,7 +189,6 @@
 								<div class="col-md-6">
 									<div class="isi_surat">
 										<center>
-											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 											Klaten, 03 Maret 2020<br>
 											Kepala
 										</center>
@@ -211,9 +209,7 @@
 								<div class="col-md-6">
 									<div class="isi_surat">
 										<center>
-											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
 											<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
-											Nip. 197004201995031003
 										</center>
 									</div>
 								</div>
