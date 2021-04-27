@@ -15,7 +15,7 @@ class Dashboard extends CI_Controller
 
     public function index()
     {
-        $data_title['title'] = 'SIMANIS: Dashboard';                
+        $data_title['title'] = 'SIMANIS: Dashboard';
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 
@@ -35,7 +35,7 @@ class Dashboard extends CI_Controller
     //profil
     public function profil()
     {
-        $data_title['title'] = 'Profil Saya';                
+        $data_title['title'] = 'Profil Saya';
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 
@@ -95,7 +95,7 @@ class Dashboard extends CI_Controller
     //menampilkan halaman form ubah kata sandi
     public function form_ubahsandi()
     {
-        $data_title['title'] = 'Ubah Kata Sandi Saya';                
+        $data_title['title'] = 'Ubah Kata Sandi Saya';
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 
@@ -146,7 +146,7 @@ class Dashboard extends CI_Controller
     //list permohonan masuk
     public function list_permohonan_masuk()
     {
-        $data_title['title'] = 'List Permohonan Masuk';                
+        $data_title['title'] = 'List Permohonan Masuk';
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 
@@ -155,7 +155,7 @@ class Dashboard extends CI_Controller
 
         $data_detail['data_permohonan'] = $this->m_bo->get_list_data_permohonan('Proses BO', $sie)->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('backoffice/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('backoffice/list_permohonan_masuk', $data_detail);
@@ -165,7 +165,7 @@ class Dashboard extends CI_Controller
     //list permohonan yang sudah disetujui BO
     public function list_permohonan_selesaiBO()
     {
-        $data_title['title'] = 'List Permohonan Proses BO';                
+        $data_title['title'] = 'List Permohonan Proses BO';
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 
@@ -174,7 +174,7 @@ class Dashboard extends CI_Controller
 
         $data_detail['data_permohonan'] = $this->m_bo->get_list_data_permohonan_selesaiBO($sie)->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('backoffice/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('backoffice/list_permohonan_selesaiBO', $data_detail);
@@ -184,7 +184,7 @@ class Dashboard extends CI_Controller
     //list permohonan masuk
     public function list_permohonan_prosesKasi()
     {
-        $data_title['title'] = 'List Permohonan Proses Kasi';                
+        $data_title['title'] = 'List Permohonan Proses Kasi';
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 
@@ -193,7 +193,7 @@ class Dashboard extends CI_Controller
 
         $data_detail['data_permohonan'] = $this->m_bo->get_list_data_permohonan('Proses Kasi', $sie)->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('backoffice/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('backoffice/list_permohonan_prosesKasi', $data_detail);
@@ -203,7 +203,7 @@ class Dashboard extends CI_Controller
     //menampilkan detail data permohonan dari list permohonan
     public function detail_data_permohonan($id_permohonan_ptsp, $id_layanan)
     {
-        $data_title['title'] = 'Detail Permohonan';                
+        $data_title['title'] = 'Detail Permohonan';
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 
@@ -212,14 +212,41 @@ class Dashboard extends CI_Controller
 
         $data_detail['detail_permohonan'] = $this->m_bo->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
 
-        if ($id_layanan == 5) {
+        if ($id_layanan == 1) {
+            $data_detail['data_petugas_doa'] = $this->m_bo->data_petugas_doa($id_permohonan_ptsp)->result();
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp01')->result();
+        } elseif ($id_layanan == 2) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp02')->result();
+        } elseif ($id_layanan == 3) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp03')->result();
+        } elseif ($id_layanan == 4) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp04')->result();
+        } elseif ($id_layanan == 5) {
             $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
         } elseif ($id_layanan == 6) {
             $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp06')->result();
+        } elseif ($id_layanan == 7) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp07')->result();
+        } elseif ($id_layanan == 8) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp08')->result();
+        } elseif ($id_layanan == 9) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp09')->result();
+        } elseif ($id_layanan == 10) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp10')->result();
+        } elseif ($id_layanan == 11) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp11')->result();
+        } elseif ($id_layanan == 12) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp12')->result();
+        } elseif ($id_layanan == 13) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp13')->result();
         } elseif ($id_layanan == 14) {
             $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp14')->result();
         } elseif ($id_layanan == 15) {
             $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp15')->result();
+        } elseif ($id_layanan == 16) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp16')->result();
+        } elseif ($id_layanan == 17) {
+            $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp17')->result();
         } elseif ($id_layanan == 18) {
             $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp18')->result();
         } elseif ($id_layanan == 19) {
@@ -240,19 +267,45 @@ class Dashboard extends CI_Controller
             $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp26')->result();
         } elseif ($id_layanan == 27) {
             $data_detail['detail_ptsp'] = $this->m_bo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp27')->result();
-        } 
+        }
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('backoffice/sidebar');
         $this->load->view('topbar', $data);
-        if ($id_layanan == 5) {
+        if ($id_layanan == 1) {
+            $this->load->view('backoffice/ptsp1/detail_ptsp01', $data_detail);
+        } elseif ($id_layanan == 2) {
+            $this->load->view('backoffice/ptsp2/detail_ptsp02', $data_detail);
+        } elseif ($id_layanan == 3) {
+            $this->load->view('backoffice/ptsp3/detail_ptsp03', $data_detail);
+        } elseif ($id_layanan == 4) {
+            $this->load->view('backoffice/ptsp4/detail_ptsp04', $data_detail);
+        } elseif ($id_layanan == 5) {
             $this->load->view('backoffice/ptsp5/detail_ptsp05', $data_detail);
         } elseif ($id_layanan == 6) {
             $this->load->view('backoffice/ptsp6/detail_ptsp06', $data_detail);
+        } elseif ($id_layanan == 7) {
+            $this->load->view('backoffice/ptsp7/detail_ptsp07', $data_detail);
+        } elseif ($id_layanan == 8) {
+            $this->load->view('backoffice/ptsp8/detail_ptsp08', $data_detail);
+        } elseif ($id_layanan == 9) {
+            $this->load->view('backoffice/ptsp9/detail_ptsp09', $data_detail);
+        } elseif ($id_layanan == 10) {
+            $this->load->view('backoffice/ptsp10/detail_ptsp10', $data_detail);
+        } elseif ($id_layanan == 11) {
+            $this->load->view('backoffice/ptsp11/detail_ptsp11', $data_detail);
+        } elseif ($id_layanan == 12) {
+            $this->load->view('backoffice/ptsp12/detail_ptsp12', $data_detail);
+        } elseif ($id_layanan == 13) {
+            $this->load->view('backoffice/ptsp13/detail_ptsp13', $data_detail);
         } elseif ($id_layanan == 14) {
             $this->load->view('backoffice/ptsp14/detail_ptsp14', $data_detail);
         } elseif ($id_layanan == 15) {
             $this->load->view('backoffice/ptsp15/detail_ptsp15', $data_detail);
+        } elseif ($id_layanan == 16) {
+            $this->load->view('backoffice/ptsp16/detail_ptsp16', $data_detail);
+        } elseif ($id_layanan == 17) {
+            $this->load->view('backoffice/ptsp17/detail_ptsp17', $data_detail);
         } elseif ($id_layanan == 18) {
             $this->load->view('backoffice/ptsp18/detail_ptsp18', $data_detail);
         } elseif ($id_layanan == 19) {
@@ -272,7 +325,7 @@ class Dashboard extends CI_Controller
         } elseif ($id_layanan == 26) {
             $this->load->view('backoffice/ptsp26/detail_ptsp26', $data_detail);
         } elseif ($id_layanan == 27) {
-            $this->load->view('backoffice/ptsp27detail_ptsp27', $data_detail);
+            $this->load->view('backoffice/ptsp27/detail_ptsp27', $data_detail);
         }
         $this->load->view('footer');
     }
@@ -280,7 +333,7 @@ class Dashboard extends CI_Controller
     //tampil form tolak permohonan
     public function form_input_keterangan($id_permohonan_ptsp)
     {
-        $data_title['title'] = 'Form Keterangan Pending';                
+        $data_title['title'] = 'Form Keterangan Pending';
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 
@@ -290,13 +343,66 @@ class Dashboard extends CI_Controller
         $data_detail['id_permohonan_ptsp'] = $this->db->get_where('permohonan_ptsp', ['id_permohonan_ptsp' =>
         $id_permohonan_ptsp])->row_array();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('backoffice/sidebar');
         $this->load->view('topbar', $data);
         $this->load->view('backoffice/form_input_keterangan', $data_detail);
         $this->load->view('footer');
     }
 
+    //update status permohonan menjadi Proses Kasi
+    public function jadwal_konsultasi()
+    {
+        $data = array(
+            'hari_konsultasi' => $this->input->post('hari_konsultasi'),
+            'jam_konsultasi' => $this->input->post('jam_konsultasi'),
+            'nama_petugas' => $this->input->post('nama_petugas'),
+            'nip_petugas' => $this->input->post('nip_petugas'),
+            'pangkat_golongan' => $this->input->post('pangkat_golongan'),
+            'jabatan' => $this->input->post('jabatan'),
+        );
+
+        $id_ptsp = $this->input->post('id_ptsp');
+        $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
+        $id_layanan = $this->input->post('id_layanan');
+
+        $this->m_bo->tambah_jadwal_konsultasi($id_ptsp, $data, 'ptsp25');
+
+        $this->session->set_flashdata('success', 'petugas sukses ditambahkan');
+        redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
+    }
+
+    //aksi tambah_petugas_doa
+    public function tambah_petugas_doa()
+    {
+        $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
+        $id_layanan = $this->input->post('id_layanan');
+
+        $data = array(
+            'id_ptsp' => $this->input->post('id_ptsp'),
+            'nama_petugas_doa' => $this->input->post('nama_petugas_doa'),
+            'nip_petugas_doa' => $this->input->post('nip_petugas_doa'),
+            'pangkat_petugas_doa' => $this->input->post('pangkat_petugas_doa'),
+            'jabatan_petugas_doa' => $this->input->post('jabatan_petugas_doa'),
+        );
+
+        $this->m_bo->insert_petugas_doa($data, 'petugas_doa');
+
+        $this->session->set_flashdata('success', 'petugas doa sukses ditambahkan');
+        redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
+    }
+
+    //aksi hapus petugas doa
+    public function hapus_petugas_doa($id_petugas_doa, $id_permohonan_ptsp, $id_layanan)
+    {
+        $this->m_bo->delete_petugas_doa($id_petugas_doa);
+        $id_permohonan_ptsp = $id_permohonan_ptsp;
+        $id_layanan = $id_layanan;
+
+        $this->session->set_flashdata('success', 'petugas doa sukses dihapus');
+        // redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
+        redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
+    }
     //aksi tolak permohonan
     public function kirim_alasn_permohonan()
     {
@@ -359,7 +465,7 @@ class Dashboard extends CI_Controller
     }
 
     //update status permohonan menjadi Proses Kasi
-    public function aksi_update_status_setujui($id_permohonan_ptsp)
+    public function aksi_update_status_proses_kasi($id_permohonan_ptsp)
     {
         $data = array(
             'id_bo' => $this->session->userdata('id_bo'),
@@ -374,10 +480,124 @@ class Dashboard extends CI_Controller
         redirect('dashboard/list_permohonan_masuk');
     }
 
+    //update status permohonan menjadi Proses tim teknis
+    public function aksi_update_status_proses_tim_teknis($id_permohonan_ptsp)
+    {
+        $data = array(
+            'id_bo' => $this->session->userdata('id_bo'),
+            'notif_pemohon' => 'Belum Dibaca',
+            'status' => 'Proses Tim Teknis',
+            'tgl_persetujuan_bo' => date("Y/m/d")
+        );
+
+        $this->m_bo->update_status_permohonan($id_permohonan_ptsp, $data, 'permohonan_ptsp');
+
+        $this->session->set_flashdata('success', 'permohonan sukses disetujui');
+        redirect('dashboard/list_permohonan_masuk');
+    }
+
+    //update status permohonan menjadi Proses Kasubag
+    public function aksi_update_status_proses_kasubag($id_permohonan_ptsp)
+    {
+        $data = array(
+            'id_bo' => $this->session->userdata('id_bo'),
+            'notif_pemohon' => 'Belum Dibaca',
+            'status' => 'Proses Kasubag',
+            'tgl_persetujuan_bo' => date("Y/m/d")
+        );
+
+        $this->m_bo->update_status_permohonan($id_permohonan_ptsp, $data, 'permohonan_ptsp');
+
+        $this->session->set_flashdata('success', 'permohonan sukses disetujui');
+        redirect('dashboard/list_permohonan_masuk');
+    }
+
+    // upload ulang jadwal siaran ptsp19
+    public function update_jadwal_siaran_ptsp19($id_ptsp)
+    {
+        if ($_FILES != null) {
+            $this->aksi_upload_jadwal_siaran_ptsp19($id_ptsp);
+        }
+        $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
+        $id_layanan = $this->input->post('id_layanan');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
+    }
+
+    //upload jadwal siaran ptsp19
+    private function aksi_upload_jadwal_siaran_ptsp19($id_ptsp19)
+    {
+        $config['upload_path']          = '../assets/dashboard/pemohon/ptsp/ptsp19/jadwal_siaran/';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|docx|doc|xlsx|xls';
+        $config['file_name']            = 'jadwal_siaran-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+        $this->load->library('upload', $config);
+        if (!empty($_FILES['jadwal_siaran']['name'])) {
+            if ($this->upload->do_upload('jadwal_siaran')) {
+
+                $uploadData = $this->upload->data();
+
+                $item = $this->db->where('id_ptsp', $id_ptsp19)->get('ptsp19')->row();
+
+                //replace foto lama 
+                if ($item->jadwal_siaran != null) {
+                    $target_file = '../assets/dashboard/pemohon/ptsp/ptsp19/jadwal_siaran/' . $item->jadwal_siaran;
+                    unlink($target_file);
+                }
+
+                $data['jadwal_siaran'] = $uploadData['file_name'];
+
+                $this->db->where('id_ptsp', $id_ptsp19);
+                $this->db->update('ptsp19', $data);
+            }
+        }
+    }
+
+    // upload ulang srt_ket_id_masjid ptsp22
+    public function update_srt_ket_id_masjid_ptsp22($id_ptsp)
+    {
+        if ($_FILES != null) {
+            $this->aksi_upload_srt_ket_id_masjid_ptsp22($id_ptsp);
+        }
+        $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
+        $id_layanan = $this->input->post('id_layanan');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
+    }
+
+    //upload srt_ket_id_masjid ptsp22
+    private function aksi_upload_srt_ket_id_masjid_ptsp22($id_ptsp22)
+    {
+        $config['upload_path']          = '../assets/dashboard/pemohon/ptsp/ptsp22/srt_ket_id_masjid/';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|docx|doc|xlsx|xls';
+        $config['file_name']            = 'srt_ket_id_masjid-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+        $this->load->library('upload', $config);
+        if (!empty($_FILES['srt_ket_id_masjid']['name'])) {
+            if ($this->upload->do_upload('srt_ket_id_masjid')) {
+
+                $uploadData = $this->upload->data();
+
+                $item = $this->db->where('id_ptsp', $id_ptsp22)->get('ptsp22')->row();
+
+                //replace foto lama 
+                if ($item->srt_ket_id_masjid != null) {
+                    $target_file = '../assets/dashboard/pemohon/ptsp/ptsp22/srt_ket_id_masjid/' . $item->srt_ket_id_masjid;
+                    unlink($target_file);
+                }
+
+                $data['srt_ket_id_masjid'] = $uploadData['file_name'];
+
+                $this->db->where('id_ptsp', $id_ptsp22);
+                $this->db->update('ptsp22', $data);
+            }
+        }
+    }
+
     //tampil detail ptsp10
     public function detail_ptsp10()
     {
-        $data_title['title'] = 'Detail Permohonan';                
+        $data_title['title'] = 'Detail Permohonan';
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 
@@ -391,10 +611,10 @@ class Dashboard extends CI_Controller
         $this->load->view('footer');
     }
 
-	//tampil detail ptsp11
+    //tampil detail ptsp11
     public function detail_ptsp11()
     {
-        $data_title['title'] = 'Detail Permohonan';                
+        $data_title['title'] = 'Detail Permohonan';
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 
@@ -411,7 +631,7 @@ class Dashboard extends CI_Controller
     //tampil detail ptsp12
     public function detail_ptsp12()
     {
-        $data_title['title'] = 'Detail Permohonan';                
+        $data_title['title'] = 'Detail Permohonan';
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 
@@ -425,10 +645,10 @@ class Dashboard extends CI_Controller
         $this->load->view('footer');
     }
 
-	//tampil detail ptsp13
+    //tampil detail ptsp13
     public function detail_ptsp13()
     {
-        $data_title['title'] = 'Detail Permohonan';                
+        $data_title['title'] = 'Detail Permohonan';
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 
@@ -442,10 +662,10 @@ class Dashboard extends CI_Controller
         $this->load->view('footer');
     }
 
-	//tampil detail ptsp16
+    //tampil detail ptsp16
     public function detail_ptsp16()
     {
-        $data_title['title'] = 'Detail Permohonan';                
+        $data_title['title'] = 'Detail Permohonan';
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 
@@ -459,10 +679,10 @@ class Dashboard extends CI_Controller
         $this->load->view('footer');
     }
 
-	//tampil detail ptsp17
+    //tampil detail ptsp17
     public function detail_ptsp17()
     {
-        $data_title['title'] = 'Detail Permohonan';                
+        $data_title['title'] = 'Detail Permohonan';
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 

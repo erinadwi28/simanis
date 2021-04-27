@@ -2,11 +2,11 @@
 <div class="container-fluid">
   <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between">
-    <h3 class="judullist py-3">Data Permohonan Selesai</h1>
+    <h3 class="judullist py-3">Data Permohonan Selesai Tim Teknis</h1>
       <nav aria-label="breadcrumb" class="nav-breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Permohonan Selesai</li>
+          <li class="breadcrumb-item active" aria-current="page">Permohonan Selesai Tim Teknis</li>
         </ol>
       </nav>
   </div>
