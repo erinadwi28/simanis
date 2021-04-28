@@ -87,7 +87,7 @@
 				<div class="card-body">
 					<table class="table-hover table-responsive">
 						<tbody>
-						<?php if ($detail->no_surat != null) { ?>
+							<?php if ($detail->no_surat != null) { ?>
 							<tr>
 								<td><b>Nomor Surat</b></td>
 								<td> </td>
