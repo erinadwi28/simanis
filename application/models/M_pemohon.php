@@ -115,6 +115,7 @@ class M_pemohon extends CI_Model
         $this->db->where('permohonan_ptsp.status_delete', 0);
         $this->db->where("(permohonan_ptsp.status = 'Validasi Kemenag'
         OR permohonan_ptsp.status = 'Proses BO'
+        OR permohonan_ptsp.status = 'Proses Tim Teknis'
         OR permohonan_ptsp.status = 'Proses Kasi'
         OR permohonan_ptsp.status = 'Proses Kasubag')", null, false);
         $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
@@ -453,7 +454,7 @@ class M_pemohon extends CI_Model
         $this->db->join('ptsp20', 'permohonan_ptsp.id_permohonan_ptsp = ptsp20.id_permohonan_ptsp', 'INNER');
         $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
         $this->db->where('permohonan_ptsp.status_delete', 0);
-    
+
         $hasil = $this->db->get();
         return $hasil;
     }
@@ -580,6 +581,20 @@ class M_pemohon extends CI_Model
     {
         $this->db->where('id_permohonan_ptsp ', $where);
         $this->db->update($tabel, $data);
+    }
+
+    //get data petugas doa ptsp01
+    public function data_petugas_doa($id_permohonan)
+    {
+        $this->db->select('petugas_doa.*');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('ptsp01', 'permohonan_ptsp.id_permohonan_ptsp = ptsp01.id_permohonan_ptsp', 'INNER');
+        $this->db->join('petugas_doa', 'ptsp01.id_ptsp = petugas_doa.id_ptsp', 'INNER');
+        $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
+        $this->db->where('permohonan_ptsp.status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
     }
 
     // //get list data permohonan yang belum dibaca

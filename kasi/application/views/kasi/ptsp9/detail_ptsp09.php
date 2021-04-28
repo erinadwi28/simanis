@@ -1,37 +1,99 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 	<!-- Page Heading -->
-	<div class="d-sm-flex align-items-center justify-content-between">
-		<h3 class="judullist py-3">Detail Permohonan</h1>
-			<nav aria-label="breadcrumb" class="nav-breadcrumb">
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-					<li class="breadcrumb-item" aria-current="page"><a
-							href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Permohonan Masuk</a></li>
-					<li class="breadcrumb-item active" aria-current="page">Detail</li>
-				</ol>
-			</nav>
-	</div>
-
-	<?php foreach ($detail_ptsp as $detail) { ?>
+	<?php
+	foreach ($detail_ptsp as $detail) { ?>
+		<?php if ($detail->status === 'Pending') { ?>
+			<!-- Page Heading -->
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail</h3>
+				<nav aria-label="breadcrumb" class="nav-breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesaiKasi') ?>">Permohonan Pending</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Detail</li>
+					</ol>
+				</nav>
+			</div>
+		<?php } elseif ($detail->status === 'Validasi Kemenag') { ?>
+			<!-- Page Heading -->
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail</h3>
+				<nav aria-label="breadcrumb" class="nav-breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesaiKasi') ?>">Permohonan Proses FO</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Detail</li>
+					</ol>
+				</nav>
+			</div>
+		<?php } elseif ($detail->status === 'Proses BO') { ?>
+			<!-- Page Heading -->
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail</h3>
+				<nav aria-label="breadcrumb" class="nav-breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesaiKasi') ?>">Permohonan Proses BO</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Detail</li>
+					</ol>
+				</nav>
+			</div>
+		<?php } elseif ($detail->status === 'Proses Kasi') { ?>
+			<!-- Page Heading -->
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail</h3>
+				<nav aria-label="breadcrumb" class="nav-breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Permohonan Proses Kasi</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Detail</li>
+					</ol>
+				</nav>
+			</div>
+		<?php } elseif ($detail->status === 'Selesai') { ?>
+			<!-- Page Heading -->
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail</h3>
+				<nav aria-label="breadcrumb" class="nav-breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesaiKasi') ?>">Permohonan Selesai</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Detail</li>
+					</ol>
+				</nav>
+			</div>
+		<?php } elseif ($detail->status === 'Proses Kasubag') { ?>
+			<!-- Page Heading -->
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail</h3>
+				<nav aria-label="breadcrumb" class="nav-breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesaiKasubag') ?>">Permohonan Selesai</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Detail</li>
+					</ol>
+				</nav>
+			</div>
+		<?php } ?>
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
 		<div class="col-md-8 mb-2">
 			<!-- Detail Data -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Izin Perpanjangan Operasional
-						KBIHU</h6>
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Izin Pendirian Penyelenggara Perjalanan Ibadah Umroh (PPIU) dan Perjalanan Ibadah Haji Khusus (PIHK)</h6>
 				</div>
 				<div class="card-body">
 					<table class="table-hover table-responsive">
 						<tbody>
-							<?php if ($detail->no_surat != null) { ?>
+						<?php if ($detail->no_surat != null) { ?>
 							<tr>
 								<td><b>Nomor Surat</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->no_surat ?></td>
 							</tr>
 							<?php } ?>
@@ -76,7 +138,7 @@
 								<td><?= $detail->alamat_kantor_cabang ?></td>
 							</tr>
 							<tr>
-								<td><b>No. HandPhone</b></td>
+								<td><b>No. Handphone</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
@@ -88,6 +150,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
 							</tr>
 							<?php if ($detail->tgl_persetujuan_fo != null) { ?>
@@ -96,6 +159,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= format_indo(date($detail->tgl_persetujuan_fo)); ?></td>
 							</tr>
 							<?php } ?>
@@ -105,6 +169,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
 							</tr>
 							<?php } ?>
@@ -114,6 +179,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= format_indo(date($detail->tgl_persetujuan_kasi)); ?></td>
 							</tr>
 							<?php } ?>
@@ -123,6 +189,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
 							</tr>
 							<?php } ?>
@@ -132,6 +199,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->keterangan; ?></td>
 							</tr>
 							<?php } ?>
@@ -157,7 +225,7 @@
 						<?php if ($detail->srt_permohonan != null) { ?>
 						<p><?= $detail->srt_permohonan; ?></p>
 						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/srt_permohonan/<?= $detail->srt_permohonan ?>"
+							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp09/srt_permohonan/<?= $detail->srt_permohonan ?>"
 							target="_blank">
 							<i class="fa fa-download nav-icon">
 							</i> Klik untuk melihat
@@ -180,17 +248,14 @@
 				</div>
 				<div class="card-body">
 					<center>
-						<?php if ($detail->srt_pernyataan != null) { ?>
-						<p><?= $detail->srt_pernyataan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>"
-							target="_blank">
-
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->srt_pernyataan == null) { ?>
-						<p class="mb-0">Belum ada lampiran</p>
+						<?php if ($detail->akte_notaris != null) { ?>
+							<p><?= $detail->akte_notaris; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp09/akte_notaris/<?= $detail->akte_notaris ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->akte_notaris == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>
@@ -208,16 +273,14 @@
 
 				<div class="card-body">
 					<center>
-						<?php if ($detail->ktp != null) { ?>
-						<p><?= $detail->ktp; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/fc_ktp/<?= $detail->ktp ?>"
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->ktp == null) { ?>
-						<p class="mb-0">Belum ada lampiran</p>
+						<?php if ($detail->izin_usaha != null) { ?>
+							<p><?= $detail->izin_usaha; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp09/izin_usaha/<?= $detail->izin_usaha ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->izin_usaha == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>
@@ -235,16 +298,14 @@
 
 				<div class="card-body">
 					<center>
-						<?php if ($detail->bukti_pelunasan != null) { ?>
-						<p><?= $detail->bukti_pelunasan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/bukti_pelunasan/<?= $detail->bukti_pelunasan ?>"
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->bukti_pelunasan == null) { ?>
-						<p class="mb-0">Belum ada lampiran</p>
+						<?php if ($detail->skud != null) { ?>
+							<p><?= $detail->skud; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp09/skud/<?= $detail->skud ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->skud == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>
@@ -263,16 +324,14 @@
 				</div>
 				<div class="card-body">
 					<center>
-						<?php if ($detail->srt_permohonan != null) { ?>
-						<p><?= $detail->srt_permohonan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/srt_permohonan/<?= $detail->srt_permohonan ?>"
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->srt_permohonan == null) { ?>
-						<p class="mb-0">Belum ada lampiran</p>
+						<?php if ($detail->npwp != null) { ?>
+							<p><?= $detail->npwp; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp09/npwp/<?= $detail->npwp ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->npwp == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>
@@ -289,17 +348,14 @@
 				</div>
 				<div class="card-body">
 					<center>
-						<?php if ($detail->srt_pernyataan != null) { ?>
-						<p><?= $detail->srt_pernyataan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>"
-							target="_blank">
-
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->srt_pernyataan == null) { ?>
-						<p class="mb-0">Belum ada lampiran</p>
+						<?php if ($detail->srt_rekomendasi_pemkab != null) { ?>
+							<p><?= $detail->srt_rekomendasi_pemkab; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp09/srt_rekomendasi_pemkab/<?= $detail->srt_rekomendasi_pemkab ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->srt_rekomendasi_pemkab == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>
@@ -316,16 +372,14 @@
 				</div>
 				<div class="card-body">
 					<center>
-						<?php if ($detail->srt_pernyataan != null) { ?>
-						<p><?= $detail->srt_pernyataan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>"
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->srt_pernyataan == null) { ?>
-						<p class="mb-0">Belum ada lampiran</p>
+						<?php if ($detail->laporan_keuangan != null) { ?>
+							<p><?= $detail->laporan_keuangan; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp09/laporan_keuangan/<?= $detail->laporan_keuangan ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->laporan_keuangan == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>
@@ -342,16 +396,14 @@
 				</div>
 				<div class="card-body">
 					<center>
-						<?php if ($detail->srt_pernyataan != null) { ?>
-						<p><?= $detail->srt_pernyataan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>"
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->srt_pernyataan == null) { ?>
-						<p class="mb-0">Belum ada lampiran</p>
+						<?php if ($detail->susunan_pengurus != null) { ?>
+							<p><?= $detail->susunan_pengurus; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp09/susunan_pengurus/<?= $detail->susunan_pengurus ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->susunan_pengurus == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>
@@ -371,16 +423,14 @@
 
 				<div class="card-body">
 					<center>
-						<?php if ($detail->srt_permohonan != null) { ?>
-						<p><?= $detail->srt_permohonan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_permohonan/<?= $detail->srt_permohonan ?>"
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->srt_permohonan == null) { ?>
-						<p class="mb-0">Belum ada lampiran</p>
+						<?php if ($detail->data_pemegang_saham != null) { ?>
+							<p><?= $detail->data_pemegang_saham; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp09/data_pemegang_saham/<?= $detail->data_pemegang_saham ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->data_pemegang_saham == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>
@@ -397,16 +447,14 @@
 				</div>
 				<div class="card-body">
 					<center>
-						<?php if ($detail->srt_pernyataan != null) { ?>
-						<p><?= $detail->srt_pernyataan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>"
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->srt_pernyataan == null) { ?>
-						<p class="mb-0">Belum ada lampiran</p>
+						<?php if ($detail->data_direksi_komisaris != null) { ?>
+							<p><?= $detail->data_direksi_komisaris; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp09/data_direksi_komisaris/<?= $detail->data_direksi_komisaris ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->data_direksi_komisaris == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>
@@ -423,16 +471,14 @@
 				</div>
 				<div class="card-body">
 					<center>
-						<?php if ($detail->srt_pernyataan != null) { ?>
-						<p><?= $detail->srt_pernyataan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>"
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->srt_pernyataan == null) { ?>
-						<p class="mb-0">Belum ada</p>
+						<?php if ($detail->berita_acara != null) { ?>
+							<p><?= $detail->berita_acara; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp08/berita_acara/<?= $detail->berita_acara ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->berita_acara == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>

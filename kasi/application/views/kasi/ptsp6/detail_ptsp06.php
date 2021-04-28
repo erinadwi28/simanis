@@ -92,6 +92,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= $detail->no_surat ?></td>
 									</tr>
 								<?php } ?>
@@ -100,13 +101,15 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
-									<td><?= $detail->nama_jamaah_haji ?></td>
+									<td> </td>
+									<td><?= $detail->nama ?></td>
 								</tr>
 								<tr>
 									<td><b>Alamat Lengkap</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->alamat ?></td>
 								</tr>
 								<tr>
@@ -114,6 +117,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->tempat_lahir ?></td>
 								</tr>
 								<tr>
@@ -121,13 +125,15 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->tanggal_lahir ?></td>
 								</tr>
 								<tr>
-									<td><b>No. HandPhone</b></td>
+									<td><b>No. Handphone</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->no_hp ?></td>
 								</tr>
 								<tr>
@@ -135,20 +141,23 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
-									<td><?= $detail->nama_ppiu_pihk ?></td>
+									<td> </td>
+									<td><?= $detail->nama_agen ?></td>
 								</tr>
 								<tr>
 									<td><b>No. SK PPIU/PIHK</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
-									<td><?= $detail->no_sk_ppiu_pihk ?></td>
+									<td> </td>
+									<td><?= $detail->no_sk_agen ?></td>
 								</tr>
 								<tr>
 									<td><b>Tahun SK</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->tahun_sk ?></td>
 								</tr>
 								<tr>
@@ -156,6 +165,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
 								</tr>
 								<?php if ($detail->tgl_persetujuan_fo != null) { ?>
@@ -164,6 +174,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= format_indo(date($detail->tgl_persetujuan_fo)); ?></td>
 									</tr>
 								<?php } ?>
@@ -173,6 +184,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
 									</tr>
 								<?php } ?>
@@ -182,6 +194,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= format_indo(date($detail->tgl_persetujuan_kasi)); ?></td>
 									</tr>
 								<?php } ?>
@@ -191,6 +204,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
 									</tr>
 								<?php } ?>
@@ -200,6 +214,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= $detail->keterangan; ?></td>
 								</tr>
 							<?php } ?>
@@ -251,13 +266,13 @@
 					</div>
 					<div class="card-body">
 						<center>
-							<?php if ($detail->sk_ijin_oprasional != null) { ?>
-								<p><?= $detail->sk_ijin_oprasional; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/sk_ijin_oprasional/<?= $detail->sk_ijin_oprasional ?>" target="_blank">
+							<?php if ($detail->fc_sk_ijin_operasi != null) { ?>
+								<p><?= $detail->fc_sk_ijin_operasi; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/fc_sk_ijin_operasi/<?= $detail->fc_sk_ijin_operasi ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
-							<?php } elseif ($detail->sk_ijin_oprasional == null) { ?>
+							<?php } elseif ($detail->fc_sk_ijin_operasi == null) { ?>
 								<p>Belum ada lampiran</p>
 							<?php } ?>
 						</center>
@@ -280,13 +295,13 @@
 
 					<div class="card-body">
 						<center>
-							<?php if ($detail->ktp != null) { ?>
-								<p><?= $detail->ktp; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/ktp/<?= $detail->ktp ?>" target="_blank">
+							<?php if ($detail->fc_ktp != null) { ?>
+								<p><?= $detail->fc_ktp; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/fc_ktp/<?= $detail->fc_ktp ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
-							<?php } elseif ($detail->ktp == null) { ?>
+							<?php } elseif ($detail->fc_ktp == null) { ?>
 								<p>Belum ada lampiran</p>
 							<?php } ?>
 						</center>
@@ -309,13 +324,13 @@
 
 					<div class="card-body">
 						<center>
-							<?php if ($detail->kk != null) { ?>
-								<p><?= $detail->kk; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/kk/<?= $detail->kk ?>" target="_blank">
+							<?php if ($detail->fc_kk != null) { ?>
+								<p><?= $detail->fc_kk; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/fc_kk/<?= $detail->fc_kk ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
-							<?php } elseif ($detail->kk == null) { ?>
+							<?php } elseif ($detail->fc_kk == null) { ?>
 								<p>Belum ada lampiran</p>
 							<?php } ?>
 						</center>
@@ -325,6 +340,30 @@
 
 					</div>
 
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3">
+				<!-- FC Dokumen -->
+				<div class="card shadow mb-4">
+					<div class="card-header">
+						<center>
+							<h6 class="m-0 font-weight-bold">FC Dokumen</h6>
+						</center>
+					</div>
+
+					<div class="card-body">
+						<center>
+							<?php if ($detail->fc_dokumen != null) { ?>
+								<p><?= $detail->fc_dokumen; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp06/fc_dokumen/<?= $detail->fc_dokumen ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->fc_dokumen == null) { ?>
+								<p>Belum ada lampiran</p>
+							<?php } ?>
+						</center>
+					</div>
 				</div>
 			</div>
 		</div>
