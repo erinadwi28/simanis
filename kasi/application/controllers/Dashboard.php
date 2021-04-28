@@ -231,20 +231,32 @@ class Dashboard extends CI_Controller
         $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
 
         $data_detail['detail_permohonan'] = $this->m_kasi->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
-        if ($id_layanan == 1) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp01')->result();
-        } elseif ($id_layanan == 3) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp03')->result();
-        } elseif ($id_layanan == 4) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp04')->result();
-        } elseif ($id_layanan == 5) {
+        if ($id_layanan == 5) {
             $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
         } elseif ($id_layanan == 6) {
             $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp06')->result();
+        } elseif ($id_layanan == 7) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp07')->result();
+        } elseif ($id_layanan == 8) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp08')->result();
+        } elseif ($id_layanan == 9) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp09')->result();
+        } elseif ($id_layanan == 10) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp10')->result();
+        } elseif ($id_layanan == 11) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp11')->result();
+        } elseif ($id_layanan == 12) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp12')->result();
+        } elseif ($id_layanan == 13) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp13')->result();
         } elseif ($id_layanan == 14) {
             $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp14')->result();
         } elseif ($id_layanan == 15) {
             $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp15')->result();
+        } elseif ($id_layanan == 16) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp16')->result();
+        } elseif ($id_layanan == 17) {
+            $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp17')->result();
         } elseif ($id_layanan == 18) {
             $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp18')->result();
         } elseif ($id_layanan == 19) {
@@ -270,20 +282,32 @@ class Dashboard extends CI_Controller
         $this->load->view('header', $data_title);
         $this->load->view('kasi/sidebar', $data);
         $this->load->view('topbar');
-        if ($id_layanan == 1) {
-            $this->load->view('kasi/ptsp1/detail_ptsp01', $data_detail);
-        } elseif ($id_layanan == 3) {
-            $this->load->view('kasi/ptsp3/detail_ptsp03', $data_detail);
-        } elseif ($id_layanan == 4) {
-            $this->load->view('kasi/ptsp4/detail_ptsp04', $data_detail);
-        } elseif ($id_layanan == 5) {
+        if ($id_layanan == 5) {
             $this->load->view('kasi/ptsp5/detail_ptsp05', $data_detail);
         } elseif ($id_layanan == 6) {
             $this->load->view('kasi/ptsp6/detail_ptsp06', $data_detail);
+        } elseif ($id_layanan == 7) {
+            $this->load->view('kasi/ptsp7/detail_ptsp07', $data_detail);
+        } elseif ($id_layanan == 8) {
+            $this->load->view('kasi/ptsp8/detail_ptsp08', $data_detail);
+        } elseif ($id_layanan == 9) {
+            $this->load->view('kasi/ptsp9/detail_ptsp09', $data_detail);
+        } elseif ($id_layanan == 10) {
+            $this->load->view('kasi/ptsp10/detail_ptsp10', $data_detail);
+        } elseif ($id_layanan == 11) {
+            $this->load->view('kasi/ptsp11/detail_ptsp11', $data_detail);
+        } elseif ($id_layanan == 12) {
+            $this->load->view('kasi/ptsp12/detail_ptsp12', $data_detail);
+        } elseif ($id_layanan == 13) {
+            $this->load->view('kasi/ptsp13/detail_ptsp13', $data_detail);
         } elseif ($id_layanan == 14) {
             $this->load->view('kasi/ptsp14/detail_ptsp14', $data_detail);
         } elseif ($id_layanan == 15) {
             $this->load->view('kasi/ptsp15/detail_ptsp15', $data_detail);
+        } elseif ($id_layanan == 16) {
+            $this->load->view('kasi/ptsp16/detail_ptsp16', $data_detail);
+        } elseif ($id_layanan == 17) {
+            $this->load->view('kasi/ptsp17/detail_ptsp17', $data_detail);
         } elseif ($id_layanan == 18) {
             $this->load->view('kasi/ptsp18/detail_ptsp18', $data_detail);
         } elseif ($id_layanan == 19) {
@@ -459,153 +483,4 @@ class Dashboard extends CI_Controller
         }
     }
 
-	//tampil detail ptsp10
-    public function detail_ptsp10()
-    {
-        $data_title['title'] = 'Detail Permohonan';
-        $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
-        $this->session->userdata('id_kasi')])->row_array();
-
-        $sie = $this->session->userdata('sie');
-        $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
-
-        $this->load->view('header', $data_title);
-        $this->load->view('kasi/sidebar', $data);
-        $this->load->view('topbar');
-        $this->load->view('kasi/ptsp10/detail_ptsp10');
-        $this->load->view('footer');
-    }
-
-	//tampil detail ptsp11
-    public function detail_ptsp11()
-    {
-        $data_title['title'] = 'Detail Permohonan';
-        $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
-        $this->session->userdata('id_kasi')])->row_array();
-
-        $sie = $this->session->userdata('sie');
-        $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
-
-        $this->load->view('header', $data_title);
-        $this->load->view('kasi/sidebar', $data);
-        $this->load->view('topbar');
-        $this->load->view('kasi/ptsp11/detail_ptsp11');
-        $this->load->view('footer');
-    }
-
-    //tampil detail ptsp12
-    public function detail_ptsp12()
-    {
-        $data_title['title'] = 'Detail Permohonan';
-        $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
-        $this->session->userdata('id_kasi')])->row_array();
-
-        $sie = $this->session->userdata('sie');
-        $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
-
-        $this->load->view('header', $data_title);
-        $this->load->view('kasi/sidebar', $data);
-        $this->load->view('topbar');
-        $this->load->view('kasi/ptsp12/detail_ptsp12');
-        $this->load->view('footer');
-    }
-
-	//tampil detail ptsp13
-    public function detail_ptsp13()
-    {
-        $data_title['title'] = 'Detail Permohonan';
-        $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
-        $this->session->userdata('id_kasi')])->row_array();
-
-        $sie = $this->session->userdata('sie');
-        $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
-
-        $this->load->view('header', $data_title);
-        $this->load->view('kasi/sidebar', $data);
-        $this->load->view('topbar');
-        $this->load->view('kasi/ptsp13/detail_ptsp13');
-        $this->load->view('footer');
-    }
-
-	 //tampil detail ptsp16
-	 public function detail_ptsp16()
-	 {
-		 $data_title['title'] = 'Detail Permohonan';
-		 $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
-		 $this->session->userdata('id_kasi')])->row_array();
- 
-		 $sie = $this->session->userdata('sie');
-		 $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
- 
-		 $this->load->view('header', $data_title);
-		 $this->load->view('kasi/sidebar', $data);
-		 $this->load->view('topbar');
-		 $this->load->view('kasi/ptsp16/detail_ptsp16');
-		 $this->load->view('footer');
-	 }
-
-	//tampil detail ptsp17
-    public function detail_ptsp17()
-    {
-        $data_title['title'] = 'Detail Permohonan';
-        $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
-        $this->session->userdata('id_kasi')])->row_array();
-
-        $sie = $this->session->userdata('sie');
-        $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
-
-        $this->load->view('header', $data_title);
-        $this->load->view('kasi/sidebar', $data);
-        $this->load->view('topbar');
-        $this->load->view('kasi/ptsp17/detail_ptsp17');
-        $this->load->view('footer');
-    }
-    //tampil detail ptsp25
-    public function detail_ptsp25()
-    {
-        $data_title['title'] = 'Detail Permohonan';
-        $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
-        $this->session->userdata('id_kasi')])->row_array();
-
-        $sie = $this->session->userdata('sie');
-        $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
-
-        $this->load->view('header', $data_title);
-        $this->load->view('kasi/sidebar', $data);
-        $this->load->view('topbar');
-        $this->load->view('kasi/ptsp25/detail_ptsp25');
-        $this->load->view('footer');
-    }
-    //tampil detail ptsp25
-    public function detail_ptsp26()
-    {
-        $data_title['title'] = 'Detail Permohonan';
-        $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
-        $this->session->userdata('id_kasi')])->row_array();
-
-        $sie = $this->session->userdata('sie');
-        $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
-
-        $this->load->view('header', $data_title);
-        $this->load->view('kasi/sidebar', $data);
-        $this->load->view('topbar');
-        $this->load->view('kasi/ptsp26/detail_ptsp26');
-        $this->load->view('footer');
-    }
-    //tampil detail ptsp27
-    public function detail_ptsp27()
-    {
-        $data_title['title'] = 'Detail Permohonan';
-        $data['kasi'] = $this->db->get_where('kasi', ['id_kasi' =>
-        $this->session->userdata('id_kasi')])->row_array();
-
-        $sie = $this->session->userdata('sie');
-        $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
-
-        $this->load->view('header', $data_title);
-        $this->load->view('kasi/sidebar', $data);
-        $this->load->view('topbar');
-        $this->load->view('kasi/ptsp27/detail_ptsp27');
-        $this->load->view('footer');
-    }
 }
