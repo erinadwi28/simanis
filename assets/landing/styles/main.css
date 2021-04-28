@@ -274,6 +274,18 @@ body {
   margin-top: 0px;
 }
 
+@media (max-width: 768px) {
+  .terkini-profile {
+    margin-top: -90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .terkini-profile .profil-heading .profil {
+    margin-bottom: 0px !important;
+  }
+}
+
 .section-profile-heading h2 {
   font-family: 'Playfair Display', serif;
   font-weight: bold;
@@ -389,6 +401,16 @@ body {
 .card-body .terkini-list-title a {
   text-decoration: none;
   color: inherit;
+}
+
+.profil-heading h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.profil-heading p {
+  font-size: 18px;
 }
 
 .user-guide-heading {

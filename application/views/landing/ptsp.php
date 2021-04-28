@@ -81,7 +81,7 @@
 					</p>
 				</div>
 			</div>
-			<div class="row mb-2">
+			<!-- <div class="row mb-2">
 				<div class="col text-center section-tata-cara mt-0">
 					<div class="input-group mb-3 cari-permohonan">
 						<input type="text" class="form-control" placeholder="Cari permohonan...."
@@ -91,7 +91,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<div class="row mb-0">
 				<div class="col-md-4 item-ptsp">
 					<div class="card item-1 shadow text-center d-flex flex-column mb-3">
