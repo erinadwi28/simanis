@@ -1026,21 +1026,6 @@ class Dashboard extends CI_Controller
                $this->load->view('frontoffice/ptsp21/tampil_ptsp21');
                $this->load->view('footer');
        }
-
-       //tampil preview ptsp22
-       public function tampil_ptsp22()
-       {
-               $data_title['title'] = 'Tampil Permohonan';
-               $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
-               $this->session->userdata('id_fo')])->row_array();
-               $data['total_notif'] = $this->m_fo->jml_notif()->result();
-
-               $this->load->view('header', $data_title);
-               $this->load->view('frontoffice/sidebar_fo');
-               $this->load->view('topbar', $data);
-               $this->load->view('frontoffice/ptsp22/tampil_ptsp22');
-               $this->load->view('footer');
-       }
        //tampil cetak ptsp23
        public function cetak_ptsp22()
        {

@@ -2,7 +2,7 @@
 <div class="container-fluid">
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between mb-2">
-		<h1 class="h3 mb-0 text-gray-800">Dashboard Tim Teknis</h1>
+		<h1 class="h3 mb-0">Dashboard</h1>
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<!-- <li class="breadcrumb-item"><a href="#">Home</a></li>

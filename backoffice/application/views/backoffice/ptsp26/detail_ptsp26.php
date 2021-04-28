@@ -2,31 +2,47 @@
 <div class="container-fluid">
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between">
-		<h3 class="judullist py-3">Detail Permohonan</h3>
+		<h3 class="judullist py-3">Detail</h3>
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-				<li class="breadcrumb-item active" aria-current="page">SOP</li>
-				<li class="breadcrumb-item active" aria-current="page">Form Permohonan</li>
-				<li class="breadcrumb-item active" aria-current="page">Detail Permohonan</li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Permohonan
+						Masuk</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Detail</li>
 			</ol>
 		</nav>
 	</div>
 
-
-	<!-- Detail input -->
 	<div class="row clearfix">
-		<div class="col-xs-12 col-sm-2"></div>
+		<div class="col-md-4 mb-0">
+			<!-- Surat Permohonan -->
+			<div class="card shadow mb-4">
+				<div class="card-header">
+					<center>
+						<h6 class="m-0 font-weight-bold">Surat Permohonan</h6>
+					</center>
+				</div>
 
+				<div class="card-body">
+					<center>
+						<p></p>
+						<a id="btn_upload" class="btn btn-sm btn-primary" href="" target="_blank">
+							<i class="fa fa-download nav-icon">
+							</i> Klik untuk melihat
+						</a>
+						<p>Belum ada lampiran</p>
+					</center>
+				</div>
+			</div>
+		</div>
 		<div class="col-md-8 mb-0">
-			<!-- Detail Data -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
 					<h6 class="m-0 font-weight-bold text-center">Permohonan Data Lembaga Agama dan Keagamaan, Rumah
 						Ibadah, Peristiwa Nikah, Jumlah Guru , Haji,</h6>
 				</div>
 				<div class="card-body">
-					<table class="table-hover table-responsive">
+				<table class="table-hover table-responsive">
 						<tbody>
 							<tr>
 								<td><b>Nama</b></td>
@@ -66,32 +82,27 @@
 
 						</tbody>
 					</table>
-
 				</div>
 			</div>
 
 			<!-- Button Tolak & Setujui Awal Surat Masuk -->
 			<div class="row clearfix float-right px-2">
-				<?php if ($detail->status == 'Proses BO') { ?>
-				<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>"
-					class="mr-2">
+				<a href="" class="mr-2">
 					<button id=" btn_tolak" class="btn btn-sm btn-tolak" type="submit">
 						<i class="fas fa-times-circle">
 						</i> Tolak
 					</button>
 				</a>
-				<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+				<a href="">
 					<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
 						<i class="fas fa-check-circle">
 						</i> Terima
 					</button>
 				</a>
-				<?php } ?>
 			</div>
 		</div>
 	</div>
-
-	<!--End Content-->
+	<!--End Content Profile-->
 </div>
 <!-- /.container-fluid -->
 </div>

@@ -18,7 +18,7 @@
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
 					<center>
-						<h6 class="m-0 font-weight-bold">Suket. Tambahan Penghasilan</h6>
+						<h6 class="m-0 font-weight-bold">Surat Permohonan</h6>
 					</center>
 				</div>
 
@@ -26,7 +26,7 @@
 					<center>
 						
 						
-						<a id="btn_upload" class="btn btn-sm btn-success"
+						<a id="btn_upload" class="btn btn-sm btn-primary"
 							href=""
 							target="_blank">
 							<i class="fa fa-download nav-icon">

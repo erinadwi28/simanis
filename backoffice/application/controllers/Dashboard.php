@@ -475,4 +475,52 @@ class Dashboard extends CI_Controller
         $this->load->view('backoffice/ptsp17/detail_ptsp17');
         $this->load->view('footer');
     }
+    //tampil detail ptsp25
+    public function detail_ptsp25()
+    {
+        $data_title['title'] = 'Detail Permohonan';                
+        $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
+        $this->session->userdata('id_bo')])->row_array();
+
+        $sie = $this->session->userdata('sie');
+        $data['total_notif'] = $this->m_bo->jml_notif($sie)->result();
+
+        $this->load->view('header', $data_title);
+        $this->load->view('backoffice/sidebar');
+        $this->load->view('topbar', $data);
+        $this->load->view('backoffice/ptsp25/detail_ptsp25');
+        $this->load->view('footer');
+    }
+    //tampil detail ptsp26
+    public function detail_ptsp26()
+    {
+        $data_title['title'] = 'Detail Permohonan';                
+        $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
+        $this->session->userdata('id_bo')])->row_array();
+
+        $sie = $this->session->userdata('sie');
+        $data['total_notif'] = $this->m_bo->jml_notif($sie)->result();
+
+        $this->load->view('header', $data_title);
+        $this->load->view('backoffice/sidebar');
+        $this->load->view('topbar', $data);
+        $this->load->view('backoffice/ptsp26/detail_ptsp26');
+        $this->load->view('footer');
+    }
+    //tampil detail ptsp27
+    public function detail_ptsp27()
+    {
+        $data_title['title'] = 'Detail Permohonan';                
+        $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
+        $this->session->userdata('id_bo')])->row_array();
+
+        $sie = $this->session->userdata('sie');
+        $data['total_notif'] = $this->m_bo->jml_notif($sie)->result();
+
+        $this->load->view('header', $data_title);
+        $this->load->view('backoffice/sidebar');
+        $this->load->view('topbar', $data);
+        $this->load->view('backoffice/ptsp27/detail_ptsp27');
+        $this->load->view('footer');
+    }
 }

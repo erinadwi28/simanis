@@ -384,9 +384,10 @@
 								</div>
 							</div>
 							<br>
+							<CENTER>
 							<div class="isi_surat identitas">
 								
-								<table border="1" cellpadding=2 cellspacing=3 align=left >
+								<table border="1" cellpadding=2 cellspacing=3>
      								 <tr>
         								<td>No</td>
         								<td>NAMA PETUGAS SIARAN</td>
@@ -438,7 +439,7 @@
       								</tr>
 									  <tr>
         								<td> 7 </td>
-        								<td>Moh Sueyana,S.Pd.I.S.H.Ag</td>
+        								<td>Moh Suryana,S.Pd.I.S.H.Ag</td>
         								<td>Selasa, 13 April 2021</td>
 										<td>05.30-06.00</td>
 										<td>Pagi Beriman Agama Islam</td>
@@ -513,9 +514,13 @@
 										<td>05.30-06.00</td>
 										<td>Pagi Beriman Agama Islam</td>
       								</tr>
-								</table>
-								<br><br>
-								<br><br>
+								 </table>
+							</div>
+							</CENTER>
+							<br><br><br>
+							<div class="row">
+								<div class="col-md-6">
+								</div>
 								<div class="col-md-6">
 									<div class="badan_surat isi_surat">
 										<center>
@@ -525,24 +530,216 @@
 										</center>
 									</div>
 								</div>
-							<br><br>
-								
+							</div>
+							<br> <br>
+							<div class="row">
+								<div class="col-md-6">
+							</div>
 								<div class="col-md-6">
 									<div class="badan_surat isi_surat">
-                                    <div class="badan_surat isi_surat">
+                                		<div class="badan_surat isi_surat">
 										<center>
 											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
 											<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
 											Nip. 197004201995031003
 										</center>
+										</div>
 									</div>
-									</div>
-							</div>
+								</div>
+							</div>	
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- /.container-fluid -->
+	<!-- Begin Page Content -->
+	<div class="container-fluid">
+		<!-- Page Heading -->
+		<div class="row">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-8">
+				<div class="card shadow mb-4">	
+				<div class="card-body">
+							<CENTER>
+							<div class="row">
+								<div class="col-md-10">
+									<p>&emsp;&emsp;&emsp;&emsp;DAFTAR HADIR
+									<br>&emsp;&emsp;PETUGAS SIARAN RSPD KLATEN BULAN APRIL 2021</p>
+									
+								</div>
+							</div>
+							</CENTER>
+							<br>
+							<CENTER>
+							<div class="isi_surat identitas">
+								<table border="1" cellpadding=2 cellspacing=3  >
+     								 <tr>
+        								<td>No</td>
+        								<td>NAMA PETUGAS SIARAN</td>
+        								<td>HARI TANGGAL SIARAN</td>
+										<td>MATA ACARA</td>
+										<td>TANDA TANGAN</td>
+      								</tr>
+									<tr>
+        								<td> 1 </td>
+        								<td>H. Lagimin, S.Ag,M.Ag</td>
+        								<td>Kamis, 1 April 2021</td>
+										<td>Pagi Beriman Agama Islam</td>
+										<td>1.</td>
+      								</tr>
+									  <tr>
+        								<td> 2 </td>
+        								<td>Ahmad Royani, S.Ag,</td>
+        								<td>Senin, 5 April 2021</td>
+										<td>Pagi Beriman Agama Islam</td>
+										<td>2.</td>
+      								</tr>
+									  <tr>
+        								<td> 3 </td>
+        								<td>Drs.Abdul Basir</td>
+        								<td>Selasa, 6 April 2021</td>
+										<td>Pagi Beriman Agama Islam</td>
+										<td>3.</td>
+      								</tr>
+									  <tr>
+        								<td> 4 </td>
+        								<td>Dra.Hj.Istikomah,M.Ag</td>
+        								<td>Rabu, 7 2021</td>
+										<td>Pagi Beriman Agama Islam</td>
+										<td>4.</td>
+      								</tr>
+									  <tr>
+        								<td> 5 </td>
+        								<td>M.Zuhri,S.Ag.M.Si</td>
+        								<td>Kamis, 8 April 2021</td>
+										<td>Pagi Beriman Agama Islam</td>
+										<td>5.</td>
+      								</tr>
+									  <tr>
+        								<td> 6 </td>
+        								<td>Andrianto Heri W, S.H.I.M.Ag</td>
+        								<td>Senin, 12 April 2021</td>
+										<td>Pagi Beriman Agama Islam</td>
+										<td>6.</td>
+      								</tr>
+									  <tr>
+        								<td> 7 </td>
+        								<td>Moh Suryana,S.Pd.I.S.H.Ag</td>
+        								<td>Selasa, 13 April 2021</td>
+										<td>Pagi Beriman Agama Islam</td>
+										<td>7.</td>
+      								</tr>
+									  <tr>
+        								<td> 8 </td>
+        								<td>H. Sunarso, S.Ag,M.Ag</td>
+        								<td>Rabu, 14 April 2021</td>
+										<td>Pagi Beriman Agama Islam</td>
+										<td>8.</td>
+      								</tr>
+									  <tr>
+        								<td> 9 </td>
+        								<td>Nur Amini, S.Ag</td>
+        								<td>Kamis, 15 April 2021</td>
+										<td>Pagi Beriman Agama Islam</td>
+										<td>9.</td>
+      								</tr>
+									  <tr>
+        								<td> 10</td>
+        								<td>H.Rusdi Santoso, S.Ag,M.Ag</td>
+        								<td>Senin, 19 April 2021</td>
+										<td>Pagi Beriman Agama Islam</td>
+										<td>10.</td>
+      								</tr>
+									  <tr>
+        								<td> 11 </td>
+        								<td>Sudarmaji, S.Ag</td>
+        								<td>Selasa, 20 April 2021</td>
+										<td>Pagi Beriman Agama Islam</td>
+										<td>11.</td>
+      								</tr>
+									  <tr>
+        								<td> 12 </td>
+        								<td>Rohmatul Umah, S.Ag</td>
+        								<td>Rabu, 21 April 2021</td>
+										<td>Pagi Beriman Agama Islam</td>
+										<td>12.</td>
+      								</tr>
+									  <tr>
+        								<td> 13 </td>
+        								<td>Hj.Herita Fatmawati S.Ag</td>
+        								<td>Kamis, 22 April 2021</td>
+										<td>Pagi Beriman Agama Islam</td>
+										<td>13.</td>
+      								</tr>
+									  <tr>
+        								<td> 14 </td>
+        								<td>Hj. Budi Suprapti S.Pd</td>
+        								<td>Senin, 26 April 2021</td>
+										<td>Pagi Beriman Agama Islam</td>
+										<td>14.</td>
+      								</tr>
+									  <tr>
+        								<td> 15 </td>
+        								<td>Dra.Hj Ummi Saidah</td>
+        								<td>Selasa, 27 April 2021</td>
+										<td>Pagi Beriman Agama Islam</td>
+										<td>14.</td>
+      								</tr>
+									  <tr>
+        								<td> 16 </td>
+        								<td>Hj.Endag Siti Winarsih S.Ag</td>
+        								<td>Rabu, 28 April 2021</td>
+										<td>Pagi Beriman Agama Islam</td>
+										<td>16.</td>
+      								</tr>
+									  <tr>
+        								<td> 17 </td>
+        								<td>H. Lagimin, S.Ag,M.Ag</td>
+        								<td>Kamis, 29 April 2021</td>
+										<td>Pagi Beriman Agama Islam</td>
+										<td>17.</td>
+      								</tr>
+								 </table>	 
+							</div>
+							</CENTER>
+							<br><br><br>
+							<div class="row">
+								<div class="col-md-6">
+								</div>
+								<div class="col-md-6">
+									<div class="badan_surat isi_surat">
+										<center>
+											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+											Klaten,....../..../...... <br>
+											Kepala
+										</center>
+									</div>
+								</div>
+							</div>
+							<br> <br>
+							<div class="row">
+								<div class="col-md-6">
+							</div>
+								<div class="col-md-6">
+									<div class="badan_surat isi_surat">
+                                		<div class="badan_surat isi_surat">
+										<center>
+											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+											<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
+											Nip. 197004201995031003
+										</center>
+										</div>
+									</div>
+								</div>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<!-- /.container-fluid -->
 
