@@ -145,4 +145,11 @@ class M_tim_teknis extends CI_Model
         $this->db->where('id_permohonan_ptsp ', $where);
         $this->db->update($tabel, $data);
     }
+
+    //update update_data_ptsp
+    public function update_data_ptsp($where, $data, $tabel)
+    {
+        $this->db->where('id_ptsp', $where);
+        $this->db->update($tabel, $data);
+    }
 }

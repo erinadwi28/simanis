@@ -218,8 +218,16 @@ class Dashboard extends CI_Controller
             $data_detail['detail_ptsp'] = $this->m_tim_teknis->get_detail_ptsp($id_permohonan_ptsp, 'ptsp09')->result();
         } elseif ($id_layanan == 10) {
             $data_detail['detail_ptsp'] = $this->m_tim_teknis->get_detail_ptsp($id_permohonan_ptsp, 'ptsp10')->result();
-        } elseif ($id_layanan == 18) {
-            $data_detail['detail_ptsp'] = $this->m_tim_teknis->get_detail_ptsp($id_permohonan_ptsp, 'ptsp18')->result();
+        } elseif ($id_layanan == 13) {
+            $data_detail['detail_ptsp'] = $this->m_tim_teknis->get_detail_ptsp($id_permohonan_ptsp, 'ptsp13')->result();
+        } elseif ($id_layanan == 14) {
+            $data_detail['detail_ptsp'] = $this->m_tim_teknis->get_detail_ptsp($id_permohonan_ptsp, 'ptsp14')->result();
+        } elseif ($id_layanan == 15) {
+            $data_detail['detail_ptsp'] = $this->m_tim_teknis->get_detail_ptsp($id_permohonan_ptsp, 'ptsp15')->result();
+        } elseif ($id_layanan == 20) {
+            $data_detail['detail_ptsp'] = $this->m_tim_teknis->get_detail_ptsp($id_permohonan_ptsp, 'ptsp20')->result();
+        } elseif ($id_layanan == 21) {
+            $data_detail['detail_ptsp'] = $this->m_tim_teknis->get_detail_ptsp($id_permohonan_ptsp, 'ptsp21')->result();
         }
 
         $this->load->view('header', $data_title);
@@ -233,8 +241,16 @@ class Dashboard extends CI_Controller
             $this->load->view('timteknis/ptsp9/detail_ptsp09', $data_detail);
         } elseif ($id_layanan == 10) {
             $this->load->view('timteknis/ptsp10/detail_ptsp10', $data_detail);
-        } elseif ($id_layanan == 18) {
-            $this->load->view('timteknis/ptsp18/detail_ptsp18', $data_detail);
+        } elseif ($id_layanan == 13) {
+            $this->load->view('timteknis/ptsp13/detail_ptsp13', $data_detail);
+        } elseif ($id_layanan == 14) {
+            $this->load->view('timteknis/ptsp14/detail_ptsp14', $data_detail);
+        } elseif ($id_layanan == 15) {
+            $this->load->view('timteknis/ptsp15/detail_ptsp15', $data_detail);
+        } elseif ($id_layanan == 20) {
+            $this->load->view('timteknis/ptsp20/detail_ptsp20', $data_detail);
+        } elseif ($id_layanan == 21) {
+            $this->load->view('timteknis/ptsp21/detail_ptsp21', $data_detail);
         }
         $this->load->view('footer');
     }
@@ -558,7 +574,7 @@ class Dashboard extends CI_Controller
         }
     }
 
-    // upload berita acara ptsp09
+    // upload berita acara ptsp10
     public function upload_berita_acaraptsp10($id_ptsp)
     {
         if ($_FILES != null) {
@@ -570,7 +586,7 @@ class Dashboard extends CI_Controller
         redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
     }
 
-    //upload jadwal siaran ptsp09
+    //upload berita acara ptsp10
     private function aksi_upload_berita_acaraptsp10($id_ptsp)
     {
         $config['upload_path']          = '../assets/dashboard/pemohon/ptsp/ptsp10/berita_acara/';
@@ -597,5 +613,335 @@ class Dashboard extends CI_Controller
                 $this->db->update('ptsp10', $data);
             }
         }
+    }
+
+    // upload berita_acara_verifikasi_dok ptsp13
+    public function upload_berita_acara_verifikasi_dok($id_ptsp)
+    {
+        if ($_FILES != null) {
+            $this->aksi_upload_berita_acara_verifikasi_dokptsp13($id_ptsp);
+        }
+        $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
+        $id_layanan = $this->input->post('id_layanan');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
+    }
+
+    //upload jadwal siaran ptsp13
+    private function aksi_upload_berita_acara_verifikasi_dokptsp13($id_ptsp)
+    {
+        $config['upload_path']          = '../assets/dashboard/pemohon/ptsp/ptsp13/berita_acara_verifikasi_dok/';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|docx|doc|xlsx|xls';
+        $config['file_name']            = 'berita_acara_verifikasi_dok-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+        $this->load->library('upload', $config);
+        if (!empty($_FILES['berita_acara_verifikasi_dok']['name'])) {
+            if ($this->upload->do_upload('berita_acara_verifikasi_dok')) {
+
+                $uploadData = $this->upload->data();
+
+                $item = $this->db->where('id_ptsp', $id_ptsp)->get('ptsp13')->row();
+
+                //replace foto lama 
+                if ($item->berita_acara_verifikasi_dok != null) {
+                    $target_file = '../assets/dashboard/pemohon/ptsp/ptsp13/berita_acara_verifikasi_dok/' . $item->berita_acara_verifikasi_dok;
+                    unlink($target_file);
+                }
+
+                $data['berita_acara_verifikasi_dok'] = $uploadData['file_name'];
+
+                $this->db->where('id_ptsp', $id_ptsp);
+                $this->db->update('ptsp13', $data);
+            }
+        }
+    }
+
+    // upload berita_acara_verifikasi_lap ptsp10
+    public function upload_berita_acara_verifikasi_lap($id_ptsp)
+    {
+        if ($_FILES != null) {
+            $this->aksi_upload_berita_acara_verifikasi_lap($id_ptsp);
+        }
+        $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
+        $id_layanan = $this->input->post('id_layanan');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
+    }
+
+    //upload berita_acara_verifikasi_lap ptsp13
+    private function aksi_upload_berita_acara_verifikasi_lap($id_ptsp)
+    {
+        $config['upload_path']          = '../assets/dashboard/pemohon/ptsp/ptsp13/berita_acara_verifikasi_lap/';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|docx|doc|xlsx|xls';
+        $config['file_name']            = 'berita_acara_verifikasi_lap-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+        $this->load->library('upload', $config);
+        if (!empty($_FILES['berita_acara_verifikasi_lap']['name'])) {
+            if ($this->upload->do_upload('berita_acara_verifikasi_lap')) {
+
+                $uploadData = $this->upload->data();
+
+                $item = $this->db->where('id_ptsp', $id_ptsp)->get('ptsp13')->row();
+
+                //replace foto lama 
+                if ($item->berita_acara_verifikasi_lap != null) {
+                    $target_file = '../assets/dashboard/pemohon/ptsp/ptsp13/berita_acara_verifikasi_lap/' . $item->berita_acara_verifikasi_lap;
+                    unlink($target_file);
+                }
+
+                $data['berita_acara_verifikasi_lap'] = $uploadData['file_name'];
+
+                $this->db->where('id_ptsp', $id_ptsp);
+                $this->db->update('ptsp13', $data);
+            }
+        }
+    }
+
+    //update status permohonan menjadi Proses Kasubag
+    public function update_data_berita_acara_ptsp13($id_ptsp)
+    {
+        $data = array(
+            'no_berita_acara_verifikasi_dok' => $this->input->post('no_berita_acara_verifikasi_dok'),
+            'tgl_berita_acara_verifikasi_dok' => $this->input->post('tgl_berita_acara_verifikasi_dok'),
+            'no_berita_acara_verifikasi_lap' => $this->input->post('no_berita_acara_verifikasi_lap'),
+            'tgl_berita_acara_verifikasi_lap' => $this->input->post('tgl_berita_acara_verifikasi_lap'),
+        );
+
+        $this->m_tim_teknis->update_data_ptsp($id_ptsp, $data, 'ptsp13');
+
+
+        $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
+        $id_layanan = $this->input->post('id_layanan');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
+    }
+
+    // upload berita acara ptsp14
+    public function upload_berita_acaraptsp14($id_ptsp)
+    {
+        if ($_FILES != null) {
+            $this->aksi_upload_berita_acaraptsp14($id_ptsp);
+        }
+        $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
+        $id_layanan = $this->input->post('id_layanan');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
+    }
+
+    //upload berita acara ptsp14
+    private function aksi_upload_berita_acaraptsp14($id_ptsp)
+    {
+        $config['upload_path']          = '../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara/';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|docx|doc|xlsx|xls';
+        $config['file_name']            = 'berita_acara-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+        $this->load->library('upload', $config);
+        if (!empty($_FILES['berita_acara']['name'])) {
+            if ($this->upload->do_upload('berita_acara')) {
+
+                $uploadData = $this->upload->data();
+
+                $item = $this->db->where('id_ptsp', $id_ptsp)->get('ptsp14')->row();
+
+                //replace foto lama 
+                if ($item->berita_acara != null) {
+                    $target_file = '../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara/' . $item->berita_acara;
+                    unlink($target_file);
+                }
+
+                $data['berita_acara'] = $uploadData['file_name'];
+
+                $this->db->where('id_ptsp', $id_ptsp);
+                $this->db->update('ptsp14', $data);
+            }
+        }
+    }
+
+    //input no statistik
+    public function update_no_statistik($id_ptsp)
+    {
+        $data = array(
+            'nomor_statistik' => $this->input->post('nomor_statistik'),
+        );
+
+        $this->m_tim_teknis->update_data_ptsp($id_ptsp, $data, 'ptsp14');
+
+
+        $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
+        $id_layanan = $this->input->post('id_layanan');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
+    }
+
+    // upload berita acara ptsp15
+    public function upload_berita_acaraptsp15($id_ptsp)
+    {
+        if ($_FILES != null) {
+            $this->aksi_upload_berita_acaraptsp15($id_ptsp);
+        }
+        $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
+        $id_layanan = $this->input->post('id_layanan');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
+    }
+
+    //upload berita acara ptsp15
+    private function aksi_upload_berita_acaraptsp15($id_ptsp)
+    {
+        $config['upload_path']          = '../assets/dashboard/pemohon/ptsp/ptsp15/berita_acara/';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|docx|doc|xlsx|xls';
+        $config['file_name']            = 'berita_acara-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+        $this->load->library('upload', $config);
+        if (!empty($_FILES['berita_acara']['name'])) {
+            if ($this->upload->do_upload('berita_acara')) {
+
+                $uploadData = $this->upload->data();
+
+                $item = $this->db->where('id_ptsp', $id_ptsp)->get('ptsp15')->row();
+
+                //replace foto lama 
+                if ($item->berita_acara != null) {
+                    $target_file = '../assets/dashboard/pemohon/ptsp/ptsp15/berita_acara/' . $item->berita_acara;
+                    unlink($target_file);
+                }
+
+                $data['berita_acara'] = $uploadData['file_name'];
+
+                $this->db->where('id_ptsp', $id_ptsp);
+                $this->db->update('ptsp15', $data);
+            }
+        }
+    }
+
+    //input no statistik ptsp15
+    public function update_no_statistik_ptsp15($id_ptsp)
+    {
+        $data = array(
+            'nomor_statistik' => $this->input->post('nomor_statistik'),
+        );
+
+        $this->m_tim_teknis->update_data_ptsp($id_ptsp, $data, 'ptsp15');
+
+
+        $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
+        $id_layanan = $this->input->post('id_layanan');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
+    }
+
+    // upload berita acara ptsp20
+    public function upload_berita_acaraptsp20($id_ptsp)
+    {
+        if ($_FILES != null) {
+            $this->aksi_upload_berita_acaraptsp20($id_ptsp);
+        }
+        $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
+        $id_layanan = $this->input->post('id_layanan');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
+    }
+
+    //upload berita acara ptsp20
+    private function aksi_upload_berita_acaraptsp20($id_ptsp)
+    {
+        $config['upload_path']          = '../assets/dashboard/pemohon/ptsp/ptsp20/berita_acara/';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|docx|doc|xlsx|xls';
+        $config['file_name']            = 'berita_acara-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+        $this->load->library('upload', $config);
+        if (!empty($_FILES['berita_acara']['name'])) {
+            if ($this->upload->do_upload('berita_acara')) {
+
+                $uploadData = $this->upload->data();
+
+                $item = $this->db->where('id_ptsp', $id_ptsp)->get('ptsp20')->row();
+
+                //replace foto lama 
+                if ($item->berita_acara != null) {
+                    $target_file = '../assets/dashboard/pemohon/ptsp/ptsp20/berita_acara/' . $item->berita_acara;
+                    unlink($target_file);
+                }
+
+                $data['berita_acara'] = $uploadData['file_name'];
+
+                $this->db->where('id_ptsp', $id_ptsp);
+                $this->db->update('ptsp20', $data);
+            }
+        }
+    }
+
+    //input no statistik ptsp20
+    public function update_no_statistik_ptsp20($id_ptsp)
+    {
+        $data = array(
+            'no_statistik' => $this->input->post('no_statistik'),
+        );
+
+        $this->m_tim_teknis->update_data_ptsp($id_ptsp, $data, 'ptsp20');
+
+
+        $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
+        $id_layanan = $this->input->post('id_layanan');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
+    }
+
+    // upload berita acara ptsp21
+    public function upload_berita_acaraptsp21($id_ptsp)
+    {
+        if ($_FILES != null) {
+            $this->aksi_upload_berita_acaraptsp21($id_ptsp);
+        }
+        $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
+        $id_layanan = $this->input->post('id_layanan');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
+    }
+
+    //upload berita acara ptsp21
+    private function aksi_upload_berita_acaraptsp21($id_ptsp)
+    {
+        $config['upload_path']          = '../assets/dashboard/pemohon/ptsp/ptsp21/berita_acara/';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|docx|doc|xlsx|xls';
+        $config['file_name']            = 'berita_acara-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+        $this->load->library('upload', $config);
+        if (!empty($_FILES['berita_acara']['name'])) {
+            if ($this->upload->do_upload('berita_acara')) {
+
+                $uploadData = $this->upload->data();
+
+                $item = $this->db->where('id_ptsp', $id_ptsp)->get('ptsp21')->row();
+
+                //replace foto lama 
+                if ($item->berita_acara != null) {
+                    $target_file = '../assets/dashboard/pemohon/ptsp/ptsp21/berita_acara/' . $item->berita_acara;
+                    unlink($target_file);
+                }
+
+                $data['berita_acara'] = $uploadData['file_name'];
+
+                $this->db->where('id_ptsp', $id_ptsp);
+                $this->db->update('ptsp21', $data);
+            }
+        }
+    }
+
+    //tanggal pengukuran dan jam pengukuran ptsp21
+    public function update_data_ptsp21($id_ptsp)
+    {
+        $data = array(
+            'tgl_pengukuran' => $this->input->post('tgl_pengukuran'),
+            'jam_pengukuran' => $this->input->post('jam_pengukuran'),
+        );
+
+        $this->m_tim_teknis->update_data_ptsp($id_ptsp, $data, 'ptsp21');
+
+
+        $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
+        $id_layanan = $this->input->post('id_layanan');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
     }
 }
