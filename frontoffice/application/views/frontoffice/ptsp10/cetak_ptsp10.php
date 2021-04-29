@@ -12,50 +12,82 @@
 	<title>SIMANIS - Dashboard</title>
 
 	<!--Tittle Icon-->
-	<link rel="shortcut icon" href="<?= base_url('assets/landing/images/') ?>title.png" />
+	<link rel="shortcut icon" href="<?= base_url('../assets/landing/images/') ?>title.png" />
 
 	<!-- Custom fonts for this template-->
-	<link rel="stylesheet" href="<?= base_url('assets/vendor/fontawesome-free/css/all.min.css') ?>" />
+	<link rel="stylesheet" href="<?= base_url('../assets/vendor/fontawesome-free/css/all.min.css') ?>" />
 	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<!-- Custom styles for this template-->
-	<link rel="stylesheet" href="<?= base_url('assets/dashboard/css/sb-admin-2.min.css') ?>" />
+	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
-		.kopsurat {
-			width: 700px;
+		.body {
+			color: #000;
+		}
+
+		.logosurat {
+			height: 130px;
+			width: 130px;
+			margin-top: -20px;
+			margin-left: 15px;
+		}
+
+		.kopsurat p {
+			font-weight: bold;
+			line-height: 1em;
+
 		}
 
 		.card-body {
-			margin-right: 50px;
+			padding: 5rem;
 		}
 
 		.badan_surat {
 			color: #000;
 		}
 
-		.badan_surat {
-			font-family: 'Arial';
+		.badan_surat .row {
+			color: #000;
 		}
 
-		.no_surat {
+		.badan_surat {
+			font-family: 'Times New Roman';
+			margin-left: 60px;
+		}
+
+		.kepala_sertifikat {
 			font-weight: bold;
-			font-size: 12pt;
-			text-align: center;
-			margin-left: 110px;
+			font-size: 14pt;
+		}
+
+		.kepala_sertifikat p {
+			margin-top: 3px;
+		}
+		.row{
+			font-size: 14pt;
+			font-family: 'Times New Roman';
+		}
+		.no_surat {
+			font-size: 14pt;
+		}
+
+		.tujuan_surat{
+			font-size: 14pt;
+			font-family: 'Times New Roman';
 		}
 
 		.paragraf {
 			/* text-indent: 2.8125em; */
 			text-align: justify;
-			font-family: 'Arial';
+			font-family: 'Times New Roman';
 			text-indent: 50px;
-			color: #000000 !important;
+			font-size: 14pt;
 		}
 
 		.isi_surat {
 			margin-left: 0.0375em;
-			font-size: 11pt;
+			font-size: 14pt;
 			line-height: 1.2em;
-			font-family: 'Arial';
+			font-family: 'Times New Roman';
 		}
 
 		.identitas {
@@ -89,6 +121,7 @@
 		}
 
 		.bawah {
+			display: block;
 			position: absolute;
 			float: right;
 			margin-right: 160px;
@@ -98,17 +131,20 @@
 			display: block;
 			position: absolute;
 			float: left;
-			margin-top: 65px;
-			margin-right: -300px;
+			margin-top: 200px;
+			margin-right: -500px;
 		}
 
-		.nama-terang {
-			margin-left: 220px !important;
+		.table {
+			color: #000;
 		}
 
-		table {
-			margin-left: 30px;
+		.table-bordered {
+			border-width: 2px;
+			border-color: #000;
+			margin-left: 15px;
 		}
+
 	</style>
 
 </head>
@@ -122,95 +158,84 @@
 			</div>
 			<div class="col-md-8">
 				<div class="card shadow mb-4">
-					<div class="card-body">
-						<center>
+				<div class="card-body">
+
 							<div class="kopsurat row">
 								<div class="col-md-12 mb-3">
 									<object data="" type="image">
-										<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
+										<img class="img-fluid" alt="logo_kop_surat"
+											src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
 									</object>
 								</div>
 							</div>
-						</center>
-
-						<div class="badan_surat">
 							<div class="no_surat">
-								<?php foreach ($detail_ptsp as $detail) { ?>
-									<p><u>SURAT KETERANGAN</u><br>
-										Nomor : <?= $detail->no_surat ?> </p>
-								<?php } ?>
+								<center>
+									<p><b>REKOMENDASI </b><br>
+										Nomor :
+									</p>
+								</center>
+							</div>
+							<div class="isi_surat">
+								<p> assalamu'alaikum Wr. Wb.
+								</p>
 							</div>
 							<div class="isi_surat paragraf">
-								<?php foreach ($data_pemohon as $detail) { ?>
-									<p>Menindaklanjuti surat permohonan dari Saudara <?= $detail->nama ?> tentang
-										Permohonan Surat Keterangan Haji Pertama, dengan ini Kepala Kantor
-										Kementrian Agama Kabupaten Klaten menerangkan bahwa :</p>
-								<?php } ?>
+								<p> Berdasarkan permohonan dari Saudara............ selaku Pimpinan PT......... perihal
+								Rekomendasi Perpanjang Izin Operasional Kantro Cabang PPIU. Setelah dilakukan peninjauan terhadap Kantor
+								Cabang PT....... yang berdomisili di.................  maka Kepala Kantor Kementerian Agama Kab. Klaten dengan ini 
+								memberikan rekomendasi kepada:
+								</p>
 							</div>
-							<?php foreach ($detail_ptsp as $detail) { ?>
-								<div class="isi_surat identitas">
-									<table class="table-responsive">
-										<tbody>
-											<tr>
-												<td>Nama</td>
-												<td> </td>
-												<td> </td>
-												<td>:</td>
-												<td> </td>
-												<td><?= $detail->nama ?></td>
-											</tr>
-											<tr>
-												<td>Tempat dan Tanggal Lahir</td>
-												<td> </td>
-												<td> </td>
-												<td>:</td>
-												<td> </td>
-												<td><?= $detail->tempat_lahir ?>, <?= $detail->tanggal_lahir ?> </td>
-											</tr>
-											<tr>
-												<td>Alamat</td>
-												<td> </td>
-												<td> </td>
-												<td>:</td>
-												<td> </td>
-												<td><?= $detail->alamat ?></td>
-											</tr>
-											<tr>
-												<td>Nomor Porsi</td>
-												<td> </td>
-												<td> </td>
-												<td>:</td>
-												<td> </td>
-												<td><?= $detail->nomor_porsi ?></td>
-											</tr>
-										</tbody>
-									</table>
+
+							<div class="isi_surat identitas">
+								<table>
+									<tbody>
+										<tr>
+											<td>Nama Kantor Cabang</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td>xx</td>
+										</tr>
+										<tr>
+											<td>Alamat Kantor Cabang</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td>xx
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="isi_surat paragraf">
+								<p>Rekomendasi ini dibuat untuk menjadi pertimbangan Perpanjang Operasional Kantor Cabang PPIU sebagai Penyelenggara
+								Perjalanan Ibadah Umrah di Kabupaten Klaten.
+								</p>
+							</div>
+							<div class="isi_surat paragraf">
+								<p>
+									Demikian rekomendasi ini kami buat untuk dipergunakan sebagaimana mestinya.
+								</p>
+							</div>
+							<div class="isi_surat">
+								<p> Wassalamu'alaikum Wr. Wb.
+								</p>
+							</div>
+							<div class="row">
+								<div class="col-md-9">
 								</div>
-								<div class="isi_surat paragraf">
-									<p>Adalah jemaah haji Kabupaten Klaten Tahun <?= $detail->tahun_hijriah ?> H / <?= $detail->tahun_masehi ?> M dan perjalanan
-										ibadah hajinya merupakan yang pertama.
-									</p>
-									<p>
-										Demikian surat keterangan ini dibuat untuk dapat dipergunakan
-										sebagaimana
-										mestinya
-									</p>
-								</div>
-								<div class="row bawah">
-									<div class="col-md-6">
-									</div>
-									<div class="col-md-6">
-										<div class="badan_surat isi_surat">
-											<center>
-												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-												Klaten, 03 Maret 2020<br>
-												Kepala
-											</center>
-										</div>
+								<div class="col-md-3">
+									<div class="badan_surat isi_surat">
+											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+											Klaten, ......... 2021<br>
+											Kepala
 									</div>
 								</div>
-							<?php } ?>
-							<div class="row ttd_kades">
+							</div>
+							<div class="row ttd_kepala">
 								<div class="col-md-6 ">
 								</div>
 								<div class="col-md-6">
@@ -218,27 +243,25 @@
 								</div>
 							</div>
 							<br> <br>
-							<div class="row kepala">
-								<div class="col-md-6 ">
+							<div class="row">
+								<div class="col-md-9">
 								</div>
-								<div class="col-md-6 nama-terang">
-									<center>
-										<div class="isi_surat">
-											<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
-											NIP. 197004201995031003
-										</div>
-									</center>
+								<div class="col-md-3">
+									<div class="badan_surat isi_surat">
+											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+											Anif Solikhin<br>
+									</div>
 								</div>
 							</div>
+
+
 						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
 	</div>
 	<!-- /.container-fluid -->
-	</div>
+
 	<!-- End of Main Content -->
 </body>
 

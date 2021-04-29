@@ -394,17 +394,4 @@ class Dashboard extends CI_Controller
         }
         $this->load->view('footer');
     }
-	//Detail Permohonan ptsp20
-    public function detail_ptsp20()
-    {
-        $data_title['title'] = 'Detail Permohonan';
-        $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
-        $this->session->userdata('id_kepala')])->row_array();
-
-        $this->load->view('header', $data_title);
-        $this->load->view('kepala/sidebar');
-        $this->load->view('topbar', $data);
-        $this->load->view('kepala/ptsp20/detail_ptsp20');
-        $this->load->view('footer');
-    }
 }
