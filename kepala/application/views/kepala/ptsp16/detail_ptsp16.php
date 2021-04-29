@@ -89,59 +89,55 @@
 		<?php } ?>
 		<div class="row clearfix">
 			<div class="col-md-4 mb-0">
-				<!-- Proposal Permohonan -->
+				<!-- Surat Permohonan -->
 				<div class="card shadow mb-4">
 					<div class="card-header">
 						<center>
-							<h6 class="m-0 font-weight-bold">Proposal Permohonan</h6>
+							<h6 class="m-0 font-weight-bold">Surat Permohonan</h6>
 						</center>
 					</div>
-
 					<div class="card-body">
 						<center>
-							<?php if ($detail->proposal_permohonan != null) { ?>
-							<p><?= $detail->proposal_permohonan; ?></p>
-							<a id="btn_upload" class="btn btn-sm btn-primary"
-								href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp15/proposal_permohonan/<?= $detail->proposal_permohonan ?>"
-								target="_blank">
-								<i class="fa fa-download nav-icon">
-								</i> Klik untuk melihat
-							</a>
-							<?php } elseif ($detail->proposal_permohonan == null) { ?>
-							<p>Belum ada lampiran</p>
+							<?php if ($detail->srt_permohonan != null) { ?>
+								<p><?= $detail->srt_permohonan; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp16/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->srt_permohonan == null) { ?>
+								<p class="mb-0">Belum ada lampiran</p>
 							<?php } ?>
 						</center>
 					</div>
 				</div>
-				<?php if ($detail->berita_acara != null) { ?>
-					<!-- Proposal Berita Acara -->
-					<div class="card shadow mb-4">
-						<div class="card-header">
-							<center>
-								<h6 class="m-0 font-weight-bold">Berita Acara</h6>
-							</center>
-						</div>
-
-						<div class="card-body">
-							<center>
-								<?php if ($detail->berita_acara != null) { ?>
-									<p><?= $detail->berita_acara; ?></p>
-									<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp15/berita_acara/<?= $detail->berita_acara ?>" target="_blank">
-										<i class="fa fa-download nav-icon">
-										</i> Klik untuk melihat
-									</a>
-								<?php } elseif ($detail->berita_acara == null) { ?>
-									<p class="mb-0">Belum ada lampiran</p>
-								<?php } ?>
-							</center>
-						</div>
+				<!-- Proposal -->
+				<div class="card shadow mb-4">
+					<div class="card-header">
+						<center>
+							<h6 class="m-0 font-weight-bold">Proposal</h6>
+						</center>
 					</div>
-				<?php } ?>
+					<div class="card-body">
+						<center>
+							<?php if ($detail->proposal != null) { ?>
+								<p><?= $detail->proposal; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp16/proposal/<?= $detail->proposal ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->proposal == null) { ?>
+								<p class="mb-0">Belum ada lampiran</p>
+							<?php } ?>
+						</center>
+					</div>
+				</div>
 			</div>
 			<div class="col-md-8 mb-2">
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-center">Permohonan Ijop Madin</h6>
+						<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Proposal PD Pontren</h6>
+						<h6 class="m-0 font-weight-bold text-center">(Bantuan Sarpras/Pembangunan/Rebahilitasi Bangunan)
+						</h6>
 					</div>
 					<div class="card-body">
 						<table class="table-hover table-responsive">
@@ -156,71 +152,81 @@
 										<td><?= $detail->no_surat ?></td>
 									</tr>
 								<?php } ?>
-								<?php if ($detail->nomor_statistik != null) { ?>
+								<?php if ($detail->sifat != null) { ?>
 									<tr>
-										<td><b>Nomor Statistik</b></td>
+										<td><b>Sifat Surat</b></td>
 										<td> </td>
 										<td> </td>
 										<td>:</td>
 										<td> </td>
-										<td><?= $detail->nomor_statistik ?></td>
+										<td><?= $detail->sifat ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->jml_lampiran != null) { ?>
+									<tr>
+										<td><b>Jumlah Lampiran</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->jml_lampiran ?></td>
 									</tr>
 								<?php } ?>
 								<tr>
-									<td><b>Nama Madrasah</b></td>
+									<td><b>Nama Tujuan</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= $detail->nama_mtd ?></td>
+									<td><?= $detail->nama_tujuan ?></td>
 								</tr>
 								<tr>
-									<td><b>Alamat</b></td>
+									<td><b>Tempat Tujuan</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= $detail->alamat ?></td>
+									<td><?= $detail->tempat_tujuan ?></td>
 								</tr>
 								<tr>
-									<td><b>Desa</b></td>
+									<td><b>Nama Instansi Pemohon</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= $detail->desa ?></td>
+									<td><?= $detail->nama_instansi_pemohon ?></td>
 								</tr>
 								<tr>
-									<td><b>Kecamatan</b></td>
+									<td><b>Nomor Surat Permohonan</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= $detail->kecamatan ?></td>
+									<td><?= $detail->no_srt_permohonan ?></td>
 								</tr>
 								<tr>
-									<td><b>Kabupaten</b></td>
+									<td><b>Tanggal Surat Permohonan</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= $detail->kabupaten ?></td>
+									<td><?= format_indo(date($detail->tgl_srt_permohonan)) ?></td>
 								</tr>
 								<tr>
-									<td><b>Provinsi</b></td>
+									<td><b>Alamat Instansi Pemohon</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= $detail->provinsi ?></td>
+									<td><?= $detail->alamat_instansi_pemohon ?></td>
 								</tr>
 								<tr>
-									<td><b>Tahun Berdiri</b></td>
+									<td><b>Jenis Bantuan</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= $detail->tahun_berdiri ?></td>
+									<td><?= $detail->jenis_bantuan ?></td>
 								</tr>
 								<tr>
 									<td><b>No. Handphone</b></td>
@@ -236,7 +242,7 @@
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
+									<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
 								</tr>
 								<?php if ($detail->tgl_persetujuan_fo != null) { ?>
 									<tr>

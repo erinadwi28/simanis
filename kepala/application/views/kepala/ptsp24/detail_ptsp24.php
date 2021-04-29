@@ -1,16 +1,82 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-	<?php
+<?php
 	foreach ($detail_ptsp as $detail) { ?>
-	<?php if ($detail->status === 'Proses Kasubag') { ?>
+	<?php if ($detail->status === 'Pending') { ?>
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between">
 		<h3 class="judullist py-3">Detail</h3>
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Permohonan
-						Masuk</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_pending') ?>">Permohonan
+						Pending</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Detail</li>
+			</ol>
+		</nav>
+	</div>
+	<?php } elseif ($detail->status === 'Validasi Kemenag') { ?>
+	<!-- Page Heading -->
+	<div class="d-sm-flex align-items-center justify-content-between">
+		<h3 class="judullist py-3">Detail</h3>
+		<nav aria-label="breadcrumb" class="nav-breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_prosesFO') ?>">Permohonan
+						Proses FO</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Detail</li>
+			</ol>
+		</nav>
+	</div>
+	<?php } elseif ($detail->status === 'Proses BO') { ?>
+	<!-- Page Heading -->
+	<div class="d-sm-flex align-items-center justify-content-between">
+		<h3 class="judullist py-3">Detail</h3>
+		<nav aria-label="breadcrumb" class="nav-breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_prosesBO') ?>">Permohonan
+						Proses BO</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Detail</li>
+			</ol>
+		</nav>
+	</div>
+	<?php } elseif ($detail->status === 'Proses Kasi') { ?>
+	<!-- Page Heading -->
+	<div class="d-sm-flex align-items-center justify-content-between">
+		<h3 class="judullist py-3">Detail</h3>
+		<nav aria-label="breadcrumb" class="nav-breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_prosesKasi') ?>">Permohonan
+						Proses Kasi</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Detail</li>
+			</ol>
+		</nav>
+	</div>
+	<?php } elseif ($detail->status === 'Proses Kasubag') { ?>
+	<!-- Page Heading -->
+	<div class="d-sm-flex align-items-center justify-content-between">
+		<h3 class="judullist py-3">Detail</h3>
+		<nav aria-label="breadcrumb" class="nav-breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item"><a
+						href="<?= base_url('dashboard/list_permohonan_prosesKasubag') ?>">Permohonan Proses Kasubag</a>
+				</li>
+				<li class="breadcrumb-item active" aria-current="page">Detail</li>
+			</ol>
+		</nav>
+	</div>
+	<?php } elseif ($detail->status === 'Selesai') { ?>
+	<!-- Page Heading -->
+	<div class="d-sm-flex align-items-center justify-content-between">
+		<h3 class="judullist py-3">Detail</h3>
+		<nav aria-label="breadcrumb" class="nav-breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Permohonan
+						Selesai</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Detail</li>
 			</ol>
 		</nav>
@@ -42,7 +108,7 @@
 					<center>
 						<?php if ($detail->srt_permohonan != null) { ?>
 							<p><?= $detail->srt_permohonan; ?></p>
-							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp21/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp24/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
 								<i class="fa fa-download nav-icon">
 								</i> Klik untuk melihat
 							</a>
@@ -52,35 +118,33 @@
 					</center>
 				</div>
 			</div>
-			<!-- Berita Acara -->
-			<?php if ($detail->berita_acara != null) { ?>
-				<div class="card shadow mb-4">
-					<div class="card-header">
-						<center>
-							<h6 class="m-0 font-weight-bold">Berita Acara</h6>
-						</center>
-					</div>
-					<div class="card-body">
-						<center>
-							<?php if ($detail->berita_acara != null) { ?>
-								<p><?= $detail->berita_acara; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp21/berita_acara/<?= $detail->berita_acara ?>" target="_blank">
-									<i class="fa fa-download nav-icon">
-									</i> Klik untuk melihat
-								</a>
-							<?php } elseif ($detail->berita_acara == null) { ?>
-								<p class="mb-0">Belum ada lampiran</p>
-							<?php } ?>
-						</center>
-					</div>
+			<!-- FC Dokumen -->
+			<div class="card shadow mb-4">
+				<div class="card-header py-3">
+					<center>
+						<h6 class="m-0 font-weight-bold">FC Dokumen BPKB dan STNK</h6>
+					</center>
 				</div>
-			<?php } ?>
+				<div class="card-body">
+					<center>
+						<?php if ($detail->fc_dokumen != null) { ?>
+							<p><?= $detail->fc_dokumen; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp24/fc_dokumen/<?= $detail->fc_dokumen ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->fc_dokumen == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
+						<?php } ?>
+					</center>
+				</div>
+			</div>
 		</div>
 		<div class="col-md-8 mb-0">
 			<!-- Detail Data -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Arah Ukur Kiblat</h6>
+					<h6 class="m-0 font-weight-bold text-center">Rekomendasi Pajak Bendaraan Bermotor Layanan Sosial Rumah Ibadah</h6>
 				</div>
 				<div class="card-body">
 					<table class="table-hover table-responsive">
@@ -95,76 +159,48 @@
 									<td><?= $detail->no_surat ?></td>
 								</tr>
 							<?php } ?>
-							<?php if ($detail->tgl_pengukuran != null) { ?>
-								<tr>
-									<td><b>Tanggal Pengukuran</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td> </td>
-									<td><?= format_indo(date($detail->tgl_pengukuran)) ?></td>
-								</tr>
-							<?php } ?>
-							<?php if ($detail->jam_pengukuran != null) { ?>
-								<tr>
-									<td><b>Jam Pengukuran</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td> </td>
-									<td><?= $detail->jam_pengukuran ?></td>
-								</tr>
-							<?php } ?>
 							<tr>
-								<td><b>Nama Masjid</b></td>
+								<td><b>Jumlah Roda Kendaraan</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->nama_masjid ?></td>
+								<td><?= $detail->jml_roda_kendaraan ?></td>
 							</tr>
 							<tr>
-								<td><b>Dukuh </b> </td>
+								<td><b>Merek Kendaraan </b> </td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->dukuh ?></td>
+								<td><?= $detail->merek_kendaraan ?></td>
 							</tr>
 							<tr>
-								<td><b>RT</b></td>
+								<td><b>No. Polisi</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->rt ?></td>
+								<td><?= $detail->no_polisi ?></td>
 							</tr>
 							<tr>
-								<td><b>RW</b></td>
+								<td><b>Pemilik Kendaraan</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->rw ?></td>
+								<td><?= $detail->pemilik_kendaraan ?></td>
 							</tr>
 							<tr>
-								<td><b>Desa</b></td>
+								<td><b>Fungsional Kendaraan</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->desa ?></td>
+								<td><?= $detail->fungsional_kendaraan ?></td>
 							</tr>
 							<tr>
-								<td><b>Kecamatan</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td> </td>
-								<td><?= $detail->kecamatan ?></td>
-							</tr>
-							<tr>
-								<td><b>No. Handphone</b></td>
+								<td><b>No. HandPhone</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
@@ -243,16 +279,7 @@
 					</table>
 				</div>
 				<div class="card-footer">
-					<div class="float-right">
-						<?php if ($detail->status == 'Proses Kasubag') { ?>
-						<a href="<?= base_url() ?>dashboard/aksi_setujui_permohonan/<?= $detail->id_permohonan_ptsp ?>">
-							<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
-								<i class="fas fa-check-circle">
-								</i> Terima
-							</button>
-						</a>
-						<?php } ?>
-					</div>
+					
 				</div>
 			</div>
 		</div>

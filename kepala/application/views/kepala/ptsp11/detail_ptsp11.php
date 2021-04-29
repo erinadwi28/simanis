@@ -1,6 +1,7 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-<?php
+	<!-- Page Heading -->
+	<?php
 	foreach ($detail_ptsp as $detail) { ?>
 	<?php if ($detail->status === 'Pending') { ?>
 	<!-- Page Heading -->
@@ -96,155 +97,115 @@
 	</div>
 	<?php } ?>
 	<div class="row clearfix">
-		<div class="col-md-4 mb-0">
-			<!-- Surat Permohonan -->
-			<div class="card shadow mb-4">
-				<div class="card-header">
-					<center>
-						<h6 class="m-0 font-weight-bold">Surat Permohonan</h6>
-					</center>
-				</div>
-				<div class="card-body">
-					<center>
-						<?php if ($detail->srt_permohonan != null) { ?>
-							<p><?= $detail->srt_permohonan; ?></p>
-							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp20/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
-								<i class="fa fa-download nav-icon">
-								</i> Klik untuk melihat
-							</a>
-						<?php } elseif ($detail->srt_permohonan == null) { ?>
-							<p class="mb-0">Belum ada lampiran</p>
-						<?php } ?>
-					</center>
-				</div>
-			</div>
-			<!-- Surat Rekomendasi KUA -->
-			<div class="card shadow mb-4">
-				<div class="card-header">
-					<center>
-						<h6 class="m-0 font-weight-bold">Surat Rekomendasi KUA</h6>
-					</center>
-				</div>
-				<div class="card-body">
-					<center>
-						<?php if ($detail->srt_rek_kua != null) { ?>
-							<p><?= $detail->srt_rek_kua; ?></p>
-							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp20/srt_rek_kua/<?= $detail->srt_rek_kua ?>" target="_blank">
-								<i class="fa fa-download nav-icon">
-								</i> Klik untuk melihat
-							</a>
-						<?php } elseif ($detail->srt_rek_kua == null) { ?>
-							<p class="mb-0">Belum ada lampiran</p>
-						<?php } ?>
-					</center>
-				</div>
-				<div class="card-footer">
-				</div>
-			</div>
-			<!-- Berita Acara -->
-			<?php if ($detail->berita_acara != null) { ?>
-				<div class="card shadow mb-4">
-					<div class="card-header">
-						<center>
-							<h6 class="m-0 font-weight-bold">Berita Acara</h6>
-						</center>
-					</div>
-					<div class="card-body">
-						<center>
-							<p><?= $detail->berita_acara; ?></p>
-							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp20/berita_acara/<?= $detail->berita_acara ?>" target="_blank">
-								<i class="fa fa-download nav-icon">
-								</i> Klik untuk melihat
-							</a>
-						</center>
-					</div>
-				</div>
-			<?php } ?>
-		</div>
-		<div class="col-md-8 mb-0">
+		<div class="col-xs-12 col-sm-2"></div>
+		<div class="col-md-8 mb-4">
 			<!-- Detail Data -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Ijin Operasional Majelis Taklim</h6>
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Pindah Siswa Madrasah</h6>
 				</div>
 				<div class="card-body">
 					<table class="table-hover table-responsive">
 						<tbody>
 							<?php if ($detail->no_surat != null) { ?>
-								<tr>
-									<td><b>Nomor Surat</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td> </td>
-									<td><?= $detail->no_surat ?></td>
-								</tr>
+							<tr>
+								<td><b>Nomor Surat</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= $detail->no_surat ?></td>
+							</tr>
 							<?php } ?>
-							<?php if ($detail->no_statistik != null) { ?>
-								<tr>
-									<td><b>Nomor Statistik</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td> </td>
-									<td><?= $detail->no_statistik ?></td>
-								</tr>
+							<?php if ($detail->jml_lampiran != null) { ?>
+							<tr>
+								<td><b>Jumlah Lampiran</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= $detail->jml_lampiran ?></td>
+							</tr>
 							<?php } ?>
 							<tr>
-								<td><b>Nama Majelis Taklim</b></td>
+								<td><b>Nama Lengkap Siswa</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->nama_majelis_taklim ?></td>
+								<td><?= $detail->nama_siswa ?></td>
 							</tr>
 							<tr>
-								<td><b>Alamat</b></td>
+								<td><b>Tempat Lahir</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->alamat ?></td>
+								<td><?= $detail->tempat_lahir_siswa ?></td>
 							</tr>
 							<tr>
-								<td><b>Desa</b></td>
+								<td><b>Tanggal Lahir</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->desa ?></td>
+								<td><?= format_indo(date($detail->tgl_lahir_siswa)) ?></td>
 							</tr>
 							<tr>
-								<td><b>Kecamatan</b></td>
+								<td><b>Nisn</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->kecamatan ?></td>
+								<td><?= $detail->nisn ?></td>
 							</tr>
 							<tr>
-								<td><b>Kabupaten</b></td>
+								<td><b>Kelas</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->kabupaten ?></td>
+								<td><?= $detail->kelas ?></td>
 							</tr>
 							<tr>
-								<td><b>Provinsi</b></td>
+								<td><b>Nama Sekolah Tujuan</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->provinsi ?></td>
+								<td><?= $detail->nama_sekolah_tujuan ?></td>
 							</tr>
 							<tr>
-								<td><b>Tahun Berdiri</b></td>
+								<td><b>Nama Sekolah Asal</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->tahun_berdiri ?></td>
+								<td><?= $detail->nama_sekolah_asal ?></td>
+							</tr>
+							<tr>
+								<td><b>No. Surat Rek. Sekolah Asal</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= $detail->no_srt_rek_sekolah_asal ?></td>
+							</tr>
+							<tr>
+								<td><b>Tanggal Surat Rek. Sekolah Asal</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= format_indo(date($detail->tgl_srt_rek_sekolah_asal)) ?></td>
+							</tr>
+							<tr>
+								<td><b>Alasan Pindah</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= $detail->alasan_pindah ?></td>
 							</tr>
 							<tr>
 								<td><b>No. Handphone</b></td>
@@ -263,72 +224,143 @@
 								<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
 							</tr>
 							<?php if ($detail->tgl_persetujuan_fo != null) { ?>
-								<tr>
-									<td><b>Tanggal Persetujuan Front Office</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td> </td>
-									<td><?= format_indo(date($detail->tgl_persetujuan_fo)); ?></td>
-								</tr>
+							<tr>
+								<td><b>Tanggal Persetujuan Front Office</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= format_indo(date($detail->tgl_persetujuan_fo)); ?></td>
+							</tr>
 							<?php } ?>
 							<?php if ($detail->tgl_persetujuan_bo != null) { ?>
-								<tr>
-									<td><b>Tanggal Persetujuan Back Office</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td> </td>
-									<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
-								</tr>
-							<?php } ?>
-							<?php if ($detail->tgl_persetujuan_tim_teknis != null) { ?>
-								<tr>
-									<td><b>Tanggal Persetujuan Tim Teknis</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td> </td>
-									<td><?= format_indo(date($detail->tgl_persetujuan_tim_teknis)); ?></td>
-								</tr>
+							<tr>
+								<td><b>Tanggal Persetujuan Back Office</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
+							</tr>
 							<?php } ?>
 							<?php if ($detail->tgl_persetujuan_kasi != null) { ?>
-								<tr>
-									<td><b>Tanggal Persetujuan Kasi</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td> </td>
-									<td><?= format_indo(date($detail->tgl_persetujuan_kasi)); ?></td>
-								</tr>
+							<tr>
+								<td><b>Tanggal Persetujuan Kasi</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= format_indo(date($detail->tgl_persetujuan_kasi)); ?></td>
+							</tr>
 							<?php } ?>
 							<?php if ($detail->tgl_persetujuan_kasubag != null) { ?>
-								<tr>
-									<td><b>Tanggal Persetujuan Kasubag</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td> </td>
-									<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
-								</tr>
+							<tr>
+								<td><b>Tanggal Persetujuan Kasubag</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
+							</tr>
 							<?php } ?>
 							<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
-								<tr>
-									<td><b>Keterangan Permohonan Pending</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td> </td>
-									<td><?= $detail->keterangan; ?></td>
-								</tr>
+							<tr>
+								<td><b>Keterangan Permohonan Pending</b></td>
+								<td> </td>
+								<td> </td>
+								<td>:</td>
+								<td> </td>
+								<td><?= $detail->keterangan; ?></td>
+							</tr>
 							<?php } ?>
 						</tbody>
 					</table>
 				</div>
-				<div class="card-footer">
-					
+
+			</div>
+		</div>
+	</div>
+	<div class="row clearfix">
+	<div class="col-xs-12 col-sm-1"></div>
+		<div class="col-xs-12 col-sm-3 mr-5">
+			<!-- Surat Rekomendasi -->
+			<div class="card shadow mb-4">
+				<div class="card-header">
+					<center>
+						<h6 class="m-0 font-weight-bold">Surat Rekomendasi</h6>
+					</center>
+				</div>
+
+				<div class="card-body">
+					<center>
+						<?php if ($detail->srt_rekomendasi != null) { ?>
+						<p><?= $detail->srt_rekomendasi; ?></p>
+						<a id="btn_upload" class="btn btn-sm btn-primary"
+							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp11/srt_rekomendasi/<?= $detail->srt_rekomendasi ?>"
+							target="_blank">
+							<i class="fa fa-download nav-icon">
+							</i> Klik untuk melihat
+						</a>
+						<?php } elseif ($detail->srt_rekomendasi == null) { ?>
+						<p>Belum ada lampiran</p>
+						<?php } ?>
+					</center>
+				</div>
+
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-3 mr-5">
+			<!-- Surat Penerimaan -->
+			<div class="card shadow mb-4">
+				<div class="card-header">
+					<center>
+						<h6 class="m-0 font-weight-bold">Surat Penerimaan</h6>
+					</center>
+				</div>
+				<div class="card-body">
+					<center>
+						<?php if ($detail->srt_penerimaan != null) { ?>
+						<p><?= $detail->srt_penerimaan; ?></p>
+						<a id="btn_upload" class="btn btn-sm btn-primary"
+							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp11/srt_penerimaan/<?= $detail->srt_penerimaan ?>"
+							target="_blank">
+							<i class="fa fa-download nav-icon">
+							</i> Klik untuk melihat
+						</a>
+						<?php } elseif ($detail->srt_penerimaan == null) { ?>
+						<p>Belum ada lampiran</p>
+						<?php } ?>
+					</center>
 				</div>
 			</div>
+		</div>
+		<div class="col-xs-12 col-sm-3">
+			<!-- fc rapot -->
+			<div class="card shadow mb-4">
+				<div class="card-header">
+					<center>
+						<h6 class="m-0 font-weight-bold">FC Rapot Terakhir</h6>
+					</center>
+				</div>
+
+				<div class="card-body">
+					<center>
+						<?php if ($detail->raport != null) { ?>
+						<p><?= $detail->raport; ?></p>
+						<a id="btn_upload" class="btn btn-sm btn-primary"
+							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp11/raport/<?= $detail->raport ?>"
+							target="_blank">
+							<i class="fa fa-download nav-icon">
+							</i> Klik untuk melihat
+						</a>
+						<?php } elseif ($detail->raport == null) { ?>
+						<p>Belum ada lampiran</p>
+						<?php } ?>
+					</center>
+				</div>
+
+			</div>
+		</div>
 	</div>
 	<?php } ?>
 	<!--End Content Profile-->

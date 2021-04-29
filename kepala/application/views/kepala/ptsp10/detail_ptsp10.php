@@ -1,96 +1,115 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
 	<!-- Page Heading -->
-	<<?php
+	<?php
 	foreach ($detail_ptsp as $detail) { ?>
-		<?php if ($detail->status === 'Pending') { ?>
-			<!-- Page Heading -->
-			<div class="d-sm-flex align-items-center justify-content-between">
-				<h3 class="judullist py-3">Detail</h3>
-				<nav aria-label="breadcrumb" class="nav-breadcrumb">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesaiKasi') ?>">Permohonan Pending</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Detail</li>
-					</ol>
-				</nav>
-			</div>
-		<?php } elseif ($detail->status === 'Validasi Kemenag') { ?>
-			<!-- Page Heading -->
-			<div class="d-sm-flex align-items-center justify-content-between">
-				<h3 class="judullist py-3">Detail</h3>
-				<nav aria-label="breadcrumb" class="nav-breadcrumb">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesaiKasi') ?>">Permohonan Proses FO</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Detail</li>
-					</ol>
-				</nav>
-			</div>
-		<?php } elseif ($detail->status === 'Proses BO') { ?>
-			<!-- Page Heading -->
-			<div class="d-sm-flex align-items-center justify-content-between">
-				<h3 class="judullist py-3">Detail</h3>
-				<nav aria-label="breadcrumb" class="nav-breadcrumb">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesaiKasi') ?>">Permohonan Proses BO</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Detail</li>
-					</ol>
-				</nav>
-			</div>
-		<?php } elseif ($detail->status === 'Proses Kasi') { ?>
-			<!-- Page Heading -->
-			<div class="d-sm-flex align-items-center justify-content-between">
-				<h3 class="judullist py-3">Detail</h3>
-				<nav aria-label="breadcrumb" class="nav-breadcrumb">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Permohonan Proses Kasi</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Detail</li>
-					</ol>
-				</nav>
-			</div>
-		<?php } elseif ($detail->status === 'Selesai') { ?>
-			<!-- Page Heading -->
-			<div class="d-sm-flex align-items-center justify-content-between">
-				<h3 class="judullist py-3">Detail</h3>
-				<nav aria-label="breadcrumb" class="nav-breadcrumb">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesaiKasi') ?>">Permohonan Selesai</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Detail</li>
-					</ol>
-				</nav>
-			</div>
-		<?php } elseif ($detail->status === 'Proses Kasubag') { ?>
-			<!-- Page Heading -->
-			<div class="d-sm-flex align-items-center justify-content-between">
-				<h3 class="judullist py-3">Detail</h3>
-				<nav aria-label="breadcrumb" class="nav-breadcrumb">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesaiKasubag') ?>">Permohonan Selesai</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Detail</li>
-					</ol>
-				</nav>
-			</div>
-		<?php } ?>
+	<?php if ($detail->status === 'Pending') { ?>
+	<!-- Page Heading -->
+	<div class="d-sm-flex align-items-center justify-content-between">
+		<h3 class="judullist py-3">Detail</h3>
+		<nav aria-label="breadcrumb" class="nav-breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_pending') ?>">Permohonan
+						Pending</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Detail</li>
+			</ol>
+		</nav>
+	</div>
+	<?php } elseif ($detail->status === 'Validasi Kemenag') { ?>
+	<!-- Page Heading -->
+	<div class="d-sm-flex align-items-center justify-content-between">
+		<h3 class="judullist py-3">Detail</h3>
+		<nav aria-label="breadcrumb" class="nav-breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_prosesFO') ?>">Permohonan
+						Proses FO</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Detail</li>
+			</ol>
+		</nav>
+	</div>
+	<?php } elseif ($detail->status === 'Proses BO') { ?>
+	<!-- Page Heading -->
+	<div class="d-sm-flex align-items-center justify-content-between">
+		<h3 class="judullist py-3">Detail</h3>
+		<nav aria-label="breadcrumb" class="nav-breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_prosesBO') ?>">Permohonan
+						Proses BO</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Detail</li>
+			</ol>
+		</nav>
+	</div>
+	<?php } elseif ($detail->status === 'Proses Kasi') { ?>
+	<!-- Page Heading -->
+	<div class="d-sm-flex align-items-center justify-content-between">
+		<h3 class="judullist py-3">Detail</h3>
+		<nav aria-label="breadcrumb" class="nav-breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_prosesKasi') ?>">Permohonan
+						Proses Kasi</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Detail</li>
+			</ol>
+		</nav>
+	</div>
+	<?php } elseif ($detail->status === 'Proses Kasubag') { ?>
+	<!-- Page Heading -->
+	<div class="d-sm-flex align-items-center justify-content-between">
+		<h3 class="judullist py-3">Detail</h3>
+		<nav aria-label="breadcrumb" class="nav-breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item"><a
+						href="<?= base_url('dashboard/list_permohonan_prosesKasubag') ?>">Permohonan Proses Kasubag</a>
+				</li>
+				<li class="breadcrumb-item active" aria-current="page">Detail</li>
+			</ol>
+		</nav>
+	</div>
+	<?php } elseif ($detail->status === 'Selesai') { ?>
+	<!-- Page Heading -->
+	<div class="d-sm-flex align-items-center justify-content-between">
+		<h3 class="judullist py-3">Detail</h3>
+		<nav aria-label="breadcrumb" class="nav-breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Permohonan
+						Selesai</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Detail</li>
+			</ol>
+		</nav>
+	</div>
+	<?php } elseif ($detail->status === 'Selesai') { ?>
+	<!-- Page Heading -->
+	<div class="d-sm-flex align-items-center justify-content-between">
+		<h3 class="judullist py-3">Detail</h3>
+		<nav aria-label="breadcrumb" class="nav-breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item"><a
+						href="<?= base_url('dashboard/list_permohonan_selesaiKasubag') ?>">Permohonan Selesai</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Detail</li>
+			</ol>
+		</nav>
+	</div>
+	<?php } ?>
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
-		<div class="col-md-8 mb-2">
+		<div class="col-md-8 mb-4">
 			<!-- Detail Data -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Izin Perpanjang Operasional <br>
+				<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Izin Perpanjang Operasional <br>
 						Penyelengara Perjalanan Ibadah Umroh (PPIU) dan Perjalanan Ibadah Haji Khusus (PIHK)
 					</h6>
 				</div>
 				<div class="card-body">
-					<table class="table-hover table-responsive">
+				<table class="table-hover table-responsive">
 						<tbody>
-							<?php if ($detail->no_surat != null) { ?>
+						<?php if ($detail->no_surat != null) { ?>
 							<tr>
 								<td><b>Nomor Surat</b></td>
 								<td> </td>
@@ -201,6 +220,7 @@
 						</tbody>
 					</table>
 				</div>
+
 			</div>
 		</div>
 	</div>
@@ -412,7 +432,7 @@
 
 	</div>
 	<div class="row clearfix">
-		
+		<div class="col-xs-12 col-sm-1"></div>
 		<div class="col-xs-12 col-sm-3">
 			<!-- Susunan Pengurus -->
 			<div class="card shadow mb-4">
@@ -463,12 +483,12 @@
 				</div>
 			</div>
 		</div>
-		<!-- Berita Acara -->
 		<div class="col-xs-12 col-sm-3">
+			<!-- Berita acara dari Tim Teknis-->
 			<div class="card shadow mb-4">
 				<div class="card-header">
 					<center>
-						<h6 class="m-0 font-weight-bold">Berita Acara</h6>
+						<h6 class="m-0 font-weight-bold">Berita Acara Tim Teknis</h6>
 					</center>
 				</div>
 				<div class="card-body">
@@ -486,23 +506,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-xs-12 col-sm-3">
-
-		</div>
 	</div>
-
-	<!-- Button Setujui -->
-	<div class="row clearfix float-right px-2">
-	<?php if ($detail->status == 'Proses Kasi') { ?>
-		<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
-			<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
-				<i class="fas fa-check-circle">
-				</i> Terima
-			</button>
-		</a>
-		<?php } ?>
-	</div>
-	<?php }?>
+	<?php } ?>
 	<!--End Content Profile-->
 </div>
 <!-- /.container-fluid -->
