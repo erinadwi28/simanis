@@ -94,20 +94,18 @@
 				<!-- ijazah -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
-						<center>
-							<h6 class="m-0 font-weight-bold">Ijazah</h6>
-						</center>
+						<h6 class="m-0 font-weight-bold text-center">FC Ijazah</h6>
 					</div>
 
-					<div class="card-body" style="padding: 15px;">
+					<div class="card-body">
 						<center>
-							<?php if ($detail->ijazah != null) { ?>
-								<p><?= $detail->ijazah; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp03/<?= $detail->ijazah ?>" target="_blank">
+							<?php if ($detail->fc_ijazah != null) { ?>
+								<p><?= $detail->fc_ijazah; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp03/fc_ijazah/<?= $detail->fc_ijazah ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
-							<?php } elseif ($sm->lampiran == null) { ?>
+							<?php } elseif ($detail->fc_ijazah == null) { ?>
 								<p>Belum ada lampiran</p>
 							<?php } ?>
 						</center>
@@ -165,6 +163,26 @@
 										<td><?= format_indo(date($detail->tgl_persetujuan_fo)); ?></td>
 									</tr>
 								<?php } ?>
+								<?php if ($detail->tgl_persetujuan_bo != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Back Office</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_persetujuan_kasubag != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Kasubag TU</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
+									</tr>
+								<?php } ?>
 								<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
 									<tr>
 										<td><b>Keterangan Permohonan Pending</b></td>
@@ -178,6 +196,7 @@
 							</tbody>
 						</table>
 					</div>
+					<div class="card-footer"></div>
 				</div>
 			</div>
 		</div>

@@ -99,15 +99,15 @@
 						</center>
 					</div>
 
-					<div class="card-body" style="padding: 15px;">
+					<div class="card-body">
 						<center>
-							<?php if ($detail->dokumen != null) { ?>
-								<p><?= $detail->dokumen; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp04/<?= $detail->dokumen ?>" target="_blank">
+							<?php if ($detail->fc_dokumen != null) { ?>
+								<p><?= $detail->fc_dokumen; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp04/fc_dokumen/<?= $detail->fc_dokumen ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
-							<?php } elseif ($detail->dokumen == null) { ?>
+							<?php } elseif ($detail->fc_dokumen == null) { ?>
 								<p>Belum ada lampiran</p>
 							<?php } ?>
 						</center>
@@ -166,6 +166,26 @@
 										<td><?= format_indo(date($detail->tgl_persetujuan_fo)); ?></td>
 									</tr>
 								<?php } ?>
+								<?php if ($detail->tgl_persetujuan_bo != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Back Office</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_persetujuan_kasubag != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Kasubag TU</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
+									</tr>
+								<?php } ?>
 								<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
 									<tr>
 										<td><b>Keterangan Permohonan Pending</b></td>
@@ -179,7 +199,7 @@
 							</tbody>
 						</table>
 					</div>
-
+					<div class="card-footer"></div>
 				</div>
 			</div>
 		</div>
