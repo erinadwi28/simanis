@@ -62,15 +62,17 @@
 		.kepala_sertifikat p {
 			margin-top: 3px;
 		}
-		.row{
+
+		.row {
 			font-size: 14pt;
 			font-family: 'Times New Roman';
 		}
+
 		.no_surat {
 			font-size: 14pt;
 		}
 
-		.tujuan_surat{
+		.tujuan_surat {
 			font-size: 14pt;
 			font-family: 'Times New Roman';
 		}
@@ -144,7 +146,6 @@
 			border-color: #000;
 			margin-left: 15px;
 		}
-
 	</style>
 
 </head>
@@ -158,16 +159,17 @@
 			</div>
 			<div class="col-md-8">
 				<div class="card shadow mb-4">
-					
-				<div class="card-body">
-							<div class="kopsurat row">
-								<div class="col-md-12 mb-3">
-									<object data="" type="image">
-										<img class="img-fluid" alt="logo_kop_surat"
-											src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
-									</object>
-								</div>
+
+					<div class="card-body">
+						<div class="kopsurat row">
+							<div class="col-md-12 mb-3">
+								<object data="" type="image">
+									<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
+								</object>
 							</div>
+						</div>
+						<?php
+						foreach ($detail_ptsp as $detail) { ?>
 							<div class="row">
 								<div class="col-md-10">
 									<table>
@@ -176,19 +178,19 @@
 												<td>Nomor</td>
 												<td></td>
 												<td>:</td>
-												<td>.../Kk.11.10/6/HM.01/03/2021</td>
+												<td><?= $detail->no_surat ?></td>
 											</tr>
-                                            <tr>
+											<tr>
 												<td>Sifat</td>
 												<td></td>
 												<td>:</td>
-												<td>biasa</td>
+												<td><?= $detail->sifat ?></td>
 											</tr>
 											<tr>
-												<td>Lamp</td>
+												<td>Lampiran</td>
 												<td></td>
 												<td>:</td>
-												<td>2 (Dua) Lembar</td>
+												<td><?= $detail->jml_lampiran ?> Lembar</td>
 											</tr>
 											<tr>
 												<td>Hal</td>
@@ -200,18 +202,18 @@
 									</table>
 								</div>
 								<div class="col-md-2">
-									<p>........................... 2021</p>
+									<p><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></p>
 								</div>
 							</div>
 							<br> <br>
 
 							<div class="isi_surat paragraf">
-								<p>Yth. Kepala Studio RSPD Klaten <br> di Klaten</p> <br>
+								<p>Yth. Kepala <?= $detail->nama_studio ?> <br> di <?= $detail->kabupaten_studio ?></p> <br>
 								<p>Assalamu'alaikum wr.wb. </p>
-                                <p align="justify">&emsp;&emsp; Memenuhi permohonan dari kepala Studio RSPD Klaten Nomor : 005/86/RSPD/III/2021 tanggal 9 Maret 2021 
-                                    perihal sebagaimana tersebut dalam pokok surat, dengan ini kami sampaikan nama-nama Petugas Siaran Keagamaan Islam
-                                    pada bulan April 2021 RSPD Klaten sebagaimana terlampir.</p>
-                                <p>&emsp;&emsp; Demikian atas perhatian dan kerjasamanya kami ucapkan terimakasih.</p>
+								<p align="justify">&emsp;&emsp; Memenuhi permohonan dari kepala <?= $detail->nama_studio ?> Nomor : <?= $detail->no_srt_permohonan ?> tanggal <?= format_indo(date($detail->tgl_srt_permohonan)); ?>
+									perihal sebagaimana tersebut dalam pokok surat, dengan ini kami sampaikan nama-nama Petugas Siaran Keagamaan <?= $detail->agama ?>
+									pada bulan <?= $detail->bln_siaran ?> 2021 RSPD Klaten sebagaimana terlampir.</p>
+								<p>&emsp;&emsp; Demikian atas perhatian dan kerjasamanya kami ucapkan terimakasih.</p>
 								<p>Wassalamu'alaikum wr.wb.</p> <br><br>
 							</div>
 							<div class="row">
@@ -221,33 +223,34 @@
 									<div class="badan_surat isi_surat">
 										<center>
 											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-											Klaten,....../..../...... <br>
+											Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?> <br>
 											Kepala
 										</center>
 									</div>
 								</div>
 							</div>
-							</div>
-							<br> 
-							<div class="row">
-								<div class="col-md-6">
-								</div>
-								<div class="col-md-6">
-									<div class="badan_surat isi_surat">
-                                    <div class="badan_surat isi_surat">
-										<center>
-											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-											<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
-											Nip. 197004201995031003
-										</center>
-									</div>
-									</div>
+						<?php } ?>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-md-6">
+						</div>
+						<div class="col-md-6">
+							<div class="badan_surat isi_surat">
+								<div class="badan_surat isi_surat">
+									<center>
+										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+										<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
+										Nip. 197004201995031003
+									</center>
 								</div>
 							</div>
 						</div>
+					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	</div>
 	<!-- /.container-fluid -->
@@ -260,110 +263,110 @@
 			</div>
 			<div class="col-md-8">
 				<div class="card shadow mb-4">
-					
-				<div class="card-body">
-							<div class="kopsurat row">
-								<div class="col-md-12 mb-3">
-									<object data="" type="image">
-										<img class="img-fluid" alt="logo_kop_surat"
-											src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
-									</object>
-								</div>
-							</div>
-							<div class="no_surat">
-								<center>
-									<p><u><b>SURAT TUGAS</b></u><br>
-										<b>Nomor :...... /Kk.11.10/6/KP.01.2/03/2021 </b>
-									</p>
-								</center>
-							</div><br>
-							<div>
-								
-									<P><b>Menimbang : </b>
-									<p align="justify">&emsp;&emsp;bahwa sehubungan dengan pelaksanaan tugas dan fungsi
-										 organisasi lingkungan Kantor Kementrian Agama Kabupaten Klaten dipandang perlu membuat
-										 surat tugas dinas pada Kantor Kementrian Agama Kabupaten Klaten 
-									</p>
-									</P>
-							</div>
-							<div>
-										<P><b>Dasar : </b>
-											<ol type="1" class="ml-0 list-syarat">
-												<li>Undang-Undang Nomor 5 Tahun 2014 tentang Aparatur Sipil Negara</li>
-												<li>Peraturan Menteri Agama Nomor 19 Tahun 2019 tentang Organisasi dan 
-													Tata Kerja Instansi Vertikal Kementerian Agama</li>
-												<li>Surat dari Kepala Studio Radio RSPD Klaten Nomor
-													<br> 005/70/RSPD/III/2021 Tanggal 9 Maret 2021</li>
-											</ol>
-										</p>
-							</div>
-							<div class="no_surat">
-								<center>
-									<p>Memberi Tugas</p>
-								</center>
-							</div>
-							<div>
-										<P><b>Kepada Untuk : </b> Penyuluh Agama Islam Sebagaimana terlampir 
-											<ol type="1" class="ml-0 list-syarat">
-												<li>Melaksanakan tugas dan fungsi organisasi di lingkungan Kantor</li>
-												<li>Melaksanakan siaran keagamaan Islam di RSPD Klaten pada bulan
-													April 2021(Jadwal terlampir)</li>
-												<li>Adapun Ketentuan penyelenggaraan siaran sebagai berikut.
-													<br> a. 30 menit sebelum siaran dimulai harus sudah siap di Studio
-															dengan perlengkapan yang diperlukan
-													<br> b. Acara sewaktu waktu dapat diadakan perubahan.
-													<br> c. Siaran berupa kaset/CD dapat dibatalkan penyiaran apabila hasil rekaman tidah baik
-													<br> d. Rekaman dapat dilakukan di LPPL RSPD Klaten dengan pemberitahuan
-															maksimal (2) dua hari sebelum tanggal penyiaran disertai dengan
-															matrai siaran pada hari dan jam kerja Senin s/d Kamis pukul 05.30/06.00 wib
-												</li>
-												<li>Setelah selesai melaksanakan tugas ini segera melaporkan kepada pimpinan</li>
-												
-											</ol>
-										</p>
-							</div>
-							<br> <br>
-							<div class="row">
-								<div class="col-md-6">
-								</div>
-								<div class="col-md-6">
-									<div class="badan_surat isi_surat">
-										<center>
-											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-											Klaten,....../..../...... <br>
-											Kepala
-										</center>
-									</div>
-								</div>
-							</div>
-							</div>
-							<br> <br>
-							<div class="row">
-								<div class="col-md-6">
-							</div>
-								<div class="col-md-6">
-									<div class="badan_surat isi_surat">
-                                		<div class="badan_surat isi_surat">
-										<center>
-											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-											<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
-											Nip. 197004201995031003
-										</center>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="isi_surat">
-								<p>Tembusan :</p>
-								<ol>
-									<li>Kepala Studio RSPD Klaten</li>
-									
-								</ol>
+
+					<div class="card-body">
+						<div class="kopsurat row">
+							<div class="col-md-12 mb-3">
+								<object data="" type="image">
+									<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
+								</object>
 							</div>
 						</div>
+						<div class="no_surat">
+							<center>
+								<p><u><b>SURAT TUGAS</b></u><br>
+									<b>Nomor :...... /Kk.11.10/6/KP.01.2/03/2021 </b>
+								</p>
+							</center>
+						</div><br>
+						<div>
+
+							<P><b>Menimbang : </b>
+							<p align="justify">&emsp;&emsp;bahwa sehubungan dengan pelaksanaan tugas dan fungsi
+								organisasi lingkungan Kantor Kementrian Agama Kabupaten Klaten dipandang perlu membuat
+								surat tugas dinas pada Kantor Kementrian Agama Kabupaten Klaten
+							</p>
+							</P>
+						</div>
+						<div>
+							<P><b>Dasar : </b>
+							<ol type="1" class="ml-0 list-syarat">
+								<li>Undang-Undang Nomor 5 Tahun 2014 tentang Aparatur Sipil Negara</li>
+								<li>Peraturan Menteri Agama Nomor 19 Tahun 2019 tentang Organisasi dan
+									Tata Kerja Instansi Vertikal Kementerian Agama</li>
+								<li>Surat dari Kepala Studio Radio RSPD Klaten Nomor
+									<br> 005/70/RSPD/III/2021 Tanggal 9 Maret 2021
+								</li>
+							</ol>
+							</p>
+						</div>
+						<div class="no_surat">
+							<center>
+								<p>Memberi Tugas</p>
+							</center>
+						</div>
+						<div>
+							<P><b>Kepada Untuk : </b> Penyuluh Agama Islam Sebagaimana terlampir
+							<ol type="1" class="ml-0 list-syarat">
+								<li>Melaksanakan tugas dan fungsi organisasi di lingkungan Kantor</li>
+								<li>Melaksanakan siaran keagamaan Islam di RSPD Klaten pada bulan
+									April 2021(Jadwal terlampir)</li>
+								<li>Adapun Ketentuan penyelenggaraan siaran sebagai berikut.
+									<br> a. 30 menit sebelum siaran dimulai harus sudah siap di Studio
+									dengan perlengkapan yang diperlukan
+									<br> b. Acara sewaktu waktu dapat diadakan perubahan.
+									<br> c. Siaran berupa kaset/CD dapat dibatalkan penyiaran apabila hasil rekaman tidah baik
+									<br> d. Rekaman dapat dilakukan di LPPL RSPD Klaten dengan pemberitahuan
+									maksimal (2) dua hari sebelum tanggal penyiaran disertai dengan
+									matrai siaran pada hari dan jam kerja Senin s/d Kamis pukul 05.30/06.00 wib
+								</li>
+								<li>Setelah selesai melaksanakan tugas ini segera melaporkan kepada pimpinan</li>
+
+							</ol>
+							</p>
+						</div>
+						<br> <br>
+						<div class="row">
+							<div class="col-md-6">
+							</div>
+							<div class="col-md-6">
+								<div class="badan_surat isi_surat">
+									<center>
+										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+										Klaten,....../..../...... <br>
+										Kepala
+									</center>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br> <br>
+					<div class="row">
+						<div class="col-md-6">
+						</div>
+						<div class="col-md-6">
+							<div class="badan_surat isi_surat">
+								<div class="badan_surat isi_surat">
+									<center>
+										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+										<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
+										Nip. 197004201995031003
+									</center>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="isi_surat">
+						<p>Tembusan :</p>
+						<ol>
+							<li>Kepala Studio RSPD Klaten</li>
+
+						</ol>
+					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	</div>
 	<!-- /.container-fluid -->
@@ -374,185 +377,185 @@
 			<div class="col-md-2">
 			</div>
 			<div class="col-md-8">
-				<div class="card shadow mb-4">	
-				<div class="card-body">
-							<div class="row">
-								<div class="col-md-10">
-									<p>Lampiran</p>
-									<p>Jadwal Petugas Siaran Keagamaan Islam RSPD Klaten</p>
-									<p>Bulan April 2021</p>
-								</div>
+				<div class="card shadow mb-4">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-md-10">
+								<p>Lampiran</p>
+								<p>Jadwal Petugas Siaran Keagamaan Islam RSPD Klaten</p>
+								<p>Bulan April 2021</p>
 							</div>
-							<br>
-							<CENTER>
+						</div>
+						<br>
+						<CENTER>
 							<div class="isi_surat identitas">
-								
+
 								<table border="1" cellpadding=2 cellspacing=3>
-     								 <tr>
-        								<td>No</td>
-        								<td>NAMA PETUGAS SIARAN</td>
-        								<td>HARI TANGGAL SIARAN</td>
+									<tr>
+										<td>No</td>
+										<td>NAMA PETUGAS SIARAN</td>
+										<td>HARI TANGGAL SIARAN</td>
 										<td>JAM SIARAN</td>
 										<td>MATA SIARAN</td>
-      								</tr>
+									</tr>
 									<tr>
-        								<td> 1 </td>
-        								<td>H. Lagimin, S.Ag,M.Ag</td>
-        								<td>Kamis, 1 April 2021</td>
+										<td> 1 </td>
+										<td>H. Lagimin, S.Ag,M.Ag</td>
+										<td>Kamis, 1 April 2021</td>
 										<td>05.30-06.00</td>
 										<td>Pagi Beriman Agama Islam</td>
-      								</tr>
-									  <tr>
-        								<td> 2 </td>
-        								<td>Ahmad Royani, S.Ag,</td>
-        								<td>Senin, 5 April 2021</td>
+									</tr>
+									<tr>
+										<td> 2 </td>
+										<td>Ahmad Royani, S.Ag,</td>
+										<td>Senin, 5 April 2021</td>
 										<td>05.30-06.00</td>
 										<td>Pagi Beriman Agama Islam</td>
-      								</tr>
-									  <tr>
-        								<td> 3 </td>
-        								<td>Drs.Abdul Basir</td>
-        								<td>Selasa, 6 April 2021</td>
+									</tr>
+									<tr>
+										<td> 3 </td>
+										<td>Drs.Abdul Basir</td>
+										<td>Selasa, 6 April 2021</td>
 										<td>05.30-06.00</td>
 										<td>Pagi Beriman Agama Islam</td>
-      								</tr>
-									  <tr>
-        								<td> 4 </td>
-        								<td>Dra.Hj.Istikomah,M.Ag</td>
-        								<td>Rabu, 7 2021</td>
+									</tr>
+									<tr>
+										<td> 4 </td>
+										<td>Dra.Hj.Istikomah,M.Ag</td>
+										<td>Rabu, 7 2021</td>
 										<td>05.30-06.00</td>
 										<td>Pagi Beriman Agama Islam</td>
-      								</tr>
-									  <tr>
-        								<td> 5 </td>
-        								<td>M.Zuhri,S.Ag.M.Si</td>
-        								<td>Kamis, 8 April 2021</td>
+									</tr>
+									<tr>
+										<td> 5 </td>
+										<td>M.Zuhri,S.Ag.M.Si</td>
+										<td>Kamis, 8 April 2021</td>
 										<td>05.30-06.00</td>
 										<td>Pagi Beriman Agama Islam</td>
-      								</tr>
-									  <tr>
-        								<td> 6 </td>
-        								<td>Andrianto Heri W, S.H.I.M.Ag</td>
-        								<td>Senin, 12 April 2021</td>
+									</tr>
+									<tr>
+										<td> 6 </td>
+										<td>Andrianto Heri W, S.H.I.M.Ag</td>
+										<td>Senin, 12 April 2021</td>
 										<td>05.30-06.00</td>
 										<td>Pagi Beriman Agama Islam</td>
-      								</tr>
-									  <tr>
-        								<td> 7 </td>
-        								<td>Moh Suryana,S.Pd.I.S.H.Ag</td>
-        								<td>Selasa, 13 April 2021</td>
+									</tr>
+									<tr>
+										<td> 7 </td>
+										<td>Moh Suryana,S.Pd.I.S.H.Ag</td>
+										<td>Selasa, 13 April 2021</td>
 										<td>05.30-06.00</td>
 										<td>Pagi Beriman Agama Islam</td>
-      								</tr>
-									  <tr>
-        								<td> 8 </td>
-        								<td>H. Sunarso, S.Ag,M.Ag</td>
-        								<td>Rabu, 14 April 2021</td>
+									</tr>
+									<tr>
+										<td> 8 </td>
+										<td>H. Sunarso, S.Ag,M.Ag</td>
+										<td>Rabu, 14 April 2021</td>
 										<td>05.30-06.00</td>
 										<td>Pagi Beriman Agama Islam</td>
-      								</tr>
-									  <tr>
-        								<td> 9 </td>
-        								<td>Nur Amini, S.Ag</td>
-        								<td>Kamis, 15 April 2021</td>
+									</tr>
+									<tr>
+										<td> 9 </td>
+										<td>Nur Amini, S.Ag</td>
+										<td>Kamis, 15 April 2021</td>
 										<td>05.30-06.00</td>
 										<td>Pagi Beriman Agama Islam</td>
-      								</tr>
-									  <tr>
-        								<td> 10</td>
-        								<td>H.Rusdi Santoso, S.Ag,M.Ag</td>
-        								<td>Senin, 19 April 2021</td>
+									</tr>
+									<tr>
+										<td> 10</td>
+										<td>H.Rusdi Santoso, S.Ag,M.Ag</td>
+										<td>Senin, 19 April 2021</td>
 										<td>05.30-06.00</td>
 										<td>Pagi Beriman Agama Islam</td>
-      								</tr>
-									  <tr>
-        								<td> 11 </td>
-        								<td>Sudarmaji, S.Ag</td>
-        								<td>Selasa, 20 April 2021</td>
+									</tr>
+									<tr>
+										<td> 11 </td>
+										<td>Sudarmaji, S.Ag</td>
+										<td>Selasa, 20 April 2021</td>
 										<td>05.30-06.00</td>
 										<td>Pagi Beriman Agama Islam</td>
-      								</tr>
-									  <tr>
-        								<td> 12 </td>
-        								<td>Rohmatul Umah, S.Ag</td>
-        								<td>Rabu, 21 April 2021</td>
+									</tr>
+									<tr>
+										<td> 12 </td>
+										<td>Rohmatul Umah, S.Ag</td>
+										<td>Rabu, 21 April 2021</td>
 										<td>05.30-06.00</td>
 										<td>Pagi Beriman Agama Islam</td>
-      								</tr>
-									  <tr>
-        								<td> 13 </td>
-        								<td>Hj.Herita Fatmawati S.Ag</td>
-        								<td>Kamis, 22 April 2021</td>
+									</tr>
+									<tr>
+										<td> 13 </td>
+										<td>Hj.Herita Fatmawati S.Ag</td>
+										<td>Kamis, 22 April 2021</td>
 										<td>05.30-06.00</td>
 										<td>Pagi Beriman Agama Islam</td>
-      								</tr>
-									  <tr>
-        								<td> 14 </td>
-        								<td>Hj. Budi Suprapti S.Pd</td>
-        								<td>Senin, 26 April 2021</td>
+									</tr>
+									<tr>
+										<td> 14 </td>
+										<td>Hj. Budi Suprapti S.Pd</td>
+										<td>Senin, 26 April 2021</td>
 										<td>05.30-06.00</td>
 										<td>Pagi Beriman Agama Islam</td>
-      								</tr>
-									  <tr>
-        								<td> 15 </td>
-        								<td>Dra.Hj Ummi Saidah</td>
-        								<td>Selasa, 27 April 2021</td>
+									</tr>
+									<tr>
+										<td> 15 </td>
+										<td>Dra.Hj Ummi Saidah</td>
+										<td>Selasa, 27 April 2021</td>
 										<td>05.30-06.00</td>
 										<td>Pagi Beriman Agama Islam</td>
-      								</tr>
-									  <tr>
-        								<td> 16 </td>
-        								<td>Hj.Endag Siti Winarsih S.Ag</td>
-        								<td>Rabu, 28 April 2021</td>
+									</tr>
+									<tr>
+										<td> 16 </td>
+										<td>Hj.Endag Siti Winarsih S.Ag</td>
+										<td>Rabu, 28 April 2021</td>
 										<td>05.30-06.00</td>
 										<td>Pagi Beriman Agama Islam</td>
-      								</tr>
-									  <tr>
-        								<td> 17 </td>
-        								<td>H. Lagimin, S.Ag,M.Ag</td>
-        								<td>Kamis, 29 April 2021</td>
+									</tr>
+									<tr>
+										<td> 17 </td>
+										<td>H. Lagimin, S.Ag,M.Ag</td>
+										<td>Kamis, 29 April 2021</td>
 										<td>05.30-06.00</td>
 										<td>Pagi Beriman Agama Islam</td>
-      								</tr>
-								 </table>
+									</tr>
+								</table>
 							</div>
-							</CENTER>
-							<br><br><br>
-							<div class="row">
-								<div class="col-md-6">
+						</CENTER>
+						<br><br><br>
+						<div class="row">
+							<div class="col-md-6">
+							</div>
+							<div class="col-md-6">
+								<div class="badan_surat isi_surat">
+									<center>
+										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+										Klaten,....../..../...... <br>
+										Kepala
+									</center>
 								</div>
-								<div class="col-md-6">
-									<div class="badan_surat isi_surat">
-										<center>
-											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-											Klaten,....../..../...... <br>
-											Kepala
-										</center>
-									</div>
-								</div>
 							</div>
-							<br> <br>
-							<div class="row">
-								<div class="col-md-6">
+						</div>
+						<br> <br>
+						<div class="row">
+							<div class="col-md-6">
 							</div>
-								<div class="col-md-6">
+							<div class="col-md-6">
+								<div class="badan_surat isi_surat">
 									<div class="badan_surat isi_surat">
-                                		<div class="badan_surat isi_surat">
 										<center>
 											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
 											<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
 											Nip. 197004201995031003
 										</center>
-										</div>
 									</div>
 								</div>
-							</div>	
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	</div>
 	<!-- /.container-fluid -->
 	<!-- Begin Page Content -->
 	<div class="container-fluid">
@@ -561,185 +564,186 @@
 			<div class="col-md-2">
 			</div>
 			<div class="col-md-8">
-				<div class="card shadow mb-4">	
-				<div class="card-body">
-							<CENTER>
+				<div class="card shadow mb-4">
+					<div class="card-body">
+						<CENTER>
 							<div class="row">
 								<div class="col-md-10">
 									<p>&emsp;&emsp;&emsp;&emsp;DAFTAR HADIR
-									<br>&emsp;&emsp;PETUGAS SIARAN RSPD KLATEN BULAN APRIL 2021</p>
-									
+										<br>&emsp;&emsp;PETUGAS SIARAN RSPD KLATEN BULAN APRIL 2021
+									</p>
+
 								</div>
 							</div>
-							</CENTER>
-							<br>
-							<CENTER>
+						</CENTER>
+						<br>
+						<CENTER>
 							<div class="isi_surat identitas">
-								<table border="1" cellpadding=2 cellspacing=3  >
-     								 <tr>
-        								<td>No</td>
-        								<td>NAMA PETUGAS SIARAN</td>
-        								<td>HARI TANGGAL SIARAN</td>
+								<table border="1" cellpadding=2 cellspacing=3>
+									<tr>
+										<td>No</td>
+										<td>NAMA PETUGAS SIARAN</td>
+										<td>HARI TANGGAL SIARAN</td>
 										<td>MATA ACARA</td>
 										<td>TANDA TANGAN</td>
-      								</tr>
+									</tr>
 									<tr>
-        								<td> 1 </td>
-        								<td>H. Lagimin, S.Ag,M.Ag</td>
-        								<td>Kamis, 1 April 2021</td>
+										<td> 1 </td>
+										<td>H. Lagimin, S.Ag,M.Ag</td>
+										<td>Kamis, 1 April 2021</td>
 										<td>Pagi Beriman Agama Islam</td>
 										<td>1.</td>
-      								</tr>
-									  <tr>
-        								<td> 2 </td>
-        								<td>Ahmad Royani, S.Ag,</td>
-        								<td>Senin, 5 April 2021</td>
+									</tr>
+									<tr>
+										<td> 2 </td>
+										<td>Ahmad Royani, S.Ag,</td>
+										<td>Senin, 5 April 2021</td>
 										<td>Pagi Beriman Agama Islam</td>
 										<td>2.</td>
-      								</tr>
-									  <tr>
-        								<td> 3 </td>
-        								<td>Drs.Abdul Basir</td>
-        								<td>Selasa, 6 April 2021</td>
+									</tr>
+									<tr>
+										<td> 3 </td>
+										<td>Drs.Abdul Basir</td>
+										<td>Selasa, 6 April 2021</td>
 										<td>Pagi Beriman Agama Islam</td>
 										<td>3.</td>
-      								</tr>
-									  <tr>
-        								<td> 4 </td>
-        								<td>Dra.Hj.Istikomah,M.Ag</td>
-        								<td>Rabu, 7 2021</td>
+									</tr>
+									<tr>
+										<td> 4 </td>
+										<td>Dra.Hj.Istikomah,M.Ag</td>
+										<td>Rabu, 7 2021</td>
 										<td>Pagi Beriman Agama Islam</td>
 										<td>4.</td>
-      								</tr>
-									  <tr>
-        								<td> 5 </td>
-        								<td>M.Zuhri,S.Ag.M.Si</td>
-        								<td>Kamis, 8 April 2021</td>
+									</tr>
+									<tr>
+										<td> 5 </td>
+										<td>M.Zuhri,S.Ag.M.Si</td>
+										<td>Kamis, 8 April 2021</td>
 										<td>Pagi Beriman Agama Islam</td>
 										<td>5.</td>
-      								</tr>
-									  <tr>
-        								<td> 6 </td>
-        								<td>Andrianto Heri W, S.H.I.M.Ag</td>
-        								<td>Senin, 12 April 2021</td>
+									</tr>
+									<tr>
+										<td> 6 </td>
+										<td>Andrianto Heri W, S.H.I.M.Ag</td>
+										<td>Senin, 12 April 2021</td>
 										<td>Pagi Beriman Agama Islam</td>
 										<td>6.</td>
-      								</tr>
-									  <tr>
-        								<td> 7 </td>
-        								<td>Moh Suryana,S.Pd.I.S.H.Ag</td>
-        								<td>Selasa, 13 April 2021</td>
+									</tr>
+									<tr>
+										<td> 7 </td>
+										<td>Moh Suryana,S.Pd.I.S.H.Ag</td>
+										<td>Selasa, 13 April 2021</td>
 										<td>Pagi Beriman Agama Islam</td>
 										<td>7.</td>
-      								</tr>
-									  <tr>
-        								<td> 8 </td>
-        								<td>H. Sunarso, S.Ag,M.Ag</td>
-        								<td>Rabu, 14 April 2021</td>
+									</tr>
+									<tr>
+										<td> 8 </td>
+										<td>H. Sunarso, S.Ag,M.Ag</td>
+										<td>Rabu, 14 April 2021</td>
 										<td>Pagi Beriman Agama Islam</td>
 										<td>8.</td>
-      								</tr>
-									  <tr>
-        								<td> 9 </td>
-        								<td>Nur Amini, S.Ag</td>
-        								<td>Kamis, 15 April 2021</td>
+									</tr>
+									<tr>
+										<td> 9 </td>
+										<td>Nur Amini, S.Ag</td>
+										<td>Kamis, 15 April 2021</td>
 										<td>Pagi Beriman Agama Islam</td>
 										<td>9.</td>
-      								</tr>
-									  <tr>
-        								<td> 10</td>
-        								<td>H.Rusdi Santoso, S.Ag,M.Ag</td>
-        								<td>Senin, 19 April 2021</td>
+									</tr>
+									<tr>
+										<td> 10</td>
+										<td>H.Rusdi Santoso, S.Ag,M.Ag</td>
+										<td>Senin, 19 April 2021</td>
 										<td>Pagi Beriman Agama Islam</td>
 										<td>10.</td>
-      								</tr>
-									  <tr>
-        								<td> 11 </td>
-        								<td>Sudarmaji, S.Ag</td>
-        								<td>Selasa, 20 April 2021</td>
+									</tr>
+									<tr>
+										<td> 11 </td>
+										<td>Sudarmaji, S.Ag</td>
+										<td>Selasa, 20 April 2021</td>
 										<td>Pagi Beriman Agama Islam</td>
 										<td>11.</td>
-      								</tr>
-									  <tr>
-        								<td> 12 </td>
-        								<td>Rohmatul Umah, S.Ag</td>
-        								<td>Rabu, 21 April 2021</td>
+									</tr>
+									<tr>
+										<td> 12 </td>
+										<td>Rohmatul Umah, S.Ag</td>
+										<td>Rabu, 21 April 2021</td>
 										<td>Pagi Beriman Agama Islam</td>
 										<td>12.</td>
-      								</tr>
-									  <tr>
-        								<td> 13 </td>
-        								<td>Hj.Herita Fatmawati S.Ag</td>
-        								<td>Kamis, 22 April 2021</td>
+									</tr>
+									<tr>
+										<td> 13 </td>
+										<td>Hj.Herita Fatmawati S.Ag</td>
+										<td>Kamis, 22 April 2021</td>
 										<td>Pagi Beriman Agama Islam</td>
 										<td>13.</td>
-      								</tr>
-									  <tr>
-        								<td> 14 </td>
-        								<td>Hj. Budi Suprapti S.Pd</td>
-        								<td>Senin, 26 April 2021</td>
+									</tr>
+									<tr>
+										<td> 14 </td>
+										<td>Hj. Budi Suprapti S.Pd</td>
+										<td>Senin, 26 April 2021</td>
 										<td>Pagi Beriman Agama Islam</td>
 										<td>14.</td>
-      								</tr>
-									  <tr>
-        								<td> 15 </td>
-        								<td>Dra.Hj Ummi Saidah</td>
-        								<td>Selasa, 27 April 2021</td>
+									</tr>
+									<tr>
+										<td> 15 </td>
+										<td>Dra.Hj Ummi Saidah</td>
+										<td>Selasa, 27 April 2021</td>
 										<td>Pagi Beriman Agama Islam</td>
 										<td>14.</td>
-      								</tr>
-									  <tr>
-        								<td> 16 </td>
-        								<td>Hj.Endag Siti Winarsih S.Ag</td>
-        								<td>Rabu, 28 April 2021</td>
+									</tr>
+									<tr>
+										<td> 16 </td>
+										<td>Hj.Endag Siti Winarsih S.Ag</td>
+										<td>Rabu, 28 April 2021</td>
 										<td>Pagi Beriman Agama Islam</td>
 										<td>16.</td>
-      								</tr>
-									  <tr>
-        								<td> 17 </td>
-        								<td>H. Lagimin, S.Ag,M.Ag</td>
-        								<td>Kamis, 29 April 2021</td>
+									</tr>
+									<tr>
+										<td> 17 </td>
+										<td>H. Lagimin, S.Ag,M.Ag</td>
+										<td>Kamis, 29 April 2021</td>
 										<td>Pagi Beriman Agama Islam</td>
 										<td>17.</td>
-      								</tr>
-								 </table>	 
+									</tr>
+								</table>
 							</div>
-							</CENTER>
-							<br><br><br>
-							<div class="row">
-								<div class="col-md-6">
+						</CENTER>
+						<br><br><br>
+						<div class="row">
+							<div class="col-md-6">
+							</div>
+							<div class="col-md-6">
+								<div class="badan_surat isi_surat">
+									<center>
+										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+										Klaten,....../..../...... <br>
+										Kepala
+									</center>
 								</div>
-								<div class="col-md-6">
-									<div class="badan_surat isi_surat">
-										<center>
-											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-											Klaten,....../..../...... <br>
-											Kepala
-										</center>
-									</div>
-								</div>
 							</div>
-							<br> <br>
-							<div class="row">
-								<div class="col-md-6">
+						</div>
+						<br> <br>
+						<div class="row">
+							<div class="col-md-6">
 							</div>
-								<div class="col-md-6">
+							<div class="col-md-6">
+								<div class="badan_surat isi_surat">
 									<div class="badan_surat isi_surat">
-                                		<div class="badan_surat isi_surat">
 										<center>
 											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
 											<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
 											Nip. 197004201995031003
 										</center>
-										</div>
 									</div>
 								</div>
-							</div>	
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<!-- /.container-fluid -->
 

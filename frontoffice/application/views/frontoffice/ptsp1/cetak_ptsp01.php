@@ -14,9 +14,7 @@
 	<!--Tittle Icon-->
 	<link rel="shortcut icon" href="<?= base_url('../assets/landing/images/') ?>title.png" />
 
-	<link
-		href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
@@ -143,21 +141,22 @@
 			line-height: 1.5em;
 		}
 
-        .petugas>.nomor{
-            padding-right: 0px;
-        }
-        .petugas>.data{
-            padding-left: -0px;
-            margin-left: -15px;
-        }
+		.petugas>.nomor {
+			padding-right: 0px;
+		}
 
-        p{
-            margin-bottom: 0px;
-        }
+		.petugas>.data {
+			padding-left: -0px;
+			margin-left: -15px;
+		}
 
-        .pelaksanaan {
-            margin-left: 30px;
-        }
+		p {
+			margin-bottom: 0px;
+		}
+
+		.pelaksanaan {
+			margin-left: 30px;
+		}
 
 		.tgl {
 			text-align: right;
@@ -184,242 +183,207 @@
 						<div class="kopsurat row">
 							<div class="col-md-12 mb-3">
 								<object data="" type="image">
-									<img class="img-fluid" alt="logo_kop_surat"
-										src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
+									<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
 								</object>
 							</div>
 						</div>
 
 						<!-- NO SURAT -->
-						<div class="no_surat row">
-							<div class="col-9">
+						<?php foreach ($detail_ptsp as $detail) { ?>
+							<div class="no_surat row">
+								<div class="col-9">
+									<table>
+										<tbody>
+											<tr>
+												<td>Nomor</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td> </td>
+												<td><?= $detail->no_surat ?></td>
+											</tr>
+											<tr>
+												<td>Sifat</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td> </td>
+												<td><?= $detail->sifat ?></td>
+											</tr>
+											<tr>
+												<td>Lampiran</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td> </td>
+												<td><?= $detail->jml_lampiran ?></td>
+											</tr>
+											<tr>
+												<td>Hal</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td> </td>
+												<td>Petugas Rohaniawan dan Petugas Do'a</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="col-3">
+									<p class="float-right"><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></p>
+								</div>
+							</div>
+						<?php } ?>
+
+						<?php
+						foreach ($detail_ptsp as $detail) { ?>
+							<!-- KEPADA -->
+							<div class="no_surat">
+								<br>
+								<p>Kepada <br>
+									Yth. <?= $detail->pemohon ?> <br>
+									Di Tempat
+								</p>
+							</div>
+						<?php } ?>
+
+						<br>
+
+						<!-- Paragraf 1 -->
+						<div class="isi_surat">
+							<p>&emsp;&emsp;&emsp;Berkenaan dengan surat Saudara Nomor <?= $detail->no_srt_permohonan ?> tanggal <?= format_indo(date($detail->tgl_srt_permohonan)); ?> perihal
+								Permohonan Petugas Rohaniawan dan Pembaca Do'a, dengan ini kami sampaikan Petugas
+								sebagai berikut:
+							</p>
+						</div>
+
+						<?php
+						$no = 1;
+						foreach ($data_petugas_doa as $detail) { ?>
+							<!-- Petugas -->
+							<div class="no_surat row">
+								<div class="col-11 data">
+									<table>
+										<tbody>
+											<tr>
+												<td><?= $no++ ?>.</td>
+												<td>Nama</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td><?= $detail->nama_petugas_doa; ?></td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>NIP</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td><?= $detail->nip_petugas_doa; ?></td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>Pangkat, Gol/Ruang</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td><?= $detail->pangkat_petugas_doa; ?></td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>Jabatan</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td><?= $detail->jabatan_petugas_doa; ?></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						<?php } ?>
+
+						<br>
+
+						<?php
+						foreach ($detail_ptsp as $detail) { ?>
+							<div class="isi_surat">
+								<p>untuk menjadi Petugas Rohaniawan dan Pembaca Do'a dalam Acara
+									<?= $detail->nama_acara ?>, pada:
+								</p>
+							</div>
+
+							<div class="pelaksanaan">
 								<table>
 									<tbody>
 										<tr>
-											<td>Nomor</td>
+											<td>Hari</td>
 											<td> </td>
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td> </td>
-											<td>.../Kk.11.10/1/BA.05/1/2021</td>
+											<td><?= $detail->hari_acara ?></td>
 										</tr>
 										<tr>
-											<td>Sifat</td>
+											<td>Tanggal</td>
 											<td> </td>
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td> </td>
-											<td>Penting</td>
+											<td><?= format_indo(date($detail->tgl_acara)); ?></td>
 										</tr>
 										<tr>
-											<td>Lampiran</td>
+											<td>Waktu</td>
 											<td> </td>
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td> </td>
-											<td>-</td>
+											<td><?= $detail->waktu_acara ?> WIB</td>
 										</tr>
 										<tr>
-											<td>Hal</td>
+											<td>Tempat</td>
 											<td> </td>
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td> </td>
-											<td>Petugas Rohaniawan dan Petugas Do'a</td>
+											<td><?= $detail->tempat_acara ?></td>
 										</tr>
 									</tbody>
 								</table>
 							</div>
-							<div class="col-3">
-								<p class="float-right">Januari 2021</p>
-							</div>
-						</div>
+						<?php } ?>
 
-						<!-- KEPADA -->
-						<div class="no_surat">
-							<br>
-							<p>Kepada <br>
-								Yth. Erina Dwi Utami <br>
-								Di Tempat
-							</p>
-						</div>
+						<br>
 
-                        <br>
-
-                        <!-- Paragraf 1 -->
-						<div class="isi_surat">
-							<p>&emsp;&emsp;&emsp;Berkenaan dengan surat Saudara Nomor .../Kk.11.10/1/BA.05/1/2021 tanggal 24 April 2021 perihal
-                                Permohonan Petugas Rohaniawan dan Pembaca Do'a, dengan ini kami sampaikan Petugas
-                                sebagai berikut:
-							</p>
-						</div>
-
-                        <!-- Petugas -->
-						<div class="petugas row">
-                            <div class="col-1 nomor">
-                                1.
-                            </div>
-                            <div class="col-11 data">
-                                <table>
-								<tbody>
-									<tr>
-										<td>Nama</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>xx</td>
-									</tr>
-									<tr>
-										<td>NIP</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>xx
-										</td>
-									</tr>
-									<tr>
-										<td>Pangkat, Gol/Ruang</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>xx</td>
-									</tr>
-									<tr>
-										<td>Jabatan</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>xx</td>
-									</tr>
-								</tbody>
-							</table>
-                            </div>
-							
-						</div>
-						<div class="petugas row">
-                            <div class="col-1 nomor">
-                                2.
-                            </div>
-                            <div class="col-11 data">
-                                <table>
-								<tbody>
-									<tr>
-										<td>Nama</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>xx</td>
-									</tr>
-									<tr>
-										<td>NIP</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>xx
-										</td>
-									</tr>
-									<tr>
-										<td>Pangkat, Gol/Ruang</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>xx</td>
-									</tr>
-									<tr>
-										<td>Jabatan</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>xx</td>
-									</tr>
-								</tbody>
-							</table>
-                            </div>
-							
-						</div>
-
-                        <br>
-
-						<div class="isi_surat">
-							<p>untuk menjadi Petugas Rohaniawan dan Pembaca Do'a dalam Acara
-                                Buka bersama seluruh pegawai xxx, pada:
-							</p>
-						</div>
-
-						<div class="pelaksanaan">
-							<table>
-								<tbody>
-									<tr>
-										<td>Hari</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>Senin</td>
-									</tr>
-									<tr>
-										<td>Tanggal</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>03 Mei 2021</td>
-									</tr>
-									<tr>
-										<td>Waktu</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>15.00 WIB</td>
-									</tr>
-									<tr>
-										<td>Tempat</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>Masjid Ahmad Husain</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-
-                        <br>
-
-                        <!-- Paragraf 2 -->
+						<!-- Paragraf 2 -->
 						<div class="isi_surat">
 							<p>&emsp;&emsp;Demikian surat ini kami sampaikan untuk dapat dipergunakan sebagaimana
-                                mestinya.
+								mestinya.
 							</p>
 						</div>
 
-                        <br>
+						<br>
 
 						<!-- Tanggal -->
 						<div class="row">
-						<div class="col-12 tgl">
-						Klaten, 24 April 2021
-						</div>
+							<div class="col-12 tgl">
+								Klaten, 24 April 2021
+							</div>
 						</div>
 
 						<!-- Kepala -->
 						<div class="row">
-						<div class="col-12 kpl">
-						Kepala
-						</div>
+							<div class="col-12 kpl">
+								Kepala
+							</div>
 						</div>
 
 						<div class="row ttd_kepala">
@@ -429,7 +393,7 @@
 							</div>
 						</div>
 						<br> <br>
-						
+
 						<div class="row">
 							<div class="col-md-9">
 							</div>
@@ -439,14 +403,14 @@
 								</div>
 							</div>
 						</div>
+						</d>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- /.container-fluid -->
+		<!-- /.container-fluid -->
 
-	<!-- End of Main Content -->
+		<!-- End of Main Content -->
 </body>
 
 </html>

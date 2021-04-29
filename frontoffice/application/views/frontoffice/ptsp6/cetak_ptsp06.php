@@ -133,7 +133,7 @@
 							<div class="no_surat">
 								<?php foreach ($detail_ptsp as $detail) { ?>
 									<center>
-										<p><u>SURAT REKOMENDASI</u><br>
+										<p><u>REKOMENDASI</u><br>
 											Nomor : <?= $detail->no_surat ?></p>
 									</center>
 							</div>
@@ -156,7 +156,7 @@
 									<tbody>
 										<tr>
 											<td>1.</td>
-											<td><?= $detail->nama_jamaah_haji ?></td>
+											<td><?= $detail->nama ?></td>
 											<td><?= $detail->alamat ?></td>
 											<td><?= $detail->tempat_lahir ?>, <?= $detail->tanggal_lahir ?></td>
 											<td><?= $detail->no_hp ?></td>
@@ -168,9 +168,9 @@
 
 							<br>
 							<div class="isi_surat paragraf">
-								<p>Adalah calon Jamaah Umrah/Haji Khusus yang terdaftar di <?= $detail->nama_ppiu_pihk ?>
+								<p>Adalah calon Jamaah Umrah/Haji Khusus yang terdaftar di <?= $detail->nama_agen ?>
 									sebagai Penyelenggara Ibadah Umrah/Haji Khusus yang terdaftar resmi pada
-									Kementerian Agama dengan SK Nomor <?= $detail->no_sk_ppiu_pihk ?> Tahun <?= $detail->tahun_sk ?>
+									Kementerian Agama dengan SK Nomor <?= $detail->no_sk_agen ?> Tahun <?= $detail->tahun_sk ?>
 								</p>
 								<p>
 									Rekomendasi ini dibuat sebagai pertimbangan dalam pembuatan paspor untuk
@@ -189,7 +189,7 @@
 								<div class="col-md-6">
 									<div class="isi_surat">
 										<center>
-											Klaten, 03 Maret 2020<br>
+											Klaten,<?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 											Kepala
 										</center>
 									</div>

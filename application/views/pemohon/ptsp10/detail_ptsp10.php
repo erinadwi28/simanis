@@ -24,162 +24,162 @@
 			</nav>
 		</div>
 
-	<!-- Detail input -->
-	<div class="row clearfix">
-		<div class="col-xs-12 col-sm-2"></div>
-		<div class="col-md-8 mb-2">
-			<!-- Detail Data -->
-			<div class="card shadow mb-4">
-				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Izin Perpanjang Operasional <br>
-						Penyelengara Perjalanan Ibadah Umroh (PPIU) dan Perjalanan Ibadah Haji Khusus (PIHK)
-					</h6>
-				</div>
-				<div class="card-body">
-					<table class="table-hover table-responsive">
-						<tbody>
-							<?php if ($detail->no_surat != null && $detail->status == 'Selesai') { ?>
+		<!-- Detail input -->
+		<div class="row clearfix">
+			<div class="col-xs-12 col-sm-2"></div>
+			<div class="col-md-8 mb-2">
+				<!-- Detail Data -->
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Izin Perpanjang Operasional <br>
+							Penyelengara Perjalanan Ibadah Umroh (PPIU) dan Perjalanan Ibadah Haji Khusus (PIHK)
+						</h6>
+					</div>
+					<div class="card-body">
+						<table class="table-hover table-responsive">
+							<tbody>
+								<?php if ($detail->no_surat != null && $detail->status == 'Selesai') { ?>
+									<tr>
+										<td><b>Nomor Surat</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td><?= $detail->no_surat ?></td>
+									</tr>
+								<?php } ?>
 								<tr>
-									<td><b>Nomor Surat</b></td>
+									<td><b>Nama Pemohon</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
-									<td><?= $detail->no_surat ?></td>
+									<td> </td>
+									<td><?= $detail->nama_pemohon ?></td>
 								</tr>
-							<?php } ?>
-							<tr>
-								<td><b>Nama Pemohon</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td> </td>
-								<td><?= $detail->nama_pemohon ?></td>
-							</tr>
-							<tr>
-								<td><b>Nama Perusahaan</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td> </td>
-								<td><?= $detail->nama_pt ?></td>
-							</tr>
-							<tr>
-								<td><b>Nama Kantor Cabang</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td> </td>
-								<td><?= $detail->nama_kantor_cabang ?></td>
-							</tr>
-							<tr>
-								<td><b>Domisili Kantor Cabang</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td> </td>
-								<td><?= $detail->domisili_kantor_cabang ?></td>
-							</tr>
-							<tr>
-								<td><b>Alamat Kantor Cabang</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td> </td>
-								<td><?= $detail->alamat_kantor_cabang ?></td>
-							</tr>
-							<tr>
-								<td><b>No. HandPhone</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td> </td>
-								<td><?= $detail->no_hp ?></td>
-							</tr>
-							<tr>
-								<td><b>Tanggal Permohonan</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td> </td>
-								<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
-							</tr>
+								<tr>
+									<td><b>Nama Perusahaan</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td> </td>
+									<td><?= $detail->nama_pt ?></td>
+								</tr>
+								<tr>
+									<td><b>Nama Kantor Cabang</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td> </td>
+									<td><?= $detail->nama_kantor_cabang ?></td>
+								</tr>
+								<tr>
+									<td><b>Domisili Kantor Cabang</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td> </td>
+									<td><?= $detail->domisili_kantor_cabang ?></td>
+								</tr>
+								<tr>
+									<td><b>Alamat Kantor Cabang</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td> </td>
+									<td><?= $detail->alamat_kantor_cabang ?></td>
+								</tr>
+								<tr>
+									<td><b>No. HandPhone</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td> </td>
+									<td><?= $detail->no_hp ?></td>
+								</tr>
+								<tr>
+									<td><b>Tanggal Permohonan</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td> </td>
+									<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
+								</tr>
 
-							<?php if ($detail->tgl_persetujuan_fo != null) { ?>
-								<tr>
-									<td><b>Tanggal Persetujuan Front Office</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td> </td>
-									<td><?= format_indo(date($detail->tgl_persetujuan_fo)); ?></td>
-								</tr>
-							<?php } ?>
-							<?php if ($detail->tgl_persetujuan_bo != null) { ?>
-								<tr>
-									<td><b>Tanggal Persetujuan Back Office</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td> </td>
-									<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
-								</tr>
-							<?php } ?>
-							<?php if ($detail->tgl_persetujuan_kasi != null) { ?>
-								<tr>
-									<td><b>Tanggal Persetujuan Kasi</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td> </td>
-									<td><?= format_indo(date($detail->tgl_persetujuan_kasi)); ?></td>
-								</tr>
-							<?php } ?>
-							<?php if ($detail->tgl_persetujuan_kasubag != null) { ?>
-								<tr>
-									<td><b>Tanggal Persetujuan Kasubag</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td> </td>
-									<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
-								</tr>
-							<?php } ?>
-							<?php if ($detail->keterangan != null && $detail->status == 'Pending') { ?>
-								<tr>
-									<td><b>Keterangan Permohonan Pending</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td> </td>
-									<td><?= $detail->keterangan; ?></td>
-								</tr>
-							<?php } ?>
-						</tbody>
-					</table>
+								<?php if ($detail->tgl_persetujuan_fo != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Front Office</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_fo)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_persetujuan_bo != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Back Office</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_persetujuan_kasi != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Kasi</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_kasi)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_persetujuan_kasubag != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Kasubag</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->keterangan != null && $detail->status == 'Pending') { ?>
+									<tr>
+										<td><b>Keterangan Permohonan Pending</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->keterangan; ?></td>
+									</tr>
+								<?php } ?>
+							</tbody>
+						</table>
+						<?php if ($detail->status == 'Pending') { ?>
+							<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen dibawah</em>
+						<?php } ?>
+					</div>
+
 					<?php if ($detail->status == 'Pending') { ?>
-						<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen dibawah</em>
+						<div class="card-footer">
+							<div class="float-right">
+								<a href="<?= base_url() ?>dashboard/form_ubah_ptsp10/<?= $detail->id_permohonan_ptsp ?>">
+									<button id="btn_ubah" class="btn btn-sm btn-warning" type="submit">
+										<i class="fa fa-edit nav-icon">
+										</i> Ubah
+									</button>
+								</a>
+							</div>
+						</div>
 					<?php } ?>
 				</div>
-
-				<?php if ($detail->status == 'Pending') { ?>
-					<div class="card-footer">
-						<div class="float-right">
-							<a href="<?= base_url() ?>dashboard/form_ubah_ptsp10/<?= $detail->id_permohonan_ptsp ?>">
-								<button id="btn_ubah" class="btn btn-sm btn-warning" type="submit">
-									<i class="fa fa-edit nav-icon">
-									</i> Ubah
-								</button>
-							</a>
-						</div>
-					</div>
-				<?php } ?>
 			</div>
+			<div class="col-xs-12 col-sm-2"></div>
 		</div>
-		<div class="col-xs-12 col-sm-2"></div>
-	</div>
 
-	<!-- Unggah dokumen -->
-	<div class="row clearfix">
+		<!-- Unggah dokumen -->
+		<div class="row clearfix">
 			<!-- Surat Permohonan -->
 			<div class="col-xs-12 col-sm-3">
 				<div class="card shadow mb-4">
@@ -690,7 +690,7 @@
 					</div>
 				</div>
 			</div> -->
-		</div> 
+		</div>
 
 		<!-- Button Selesai -->
 		<div class="row clearfix float-right px-2">

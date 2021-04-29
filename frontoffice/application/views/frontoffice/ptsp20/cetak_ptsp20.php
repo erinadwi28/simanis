@@ -158,7 +158,9 @@
 									</div>
 								</div>
 							</center>
-                            <div class="badan_surat">
+							<?php
+							foreach ($detail_ptsp as $detail) { ?>
+								<div class="badan_surat">
 									<center>
 										<div class="kepala_Sertifikat">
 											<h5 style="margin-top: 20px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></h5>
@@ -169,127 +171,128 @@
 										</div>
 									</center>
 									<p><b>PIAGAM IZIN OPERASIONAL MAJELIS TAKLIM</b><br>
-										<b>Nomor :  /Kk.11.10/6/BA.01.1/...../2021 </b>
+										<b>Nomor : <?= $detail->no_surat ?> </b>
 									</p>
-								</center>
-							</div><br>
-							    <div class="isi_surat">
-								    <p align="justify">&emsp;&emsp;
-									Dengan ini Kepala Kantor Kementrian Agama Kabupaten <br>
-                                    &emsp; &emsp;Klaten memberikan Statistik Majelis Taklim Kepada :
-								    </p>
-							    </div>
-									<div class="isi_surat identitas">
-								<table class="table-responsive">
-									<tbody>
-										<tr>
-											<td>&emsp;&emsp;Nama Majelis Taklim :</td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td>.................................</td>
-										</tr>
-										<tr>
-											<td>&emsp;&emsp;Alamat :</td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td>.................................</td>
-										</tr>
-										<tr>
-											<td>&emsp;&emsp;Desa :</td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td>.................................</td>
-										</tr>
-										<tr>
-											<td>&emsp;&emsp;Kecamatan :</td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td>.................................</td>
-										</tr>
-                                        <tr>
-											<td>&emsp;&emsp;Kabupaten :</td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td>.................................</td>
-										</tr>
-                                        <tr>
-											<td>&emsp;&emsp;Provinsi : </td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td>.................................</td>
-										</tr>
-                                        <tr>
-											<td>&emsp;&emsp;Tahun Berdiri :</td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td>.................................</td>
-										</tr>
-                                        <tr>
-											<td>&emsp;&emsp;Nomor Statistik : </td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td>4 3 1 2 3 3 1 0 0 0</td>
-										</tr>
-									</tbody>
-								</table>
-							</div><br>
-                            <div class="isi_surat">
-								<p align="justify">&emsp;&emsp;
-									dan Majelis Taklim tersebut telah terdaftar pada Kantor <br>
-                                    &emsp; &emsp;Kementrian Agama Kabupaten Klaten
-								</p>
-							</div>
-                            <br>
-							<div class="row">
-								<div class="col-md-6">
+									</center>
+								</div><br>
+								<div class="isi_surat">
+									<p align="justify">&emsp;&emsp;
+										Dengan ini Kepala Kantor Kementrian Agama Kabupaten <br>
+										&emsp; &emsp;Klaten memberikan Statistik Majelis Taklim Kepada :
+									</p>
 								</div>
-								<div class="col-md-6">
-									<div class="badan_surat isi_surat">
-										<P>
-											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-											Diterapkan di : Klaten <br>
-											Pada Tanggal : .................. 2021<br>
-											Kepala,
-                                        </P>
+								<div class="isi_surat identitas">
+									<table>
+										<tbody>
+											<tr>
+												<td>&emsp;&emsp;Nama Majelis Taklim </td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td><?= $detail->nama_majelis_taklim ?></td>
+											</tr>
+											<tr>
+												<td>&emsp;&emsp;Alamat </td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td><?= $detail->alamat ?></td>
+											</tr>
+											<tr>
+												<td>&emsp;&emsp;Desa </td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td><?= $detail->desa ?></td>
+											</tr>
+											<tr>
+												<td>&emsp;&emsp;Kecamatan </td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td><?= $detail->kecamatan ?></td>
+											</tr>
+											<tr>
+												<td>&emsp;&emsp;Kabupaten </td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td><?= $detail->kabupaten ?></td>
+											</tr>
+											<tr>
+												<td>&emsp;&emsp;Provinsi </td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td><?= $detail->provinsi ?></td>
+											</tr>
+											<tr>
+												<td>&emsp;&emsp;Tahun Berdiri </td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td><?= $detail->tahun_berdiri ?></td>
+											</tr>
+											<tr>
+												<td>&emsp;&emsp;Nomor Statistik </td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td><?= $detail->no_statistik ?></td>
+											</tr>
+										</tbody>
+									</table>
+								</div><br>
+								<div class="isi_surat">
+									<p align="justify">&emsp;&emsp;
+										dan Majelis Taklim tersebut telah terdaftar pada Kantor <br>
+										&emsp; &emsp;Kementrian Agama Kabupaten Klaten
+									</p>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-md-6">
 									</div>
-								</div>
-							</div>
-									
-									<br> <br>
-									<div class="row">
-										<div class="col-md-6"></div>
-										<div class="col-md-6">
-											<div class="badan_surat isi_surat">
+									<div class="col-md-6">
+										<div class="badan_surat isi_surat">
+											<P>
 												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-												<P>
-											    <u><b>H. Anif Solikhim. S.Ag. M S I</b></u><br>
-											        Nip. 197004201995031003
-                                                </P>
-											</div>
+												Diterapkan di : Klaten <br>
+												Pada Tanggal : <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
+												Kepala,
+											</P>
 										</div>
 									</div>
 								</div>
+							<?php } ?>
+
+							<br> <br>
+							<div class="row">
+								<div class="col-md-6"></div>
+								<div class="col-md-6">
+									<div class="badan_surat isi_surat">
+										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+										<P>
+											<u><b>H. Anif Solikhim. S.Ag. M S I</b></u><br>
+											Nip. 197004201995031003
+										</P>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	</div>
 	<!-- /.container-fluid -->

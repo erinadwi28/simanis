@@ -62,15 +62,17 @@
 		.kepala_sertifikat p {
 			margin-top: 3px;
 		}
-		.row{
+
+		.row {
 			font-size: 14pt;
 			font-family: 'Times New Roman';
 		}
+
 		.no_surat {
 			font-size: 14pt;
 		}
 
-		.tujuan_surat{
+		.tujuan_surat {
 			font-size: 14pt;
 			font-family: 'Times New Roman';
 		}
@@ -144,7 +146,6 @@
 			border-color: #000;
 			margin-left: 15px;
 		}
-
 	</style>
 
 </head>
@@ -158,29 +159,30 @@
 			</div>
 			<div class="col-md-8">
 				<div class="card shadow mb-4">
-				<div class="card-body">
+					<div class="card-body">
 
-							<div class="kopsurat row">
-								<div class="col-md-12 mb-3">
-									<object data="" type="image">
-										<img class="img-fluid" alt="logo_kop_surat"
-											src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
-									</object>
-								</div>
+						<div class="kopsurat row">
+							<div class="col-md-12 mb-3">
+								<object data="" type="image">
+									<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
+								</object>
 							</div>
+						</div>
+						<?php
+						foreach ($detail_ptsp as $detail) { ?>
 							<div class="no_surat">
 								<center>
 									<p><b>SURAT TUGAS </b><br>
-										<b>Nomor : ....../kK.11.10/1/kp.07/6/.../2021</b>
+										<b>Nomor : <?= $detail->no_surat; ?></b>
 									</p>
 								</center>
 							</div>
 							<div class="isi_surat">
-								<p> Dengan ini Kepala Kantor Kementerian Agama Kbupaten Klaten berdasarkan surat
-									permohonan Sdr........... tanggal ..................
+								<p> Dengan ini Kepala Kantor Kementerian Agama Kabupaten Klaten berdasarkan surat
+									permohonan Sdr.<?= $detail->nama_pns ?> tanggal <?= format_indo(date($detail->tgl_srt_permohonan)); ?>
 									perihal Permohonan Tambahan Tugas Mengajar yang disetujui Pengawas Pendidikan Agama
-									Islam Kec...... dan
-									surat persetujuan Kepala SD Negeri 2 Demangan Kec. Karangdowo, memerintahkan kepada
+									Islam Kec <?= $detail->kecamatan ?> dan
+									surat persetujuan Kepala <?= $detail->nama_sekolah_satmikal ?> Kec. <?= $detail->kecamatan_sekolah_satmikal ?>, memerintahkan kepada
 									Pegawai Negeri Sipil :
 								</p>
 							</div>
@@ -194,7 +196,7 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td>xx</td>
+											<td><?= $detail->nama_pns ?></td>
 										</tr>
 										<tr>
 											<td>NIP</td>
@@ -202,8 +204,7 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td>xx
-											</td>
+											<td><?= $detail->nip ?></td>
 										</tr>
 										<tr>
 											<td>Pangkat/Gol. Ruang</td>
@@ -211,7 +212,7 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td>xx</td>
+											<td><?= $detail->pangkat_gol ?></td>
 										</tr>
 										<tr>
 											<td>Jabatan</td>
@@ -219,7 +220,7 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td>xx</td>
+											<td><?= $detail->jabatan ?></td>
 										</tr>
 										<tr>
 											<td>Ditugaskan di</td>
@@ -227,7 +228,7 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td>xx</td>
+											<td><?= $detail->nama_sekolah_tujuan ?></td>
 										</tr>
 										<tr>
 											<td>Terhitung mulai tanggal</td>
@@ -235,15 +236,14 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td>xx</td>
+											<td><?= format_indo(date($detail->tgl_mulai_mengajar)); ?></td>
 										</tr>
 									</tbody>
 								</table>
 							</div>
 							<div class="isi_surat">
 								<p>untuk segera melaksanakan tugas sebagai Guru Muda pada Kantor Kementerian Agama
-									Kab. Klaten ditugaskan di SD Negeri 3 Karangdowo Kec. Karangdowo dan SD Negeri 2
-									Demangan Kec. Karngdowo Kabupaten Klaten
+									Kab. Klaten ditugaskan di <?= $detail->nama_sekolah_tujuan ?> Kec. <?= $detail->kecamatan_sekolah_tujuan ?> dan <?= $detail->nama_sekolah_satmikal ?> Kec. <?= $detail->kecamatan_sekolah_satmikal ?> Kabupaten <?= $detail->kabupaten_sekolah_satmikal ?>
 								</p>
 							</div>
 							<div class="isi_surat paragraf">
@@ -256,46 +256,47 @@
 								</div>
 								<div class="col-md-3">
 									<div class="badan_surat isi_surat">
-											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-											Klaten, ................... 2021<br>
-											Kepala
+										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+										Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
+										Kepala
 									</div>
 								</div>
 							</div>
-							<div class="row ttd_kepala">
-								<div class="col-md-6 ">
-								</div>
-								<div class="col-md-6">
-
-								</div>
+						<?php } ?>
+						<div class="row ttd_kepala">
+							<div class="col-md-6 ">
 							</div>
-							<br> <br>
-							<div class="row">
-								<div class="col-md-9">
-								</div>
-								<div class="col-md-3">
-									<div class="badan_surat isi_surat">
-											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-											Anif Solikhin<br>
-									</div>
-								</div>
+							<div class="col-md-6">
+
 							</div>
-							<div>
-								Tempusan: <br>
-								1. Kepala Seksi PAIS Kankemenag Kab. Klaten; <br>
-								2. Korwil Pendidikan Kec. Karngdowo; <br>
-								3. Kepala SD Negeri 2 Demangan Kec. Karangdowo <br>
-								4. Kepala SD Negeri 3 Karangwungu Kec. Karangdowo <br>
-								5. Sdr. M. Zajid, S.Ag. NIP. 19740512 200501 1 003; <br>
-								6. Arsip
-							</div>
-
-
-
 						</div>
+						<br> <br>
+						<div class="row">
+							<div class="col-md-9">
+							</div>
+							<div class="col-md-3">
+								<div class="badan_surat isi_surat">
+									<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+									Anif Solikhin<br>
+								</div>
+							</div>
+						</div>
+						<div>
+							Tempusan: <br>
+							1. Kepala Seksi PAIS Kankemenag Kab. Klaten; <br>
+							2. Korwil Pendidikan Kec. Karngdowo; <br>
+							3. Kepala SD Negeri 2 Demangan Kec. Karangdowo <br>
+							4. Kepala SD Negeri 3 Karangwungu Kec. Karangdowo <br>
+							5. Sdr. M. Zajid, S.Ag. NIP. 19740512 200501 1 003; <br>
+							6. Arsip
+						</div>
+
+
+
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 	<!-- /.container-fluid -->
 
