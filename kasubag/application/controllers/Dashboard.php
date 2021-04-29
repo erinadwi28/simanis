@@ -156,22 +156,6 @@ class Dashboard extends CI_Controller
                 $this->load->view('footer');
         }
 
-        //list data permohonan pending
-        public function detail_ptsp20()
-        {
-                $data_title['title'] = 'Detail Permohonan';
-                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-                $this->session->userdata('id_kasubag')])->row_array();
-
-                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-
-                $this->load->view('header', $data_title);
-                $this->load->view('kasubag/sidebar');
-                $this->load->view('topbar', $data);
-                $this->load->view('kasubag/ptsp20/detail_ptsp20');
-                $this->load->view('footer');
-        }
-
         //list data permohonan yang teralh disetujui
         public function list_permohonan_selesaiKasubag()
         {
@@ -201,6 +185,8 @@ class Dashboard extends CI_Controller
 
                 if ($id_layanan == 1) {
                         $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp01')->result();
+                } elseif ($id_layanan == 2) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp02')->result();
                 } elseif ($id_layanan == 3) {
                         $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp03')->result();
                 } elseif ($id_layanan == 4) {
@@ -209,6 +195,20 @@ class Dashboard extends CI_Controller
                         $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
                 } elseif ($id_layanan == 6) {
                         $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp06')->result();
+                } elseif ($id_layanan == 7) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp07')->result();
+                } elseif ($id_layanan == 8) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp08')->result();
+                } elseif ($id_layanan == 9) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp09')->result();
+                } elseif ($id_layanan == 10) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp10')->result();
+                } elseif ($id_layanan == 11) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp11')->result();
+                } elseif ($id_layanan == 12) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp12')->result();
+                } elseif ($id_layanan == 13) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp13')->result();
                 } elseif ($id_layanan == 14) {
                         $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp14')->result();
                 } elseif ($id_layanan == 15) {
@@ -244,6 +244,8 @@ class Dashboard extends CI_Controller
                 $this->load->view('topbar', $data);
                 if ($id_layanan == 1) {
                         $this->load->view('kasubag/ptsp1/detail_ptsp01', $data_detail);
+                } elseif ($id_layanan == 2) {
+                        $this->load->view('kasubag/ptsp2/detail_ptsp02', $data_detail);
                 } elseif ($id_layanan == 3) {
                         $this->load->view('kasubag/ptsp3/detail_ptsp03', $data_detail);
                 } elseif ($id_layanan == 4) {
@@ -434,165 +436,5 @@ class Dashboard extends CI_Controller
                         redirect('dashboard/list_permohonan_pending');
                 }
         }
-        //tampil detail permohonan ptsp06
-        public function detail_ptsp06()
-        {
-                $data_title['title'] = 'Detail Permohonan';
-                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-                $this->session->userdata('id_kasubag')])->row_array();
-
-                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-                $data_detail['data_permohonan'] = $this->m_kasubag->get_list_data_permohonan('Pending')->result();
-
-                $this->load->view('header', $data_title);
-                $this->load->view('kasubag/sidebar');
-                $this->load->view('topbar', $data);
-                $this->load->view('kasubag/ptsp6/detail_ptsp06');
-                $this->load->view('footer');
-        }
-
-	//tampil detail permohonan ptsp10
-        public function detail_ptsp10()
-        {
-                $data_title['title'] = 'Detail Permohonan';
-                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-                $this->session->userdata('id_kasubag')])->row_array();
-
-                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-
-                $this->load->view('header', $data_title);
-                $this->load->view('kasubag/sidebar');
-                $this->load->view('topbar', $data);
-                $this->load->view('kasubag/ptsp10/detail_ptsp10');
-                $this->load->view('footer');
-        }
-
-	//tampil detail permohonan ptsp11
-        public function detail_ptsp11()
-        {
-                $data_title['title'] = 'Detail Permohonan';
-                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-                $this->session->userdata('id_kasubag')])->row_array();
-
-                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-
-                $this->load->view('header', $data_title);
-                $this->load->view('kasubag/sidebar');
-                $this->load->view('topbar', $data);
-                $this->load->view('kasubag/ptsp11/detail_ptsp11');
-                $this->load->view('footer');
-        }
-
-        //tampil detail permohonan ptsp12
-        public function detail_ptsp12()
-        {
-                $data_title['title'] = 'Detail Permohonan';
-                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-                $this->session->userdata('id_kasubag')])->row_array();
-
-                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-
-                $this->load->view('header', $data_title);
-                $this->load->view('kasubag/sidebar');
-                $this->load->view('topbar', $data);
-                $this->load->view('kasubag/ptsp12/detail_ptsp12');
-                $this->load->view('footer');
-        }
-
-	//tampil detail permohonan ptsp13
-        public function detail_ptsp13()
-        {
-                $data_title['title'] = 'Detail Permohonan';
-                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-                $this->session->userdata('id_kasubag')])->row_array();
-
-                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-
-                $this->load->view('header', $data_title);
-                $this->load->view('kasubag/sidebar');
-                $this->load->view('topbar', $data);
-                $this->load->view('kasubag/ptsp13/detail_ptsp13');
-                $this->load->view('footer');
-        }
-
-	//tampil detail permohonan ptsp16
-        public function detail_ptsp16()
-        {
-                $data_title['title'] = 'Detail Permohonan';
-                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-                $this->session->userdata('id_kasubag')])->row_array();
-
-                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-
-                $this->load->view('header', $data_title);
-                $this->load->view('kasubag/sidebar');
-                $this->load->view('topbar', $data);
-                $this->load->view('kasubag/ptsp16/detail_ptsp16');
-                $this->load->view('footer');
-        }
-
-	//tampil detail permohonan ptsp17
-        public function detail_ptsp17()
-        {
-                $data_title['title'] = 'Detail Permohonan';
-                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-                $this->session->userdata('id_kasubag')])->row_array();
-
-                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-
-                $this->load->view('header', $data_title);
-                $this->load->view('kasubag/sidebar');
-                $this->load->view('topbar', $data);
-                $this->load->view('kasubag/ptsp17/detail_ptsp17');
-                $this->load->view('footer');
-        }
-        //tampil detail permohonan ptsp25
-        public function detail_ptsp25()
-        {
-                $data_title['title'] = 'Detail Permohonan';
-                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-                $this->session->userdata('id_kasubag')])->row_array();
-
-                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-
-                $this->load->view('header', $data_title);
-                $this->load->view('kasubag/sidebar');
-                $this->load->view('topbar', $data);
-                $this->load->view('kasubag/ptsp25/detail_ptsp25');
-                $this->load->view('footer');
-        }
-        //tampil detail permohonan ptsp26
-        public function detail_ptsp26()
-        {
-                $data_title['title'] = 'Detail Permohonan';
-                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-                $this->session->userdata('id_kasubag')])->row_array();
-
-                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-
-                $this->load->view('header', $data_title);
-                $this->load->view('kasubag/sidebar');
-                $this->load->view('topbar', $data);
-                $this->load->view('kasubag/ptsp26/detail_ptsp26');
-                $this->load->view('footer');
-        }
-        //tampil detail permohonan ptsp27
-        public function detail_ptsp27()
-        {
-                $data_title['title'] = 'Detail Permohonan';
-                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-                $this->session->userdata('id_kasubag')])->row_array();
-
-                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-
-                $this->load->view('header', $data_title);
-                $this->load->view('kasubag/sidebar');
-                $this->load->view('topbar', $data);
-                $this->load->view('kasubag/ptsp27/detail_ptsp27');
-                $this->load->view('footer');
-        }
-
-
-
-
+        
 }

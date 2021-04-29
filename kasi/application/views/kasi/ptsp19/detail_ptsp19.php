@@ -119,31 +119,6 @@
 						<?php } ?>
 					</center>
 				</div>
-
-				<?php if ($detail->status == 'Proses Kasi') { ?>
-					<div class="card-footer">
-						<form action="<?= base_url('dashboard/update_jadwal_siaran_ptsp19/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_jadwal_siaran">
-							<div class="form-group">
-								<div class="input-group">
-									<div class="form-group-upload">
-										<div class="custom-file">
-											<label class="custom-file-label" for="file-upload-2">pilih file...</label>
-											<input type="file" class="custom-file-input" id="file-upload-2" name="jadwal_siaran" value="<?= $detail->jadwal_siaran ?>">
-											<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
-											<input type="hidden" class="form-control form-user-input" name="id_layanan" id="file-upload" value="<?= $detail->id_layanan ?>">
-										</div>
-									</div>
-								</div>
-							</div>
-							<center>
-								<button class="btn btn-sm btn-primary" type="submit">
-									<i class="fa fa-upload">
-									</i>
-								</button>
-							</center>
-						</form>
-					</div>
-				<?php } ?>
 			</div>
 		</div>
 		<div class="col-md-8 mb-0">
@@ -322,17 +297,18 @@
 						</tbody>
 					</table>
 				</div>
-			</div>
-
-			<!-- Button Tolak & Setujui Awal Surat Masuk -->
-			<div class="row clearfix float-right px-2">
-				
-				<a href="">
-					<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
-						<i class="fas fa-check-circle">
-						</i> Terima
-					</button>
-				</a>
+				<div class="card-footer">
+					<div class="float-right">
+						<?php if ($detail->status == 'Proses Kasi') { ?>
+						<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+							<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
+								<i class="fas fa-check-circle">
+								</i> Terima
+							</button>
+						</a>
+						<?php } ?>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -1,20 +1,6 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 	<!-- Page Heading -->
-<<<<<<< HEAD
-	<div class="d-sm-flex align-items-center justify-content-between">
-		<h3 class="judullist py-3">Detail</h3>
-		<nav aria-label="breadcrumb" class="nav-breadcrumb">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Permohonan
-						Masuk</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Detail</li>
-			</ol>
-		</nav>
-	</div>
-
-=======
 	<?php
 	foreach ($detail_ptsp as $detail) { ?>
 		<?php if ($detail->status === 'Pending') { ?>
@@ -90,34 +76,15 @@
 				</nav>
 			</div>
 		<?php } ?>
->>>>>>> e463f139cb23d1ef4c3a6895243028dd334615f3
 	<div class="row clearfix">
 		<div class="col-md-4 mb-0">
 			<!-- Surat Permohonan -->
 			<div class="card shadow mb-4">
-<<<<<<< HEAD
-				<div class="card-header">
-=======
 				<div class="card-header py-3">
->>>>>>> e463f139cb23d1ef4c3a6895243028dd334615f3
 					<center>
 						<h6 class="m-0 font-weight-bold">Surat Permohonan</h6>
 					</center>
 				</div>
-<<<<<<< HEAD
-
-				<div class="card-body">
-					<center>
-						<p></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary" href="" target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<p>Belum ada lampiran</p>
-					</center>
-				</div>
-			</div>
-=======
 				<div class="card-body">
 					<center>
 						<?php if ($detail->srt_permohonan != null) { ?>
@@ -151,12 +118,11 @@
 					</div>
 				</div>
 			<?php } ?>
->>>>>>> e463f139cb23d1ef4c3a6895243028dd334615f3
 		</div>
 		<div class="col-md-8 mb-0">
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Konsultasi dan informasi sertifikasi halal,zakat dan
+					<h6 class="m-0 font-weight-bold text-center">Konsultasi dan informasi sertifikasi halal, zakat dan
 						wakaf</h6>
 				</div>
 				<div class="card-body">
@@ -333,25 +299,18 @@
 						</tbody>
 					</table>
 				</div>
-			</div>
-
-			<!-- Button Setujui Awal Surat Masuk -->
-			<div class="row clearfix float-right px-2">
-<<<<<<< HEAD
-				<a href="">
-=======
-				<?php if ($detail->status == 'Proses Kasi') { ?>
-				<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
->>>>>>> e463f139cb23d1ef4c3a6895243028dd334615f3
-					<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
-						<i class="fas fa-check-circle">
-						</i> Terima
-					</button>
-				</a>
-<<<<<<< HEAD
-=======
-				<?php } ?>
->>>>>>> e463f139cb23d1ef4c3a6895243028dd334615f3
+				<div class="card-footer">
+					<div class="float-right">
+						<?php if ($detail->status == 'Proses Kasi') { ?>
+						<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+							<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
+								<i class="fas fa-check-circle">
+								</i> Terima
+							</button>
+						</a>
+						<?php } ?>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

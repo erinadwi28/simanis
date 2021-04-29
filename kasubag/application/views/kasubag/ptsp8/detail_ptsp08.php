@@ -1,7 +1,7 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-	<?php
-			foreach ($detail_ptsp as $detail) { ?>
+<?php
+	foreach ($detail_ptsp as $detail) { ?>
 	<?php if ($detail->status === 'Proses Kasubag') { ?>
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between">
@@ -23,15 +23,12 @@
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
 				<li class="breadcrumb-item"><a
-						href="<?= base_url('dashboard/list_permohonan_selesaiKasubag') ?>">Permohonan
-						Selesai</a></li>
+						href="<?= base_url('dashboard/list_permohonan_selesaiKasubag') ?>">Permohonan Selesai</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Detail</li>
 			</ol>
 		</nav>
 	</div>
 	<?php } ?>
-
-
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
 		<div class="col-md-8 mb-4">
@@ -50,6 +47,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->no_surat ?></td>
 							</tr>
 							<?php } ?>
@@ -106,6 +104,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
 							</tr>
 							<?php if ($detail->tgl_persetujuan_fo != null) { ?>
@@ -114,6 +113,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= format_indo(date($detail->tgl_persetujuan_fo)); ?></td>
 							</tr>
 							<?php } ?>
@@ -123,6 +123,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
 							</tr>
 							<?php } ?>
@@ -132,6 +133,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= format_indo(date($detail->tgl_persetujuan_kasi)); ?></td>
 							</tr>
 							<?php } ?>
@@ -141,6 +143,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
 							</tr>
 							<?php } ?>
@@ -150,6 +153,7 @@
 								<td> </td>
 								<td> </td>
 								<td>:</td>
+								<td> </td>
 								<td><?= $detail->keterangan; ?></td>
 							</tr>
 							<?php } ?>
@@ -160,8 +164,7 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- Unggah dokumen -->
+	<!-- Unggahan -->
 	<div class="row clearfix">
 		<!-- Surat Permohonan -->
 		<div class="col-xs-12 col-sm-3">
@@ -176,7 +179,7 @@
 						<?php if ($detail->srt_permohonan != null) { ?>
 						<p><?= $detail->srt_permohonan; ?></p>
 						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/srt_permohonan/<?= $detail->srt_permohonan ?>"
+							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp08/srt_permohonan/<?= $detail->srt_permohonan ?>"
 							target="_blank">
 							<i class="fa fa-download nav-icon">
 							</i> Klik untuk melihat
@@ -199,17 +202,14 @@
 				</div>
 				<div class="card-body">
 					<center>
-						<?php if ($detail->srt_pernyataan != null) { ?>
-						<p><?= $detail->srt_pernyataan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>"
-							target="_blank">
-
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->srt_pernyataan == null) { ?>
-						<p class="mb-0">Belum ada lampiran</p>
+						<?php if ($detail->akte_notaris != null) { ?>
+							<p><?= $detail->akte_notaris; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp08/akte_notaris/<?= $detail->akte_notaris ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->akte_notaris == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>
@@ -227,16 +227,14 @@
 
 				<div class="card-body">
 					<center>
-						<?php if ($detail->ktp != null) { ?>
-						<p><?= $detail->ktp; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/fc_ktp/<?= $detail->ktp ?>"
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->ktp == null) { ?>
-						<p class="mb-0">Belum ada lampiran</p>
+						<?php if ($detail->foto_kantor != null) { ?>
+							<p><?= $detail->foto_kantor; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp08/foto_kantor/<?= $detail->foto_kantor ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->foto_kantor == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>
@@ -254,16 +252,14 @@
 
 				<div class="card-body">
 					<center>
-						<?php if ($detail->bukti_pelunasan != null) { ?>
-						<p><?= $detail->bukti_pelunasan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/bukti_pelunasan/<?= $detail->bukti_pelunasan ?>"
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->bukti_pelunasan == null) { ?>
-						<p class="mb-0">Belum ada lampiran</p>
+						<?php if ($detail->susunan_pengurus != null) { ?>
+							<p><?= $detail->susunan_pengurus; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp08/susunan_pengurus/<?= $detail->susunan_pengurus ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->susunan_pengurus == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>
@@ -277,21 +273,19 @@
 			<div class="card shadow mb-4">
 				<div class="card-header">
 					<center>
-						<h6 class="m-0 font-weight-bold">Sertifikat Pembimbing</h6>
+						<h6 class="m-0 font-weight-bold">Sertifikat pembimbing</h6>
 					</center>
 				</div>
 				<div class="card-body">
 					<center>
-						<?php if ($detail->srt_permohonan != null) { ?>
-						<p><?= $detail->srt_permohonan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/srt_permohonan/<?= $detail->srt_permohonan ?>"
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->srt_permohonan == null) { ?>
-						<p class="mb-0">Belum ada lampiran</p>
+						<?php if ($detail->sertifikat_pembimbing != null) { ?>
+							<p><?= $detail->sertifikat_pembimbing; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp08/sertifikat_pembimbing/<?= $detail->sertifikat_pembimbing ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->sertifikat_pembimbing == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>
@@ -308,17 +302,14 @@
 				</div>
 				<div class="card-body">
 					<center>
-						<?php if ($detail->srt_pernyataan != null) { ?>
-						<p><?= $detail->srt_pernyataan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>"
-							target="_blank">
-
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->srt_pernyataan == null) { ?>
-						<p class="mb-0">Belum ada lampiran</p>
+						<?php if ($detail->program_manasik != null) { ?>
+							<p><?= $detail->program_manasik; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp08/program_manasik/<?= $detail->program_manasik ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->program_manasik == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>
@@ -335,16 +326,14 @@
 				</div>
 				<div class="card-body">
 					<center>
-						<?php if ($detail->srt_pernyataan != null) { ?>
-						<p><?= $detail->srt_pernyataan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>"
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->srt_pernyataan == null) { ?>
-						<p class="mb-0">Belum ada lampiran</p>
+						<?php if ($detail->laporan_bimbingan != null) { ?>
+							<p><?= $detail->laporan_bimbingan; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp08/laporan_bimbingan/<?= $detail->laporan_bimbingan ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->laporan_bimbingan == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>
@@ -361,19 +350,18 @@
 				</div>
 				<div class="card-body">
 					<center>
-						<?php if ($detail->srt_pernyataan != null) { ?>
-						<p><?= $detail->srt_pernyataan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>"
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->srt_pernyataan == null) { ?>
-						<p class="mb-0">Belum ada lampiran</p>
+						<?php if ($detail->sertifikat_akreditasi != null) { ?>
+							<p><?= $detail->sertifikat_akreditasi; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp08/sertifikat_akreditasi/<?= $detail->sertifikat_akreditasi ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->sertifikat_akreditasi == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>
+
 			</div>
 		</div>
 	</div>
@@ -390,16 +378,14 @@
 
 				<div class="card-body">
 					<center>
-						<?php if ($detail->srt_permohonan != null) { ?>
-						<p><?= $detail->srt_permohonan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_permohonan/<?= $detail->srt_permohonan ?>"
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->srt_permohonan == null) { ?>
-						<p class="mb-0">Belum ada lampiran</p>
+						<?php if ($detail->sk_pendirian != null) { ?>
+							<p><?= $detail->sk_pendirian; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp08/sk_pendirian/<?= $detail->sk_pendirian ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->sk_pendirian == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>
@@ -416,16 +402,14 @@
 				</div>
 				<div class="card-body">
 					<center>
-						<?php if ($detail->srt_pernyataan != null) { ?>
-						<p><?= $detail->srt_pernyataan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>"
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->srt_pernyataan == null) { ?>
-						<p class="mb-0">Belum ada lampiran</p>
+						<?php if ($detail->rincian_penggunaan_biaya_bimbingan != null) { ?>
+							<p><?= $detail->rincian_penggunaan_biaya_bimbingan; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp08/rincian_penggunaan_biaya_bimbingan/<?= $detail->rincian_penggunaan_biaya_bimbingan ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->rincian_penggunaan_biaya_bimbingan == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>
@@ -442,23 +426,20 @@
 				</div>
 				<div class="card-body">
 					<center>
-						<?php if ($detail->srt_pernyataan != null) { ?>
-						<p><?= $detail->srt_pernyataan; ?></p>
-						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/<?= $detail->srt_pernyataan ?>"
-							target="_blank">
-							<i class="fa fa-download nav-icon">
-							</i> Klik untuk melihat
-						</a>
-						<?php } elseif ($detail->srt_pernyataan == null) { ?>
-						<p class="mb-0">Belum ada</p>
+						<?php if ($detail->berita_acara != null) { ?>
+							<p><?= $detail->berita_acara; ?></p>
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp08/berita_acara/<?= $detail->berita_acara ?>" target="_blank">
+								<i class="fa fa-download nav-icon">
+								</i> Klik untuk melihat
+							</a>
+						<?php } elseif ($detail->berita_acara == null) { ?>
+							<p class="mb-0">Belum ada lampiran</p>
 						<?php } ?>
 					</center>
 				</div>
 			</div>
 		</div>
 	</div>
-
 	<!-- Button Setujui -->
 	<div class="row clearfix float-right px-2">
 		<?php if ($detail->status == 'Proses Kasubag') { ?>

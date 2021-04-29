@@ -87,7 +87,7 @@
 				<div class="card-body">
 					<table class="table-hover table-responsive">
 						<tbody>
-						<?php if ($detail->no_surat != null) { ?>
+							<?php if ($detail->no_surat != null) { ?>
 							<tr>
 								<td><b>Nomor Surat</b></td>
 								<td> </td>
@@ -473,7 +473,7 @@
 					<center>
 						<?php if ($detail->berita_acara != null) { ?>
 							<p><?= $detail->berita_acara; ?></p>
-							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp08/berita_acara/<?= $detail->berita_acara ?>" target="_blank">
+							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp09/berita_acara/<?= $detail->berita_acara ?>" target="_blank">
 								<i class="fa fa-download nav-icon">
 								</i> Klik untuk melihat
 							</a>
