@@ -22,6 +22,8 @@
 	<style>
 		.body {
 			color: #000;
+			font-family: Calibri, Helvetica, Arial, sans-serif;
+			font-size: 11pt;
 		}
 
 		.logosurat {
@@ -37,9 +39,9 @@
 
 		}
 
-		.card-body {
+		/* .card-body {
 			padding: 5rem;
-		}
+		} */
 
 		.badan_surat {
 			color: #000;
@@ -50,7 +52,6 @@
 		}
 
 		.badan_surat {
-			font-family: 'Times New Roman';
 			margin-left: 60px;
 		}
 
@@ -64,33 +65,29 @@
 		}
 
 		.row {
-			font-size: 14pt;
-			font-family: 'Times New Roman';
+			font-size: 11pt;
 		}
 
 		.no_surat {
-			font-size: 14pt;
+			font-size: 11pt;
 		}
 
 		.tujuan_surat {
-			font-size: 14pt;
-			font-family: 'Times New Roman';
+			font-size: 11pt;
 		}
 
 		.paragraf {
 			/* text-indent: 2.8125em; */
 			text-align: justify;
-			font-family: 'Times New Roman';
 			text-indent: 50px;
 			font-size: 14pt;
 		}
 
 		.isi_surat {
 			margin-left: 0.0375em;
-			font-size: 14pt;
+			font-size: 11pt;
 			line-height: 1.2em;
-			font-family: 'Times New Roman';
-		}
+			}
 
 		.identitas {
 			margin-left: 2.8125em;
