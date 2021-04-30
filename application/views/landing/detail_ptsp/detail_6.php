@@ -75,31 +75,20 @@
 				</div>
 				<div class="col-md-6 content-detail text-center">
 					<div class="row mb-4">
-						<div class="col-md-12">
-							<div class="card shadow">
-								<div class="card-header text-center mb-0 py-1">
-									<h4>Waktu</h4>
-								</div>
-								<div class="card-body">
-									<p class="card-text">1 hari
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row mb-4">
 						<div class="col-md-12 syarat">
 							<div class="card shadow">
 								<div class="card-header text-center mb-0 py-1">
-									<h4>Persyaratan</h4>
+									<h4>Standar Operasional Prosedur</h4>
 								</div>
 								<div class="card-body">
 									<ol type="1" class="ml-3 list">
-										<li>Surat Permohonan dari PPIU/PIHK;</li>
-										<li>Fotokopi SK Ijin operasional PPIU/PIHK;</li>
-										<li>Fotokopi KTP;</li>
-										<li>FC KK;</li>
-										<li>FC Buku Nikah/Ijazah/Akte Kelahiran;</li>
+									<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+						<li>Pemohon mengunggah Surat Permohonan dari PPIU/PIHK. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon mengunggah FC (Fotocopy) SK Ijin Operasional PPIU/PIHK. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon mengunggah FC (Fotocopy) KTP (Kartu Tanda Penduduk). <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon mengunggah FC (Fotocopy) KK (Kartu Keluarga). <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon mengunggah FC (Fotocopy) Buku Nikah/Ijazah/Akte Kelahiran. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.</li>
 									</ol>
 								</div>
 							</div>

@@ -50,7 +50,8 @@
 		<ul class="sticky">
 			<li>
 				<img src="<?= base_url('assets/landing/images/wa.png')?>" width="32" height="32">
-				<p><a href="https://api.whatsapp.com/send?phone=628112650662&text=Info" target="_blank">Chat Haji <br> & Umrah</a></p>
+				<p><a href="https://api.whatsapp.com/send?phone=628112650662&text=Info" target="_blank">Chat Haji <br> &
+						Umrah</a></p>
 			</li>
 		</ul>
 	</div>
@@ -75,31 +76,33 @@
 				</div>
 				<div class="col-md-6 content-detail text-center">
 					<div class="row mb-4">
-						<div class="col-md-12">
-							<div class="card shadow">
-								<div class="card-header text-center mb-0 py-1">
-									<h4>Waktu</h4>
-								</div>
-								<div class="card-body">
-									<p class="card-text">1 hari
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row mb-4">
 						<div class="col-md-12 syarat">
 							<div class="card shadow">
 								<div class="card-header text-center mb-0 py-1">
-									<h4>Persyaratan</h4>
+									<h4>Standar Operasional Prosedur</h4>
 								</div>
 								<div class="card-body">
+									<p class="card-text">
+										Pemohon adalah pemilik asli dokumen yang mengajukan permohonan pengesahan atau
+										yang
+										diberikan
+										kuasa oleh pemiliknya.
+									</p> <br>
 									<ol type="1" class="ml-3 list">
-										<li>Menunjukkan dokumen Asli;</li>
-										<li>Fotokopi dokumen yang akan dilegalisir;</li>
-										<li>Kejuaraan yang bisa dilegalisir adalah kejuaraan yang diakui oleh
-											kementerian agama. </li>
+										<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+										<li>Pemohon mengunggah FC (Fotocopy) dokumen yang akan disahkan. <br> (Format:
+											PDF, Ukuran: Max 1 MB)</li>
+										<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses pengesahan
+											telah selesai.</li>
+										<li>Pemohon mengambil dokumen legalisir dengan membawa dokumen asli.</li>
 									</ol>
+
+									<p class="card-text">
+										<em><b>
+												Kejuaraan yang bisa dilegalisir adalah kejuaraan yang diakui oleh
+												kementerian agama.
+										</b></em>
+									</p>
 								</div>
 							</div>
 						</div>

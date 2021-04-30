@@ -50,7 +50,8 @@
 		<ul class="sticky">
 			<li>
 				<img src="<?= base_url('assets/landing/images/wa.png')?>" width="32" height="32">
-				<p><a href="https://api.whatsapp.com/send?phone=628112650662&text=Info" target="_blank">Chat Haji <br> & Umrah</a></p>
+				<p><a href="https://api.whatsapp.com/send?phone=628112650662&text=Info" target="_blank">Chat Haji <br> &
+						Umrah</a></p>
 			</li>
 		</ul>
 	</div>
@@ -76,28 +77,25 @@
 				</div>
 				<div class="col-md-6 content-detail text-center">
 					<div class="row mb-4">
-						<div class="col-md-12">
-							<div class="card shadow">
-								<div class="card-header text-center mb-0 py-1">
-									<h4>Waktu</h4>
-								</div>
-								<div class="card-body">
-									<p class="card-text">3 hari
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row mb-4">
 						<div class="col-md-12 syarat">
 							<div class="card shadow">
 								<div class="card-header text-center mb-0 py-1">
-									<h4>Persyaratan</h4>
+									<h4>Standar Operasional Prosedur</h4>
 								</div>
 								<div class="card-body">
-									<p class="card-text">Menyerahkan proposal bantuan dengan dilampiri surat permohonan
-										kepada Kepala Kantor, untuk Bantuan Fisik wajib dilampiri fc Sertifikat Tanah
-										Wakaf/ Hak Milik Yayasan (bukan atas nama pribadi)</p>
+									<ol type="1" class="ml-3 list">
+										<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+										<li>Pemohon Mengunggah Proposal yang telah dilampiri :<br></li>
+										<ol type="a" class="ml-4 list">
+											<li>Surat Permohonan yang ditujukan Kepala Kemenag Kab. Klaten</li>
+											<li>Untuk bantuan fisik maka wajib dilampiri (fotocopy sertifikat tanah
+												wakaf/hak milik yayasan bukan atas nama pribadi) <br>(Format: PDF, Ukuran: Max 1 MB)</li> 
+										</ol>
+										
+										<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan
+											telah selesai.
+										</li>
+									</ol>
 								</div>
 							</div>
 						</div>

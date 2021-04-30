@@ -50,7 +50,8 @@
 		<ul class="sticky">
 			<li>
 				<img src="<?= base_url('assets/landing/images/wa.png')?>" width="32" height="32">
-				<p><a href="https://api.whatsapp.com/send?phone=628112650662&text=Info" target="_blank">Chat Haji <br> & Umrah</a></p>
+				<p><a href="https://api.whatsapp.com/send?phone=628112650662&text=Info" target="_blank">Chat Haji <br> &
+						Umrah</a></p>
 			</li>
 		</ul>
 	</div>
@@ -62,8 +63,9 @@
 		<div class="container">
 			<div class="row text-center">
 				<div class="col-md-12">
-					<h4>Permohonan Rekomendasi Izin Pendirian Penyelenggara Perjalanan Ibadah Umroh (PPIU) dan Perjalanan Ibadah Haji Khusus (PIHK)</h4>
+					<h4>Rekomendasi Pajak Bendaraan Bermotor Layanan Sosial Rumah Ibadah</h4>
 				</div>
+
 			</div>
 		</div>
 	</section>
@@ -82,28 +84,14 @@
 								</div>
 								<div class="card-body">
 									<ol type="1" class="ml-3 list">
-									<li>Pemohon mengunduh Surat Permohonan.</li>
-							<li>Pemohon mengisi Surat Permohonan yang ditujukan kepada Kepala Kantor Kemenag Klaten.
-							</li>
-							<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
-							<li>Pemohon mengunggah Surat Permohonan. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon mengunggah Akte Notaris Pendirian perusahaan. <br> (Format: PDF, Ukuran: Max 1 MB)
-							</li>
-							<li>Pemohon mengunggah Izin usaha pendirian perjalanan wisata paling singkat 2 (dua) tahun.
-								<br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon mengunggah Surat Keterangan Domisili Usaha (SKDU). <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon mengunggah NPWP Perusahaan dan pimpinan perusahaan. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon mengunggah Surat Rekomendasi dari Instansi Pemkab setempat yang membidangi pariwisata yang masih berlaku. <br> (Format: PDF, Ukuran:
-								Max 1 MB)</li>
-							<li>Pemohon mengunggah laporan pelaksanaan bimbingan 2(dua) tahun terakhir. <br> (Format: PDF, Ukuran:
-								Max 10 MB)</li>
-							<li>Pemohon mengunggah laporan keuangan perusahaan yang sehat selama 1 (satu) tahun terakhir dan telah diaudit akuntan publik yang terdaftar dengan opini minimal Wajar Dengan Pengecualian (WDP). 
-							<br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon mengunggah dokumen susunan pengurus perusahaan. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon mengunggah data pemegang saham. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon mengunggah dokumen anggota direksi dan komisaris. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
-							</li>
+										<li>Pemohon membuat surat permohonan ditujukan kepada Kepala Kantor Kementerian
+											Agama Kab. Klaten</li>
+										<li>Pemohon mengunggah surat permohonan yang telah dibuat. <br> (Format: PDF,
+											Ukuran: Max 1 MB)</li>
+										<li>Pemohon mengunggah FC (Fotocopy) SK Ijin Operasional PPIU/PIHK. <br>
+											(Format: PDF, Ukuran: Max 1 MB)</li>
+										<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan
+											telah selesai.</li>
 									</ol>
 								</div>
 							</div>
