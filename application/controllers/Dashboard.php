@@ -418,6 +418,7 @@ class Dashboard extends CI_Controller
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
         $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp01($id_permohonan)->result();
+        $data_detail['data_petugas_doa'] = $this->m_pemohon->data_petugas_doa($id_permohonan)->result();
 
         $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
@@ -1967,7 +1968,7 @@ class Dashboard extends CI_Controller
     //upload akte_notaris ptsp08
     private function aksi_upload_akte_notaris_ptsp08($id_ptsp08)
     {
-        $config['upload_path']          = './assets/dashboard/pemohon/ptsp/ptsp07/akte_notaris/';
+        $config['upload_path']          = './assets/dashboard/pemohon/ptsp/ptsp08/akte_notaris/';
         $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|docx|doc|xlsx|xls';
         $config['file_name']            = 'akte_notaris-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
 

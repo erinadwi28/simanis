@@ -35,14 +35,14 @@
                                 <td><?= $permohonan->nama_layanan ?></td>
                                 <td><?= format_indo(date($permohonan->tgl_permohonan)); ?></td>
                                 <td><label class="badge badge-success"><i class="far fa-check-circle text-status"> <?= $permohonan->status ?></i></label></td>
-                                <td class="text-center">
+                                <td class="text-center" width="90px">
                                     <!-- Button View -->
-                                    <a href="<?= base_url() ?>dashboard/lihat_surat/<?= $permohonan->id_permohonan_ptsp ?>/<?= $permohonan->id_layanan ?>" class="btn btn-primary btn-sm mr-1">
+                                    <a href="<?= base_url() ?>dashboard/detail_data_permohonan/<?= $permohonan->id_permohonan_ptsp ?>/<?= $permohonan->id_layanan ?>" class="btn btn-primary btn-sm mr-1">
                                         <i class="fas fa-search"></i>
                                     </a>
 
                                     <!-- Button Print -->
-                                    <a href="" class="btn btn-primary btn-sm">
+                                    <a href="<?= base_url() ?>dashboard/cetak_ptsp/<?= $permohonan->id_permohonan_ptsp ?>/<?= $permohonan->id_layanan ?>" class="btn btn-primary btn-sm">
                                         <i class="fa fa-print"></i>
                                     </a>
                                 </td>

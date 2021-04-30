@@ -20,6 +20,12 @@
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
+		.body {
+			color: #000;
+			font-family: Calibri, Helvetica, Arial, sans-serif;
+			font-size: 11pt;
+		}
+		
 		.kopsurat p {
 			font-weight: bold;
 			line-height: 1em;
@@ -31,11 +37,7 @@
 		}
 
 		.badan_surat {
-			opacity: 0.8;
-		}
-
-		.badan_surat {
-			font-family: 'Arial';
+			font-size: 11pt;
 		}
 
 		.no_surat {
@@ -46,7 +48,6 @@
 		.paragraf {
 			/* text-indent: 2.8125em; */
 			text-align: justify;
-			font-family: 'Arial';
 			text-indent: 50px;
 		}
 
@@ -54,7 +55,6 @@
 			margin-left: 0.0375em;
 			font-size: 11pt;
 			line-height: 1.2em;
-			font-family: 'Arial';
 		}
 
 		.identitas {
@@ -136,14 +136,14 @@
 								</div>
 								<div class="isi_surat paragraf">
 									<p class="text-justify">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Berdasarkan surat dari Takmir Masjid <?= $detail->nama_masjid ?> Nomor :
-										<?= $detail->no_surat_permohonan ?>
-										tanggal <?= $detail->tgl_surat_permohonan ?> perihal Permohonan Surat Rekomendasi dan
+										<?= $detail->no_srt_permohonan ?>
+										tanggal <?= format_indo(date($detail->tgl_srt_permohonan)); ?> perihal Permohonan Surat Rekomendasi dan
 										memperhatikan kelengkapan
 										proposal yang diajukan, dengan ini kami memberikan rekomendasi kepada :
 									</p>
 								</div>
 								<div class="isi_surat identitas">
-									<table class="table-responsive">
+									<table>
 										<tbody>
 											<tr>
 												<td>Nama Masjid</td>
@@ -188,7 +188,7 @@
 									<div class="col-md-6">
 										<div class="isi_surat">
 											<center>
-												Klaten, 03 Maret 2020<br>
+												Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 												Kepala
 											</center>
 										</div>

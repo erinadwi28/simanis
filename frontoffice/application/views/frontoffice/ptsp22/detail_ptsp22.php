@@ -139,12 +139,13 @@
 					<div class="card-body">
 						<table class="table-hover table-responsive">
 							<tbody>
-								<?php if ($detail->no_surat != null && $detail->status == 'Selesai') { ?>
+								<?php if ($detail->no_surat != null) { ?>
 									<tr>
 										<td><b>Nomor Surat</b></td>
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= $detail->no_surat ?></td>
 									</tr>
 								<?php } ?>
@@ -267,7 +268,7 @@
 				if ($detail->status == 'Selesai') { ?>
 					<div class="row clearfix">
 						<div class="col-md-12">
-							<form class="form-horizontal" id="no_surat_ptsp22" enctype="multipart/form-data" action="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>/<?= $detail->id_layanan ?>" method="POST">
+							<form class="form-horizontal" id="no_surat_ptsp22" enctype="multipart/form-data" action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp22/<?= $detail->id_permohonan_ptsp ?>" method="POST">
 								<div class="input-group mb-3 col-md-6 float-right p-0">
 									<input type="text" class="form-control " id="no_surat" name="no_surat" value=".../ Kk.11.10/6/HM.01/...../2021" required>
 									<button class="btn btn-sm btn-primary" type="submit" id="button-addon2"><i class="fas fa-check-circle">

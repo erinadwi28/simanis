@@ -108,6 +108,51 @@
 						</center>
 					</div>
 				</div>
+
+				<!-- Upload data -->
+				<div class="card shadow mb-4">
+					<div class="card-header">
+						<center>
+							<h6 class="m-0 font-weight-bold">data</h6>
+						</center>
+					</div>
+					<div class="card-body">
+						<center>
+							<?php if ($detail->data != null) { ?>
+								<p><?= $detail->data; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp26/data/<?= $detail->data ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->data == null) { ?>
+								<p>Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
+							<?php } ?>
+						</center>
+					</div>
+					<?php if ($detail->status == 'Selesai') { ?>
+						<div class="card-footer">
+							<form action="<?= base_url('dashboard/update_data_ptsp26/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_data">
+								<div class="form-group">
+									<div class="input-group">
+										<div class="form-group-upload">
+											<div class="custom-file">
+												<label class="custom-file-label" for="file-upload-2">pilih file...</label>
+												<input type="file" class="custom-file-input" id="file-upload-2" name="data" value="<?= $detail->data ?>">
+												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
+											</div>
+										</div>
+									</div>
+								</div>
+								<center>
+									<button class="btn btn-sm btn-primary" type="submit">
+										<i class="fa fa-upload">
+										</i>
+									</button>
+								</center>
+							</form>
+						</div>
+					<?php } ?>
+				</div>
 			</div>
 			<div class="col-md-8 mb-2">
 				<div class="card shadow mb-4">
@@ -220,51 +265,6 @@
 						</table>
 					</div>
 				</div>
-				<!-- Unggah Berita Acara -->
-				<?php
-				if ($detail->status == 'Selesai') { ?>
-					<!-- Unggah Berita Acara -->
-					<div class="row clearfix">
-						<div class="col-xs-12 col-sm-6"></div>
-						<div class="col-xs-12 col-sm-6">
-							<div class="card shadow mb-4">
-								<div class="card-header">
-									<center>
-										<h6 class="m-0 font-weight-bold">Upload Data</h6>
-									</center>
-								</div>
-
-								<div class="card-body">
-									<center>
-										<a id="btn_upload" class="btn btn-sm btn-primary" href="" target="_blank">
-											<i class="fa fa-download nav-icon">
-											</i> Klik untuk melihat
-										</a>
-
-										<p class="mb-0">Belum ada lampiran</p>
-
-									</center>
-								</div>
-
-								<div class="card-footer">
-									<form action="" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="">
-										<div class="input-group px-4">
-											<div class="custom-file">
-												<label class="custom-file-label" for="file-upload">pilih
-													file...</label>
-												<input type="file" class="custom-file-input" id="file-upload" name="srt_permohonan" value="" required>
-												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="">
-											</div>
-											<div class="input-group-append">
-												<button class="btn btn-sm btn-primary" type="submit" id="inputGroupFileAddon04"><i class="fa fa-upload"></i></button>
-											</div>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				<?php } ?>
 
 				<!-- Button Tolak & Setujui Awal Surat Masuk -->
 				<div class="row clearfix float-right px-2">

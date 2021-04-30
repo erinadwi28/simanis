@@ -41,7 +41,7 @@
 				<div class="card-body">
 					<table class="table-hover table-responsive">
 						<tbody>
-						<?php if ($detail->no_surat != null) { ?>
+							<?php if ($detail->no_surat != null) { ?>
 							<tr>
 								<td><b>Nomor Surat</b></td>
 								<td> </td>
@@ -164,8 +164,8 @@
 			</div>
 		</div>
 	</div>
-<!-- Unggahan -->
-<div class="row clearfix">
+	<!-- Unggahan -->
+	<div class="row clearfix">
 		<!-- Surat Permohonan -->
 		<div class="col-xs-12 col-sm-3">
 			<div class="card shadow mb-4">
@@ -179,7 +179,7 @@
 						<?php if ($detail->srt_permohonan != null) { ?>
 						<p><?= $detail->srt_permohonan; ?></p>
 						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp05/srt_permohonan/<?= $detail->srt_permohonan ?>"
+							href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp08/srt_permohonan/<?= $detail->srt_permohonan ?>"
 							target="_blank">
 							<i class="fa fa-download nav-icon">
 							</i> Klik untuk melihat

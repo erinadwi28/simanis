@@ -14,9 +14,7 @@
 	<!--Tittle Icon-->
 	<link rel="shortcut icon" href="<?= base_url('../assets/landing/images/') ?>title.png" />
 
-	<link
-		href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
@@ -143,25 +141,26 @@
 			line-height: 1.5em;
 		}
 
-        .petugas>.nomor{
-            padding-right: 0px;
-        }
-        .petugas>.data{
-            padding-left: -0px;
-            margin-left: -15px;
-        }
+		.petugas>.nomor {
+			padding-right: 0px;
+		}
 
-        p{
-            margin-bottom: 0px;
-        }
+		.petugas>.data {
+			padding-left: -0px;
+			margin-left: -15px;
+		}
 
-        .pelaksanaan {
-            margin-left: 50px;
-        }
+		p {
+			margin-bottom: 0px;
+		}
 
-        .ketentuan {
-            margin-left: 10px;
-        }
+		.pelaksanaan {
+			margin-left: 50px;
+		}
+
+		.ketentuan {
+			margin-left: 10px;
+		}
 
 		.tgl {
 			text-align: right;
@@ -188,177 +187,177 @@
 						<div class="kopsurat row">
 							<div class="col-md-12 mb-3">
 								<object data="" type="image">
-									<img class="img-fluid" alt="logo_kop_surat"
-										src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
+									<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
 								</object>
 							</div>
 						</div>
 
 						<!-- NO SURAT -->
-						<div class="no_surat row">
-							<div class="col-9">
+						<?php
+						foreach ($detail_ptsp as $detail) { ?>
+							<div class="no_surat row">
+								<div class="col-9">
+									<table>
+										<tbody>
+											<tr>
+												<td>Nomor</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td> </td>
+												<td><?= $detail->no_surat ?></td>
+											</tr>
+											<tr>
+												<td>Sifat</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td> </td>
+												<td><?= $detail->sifat ?></td>
+											</tr>
+											<tr>
+												<td>Lampiran</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td> </td>
+												<td><?= $detail->jml_lampiran ?> lembar</td>
+											</tr>
+											<tr>
+												<td>Hal</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td> </td>
+												<td>Surat Ijin Rekomendasi Kegiatan</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="col-3">
+									<p class="float-right"><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></p>
+								</div>
+							</div>
+
+							<!-- KEPADA -->
+							<div class="no_surat">
+								<br>
+								<p>Kepada Yth. <br>
+									<?= $detail->pemohon ?> <br>
+									Di tempat
+								</p>
+							</div>
+
+							<br>
+
+							<!-- Paragraf 1 -->
+							<div class="isi_surat">
+								<p>&emsp;&emsp;&emsp;Diberitahukan dengan hormat, setelah membaca dan memperhatikan surat permohonan Rekomendasi
+									dari <?= $detail->pemohon ?>, Nomor
+									<?= $detail->no_srt_permohonan ?>, tanggal <?= format_indo(date($detail->tgl_srt_permohonan)); ?> perihal seperti pokok surat dengan mengadakan
+									kegiatan yang akan dilaksanakan pada:
+								</p>
+							</div>
+
+							<!-- Pelaksanaan -->
+							<div class="pelaksanaan">
 								<table>
 									<tbody>
 										<tr>
-											<td>Nomor</td>
+											<td>Hari</td>
 											<td> </td>
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td> </td>
-											<td>4763/Kk.11.10/8/HM.00/06/2021</td>
+											<td><?= $detail->hari_kegiatan ?></td>
 										</tr>
 										<tr>
-											<td>Sifat</td>
+											<td>Tempat</td>
 											<td> </td>
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td> </td>
-											<td>Segera</td>
+											<td><?= $detail->tempat_kegiatan ?></td>
 										</tr>
 										<tr>
-											<td>Lampiran</td>
+											<td>Waktu</td>
 											<td> </td>
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td> </td>
-											<td>2 lembar</td>
+											<td><?= $detail->waktu_kegiatan ?> WIB</td>
 										</tr>
 										<tr>
-											<td>Hal</td>
+											<td>Acara</td>
 											<td> </td>
 											<td> </td>
 											<td>:</td>
 											<td> </td>
+											<td><?= $detail->nama_kegiatan ?></td>
+										</tr>
+										<tr>
+											<td>Jumlah Peserta</td>
 											<td> </td>
-											<td>Surat Ijin Rekomendasi Kegiatan</td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td><?= $detail->jml_peserta ?></td>
+										</tr>
+										<tr>
+											<td>Agenda Kegiatan</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td><?= $detail->agenda_kegiatan ?></td>
 										</tr>
 									</tbody>
 								</table>
 							</div>
-							<div class="col-3">
-								<p class="float-right">Januari 2021</p>
-							</div>
-						</div>
 
-						<!-- KEPADA -->
-						<div class="no_surat">
 							<br>
-							<p>Kepada Yth. <br>
-								Panitia PRE-EVENT ASIAN YOTUH DAY III <br>
-								Orang Muda Katolik (OMK)
-								Rayon Klaten <br>
-								Di tempat
-							</p>
-						</div>
 
-                        <br>
+							<div class="isi_surat">
+								<p><b>Maka dengan ini kami memberi Rekomendasi atas kegiatan tersebut dengan ketentuan:</b>
+								</p>
+							</div>
 
-                        <!-- Paragraf 1 -->
-						<div class="isi_surat">
-							<p>&emsp;&emsp;&emsp;Diberitahukan dengan hormay, setelah membaca an memperhatikan surat permohonan Rekomendasi
-							dari Pantia PRE-EVEN ASIAN YOUTH DAY III Orang Muda Katolik (OMK) Rayon Klaten, Nomor
-							A/32/BYGK/OMK-RK/V/2017, tanggal 09 Juni 2017 perihal seperti pokok surat dengan mengadakan
-							kegiatan yang akan dilaksanakan pada:
-							</p>
-						</div>
+							<!-- ketentuan -->
+							<div class="ketentuan">
+								<ol type="1">
+									<li>Tetap menjaga persatuan dan kesatuan dalam kegiatan dan masyarakat.</li>
+									<li>Menjaga kondusifitas lingkungan / wilayah Kabupaten Klaten.</li>
+									<li>Agar tetap berkoordinasi dengan pihak keamanan serta pihak terkait.</li>
+									<li>Agar menjauhkan dari paham-paham Radikalisme serta menghindari dari unsur SARA.</li>
+								</ol>
+							</div>
 
-                        <!-- Pelaksanaan -->
-						<div class="pelaksanaan">
-							<table>
-								<tbody>
-									<tr>
-										<td>Hari</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>xxx</td>
-									</tr>
-									<tr>
-										<td>Tempat</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>xxx</td>
-									</tr>
-									<tr>
-										<td>Waktu</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>xxx WIB</td>
-									</tr>
-									<tr>
-										<td>Acara</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>xxxx</td>
-									</tr>
-									<tr>
-										<td>Jumlah Peserta</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>xxxx</td>
-									</tr>
-									<tr>
-										<td>Agenda Kegiatan</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>xxxx</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
+							<!-- Paragraf 2 -->
+							<div class="isi_surat">
+								<p>&emsp;&emsp;Demikian surat ini kami sampaikan untuk dapat dipergunakan sebagaimana
+									mestinya.
+								</p>
+							</div>
 
-                        <br>
+							<br>
 
-						<div class="isi_surat">
-							<p><b>Maka dengan ini kami memberi Rekomendasi atas kegiatan tersebut dengan ketentuan:</b>
-							</p>
-						</div>
-
-						<!-- ketentuan -->
-						<div class="ketentuan">
-							<ol type="1">
-								<li>Tetap menjaga persatuan dan kesatuan dalam kegiatan dan masyarakat.</li>
-								<li>Menjaga kondusifitas lingkungan / wilayah Kabupaten Klaten.</li>
-								<li>Agar tetap berkoordinasi dengan pihak keamanan serta pihak terkait.</li>
-								<li>Agar menjauhkan dari paham-paham Radikalisme serta menghindari dari unsur SARA.</li>
-							</ol>
-						</div>
-
-                        <!-- Paragraf 2 -->
-						<div class="isi_surat">
-							<p>&emsp;&emsp;Demikian surat ini kami sampaikan untuk dapat dipergunakan sebagaimana
-                                mestinya.
-							</p>
-						</div>
-
-                        <br>
-
-						<!-- Tanggal -->
-						<div class="row">
-						<div class="col-12 tgl">
-						Klaten, 24 April 2021
-						</div>
-						</div>
+							<!-- Tanggal -->
+							<div class="row">
+								<div class="col-12 tgl">
+									Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?>
+								</div>
+							</div>
+						<?php } ?>
 
 						<!-- Kepala -->
 						<div class="row">
-						<div class="col-12 kpl">
-						Kepala
-						</div>
+							<div class="col-12 kpl">
+								Kepala
+							</div>
 						</div>
 
 						<div class="row ttd_kepala">
@@ -368,7 +367,7 @@
 							</div>
 						</div>
 						<br> <br>
-						
+
 						<div class="row">
 							<div class="col-md-9">
 							</div>

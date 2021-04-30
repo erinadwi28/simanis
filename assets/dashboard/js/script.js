@@ -119,6 +119,8 @@ $('#formupload_ptsp06_3').parsley();
 
 $('#formupload_ptsp06_4').parsley();
 
+$('#formupload_ptsp06_5').parsley();
+
 $('#formubah_ptsp06').parsley();
 
 $('#no_surat_ptsp06').parsley();
@@ -137,6 +139,9 @@ $('#formupload_ptsp07_4').parsley();
 $('#formupload_ptsp07_5').parsley();
 
 $('#formupload_ptsp07_6').parsley();
+
+$('#formupload_berita_acara_07').parsley();
+
 
 $('#formubah_ptsp07').parsley();
 
@@ -167,6 +172,8 @@ $('#formupload_ptsp08_9').parsley();
 
 $('#formupload_ptsp08_10').parsley();
 
+$('#formupload_berita_acara_08').parsley();
+
 $('#formubah_ptsp08').parsley();
 
 $('#no_surat_ptsp08').parsley();
@@ -195,6 +202,8 @@ $('#formupload_ptsp09_8').parsley();
 $('#formupload_ptsp09_9').parsley();
 
 $('#formupload_ptsp09_10').parsley();
+
+$('#formupload_berita_acara_09').parsley();
 
 $('#formubah_ptsp09').parsley();
 
@@ -226,6 +235,8 @@ $('#formupload_ptsp10_8').parsley();
 $('#formupload_ptsp10_9').parsley();
 
 $('#formupload_ptsp10_10').parsley();
+
+$('#formupload_berita_acara_10').parsley();
 
 $('#no_surat_ptsp10').parsley();
 

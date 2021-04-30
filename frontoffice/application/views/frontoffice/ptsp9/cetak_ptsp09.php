@@ -14,14 +14,14 @@
 	<!--Tittle Icon-->
 	<link rel="shortcut icon" href="<?= base_url('../assets/landing/images/') ?>title.png" />
 
-	<link
-		href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
 		.body {
 			color: #000;
+			font-family: Calibri, Helvetica, Arial, sans-serif;
+			font-size: 11pt;
 		}
 
 		.logosurat {
@@ -37,9 +37,9 @@
 
 		}
 
-		.card-body {
+		/* .card-body {
 			padding: 5rem;
-		}
+		} */
 
 		.badan_surat {
 			color: #000;
@@ -50,37 +50,35 @@
 		}
 
 		.badan_surat {
-			font-family: 'Arial';
+			
 			margin-left: 60px;
 		}
 
 		.row {
-			font-size: 12pt;
-			font-family: 'Arial';
+			font-size: 11pt;
+			
 		}
 
 		.no_surat {
-			font-size: 12pt;
+			font-size: 11pt;
 		}
 
 		.tujuan_surat {
-			font-size: 12pt;
-			font-family: 'Arial';
+			font-size: 11pt;
+			
 		}
 
 		.paragraf {
 			/* text-indent: 2.8125em; */
 			text-align: justify;
-			font-family: 'Arial';
 			text-indent: 50px;
-			font-size: 12pt;
+			font-size: 11pt;
 		}
 
 		.isi_surat {
 			margin-left: 0.0375em;
-			font-size: 12pt;
+			font-size: 11pt;
 			line-height: 1.5em;
-			font-family: 'Arial';
 			text-align: justify;
 		}
 
@@ -114,13 +112,6 @@
 			margin-left: auto;
 		}
 
-		/* .bawah {
-			display: block;
-			position: absolute;
-			float: right;
-			margin-right: 160px;
-		} */
-
 		.kepala {
 			display: block;
 			position: absolute;
@@ -143,37 +134,44 @@
 			line-height: 1.5em;
 		}
 
-        .petugas>.nomor{
-            padding-right: 0px;
-        }
-        .petugas>.data{
-            padding-left: -0px;
-            margin-left: -15px;
-        }
+		.petugas>.nomor {
+			padding-right: 0px;
+		}
 
-        p{
-            margin-bottom: 0px;
-        }
+		.petugas>.data {
+			padding-left: -0px;
+			margin-left: -15px;
+		}
 
-        .pelaksanaan {
-            margin-left: 0px;
-        }
+		p {
+			margin-bottom: 0px;
+		}
 
-        .ketentuan {
-            margin-left: 10px;
-        }
+		.pelaksanaan {
+			margin-left: 0px;
+		}
+
+		.ketentuan {
+			margin-left: 10px;
+		}
 
 		.tgl {
 			text-align: right;
 		}
 
 		.kpl {
-			margin-left: 509px;
+			margin-left: 300px;
 		}
 
 		.rekomendasi {
 			text-align: center;
-		}		
+		}
+
+		.ttd_surat {
+			font-size: 11pt;
+			margin-left: 400px;
+		}
+
 	</style>
 
 </head>
@@ -192,109 +190,102 @@
 						<div class="kopsurat row">
 							<div class="col-md-12 mb-3">
 								<object data="" type="image">
-									<img class="img-fluid" alt="logo_kop_surat"
-										src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
+									<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
 								</object>
 							</div>
 						</div>
 
 						<!-- NO SURAT -->
-						<div class="no_surat row">
-							<div class="col-12 rekomendasi">
-								<p><b>REKOMENDASI</b></p>
-								<p>Nomor: xxx</p>
+						<?php
+						foreach ($detail_ptsp as $detail) { ?>
+							<div class="no_surat row">
+								<div class="col-12 rekomendasi">
+									<p><b>REKOMENDASI</b></p>
+									<p>Nomor: <?= $detail->no_surat ?></p>
+								</div>
 							</div>
-						</div>
 
-						<!-- PEMBUKA -->
-						<div class="no_surat">
-							<br>
-							<p>Assalamu'alaikum Wr.Wb</p>
-							<br>
-						</div>
-
-                        <!-- Paragraf 1 -->
-						<div class="isi_surat">
-							<p>&emsp;&emsp;&emsp;Berdasarkan permohonan dari Saudara xxx selaku Pimpinan PT xxx perihal Rekomendasi
-							Pengesahan Pembukaan Kantor Cabang PPIU. Setelah dilakukan peninjauan terhadap Kantor Cabang PT xxx 
-							yang berdomisili di xxx maka Kepala Kantor Kementerian Agama Kab. Klaten dengan ini memberikan rekomendasi
-							kepada:
-							</p>
-							<br>
-						</div>
-
-                        <!-- Pelaksanaan -->
-						<div class="pelaksanaan">
-							<table>
-								<tbody>
-									<tr>
-										<td>Nama Kantor Cabang</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>xxx</td>
-									</tr>
-									<tr>
-										<td>Alamat Kantor Cabang</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>xxx</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-
-                        <br>
-
-						
-
-                        <!-- Paragraf 2 -->
-						<div class="isi_surat">
-						<p>&emsp;&emsp;&emsp;Rekomendasi ini dibuat sebagai pertimbangan dalam Pengesahan Pembukaan Kantor Cabang 
-						PPIU sebagai Penyelenggara Perjalanan Ibadah Umrah di Kabupaten Klaten.</p>
-							<p>&emsp;&emsp;&emsp;Demikian surat ini kami sampaikan untuk dapat dipergunakan sebagaimana
-                                mestinya.
-							</p>
-						</div>
-
-						<!-- PENUTUP -->
-						<div class="no_surat">
-							<br>
-							<p>Wassalamu'alaikum Wr.Wb</p>
-						</div>
-
-                        <br>
-
-						<!-- Tanggal -->
-						<div class="row">
-						<div class="col-12 tgl">
-						Klaten, 24 April 2021
-						</div>
-						</div>
-
-						<!-- Kepala -->
-						<div class="row">
-						<div class="col-12 kpl">
-						Kepala
-						</div>
-						</div>
-
-						<div class="row ttd_kepala">
-							<div class="col-md-6 ">
+							<!-- PEMBUKA -->
+							<div class="no_surat">
+								<br>
+								<p>Assalamu'alaikum Wr.Wb</p>
+								<br>
 							</div>
-							<div class="col-md-6">
+
+							<!-- Paragraf 1 -->
+							<div class="isi_surat paragraf">
+								<p>Berdasarkan permohonan dari Saudara <?= $detail->nama_pemohon ?> selaku Pimpinan PT <?= $detail->nama_pt ?> perihal Rekomendasi
+									Pengesahan Pembukaan Kantor Cabang PPIU. Setelah dilakukan peninjauan terhadap Kantor Cabang PT <?= $detail->nama_pt ?>
+									yang berdomisili di <?= $detail->domisili_kantor_cabang ?> maka Kepala Kantor Kementerian Agama Kab. Klaten dengan ini memberikan rekomendasi
+									kepada:
+								</p>
+								<br>
 							</div>
-						</div>
-						<br> <br>
-						
+
+							<!-- Pelaksanaan -->
+							<div class="pelaksanaan">
+								<table>
+									<tbody>
+										<tr>
+											<td>Nama Kantor Cabang</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td><?= $detail->nama_kantor_cabang ?></td>
+										</tr>
+										<tr>
+											<td>Alamat Kantor Cabang</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td><?= $detail->alamat_kantor_cabang ?></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<br>
+
+
+
+							<!-- Paragraf 2 -->
+							<div class="isi_surat paragraf">
+								<p>Rekomendasi ini dibuat sebagai pertimbangan dalam Pengesahan Pembukaan Kantor Cabang
+									PPIU sebagai Penyelenggara Perjalanan Ibadah Umrah di Kabupaten Klaten.</p>
+								<p>Demikian surat ini kami sampaikan untuk dapat dipergunakan sebagaimana
+									mestinya.
+								</p>
+							</div>
+
+							<!-- PENUTUP -->
+							<div class="no_surat">
+								<br>
+								<p>Wassalamu'alaikum Wr.Wb</p>
+							</div>
+
+							<br>
+
+							<!-- Tanggal -->
+							<div class="row">
+							<div class="col-md-9">
+								</div>
+								<div class="col-md-3">
+								<div class="ttd_surat">
+									Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?> <br>
+									Kepala
+								</div>
+								</div>
+							</div>
+						<?php } ?>
+						<br> <br> <br> <br>
+
 						<div class="row">
 							<div class="col-md-9">
 							</div>
 							<div class="col-md-3">
-								<div class="badan_surat isi_surat">
+								<div class="ttd_surat">
 									Anif Solikhin<br>
 								</div>
 							</div>

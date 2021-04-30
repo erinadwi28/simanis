@@ -22,6 +22,8 @@
 	<style>
 		.body {
 			color: #000;
+			font-family: Calibri, Helvetica, Arial, sans-serif;
+			font-size: 11pt;
 		}
 
 		.logosurat {
@@ -37,9 +39,9 @@
 
 		}
 
-		.card-body {
+		/* .card-body {
 			padding: 5rem;
-		}
+		} */
 
 		.badan_surat {
 			color: #000;
@@ -50,44 +52,41 @@
 		}
 
 		.badan_surat {
-			font-family: 'Times New Roman';
 			margin-left: 60px;
 		}
 
 		.kepala_sertifikat {
 			font-weight: bold;
-			font-size: 14pt;
+			font-size: 11pt;
 		}
 
 		.kepala_sertifikat p {
 			margin-top: 3px;
 		}
-		.row{
-			font-size: 14pt;
-			font-family: 'Times New Roman';
-		}
-		.no_surat {
-			font-size: 14pt;
+
+		.row {
+			font-size: 11pt;
 		}
 
-		.tujuan_surat{
-			font-size: 14pt;
-			font-family: 'Times New Roman';
+		.no_surat {
+			font-size: 11pt;
+		}
+
+		.tujuan_surat {
+			font-size: 11pt;
 		}
 
 		.paragraf {
 			/* text-indent: 2.8125em; */
 			text-align: justify;
-			font-family: 'Times New Roman';
 			text-indent: 50px;
-			font-size: 14pt;
+			font-size: 11pt;
 		}
 
 		.isi_surat {
 			margin-left: 0.0375em;
-			font-size: 14pt;
+			font-size: 11pt;
 			line-height: 1.2em;
-			font-family: 'Times New Roman';
 		}
 
 		.identitas {
@@ -120,21 +119,6 @@
 			margin-left: auto;
 		}
 
-		.bawah {
-			display: block;
-			position: absolute;
-			float: right;
-			margin-right: 160px;
-		}
-
-		.kepala {
-			display: block;
-			position: absolute;
-			float: left;
-			margin-top: 200px;
-			margin-right: -500px;
-		}
-
 		.table {
 			color: #000;
 		}
@@ -143,6 +127,11 @@
 			border-width: 2px;
 			border-color: #000;
 			margin-left: 15px;
+		}
+
+		.ttd_surat {
+			font-size: 11pt;
+			margin-left: 400px;
 		}
 
 	</style>
@@ -158,8 +147,9 @@
 			</div>
 			<div class="col-md-8">
 				<div class="card shadow mb-4">
-				<div class="card-body">
-
+					<div class="card-body">
+						<?php
+						foreach ($detail_ptsp as $detail) { ?>
 							<div class="kopsurat row">
 								<div class="col-md-12 mb-3">
 									<object data="" type="image">
@@ -171,19 +161,19 @@
 							<div class="no_surat">
 								<center>
 									<p><b>REKOMENDASI </b><br>
-										Nomor :
+										Nomor: <?= $detail->no_surat ?>
 									</p>
 								</center>
 							</div>
 							<div class="isi_surat">
-								<p> assalamu'alaikum Wr. Wb.
+								<p> Assalamu'alaikum Wr. Wb.
 								</p>
 							</div>
 							<div class="isi_surat paragraf">
-								<p> Berdasarkan permohonan dari Saudara............ selaku Pimpinan PT......... perihal
-								Rekomendasi Perpanjang Izin Operasional Kantro Cabang PPIU. Setelah dilakukan peninjauan terhadap Kantor
-								Cabang PT....... yang berdomisili di.................  maka Kepala Kantor Kementerian Agama Kab. Klaten dengan ini 
-								memberikan rekomendasi kepada:
+								<p>Berdasarkan permohonan dari Saudara <?= $detail->nama_pemohon ?> selaku Pimpinan PT <?= $detail->nama_pt ?> perihal
+									Rekomendasi Perpanjang Izin Operasional Kantor Cabang PPIU. Setelah dilakukan peninjauan terhadap Kantor
+									Cabang PT <?= $detail->nama_pt ?> yang berdomisili di <?= $detail->domisili_kantor_cabang ?> maka Kepala Kantor Kementerian Agama Kab. Klaten dengan ini
+									memberikan rekomendasi kepada:
 								</p>
 							</div>
 
@@ -196,7 +186,7 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td>xx</td>
+											<td><?= $detail->nama_kantor_cabang ?></td>
 										</tr>
 										<tr>
 											<td>Alamat Kantor Cabang</td>
@@ -204,61 +194,55 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td>xx
-											</td>
+											<td><?= $detail->alamat_kantor_cabang ?></td>
 										</tr>
 									</tbody>
 								</table>
 							</div>
 							<div class="isi_surat paragraf">
-								<p>Rekomendasi ini dibuat untuk menjadi pertimbangan Perpanjang Operasional Kantor Cabang PPIU sebagai Penyelenggara
-								Perjalanan Ibadah Umrah di Kabupaten Klaten.
+								<p>Rekomendasi ini dibuat untuk menjadi pertimbangan Perpanjangan Izin Operasional Kantor Cabang PPIU sebagai Penyelenggara
+									Perjalanan Ibadah Umrah di Kabupaten Klaten.
 								</p>
 							</div>
 							<div class="isi_surat paragraf">
-								<p>
-									Demikian rekomendasi ini kami buat untuk dipergunakan sebagaimana mestinya.
+								<p>Demikian rekomendasi ini kami buat untuk dipergunakan sebagaimana mestinya.
 								</p>
 							</div>
 							<div class="isi_surat">
-								<p> Wassalamu'alaikum Wr. Wb.
+								<p>Wassalamu'alaikum Wr. Wb.
 								</p>
 							</div>
 							<div class="row">
 								<div class="col-md-9">
 								</div>
 								<div class="col-md-3">
-									<div class="badan_surat isi_surat">
-											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-											Klaten, ......... 2021<br>
-											Kepala
+									<div class="ttd_surat">
+										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+										Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
+										Kepala
 									</div>
 								</div>
 							</div>
-							<div class="row ttd_kepala">
-								<div class="col-md-6 ">
-								</div>
-								<div class="col-md-6">
-
-								</div>
+						<?php } ?>
+						<br> <br> <br> <br>
+						<div class="row">
+							<div class="col-md-9">
 							</div>
-							<br> <br>
-							<div class="row">
-								<div class="col-md-9">
-								</div>
-								<div class="col-md-3">
-									<div class="badan_surat isi_surat">
-											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-											Anif Solikhin<br>
-									</div>
+							<div class="col-md-3">
+								<div class="ttd_surat">
+									<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+									Anif Solikhin<br>
 								</div>
 							</div>
 
 
 						</div>
+
+
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 	<!-- /.container-fluid -->
 

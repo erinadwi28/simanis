@@ -93,38 +93,13 @@
 						<?php } ?>
 					</center>
 				</div>
-
-				<?php if ($detail->status == 'Proses Kasi') { ?>
-					<div class="card-footer">
-						<form action="<?= base_url('dashboard/update_srt_ket_id_masjid_ptsp22/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="srt_ket_id_masjid">
-							<div class="form-group">
-								<div class="input-group">
-									<div class="form-group-upload">
-										<div class="custom-file">
-											<label class="custom-file-label" for="file-upload-2">pilih file...</label>
-											<input type="file" class="custom-file-input" id="file-upload-2" name="srt_ket_id_masjid" value="<?= $detail->srt_ket_id_masjid ?>">
-											<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
-											<input type="hidden" class="form-control form-user-input" name="id_layanan" id="file-upload" value="<?= $detail->id_layanan ?>">
-										</div>
-									</div>
-								</div>
-							</div>
-							<center>
-								<button class="btn btn-sm btn-primary" type="submit">
-									<i class="fa fa-upload">
-									</i>
-								</button>
-							</center>
-						</form>
-					</div>
-				<?php } ?>
 			</div>
 		</div>
 		<div class="col-md-8 mb-0">
 			<!-- Detail Data -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Petugas Siaran Keagamaan</h6>
+					<h6 class="m-0 font-weight-bold text-center">Rekomendasi Permohonan ID Masjid dan Musala</h6>
 				</div>
 				<div class="card-body">
 					<table class="table-hover table-responsive">

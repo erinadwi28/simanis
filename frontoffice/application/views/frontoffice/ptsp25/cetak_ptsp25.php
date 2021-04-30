@@ -62,15 +62,17 @@
 		.kepala_sertifikat p {
 			margin-top: 3px;
 		}
-		.row{
+
+		.row {
 			font-size: 14pt;
 			font-family: 'Times New Roman';
 		}
+
 		.no_surat {
 			font-size: 14pt;
 		}
 
-		.tujuan_surat{
+		.tujuan_surat {
 			font-size: 14pt;
 			font-family: 'Times New Roman';
 		}
@@ -144,7 +146,6 @@
 			border-color: #000;
 			margin-left: 15px;
 		}
-
 	</style>
 
 </head>
@@ -158,20 +159,21 @@
 			</div>
 			<div class="col-md-8">
 				<div class="card shadow mb-4">
-					
-				<div class="card-body">
-							<div class="kopsurat row">
-								<div class="col-md-12 mb-3">
-									<object data="" type="image">
-										<img class="img-fluid" alt="logo_kop_surat"
-											src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
-									</object>
-								</div>
+
+					<div class="card-body">
+						<div class="kopsurat row">
+							<div class="col-md-12 mb-3">
+								<object data="" type="image">
+									<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
+								</object>
 							</div>
+						</div>
 
 						<div class="badan_surat">
 							<div class="no_surat">
-								<center><p><u>FORMULIR KONSULTASI</u> </p></center>
+								<center>
+									<p><u>FORMULIR KONSULTASI</u> </p>
+								</center>
 							</div><br>
 							<div class="isi_surat identitas">
 								<table class="table-responsive" cellpadding="5">
@@ -229,7 +231,7 @@
 											Pemohon,
 											<br><br>
 
-											(..................) 
+											(..................)
 										</center>
 									</div>
 								</div>
@@ -251,113 +253,119 @@
 
 	<!-- Page Heading -->
 	<div class="row">
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-8">
-				<div class="card shadow mb-4">
-					
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+			<div class="card shadow mb-4">
+
 				<div class="card-body">
-							<div class="kopsurat row">
-								<div class="col-md-12 mb-3">
-									<object data="" type="image">
-										<img class="img-fluid" alt="logo_kop_surat"
-											src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
-									</object>
-								</div>
-							</div>
+					<div class="kopsurat row">
+						<div class="col-md-12 mb-3">
+							<object data="" type="image">
+								<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
+							</object>
+						</div>
+					</div>
 
-						<div class="badan_surat">
-							<div class="no_surat">
-								<center><p><u>LEMBAR KONSULTASI</u> </p></center>
-							</div>
-							<div class="isi_surat identitas">
-								<table border="1" cellpadding="5" width="630px">
-									<br><br>
-									<p>Data Pemohon Konsultasi</p>
-     								 <tr>
-        								<td width="30px">1</td>
-        								<td width="190px">Nama</td>
-        								<td >  </td>
-      								</tr>
-									<tr>
-        								<td>2</td>
-        								<td>Alamat</td>
-        								<td >    </td>
-      								</tr>
-									 <tr>
-        								<td>3</td>
-        								<td>Telp</td>
-        								<td>    </td>
-									</tr>
-								</table>
-							</div>
-							<div class="isi_surat identitas">
-								<table border="1" cellpadding="5" width="630px">
-									<br><br>
-									<p>Petugas Penerima</p>
-     								 <tr>
-        								<td width="30px">1</td>
-        								<td width="190px">Nama</td>
-        								<td>    </td>
-      								</tr>
-									<tr>
-        								<td>2</td>
-        								<td>NIP</td>
-        								<td >    </td>					
-      								</tr>
-									 <tr>
-        								<td>3</td>
-        								<td>Pangkat/Golru</td>
-        								<td>    </td>						
-      								</tr>
-									<tr>
-        								<td>4</td>
-        								<td>Jabatan</td>
-        								<td>    </td>										
-      								</tr>
-								</table>
-							</div>
+					<div class="badan_surat">
+						<div class="no_surat">
+							<center>
+								<p><u>LEMBAR KONSULTASI</u> </p>
+							</center>
+						</div>
+						<div class="isi_surat identitas">
+							<table border="1" cellpadding="5" width="630px">
+								<br><br>
+								<p>Data Pemohon Konsultasi</p>
+								<tr>
+									<td width="30px">1</td>
+									<td width="190px">Nama</td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Alamat</td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Telp</td>
+									<td> </td>
+								</tr>
+							</table>
+						</div>
+						<div class="isi_surat identitas">
+							<table border="1" cellpadding="5" width="630px">
+								<br><br>
+								<p>Petugas Penerima</p>
+								<tr>
+									<td width="30px">1</td>
+									<td width="190px">Nama</td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>NIP</td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Pangkat/Golru</td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Jabatan</td>
+									<td> </td>
+								</tr>
+							</table>
+						</div>
 
-							<div class="isi_surat identitas">
-								<table border="1" cellpadding="5" width="630px">
-									<br><br>
-     								 <tr>
-        								<td width="30px">1</td>
-        								<td width="190px">Hari /Tanggal  </td>
-        								<td colspan="3"> </td>
-      								</tr>
-									  <tr>
-        								<td>2<br><br><br><br><br><br>  </td>
-        								<td>Materi Konsultasi<br><br><br><br><br><br>  </td>
-        								<td colspan="3"> </td>
-      								</tr>
-									<tr>
-        								<td>3<br><br><br><br><br><br><br><br><br><br><br>  </td>
-        								<td>Hasil Konsultasi<br><br><br><br><br><br><br><br><br><br><br>  </td>
-        								<td colspan="3"> </td>
-      								</tr>
-									<tr>
-        								<td>4<br><br><br><br><br><br>   </td>
-        								<td>Tindak Lanjut Konsultasi<br><br><br><br><br><br>  </td>
-        								<td colspan="3"> </td>
-      								</tr>
-									<tr>
-        								<td colspan="3"> </td>
-        								<td> </td>
-        								<td>Klaten,................</td>
-      								</tr>									 
-									<tr>
-        								<td width="250px" colspan="3"><center>Petugas Penerima<br><br><br><br> (..................) </center></td>
-        								<td> </td>
-        								<td width="250px"><center>Yang Berkonsultasi<br><br><br><br> (..................) </center></td>
-      								</tr>
-								</table>
-							</div>
+						<div class="isi_surat identitas">
+							<table border="1" cellpadding="5" width="630px">
+								<br><br>
+								<tr>
+									<td width="30px">1</td>
+									<td width="190px">Hari /Tanggal </td>
+									<td colspan="3"> </td>
+								</tr>
+								<tr>
+									<td>2<br><br><br><br><br><br> </td>
+									<td>Materi Konsultasi<br><br><br><br><br><br> </td>
+									<td colspan="3"> </td>
+								</tr>
+								<tr>
+									<td>3<br><br><br><br><br><br><br><br><br><br><br> </td>
+									<td>Hasil Konsultasi<br><br><br><br><br><br><br><br><br><br><br> </td>
+									<td colspan="3"> </td>
+								</tr>
+								<tr>
+									<td>4<br><br><br><br><br><br> </td>
+									<td>Tindak Lanjut Konsultasi<br><br><br><br><br><br> </td>
+									<td colspan="3"> </td>
+								</tr>
+								<tr>
+									<td colspan="3"> </td>
+									<td> </td>
+									<td>Klaten,................</td>
+								</tr>
+								<tr>
+									<td width="250px" colspan="3">
+										<center>Petugas Penerima<br><br><br><br> (..................) </center>
+									</td>
+									<td> </td>
+									<td width="250px">
+										<center>Yang Berkonsultasi<br><br><br><br> (..................) </center>
+									</td>
+								</tr>
+							</table>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	</div>
 </body>
+
 </html>
