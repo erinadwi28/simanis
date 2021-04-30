@@ -20,6 +20,8 @@
 	<style>
 		.body {
 			color: #000;
+			font-family: Calibri, Helvetica, Arial, sans-serif;
+			font-size: 11pt;
 		}
 
 		.logosurat {
@@ -35,9 +37,9 @@
 
 		}
 
-		.card-body {
+		/* .card-body {
 			padding: 5rem;
-		}
+		} */
 
 		.badan_surat {
 			color: #000;
@@ -48,37 +50,35 @@
 		}
 
 		.badan_surat {
-			font-family: 'Arial';
+			
 			margin-left: 60px;
 		}
 
 		.row {
-			font-size: 12pt;
-			font-family: 'Arial';
+			font-size: 11pt;
+			
 		}
 
 		.no_surat {
-			font-size: 12pt;
+			font-size: 11pt;
 		}
 
 		.tujuan_surat {
-			font-size: 12pt;
-			font-family: 'Arial';
+			font-size: 11pt;
+			
 		}
 
 		.paragraf {
 			/* text-indent: 2.8125em; */
 			text-align: justify;
-			font-family: 'Arial';
 			text-indent: 50px;
-			font-size: 12pt;
+			font-size: 11pt;
 		}
 
 		.isi_surat {
 			margin-left: 0.0375em;
-			font-size: 12pt;
+			font-size: 11pt;
 			line-height: 1.5em;
-			font-family: 'Arial';
 			text-align: justify;
 		}
 
@@ -111,13 +111,6 @@
 			margin-right: auto;
 			margin-left: auto;
 		}
-
-		/* .bawah {
-			display: block;
-			position: absolute;
-			float: right;
-			margin-right: 160px;
-		} */
 
 		.kepala {
 			display: block;
@@ -167,12 +160,18 @@
 		}
 
 		.kpl {
-			margin-left: 509px;
+			margin-left: 300px;
 		}
 
 		.rekomendasi {
 			text-align: center;
 		}
+
+		.ttd_surat {
+			font-size: 11pt;
+			margin-left: 400px;
+		}
+
 	</style>
 
 </head>
@@ -214,8 +213,8 @@
 							</div>
 
 							<!-- Paragraf 1 -->
-							<div class="isi_surat">
-								<p>&emsp;&emsp;&emsp;Berdasarkan permohonan dari Saudara <?= $detail->nama_pemohon ?> selaku Pimpinan PT <?= $detail->nama_pt ?> perihal Rekomendasi
+							<div class="isi_surat paragraf">
+								<p>Berdasarkan permohonan dari Saudara <?= $detail->nama_pemohon ?> selaku Pimpinan PT <?= $detail->nama_pt ?> perihal Rekomendasi
 									Pengesahan Pembukaan Kantor Cabang PPIU. Setelah dilakukan peninjauan terhadap Kantor Cabang PT <?= $detail->nama_pt ?>
 									yang berdomisili di <?= $detail->domisili_kantor_cabang ?> maka Kepala Kantor Kementerian Agama Kab. Klaten dengan ini memberikan rekomendasi
 									kepada:
@@ -252,10 +251,10 @@
 
 
 							<!-- Paragraf 2 -->
-							<div class="isi_surat">
-								<p>&emsp;&emsp;&emsp;Rekomendasi ini dibuat sebagai pertimbangan dalam Pengesahan Pembukaan Kantor Cabang
+							<div class="isi_surat paragraf">
+								<p>Rekomendasi ini dibuat sebagai pertimbangan dalam Pengesahan Pembukaan Kantor Cabang
 									PPIU sebagai Penyelenggara Perjalanan Ibadah Umrah di Kabupaten Klaten.</p>
-								<p>&emsp;&emsp;&emsp;Demikian surat ini kami sampaikan untuk dapat dipergunakan sebagaimana
+								<p>Demikian surat ini kami sampaikan untuk dapat dipergunakan sebagaimana
 									mestinya.
 								</p>
 							</div>
@@ -270,33 +269,23 @@
 
 							<!-- Tanggal -->
 							<div class="row">
-								<div class="col-12 tgl">
-									Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?>
+							<div class="col-md-9">
+								</div>
+								<div class="col-md-3">
+								<div class="ttd_surat">
+									Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?> <br>
+									Kepala
+								</div>
 								</div>
 							</div>
 						<?php } ?>
-
-
-						<!-- Kepala -->
-						<div class="row">
-							<div class="col-12 kpl">
-								Kepala
-							</div>
-						</div>
-
-						<div class="row ttd_kepala">
-							<div class="col-md-6 ">
-							</div>
-							<div class="col-md-6">
-							</div>
-						</div>
-						<br> <br>
+						<br> <br> <br> <br>
 
 						<div class="row">
 							<div class="col-md-9">
 							</div>
 							<div class="col-md-3">
-								<div class="badan_surat isi_surat">
+								<div class="ttd_surat">
 									Anif Solikhin<br>
 								</div>
 							</div>
