@@ -193,7 +193,7 @@
 													<td> </td>
 													<td>:</td>
 													<td> </td>
-													<td><?= $detail->nama_madrasah ?></td>
+													<td><?= $detail->nama_mtd ?></td>
 												</tr>
 												<tr>
 													<td>Alamat</td>

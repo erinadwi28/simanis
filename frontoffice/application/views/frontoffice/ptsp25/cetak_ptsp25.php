@@ -9,54 +9,87 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>SIMANIS - Dashboard</title>
+	<title>SIMELATI: Cetak Surat</title>
 
 	<!--Tittle Icon-->
 	<link rel="shortcut icon" href="<?= base_url('../assets/landing/images/') ?>title.png" />
 
 	<!-- Custom fonts for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/vendor/fontawesome-free/css/all.min.css') ?>" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
+		.body {
+			color: #000;
+		}
+
+		.logosurat {
+			height: 130px;
+			width: 130px;
+			margin-top: -20px;
+			margin-left: 15px;
+		}
+
 		.kopsurat p {
 			font-weight: bold;
 			line-height: 1em;
+
 		}
 
 		.card-body {
 			padding: 5rem;
-			color: black;
 		}
 
 		.badan_surat {
-			opacity: 0.8;
+			color: #000;
+		}
+
+		.badan_surat .row {
+			color: #000;
 		}
 
 		.badan_surat {
-			font-family: 'Arial';
+			font-family: 'Times New Roman';
+			margin-left: 60px;
+		}
+
+		.kepala_sertifikat {
+			font-weight: bold;
+			font-size: 14pt;
+		}
+
+		.kepala_sertifikat p {
+			margin-top: 3px;
+		}
+
+		.row {
+			font-size: 14pt;
+			font-family: 'Times New Roman';
 		}
 
 		.no_surat {
-			font-weight: bold;
-			font-size: 12pt;
+			font-size: 14pt;
+		}
+
+		.tujuan_surat {
+			font-size: 14pt;
+			font-family: 'Times New Roman';
 		}
 
 		.paragraf {
 			/* text-indent: 2.8125em; */
 			text-align: justify;
-			font-family: 'Arial';
+			font-family: 'Times New Roman';
 			text-indent: 50px;
+			font-size: 14pt;
 		}
 
 		.isi_surat {
 			margin-left: 0.0375em;
-			font-size: 11pt;
+			font-size: 14pt;
 			line-height: 1.2em;
-			font-family: 'Arial';
+			font-family: 'Times New Roman';
 		}
 
 		.identitas {
@@ -103,11 +136,16 @@
 			margin-top: 200px;
 			margin-right: -500px;
 		}
-		.table-bordered{
-			border-color: #000;
+
+		.table {
 			color: #000;
 		}
 
+		.table-bordered {
+			border-width: 2px;
+			border-color: #000;
+			margin-left: 15px;
+		}
 	</style>
 
 </head>
@@ -121,21 +159,21 @@
 			</div>
 			<div class="col-md-8">
 				<div class="card shadow mb-4">
+
 					<div class="card-body">
-						<center>
-							<div class="kopsurat row">
-								<div class="col-md-12 mb-3">
-									<object data="" type="image">
-										<img class="img-fluid" alt="logo_kop_surat"
-											src="<?= base_url('../assets/dashboard/') ?>images/kop_surat.jpg">
-									</object>
-								</div>
+						<div class="kopsurat row">
+							<div class="col-md-12 mb-3">
+								<object data="" type="image">
+									<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
+								</object>
 							</div>
-						</center>
+						</div>
 
 						<div class="badan_surat">
 							<div class="no_surat">
-								<center><p><u>FORMULIR KONSULTASI</u> </p></center>
+								<center>
+									<p><u>FORMULIR KONSULTASI</u> </p>
+								</center>
 							</div><br>
 							<div class="isi_surat identitas">
 								<table class="table-responsive" cellpadding="5">
@@ -193,7 +231,7 @@
 											Pemohon,
 											<br><br>
 
-											(..................) 
+											(..................)
 										</center>
 									</div>
 								</div>
@@ -213,118 +251,121 @@
 	</div>
 	<!-- End of Main Content -->
 
-	<!-- Begin Page Content -->
-	<div class="container-fluid">
-		<!-- Page Heading -->
-		<div class="row">
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-8">
-				<div class="card shadow mb-4">
-					<div class="card-body">
-						<center>
-							<div class="kopsurat row">
-								<div class="col-md-12 mb-3">
-									<object data="" type="image">
-										<img class="img-fluid" alt="logo_kop_surat"
-											src="<?= base_url('../assets/dashboard/') ?>images/kop_surat.jpg">
-									</object>
-								</div>
-							</div>
-						</center>
+	<!-- Page Heading -->
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+			<div class="card shadow mb-4">
 
-						<div class="badan_surat">
-							<div class="no_surat">
-								<center><p><u>LEMBAR KONSULTASI</u> </p></center>
-							</div>
-							<div class="isi_surat identitas">
-								<table border="1" cellpadding="5" width="630px">
-									<br><br>
-									<p>Data Pemohon Konsultasi</p>
-     								 <tr>
-        								<td width="30px">1</td>
-        								<td width="190px">Nama</td>
-        								<td >  </td>
-      								</tr>
-									<tr>
-        								<td>2</td>
-        								<td>Alamat</td>
-        								<td >    </td>
-      								</tr>
-									 <tr>
-        								<td>3</td>
-        								<td>Telp</td>
-        								<td>    </td>
-									</tr>
-								</table>
-							</div>
-							<div class="isi_surat identitas">
-								<table border="1" cellpadding="5" width="630px">
-									<br><br>
-									<p>Petugas Penerima</p>
-     								 <tr>
-        								<td width="30px">1</td>
-        								<td width="190px">Nama</td>
-        								<td>    </td>
-      								</tr>
-									<tr>
-        								<td>2</td>
-        								<td>NIP</td>
-        								<td >    </td>					
-      								</tr>
-									 <tr>
-        								<td>3</td>
-        								<td>Pangkat/Golru</td>
-        								<td>    </td>						
-      								</tr>
-									<tr>
-        								<td>4</td>
-        								<td>Jabatan</td>
-        								<td>    </td>										
-      								</tr>
-								</table>
-							</div>
+				<div class="card-body">
+					<div class="kopsurat row">
+						<div class="col-md-12 mb-3">
+							<object data="" type="image">
+								<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
+							</object>
+						</div>
+					</div>
 
-							<div class="isi_surat identitas">
-								<table border="1" cellpadding="5" width="630px">
-									<br><br>
-     								 <tr>
-        								<td width="30px">1</td>
-        								<td width="190px">Hari /Tanggal  </td>
-        								<td colspan="3"> </td>
-      								</tr>
-									  <tr>
-        								<td>2<br><br><br><br><br><br>  </td>
-        								<td>Materi Konsultasi<br><br><br><br><br><br>  </td>
-        								<td colspan="3"> </td>
-      								</tr>
-									<tr>
-        								<td>3<br><br><br><br><br><br><br><br><br><br><br>  </td>
-        								<td>Hasil Konsultasi<br><br><br><br><br><br><br><br><br><br><br>  </td>
-        								<td colspan="3"> </td>
-      								</tr>
-									<tr>
-        								<td>4<br><br><br><br><br><br>   </td>
-        								<td>Tindak Lanjut Konsultasi<br><br><br><br><br><br>  </td>
-        								<td colspan="3"> </td>
-      								</tr>
-									<tr>
-        								<td colspan="3"> </td>
-        								<td> </td>
-        								<td>Klaten,................</td>
-      								</tr>									 
-									<tr>
-        								<td width="250px" colspan="3"><center>Petugas Penerima<br><br><br><br> (..................) </center></td>
-        								<td> </td>
-        								<td width="250px"><center>Yang Berkonsultasi<br><br><br><br> (..................) </center></td>
-      								</tr>
-								</table>
-							</div>
+					<div class="badan_surat">
+						<div class="no_surat">
+							<center>
+								<p><u>LEMBAR KONSULTASI</u> </p>
+							</center>
+						</div>
+						<div class="isi_surat identitas">
+							<table border="1" cellpadding="5" width="630px">
+								<br><br>
+								<p>Data Pemohon Konsultasi</p>
+								<tr>
+									<td width="30px">1</td>
+									<td width="190px">Nama</td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Alamat</td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Telp</td>
+									<td> </td>
+								</tr>
+							</table>
+						</div>
+						<div class="isi_surat identitas">
+							<table border="1" cellpadding="5" width="630px">
+								<br><br>
+								<p>Petugas Penerima</p>
+								<tr>
+									<td width="30px">1</td>
+									<td width="190px">Nama</td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>NIP</td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Pangkat/Golru</td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Jabatan</td>
+									<td> </td>
+								</tr>
+							</table>
+						</div>
+
+						<div class="isi_surat identitas">
+							<table border="1" cellpadding="5" width="630px">
+								<br><br>
+								<tr>
+									<td width="30px">1</td>
+									<td width="190px">Hari /Tanggal </td>
+									<td colspan="3"> </td>
+								</tr>
+								<tr>
+									<td>2<br><br><br><br><br><br> </td>
+									<td>Materi Konsultasi<br><br><br><br><br><br> </td>
+									<td colspan="3"> </td>
+								</tr>
+								<tr>
+									<td>3<br><br><br><br><br><br><br><br><br><br><br> </td>
+									<td>Hasil Konsultasi<br><br><br><br><br><br><br><br><br><br><br> </td>
+									<td colspan="3"> </td>
+								</tr>
+								<tr>
+									<td>4<br><br><br><br><br><br> </td>
+									<td>Tindak Lanjut Konsultasi<br><br><br><br><br><br> </td>
+									<td colspan="3"> </td>
+								</tr>
+								<tr>
+									<td colspan="3"> </td>
+									<td> </td>
+									<td>Klaten,................</td>
+								</tr>
+								<tr>
+									<td width="250px" colspan="3">
+										<center>Petugas Penerima<br><br><br><br> (..................) </center>
+									</td>
+									<td> </td>
+									<td width="250px">
+										<center>Yang Berkonsultasi<br><br><br><br> (..................) </center>
+									</td>
+								</tr>
+							</table>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	</div>
 </body>
+
 </html>

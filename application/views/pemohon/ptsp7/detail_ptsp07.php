@@ -246,6 +246,7 @@
 							<?php } elseif ($detail->akte_notaris == null) { ?>
 								<p class="mb-0">Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
 							<?php } ?>
+
 						</center>
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
@@ -288,13 +289,14 @@
 						<center>
 							<?php if ($detail->foto_kantor != null) { ?>
 								<p><?= $detail->foto_kantor; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp07/fc_foto_kantor/<?= $detail->foto_kantor ?>" target="_blank">
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp07/foto_kantor/<?= $detail->foto_kantor ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
 							<?php } elseif ($detail->foto_kantor == null) { ?>
 								<p class="mb-0">Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
 							<?php } ?>
+
 						</center>
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>

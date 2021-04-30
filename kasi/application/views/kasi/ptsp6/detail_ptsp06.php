@@ -126,7 +126,7 @@
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= $detail->tanggal_lahir ?></td>
+									<td><?= format_indo(date($detail->tanggal_lahir)) ?></td>
 								</tr>
 								<tr>
 									<td><b>No. Handphone</b></td>
@@ -208,7 +208,7 @@
 										<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
 									</tr>
 								<?php } ?>
-								<tr>
+									<tr>
 									<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
 										<td><b>Keterangan Permohonan Pending</b></td>
 										<td> </td>
@@ -216,8 +216,8 @@
 										<td>:</td>
 										<td> </td>
 										<td><?= $detail->keterangan; ?></td>
-								</tr>
-							<?php } ?>
+									</tr>
+								<?php } ?>
 							</tbody>
 						</table>
 					</div>

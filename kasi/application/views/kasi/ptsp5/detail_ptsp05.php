@@ -2,7 +2,7 @@
 <div class="container-fluid">
 
 	<!-- Page Heading -->
-	<<?php
+	<?php
 	foreach ($detail_ptsp as $detail) { ?>
 		<?php if ($detail->status === 'Pending') { ?>
 			<!-- Page Heading -->
@@ -120,7 +120,7 @@
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->tanggal_lahir ?></td>
+								<td><?= format_indo(date($detail->tanggal_lahir)) ?></td>
 							</tr>
 							<tr>
 								<td><b>Alamat Lengkap</b></td>

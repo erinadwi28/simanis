@@ -141,8 +141,8 @@
 								<?php } ?>
 							</div>
 							<div class="isi_surat paragraf">
-								<?php foreach ($data_pemohon as $detail) { ?>
-									<p>Menindaklanjuti surat permohonan dari Saudara <?= $detail->nama ?> tentang
+								<?php foreach ($detail_ptsp as $detail) { ?>
+									<p>Menindaklanjuti surat permohonan dari Saudara <?= $detail->nama_pemohon ?> tentang
 										Permohonan Surat Keterangan Haji Pertama, dengan ini Kepala Kantor
 										Kementrian Agama Kabupaten Klaten menerangkan bahwa :</p>
 								<?php } ?>
@@ -157,7 +157,7 @@
 												<td> </td>
 												<td>:</td>
 												<td> </td>
-												<td><?= $detail->nama ?></td>
+												<td><?= $detail->nama_pemohon ?></td>
 											</tr>
 											<tr>
 												<td>Tempat dan Tanggal Lahir</td>
@@ -187,7 +187,7 @@
 									</table>
 								</div>
 								<div class="isi_surat paragraf">
-									<p>Adalah jemaah haji Kabupaten Klaten Tahun <?= $detail->tahun_hijriah ?> H / <?= $detail->tahun_masehi ?> M dan perjalanan
+									<p>Adalah jemaah haji Kabupaten Klaten Tahun <?= $detail->tahun_angkatan_haji_hijriah ?> H / <?= $detail->tahun_angkatan_haji_masehi ?> M dan perjalanan
 										ibadah hajinya merupakan yang pertama.
 									</p>
 									<p>
@@ -203,7 +203,7 @@
 										<div class="badan_surat isi_surat">
 											<center>
 												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-												Klaten, 03 Maret 2020<br>
+												Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 												Kepala
 											</center>
 										</div>

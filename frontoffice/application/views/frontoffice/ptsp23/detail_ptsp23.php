@@ -2,17 +2,85 @@
 <div class="container-fluid">
 	<!-- Page Heading -->
 	<?php
-	foreach ($detail_ptsp as $detail) { ?>
-		<div class="d-sm-flex align-items-center justify-content-between">
-			<h3 class="judullist py-3">Detail</h3>
-			<nav aria-label="breadcrumb" class="nav-breadcrumb">
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-					<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Permohonan Masuk</a></li>
-					<li class="breadcrumb-item active" aria-current="page">Detail</li>
-				</ol>
-			</nav>
-		</div>
+	foreach ($detail_ptsp as $detail) {
+		if ($detail->status === 'Validasi Kemenag') { ?>
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail Permohonan</h1>
+					<nav aria-label="breadcrumb" class="nav-breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+							<li class="breadcrumb-item" aria-current="page"><a href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Permohonan Masuk</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Detail</li>
+						</ol>
+					</nav>
+			</div>
+		<?php } elseif ($detail->status === 'Pending') { ?>
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail Permohonan</h1>
+					<nav aria-label="breadcrumb" class="nav-breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+							<li class="breadcrumb-item" aria-current="page"><a href="<?= base_url('dashboard/list_permohonan_pending') ?>">Permohonan Pending</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Detail</li>
+						</ol>
+					</nav>
+			</div>
+		<?php } elseif ($detail->id_fo != null) { ?>
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail Permohonan</h1>
+					<nav aria-label="breadcrumb" class="nav-breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+							<li class="breadcrumb-item" aria-current="page"><a href="<?= base_url('dashboard/list_permohonan_selesaiFO') ?>">Permohonan Selesai FO</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Detail</li>
+						</ol>
+					</nav>
+			</div>
+		<?php } elseif ($detail->status === 'Proses BO') { ?>
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail Permohonan</h1>
+					<nav aria-label="breadcrumb" class="nav-breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+							<li class="breadcrumb-item" aria-current="page"><a href="<?= base_url('dashboard/list_permohonan_prosesBO') ?>">Permohonan Proses BO</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Detail</li>
+						</ol>
+					</nav>
+			</div>
+		<?php } elseif ($detail->status === 'Proses Kasi') { ?>
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail Permohonan</h1>
+					<nav aria-label="breadcrumb" class="nav-breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+							<li class="breadcrumb-item" aria-current="page"><a href="<?= base_url('dashboard/list_permohonan_prosesKasi') ?>">Permohonan Proses Kasi</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Detail</li>
+						</ol>
+					</nav>
+			</div>
+		<?php } elseif ($detail->status === 'Proses Kasubag') { ?>
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail Permohonan</h1>
+					<nav aria-label="breadcrumb" class="nav-breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+							<li class="breadcrumb-item" aria-current="page"><a href="<?= base_url('dashboard/list_permohonan_prosesKasubag') ?>">Permohonan Proses Kasubag</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Detail</li>
+						</ol>
+					</nav>
+			</div>
+		<?php } elseif ($detail->status === 'Selesai') { ?>
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail Permohonan</h1>
+					<nav aria-label="breadcrumb" class="nav-breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+							<li class="breadcrumb-item" aria-current="page"><a href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Permohonan Selesai</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Detail</li>
+						</ol>
+					</nav>
+			</div>
+		<?php } ?>
 
 
 		<div class="row clearfix">
@@ -49,12 +117,13 @@
 					<div class="card-body">
 						<table class="table-hover table-responsive">
 							<tbody>
-								<?php if ($detail->no_surat != null && $detail->status == 'Selesai') { ?>
+								<?php if ($detail->no_surat != null) { ?>
 									<tr>
 										<td><b>Nomor Surat</b></td>
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= $detail->no_surat ?></td>
 									</tr>
 								<?php } ?>
@@ -257,7 +326,7 @@
 				if ($detail->status == 'Selesai') { ?>
 					<div class="row clearfix">
 						<div class="col-md-12">
-							<form class="form-horizontal" id="no_surat_ptsp23" enctype="multipart/form-data" action="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>/<?= $detail->id_layanan ?>" method="POST">
+							<form class="form-horizontal" id="no_surat_ptsp23" enctype="multipart/form-data" action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp23/<?= $detail->id_permohonan_ptsp ?>" method="POST">
 								<div class="input-group mb-3 col-md-6 float-right p-0">
 									<input type="text" class="form-control " id="no_surat" name="no_surat" value=".../Kk.11.10/1/KP.07.6/02/2020" required>
 									<button class="btn btn-sm btn-primary" type="submit" id="button-addon2"><i class="fas fa-check-circle">

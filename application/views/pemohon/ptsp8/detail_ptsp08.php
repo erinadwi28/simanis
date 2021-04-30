@@ -288,7 +288,7 @@
 						<center>
 							<?php if ($detail->foto_kantor != null) { ?>
 								<p><?= $detail->foto_kantor; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp08/fc_foto_kantor/<?= $detail->foto_kantor ?>" target="_blank">
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp08/foto_kantor/<?= $detail->foto_kantor ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
@@ -481,7 +481,7 @@
 					</div>
 					<div class="card-body">
 						<center>
-						<?php if ($detail->laporan_bimbingan != null) { ?>
+							<?php if ($detail->laporan_bimbingan != null) { ?>
 								<p><?= $detail->laporan_bimbingan; ?></p>
 								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp08/laporan_bimbingan/<?= $detail->laporan_bimbingan ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
@@ -516,7 +516,7 @@
 							</form>
 						</div>
 					<?php } ?>
-				</div> 
+				</div>
 			</div>
 
 			<!-- Sertifikat AKreditasi -->

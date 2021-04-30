@@ -94,12 +94,13 @@
 					<div class="card-body">
 						<table class="table-hover table-responsive">
 							<tbody>
-								<?php if ($detail->no_surat != null && $detail->status == 'Selesai') { ?>
+								<?php if ($detail->no_surat != null) { ?>
 									<tr>
 										<td><b>Nomor Surat</b></td>
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= $detail->no_surat ?></td>
 									</tr>
 								<?php } ?>
@@ -220,18 +221,18 @@
 
 		<!-- Unggah dokumen -->
 		<div class="row clearfix">
+			<!-- Surat Permohonan -->
 			<div class="col-xs-12 col-sm-3">
-				<!-- Surat Permohonan -->
 				<div class="card shadow mb-4">
 					<div class="card-header">
 						<center>
 							<h6 class="m-0 font-weight-bold">Surat Permohonan</h6>
 						</center>
 					</div>
+
 					<div class="card-body">
 						<center>
-							<?php
-							if ($detail->srt_permohonan != null) { ?>
+							<?php if ($detail->srt_permohonan != null) { ?>
 								<p><?= $detail->srt_permohonan; ?></p>
 								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp10/srt_permohonan/<?= $detail->srt_permohonan ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
@@ -242,35 +243,11 @@
 							<?php } ?>
 						</center>
 					</div>
+				</div>
+			</div>
 
-				</div>
-			</div>
+			<!-- Akte Notaris -->
 			<div class="col-xs-12 col-sm-3">
-				<!-- SK -->
-				<div class="card shadow mb-4">
-					<div class="card-header">
-						<center>
-							<h6 class="m-0 font-weight-bold">SK</h6>
-						</center>
-					</div>
-					<div class="card-body">
-						<center>
-							<?php
-							if ($detail->sk != null) { ?>
-								<p><?= $detail->sk; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp10/sk/<?= $detail->sk ?>" target="_blank">
-									<i class="fa fa-download nav-icon">
-									</i> Klik untuk melihat
-								</a>
-							<?php } elseif ($detail->sk == null) { ?>
-								<p class="mb-0">Belum ada lampiran</p>
-							<?php } ?>
-						</center>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-3">
-				<!-- Akte Notaris -->
 				<div class="card shadow mb-4">
 					<div class="card-header">
 						<center>
@@ -279,8 +256,7 @@
 					</div>
 					<div class="card-body">
 						<center>
-							<?php
-							if ($detail->akte_notaris != null) { ?>
+							<?php if ($detail->akte_notaris != null) { ?>
 								<p><?= $detail->akte_notaris; ?></p>
 								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp10/akte_notaris/<?= $detail->akte_notaris ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
@@ -293,18 +269,19 @@
 					</div>
 				</div>
 			</div>
+
+			<!--Izin usaha pendirian perjalanan wisata -->
 			<div class="col-xs-12 col-sm-3">
-				<!-- SuKet. Izin Usaha -->
 				<div class="card shadow mb-4">
 					<div class="card-header">
 						<center>
-							<h6 class="m-0 font-weight-bold">SuKet. Izin Usaha</h6>
+							<h6 class="m-0 font-weight-bold">Izin usaha pendirian perjalanan wisata</h6>
 						</center>
 					</div>
+
 					<div class="card-body">
 						<center>
-							<?php
-							if ($detail->izin_usaha != null) { ?>
+							<?php if ($detail->izin_usaha != null) { ?>
 								<p><?= $detail->izin_usaha; ?></p>
 								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp10/izin_usaha/<?= $detail->izin_usaha ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
@@ -317,20 +294,19 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row clearfix">
+
+			<!-- Surat Keterangan Domisili Usaha -->
 			<div class="col-xs-12 col-sm-3">
-				<!-- SuKet. Domisili Usaha -->
 				<div class="card shadow mb-4">
 					<div class="card-header">
 						<center>
-							<h6 class="m-0 font-weight-bold">SuKet. Domisili Usaha</h6>
+							<h6 class="m-0 font-weight-bold">Surat Keterangan Domisili Usaha</h6>
 						</center>
 					</div>
+
 					<div class="card-body">
 						<center>
-							<?php
-							if ($detail->skud != null) { ?>
+							<?php if ($detail->skud != null) { ?>
 								<p><?= $detail->skud; ?></p>
 								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp10/skud/<?= $detail->skud ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
@@ -343,18 +319,21 @@
 					</div>
 				</div>
 			</div>
+		</div>
+
+		<div class="row clearfix">
+			<!-- NPWP Perusahaan dan pimpinan -->
 			<div class="col-xs-12 col-sm-3">
-				<!-- NPWP -->
 				<div class="card shadow mb-4">
 					<div class="card-header">
 						<center>
-							<h6 class="m-0 font-weight-bold">NPWP</h6>
+							<h6 class="m-0 font-weight-bold">NPWP Perusahaan dan Pimpinan</h6>
 						</center>
 					</div>
+
 					<div class="card-body">
 						<center>
-							<?php
-							if ($detail->npwp != null) { ?>
+							<?php if ($detail->npwp != null) { ?>
 								<p><?= $detail->npwp; ?></p>
 								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp10/npwp/<?= $detail->npwp ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
@@ -367,18 +346,18 @@
 					</div>
 				</div>
 			</div>
+
+			<!-- Surat Rekomendasi dari Instansi Pemkab setempat -->
 			<div class="col-xs-12 col-sm-3">
-				<!-- SuRek. PEMKAB -->
 				<div class="card shadow mb-4">
 					<div class="card-header">
 						<center>
-							<h6 class="m-0 font-weight-bold">SuRek. PEMKAB</h6>
+							<h6 class="m-0 font-weight-bold">Surat Rekomendasi dari Instansi Pemkab setempat</h6>
 						</center>
 					</div>
 					<div class="card-body">
 						<center>
-							<?php
-							if ($detail->srt_rekomendasi_pemkab != null) { ?>
+							<?php if ($detail->srt_rekomendasi_pemkab != null) { ?>
 								<p><?= $detail->srt_rekomendasi_pemkab; ?></p>
 								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp10/srt_rekomendasi_pemkab/<?= $detail->srt_rekomendasi_pemkab ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
@@ -391,18 +370,18 @@
 					</div>
 				</div>
 			</div>
+
+			<!-- Laporan keuangan perusahaan yang sehat selama 1 tahun terakhir -->
 			<div class="col-xs-12 col-sm-3">
-				<!-- Laporan Keuangan -->
 				<div class="card shadow mb-4">
 					<div class="card-header">
 						<center>
-							<h6 class="m-0 font-weight-bold">Laporan Keuangan</h6>
+							<h6 class="m-0 font-weight-bold">Laporan keuangan perusahaan</h6>
 						</center>
 					</div>
 					<div class="card-body">
 						<center>
-							<?php
-							if ($detail->laporan_keuangan != null) { ?>
+							<?php if ($detail->laporan_keuangan != null) { ?>
 								<p><?= $detail->laporan_keuangan; ?></p>
 								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp10/laporan_keuangan/<?= $detail->laporan_keuangan ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
@@ -416,22 +395,17 @@
 				</div>
 			</div>
 
-		</div>
-		<div class="row clearfix">
+			<!-- Susunan pengurus perusahaan -->
 			<div class="col-xs-12 col-sm-3">
-			</div>
-			<div class="col-xs-12 col-sm-3">
-				<!-- Susunan Pengurus -->
 				<div class="card shadow mb-4">
 					<div class="card-header">
 						<center>
-							<h6 class="m-0 font-weight-bold">Susunan Pengurus</h6>
+							<h6 class="m-0 font-weight-bold">Susunan Pengurus Perusahaan</h6>
 						</center>
 					</div>
 					<div class="card-body">
 						<center>
-							<?php
-							if ($detail->susunan_pengurus != null) { ?>
+							<?php if ($detail->susunan_pengurus != null) { ?>
 								<p><?= $detail->susunan_pengurus; ?></p>
 								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp10/susunan_pengurus/<?= $detail->susunan_pengurus ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
@@ -444,8 +418,36 @@
 					</div>
 				</div>
 			</div>
+		</div>
+
+		<div class="row clearfix">
+			<!-- SK -->
 			<div class="col-xs-12 col-sm-3">
-				<!-- Bukti Pemberangkatan -->
+				<div class="card shadow mb-4">
+					<div class="card-header">
+						<center>
+							<h6 class="m-0 font-weight-bold">SK</h6>
+						</center>
+					</div>
+
+					<div class="card-body">
+						<center>
+							<?php if ($detail->sk != null) { ?>
+								<p><?= $detail->sk; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp10/sk/<?= $detail->sk ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->sk == null) { ?>
+								<p class="mb-0">Belum ada lampiran</p>
+							<?php } ?>
+						</center>
+					</div>
+				</div>
+			</div>
+
+			<!-- Bukti Pemberangkatan -->
+			<div class="col-xs-12 col-sm-3">
 				<div class="card shadow mb-4">
 					<div class="card-header">
 						<center>
@@ -454,8 +456,7 @@
 					</div>
 					<div class="card-body">
 						<center>
-							<?php
-							if ($detail->bukti_pemberangkatan != null) { ?>
+							<?php if ($detail->bukti_pemberangkatan != null) { ?>
 								<p><?= $detail->bukti_pemberangkatan; ?></p>
 								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp10/bukti_pemberangkatan/<?= $detail->bukti_pemberangkatan ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
@@ -468,14 +469,36 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-12 col-sm-3">
-			</div>
+
+			<!-- Berita Acara -->
+			<!-- <div class="col-xs-12 col-sm-3">
+				<div class="card shadow mb-4">
+					<div class="card-header">
+						<center>
+							<h6 class="m-0 font-weight-bold">Berita Acara</h6>
+						</center>
+					</div>
+					<div class="card-body">
+						<center>
+							<?php if ($detail->srt_pernyataan != null) { ?>
+								<p><?= $detail->srt_pernyataan; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp10/srt_pernyataan/<?= $detail->srt_pernyataan ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->srt_pernyataan == null) { ?>
+								<p class="mb-0">Belum ada</p>
+							<?php } ?>
+						</center>
+					</div>
+				</div>
+			</div> -->
 		</div>
 
 		<!-- Button Tolak & Setujui Awal Surat Masuk -->
 		<div class="row clearfix float-right px-2">
 			<?php if ($detail->status == 'Validasi Kemenag') { ?>
-				<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>" class="mr-2" class="mr-2">
+				<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>" class="mr-2">
 					<button id=" btn_tolak" class="btn btn-sm btn-tolak" type="submit">
 						<i class="fas fa-times-circle">
 						</i> Tolak
@@ -487,31 +510,26 @@
 						</i> Terima
 					</button>
 				</a>
+			<?php } ?>
 		</div>
-	<?php } ?>
 
-	<!-- Button Setujui Final & No Surat -->
-	<?php
+		<!-- Button Setujui Final & No Surat -->
+		<?php
 		if ($detail->status === 'Selesai') { ?>
-		<div class="row clearfix">
-			<div class="col-md-12">
-				<form class="form-horizontal" id="no_surat_ptsp10" enctype="multipart/form-data" action="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>/<?= $detail->id_layanan ?>" method="POST">
-					<div class="row clearfix">
-						<div class="col-md-2"></div>
-						<div class="input-group col-md-3 px-2 mb-2">
+			<div class="row clearfix">
+				<div class="col-md-12">
+					<form class="form-horizontal" id="no_surat_ptsp10" enctype="multipart/form-data" action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp10/<?= $detail->id_permohonan_ptsp ?>" method="POST">
+						<div class="input-group mb-3 col-md-4 float-right p-0">
+							<input type="text" class="form-control " id="no_surat" name="no_surat" value="" required>
+							<button class="btn btn-sm btn-primary" type="submit" id="button-addon2"><i class="fas fa-check-circle">
+								</i> Terima</button>
 						</div>
-						<div class="input-group col-md-6 px-2 mb-2">
-							<input type="text" class="form-control " id="no_surat" name="no_surat" value=".../blm ada contoh formnatnya" required>
-						</div>
-						<button class="btn btn-sm btn-primary mb-2 float-right px-2" type="submit" id="button-addon2"><i class="fas fa-check-circle">
-							</i> Terima</button>
-					</div>
-				</form>
+					</form>
+				</div>
 			</div>
-		</div>
+		<?php } ?>
 	<?php } ?>
-<?php } ?>
-<!--End Content Profile-->
+	<!--End Content Profile-->
 </div>
 <!-- /.container-fluid -->
 </div>

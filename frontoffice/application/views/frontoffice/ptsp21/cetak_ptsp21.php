@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>SIMANIS - Dashboard</title>
+	<title>SIMELATI: Cetak Surat</title>
 
 	<!--Tittle Icon-->
 	<link rel="shortcut icon" href="<?= base_url('../assets/landing/images/') ?>title.png" />
@@ -23,6 +23,7 @@
 		.body {
 			color: #000;
 		}
+
 
 		.logosurat {
 			height: 130px;
@@ -129,13 +130,6 @@
 			border-color: #000;
 			color: #000;
 		}
-
-		.card {
-			position: relative;
-			background: url(<?= base_url('../assets/dashboard/images/frontoffice/ptsp/bg_ptsp15.png') ?>) no-repeat;
-			background-size: cover;
-			overflow: hidden;
-		}
 	</style>
 
 </head>
@@ -147,7 +141,7 @@
 		<div class="row">
 			<div class="col-md-2">
 			</div>
-			<div class="col-md-8">
+			<div class="col-md-12">
 				<div class="card shadow mb-4">
 					<div class="card-body">
 						<div class="card-body">
@@ -160,122 +154,164 @@
 									</div>
 								</div>
 							</center>
-
-							<?php foreach ($detail_ptsp as $detail) { ?>
+							<?php
+							foreach ($detail_ptsp as $detail) { ?>
 								<div class="badan_surat">
 									<center>
 										<div class="kepala_Sertifikat">
-											<h5 style="margin-top: 20px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></h5>
-											<h6><b>KANTOR KABUPATEN KLATEN </b></h6>
-											<p>Jalan Ronggowarsito Klaten <br>
-												Telepon/Faksimili (0272)321154 <br>
-												Website : http://klaten.kemenag.go.id <br> <br> </p>
+											<h3style="margin-top: 20px;"><b>SERTIFIKAT</b></h3style=>
+												<h5><b>Nomor : <?= $detail->no_surat ?> </b></h5>
+												<p>Kepala Kantor Kementrian Agama Kabupaten Klaten Menerangkan bahwa : </p>
 										</div>
 									</center>
 									<center>
 										<div class="no_surat">
-											<h5><b>PIAGAM PENYELENGARAAN</b></h5>
-											<h5><b>MADRASAH DINIYAH TAKMILIYAH (MDT)</b></h5>
-											<p><b> Nomor:<?= $detail->no_surat ?></b></p>
+											<h5><b>MASJID/MUSHALLA <?= $detail->nama_masjid ?></b></h5>
+											<p>Dukuh <?= $detail->dukuh ?>, RT <?= $detail->rt ?>, RW <?= $detail->rw ?>, Desa <?= $detail->desa ?>, Kecamatan <?= $detail->kecamatan ?>, Kabupaten Klaten</p>
+										</div>
+									</center>
+									<br>
+									<center>
+										<div class="isi_surat">
+											<p>Telah dilakukan pengukuran arah kiblat :
+												<br> Oleh Tim Sertifikat Arah Kiblat Kabupaten Klaten
+											</p>
+											<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;....................20...M
+												<br> Pada hari,.....tanggal,............................................
+												<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;...................14...H
+											</p>
+											<p>Dengan rashadul kiblat/waktu pengukuran pukul ......... WIB</p>
+									</center>
+
+									<br> <br>
+									<CENTER>
+										<div class="row">
+											<div class="col-md-6"></div>
+											<div class="col-md-6">
+												<div class="badan_surat isi_surat">
+													<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+													<p>Klaten,..........................,20... <br>
+														Kepala, </p><br><br><br><br>
+													<b>H. Anif Solikhin, S.Ag. MSI</b><br>
+													Nip. 197004201995031003
+												</div>
+											</div>
+										</div>
+									</CENTER>
+								</div>
+						</div>
+					<?php } ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!-- /.container-fluid -->
+	<!-- Begin Page Content -->
+	<div class="container-fluid">
+		<!-- Page Heading -->
+		<div class="row">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-12">
+				<div class="card shadow mb-4">
+					<div class="card-body">
+						<div class="card-body">
+							<?php
+							foreach ($detail_ptsp as $detail) { ?>
+								<div class="badan_surat">
+									<center>
+										<div class="kepala_Sertifikat">
+											<h4style="margin-top: 20px;"><b>BERITA ACARA PENGUKURAN ARAH KIBLAT</b></h4style=>
+												<P><b>MASJID/MUSHALLA..............</b></P>
+												<p>Dukuh,....RT,.....RW,.......Desa,....Kecamatan,.......Kabupaten Klaten</p>
 										</div>
 									</center>
 									<br>
 									<div class="isi_surat">
-										<p>Dengan ini Kepala Kantor Kementerian Agama Kabupaten Klaten <br> memberikan NSMDT
-											kepada :</p>
-									</div>
-									<div class="isi_surat identitas">
-										<table>
-											<tbody>
-												<tr>
-													<td>Nama MDT</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td> </td>
-													<td><?= $detail->nama_madrasah ?></td>
-												</tr>
-												<tr>
-													<td>Alamat</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td> </td>
-													<td><?= $detail->alamat ?></td>
-												</tr>
-												<tr>
-													<td>Desa</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td> </td>
-													<td><?= $detail->desa ?></td>
-												</tr>
-												<tr>
-													<td>Kecamatan</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td> </td>
-													<td><?= $detail->kecamatan ?></td>
-												</tr>
-												<tr>
-													<td>Kabupaten</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td> </td>
-													<td><?= $detail->kabupaten ?></td>
-												</tr>
-												<tr>
-													<td>Provinsi</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td> </td>
-													<td><?= $detail->provinsi ?></td>
-												</tr>
-												<tr>
-													<td>Tahun Berdiri</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td> </td>
-													<td><?= $detail->tahun_berdiri ?></td>
-												</tr>
-												<tr>
-													<td>No Telp</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td> </td>
-													<td><?= $detail->no_hp ?></td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-									<br>
-									<div class="isi_surat">
-										<p>Madrasah Diniyah Taklimiyah (MDT) tersebut telah terdaftar di <br>
-											Kantor Kementerian Agama Kabupaten Klaten sebagai Lembaga <br>
-											Pendidikan Keagamaan Islam.</p>
-										<p>Demikian untuk dapat digunakan sebagaimana mestinya.</p>
-									</div>
-									<div class="no_statistik">
+										<p>Data Astronomi dengan menggunakan Ephimeris :
+											<br> Hari : ..........,...............20........
+										</p>
+										<div class="isi_surat identitas">
 
-									</div>
-									<br> <br>
-									<div class="row">
-										<div class="col-md-6"></div>
-										<div class="col-md-6">
-											<div class="badan_surat isi_surat">
-												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-												<p>Ditetapkan di : Klaten <br>
-													Pada Tanggal : &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; 20 <br>
-													Kepala </p><br><br><br><br>
-												<b>Anif Solikhin</b><br>
-											</div>
+											<table border="1" cellpadding=2 cellspacing=3 align=left>
+												<tr>
+													<td WIDTH=200>Lintang Tempat</td>
+													<td WIDTH=100>.......&ordm;......&ordm;.....&ordm;</td>
+												</tr>
+												<tr>
+													<td>Bujur Tempat</td>
+													<td>.......&ordm;......&ordm;.....&ordm;</td>
+												</tr>
+												<tr>
+													<td>Waktu Pengukuran</td>
+													<td>.......,......WIB</td>
+												</tr>
+												<tr>
+													<td>Dekhinasi Matahari</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>True Norht</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Sudut Waktu Matahari</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Azimuth Matahari</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Azimuth Kiblat</td>
+													<td>.......&ordm;......&ordm;.....&ordm;</td>
+												</tr>
+												<tr>
+													<td>Rashdul Kiblat</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Tim Pengukur</td>
+													<td>1.</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>2.</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td>3.</td>
+												</tr>
+												<tr>
+													<td><br></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Saksi<br><br><br> </td>
+													<td>1.
+														<br>2.
+														<br>3.
+													</td>
+												</tr>
+											</table>
 										</div>
+										<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+										<CENTER>
+											<div class="row">
+												<div class="col-md-6"></div>
+												<div class="col-md-6">
+													<div class="badan_surat isi_surat">
+														<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+														<p>Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?> <br>
+															Kepala, </p><br><br><br><br>
+														<b>H. Anif Solikhin, S.Ag. MSI</b><br>
+														Nip. 197004201995031003
+													</div>
+												</div>
+											</div>
+										</CENTER>
 									</div>
 								</div>
 							<?php } ?>
@@ -284,7 +320,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 	<!-- /.container-fluid -->
 

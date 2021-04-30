@@ -136,14 +136,14 @@
 								</div>
 								<div class="isi_surat paragraf">
 									<p class="text-justify">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Berdasarkan surat dari Takmir Masjid <?= $detail->nama_masjid ?> Nomor :
-										<?= $detail->no_surat_permohonan ?>
-										tanggal <?= $detail->tgl_surat_permohonan ?> perihal Permohonan Surat Rekomendasi dan
+										<?= $detail->no_srt_permohonan ?>
+										tanggal <?= format_indo(date($detail->tgl_srt_permohonan)); ?> perihal Permohonan Surat Rekomendasi dan
 										memperhatikan kelengkapan
 										proposal yang diajukan, dengan ini kami memberikan rekomendasi kepada :
 									</p>
 								</div>
 								<div class="isi_surat identitas">
-									<table class="table-responsive">
+									<table>
 										<tbody>
 											<tr>
 												<td>Nama Masjid</td>
@@ -188,7 +188,7 @@
 									<div class="col-md-6">
 										<div class="isi_surat">
 											<center>
-												Klaten, 03 Maret 2020<br>
+												Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 												Kepala
 											</center>
 										</div>

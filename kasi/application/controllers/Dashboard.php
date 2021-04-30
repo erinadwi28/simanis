@@ -333,7 +333,7 @@ class Dashboard extends CI_Controller
     }
 
     //update status permohonan menjadi Proses kasubag
-    public function aksi_update_status_setujui($id_permohonan_ptsp, $id_layanan)
+    public function aksi_update_status_setujui($id_permohonan_ptsp)
     {
         $data = array(
             'id_kasi' => $this->session->userdata('id_kasi'),
@@ -342,60 +342,7 @@ class Dashboard extends CI_Controller
             'tgl_persetujuan_kasi' => date("Y/m/d"),
 
         );
-
-        $no_surat = array(
-            'no_surat' => $this->input->post('no_surat'),
-        );
-
         $this->m_kasi->update_status_permohonan($id_permohonan_ptsp, $data, 'permohonan_ptsp');
-
-        if ($id_layanan == 5) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp05', $no_surat);
-        } elseif ($id_layanan == 6) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp06', $no_surat);
-        } elseif ($id_layanan == 7) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp07', $no_surat);
-        } elseif ($id_layanan == 8) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp08', $no_surat);
-        } elseif ($id_layanan == 9) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp09', $no_surat);
-        } elseif ($id_layanan == 10) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp10', $no_surat);
-        } elseif ($id_layanan == 11) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp11', $no_surat);
-        } elseif ($id_layanan == 12) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp12', $no_surat);
-        } elseif ($id_layanan == 13) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp13', $no_surat);
-        } elseif ($id_layanan == 14) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp14', $no_surat);
-        } elseif ($id_layanan == 15) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp15', $no_surat);
-        } elseif ($id_layanan == 16) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp16', $no_surat);
-        } elseif ($id_layanan == 17) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp17', $no_surat);
-        } elseif ($id_layanan == 18) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp18', $no_surat);
-        } elseif ($id_layanan == 19) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp19', $no_surat);
-        } elseif ($id_layanan == 20) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp20', $no_surat);
-        } elseif ($id_layanan == 21) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp21', $no_surat);
-        } elseif ($id_layanan == 22) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp22', $no_surat);
-        } elseif ($id_layanan == 23) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp23', $no_surat);
-        } elseif ($id_layanan == 24) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp24', $no_surat);
-        } elseif ($id_layanan == 25) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp25', $no_surat);
-        } elseif ($id_layanan == 26) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp26', $no_surat);
-        } elseif ($id_layanan == 27) {
-            $data_detail['detail_ptsp'] = $this->m_kasi->insert_no_surat($id_permohonan_ptsp, 'ptsp27', $no_surat);
-        }
 
         $this->session->set_flashdata('success', 'permohonan sukses disetujui');
         redirect('dashboard/list_permohonan_masuk');

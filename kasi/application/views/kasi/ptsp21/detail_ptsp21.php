@@ -111,7 +111,7 @@
 						<center>
 							<?php if ($detail->berita_acara != null) { ?>
 								<p><?= $detail->berita_acara; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp08/berita_acara/<?= $detail->berita_acara ?>" target="_blank">
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp21/berita_acara/<?= $detail->berita_acara ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
@@ -289,18 +289,18 @@
 						</tbody>
 					</table>
 				</div>
-			</div>
-
-			<!-- Button Tolak & Setujui Awal Surat Masuk -->
-			<div class="row clearfix float-right px-2">
-				<?php if ($detail->status == 'Proses Kasi') { ?>
-				<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
-					<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
-						<i class="fas fa-check-circle">
-						</i> Terima
-					</button>
-				</a>
-				<?php } ?>
+				<div class="card-footer">
+					<div class="float-right">
+						<?php if ($detail->status == 'Proses Kasi') { ?>
+						<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+							<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
+								<i class="fas fa-check-circle">
+								</i> Terima
+							</button>
+						</a>
+						<?php } ?>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

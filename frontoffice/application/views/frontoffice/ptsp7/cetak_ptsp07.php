@@ -14,9 +14,7 @@
 	<!--Tittle Icon-->
 	<link rel="shortcut icon" href="<?= base_url('../assets/landing/images/') ?>title.png" />
 
-	<link
-		href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
@@ -143,25 +141,26 @@
 			line-height: 1.5em;
 		}
 
-        .petugas>.nomor{
-            padding-right: 0px;
-        }
-        .petugas>.data{
-            padding-left: -0px;
-            margin-left: -15px;
-        }
+		.petugas>.nomor {
+			padding-right: 0px;
+		}
 
-        p{
-            margin-bottom: 0px;
-        }
+		.petugas>.data {
+			padding-left: -0px;
+			margin-left: -15px;
+		}
 
-        .pelaksanaan {
-            margin-left: 0px;
-        }
+		p {
+			margin-bottom: 0px;
+		}
 
-        .ketentuan {
-            margin-left: 10px;
-        }
+		.pelaksanaan {
+			margin-left: 0px;
+		}
+
+		.ketentuan {
+			margin-left: 10px;
+		}
 
 		.tgl {
 			text-align: right;
@@ -173,7 +172,7 @@
 
 		.rekomendasi {
 			text-align: center;
-		}		
+		}
 	</style>
 
 </head>
@@ -192,94 +191,97 @@
 						<div class="kopsurat row">
 							<div class="col-md-12 mb-3">
 								<object data="" type="image">
-									<img class="img-fluid" alt="logo_kop_surat"
-										src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
+									<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
 								</object>
 							</div>
 						</div>
 
 						<!-- NO SURAT -->
-						<div class="no_surat row">
-							<div class="col-12 rekomendasi">
-								<p><b>REKOMENDASI</b></p>
-								<p>Nomor: xxx</p>
+						<?php
+						foreach ($detail_ptsp as $detail) { ?>
+							<div class="no_surat row">
+								<div class="col-12 rekomendasi">
+									<p><b>REKOMENDASI</b></p>
+									<p>Nomor: <?= $detail->no_surat ?></p>
+								</div>
 							</div>
-						</div>
 
-						<!-- PEMBUKA -->
-						<div class="no_surat">
+							<!-- PEMBUKA -->
+							<div class="no_surat">
+								<br>
+								<p>Assalamu'alaikum Wr.Wb</p>
+								<br>
+							</div>
+
+							<!-- Paragraf 1 -->
+							<div class="isi_surat">
+								<p>&emsp;&emsp;&emsp;Berdasarkan permohonan dari Saudara <?= $detail->nama_pemohon ?> selaku ketua Yayasan <?= $detail->nama_yayasan ?> perihal Rekomendasi
+									Pendirian Kelompok Bimbingan <?= $detail->nama_kelompok_bimbingan ?>. Setelah dilakukan peninjauan terhadap Kantor Sekretariat Kelompok Bimbingan
+									<?= $detail->nama_kelompok_bimbingan ?> yang berdomisili di <?= $detail->domisili_kelompok_bimbingan ?> maka Kepala Kantor Kementerian Agama Kab. Klaten dengan ini memberikan rekomendasi
+									kepada:
+								</p>
+								<br>
+							</div>
+
+							<!-- Pelaksanaan -->
+							<div class="pelaksanaan">
+								<table>
+									<tbody>
+										<tr>
+											<td>Nama Kelompok Bimbingan</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td><?= $detail->nama_kelompok_bimbingan ?></td>
+										</tr>
+										<tr>
+											<td>Alamat Kantor</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td><?= $detail->alamat_kantor ?></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
 							<br>
-							<p>Assalamu'alaikum Wr.Wb</p>
+
+
+
+							<!-- Paragraf 2 -->
+							<div class="isi_surat">
+								<p>&emsp;&emsp;&emsp;Rekomendasi ini dibuat sebagai pertimbangan untuk mendapatkan izin operasional dalam
+									Pendirian Kelompok Bimbingan <?= $detail->nama_kelompok_bimbingan ?> sebagai Penyelenggara Bimbingan Ibadah Haji di Kabupaten Klaten.</p>
+								<p>&emsp;&emsp;&emsp;Demikian surat ini kami sampaikan untuk dapat dipergunakan sebagaimana
+									mestinya.
+								</p>
+							</div>
+
+							<!-- PENUTUP -->
+							<div class="no_surat">
+								<br>
+								<p>Wassalamu'alaikum Wr.Wb</p>
+							</div>
+
 							<br>
-						</div>
 
-                        <!-- Paragraf 1 -->
-						<div class="isi_surat">
-							<p>&emsp;&emsp;&emsp;Berdasarkan permohonan dari Saudara xxx selaku ketua Yayasan xxx perihal Rekomendasi
-							Pendirian Kelompok Bimbingan xxx. Setelah dilakukan peninjauan terhadap Kantor Sekretariat Kelompok Bimbingan
-							xxx yang berdomisili di xxx maka Kepala Kantor Kementerian Agama Kab. Klaten dengan ini memberikan rekomendasi
-							kepada:
-							</p>
-							<br>
-						</div>
+							<!-- Tanggal -->
+							<div class="row">
+								<div class="col-12 tgl">
+									Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?>
+								</div>
+							</div>
+						<?php } ?>
 
-                        <!-- Pelaksanaan -->
-						<div class="pelaksanaan">
-							<table>
-								<tbody>
-									<tr>
-										<td>Nama Kelompok Bimbingan</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>xxx</td>
-									</tr>
-									<tr>
-										<td>Alamat Kantor</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>xxx</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-
-                        <br>
-
-						
-
-                        <!-- Paragraf 2 -->
-						<div class="isi_surat">
-						<p>&emsp;&emsp;&emsp;Rekomendasi ini dibuat sebagai pertimbangan untuk mendapatkan izin operasional dalam
-						Pendirian Kelompok Bimbingan xxx sebagai Penyelenggara Bimbingan Ibadah Haji di Kabupaten Klaten.</p>
-							<p>&emsp;&emsp;&emsp;Demikian surat ini kami sampaikan untuk dapat dipergunakan sebagaimana
-                                mestinya.
-							</p>
-						</div>
-
-						<!-- PENUTUP -->
-						<div class="no_surat">
-							<br>
-							<p>Wassalamu'alaikum Wr.Wb</p>
-						</div>
-
-                        <br>
-
-						<!-- Tanggal -->
-						<div class="row">
-						<div class="col-12 tgl">
-						Klaten, 24 April 2021
-						</div>
-						</div>
 
 						<!-- Kepala -->
 						<div class="row">
-						<div class="col-12 kpl">
-						Kepala
-						</div>
+							<div class="col-12 kpl">
+								Kepala
+							</div>
 						</div>
 
 						<div class="row ttd_kepala">
@@ -289,7 +291,7 @@
 							</div>
 						</div>
 						<br> <br>
-						
+
 						<div class="row">
 							<div class="col-md-9">
 							</div>

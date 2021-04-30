@@ -93,7 +93,7 @@
 					<div class="card-body">
 						<table class="table-hover table-responsive">
 							<tbody>
-								<?php if ($detail->no_surat != null && $detail->status == 'Selesai') { ?>
+								<?php if ($detail->no_surat != null) { ?>
 									<tr>
 										<td><b>Nomor Surat</b></td>
 										<td> </td>
@@ -101,6 +101,16 @@
 										<td>:</td>
 										<td> </td>
 										<td><?= $detail->no_surat ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->jml_lampiran != null) { ?>
+									<tr>
+										<td><b>Lampiran</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->jml_lampiran ?></td>
 									</tr>
 								<?php } ?>
 								<tr>
@@ -356,7 +366,7 @@
 		<?php if ($detail->status == 'Selesai') { ?>
 			<div class="row clearfix">
 				<div class="col-md-12">
-					<form class="form-horizontal" id="no_surat_ptsp11" enctype="multipart/form-data" action="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>/<?= $detail->id_layanan ?>" method="POST">
+					<form class="form-horizontal" id="no_surat_ptsp11" enctype="multipart/form-data" action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp11/<?= $detail->id_permohonan_ptsp ?>" method="POST">
 						<div class="row clearfix">
 							<div class="col-md-2"></div>
 							<div class="input-group col-md-3 px-2 mb-2">

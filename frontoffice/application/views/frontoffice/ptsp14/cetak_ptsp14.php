@@ -189,7 +189,7 @@
 										<p>&nbsp; &nbsp; &nbsp; Diberikan kepada :</p>
 									</div>
 									<div class="isi_surat identitas">
-										<table class="table-responsive">
+										<table>
 											<tbody>
 												<tr>
 													<td>Nama LPQ</td>
@@ -245,7 +245,7 @@
 													<td> </td>
 													<td>:</td>
 													<td> </td>
-													<td><?= $detail->yayasan ?></td>
+													<td><?= $detail->nama_yayasan ?></td>
 												</tr>
 												<tr>
 													<td>SK Menkumham RI</td>
@@ -253,7 +253,7 @@
 													<td> </td>
 													<td>:</td>
 													<td> </td>
-													<td><?= $detail->sk_menkumham ?></td>
+													<td><?= $detail->no_sk_menkumham_ri ?></td>
 												</tr>
 												<tr>
 													<td>Tahun Berdiri</td>
@@ -282,18 +282,18 @@
 										<table class="table table-bordered ">
 											<tbody>
 												<tr>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
 											</tbody>
 											</tr>
 										</table>
@@ -308,7 +308,7 @@
 										<div class="col-md-6">
 											<div class="badan_surat isi_surat">
 												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-												<p>Klaten, 03 Maret 2020</p>
+												<p>Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></p>
 												<h6>MENTERI AGAMA</h6>
 												Kepala Kantor Kementerian Agama
 												Kabupaten Klaten<br><br><br><br>

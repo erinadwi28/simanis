@@ -62,15 +62,17 @@
 		.kepala_sertifikat p {
 			margin-top: 3px;
 		}
-		.row{
+
+		.row {
 			font-size: 14pt;
 			font-family: 'Times New Roman';
 		}
+
 		.no_surat {
 			font-size: 14pt;
 		}
 
-		.tujuan_surat{
+		.tujuan_surat {
 			font-size: 14pt;
 			font-family: 'Times New Roman';
 		}
@@ -144,7 +146,6 @@
 			border-color: #000;
 			margin-left: 15px;
 		}
-
 	</style>
 
 </head>
@@ -158,22 +159,16 @@
 			</div>
 			<div class="col-md-8">
 				<div class="card shadow mb-4">
-				<div class="card-body">
-							<div class="kopsurat row">
-								<div class="col-md-12 mb-3">
-									<object data="" type="image">
-										<img class="img-fluid" alt="logo_kop_surat"
-											src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
-									</object>
-								</div>
+					<div class="card-body">
+						<div class="kopsurat row">
+							<div class="col-md-12 mb-3">
+								<object data="" type="image">
+									<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
+								</object>
 							</div>
-							<div class="no_surat">
-								<center>
-									<p><u><b>SURAT TUGAS</b></u><br>
-										<b>Nomor : ...../Kk.11.10/1/KP.07.6/..../2021</b>
-									</p>
-								</center>
-							</div>
+						</div>
+						<?php
+						foreach ($detail_ptsp as $detail) { ?>
 							<div class="row">
 								<div class="col-md-10">
 									<table>
@@ -182,19 +177,19 @@
 												<td>Nomor</td>
 												<td></td>
 												<td>:</td>
-												<td>.../Kk.11.10/3/PP.00.7/.../2021</td>
+												<td><?= $detail->no_surat ?></td>
 											</tr>
 											<tr>
 												<td>Sifat</td>
 												<td></td>
 												<td>:</td>
-												<td>Penting</td>
+												<td><?= $detail->sifat ?></td>
 											</tr>
 											<tr>
-												<td>Lamp</td>
+												<td>Lampiran</td>
 												<td></td>
 												<td>:</td>
-												<td>1 berkas proposal</td>
+												<td><?= $detail->jml_lampiran ?> berkas proposal</td>
 											</tr>
 											<tr>
 												<td>Perihal</td>
@@ -206,75 +201,75 @@
 									</table>
 								</div>
 								<div class="col-md-2">
-									<p>........................... 2021</p>
+									<p><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></p>
 								</div>
 							</div>
 							<br> <br>
 
 							<div class="tujuan_surat">
 								<p>Kepada Yth. <br>
-								.......................... <br>
-								.......................... <br>
-								di <br>
-								..........................</p>
+									<?= $detail->nama_tujuan ?>
+									di <br>
+									<?= $detail->tempat_tujuan ?></p>
 							</div>
 							<div class="isi_surat">
 								<p>Assalamu'alaikum Wr. Wb.</p>
 							</div>
 							<div class="isi_surat paragraf">
 								<p> Menindaklanjuti surat permohonan yang diajukan oleh Pengurus Taman Pendidikan Al Quran/
-								Madrasah Diniyah/Pondok Pesantren................ Nomor : .......................... Tanggal : ...............
-									yang beralamat di ........................ perihal Permohonan Rekomendasi sebagai syarat kelengkapan
-								permohonan Bantuan ......................, maka dengan ini kami memberikan rekomendasi atas permohonan tersebut dengan
-								ketentuan sebagai berikut : <br>
-								1. Apabila bantuan telah cair, maka harus dipergunakan sesuai dengan peruntukannya <br>
-								seperti yang tercantum dalam proposal permohonan ; <br>
-								2. Membuat LPJ tepat waktu dan Kankemenag. Kab. Klaten cq. Seksi PD Pontren diberi tembusannya.
-							</p>
-							</div>
-							<div class="isi_surat paragraf">
-								<p>
-									Demikian rekomendasi ini dibuat untuk digunakan sebagaimana mestinya.
+									Madrasah Diniyah/Pondok Pesantren <?= $detail->nama_instansi_pemohon ?> Nomor : <?= $detail->no_srt_permohonan ?> Tanggal : <?= format_indo(date($detail->tgl_srt_permohonan)); ?>
+									yang beralamat di <?= $detail->alamat_instansi_pemohon ?> perihal Permohonan Rekomendasi sebagai syarat kelengkapan
+									permohonan Bantuan <?= $detail->jenis_bantuan ?> maka dengan ini kami memberikan rekomendasi atas permohonan tersebut dengan
+									ketentuan sebagai berikut : <br>
+									1. Apabila bantuan telah cair, maka harus dipergunakan sesuai dengan peruntukannya <br>
+									seperti yang tercantum dalam proposal permohonan ; <br>
+									2. Membuat LPJ tepat waktu dan Kankemenag. Kab. Klaten cq. Seksi PD Pontren diberi tembusannya.
 								</p>
 							</div>
-							<div class="isi_surat">
-								Wassalamu'alaikum Wr. Wb.
+						<?php } ?>
+						<div class="isi_surat paragraf">
+							<p>
+								Demikian rekomendasi ini dibuat untuk digunakan sebagaimana mestinya.
+							</p>
+						</div>
+						<div class="isi_surat">
+							Wassalamu'alaikum Wr. Wb.
+						</div>
+						<div class="row">
+							<div class="col-md-6">
 							</div>
-							<div class="row">
-								<div class="col-md-6">
-								</div>
-								<div class="col-md-6">
-									<div class="badan_surat isi_surat">
-										<center>
-											Kepala
-										</center>
-									</div>
+							<div class="col-md-6">
+								<div class="badan_surat isi_surat">
+									<center>
+										Kepala
+									</center>
 								</div>
 							</div>
-							<div class="row ttd_kepala">
-								<div class="col-md-6 ">
-								</div>
-								<div class="col-md-6">
+						</div>
+						<div class="row ttd_kepala">
+							<div class="col-md-6 ">
+							</div>
+							<div class="col-md-6">
 
+							</div>
+						</div>
+						<br> <br>
+						<div class="row">
+							<div class="col-md-6">
+							</div>
+							<div class="col-md-6">
+								<div class="badan_surat isi_surat">
+									<center>
+										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+										<u><b>Anif Solikhin</b></u>
+									</center>
 								</div>
 							</div>
-							<br> <br>
-							<div class="row">
-								<div class="col-md-6">
-								</div>
-								<div class="col-md-6">
-									<div class="badan_surat isi_surat">
-										<center>
-											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-											<u><b>Anif Solikhin</b></u>
-										</center>
-									</div>
-								</div>
-							</div>
-							<div>
+						</div>
+						<div>
 							Tempusan Yth: <br>
 							Kanwil. Kemenag. Prov. Jawa Tengah</div>
-						</div>
+					</div>
 				</div>
 			</div>
 		</div>

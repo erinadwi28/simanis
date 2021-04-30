@@ -307,18 +307,18 @@
 						</tbody>
 					</table>
 				</div>
-			</div>
-
-			<!-- Button Setujui -->
-			<div class="row clearfix float-right px-2">
-				<?php if ($detail->status == 'Proses Kasi') { ?>
-				<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
-					<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
-						<i class="fas fa-check-circle">
-						</i> Terima
-					</button>
-				</a>
-				<?php } ?>
+				<div class="card-footer">
+					<div class="float-right">
+						<?php if ($detail->status == 'Proses Kasi') { ?>
+						<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+							<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
+								<i class="fas fa-check-circle">
+								</i> Terima
+							</button>
+						</a>
+						<?php } ?>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
