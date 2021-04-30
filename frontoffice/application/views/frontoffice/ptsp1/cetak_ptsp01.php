@@ -152,11 +152,11 @@
 	<?php foreach ($detail_ptsp as $detail) { ?>
 		<table width="530">
 			<tr>
-				<td><img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>" width="80" height="80"></td>
+				<td class="logo"><img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>" width="80" height="80"></td>
 				<td>
 				<center>
-					<font size="4"><b>KEMENTRIAN AGAMA REPUBLIK INDONESIA</b></font><br>
-					<font size="3">KANTOR KEMENTRIAN AGAMA KABUPATEN KLATEN</font><br>
+					<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
+					<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
 					<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
 					<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
 					<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>

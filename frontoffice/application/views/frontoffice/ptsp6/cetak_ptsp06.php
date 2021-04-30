@@ -96,7 +96,8 @@
 		}
         .table-bordered thead tr,
 		.table-bordered thead th
-		{border: 1px solid #000;
+		{
+			border: 1px solid #000;
 
 		}
         .table-bordered tbody td {
