@@ -386,7 +386,7 @@ class Dashboard extends CI_Controller
         $data_permohonan = array(
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '1',
-            'sie' => 'Bimas Islam, Penyelenggara Katolik,Hindu, Sub Bag (Kristen, Budha)',
+            'sie' => 'Subbag TU',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -473,7 +473,6 @@ class Dashboard extends CI_Controller
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        // $data_detail['detail_permohonan'] = $this->m_pemohon->get_data_permohonan($id_permohonan, 'permohonan_ptsp')->result();
         $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp01($id_permohonan)->result();
 
         $this->load->view('header', $data_title);
@@ -542,7 +541,7 @@ class Dashboard extends CI_Controller
         $data_permohonan = array(
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '2',
-            'sie' => 'Bimas Islam, Katolik, Hindu',
+            'sie' => 'Subbag TU',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -842,7 +841,7 @@ class Dashboard extends CI_Controller
         $data_permohonan = array(
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '4',
-            'sie' => 'PAIS, Pontren, Penyelenggara Katolik',
+            'sie' => 'Subbag TU',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -3384,6 +3383,7 @@ class Dashboard extends CI_Controller
             'tgl_srt_rek_sekolah_asal' => $this->input->post('tgl_srt_rek_sekolah_asal'),
             'nama_siswa' => $this->input->post('nama_siswa'),
             'tempat_lahir_siswa' => $this->input->post('tempat_lahir_siswa'),
+            'jenis_kelamin' => $this->input->post('jenis_kelamin'),
             'tgl_lahir_siswa' => $this->input->post('tgl_lahir_siswa'),
             'nisn' => $this->input->post('nisn'),
             'kelas' => $this->input->post('kelas'),
@@ -3438,6 +3438,7 @@ class Dashboard extends CI_Controller
             'tgl_srt_rek_sekolah_asal' => $this->input->post('tgl_srt_rek_sekolah_asal'),
             'nama_siswa' => $this->input->post('nama_siswa'),
             'tempat_lahir_siswa' => $this->input->post('tempat_lahir_siswa'),
+            'jenis_kelamin' => $this->input->post('jenis_kelamin'),
             'tgl_lahir_siswa' => $this->input->post('tgl_lahir_siswa'),
             'nisn' => $this->input->post('nisn'),
             'kelas' => $this->input->post('kelas'),
@@ -4465,7 +4466,7 @@ class Dashboard extends CI_Controller
         $data_permohonan = array(
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '17',
-            'sie' => 'Seksi PAIS, Penmad, Peny. Katolik, Hindu, Subbag TU',
+            'sie' => 'Subbag TU',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -5785,7 +5786,7 @@ class Dashboard extends CI_Controller
         $data_permohonan = array(
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '24',
-            'sie' => 'Bimas Islam, Penyelenggara Katolik,Hindu, Sub Bag (Kristen, Budha)',
+            'sie' => 'Subbag TU',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);

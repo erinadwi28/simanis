@@ -2,7 +2,7 @@
 <div class="container-fluid">
 	<!-- Page Heading -->
 	<?php foreach ($detail_ptsp as $detail) {
-		if ($detail->status === 'Validasi Kemenag') { ?>
+		if ($detail->status == 'Validasi Kemenag') { ?>
 			<div class="d-sm-flex align-items-center justify-content-between">
 				<h3 class="judullist py-3">Detail Permohonan</h1>
 					<nav aria-label="breadcrumb" class="nav-breadcrumb">
@@ -13,7 +13,7 @@
 						</ol>
 					</nav>
 			</div>
-		<?php } elseif ($detail->status === 'Pending') { ?>
+		<?php } elseif ($detail->status == 'Pending') { ?>
 			<div class="d-sm-flex align-items-center justify-content-between">
 				<h3 class="judullist py-3">Detail Permohonan</h1>
 					<nav aria-label="breadcrumb" class="nav-breadcrumb">
@@ -24,18 +24,7 @@
 						</ol>
 					</nav>
 			</div>
-		<?php } elseif ($detail->id_fo != null) { ?>
-			<div class="d-sm-flex align-items-center justify-content-between">
-				<h3 class="judullist py-3">Detail Permohonan</h1>
-					<nav aria-label="breadcrumb" class="nav-breadcrumb">
-						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-							<li class="breadcrumb-item" aria-current="page"><a href="<?= base_url('dashboard/list_permohonan_selesaiFO') ?>">Permohonan Selesai FO</a></li>
-							<li class="breadcrumb-item active" aria-current="page">Detail</li>
-						</ol>
-					</nav>
-			</div>
-		<?php } elseif ($detail->status === 'Proses BO') { ?>
+		<?php } elseif ($detail->status == 'Proses BO') { ?>
 			<div class="d-sm-flex align-items-center justify-content-between">
 				<h3 class="judullist py-3">Detail Permohonan</h1>
 					<nav aria-label="breadcrumb" class="nav-breadcrumb">
@@ -46,7 +35,7 @@
 						</ol>
 					</nav>
 			</div>
-		<?php } elseif ($detail->status === 'Proses Kasi') { ?>
+		<?php } elseif ($detail->status == 'Proses Kasi') { ?>
 			<div class="d-sm-flex align-items-center justify-content-between">
 				<h3 class="judullist py-3">Detail Permohonan</h1>
 					<nav aria-label="breadcrumb" class="nav-breadcrumb">
@@ -57,7 +46,7 @@
 						</ol>
 					</nav>
 			</div>
-		<?php } elseif ($detail->status === 'Proses Kasubag') { ?>
+		<?php } elseif ($detail->status == 'Proses Kasubag') { ?>
 			<div class="d-sm-flex align-items-center justify-content-between">
 				<h3 class="judullist py-3">Detail Permohonan</h1>
 					<nav aria-label="breadcrumb" class="nav-breadcrumb">
@@ -68,7 +57,7 @@
 						</ol>
 					</nav>
 			</div>
-		<?php } elseif ($detail->status === 'Selesai') { ?>
+		<?php } elseif ($detail->status == 'Selesai') { ?>
 			<div class="d-sm-flex align-items-center justify-content-between">
 				<h3 class="judullist py-3">Detail Permohonan</h1>
 					<nav aria-label="breadcrumb" class="nav-breadcrumb">

@@ -153,7 +153,7 @@
 		<table width="530">
 			<tr>
 				<td><img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>" width="80" height="80"></td>
-				<td>
+				<td width="400">
 				<center>
 					<font size="4"><b>KEMENTRIAN AGAMA REPUBLIK INDONESIA</b></font><br>
 					<font size="3">KANTOR KEMENTRIAN AGAMA KABUPATEN KLATEN</font><br>
@@ -199,6 +199,7 @@
 		       </td>
 		    </tr>
 		</table>
+		<br>
 		<table width="530">
 			<tr>
 		       <td>
@@ -209,7 +210,6 @@
 		    </tr>
 		</table>
 		<?php } ?>
-		<br>
 
 		<?php $no = 1;
 		foreach ($data_petugas_doa as $detail) { ?>
