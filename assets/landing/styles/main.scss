@@ -311,7 +311,22 @@ $breakpoint-tablet: 768px;
 
 .terkini-profile {
 	margin-top: 0px;
+
+	$breakpoint-tablet: 768px;
+
+	@media (max-width: $breakpoint-tablet) {
+		margin-top: -90px;
+	}
+
+	.profil-heading {
+		.profil {
+			@media (max-width: $breakpoint-tablet) {
+		margin-bottom: 0px !important;
+	}
+		}
+	}
 }
+
 
 .section-profile-heading {
 	h2 {
@@ -428,6 +443,20 @@ $breakpoint-tablet: 768px;
 			color: inherit;
 		}
 	}
+}
+
+// profile-heading 
+.profil-heading {
+	h2 {
+		font-family: 'Playfair Display', serif;
+		font-weight: bold;
+		font-size: 35px;
+	}
+
+	p {
+		font-size: 18px;
+	}
+	
 }
 
 //User Guide Heading
@@ -836,4 +865,10 @@ $breakpoint-tablet: 768px;
     margin-top: -25px;
     position: relative;
     z-index: 2;
+}
+
+.list-syarat {
+	li {
+		text-align: justify;
+	}
 }

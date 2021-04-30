@@ -42,7 +42,6 @@
 		</nav>
 	</div>
 </div>
-
 </div>
 
 <!-- Header -->
@@ -63,7 +62,8 @@
 		<ul class="sticky">
 			<li>
 				<img src="<?= base_url('assets/landing/images/wa.png')?>" width="32" height="32">
-				<p><a href="https://api.whatsapp.com/send?phone=628112650662&text=Info" target="_blank">Chat Haji <br> & Umrah</a></p>
+				<p><a href="https://api.whatsapp.com/send?phone=628112650662&text=Info" target="_blank">Chat Haji <br> &
+						Umrah</a></p>
 			</li>
 		</ul>
 	</div>
@@ -71,10 +71,26 @@
 
 <!-- Main Content -->
 <main>
-	<section class="terkini-profile">
+
+	<section class="terkini-profile ">
+		<div class="profil-heading" id="user-guide">
+			<div class="container">
+				<div class="row">
+					<div class="col profil text-center mt-4 mb-4">
+						<h2>Profil</h2>
+						<p class="mb-1">Mengenal Kementerian Agama
+							<br>
+							Kabupaten Klaten
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="container">
 			<div class="section-terkini-profile row justify-content-center">
-				<div class="col-md-6">
+				<!-- Berita -->
+				<!-- <div class="col-md-6">
 					<div class="card shadow mb-2 px-4">
 						<div class="card-body">
 							<h3 class="card-title terkini-title">Terkini</h3>
@@ -187,32 +203,17 @@
 									class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<div class="col-md-6">
-					<div class="row">
-						<div class="col text-center section-profile-heading">
-							<h2>Profil</h2>
-							<p class="mb-1">Mengenal Kementerian Agama
-								<br>
-								Kabupaten Klaten
-							</p>
-							<div class="image-office mb-2">
-								<img class="img-fluid" src="<?= base_url('assets/landing/images/kantor.png')?>"
-									alt="kantor kemenag">
-								<center>
-									<figcaption>Kantor Kemenag Klaten</figcaption>
-								</center>
-							</div>
-						</div>
-
-					</div>
 					<div class="row">
 						<div class="col justify-content-center section-profile-content">
 							<p class="mb-0">
 								Kantor Kementerian Agama Kabupaten Klaten merupakan salah
-								satu instansi vertical Kementerian Agama yang berada dibawah
+								satu instansi vertikal Kementerian Agama yang berada dibawah
 								dan bertanggung jawab kepada Kementerian Agama Provinsi
-								Jawa Tengah.
+								Jawa Tengah. Kantor Kementerian Agama Kab. Klaten ini terletak di
+								JL. Ronggowarsito, 57431, Gunungan, Bareng Lor, Kec. Klaten Utara, 
+								Kabupaten Klaten, Jawa Tengah 57468
 							</p>
 							<p class="my-0">
 								Selengkapnya klik dibawah ini:
@@ -222,6 +223,21 @@
 							</p>
 						</div>
 					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col text-center section-profile-heading">
+
+							<div class="image-office mb-2">
+								<img class="img-fluid" src="<?= base_url('assets/landing/images/kantor.png')?>"
+									alt="kantor kemenag">
+								<center>
+									<figcaption>Kantor Kemenag Klaten</figcaption>
+								</center>
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>
@@ -353,8 +369,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-					<h2>Aplikasi SIMANIS</h2>
-					<p>Untuk install aplikasi SIMANIS berbasis
+					<h2>Aplikasi SIMELATI</h2>
+					<p>Untuk install aplikasi SIMELATI berbasis
 						<br>
 						android di SmartPhone Anda. Silahkan
 						<br>

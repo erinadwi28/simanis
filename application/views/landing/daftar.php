@@ -28,26 +28,26 @@
                             </div>
                         <?php endif ?>
 
-                        <form action="<?= base_url('daftar/aksi_daftar'); ?>" method="post">
+                        <form action="<?= base_url('daftar/aksi_daftar'); ?>" method="post" id="form_daftar">
                             <div class="form-group first shadow">
                                 <label for="nik">NIK | 3404123456789</label>
-                                <input type="text" class="form-control" id="nik" name="nik">
+                                <input type="text" class="form-control" id="nik" name="nik" required data-parsley-type="number">
                             </div>
                             <div class="form-group first shadow">
                                 <label for="email">Email | contoh@email.com</label>
-                                <input type="email" class="form-control" id="email" name="email">
+                                <input type="email" class="form-control" id="email" name="email" required>
                             </div>
                             <div class="form-group first shadow">
                                 <label for="nama">Nama | Erina Dwi U</label>
-                                <input type="nama" class="form-control" id="nama" name="nama">
+                                <input type="nama" class="form-control" id="nama" name="nama" required>
                             </div>
                             <div class="form-group last shadow">
                                 <label for="kata_sandi">Kata Sandi</label>
-                                <input type="password" class="form-control" id="kata_sandi" name="kata_sandi">
+                                <input type="password" class="form-control" id="kata_sandi" name="kata_sandi" required>
                             </div>
                             <div class="form-group last shadow">
                                 <label for="konfirmasi_kata_sandi">Konfirmasi Kata Sandi</label>
-                                <input type="password" class="form-control" id="konfirmasi_kata_sandi" name="konfirmasi_kata_sandi">
+                                <input type="password" class="form-control" id="konfirmasi_kata_sandi" name="konfirmasi_kata_sandi" required data-parsley-equalto="#kata_sandi">
                             </div>
                             <div class="g-recaptcha mt-3" data-sitekey="6LcWJXwaAAAAAJpeWzQao7fZOgv3zBsUTCLH4t0b">
                             </div>

@@ -28,14 +28,14 @@
 							</div>
 						<?php endif ?>
 
-						<form action="<?= base_url('masuk/aksi_login'); ?>" method="post">
+						<form action="<?= base_url('masuk/aksi_login'); ?>" method="post" id="form_masuk_bo">
 							<div class="form-group first shadow">
 								<label for="email">Email | contoh@email.com</label>
-								<input type="email" class="form-control" id="email" name="email">
+								<input type="email" class="form-control" id="email" name="email" required>
 							</div>
 							<div class="form-group last mb-4 shadow">
 								<label for="kata_sandi">Kata Sandi</label>
-								<input type="password" class="form-control" id="password-field" name="kata_sandi"> 
+								<input type="password" class="form-control" id="password-field" name="kata_sandi" required> 
 								<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 							</div>
 
@@ -48,13 +48,9 @@
 							</div>
 
 							<input type="submit" value="Masuk" class="btn btn-block btn-primary">
-							<center class="mt-3">
-								<small class="daftar">
-									<i class="fas fa-user"></i> Belum punya akun ? <a href="<?= base_url('daftar') ?>">Daftar Sekarang</a>
-								</small>
-							</center>
-							<center class="mt-1">
-								<a href="<?= base_url('beranda') ?>">
+							
+							<center class="mt-2">
+								<a href="<?= base_url('../beranda') ?>">
 									<small>
 										<i class="fas fa-arrow-left"></i> Kembali Ke Beranda
 									</small>
