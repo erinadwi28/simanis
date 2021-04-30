@@ -1147,6 +1147,11 @@ class Dashboard extends CI_Controller
 
         public function cetak_ptsp($id_permohonan_ptsp, $id_layanan)
         {
+                $data_permohonan = array(
+                        'status_cetak' => 1
+                    );
+                $this->m_fo->tambah_permohonan($data_permohonan,$id_permohonan_ptsp);
+
                 $data_detail['detail_permohonan'] = $this->m_fo->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
 
                 if ($id_layanan == 1) {

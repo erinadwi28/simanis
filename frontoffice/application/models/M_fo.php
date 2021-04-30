@@ -273,4 +273,11 @@ class M_fo extends CI_Model
         $hasil = $this->db->get();
         return $hasil;
     }
+
+    // aksi tambah data permohonan
+    public function tambah_permohonan($data_permohonan, $id_permohonan_ptsp)
+    {
+        $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp);
+        $this->db->update('permohonan_ptsp', $data_permohonan);
+    }
 }
