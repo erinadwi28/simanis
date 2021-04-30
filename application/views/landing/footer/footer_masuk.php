@@ -21,6 +21,6 @@
     		});
     	});
     </script>
-    </body>
+    </body> 
 
     </html>

@@ -761,4 +761,8 @@ body {
   position: relative;
   z-index: 2;
 }
+
+.list-syarat li {
+  text-align: justify;
+}
 /*# sourceMappingURL=main.css.map */

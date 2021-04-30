@@ -2403,7 +2403,7 @@
     mincheck: "You must select at least %s choices.",
     maxcheck: "You must select %s choices or fewer.",
     check: "You must select between %s and %s choices.",
-    equalto: "This value should be the same.",
+    equalto: "masukkan nilai yang sama dengan sebelumnya.",
     euvatin: "It's not a valid VAT Identification Number."
   });
   Parsley.setLocale('en');

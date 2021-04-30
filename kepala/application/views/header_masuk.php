@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIMANIS - Kemenag Klaten</title>
-    <!--Tittle Icon-->
+<title>SIMELATI: Masuk Kepala</title>   
+ <!--Tittle Icon-->
     <link rel="shortcut icon" href="<?= base_url('../assets/landing/images/') ?>title.png" />
 
     <link rel="stylesheet" href="<?= base_url('../assets/landing/libraries/bootstrap/css/bootstrap.css') ?>" />
@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="<?= base_url('../assets/landing/libraries/owl_carousel/dist/assets/owl.theme.default.min.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('../assets/landing/styles/main.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('../assets/landing/styles/login.css') ?>"/> 
+
+<!-- Parsley -->
+  <link rel="stylesheet" href="<?= base_url('../assets/dashboard/library/parsley/parsley.css') ?>">
 </head>
 
 <body>

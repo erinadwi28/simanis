@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIMANIS - Kemenag Klaten</title>
+    <title>SIMELATI: Masuk</title>
     <!--Tittle Icon-->
     <link rel="shortcut icon" href="<?= base_url('/assets/landing/images/') ?>title.png" />
 
