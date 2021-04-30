@@ -14,12 +14,12 @@
 	<!--Tittle Icon-->
 	<link rel="shortcut icon" href="<?= base_url('../assets/landing/images/') ?>title.png" />
 
-	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
 		.body {
 			color: #000;
+			font-family: Calibri, Helvetica, Arial, sans-serif;
 		}
 
 		.logosurat {
@@ -34,10 +34,10 @@
 			line-height: 1em;
 
 		}
-
+/* 
 		.card-body {
 			padding: 5rem;
-		}
+		} */
 
 		.badan_surat {
 			color: #000;
@@ -48,13 +48,11 @@
 		}
 
 		.badan_surat {
-			font-family: 'Arial';
 			margin-left: 60px;
 		}
 
 		.row {
 			font-size: 12pt;
-			font-family: 'Arial';
 		}
 
 		.no_surat {
@@ -63,13 +61,11 @@
 
 		.tujuan_surat {
 			font-size: 12pt;
-			font-family: 'Arial';
 		}
 
 		.paragraf {
 			/* text-indent: 2.8125em; */
 			text-align: justify;
-			font-family: 'Arial';
 			text-indent: 50px;
 			font-size: 12pt;
 		}
@@ -78,7 +74,6 @@
 			margin-left: 0.0375em;
 			font-size: 12pt;
 			line-height: 1.5em;
-			font-family: 'Arial';
 			text-align: justify;
 		}
 

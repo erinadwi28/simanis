@@ -28,14 +28,14 @@
 						</div>
 						<?php endif ?>
 
-						<form action="<?= base_url('masuk/aksi_login'); ?>" method="post">
+						<form action="<?= base_url('masuk/aksi_login'); ?>" method="post" id="form_masuk">
 							<div class="form-group first shadow">
 								<label for="email">Email | contoh@email.com</label>
-								<input type="email" class="form-control" id="email" name="email">
+								<input type="email" class="form-control" id="email" name="email" required>
 							</div>
 							<div class="form-group last mb-1 shadow">
 								<label for="kata_sandi">Kata Sandi</label>
-								<input type="password" class="form-control" id="password-field" name="kata_sandi"> 
+								<input type="password" class="form-control" id="password-field" name="kata_sandi" required>  
 								<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 							</div>
 							<div class="d-flex mb-3 align-items-center">

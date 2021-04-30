@@ -86,39 +86,40 @@
 						<div class="card-body">
 							<em class="small text-danger">*Data Anda Kami rahasiakan</em>
 							<div class="content-item mb-0 px-3 py-3">
-								<form>
+								<form id="form_pengaduan" method="POST">
 									<div class="form-group">
 										<label for="judul_laporan">Judul Laporan *</label>
 										<input type="text" class="form-control" id="judul_laporan"
-											placeholder="masukkan judul laporan disini...">
+											placeholder="masukkan judul laporan disini..." required>
 									</div>
 									<div class="form-row">
 										<div class="form-group col-md-6">
 											<label for="nama_pelapor">Nama Pelapor *</label>
 											<input type="text" class="form-control" id="nama_pelapor"
-												placeholder="masukkan nama disini...">
+												placeholder="masukkan nama disini..." required>
 										</div>
 										<div class="form-group col-md-6">
 											<label for="tgl_kejadian">Tanggal Kejadian *</label>
-											<input type="date" class="form-control" id="tgl_kejadian">
+											<input type="date" class="form-control" id="tgl_kejadian" required>
 										</div>
 									</div>
 									<div class="form-row">
 										<div class="form-group col-md-6">
 											<label for="no_hp">No HandPhone Pelapor *</label>
 											<input type="text" class="form-control" id="no_hp"
-												placeholder="masukkan No HandPhone disini...">
+												placeholder="masukkan No HandPhone disini..." required data-parsley-type="number"
+										minlength="11">
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="isi">Isi Pesan *</label>
 										<textarea type="text" class="form-control" id="isi"
-											placeholder="masukkan pesan disini..."></textarea>
+											placeholder="masukkan pesan disini..." required></textarea>
 									</div>
 									<div class="form-row">
 										<div class="form-group col-md-6">
 											<label for="Jenis_kelamin">Tujuan Pengaduan *</label>
-											<select class="form-control" id="tujuan" name="tujuan">
+											<select class="form-control" id="tujuan" name="tujuan" required>
 												<option selected value="">~ pilih tujuan ~</option>
 												<option value="Pelayanan PTSP">Pelayanan PTSP</option>
 												<option value="Pelayanan Haji">Pelayanan Haji</option>
@@ -131,7 +132,7 @@
 										<div class="form-group col-md-6">
 											<label for="tujuan_lain">Tujuan Lainnya </label>
 											<input type="text" class="form-control" id="tujuan_lain"
-												placeholder="tujuan lainnya masukkan disini...">
+												placeholder="tujuan lainnya masukkan disini..." required>
 										</div>
 									</div>
 									<button type="submit" class="btn btn-primary float-right mt-2">Kirim</button>

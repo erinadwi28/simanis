@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIMELATI - Kemenag Klaten</title>
+    <title>SIMELATI:<?= $title ?></title>
     <!--Tittle Icon-->
     <link rel="shortcut icon" href="<?= base_url('/assets/landing/images/') ?>title.png" />
 
@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="<?= base_url('assets/landing/libraries/owl_carousel/dist/assets/owl.carousel.min.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('assets/landing/libraries/owl_carousel/dist/assets/owl.theme.default.min.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('assets/landing/styles/main.css') ?>" />
+
+  <!-- Parsley -->
+  <link rel="stylesheet" href="<?= base_url('assets/dashboard/library/parsley/parsley.css') ?>">
 </head>
 
 <body>

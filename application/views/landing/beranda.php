@@ -14,10 +14,10 @@
 				<div class="collapse navbar-collapse" id="navb">
 					<ul class="navbar-nav ml-auto mr-3">
 						<li class="nav-item mx-md-2">
-							<a href="<?= base_url('beranda')?>" class="nav-link">Beranda</a>
+							<a href="<?= base_url('beranda')?>" class="nav-link active">Beranda</a>
 						</li>
 						<li class="nav-item mx-md-2">
-							<a href="<?= base_url('profil')?>" class="nav-link active">Profil</a>
+							<a href="<?= base_url('profil')?>" class="nav-link">Profil</a>
 						</li>
 						<li class="nav-item mx-md-2">
 							<a href="<?= base_url('ptsp')?>" class="nav-link">Layanan PTSP</a>

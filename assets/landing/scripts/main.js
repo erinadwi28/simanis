@@ -30,3 +30,11 @@ $(function () {
 	})
 });
 
+// Pengaduan
+$('#form_pengaduan').parsley();
+
+// Masuk
+$('#form_masuk').parsley();
+
+
+

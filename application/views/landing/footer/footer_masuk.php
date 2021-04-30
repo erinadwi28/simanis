@@ -2,6 +2,8 @@
     <script src="<?= base_url('assets/landing/libraries/bootstrap/js/bootstrap.js') ?>"></script>
     <!-- <script src="<?= base_url('assets/landing/libraries/retina/retina.min.js') ?>"></script> -->
     <script src="<?= base_url('assets/landing/libraries/owl_carousel/dist/owl.carousel.min.js') ?>"></script>
+    <!-- Parsley -->
+    <script src="<?= base_url('assets/dashboard/library/parsley/parsley.js') ?>"></script>
     <script src="<?= base_url('assets/landing/scripts/main.js') ?>"></script>
 
     <!--google recaptcha-->
