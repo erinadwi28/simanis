@@ -23,11 +23,11 @@
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
 						<ol type="1" class="ml-0 list-syarat">
-						<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+							<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
 							<li>Pemohon Mengunggah Proposal yang telah dilampiri :<br></li>
 							<ol type="a" class="ml-0 list-syarat">
 							<li>Surat Permohonan yang ditujukan Kepala Kemenag Kab. Klaten</li>
-							<li>Untuk bantuan fisik maka wajib dilampiri (fotocopy dertifikat tanah wakaf/hak milik yayasan bukan atas nama pribadi)</li>
+							<li>Untuk bantuan fisik maka wajib dilampiri (fotocopy sertifikat tanah wakaf/hak milik yayasan bukan atas nama pribadi)</li>
 							(Format: PDF, Ukuran: Max 1 MB)
 							</ol>
 							<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.

@@ -38,10 +38,19 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="tgl_surat_permohonan" class="col-sm-3 col-form-label">Tgl. Surat Permohonan</label>
+							<label for="no_srt_permohonan" class="col-sm-3 col-form-label">No. Surat Takmir Masjid</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="date" class="form-control" id="tgl_surat_permohonan" name="tgl_surat_permohonan" value="" required>
+									<input type="text" class="form-control" id="no_srt_permohonan" name="no_srt_permohonan"
+									value="" placeholder="masukkan no surat takmir disini...">
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="tgl_srt_permohonan" class="col-sm-3 col-form-label">Tgl. Surat Permohonan</label>
+							<div class="col-sm-9">
+								<div class="form-line focused">
+									<input type="date" class="form-control" id="tgl_srt_permohonan" name="tgl_srt_permohonan" value="" required>
 								</div>
 							</div>
 						</div>
@@ -69,6 +78,15 @@
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="no_id_masjid" name="no_id_masjid" value=""
 										placeholder="masukkan no ID masjid disini..." required>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="tujuan_rekomendasi_bantuan" class="col-sm-3 col-form-label">Tujuan Rekomendasi Bantuan</label>
+							<div class="col-sm-9">
+								<div class="form-line focused">
+									<input type="text" class="form-control" id="tujuan_rekomendasi_bantuan" name="tujuan_rekomendasi_bantuan"
+										value="" placeholder="masukkan tujuan disini..." required>
 								</div>
 							</div>
 						</div>
@@ -117,12 +135,9 @@
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
 					<ol type="1" class="ml-0 list-syarat modal-content-syarat">
-						<li>Pemohon mengunduh surat permohonan ditujukan kepada Kepala Kantor Kemenag Klaten
-							ditandatangani oleh
-							takmir masjid yang bersangkutan. Untuk mengunduh <br> <a href="#" class="klik-unduh">Klik
-								disini!</a></li>
-						<li>Pemohon mengisi surat permohonan yang telah diunduh tersebut.</li>
-						<li>Pemohon membuat proposal yang memuat:
+						<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+						<li>Pemohon mengunggah surat permohonan yang ditujukan kepada Kepala Kemenag Kab. Kalten ditandatangi oleh takmir masjid. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon mengunggah Proposal Memuat:<br></li>
 							<ol type="a">
 								<li>Surat Permohonan Bantuan ditanda tangan Lurah, Camat, Kepala KUA.</li>
 								<li>RAB.</li>
@@ -132,14 +147,12 @@
 								<li>Rekening atas nama Takmir / Panitia.</li>
 								<li>Nomor Identitas Masjid.</li>
 								<li>Surat keterangan domisili masjid.</li>
-								<li>Fotocopy sertifikat wakaf/ Ikrar wakaf/ surat keterangan dari pejabat berwenang jika
-									tanah kas.</li>
+								<li>Fotocopy sertifikat wakaf/ Ikrar wakaf/ surat keterangan dari pejabat berwenang jika tanah kas.</li>
 							</ol>
 						</li>
-						<li>Pemohon mengisi dan melengkapi form pengajuan yang telah disediakan.</li>
-						<li>Pemohon mengunggah surat permohonan dan proposal pada form pengajuan.</li>
-						<li>Pemohon menunggu informasi dari Kemenag terkait proses pengajuan permohonan dan pengambilan
-							surat yang sudah jadi.</li>
+						(Format: PDF, Ukuran: Max 10 MB)
+						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
+						</li>
 					</ol>
 				</p>
 			</div>

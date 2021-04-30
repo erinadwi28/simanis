@@ -16,6 +16,7 @@
 	<!--Begin Content Profile-->
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
+		<?php foreach ($detail_profil_saya as $detail) { ?>
 			<div class="col-xs col-sm-8">
 				<div class="card shadow mb-5">
 					<div class="card-header py-3">
@@ -24,7 +25,8 @@
 					<div class="card-body">
 						<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
 						<br>
-						<form class="form-horizontal mt-4" id="form_ptsp17" enctype="multipart/form-data" action="" method="POST">
+						<form class="form-horizontal mt-4" id="form_ptsp17" enctype="multipart/form-data" 
+							action="<?= base_url('dashboard/aksi_pengajuan_ptsp17') ?>" method="POST">
 							<div class="form-group row">
 								<label for="nama_pns" class="col-sm-3 col-form-label">Nama PNS</label>
 								<div class="col-sm-9">
@@ -50,26 +52,26 @@
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="nama_sekolah_satminkal" class="col-sm-3 col-form-label">Nama Sekolah Satminkal</label>
+								<label for="nama_sekolah_satmikal" class="col-sm-3 col-form-label">Nama Sekolah Satminkal</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="nama_sekolah_satminkal" name="nama_sekolah_satminkal" value="" placeholder="masukkan nama sekolah satminkal disini..." required>
+										<input type="text" class="form-control" id="nama_sekolah_satmikal" name="nama_sekolah_satmikal" value="" placeholder="masukkan nama sekolah satminkal disini..." required>
 									</div>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="kecamatan_sekolah_satminkal" class="col-sm-3 col-form-label">Kecamatan Sekolah Satminkal</label>
+								<label for="kecamatan_sekolah_satmikal" class="col-sm-3 col-form-label">Kecamatan Sekolah Satminkal</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="kecamatan_sekolah_satminkal" name="kecamatan_sekolah_satminkal" value="" placeholder="masukkan kecamatan sekolah satminkal disini..." required>
+										<input type="text" class="form-control" id="kecamatan_sekolah_satmikal" name="kecamatan_sekolah_satmikal" value="" placeholder="masukkan kecamatan sekolah satminkal disini..." required>
 									</div>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="kabupaten_sekolah_satminkal" class="col-sm-3 col-form-label">Kabupaten Sekolah Satminkal</label>
+								<label for="kabupaten_sekolah_satmikal" class="col-sm-3 col-form-label">Kabupaten Sekolah Satminkal</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="kabupaten_sekolah_satminkal" name="kabupaten_sekolah_satminkal" value="" placeholder="masukkan keabupaten sekolah satminkal disini..." required>
+										<input type="text" class="form-control" id="kabupaten_sekolah_satmikal" name="kabupaten_sekolah_satmikal" value="" placeholder="masukkan keabupaten sekolah satminkal disini..." required>
 									</div>
 								</div>
 							</div>
@@ -150,6 +152,7 @@
 								</div>
 							</div>
 					</div>
+				<?php } ?>
 				<div class="card-footer">
 					<div class="float-right">
 						<a href="#">
@@ -184,13 +187,15 @@
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
 				<ol type="1" class="ml-0 list-syarat modal-content-syarat">
-					<li>Pemohon Mengunduh Surat Permohonan ditujukan kepada Kepala Kantor Kemenag Klaten yang bisa di dowload <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp05/srt_permohonan.pdf" target="_blank">[di sini]</a></b></li>
-					<li>Pemohon Mengunduh Surat Pernyataan Pergi Haji Pertama Bermatrai Rp.10.000 yang bisa di dowload <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp05/srt_pernyataan.pdf" target="_blank">[di sini]</a></b></li>
-					<li>Pemohon Mengisi Surat Permohonan ditujukan kepada Kepala Kantor Kemenag Klaten.</li>
-					<li>Pemohon Mengisi Surat Pernyataan Pergi Haji Pertama Bermatrai Rp.10.000.</li>
-					<li>Pemohon Mengunggah Surat Permohonan dan Surat Pernyataan pada form pengajuan.</li>
-					<li>Pemohon Mengisi dan Menlengkapi form pengajuan yang telah disediakan.</li>
-					<li>Pemohon Menunggu Informasi dari Kemenag terkait proses pengajuan permohonan.</li>
+					<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+					<li>Pemohon mengunggah surat permohonan kepada Kepala Kantor Kemenag Kab. Klaten <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+					<li>Pemohon mengunggah surat persetujuan dari kepala sekolah satminkal dan jadwal mengajarnya. <br> (Format: PDF, Ukuran: Max 10 MB)
+					</li>
+					<li>Pemohon mengunggah surat persetujuan dari kepala sekolah sekolah yang dituju dengan menyebutkan jumlah jam mengajar dari Pengawas Pendidikan Agama <br> (Format: PDF, Ukuran: Max 10
+						MB)
+					</li>
+					<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
+					</li>
 				</ol>
 				</p>
 			</div>

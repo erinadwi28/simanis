@@ -76,18 +76,18 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="yayasan" class="col-sm-3 col-form-label">Yayasan</label>
+							<label for="nama_yayasan" class="col-sm-3 col-form-label">Nama Yayasan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="yayasan" name="yayasan" value="" placeholder="masukkan yayasan disini..." required>
+									<input type="text" class="form-control" id="nama_yayasan" name="nama_yayasan" value="" placeholder="masukkan nama yayasan disini..." required>
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="sk_menkumham" class="col-sm-3 col-form-label">SK Menkumham RI</label>
+							<label for="no_sk_menkumham_ri" class="col-sm-3 col-form-label">SK Menkumham RI</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="sk_menkumham" name="sk_menkumham" value="" placeholder="masukkan no SK PPIU/PIHK disini..." required>
+									<input type="text" class="form-control" id="no_sk_menkumham_ri" name="no_sk_menkumham_ri" value="" placeholder="masukkan no SK PPIU/PIHK disini..." required>
 								</div>
 							</div>
 						</div>
@@ -152,26 +152,28 @@
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
 					<ol type="1" class="ml-0 list-syarat modal-content-syarat">
-							<li>Pemohon Mengunggah Proposal Memuat:<br></li>
-							<ol type="a" class="ml-0 list-syarat">
-							<li>Surat Permohonan yang ditujukan Kepala Kemenag Kab. Klaten</li>
-							<li>Surat Keterangan dari Yayasan/Badan Hukum beserta FC Akta Kemenkumhamnya</li>
-							<li>Visi dan Misi</li>
-							<li>Susunan Kepengurusan</li>
-							<li>FC KTP Susunan Kepengurusan</li>
-							<li>FC KTP Guru</li>
-							<li>Kurikulum Pelajaran</li>
-							<li>Jadwal Pelajaran</li>
-							<li>Daftar Santri</li>
-							<li>Sarana Prasarana yang Di Miliki</li>
-							<li>Foto Gedung</li>
-							<li>Kegiatan dan Papan Nama</li>
-							<li>Memiliki Guru</li>
-							<li>Santri Aktif Minimal 15 Orang</li>
-							<li>Pernyataan Setia pada NKRI Bermaterai</li>
-							</ol>
-							<li>Pemohon Mengisi dan Melengkapi form pengajuan yang telah disediakan.</li>
-							<li>Pemohon Menunggu Informasi dari Kemenag terkait proses pengajuan permohonan.</li>
+						<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+						<li>Pemohon mengunggah Proposal Memuat:<br></li>
+						<ol type="a" class="ml-0 list-syarat">
+						<li>Surat Permohonan yang ditujukan Kepala Kemenag Kab. Klaten</li>
+						<li>Surat Keterangan dari Yayasan/Badan Hukum beserta FC Akta Kemenkumhamnya</li>
+						<li>Visi dan Misi</li>
+						<li>Susunan Kepengurusan</li>
+						<li>FC KTP Susunan Kepengurusan</li>
+						<li>FC KTP Guru</li>
+						<li>Kurikulum Pelajaran</li>
+						<li>Jadwal Pelajaran</li>
+						<li>Daftar Santri</li>
+						<li>Sarana Prasarana yang Di Miliki</li>
+						<li>Foto Gedung</li>
+						<li>Kegiatan dan Papan Nama</li>
+						<li>Memiliki Guru</li>
+						<li>Santri Aktif Minimal 15 Orang</li>
+						<li>Pernyataan Setia pada NKRI Bermaterai</li>
+						</ol>
+						(Format: PDF, Ukuran: Max 10 MB)
+						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
+						</li>
 					</ol>
 				</p>
 			</div>

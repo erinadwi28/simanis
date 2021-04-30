@@ -90,6 +90,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= $detail->no_surat ?></td>
 									</tr>
 								<?php } ?>
@@ -98,13 +99,15 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
-									<td><?= $detail->nama_madrasah ?></td>
+									<td> </td>
+									<td><?= $detail->nama_mtd ?></td>
 								</tr>
 								<tr>
 									<td><b>Alamat</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->alamat ?></td>
 								</tr>
 								<tr>
@@ -112,6 +115,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->desa ?></td>
 								</tr>
 								<tr>
@@ -119,6 +123,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->kecamatan ?></td>
 								</tr>
 								<tr>
@@ -126,6 +131,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->kabupaten ?></td>
 								</tr>
 								<tr>
@@ -133,6 +139,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->provinsi ?></td>
 								</tr>
 								<tr>
@@ -140,6 +147,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->tahun_berdiri ?></td>
 								</tr>
 								<?php if ($detail->nomor_statistik != null) { ?>
@@ -148,6 +156,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= $detail->nomor_statistik ?></td>
 									</tr>
 								<?php } ?>
@@ -156,6 +165,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->no_hp ?></td>
 								</tr>
 								<tr>
@@ -163,6 +173,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
 								</tr>
 
@@ -172,6 +183,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= format_indo(date($detail->tgl_persetujuan_fo)); ?></td>
 									</tr>
 								<?php } ?>
@@ -181,6 +193,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
 									</tr>
 								<?php } ?>
@@ -190,6 +203,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= format_indo(date($detail->tgl_persetujuan_kasi)); ?></td>
 									</tr>
 								<?php } ?>
@@ -199,6 +213,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
 									</tr>
 								<?php } ?>
@@ -208,13 +223,15 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= $detail->keterangan; ?></td>
 									</tr>
 								<?php } ?>
 							</tbody>
 						</table>
-						<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen
-							dibawah</em>
+						<?php if ($detail->status == 'Pending') { ?>
+							<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen dibawah</em>
+						<?php } ?>
 					</div>
 
 					<?php if ($detail->status == 'Pending') { ?>

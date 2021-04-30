@@ -34,7 +34,7 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="nama" name="nama"
-										value="<?= $detail->nama; ?>" required>
+										value="<?= $detail->nama ?>" placeholder="masukkan nama disini..." required>
 								</div>
 							</div>
 						</div>
@@ -44,7 +44,7 @@
 								<div class="form-line">
 									<input class="form-control" id="no_hp" name="no_hp" rows="1"
 										placeholder="masukkan no hp disini..." required data-parsley-type="number"
-										minlength="11" value="<?= $detail->no_hp; ?>">
+										minlength="11" value="">
 								</div>
 							</div>
 						</div>

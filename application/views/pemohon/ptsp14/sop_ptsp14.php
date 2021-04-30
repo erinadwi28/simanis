@@ -23,7 +23,7 @@
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
 						<ol type="1" class="ml-0 list-syarat">
-						<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+							<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
 							<li>Pemohon mengunggah Proposal Memuat:<br></li>
 							<ol type="a" class="ml-0 list-syarat">
 							<li>Surat Permohonan yang ditujukan Kepala Kemenag Kab. Klaten</li>

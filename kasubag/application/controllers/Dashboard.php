@@ -156,22 +156,6 @@ class Dashboard extends CI_Controller
                 $this->load->view('footer');
         }
 
-        //list data permohonan pending
-        public function detail_ptsp20()
-        {
-                $data_title['title'] = 'Detail Permohonan';
-                $data['kasubag'] = $this->db->get_where('kasubag', ['id_kasubag' =>
-                $this->session->userdata('id_kasubag')])->row_array();
-
-                $data['total_notif'] = $this->m_kasubag->jml_notif()->result();
-
-                $this->load->view('header', $data_title);
-                $this->load->view('kasubag/sidebar');
-                $this->load->view('topbar', $data);
-                $this->load->view('kasubag/ptsp20/detail_ptsp20');
-                $this->load->view('footer');
-        }
-
         //list data permohonan yang teralh disetujui
         public function list_permohonan_selesaiKasubag()
         {
@@ -201,6 +185,8 @@ class Dashboard extends CI_Controller
 
                 if ($id_layanan == 1) {
                         $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp01')->result();
+                } elseif ($id_layanan == 2) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp02')->result();
                 } elseif ($id_layanan == 3) {
                         $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp03')->result();
                 } elseif ($id_layanan == 4) {
@@ -209,6 +195,20 @@ class Dashboard extends CI_Controller
                         $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
                 } elseif ($id_layanan == 6) {
                         $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp06')->result();
+                } elseif ($id_layanan == 7) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp07')->result();
+                } elseif ($id_layanan == 8) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp08')->result();
+                } elseif ($id_layanan == 9) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp09')->result();
+                } elseif ($id_layanan == 10) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp10')->result();
+                } elseif ($id_layanan == 11) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp11')->result();
+                } elseif ($id_layanan == 12) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp12')->result();
+                } elseif ($id_layanan == 13) {
+                        $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp13')->result();
                 } elseif ($id_layanan == 14) {
                         $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp14')->result();
                 } elseif ($id_layanan == 15) {
@@ -244,6 +244,8 @@ class Dashboard extends CI_Controller
                 $this->load->view('topbar', $data);
                 if ($id_layanan == 1) {
                         $this->load->view('kasubag/ptsp1/detail_ptsp01', $data_detail);
+                } elseif ($id_layanan == 2) {
+                        $this->load->view('kasubag/ptsp2/detail_ptsp02', $data_detail);
                 } elseif ($id_layanan == 3) {
                         $this->load->view('kasubag/ptsp3/detail_ptsp03', $data_detail);
                 } elseif ($id_layanan == 4) {
@@ -434,6 +436,5 @@ class Dashboard extends CI_Controller
                         redirect('dashboard/list_permohonan_pending');
                 }
         }
-	
-
+        
 }

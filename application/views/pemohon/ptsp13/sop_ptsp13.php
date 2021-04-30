@@ -23,12 +23,12 @@
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
 						<ol type="1" class="ml-0 list-syarat">
-						<li>Pemohon mengunduh Surat Permohonan, unduh dengan <b><a
+							<li>Pemohon mengunduh Surat Permohonan, unduh dengan <b><a
 										href="https://ijopmadrasah.kemenag.go.id/swasta/pendaftaran/login"
 										target="_blank">[klik disini]</a></b></li>
-										<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
-										<li>Pemohon mengunggah surat permohonan yang diperoleh dari situs ijin operasional. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon mengunggah proposal permohonan. <br> (Format: PDF, Ukuran: Max 10 MB)
+							<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+							<li>Pemohon mengunggah surat permohonan yang diperoleh dari situs ijin operasional. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+							<li>Pemohon mengunggah proposal permohonan. <br> (Format: PDF, Ukuran: Max 10 MB) </li>
 							<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
 							</li>
 						</ol>

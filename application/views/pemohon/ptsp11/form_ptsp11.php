@@ -16,6 +16,7 @@
 	<!--Begin Content Profile-->
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
+		<?php foreach ($detail_profil_saya as $detail) { ?>
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
@@ -26,12 +27,12 @@
 							class="fas fa-info-circle"></i></button>
 					<br>
 					<form class="form-horizontal mt-4" id="form_ptsp11" enctype="multipart/form-data"
-						action="<?= base_url('dashboard/aksi_pengajuan_ptsp05') ?>" method="POST">
+						action="<?= base_url('dashboard/aksi_pengajuan_ptsp11') ?>" method="POST">
 						<div class="form-group row">
 							<label for="nama_siswa" class="col-sm-3 col-form-label">Nama</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama_siswa" name="nama_siswa" value=""
+									<input type="text" class="form-control" id="nama_siswa" name="nama_siswa" value="<?= $detail->nama ?>"
 										placeholder="masukkan nama siswa disini..." required>
 								</div>
 							</div>
@@ -47,16 +48,16 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="tanggal_lahir_siswa" class="col-sm-3 col-form-label">Tanggal lahir</label>
+							<label for="tgl_lahir_siswa" class="col-sm-3 col-form-label">Tanggal lahir</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="date" class="form-control" id="tanggal_lahir_siswa"
-										name="tanggal_lahir_siswa" value="" required>
+									<input type="date" class="form-control" id="tgl_lahir_siswa"
+										name="tgl_lahir_siswa" value="" required>
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="nisn" class="col-sm-3 col-form-label">Nisn</label>
+							<label for="nisn" class="col-sm-3 col-form-label">NISN</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="nisn" name="nisn" value=""
@@ -134,6 +135,7 @@
 							</div>
 						</div>
 				</div>
+				<?php } ?>
 				<div class="card-footer">
 					<div class="float-right">
 						<a href="#">
@@ -168,17 +170,14 @@
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
 					<ol type="1" class="ml-0 list-syarat modal-content-syarat">
-						<li>Pemohon Mengunduh Surat Permohonan ditujukan kepada Kepala Kantor Kemenag Klaten yang bisa
-							di dowload <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp05/srt_permohonan.pdf"
-									target="_blank">[di sini]</a></b></li>
-						<li>Pemohon Mengunduh Surat Pernyataan Pergi Haji Pertama Bermatrai Rp.10.000 yang bisa di
-							dowload <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp05/srt_pernyataan.pdf"
-									target="_blank">[di sini]</a></b></li>
-						<li>Pemohon Mengisi Surat Permohonan ditujukan kepada Kepala Kantor Kemenag Klaten.</li>
-						<li>Pemohon Mengisi Surat Pernyataan Pergi Haji Pertama Bermatrai Rp.10.000.</li>
-						<li>Pemohon Mengunggah Surat Permohonan dan Surat Pernyataan pada form pengajuan.</li>
-						<li>Pemohon Mengisi dan Menlengkapi form pengajuan yang telah disediakan.</li>
-						<li>Pemohon Menunggu Informasi dari Kemenag terkait proses pengajuan permohonan.</li>
+						<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+						<li>Pemohon mengunggah surat rekomendasi dari madrasah asal. <br> (Format: PDF, Ukuran: Max
+							1 MB)</li>
+						<li>Pemohon mengunggah surat penerimaan/kuota dari sekolah yang akan dituju. <br> (Format:
+							PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon mengunggah rapot terakhir. <br> (Format: PDF, Ukuran: Max 10 MB)</li>
+						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
+						</li>
 					</ol>
 				</p>
 			</div>

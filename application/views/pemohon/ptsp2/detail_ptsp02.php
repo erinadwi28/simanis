@@ -1,7 +1,7 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-	<?php foreach ($detail_ptsp as $detail) { ?>
+<?php foreach ($detail_ptsp as $detail) { ?>
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between">
 		<h3 class="judullist py-3">Detail Permohonan</h3>
@@ -30,6 +30,7 @@
 
 	<div class="row">
 		<div class="col-md-4 mb-0">
+			<!-- Upload Surat Permohonan -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
 					<center>
@@ -37,18 +38,17 @@
 					</center>
 				</div>
 
-				<!-- DISESUAIKAN BE YA -->
 				<div class="card-body">
 					<center>
-						<?php if ($detail->ijazah != 'place_holder_ijazah.png') { ?>
-						<p><?= $detail->ijazah; ?></p>
+						<?php if ($detail->srt_permohonan != null) { ?>
+						<p><?= $detail->srt_permohonan; ?></p>
 						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>assets/dashboard/pemohon/ptsp/ptsp03/<?= $detail->ijazah ?>"
+							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp02/srt_permohonan/<?= $detail->srt_permohonan ?>"
 							target="_blank">
 							<i class="fa fa-download nav-icon">
 							</i> Klik untuk melihat
 						</a>
-						<?php } elseif ($detail->ijazah == 'place_holder_ijazah.png') { ?>
+						<?php } elseif ($detail->srt_permohonan == null) { ?>
 						<p>Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
 						<?php } ?>
 					</center>
@@ -56,17 +56,18 @@
 
 				<?php if ($detail->status == 'Pending') { ?>
 				<div class="card-footer">
-					<form action="<?= base_url('dashboard/update_ijazah_ptsp01/' . $detail->id_ptsp) ?>"
-						enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp01_1">
+					<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp02/' . $detail->id_ptsp) ?>"
+						enctype="multipart/form-data" method="post" accept-charset="utf-8"
+						id="form_upload_srt_permohonan">
 						<div class="form-group">
 							<div class="input-group">
-								<div class="form-group-upload col-md-12">
+								<div class="form-group-upload">
 									<div class="custom-file">
 										<label class="custom-file-label" for="file-upload">pilih file...</label>
-										<input type="file" class="custom-file-input" id="file-upload" name="berkas"
-											value="<?= $detail->ijazah ?>" required>
+										<input type="file" class="custom-file-input" id="file-upload"
+											name="srt_permohonan" value="<?= $detail->srt_permohonan ?>">
 										<input type="hidden" class="form-control form-user-input"
-											name="id_permohonan_ptsp" id="id_permohonan_ptsp"
+											name="id_permohonan_ptsp" id="file-upload"
 											value="<?= $detail->id_permohonan_ptsp ?>">
 									</div>
 								</div>
@@ -74,7 +75,8 @@
 						</div>
 						<center>
 							<button class="btn btn-sm btn-primary" type="submit">
-								<i class="fa fa-upload"></i>
+								<i class="fa fa-upload">
+								</i>
 							</button>
 						</center>
 					</form>
@@ -91,6 +93,15 @@
 				<div class="card-body">
 					<table class="table-hover table-responsive">
 						<tbody>
+							<?php if ($detail->no_surat != null && $detail->status == 'Selesai') { ?>
+								<tr>
+									<td><b>Nomor Surat</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->no_surat ?></td>
+								</tr>
+							<?php } ?>
 							<tr>
 								<td><b>Nama</b></td>
 								<td> </td>
@@ -240,6 +251,9 @@
 							<?php } ?>
 						</tbody>
 					</table>
+					<?php if ($detail->status == 'Pending') { ?>
+						<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen dibawah</em>
+					<?php } ?>
 				</div>
 
 				<?php if ($detail->status == 'Pending') { ?>

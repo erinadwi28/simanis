@@ -94,15 +94,15 @@
 				</div>
 				<div class="card-body">
 					<center>
-						<?php if ($detail->surat_rekomendasi != null) { ?>
-						<p><?= $detail->surat_rekomendasi; ?></p>
+						<?php if ($detail->srt_rek_kua != null) { ?>
+						<p><?= $detail->srt_rek_kua; ?></p>
 						<a id="btn_upload" class="btn btn-sm btn-primary"
-							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp20/surat_rekomendasi/<?= $detail->surat_rekomendasi ?>"
+							href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp20/srt_rek_kua/<?= $detail->srt_rek_kua ?>"
 							target="_blank">
 							<i class="fa fa-download nav-icon">
 							</i> Klik untuk melihat
 						</a>
-						<?php } elseif ($detail->surat_rekomendasi == null) { ?>
+						<?php } elseif ($detail->srt_rek_kua == null) { ?>
 						<p>Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
 						<?php } ?>
 					</center>
@@ -110,16 +110,16 @@
 
 				<?php if ($detail->status == 'Pending') { ?>
 				<div class="card-footer">
-					<form action="<?= base_url('dashboard/update_surat_rekomendasi_ptsp20/' . $detail->id_ptsp) ?>"
+					<form action="<?= base_url('dashboard/update_srt_rek_kua_ptsp20/' . $detail->id_ptsp) ?>"
 						enctype="multipart/form-data" method="post" accept-charset="utf-8"
-						id="form_upload_surat_rekomendasi">
+						id="form_upload_srt_rek_kua">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="form-group-upload">
 									<div class="custom-file">
 										<label class="custom-file-label" for="file-upload-2">pilih file...</label>
 										<input type="file" class="custom-file-input" id="file-upload-2"
-											name="surat_rekomendasi" value="<?= $detail->surat_rekomendasi ?>">
+											name="srt_rek_kua" value="<?= $detail->srt_rek_kua ?>">
 										<input type="hidden" class="form-control form-user-input"
 											name="id_permohonan_ptsp" id="file-upload"
 											value="<?= $detail->id_permohonan_ptsp ?>">
@@ -147,13 +147,22 @@
 				<div class="card-body">
 					<table class="table-hover table-responsive">
 						<tbody>
+							<?php if ($detail->no_surat != null && $detail->status == 'Selesai') { ?>
+								<tr>
+									<td><b>Nomor Surat</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td><?= $detail->no_surat ?></td>
+								</tr>
+							<?php } ?>
 							<tr>
 								<td><b>Nama Majelis Taklim</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td><?= $detail->nama_majlis_taklim ?></td>
+								<td><?= $detail->nama_majelis_taklim ?></td>
 							</tr>
 							<tr>
 								<td><b>Alamat</b></td>
@@ -272,8 +281,9 @@
 							<?php } ?>
 						</tbody>
 					</table>
-					<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen
-						disamping</em>
+					<?php if ($detail->status == 'Pending') { ?>
+						<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen dibawah</em>
+					<?php } ?>
 				</div>
 
 

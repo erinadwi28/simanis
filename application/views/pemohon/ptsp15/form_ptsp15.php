@@ -28,10 +28,10 @@
 					<form class="form-horizontal mt-4" id="form_ptsp15" enctype="multipart/form-data"
 						action="<?= base_url('dashboard/aksi_pengajuan_ptsp15') ?>" method="POST">
 						<div class="form-group row">
-							<label for="Nama_madrasah" class="col-sm-3 col-form-label">Nama Madrasah</label>
+							<label for="nama_mtd" class="col-sm-3 col-form-label">Nama Madrasah</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama_madrasah" name="nama_madrasah" value="" placeholder="masukkan nama madrasah disini..." required>
+									<input type="text" class="form-control" id="nama_mtd" name="nama_mtd" value="" placeholder="masukkan nama madrasah disini..." required>
 								</div>
 							</div>
 						</div>
@@ -128,26 +128,27 @@
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
 					<ol type="1" class="ml-0 list-syarat modal-content-syarat">
-							<li>Pemohon Mengunggah Proposal Memuat:<br></li>
-							<ol type="a" class="ml-0 list-syarat">
-							<li>Surat Permohonan yang ditujukan Kepala Kemenag Kab. Klaten</li>
-							<li>Surat Keterangan dari Yayasan/Badan Hukum beserta FC Akta Kemenkumhamnya</li>
-							<li>Visi dan Misi</li>
-							<li>Susunan Kepengurusan</li>
-							<li>FC KTP Susunan Kepengurusan</li>
-							<li>FC KTP Guru</li>
-							<li>Kurikulum Pelajaran</li>
-							<li>Jadwal Pelajaran</li>
-							<li>Daftar Santri</li>
-							<li>Sarana Prasarana yang Di Miliki</li>
-							<li>Foto Gedung</li>
-							<li>Kegiatan dan Papan Nama</li>
-							<li>Memiliki Guru</li>
-							<li>Santri Aktif Minimal 15 Orang</li>
-							<li>Pernyataan Setia pada NKRI Bermaterai</li>
-							</ol>
-							<li>Pemohon Mengisi dan Melengkapi form pengajuan yang telah disediakan.</li>
-							<li>Pemohon Menunggu Informasi dari Kemenag terkait proses pengajuan permohonan.</li>
+					<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+						<li>Pemohon mengunggah proposal yang memuat:<br></li>
+						<ol type="a" class="ml-0 list-syarat">
+						<li>Surat Permohonan yang ditujukan Kepala Kemenag, Cq Kasi PD Pontren, diketahui oleh Kepala Desa setempat, dan Kepala KUA</li>
+						<li>Visi dan Misi</li>
+						<li>Susunan Kepengurusan</li>
+						<li>Kurikulum Pelajaran</li>
+						<li>Jadwal Pelajaran</li>
+						<li>Daftar Santri</li>
+						<li>Memiliki Surat Keterangan Domisili dari Kantor Kelurahan/Desa setempat</li>
+						<li>Sarana Prasarana yang Di Miliki,Foto Gedung,Kegiatan dan Papan Nama</li>
+						<li>Memiliki Guru</li>
+						<li>Memiliki Santri Aktif Minimal 15 Orang</li>
+						<li>Memiliki Tempat atau Ruang Belajar yang memadai</li>
+						<li>Ada Mata Pelajaran : Al quran dan Hadist, Sejarah Kebudayaan Islam, Ibadah, Fiqh, Bahasa Arab, Aqidah & akhlaq Praktek ibadah;</li>
+						<li>Membuat Surat Pernyataan Setia pada NKRI Bermaterai</li>
+						<li>Mencantumkan nomor yang dapat dihubungi untuk keperluan survey lapangan</li>
+						</ol>
+						(Format: PDF, Ukuran: Max 10 MB)
+						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
+						</li>
 					</ol>
 				</p>
 			</div>

@@ -233,45 +233,6 @@ class Dashboard extends CI_Controller
         $this->load->view('kepala/list_permohonan_selesai', $data_detail);
         $this->load->view('footer');
     }
-    //Detail Permohonan ptsp06
-    public function detail_ptsp06()
-    {
-        $data_title['title'] = 'Detail Permohonan';
-        $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
-        $this->session->userdata('id_kepala')])->row_array();
-
-        $this->load->view('header', $data_title);
-        $this->load->view('kepala/sidebar');
-        $this->load->view('topbar', $data);
-        $this->load->view('kepala/ptsp6/detail_ptsp06');
-        $this->load->view('footer');
-    }
-    //Detail Permohonan ptsp14
-    public function detail_ptsp14()
-    {
-        $data_title['title'] = 'Detail Permohonan';
-        $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
-        $this->session->userdata('id_kepala')])->row_array();
-
-        $this->load->view('header', $data_title);
-        $this->load->view('kepala/sidebar');
-        $this->load->view('topbar', $data);
-        $this->load->view('kepala/ptsp14/detail_ptsp14');
-        $this->load->view('footer');
-    }
-    //Detail Permohonan ptsp15
-    public function detail_ptsp15()
-    {
-        $data_title['title'] = 'Detail Permohonan';
-        $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
-        $this->session->userdata('id_kepala')])->row_array();
-
-        $this->load->view('header', $data_title);
-        $this->load->view('kepala/sidebar');
-        $this->load->view('topbar', $data);
-        $this->load->view('kepala/ptsp15/detail_ptsp15');
-        $this->load->view('footer');
-    }
 
     //menampilkan detail data permohonan dari list permohonan
     public function detail_data_permohonan($id_permohonan_ptsp, $id_layanan)
@@ -284,6 +245,8 @@ class Dashboard extends CI_Controller
 
         if ($id_layanan == 1) {
             $data_detail['detail_ptsp'] = $this->m_kepala->get_detail_ptsp($id_permohonan_ptsp, 'ptsp01')->result();
+        } elseif ($id_layanan == 2) {
+            $data_detail['detail_ptsp'] = $this->m_kepala->get_detail_ptsp($id_permohonan_ptsp, 'ptsp02')->result();
         } elseif ($id_layanan == 3) {
             $data_detail['detail_ptsp'] = $this->m_kepala->get_detail_ptsp($id_permohonan_ptsp, 'ptsp03')->result();
         } elseif ($id_layanan == 4) {
@@ -341,6 +304,8 @@ class Dashboard extends CI_Controller
         $this->load->view('topbar', $data);
         if ($id_layanan == 1) {
             $this->load->view('kepala/ptsp1/detail_ptsp01', $data_detail);
+        } elseif ($id_layanan == 2) {
+            $this->load->view('kepala/ptsp2/detail_ptsp02', $data_detail);
         } elseif ($id_layanan == 3) {
             $this->load->view('kepala/ptsp3/detail_ptsp03', $data_detail);
         } elseif ($id_layanan == 4) {

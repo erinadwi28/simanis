@@ -66,9 +66,9 @@ class M_tim_teknis extends CI_Model
     }
 
     // hitung jumlah permohonan yang sudah disetujui timteknis
-    public function jml_permohonan_selesai($sie)
+    public function permohonan_selesai_tim_teknis($sie)
     {
-        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_selesai');
+        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_selesai_tim_teknis');
         $this->db->from('permohonan_ptsp');
         $this->db->where("(id_tim_teknis != 'null')");
         $this->db->where('sie', $sie);
@@ -77,7 +77,7 @@ class M_tim_teknis extends CI_Model
         $hasil = $this->db->get();
         return $hasil;
     }
-    
+
     //get list data permohonan dengan status tertentu
     public function get_list_data_permohonan($status, $sie)
     {
@@ -92,13 +92,12 @@ class M_tim_teknis extends CI_Model
     }
 
     //get list data permohonan yang sudah disetujui timteknis
-    public function get_list_data_permohonan_selesai($sie)
+    public function get_list_data_permohonan_selesai_tim_teknis($sie)
     {
         $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
         $this->db->from('permohonan_ptsp');
         $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
         $this->db->where("(permohonan_ptsp.id_tim_teknis != 'null')");
-        $this->db->where("(permohonan_ptsp.status != 'Pending')");
         $this->db->where('permohonan_ptsp.sie', $sie);
         $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
 
@@ -144,6 +143,13 @@ class M_tim_teknis extends CI_Model
     public function update_status_permohonan($where, $data, $tabel)
     {
         $this->db->where('id_permohonan_ptsp ', $where);
+        $this->db->update($tabel, $data);
+    }
+
+    //update update_data_ptsp
+    public function update_data_ptsp($where, $data, $tabel)
+    {
+        $this->db->where('id_ptsp', $where);
         $this->db->update($tabel, $data);
     }
 }

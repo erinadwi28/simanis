@@ -26,10 +26,10 @@
 						action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp15/<?= $detail->id_permohonan_ptsp ?>"
 						method="POST">
 						<div class="form-group row">
-							<label for="nama_madrasah" class="col-sm-3 col-form-label">Nama Madrasah</label>
+							<label for="nama_mtd" class="col-sm-3 col-form-label">Nama Madrasah</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama_madrasah" name="nama_madrasah" value="<?= $detail->nama_madrasah ?>" placeholder="masukkan nama madrasah disini..." required>
+									<input type="text" class="form-control" id="nama_mtd" name="nama_mtd" value="<?= $detail->nama_mtd ?>" placeholder="masukkan nama madrasah disini..." required>
 								</div>
 							</div>
 						</div>

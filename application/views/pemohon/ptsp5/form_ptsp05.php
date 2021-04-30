@@ -27,10 +27,11 @@
 						<br>
 						<form class="form-horizontal mt-4" id="form_ptsp05" enctype="multipart/form-data" action="<?= base_url('dashboard/aksi_pengajuan_ptsp05') ?>" method="POST">
 							<div class="form-group row">
-								<label for="nama" class="col-sm-3 col-form-label">Nama Lengkap</label>
+								<label for="nama_pemohon" class="col-sm-3 col-form-label">Nama Lengkap</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="nama" name="nama" value="<?= $detail->nama; ?>" required>
+										<input type="text" class="form-control" id="nama_pemohon" name="nama_pemohon" 
+										value="<?= $detail->nama ?>" placeholder="masukkan nama disini..." required>
 									</div>
 								</div>
 							</div>
@@ -38,7 +39,7 @@
 								<label for="no_hp" class="col-sm-3 col-form-label">No. HandPhone</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="no_hp" name="no_hp" value="<?= $detail->no_hp; ?>"
+										<input type="text" class="form-control" id="no_hp" name="no_hp" value=""
 										placeholder="masukkan no hp disini..." 
 										required data-parsley-type="number" minlength="11">
 									</div>
@@ -79,19 +80,19 @@
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="tahun_hijriah" class="col-sm-3 col-form-label">Tahun Angkatan Haji Hijriah</label>
+								<label for="tahun_angkatan_haji_hijriah" class="col-sm-3 col-form-label">Tahun Angkatan Haji Hijriah</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="tahun_hijriah" name="tahun_hijriah" value="" placeholder="masukkan tahun Hijriah disini..."
+										<input type="text" class="form-control" id="tahun_angkatan_haji_hijriah" name="tahun_angkatan_haji_hijriah" value="" placeholder="masukkan tahun Hijriah disini..."
 										required data-parsley-type="number">
 									</div>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="tahun_masehi" class="col-sm-3 col-form-label">Tahun Angkatan Haji Masehi</label>
+								<label for="tahun_angkatan_haji_masehi" class="col-sm-3 col-form-label">Tahun Angkatan Haji Masehi</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="tahun_masehi" name="tahun_masehi" value="" placeholder="masukkan tahun Masehi disini..."
+										<input type="text" class="form-control" id="tahun_angkatan_haji_masehi" name="tahun_angkatan_haji_masehi" value="" placeholder="masukkan tahun Masehi disini..."
 										required data-parsley-type="number">
 									</div>
 								</div>

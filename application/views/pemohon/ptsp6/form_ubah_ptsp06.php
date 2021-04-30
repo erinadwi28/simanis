@@ -27,7 +27,7 @@
 								<label for="nama" class="col-sm-3 col-form-label">Nama Jamaah Haji</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="nama" name="nama" value="<?= $detail->nama_jamaah_haji ?>"  placeholder="masukkan nama lengkap disini..." required>
+										<input type="text" class="form-control" id="nama" name="nama" value="<?= $detail->nama ?>"  placeholder="masukkan nama lengkap disini..." required>
 									</div>
 								</div>
 							</div>
@@ -68,7 +68,7 @@
 								<label for="nama_agen" class="col-sm-3 col-form-label">Nama PPIU/PIHK</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="nama_agen" name="nama_agen" value="<?= $detail->nama_ppiu_pihk ?>" placeholder="masukkan nama PPIU/PIHK disini..." required>
+										<input type="text" class="form-control" id="nama_agen" name="nama_agen" value="<?= $detail->nama_agen ?>" placeholder="masukkan nama PPIU/PIHK disini..." required>
 									</div>
 								</div>
 							</div>
@@ -76,15 +76,15 @@
 								<label for="no_sk_agen" class="col-sm-3 col-form-label">No SK PPIU/PIHK</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="no_sk_agen" name="no_sk_agen" value="<?= $detail->no_sk_ppiu_pihk ?>" placeholder="masukkan no SK PPIU/PIHK disini..." required>
+										<input type="text" class="form-control" id="no_sk_agen" name="no_sk_agen" value="<?= $detail->no_sk_agen ?>" placeholder="masukkan no SK PPIU/PIHK disini..." required>
 									</div>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="tahun_sk_agen" class="col-sm-3 col-form-label">Tahun SK </label>
+								<label for="tahun_sk" class="col-sm-3 col-form-label">Tahun SK </label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="tahun_sk_agen" name="tahun_sk_agen" value="<?= $detail->tahun_sk ?>" placeholder="masukkan tahun SK PPIU/PIHK disini..." 
+										<input type="text" class="form-control" id="tahun_sk" name="tahun_sk" value="<?= $detail->tahun_sk ?>" placeholder="masukkan tahun SK PPIU/PIHK disini..." 
 										required data-parsley-type="number" minlength="4">
 									</div>
 								</div>

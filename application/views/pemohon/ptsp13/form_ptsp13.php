@@ -16,7 +16,7 @@
 	<!--Begin Content Profile-->
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
-
+		<?php foreach ($detail_profil_saya as $detail) { ?>
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
@@ -27,7 +27,7 @@
 							class="fas fa-info-circle"></i></button>
 					<br>
 					<form class="form-horizontal mt-4" id="form_ptsp13" enctype="multipart/form-data"
-						action="" method="POST">
+						action="<?= base_url('dashboard/aksi_pengajuan_ptsp13') ?>" method="POST">
 						<div class="form-group row">
 							<label for="nama_yayasan" class="col-sm-3 col-form-label">Nama Yayasan</label>
 							<div class="col-sm-9">
@@ -38,28 +38,28 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="no_srt_permohonan" class="col-sm-3 col-form-label">No. Surat Permohonan</label>
+							<label for="no_srt_pemohon" class="col-sm-3 col-form-label">No. Surat Permohonan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="no_srt_permohonan" name="no_srt_permohonan" value=""
+									<input type="text" class="form-control" id="no_srt_pemohon" name="no_srt_pemohon" value=""
 										placeholder="masukkan no surat permohonan disini..." required>
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="tgl_srt_permohonan" class="col-sm-3 col-form-label">Tanggal Surat Permohonan</label>
+							<label for="tgl_srt_pemohon" class="col-sm-3 col-form-label">Tanggal Surat Permohonan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="date" class="form-control" id="tgl_srt_permohonan"
-										name="tgl_srt_permohonan" value="" required>
+									<input type="date" class="form-control" id="tgl_srt_pemohon"
+										name="tgl_srt_pemohon" value="" required>
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="hal_srt_permohonan" class="col-sm-3 col-form-label">Hal Surat Permohonan</label>
+							<label for="hal_srt_pemohon" class="col-sm-3 col-form-label">Hal Surat Permohonan</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="hal_srt_permohonan" name="hal_srt_permohonan" value=""
+									<input type="text" class="form-control" id="hal_srt_pemohon" name="hal_srt_pemohon" value=""
 										placeholder="masukkan hal surat permohonan disini..." required>
 								</div>
 							</div>
@@ -112,6 +112,7 @@
 							</div>
 						</div>
 				</div>
+				<?php } ?>
 				<div class="card-footer">
 					<div class="float-right">
 						<a href="#">
@@ -146,26 +147,14 @@
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
 					<ol type="1" class="ml-0 list-syarat modal-content-syarat">
-						<li>Pemohon Mengunggah Proposal Memuat:<br></li>
-						<ol type="a" class="ml-0 list-syarat">
-							<li>Surat Permohonan yang ditujukan Kepala Kemenag Kab. Klaten</li>
-							<li>Surat Keterangan dari Yayasan/Badan Hukum beserta FC Akta Kemenkumhamnya</li>
-							<li>Visi dan Misi</li>
-							<li>Susunan Kepengurusan</li>
-							<li>FC KTP Susunan Kepengurusan</li>
-							<li>FC KTP Guru</li>
-							<li>Kurikulum Pelajaran</li>
-							<li>Jadwal Pelajaran</li>
-							<li>Daftar Santri</li>
-							<li>Sarana Prasarana yang Di Miliki</li>
-							<li>Foto Gedung</li>
-							<li>Kegiatan dan Papan Nama</li>
-							<li>Memiliki Guru</li>
-							<li>Santri Aktif Minimal 15 Orang</li>
-							<li>Pernyataan Setia pada NKRI Bermaterai</li>
-						</ol>
-						<li>Pemohon Mengisi dan Melengkapi form pengajuan yang telah disediakan.</li>
-						<li>Pemohon Menunggu Informasi dari Kemenag terkait proses pengajuan permohonan.</li>
+						<li>Pemohon mengunduh Surat Permohonan, unduh dengan <b><a
+									href="https://ijopmadrasah.kemenag.go.id/swasta/pendaftaran/login"
+									target="_blank">[klik disini]</a></b></li>
+						<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+						<li>Pemohon mengunggah surat permohonan yang diperoleh dari situs ijin operasional. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon mengunggah proposal permohonan. <br> (Format: PDF, Ukuran: Max 10 MB) </li>
+						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
+						</li>
 					</ol>
 				</p>
 			</div>

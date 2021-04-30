@@ -33,7 +33,17 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="pemohon" name="pemohon"
-										value="" placeholder="masukkan nama disini..." required>
+										value="<?= $detail->nama ?>" placeholder="masukkan nama disini..." required>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="no_hp" class="col-sm-3 col-form-label">No. Handphone</label>
+							<div class="col-sm-9">
+								<div class="form-line focused">
+									<input type="text" class="form-control" id="no_hp" name="no_hp" value=""
+										placeholder="masukkan no handphone disini..." required data-parsley-type="number"
+										minlength="11">
 								</div>
 							</div>
 						</div>
@@ -55,6 +65,16 @@
 									<input type="text" class="form-control" id="no_srt_permohonan"
 										name="no_srt_permohonan" value=""
 										placeholder="masukkan nomor surat permohonan disini..." required>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="nama_acara" class="col-sm-3 col-form-label">Nama Acara</label>
+							<div class="col-sm-9">
+								<div class="form-line focused">
+									<input type="text" class="form-control" id="nama_acara"
+										name="nama_acara" value=""
+										placeholder="masukkan nama acara disini..." required>
 								</div>
 							</div>
 						</div>
@@ -106,12 +126,13 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="jml_petugas_doa" class="col-sm-3 col-form-label">Jumlah Petugas Do'a</label>
+							<label for="Jml_petugas_doa" class="col-sm-3 col-form-label">Jumlah Petugas Do'a</label>
 							<div class="col-sm-9">
 								<div class="form-line">
-									<input type="number" min="1" max="5" class="form-control" id="jml_petugas_doa"
-										name="jml_petugas_doa" rows="1"
-										placeholder="masukkan jumlah petugas disini..." required data-parsley-type="number" value="">
+									<input type="text" min="1" max="5" class="form-control" id="Jml_petugas_doa"
+										name="Jml_petugas_doa" rows="1" value=""
+										placeholder="masukkan jumlah petugas disini..." required data-parsley-type="number">
+
 								</div>
 							</div>
 						</div>
