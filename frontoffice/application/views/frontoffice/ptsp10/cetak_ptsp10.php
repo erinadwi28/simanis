@@ -16,7 +16,9 @@
 
 	<!-- Custom fonts for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/vendor/fontawesome-free/css/all.min.css') ?>" />
-	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+		rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
@@ -129,6 +131,22 @@
 			margin-left: 15px;
 		}
 
+		.img {
+			padding-top: 10px;
+		}
+
+		.img img {
+			padding-left: 10px;
+		}
+
+		.garis {
+			border: 2px;
+			border-style: solid;
+			color: #000000 !important;
+			margin-top: 5px;
+			margin-right: 17px;
+		}
+
 		.ttd_surat {
 			font-size: 11pt;
 			margin-left: 400px;
@@ -150,79 +168,105 @@
 					<div class="card-body">
 						<?php
 						foreach ($detail_ptsp as $detail) { ?>
-							<div class="kopsurat row">
-								<div class="col-md-12 mb-3">
-									<object data="" type="image">
-										<img class="img-fluid" alt="logo_kop_surat"
-											src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
-									</object>
-								</div>
-							</div>
-							<div class="no_surat">
-								<center>
-									<p><b>REKOMENDASI </b><br>
-										Nomor: <?= $detail->no_surat ?>
-									</p>
-								</center>
-							</div>
-							<div class="isi_surat">
-								<p> Assalamu'alaikum Wr. Wb.
+						<!-- KOP SURAT -->
+						<center>
+							<table width="530">
+								<tr>
+									<td></td>
+									<td class="img">
+										<center>
+											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
+												width="100" height="100">
+										</center>
+									</td>
+									<td width="400" style="padding-left: 10px;">
+										<center>
+											<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
+											<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
+											<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
+											<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
+											<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
+											<br>
+										</center>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3">
+										<div class="garis"></div>
+									</td>
+								</tr>
+							</table>
+						</center>
+						<div class="no_surat">
+							<center>
+								<p><b>REKOMENDASI </b><br>
+									Nomor: <?= $detail->no_surat ?>
 								</p>
-							</div>
-							<div class="isi_surat paragraf">
-								<p>Berdasarkan permohonan dari Saudara <?= $detail->nama_pemohon ?> selaku Pimpinan PT <?= $detail->nama_pt ?> perihal
-									Rekomendasi Perpanjang Izin Operasional Kantor Cabang PPIU. Setelah dilakukan peninjauan terhadap Kantor
-									Cabang PT <?= $detail->nama_pt ?> yang berdomisili di <?= $detail->domisili_kantor_cabang ?> maka Kepala Kantor Kementerian Agama Kab. Klaten dengan ini
-									memberikan rekomendasi kepada:
-								</p>
-							</div>
+							</center>
+						</div>
+						<div class="isi_surat">
+							<p> Assalamu'alaikum Wr. Wb.
+							</p>
+						</div>
+						<div class="isi_surat">
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Berdasarkan permohonan dari Saudara <?= $detail->nama_pemohon ?> selaku Pimpinan PT
+								<?= $detail->nama_pt ?> perihal
+								Rekomendasi Perpanjang Izin Operasional Kantor Cabang PPIU. Setelah dilakukan peninjauan
+								terhadap Kantor
+								Cabang PT <?= $detail->nama_pt ?> yang berdomisili di
+								<?= $detail->domisili_kantor_cabang ?> maka Kepala Kantor Kementerian Agama Kab. Klaten
+								dengan ini
+								memberikan rekomendasi kepada:
+							</p>
+						</div>
 
-							<div class="isi_surat identitas">
-								<table>
-									<tbody>
-										<tr>
-											<td>Nama Kantor Cabang</td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td><?= $detail->nama_kantor_cabang ?></td>
-										</tr>
-										<tr>
-											<td>Alamat Kantor Cabang</td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td><?= $detail->alamat_kantor_cabang ?></td>
-										</tr>
-									</tbody>
-								</table>
+						<div class="isi_surat identitas">
+							<table>
+								<tbody>
+									<tr>
+										<td>Nama Kantor Cabang</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->nama_kantor_cabang ?></td>
+									</tr>
+									<tr>
+										<td>Alamat Kantor Cabang</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->alamat_kantor_cabang ?></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="isi_surat">
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rekomendasi ini dibuat untuk menjadi pertimbangan Perpanjangan Izin Operasional Kantor
+								Cabang PPIU sebagai Penyelenggara
+								Perjalanan Ibadah Umrah di Kabupaten Klaten.
+							</p>
+						</div>
+						<div class="isi_surat">
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demikian rekomendasi ini kami buat untuk dipergunakan sebagaimana mestinya.
+							</p>
+						</div>
+						<div class="isi_surat">
+							<p>Wassalamu'alaikum Wr. Wb.
+							</p>
+						</div>
+						<div class="row">
+							<div class="col-md-9">
 							</div>
-							<div class="isi_surat paragraf">
-								<p>Rekomendasi ini dibuat untuk menjadi pertimbangan Perpanjangan Izin Operasional Kantor Cabang PPIU sebagai Penyelenggara
-									Perjalanan Ibadah Umrah di Kabupaten Klaten.
-								</p>
-							</div>
-							<div class="isi_surat paragraf">
-								<p>Demikian rekomendasi ini kami buat untuk dipergunakan sebagaimana mestinya.
-								</p>
-							</div>
-							<div class="isi_surat">
-								<p>Wassalamu'alaikum Wr. Wb.
-								</p>
-							</div>
-							<div class="row">
-								<div class="col-md-9">
+							<div class="col-md-3">
+								<div class="ttd_surat">
+									<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+									Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
+									Kepala
 								</div>
-								<div class="col-md-3">
-									<div class="ttd_surat">
-										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-										Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
-										Kepala
-									</div>
-								</div>
 							</div>
+						</div>
 						<?php } ?>
 						<br> <br> <br> <br>
 						<div class="row">
