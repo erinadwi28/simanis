@@ -31,16 +31,16 @@
 
 		table tr .text2 {
 			text-align: right;
-			font-size: 13px;
+			font-size: 11pt;
 		}
 
 		table tr .text {
 			text-align: center;
-			font-size: 13px;
+			font-size: 11pt;
 		}
 
 		table tr td {
-			font-size: 13px;
+			font-size: 11pt;
 		}
 
 		.logosurat {
@@ -73,27 +73,27 @@
 		}
 
 		.row {
-			font-size: 12pt;
+			font-size: 11pt;
 		}
 
 		.no_surat {
-			font-size: 12pt;
+			font-size: 11pt;
 		}
 
 		.tujuan_surat {
-			font-size: 12pt;
+			font-size: 11pt;
 		}
 
 		.paragraf {
 			/* text-indent: 2.8125em; */
 			text-align: justify;
 			text-indent: 50px;
-			font-size: 12pt;
+			font-size: 11pt;
 		}
 
 		.isi_surat {
 			margin-left: 0.0375em;
-			font-size: 12pt;
+			font-size: 11pt;
 			line-height: 1.5em;
 			text-align: justify;
 		}
@@ -304,7 +304,7 @@
 		<br>
 		<table width="500">
 			<tr>
-				<td width="430"><br><br><br><br></td>
+				<td width="400"><br><br><br><br></td>
 				<td class="text" align="center">Kepala<br><br><br><br>Arif Solikhin</td>
 			</tr>
 		</table>

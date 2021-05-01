@@ -14,58 +14,179 @@
 	<!--Tittle Icon-->
 	<link rel="shortcut icon" href="<?= base_url('../assets/landing/images/') ?>title.png" />
 
-	<!-- Custom fonts for this template-->
-	<link rel="stylesheet" href="<?= base_url('../assets/vendor/fontawesome-free/css/all.min.css') ?>" />
-	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
-	
-	<style type="text/css">
+	<style>
+		.body {
+			color: #000000;
+			font-family: Calibri, Helvetica, Arial, sans-serif;
+		}
+
 		table {
 			border-style: double;
 			border-width: 3px;
 			border-color: white;
-		}
-		table tr .text2 {
-			font-family: 'Arial';
-			text-align: right;
-			font-size: 13px;
-		}
-		table tr .text {
-			font-family: 'Arial';
-			text-align: center;
-			font-size: 13px;
-		}
-		table tr td {
-			font-family: 'Arial';
-			font-size: 13px;
-		}
-		table ol li {
-			font-family: 'Arial';
-			font-size: 13px;
+			color: #000000;
 		}
 
+		table tr .text2 {
+			text-align: right;
+			font-size: 11pt;
+		}
+
+		table tr .text {
+			text-align: center;
+			font-size: 11pt;
+		}
+
+		table tr td {
+			font-size: 11pt;
+		}
+
+		.logosurat {
+			height: 130px;
+			width: 130px;
+			margin-top: -20px;
+			margin-left: 15px;
+		}
+
+		.kopsurat p {
+			font-weight: bold;
+			line-height: 1em;
+		}
+
+		/* 
+		.card-body {
+			padding: 5rem;
+		} */
+
+		.badan_surat {
+			color: #000;
+		}
+
+		.badan_surat .row {
+			color: #000;
+		}
+
+		.badan_surat {
+			margin-left: 60px;
+		}
+
+		.row {
+			font-size: 11pt;
+		}
+
+		.no_surat {
+			font-size: 11pt;
+		}
+
+		.tujuan_surat {
+			font-size: 11pt;
+		}
+
+		.paragraf {
+			/* text-indent: 2.8125em; */
+			text-align: justify;
+			text-indent: 50px;
+			font-size: 11pt;
+		}
+
+		.isi_surat {
+			margin-left: 0.0375em;
+			font-size: 11pt;
+			line-height: 1.5em;
+			text-align: justify;
+		}
+
+		.identitas {
+			margin-left: 2.8125em;
+			margin-bottom: 0.3125em;
+		}
+
+		.img_ttd {
+			width: 200px;
+			margin-right: 110px;
+		}
+
+		.ttd_kepala {
+			display: block;
+			position: absolute;
+			float: left;
+			margin-right: -400px;
+		}
+
+		.img-fluid {
+			max-width: 100%;
+			height: auto;
+		}
+
+		.container-fluid {
+			width: 100%;
+			padding-right: 0.75rem;
+			padding-left: 0.75rem;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		/* .bawah {
+			display: block;
+			position: absolute;
+			float: right;
+			margin-right: 160px;
+		} */
+
+		.kepala {
+			display: block;
+			position: absolute;
+			float: left;
+			margin-top: 200px;
+			margin-right: -500px;
+		}
+
+		.img {
+			padding-top: 37px;
+		}
+
+		.img img {
+			padding-left: 10px;
+		}
+
+		.garis {
+			border: 2px;
+			border-style: solid;
+			color: #000000 !important;
+		}
+		
 	</style>
 </head>
+
 <body>
 	<center>
-	
-	<?php foreach ($detail_ptsp as $detail) { ?>
+
+		<?php foreach ($detail_ptsp as $detail) { ?>
 		<table width="530">
 			<tr>
-				<td><img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>" width="80" height="80"></td>
-				<td>
-				<center>
-					<font size="4"><b>KEMENTRIAN AGAMA REPUBLIK INDONESIA</b></font><br>
-					<font size="3">KANTOR KEMENTRIAN AGAMA KABUPATEN KLATEN</font><br>
-					<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
-					<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
-					<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
-				</center>
+				<td></td>
+				<td class="img">
+					<center>
+						<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
+						width="110" height="110">
+					</center>
+				</td>
+				<td width="400">
+					<center>
+						<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
+						<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
+						<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
+						<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
+						<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
+					</center>
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2"><hr></td>
+				<td colspan="3">
+					<div class="garis"></div>
+				</td>
 			</tr>
 			<table width="530">
 				<tr>
@@ -180,11 +301,12 @@
 		       </td>
 		    </tr>
 		</table>
-		<br>
+		<br><br>
 		<table width="500">
 			<tr>
-				<td width="430"><br><br><br><br></td>
-				<td class="text" align="center">Kepala<br><br><br><br>Arif Solikhin</td>
+				<td width="300"><br><br><br><br></td>
+				<td class="text" align="center">Kepala Kantor Kementrian Agama <br> Kabupaten Klaten<br><br><br><br><br>
+					<u style = "color: #000000;">Drs.H.Masmin Afif,M.Ag</u><br>NIP.196706131994031002</td>
 			</tr>
 	     </table>
 	</center>
