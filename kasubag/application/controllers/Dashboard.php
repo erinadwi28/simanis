@@ -184,6 +184,7 @@ class Dashboard extends CI_Controller
                 $data_detail['detail_permohonan'] = $this->m_kasubag->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
 
                 if ($id_layanan == 1) {
+                        $data_detail['data_petugas_doa'] = $this->m_kasubag->data_petugas_doa($id_permohonan_ptsp)->result();
                         $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp01')->result();
                 } elseif ($id_layanan == 2) {
                         $data_detail['detail_ptsp'] = $this->m_kasubag->get_detail_ptsp($id_permohonan_ptsp, 'ptsp02')->result();
@@ -436,5 +437,4 @@ class Dashboard extends CI_Controller
                         redirect('dashboard/list_permohonan_pending');
                 }
         }
-        
 }

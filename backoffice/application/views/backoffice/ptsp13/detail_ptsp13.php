@@ -96,12 +96,12 @@
 						</div>
 					</div>
 				<?php } ?>
-				<!-- BeritaAcara Verifikasi Lapangan -->
+				<!-- Berita Acara Verifikasi Lapangan -->
 				<?php if ($detail->berita_acara_verifikasi_lap != null) { ?>
 					<div class="card shadow mb-4">
 						<div class="card-header">
 							<center>
-								<h6 class="m-0 font-weight-bold">BeritaAcara Verifikasi Lapangan</h6>
+								<h6 class="m-0 font-weight-bold">Berita Acara Verifikasi Lapangan</h6>
 							</center>
 						</div>
 

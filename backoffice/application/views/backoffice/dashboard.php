@@ -82,7 +82,7 @@
 		</div>
 
 		<!-- Data Permohonan Proses Kasi-->
-		<div class="col-xl-3 col-md-3 mb-3">
+		<!-- <div class="col-xl-3 col-md-3 mb-3">
 			<div class="card border-left-primary shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
@@ -107,7 +107,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </div>
 <!-- /.container-fluid -->
