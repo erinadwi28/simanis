@@ -31,6 +31,7 @@ class Dashboard extends CI_Controller
                 $data_permohonan['permohonan_prosesKasi'] = $this->m_fo->jml_permohonan_prosesKasi()->result();
                 $data_permohonan['permohonan_prosesKasubag'] = $this->m_fo->jml_permohonan_prosesKasubag()->result();
                 $data_permohonan['permohonan_selesai'] = $this->m_fo->jml_permohonan_selesai()->result();
+                $data_permohonan['permohonan_arsip'] = $this->m_fo->jml_permohonan_arsip()->result();
 
                 $this->load->view('header', $data_title);
                 $this->load->view('frontoffice/sidebar_fo', $data);
@@ -271,6 +272,23 @@ class Dashboard extends CI_Controller
                 $this->load->view('frontoffice/sidebar_fo');
                 $this->load->view('topbar', $data);
                 $this->load->view('frontoffice/list_permohonan_selesai', $data_detail);
+                $this->load->view('footer');
+        }
+
+        //list permohonan arsip
+        public function list_permohonan_arsip()
+        {
+                $data_title['title'] = 'Arsip Data Permohonan';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan_arsip('Selesai' , 1)->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/list_permohonan_arsip', $data_detail);
                 $this->load->view('footer');
         }
 
@@ -1129,6 +1147,11 @@ class Dashboard extends CI_Controller
 
         public function cetak_ptsp($id_permohonan_ptsp, $id_layanan)
         {
+                $data_permohonan = array(
+                        'status_cetak' => 1
+                    );
+                $this->m_fo->tambah_permohonan($data_permohonan,$id_permohonan_ptsp);
+
                 $data_detail['detail_permohonan'] = $this->m_fo->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
 
                 if ($id_layanan == 1) {

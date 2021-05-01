@@ -30,7 +30,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-primary">
-								Permohonan Masuk</div>
+								Masuk</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($total_notif as $total_notif) { ?>
@@ -51,60 +51,6 @@
 				</div>
 			</div>
 		</div>
-		<!-- Data Pending-->
-		<div class="col-xl-3 col-md-3 mb-3">
-			<div class="card border-left-danger shadow-lg">
-				<div class="card-body px-3">
-					<div class="row no-gutters align-items-center">
-						<div class="col mr-0">
-							<div class="h6 text-danger">
-								Permohonan Pending</div>
-							<div class="h4 mb-0 text-gray-800">
-								<?php
-								foreach ($permohonan_pending as $pending) { ?>
-									<?= $pending->permohonan_pending; ?>
-								<?php } ?>
-							</div>
-						</div>
-						<div class="col-auto">
-							<i class="fas fa-clock fa-2x text-gray-300"></i>
-						</div>
-					</div>
-					<div class="row mt-1">
-						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_permohonan_pending') ?>" class="badge badge-danger float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Data Selesai FO-->
-		<div class="col-xl-3 col-md-3 mb-3">
-			<div class="card border-left-warning shadow-lg">
-				<div class="card-body px-3">
-					<div class="row no-gutters align-items-center">
-						<div class="col mr-0">
-							<div class="h6 text-warning">
-								Permohonan Selesai FO</div>
-							<div class="h4 mb-0 text-gray-800">
-								<?php
-								foreach ($permohonan_selesaiFO as $selesaiFO) { ?>
-									<?= $selesaiFO->permohonan_selesaiFO; ?>
-								<?php } ?>
-							</div>
-						</div>
-						<div class="col-auto">
-							<i class="fas fa-check fa-2x text-gray-300"></i>
-						</div>
-					</div>
-					<div class="row mt-1">
-						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_permohonan_selesaiFO') ?>" class="badge badge-warning float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 		<!-- Data Proses BO -->
 		<div class="col-xl-3 col-md-3 mb-3">
 			<div class="card border-left-primary shadow-lg">
@@ -112,7 +58,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-primary">
-								Permohonan Proses BO</div>
+								Proses BO</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($permohonan_prosesBO as $prosesBO) { ?>
@@ -133,8 +79,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="row">
 		<!-- Data Proses Kasi-->
 		<div class="col-xl-3 col-md-3 mb-3">
 			<div class="card border-left-primary shadow-lg">
@@ -142,7 +86,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-primary">
-								Permohonan Proses Kasi</div>
+								Proses Kasi</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($permohonan_prosesKasi as $prosesKasi) { ?>
@@ -170,7 +114,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-primary">
-								Permohonan Proses Kasubag</div>
+								Proses Kasubag</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($permohonan_prosesKasubag as $prosesKasubag) { ?>
@@ -191,7 +135,37 @@
 				</div>
 			</div>
 		</div>
-
+	</div>
+	<div class="row">
+		
+		
+		<!-- Data Pending-->
+		<div class="col-xl-3 col-md-3 mb-3">
+			<div class="card border-left-danger shadow-lg">
+				<div class="card-body px-3">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-0">
+							<div class="h6 text-danger">
+								Pending</div>
+							<div class="h4 mb-0 text-gray-800">
+								<?php
+								foreach ($permohonan_pending as $pending) { ?>
+									<?= $pending->permohonan_pending; ?>
+								<?php } ?>
+							</div>
+						</div>
+						<div class="col-auto">
+							<i class="fas fa-clock fa-2x text-gray-300"></i>
+						</div>
+					</div>
+					<div class="row mt-1">
+						<div class="col-md-12">
+							<a href="<?= base_url('dashboard/list_permohonan_pending') ?>" class="badge badge-danger float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<!-- Permohonan Selesai-->
 		<div class="col-xl-3 col-md-3 mb-3">
 			<div class="card border-left-info shadow-lg">
@@ -199,7 +173,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-info">
-								Permohonan Selesai</div>
+								Selesai Validasi</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($permohonan_selesai as $selesai) { ?>
@@ -221,18 +195,18 @@
 			</div>
 		</div>
 		
-		<!-- Permohonan Dicetak-->
+		<!-- Permohonan Arsip-->
 		<div class="col-xl-3 col-md-3 mb-3">
 			<div class="card border-left-success shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-success">
-								Permohonan Dicetak</div>
+								Arsip Permohonan</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
-								foreach ($permohonan_selesai as $selesai) { ?>
-									<?= $selesai->permohonan_selesai; ?>
+								foreach ($permohonan_arsip as $arsip) { ?>
+									<?= $arsip->permohonan_arsip; ?>
 								<?php } ?>
 							</div>
 						</div>
@@ -242,13 +216,42 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_permohonan_selesai') ?>" class="badge badge-success float-right"><i class="far fa-eye nav-icon"></i>
+							<a href="<?= base_url('dashboard/list_permohonan_arsip') ?>" class="badge badge-success float-right"><i class="far fa-eye nav-icon"></i>
 								Lihat</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<!-- Data Selesai FO-->
+		<!-- <div class="col-xl-3 col-md-3 mb-3">
+			<div class="card border-left-warning shadow-lg">
+				<div class="card-body px-3">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-0">
+							<div class="h6 text-warning">
+								Permohonan Selesai FO</div>
+							<div class="h4 mb-0 text-gray-800">
+								<?php
+								foreach ($permohonan_selesaiFO as $selesaiFO) { ?>
+									<?= $selesaiFO->permohonan_selesaiFO; ?>
+								<?php } ?>
+							</div>
+						</div>
+						<div class="col-auto">
+							<i class="fas fa-check fa-2x text-gray-300"></i>
+						</div>
+					</div>
+					<div class="row mt-1">
+						<div class="col-md-12">
+							<a href="<?= base_url('dashboard/list_permohonan_selesaiFO') ?>" class="badge badge-warning float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+
 	</div>
 
 </div>

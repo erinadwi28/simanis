@@ -49,6 +49,15 @@
 								</div>
 							</div>
 							<div class="form-group row">
+								<label for="jenis_kelamin" class="col-sm-3 col-form-label">Jenis Kelamin</label>
+								<div class="col-sm-9">
+									<div class="form-line focused">
+										<input type="text" class="form-control" id="jenis_kelamin" name="jenis_kelamin" value="<?= $detail->jenis_kelamin ?>"
+											placeholder="masukkan jenis kelamin disini..." required>
+									</div>
+								</div>
+							</div>
+							<div class="form-group row">
 								<label for="nisn" class="col-sm-3 col-form-label">NISN</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">

@@ -109,6 +109,20 @@ class M_fo extends CI_Model
         return $hasil;
     }
 
+    // hitung jumlah permohonan yang sudah disetujui fo
+    public function jml_permohonan_arsip()
+    {
+        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_arsip');
+        $this->db->from('permohonan_ptsp');
+        $this->db->where("(id_fo != 'null')");
+        $this->db->where("(status = 'Selesai')");
+        $this->db->where('status_delete', 0);
+        $this->db->where('status_cetak', 1);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
     // get data detail profil saya
     public function get_detail_profil_saya($detailhere, $tabel)
     {
@@ -140,6 +154,19 @@ class M_fo extends CI_Model
     }
 
     //get list data permohonan dengan status tertentu
+    public function get_list_data_permohonan_arsip($status , $cetak)
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->where('permohonan_ptsp.status', $status);
+        $this->db->where('permohonan_ptsp.status_cetak', $cetak);
+        $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
+
+        return $this->db->get();
+    }
+
+    //get list data permohonan dengan status tertentu 
     public function get_list_data_permohonan($status)
     {
         $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
@@ -245,5 +272,12 @@ class M_fo extends CI_Model
 
         $hasil = $this->db->get();
         return $hasil;
+    }
+
+    // aksi tambah data permohonan
+    public function tambah_permohonan($data_permohonan, $id_permohonan_ptsp)
+    {
+        $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp);
+        $this->db->update('permohonan_ptsp', $data_permohonan);
     }
 }

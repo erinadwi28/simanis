@@ -2,7 +2,7 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4 judullist">
         <h3>Form Keterangan Revisi Permohonan</h3>
-        <a href="">
+        <a href="<?= base_url() ?>dashboard/detail_data_permohonan/<?= $id_permohonan_ptsp['id_permohonan_ptsp']; ?>/<?= $id_permohonan_ptsp['id_layanan']; ?>">
             <button id="btn_kembali" class="btn btn-sm btn-warning" type="">
                 <i class="fa fa-arrow-left">
                 </i> Kembali
