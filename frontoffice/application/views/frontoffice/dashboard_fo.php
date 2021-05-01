@@ -30,7 +30,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-primary">
-								Permohonan Masuk</div>
+								Masuk</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($total_notif as $total_notif) { ?>
@@ -174,7 +174,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-danger">
-								Permohonan Pending</div>
+								Pending</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($permohonan_pending as $pending) { ?>
