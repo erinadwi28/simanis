@@ -156,7 +156,6 @@
 			border-style: solid;
 			color: #000000 !important;
 		}
-		
 	</style>
 </head>
 
@@ -164,133 +163,132 @@
 	<center>
 
 		<?php foreach ($detail_ptsp as $detail) { ?>
-		<table width="530">
-			<tr>
-				<td></td>
-				<td class="img">
-					<center>
-						<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
-						width="110" height="110">
-					</center>
-				</td>
-				<td width="400">
-					<center>
-						<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
-						<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
-						<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
-						<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
-						<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
-					</center>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="3">
-					<div class="garis"></div>
-				</td>
-			</tr>
 			<table width="530">
 				<tr>
-					<td class="text2"><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
+					<td></td>
+					<td class="img">
+						<center>
+							<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>" width="110" height="110">
+						</center>
+					</td>
+					<td width="400">
+						<center>
+							<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
+							<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
+							<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
+							<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
+							<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
+						</center>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<div class="garis"></div>
+					</td>
+				</tr>
+				<table width="530">
+					<tr>
+						<td class="text2"><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
+					</tr>
+				</table>
+			</table>
+
+			<table>
+				<tr class="text2">
+					<td width="40">Nomer</td>
+					<td>: <?= $detail->no_surat ?></td>
+				</tr>
+				<tr>
+					<td>Sifat</td>
+					<td>: <?= $detail->sifat ?></td>
+				</tr>
+				<tr>
+					<td>Lampiran</td>
+					<td>: <?= $detail->jml_lampiran ?></td>
+				</tr>
+				<tr>
+					<td>Hal</td>
+					<td>: Petugas Rohaniawan dan Petugas Do'a</td>
 				</tr>
 			</table>
-		</table>
-
-		<table>
-			<tr class="text2">
-				<td width="40">Nomer</td>
-				<td>: <?= $detail->no_surat ?></td>
-			</tr>
-			<tr>
-				<td>Sifat</td>
-				<td>: <?= $detail->sifat ?></td>
-			</tr>
-			<tr>
-				<td>Lampiran</td>
-				<td>: <?= $detail->jml_lampiran ?></td>
-			</tr>
-			<tr>
-				<td>Hal</td>
-				<td>: Petugas Rohaniawan dan Petugas Do'a</td>
-			</tr>
-		</table>
-		<br>
-		<table width="530">
-			<tr>
-				<td>
-					<font size="2">Kpd yth.<br><?= $detail->pemohon ?><br>Di tempat</font>
-				</td>
-			</tr>
-		</table>
-		<br>
-		<table width="530">
-			<tr>
-				<td>
-					<font size="2">&emsp;&emsp; Berkenaan dengan surat Saudara Nomor <?= $detail->no_srt_permohonan ?>
-						tanggal <?= format_indo(date($detail->tgl_srt_permohonan)); ?> perihal
-						Permohonan Petugas Rohaniawan dan Pembaca Do'a, dengan ini kami sampaikan Petugas
-						sebagai berikut:</font>
-				</td>
-			</tr>
-		</table>
+			<br>
+			<table width="530">
+				<tr>
+					<td>
+						<font size="2">Kpd yth.<br><?= $detail->pemohon ?><br>Di tempat</font>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table width="530">
+				<tr>
+					<td>
+						<font size="2">&emsp;&emsp; Berkenaan dengan surat Saudara Nomor <?= $detail->no_srt_permohonan ?>
+							tanggal <?= format_indo(date($detail->tgl_srt_permohonan)); ?> perihal
+							Permohonan Petugas Rohaniawan dan Pembaca Do'a, dengan ini kami sampaikan Petugas
+							sebagai berikut:</font>
+					</td>
+				</tr>
+			</table>
 		<?php } ?>
 
 		<?php $no = 1;
 		foreach ($data_petugas_doa as $detail) { ?>
-		<table width="530">
-			<tr class="text2">
-				<td width="20"><?= $no++ ?>.</td>
-				<td width="120">Nama</td>
-				<td>: <?= $detail->nama_petugas_doa; ?></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>NIP</td>
-				<td>: <?= $detail->nip_petugas_doa; ?></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>Pangkat, Gol/Ruang</td>
-				<td>: <?= $detail->pangkat_petugas_doa; ?></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>Jabatan</td>
-				<td>: <?= $detail->jabatan_petugas_doa; ?></td>
-			</tr>
-		</table>
+			<table width="530">
+				<tr class="text2">
+					<td width="20"><?= $no++ ?>.</td>
+					<td width="120">Nama</td>
+					<td>: <?= $detail->nama_petugas_doa; ?></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>NIP</td>
+					<td>: <?= $detail->nip_petugas_doa; ?></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Pangkat, Gol/Ruang</td>
+					<td>: <?= $detail->pangkat_petugas_doa; ?></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Jabatan</td>
+					<td>: <?= $detail->jabatan_petugas_doa; ?></td>
+				</tr>
+			</table>
 		<?php } ?>
 
 		<?php foreach ($detail_ptsp as $detail) { ?>
-		<table width="530">
-			<tr>
-				<td>
-					<font size="2">&emsp;&emsp; untuk menjadi Petugas Rohaniawan dan Pembaca Do'a dalam Acara
-						<?= $detail->nama_acara ?>, pada :<br></font>
-				</td>
-			</tr>
-		</table>
-		<table width="530">
-			<tr class="text2">
-				<td width="20"></td>
-				<td width="60">Hari</td>
-				<td>: <?= $detail->hari_acara ?></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>Tanggal</td>
-				<td>: <?= format_indo(date($detail->tgl_acara)); ?></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>Waktu</td>
-				<td>: <?= $detail->waktu_acara ?> WIB</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>Tempat</td>
-				<td>: <?= $detail->tempat_acara ?></td>
-			</tr>
-		</table>
+			<table width="530">
+				<tr>
+					<td>
+						<font size="2">&emsp;&emsp; untuk menjadi Petugas Rohaniawan dan Pembaca Do'a dalam Acara
+							<?= $detail->nama_acara ?>, pada :<br></font>
+					</td>
+				</tr>
+			</table>
+			<table width="530">
+				<tr class="text2">
+					<td width="20"></td>
+					<td width="60">Hari</td>
+					<td>: <?= $detail->hari_acara ?></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Tanggal</td>
+					<td>: <?= format_indo(date($detail->tgl_acara)); ?></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Waktu</td>
+					<td>: <?= $detail->waktu_acara ?> WIB</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Tempat</td>
+					<td>: <?= $detail->tempat_acara ?></td>
+				</tr>
+			</table>
 		<?php } ?>
 
 		<table width="530">

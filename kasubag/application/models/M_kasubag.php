@@ -71,7 +71,7 @@ class M_kasubag extends CI_Model
         $this->db->from('permohonan_ptsp');
         $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
         $this->db->where('permohonan_ptsp.status', $status);
-        $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
+        $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'asc');
 
         return $this->db->get();
     }
