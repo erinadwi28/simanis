@@ -188,32 +188,13 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td style="text-align: center; padding:2px">12</td>
-									<td style="padding:2px">Erina Dwi Utami</td>
-									<td style="padding:2px">Mudal, Argomulyo, Cangkringan, SLeman, DIY</td>
-									<td style="padding:2px">Sleman, <?= $detail->tanggal_lahir ?></td>
-									<td style="padding:2px">+6285716609299</td>
+									<td style="text-align: center; padding:2px">1.</td>
+									<td style="padding:2px"><?= $detail->nama ?></td>
+									<td style="padding:2px"><?= $detail->alamat ?></td>
+									<td style="padding:2px"><?= $detail->tempat_lahir ?>, <?= $detail->tanggal_lahir ?></td>
+									<td style="padding:2px"><?= $detail->no_hp ?></td>
 								</tr>
 							</tbody>
-
-							<!-- <thead>
-								<tr>
-									<th>No</th>
-									<th>Nama</th>
-									<th>Alamat</th>
-									<th>Tempat/Tgl Lahir</th>
-									<th>No.Telp</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td style="text-align: center;">1.</td>
-									<td><?= $detail->nama ?></td>
-									<td><?= $detail->alamat ?></td>
-									<td><?= $detail->tempat_lahir ?>, <?= $detail->tanggal_lahir ?></td>
-									<td><?= $detail->no_hp ?></td>
-								</tr>
-							</tbody> -->
 						</table>
 
 						<div class="isi_surat paragraf">
@@ -237,8 +218,7 @@
 					<!-- TTD -->
 					<div class="row">
 						<div class="ttd_surat col">
-							Klaten, 23 September 2021 <br>
-							<!-- Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?> <br> -->
+							Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?> <br>
 							Kepala<br><br><br><br>Anif Solikhin
 						</div>
 					</div>
