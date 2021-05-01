@@ -35,6 +35,17 @@
 						</ol>
 					</nav>
 			</div>
+		<?php } elseif ($detail->status == 'Proses Tim Teknis') { ?>
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail Permohonan</h1>
+					<nav aria-label="breadcrumb" class="nav-breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+							<li class="breadcrumb-item" aria-current="page"><a href="<?= base_url('dashboard/list_permohonan_prosesTimTeknis') ?>">Permohonan Proses Tim Teknis</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Detail</li>
+						</ol>
+					</nav>
+			</div>
 		<?php } elseif ($detail->status == 'Proses Kasi') { ?>
 			<div class="d-sm-flex align-items-center justify-content-between">
 				<h3 class="judullist py-3">Detail Permohonan</h1>
@@ -57,7 +68,18 @@
 						</ol>
 					</nav>
 			</div>
-		<?php } elseif ($detail->status == 'Selesai') { ?>
+		<?php } elseif ($detail->status_cetak == 1) { ?>
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail Permohonan</h1>
+					<nav aria-label="breadcrumb" class="nav-breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+							<li class="breadcrumb-item" aria-current="page"><a href="<?= base_url('dashboard/list_permohonan_arsip') ?>">Arsip</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Detail</li>
+						</ol>
+					</nav>
+			</div>
+		<?php } else { ?>
 			<div class="d-sm-flex align-items-center justify-content-between">
 				<h3 class="judullist py-3">Detail Permohonan</h1>
 					<nav aria-label="breadcrumb" class="nav-breadcrumb">
@@ -115,6 +137,29 @@
 						</center>
 					</div>
 				</div>
+
+				<!-- Berita Acara -->
+				<?php if ($detail->berita_acara != null) { ?>
+					<div class="card shadow mb-4">
+						<div class="card-header">
+							<center>
+								<h6 class="m-0 font-weight-bold">Berita Acara</h6>
+							</center>
+						</div>
+
+						<div class="card-body">
+							<center>
+
+								<p><?= $detail->berita_acara; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp20/berita_acara/<?= $detail->berita_acara ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+
+							</center>
+						</div>
+					</div>
+				<?php } ?>
 			</div>
 			<div class="col-md-8 mb-0">
 				<!-- Detail Data -->
@@ -293,13 +338,12 @@
 				</div>
 
 				<!-- Button Setujui Final & No Surat -->
-				<?php
-				if ($detail->status == 'Selesai') { ?>
+				<?php if ($detail->status === 'Selesai' && $detail->no_surat == null) { ?>
 					<div class="row clearfix">
 						<div class="col-md-12">
 							<form class="form-horizontal" id="no_surat_ptsp20" enctype="multipart/form-data" action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp20/<?= $detail->id_permohonan_ptsp ?>" method="POST">
 								<div class="input-group mb-3 col-md-6 float-right p-0">
-									<input type="text" class="form-control " id="no_surat" name="no_surat" value=".../ Kk.11.10/6/BA.01.1/.../2021" required>
+									<input type="text" class="form-control " id="no_surat" name="no_surat" value=".../Kk.11.10/06/.../<?= date("m/Y") ?>" required>
 									<button class="btn btn-sm btn-primary" type="submit" id="button-addon2"><i class="fas fa-check-circle">
 										</i> Terima</button>
 								</div>

@@ -57,7 +57,18 @@
 						</ol>
 					</nav>
 			</div>
-		<?php } elseif ($detail->status == 'Selesai') { ?>
+		<?php } elseif ($detail->status_cetak == 1) { ?>
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail Permohonan</h1>
+					<nav aria-label="breadcrumb" class="nav-breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+							<li class="breadcrumb-item" aria-current="page"><a href="<?= base_url('dashboard/list_permohonan_arsip') ?>">Arsip</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Detail</li>
+						</ol>
+					</nav>
+			</div>
+		<?php } else { ?>
 			<div class="d-sm-flex align-items-center justify-content-between">
 				<h3 class="judullist py-3">Detail Permohonan</h1>
 					<nav aria-label="breadcrumb" class="nav-breadcrumb">
@@ -305,13 +316,12 @@
 					<?php } ?>
 				</div>
 				<!-- Button Setujui Final & No Surat -->
-				<?php
-				if ($detail->status == 'Selesai') { ?>
+				<?php if ($detail->status === 'Selesai' && $detail->no_surat == null) { ?>
 					<div class="row clearfix float-right px-2">
 						<form class="form-horizontal" id="no_surat_ptsp19" enctype="multipart/form-data" action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp19/<?= $detail->id_permohonan_ptsp ?>" method="POST">
 							<div class="row clearfix float-right px-2">
 								<div class="input-group col-md-3 px-2 mb-2 ">
-									<input type="text" class="form-control " id="no_surat" name="no_surat" value=".../Kk.11.10/05/Hj.00/" required>
+									<input type="text" class="form-control " id="no_surat" name="no_surat" value=".../Kk.11.10/06/BA.00/<?= date("m/Y") ?>" required>
 								</div>
 								<div class="input-group col-md-3 px-2 mb-2">
 									<input type="text" min="0" class="form-control " id="nomor_surat_tugas" name="nomor_surat_tugas" value="" placeholder="No. Surat Tugas" required>

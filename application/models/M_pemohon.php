@@ -51,6 +51,7 @@ class M_pemohon extends CI_Model
         $this->db->where('id_pemohon', $this->session->userdata('id_pemohon'));
         $this->db->where("(status = 'Validasi Kemenag'
         OR status = 'Proses BO'
+        OR status = 'Proses Tim Teknis'
         OR status = 'Proses Kasi'
         OR status = 'Proses Kasubag')", null, false);
         $this->db->where('status_delete', 0);

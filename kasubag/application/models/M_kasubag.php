@@ -139,4 +139,18 @@ class M_kasubag extends CI_Model
 
         return $this->db->get()->row();
     }
+
+    //get data petugas doa ptsp01
+    public function data_petugas_doa($id_permohonan)
+    {
+        $this->db->select('petugas_doa.*');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('ptsp01', 'permohonan_ptsp.id_permohonan_ptsp = ptsp01.id_permohonan_ptsp', 'INNER');
+        $this->db->join('petugas_doa', 'ptsp01.id_ptsp = petugas_doa.id_ptsp', 'INNER');
+        $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
+        $this->db->where('permohonan_ptsp.status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
 }

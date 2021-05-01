@@ -28,6 +28,7 @@ class Dashboard extends CI_Controller
                 $data_permohonan['permohonan_pending'] = $this->m_fo->jml_permohonan_pending()->result();
                 $data_permohonan['permohonan_selesaiFO'] = $this->m_fo->jml_permohonan_selesaiFO()->result();
                 $data_permohonan['permohonan_prosesBO'] = $this->m_fo->jml_permohonan_prosesBO()->result();
+                $data_permohonan['permohonan_prosesTimTeknis'] = $this->m_fo->jml_permohonan_prosesTimTeknis()->result();
                 $data_permohonan['permohonan_prosesKasi'] = $this->m_fo->jml_permohonan_prosesKasi()->result();
                 $data_permohonan['permohonan_prosesKasubag'] = $this->m_fo->jml_permohonan_prosesKasubag()->result();
                 $data_permohonan['permohonan_selesai'] = $this->m_fo->jml_permohonan_selesai()->result();
@@ -224,6 +225,23 @@ class Dashboard extends CI_Controller
                 $this->load->view('footer');
         }
 
+        //list permohonan proses Tim teknis
+        public function list_permohonan_prosesTimTeknis()
+        {
+                $data_title['title'] = 'List Permohonan Proses Tim Teknis';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+
+                $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan('Proses Tim Teknis')->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/list_permohonan_prosesTimTeknis', $data_detail);
+                $this->load->view('footer');
+        }
+
         //list permohonan proses kasi
         public function list_permohonan_prosesKasi()
         {
@@ -266,7 +284,7 @@ class Dashboard extends CI_Controller
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
 
-                $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan('Selesai')->result();
+                $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan_selesai('Selesai')->result();
 
                 $this->load->view('header', $data_title);
                 $this->load->view('frontoffice/sidebar_fo');
@@ -283,7 +301,7 @@ class Dashboard extends CI_Controller
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
 
-                $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan_arsip('Selesai' , 1)->result();
+                $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan_arsip('Selesai', 1)->result();
 
                 $this->load->view('header', $data_title);
                 $this->load->view('frontoffice/sidebar_fo');
@@ -303,6 +321,7 @@ class Dashboard extends CI_Controller
                 $data_detail['detail_permohonan'] = $this->m_fo->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
 
                 if ($id_layanan == 1) {
+                        $data_detail['data_petugas_doa'] = $this->m_fo->data_petugas_doa($id_permohonan_ptsp)->result();
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp01')->result();
                 } elseif ($id_layanan == 2) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp02')->result();
@@ -740,7 +759,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp01');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/1');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp02
@@ -755,7 +774,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp02');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/2');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp05
@@ -768,7 +787,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp05');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/5');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp06
@@ -781,7 +800,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp06');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/6');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp07
@@ -794,7 +813,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp07');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/7');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp08
@@ -807,7 +826,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp08');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/8');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp09
@@ -820,7 +839,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp09');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/9');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp10
@@ -833,7 +852,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp10');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/10');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp11
@@ -847,7 +866,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp11');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/11');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp12
@@ -862,7 +881,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp12');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/12');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp13
@@ -875,7 +894,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp13');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/13');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp14
@@ -889,7 +908,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp14');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/14');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp15
@@ -902,7 +921,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp15');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/15');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp16
@@ -917,7 +936,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp16');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/16');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp17
@@ -930,7 +949,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp17');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/17');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp18
@@ -943,7 +962,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp18');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/18');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp19
@@ -959,7 +978,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp19');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/19');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp20
@@ -972,7 +991,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp20');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/20');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp21
@@ -985,7 +1004,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp21');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/21');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp22
@@ -998,7 +1017,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp22');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/22');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp23
@@ -1011,7 +1030,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp23');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/23');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         // aksi update ptsp24
@@ -1024,7 +1043,7 @@ class Dashboard extends CI_Controller
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp24');
 
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $id_permohonan . '/24');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
 
@@ -1149,8 +1168,8 @@ class Dashboard extends CI_Controller
         {
                 $data_permohonan = array(
                         'status_cetak' => 1
-                    );
-                $this->m_fo->tambah_permohonan($data_permohonan,$id_permohonan_ptsp);
+                );
+                $this->m_fo->tambah_permohonan($data_permohonan, $id_permohonan_ptsp);
 
                 $data_detail['detail_permohonan'] = $this->m_fo->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
 
@@ -1160,9 +1179,9 @@ class Dashboard extends CI_Controller
                 } elseif ($id_layanan == 2) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp02')->result();
                 } elseif ($id_layanan == 3) {
-                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp03')->result();
+                        redirect('dashboard/list_permohonan_selesai');
                 } elseif ($id_layanan == 4) {
-                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp04')->result();
+                        redirect('dashboard/list_permohonan_selesai');
                 } elseif ($id_layanan == 5) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
                 } elseif ($id_layanan == 6) {
@@ -1328,5 +1347,7 @@ class Dashboard extends CI_Controller
                 } elseif ($id_layanan == 27) {
                         $dompdf->stream('Permohonan Surat Ket Tambahan Penghasilan');
                 }
+
+                redirect('dashboard/list_permohonan_selesai');
         }
 }
