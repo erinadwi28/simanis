@@ -76,28 +76,19 @@
 				</div>
 				<div class="col-md-6 content-detail text-center">
 					<div class="row mb-4">
-						<div class="col-md-12">
-							<div class="card shadow">
-								<div class="card-header text-center mb-0 py-1">
-									<h4>Waktu</h4>
-								</div>
-								<div class="card-body">
-									<p class="card-text">1 hari
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row mb-4">
 						<div class="col-md-12 syarat">
 							<div class="card shadow">
 								<div class="card-header text-center mb-0 py-1">
-									<h4>Persyaratan</h4>
+									<h4>Standar Operasional Prosedur</h4>
 								</div>
 								<div class="card-body">
-									<p class="card-text">Surat permohonan rekomendasi ditujukan kepada Kepala Kankemenag
-										Kab. Klaten ditandatangani oleh panitia yang bersangkutan. Untuk kegiatan Islam
-										diketahui Kepala Desa, Kepala KUA dan Camat; Proposal kegiatan</p>
+								<ol type="1" class="ml-3 list">
+						<li>Pemohon membuat surat permohonan ditujukan kepada Kepala Kantor Kementerian Agama Kab. Klaten
+						ditandatangani oleh panitia yang bersangkutan. Untuk kegiatan Islam diketahui Kepala Desa, Kepala KUA, dan Camat.</li>
+						<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+						<li>Pemohon mengunggah surat permohonan yang telah dibuat. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.</li>
+					</ol>
 								</div>
 							</div>
 						</div>

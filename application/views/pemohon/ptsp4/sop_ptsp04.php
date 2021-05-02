@@ -33,7 +33,7 @@
 						<li>Pemohon mengambil dokumen legalisir dengan membawa dokumen asli.</li>
 					</ol>
 					</p>
-					<h6><b>Catatan :</b></h6>
+					<h6 ><b>Catatan :</b></h6>
 					<p class="persyaratan mb-0">
 					<ol type="1" class="ml-0 list-syarat">
 						<li>Kejuaraan yang bisa dilegalisir adalah kejuaraan yang diakui oleh kementerian agama. </li>

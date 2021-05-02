@@ -23,7 +23,7 @@
 					<p class="persyaratan mb-0">
 						<ol type="1" class="ml-0 list-syarat">
 						<li>Pemohon membuat surat permohonan ditujukan kepada Kepala Kantor Kementerian Agama Kab. Klaten
-						di ketuai Panitia Pembangunan/ Takmir Masjid dan Kepala Desa</li>
+						di ketaui Panitia Pembangunan/ Takmir Masjid dan Kepala Desa</li>
 						<li>Pemohon mengunggah surat permohonan yang telah dibuat. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
 						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.</li>
 						</ol>

@@ -73,6 +73,18 @@ class M_fo extends CI_Model
         return $hasil;
     }
 
+    //hitung jumlah permohonan Proses Tim Teknis
+    public function jml_permohonan_prosesTimTeknis()
+    {
+        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_prosesTimTeknis');
+        $this->db->from('permohonan_ptsp');
+        $this->db->where('status', 'Proses Tim Teknis');
+        $this->db->where('status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
     //hitung jumlah permohonan Proses Kasi
     public function jml_permohonan_prosesKasi()
     {
@@ -103,6 +115,7 @@ class M_fo extends CI_Model
         $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_selesai');
         $this->db->from('permohonan_ptsp');
         $this->db->where('status', 'Selesai');
+        $this->db->where('status_cetak', 0);
         $this->db->where('status_delete', 0);
 
         $hasil = $this->db->get();
@@ -154,7 +167,7 @@ class M_fo extends CI_Model
     }
 
     //get list data permohonan dengan status tertentu
-    public function get_list_data_permohonan_arsip($status , $cetak)
+    public function get_list_data_permohonan_arsip($status, $cetak)
     {
         $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
         $this->db->from('permohonan_ptsp');
@@ -166,6 +179,19 @@ class M_fo extends CI_Model
         return $this->db->get();
     }
 
+    //get list data permohonan dengan status tertentu
+    public function get_list_data_permohonan_selesai($status)
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->where('permohonan_ptsp.status', $status);
+        $this->db->where('permohonan_ptsp.status_cetak', 0);
+        $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'asc');
+
+        return $this->db->get();
+    }
+
     //get list data permohonan dengan status tertentu 
     public function get_list_data_permohonan($status)
     {
@@ -173,7 +199,7 @@ class M_fo extends CI_Model
         $this->db->from('permohonan_ptsp');
         $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
         $this->db->where('permohonan_ptsp.status', $status);
-        $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
+        $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'asc');
 
         return $this->db->get();
     }

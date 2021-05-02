@@ -50,7 +50,8 @@
 		<ul class="sticky">
 			<li>
 				<img src="<?= base_url('assets/landing/images/wa.png')?>" width="32" height="32">
-				<p><a href="https://api.whatsapp.com/send?phone=628112650662&text=Info" target="_blank">Chat Haji <br> & Umrah</a></p>
+				<p><a href="https://api.whatsapp.com/send?phone=628112650662&text=Info" target="_blank">Chat Haji <br> &
+						Umrah</a></p>
 			</li>
 		</ul>
 	</div>
@@ -75,36 +76,30 @@
 				</div>
 				<div class="col-md-6 content-detail text-center">
 					<div class="row mb-4">
-						<div class="col-md-12">
-							<div class="card shadow">
-								<div class="card-header text-center mb-0 py-1">
-									<h4>Waktu</h4>
-								</div>
-								<div class="card-body">
-									<p class="card-text">1 hari
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row mb-4">
 						<div class="col-md-12 syarat">
 							<div class="card shadow">
 								<div class="card-header text-center mb-0 py-1">
-									<h4>Persyaratan</h4>
+									<h4>Standar Operasional Prosedur</h4>
 								</div>
 								<div class="card-body">
 									<p class="card-text">
-										Pemohon adalah pemilih ijazah/STTB/SKP ijazah yang mengajukan permohonan
-										pengesahan atau yang diberikan kuasa oleh pemiliknya (FM-PI-01 dan FM-PI-02).
-                                        
-									</p>
-                                    <ol type="1" class="ml-3 list"> 
-                                            <li>Mengisi dan menandatangani formulir permohonan pengesahan fotocopi ijazah/STTB/SKP ijazah (FM-PI-01).</li>
-                                            <li>Menandatangani Surat Pernyataan Tanggung Jawab Mutlak yang dibubuhi materai 6000 (FM-PI-03).</li>
-                                            <li>Menunjukkan ijazah/STTB/SKP Ijazah asli yang akan disahkan.</li>
-                                            <li>Menyerahkan fotocopi ijazah/STTB/SKP Ijazah yang akan disahkan paling banyak 10 (sepuluh) lembar.</li>
-                                        </ol>
+										Pemohon adalah pemilik ijazah/STTB/SKP ijazah yang mengajukan permohonan
+										pengesahan atau yang
+										diberikan kuasa oleh pemiliknya.
+									</p> <br>
+									<ol type="1" class="ml-3 list">
+										<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+										<li>Pemohon mengunggah FC (Fotocopy) Ijazah/STTB/SKP yang akan disahkan. <br>
+											(Format: PDF, Ukuran: Max 1 MB)</li>
+										<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses pengesahan
+											telah selesai.</li>
+										<li>Pemohon mengambil dokumen legalisir dengan membawa dokumen asli.</li>
+										<li>Jika Pengambilan dokumen legalisir diwakilkan maka wajib membawa <b> <a
+													href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-01.pdf"
+													target="_blank">FM-PI-01</a></b> dan <b><a
+													href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-02.pdf"
+													target="_blank">FM-PI-02</a></b>.</li>
+									</ol>
 								</div>
 							</div>
 						</div>

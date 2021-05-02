@@ -343,6 +343,316 @@
 					</div>
 				</div>
 			</div>
+			<div class="row mb-0">
+				<div class="col-md-4 item-ptsp">
+					<div class="card shadow text-center d-flex flex-column mb-3">
+						<div class="card-body justify-content-center">
+							<div class="content-item mb-0 px-0 py-3">
+								<div class="row">
+									<div class="round-number">
+										13
+									</div>
+									<div class="col-md-10 justify content-list mb-0">
+										<p class="card-text">
+											Permohonan Rekomendasi Ijin Operasional Lembaga Baru
+										</p>
+									</div>
+								</div>
+							</div>
+							<a href="<?= base_url('ptsp/detail_permohonan_13')?>"
+								class="card-link float-right">Selengkapnya &nbsp;<i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 item-ptsp">
+					<div class="card shadow text-center d-flex flex-column mb-3">
+						<div class="card-body justify-content-center">
+							<div class="content-item mb-0 px-0 py-3">
+								<div class="row">
+									<div class="round-number">
+										14
+									</div>
+									<div class="col-md-10 justify content-list mb-0">
+										<p class="card-text">
+											Permohonan Ijop LPQ
+										</p>
+									</div>
+								</div>
+							</div>
+							<a href="<?= base_url('ptsp/detail_permohonan_14')?>"
+								class="card-link float-right">Selengkapnya &nbsp;<i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 item-ptsp">
+					<div class="card shadow text-center d-flex flex-column mb-3">
+						<div class="card-body justify-content-center">
+							<div class="content-item mb-0 px-0 py-3">
+								<div class="row">
+									<div class="round-number">
+										15
+									</div>
+									<div class="col-md-10 justify content-list mb-0">
+										<p class="card-text">
+											Permohonan Ijop Madin
+										</p>
+									</div>
+								</div>
+							</div>
+							<a href="<?= base_url('ptsp/detail_permohonan_15')?>"
+								class="card-link float-right">Selengkapnya &nbsp;<i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mb-0">
+				<div class="col-md-4 item-ptsp">
+					<div class="card item-1 shadow text-center d-flex flex-column mb-3 item-big">
+						<div class="card-body justify-content-center">
+							<div class="content-item mb-0 px-0 py-3">
+								<div class="row">
+									<div class="round-number">
+										16
+									</div>
+									<div class="col-md-10 justify content-list mb-0">
+										<p class="card-text">
+											Rekomendasi Proposal PD Pontren (Bantuan Sarpras/Pembangunan/Rehabilitasi Bangunan)
+										</p>
+									</div>
+								</div>
+							</div>
+							<a href="<?= base_url('ptsp/detail_permohonan_16')?>"
+								class="card-link float-right">Selengkapnya &nbsp;<i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 item-ptsp">
+					<div class="card shadow text-center d-flex flex-column mb-3">
+						<div class="card-body justify-content-center">
+							<div class="content-item mb-0 px-0 py-3">
+								<div class="row">
+									<div class="round-number">
+										17
+									</div>
+									<div class="col-md-10 justify content-list mb-0">
+										<p class="card-text">
+											Permohonan Tambahan Jam Mengajar Guru
+										</p>
+									</div>
+								</div>
+							</div>
+							<a href="<?= base_url('ptsp/detail_permohonan_17')?>"
+								class="card-link float-right">Selengkapnya &nbsp;<i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 item-ptsp">
+					<div class="card shadow text-center d-flex flex-column mb-3">
+						<div class="card-body justify-content-center">
+							<div class="content-item mb-0 px-0 py-3">
+								<div class="row">
+									<div class="round-number">
+										18
+									</div>
+									<div class="col-md-10 justify content-list mb-0">
+										<p class="card-text">
+											Rekomendasi Permohonan Bantuan Masjid
+										</p>
+									</div>
+								</div>
+							</div>
+							<a href="<?= base_url('ptsp/detail_permohonan_18')?>"
+								class="card-link float-right">Selengkapnya &nbsp;<i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mb-0">
+				<div class="col-md-4 item-ptsp">
+					<div class="card shadow text-center d-flex flex-column mb-3">
+						<div class="card-body justify-content-center">
+							<div class="content-item mb-0 px-0 py-3">
+								<div class="row">
+									<div class="round-number">
+										19
+									</div>
+									<div class="col-md-10 justify content-list mb-0">
+										<p class="card-text">
+											Permohonan Petugas Siaran Keagamaan
+										</p>
+									</div>
+								</div>
+							</div>
+							<a href="<?= base_url('ptsp/detail_permohonan_19')?>"
+								class="card-link float-right">Selengkapnya &nbsp;<i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 item-ptsp">
+					<div class="card shadow text-center d-flex flex-column mb-3">
+						<div class="card-body justify-content-center">
+							<div class="content-item mb-0 px-0 py-3">
+								<div class="row">
+									<div class="round-number">
+										20
+									</div>
+									<div class="col-md-10 justify content-list mb-0">
+										<p class="card-text">
+											Permohonan Ijin Operasional Majelis Taklim 
+										</p>
+									</div>
+								</div>
+							</div>
+							<a href="<?= base_url('ptsp/detail_permohonan_20')?>"
+								class="card-link float-right">Selengkapnya &nbsp;<i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 item-ptsp">
+					<div class="card shadow text-center d-flex flex-column mb-3">
+						<div class="card-body justify-content-center">
+							<div class="content-item mb-0 px-0 py-3">
+								<div class="row">
+									<div class="round-number">
+										21
+									</div>
+									<div class="col-md-10 justify content-list mb-0">
+										<p class="card-text">
+											Permohonan Arah Ukur Kiblat
+										</p>
+									</div>
+								</div>
+							</div>
+							<a href="<?= base_url('ptsp/detail_permohonan_21')?>"
+								class="card-link float-right">Selengkapnya &nbsp;<i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mb-0">
+				<div class="col-md-4 item-ptsp">
+					<div class="card shadow text-center d-flex flex-column mb-3">
+						<div class="card-body justify-content-center">
+							<div class="content-item mb-0 px-0 py-3">
+								<div class="row">
+									<div class="round-number">
+										22
+									</div>
+									<div class="col-md-10 justify content-list mb-0">
+										<p class="card-text">
+											Rekomendasi Permohonan ID Masjid dan Musala
+										</p>
+									</div>
+								</div>
+							</div>
+							<a href="<?= base_url('ptsp/detail_permohonan_22')?>"
+								class="card-link float-right">Selengkapnya &nbsp;<i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 item-ptsp">
+					<div class="card shadow text-center d-flex flex-column mb-3">
+						<div class="card-body justify-content-center">
+							<div class="content-item mb-0 px-0 py-3">
+								<div class="row">
+									<div class="round-number">
+										23
+									</div>
+									<div class="col-md-10 justify content-list mb-0">
+										<p class="card-text">
+											Permohonan Mutasi GPAI PNS
+										</p>
+									</div>
+								</div>
+							</div>
+							<a href="<?= base_url('ptsp/detail_permohonan_23')?>"
+								class="card-link float-right">Selengkapnya &nbsp;<i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 item-ptsp">
+					<div class="card shadow text-center d-flex flex-column mb-3">
+						<div class="card-body justify-content-center">
+							<div class="content-item mb-0 px-0 py-3">
+								<div class="row">
+									<div class="round-number">
+										24
+									</div>
+									<div class="col-md-10 justify content-list mb-0">
+										<p class="card-text">
+											Rekomendasi Pajak Bendaraan Bermotor Layanan Sosial Rumah Ibadah
+										</p>
+									</div>
+								</div>
+							</div>
+							<a href="<?= base_url('ptsp/detail_permohonan_24')?>"
+								class="card-link float-right">Selengkapnya &nbsp;<i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mb-0">
+				<div class="col-md-4 item-ptsp">
+					<div class="card shadow text-center d-flex flex-column mb-3">
+						<div class="card-body justify-content-center">
+							<div class="content-item mb-0 px-0 py-3">
+								<div class="row">
+									<div class="round-number">
+										25
+									</div>
+									<div class="col-md-10 justify content-list mb-0">
+										<p class="card-text">
+											Konsultasi dan Informasi Sertifikasi Halal, Zakat dan Wakaf
+										</p>
+									</div>
+								</div>
+							</div>
+							<a href="<?= base_url('ptsp/detail_permohonan_25')?>"
+								class="card-link float-right">Selengkapnya &nbsp;<i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 item-ptsp">
+					<div class="card shadow text-center d-flex flex-column mb-3">
+						<div class="card-body justify-content-center">
+							<div class="content-item mb-0 px-0 py-3">
+								<div class="row">
+									<div class="round-number">
+										26
+									</div>
+									<div class="col-md-10 justify content-list mb-0">
+										<p class="card-text">
+											Permohonan Data Lembaga Agama dan Keagamaan, Rumah Ibadah, Peristiwa Nikah, Jumlah Guru, Haji
+										</p>
+									</div>
+								</div>
+							</div>
+							<a href="<?= base_url('ptsp/detail_permohonan_26')?>"
+								class="card-link float-right">Selengkapnya &nbsp;<i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 item-ptsp">
+					<div class="card shadow text-center d-flex flex-column mb-3">
+						<div class="card-body justify-content-center">
+							<div class="content-item mb-0 px-0 py-3">
+								<div class="row">
+									<div class="round-number">
+										27
+									</div>
+									<div class="col-md-10 justify content-list mb-0">
+										<p class="card-text">
+											Permohonan Surat Keterangan Tambahan Penghasilan
+										</p>
+									</div>
+								</div>
+							</div>
+							<a href="<?= base_url('ptsp/detail_permohonan_27')?>"
+								class="card-link float-right">Selengkapnya &nbsp;<i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 </main>

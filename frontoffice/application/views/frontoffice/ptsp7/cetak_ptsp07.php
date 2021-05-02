@@ -146,6 +146,22 @@
 			text-align: center;
 		}
 
+		.img {
+			padding-top: 10px;
+		}
+
+		.img img {
+			padding-left: 10px;
+		}
+
+		.garis {
+			border: 2px;
+			border-style: solid;
+			color: #000000 !important;
+			margin-top: 5px;
+			margin-right: 17px;
+		}
+
 		.ttd_surat {
 			font-size: 11pt;
 			margin-left: 400px;
@@ -165,22 +181,44 @@
 				<div class="card shadow mb-4">
 					<div class="card-body">
 						<!-- KOP SURAT -->
-						<div class="kopsurat row">
-							<div class="col-md-12 mb-3">
-								<object data="" type="image">
-									<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
-								</object>
-							</div>
-						</div>
+						<!-- KOP SURAT -->
+					<center>
+						<table width="530">
+							<tr>
+								<td></td>
+								<td class="img">
+									<center>
+										<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
+											width="100" height="100">
+									</center>
+								</td>
+								<td width="400" style="padding-left: 10px;">
+									<center>
+										<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
+										<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
+										<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
+										<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
+										<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
+										<br>
+									</center>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3">
+									<div class="garis"></div>
+								</td>
+							</tr>
+						</table>
+					</center>
 
 						<!-- NO SURAT -->
 						<?php
 						foreach ($detail_ptsp as $detail) { ?>
-							<div class="no_surat row">
-								<div class="col-12 rekomendasi">
-									<p><b>REKOMENDASI</b></p>
-									<p>Nomor: <?= $detail->no_surat ?></p>
-								</div>
+							<div class="no_surat">
+								<center>
+									<p><b>REKOMENDASI</b> <br>
+									Nomor: <?= $detail->no_surat ?></p>
+									</center>
 							</div>
 
 							<!-- PEMBUKA -->
@@ -192,7 +230,7 @@
 
 							<!-- Paragraf 1 -->
 							<div class="isi_surat">
-								<p>&emsp;&emsp;&emsp;Berdasarkan permohonan dari Saudara <?= $detail->nama_pemohon ?> selaku ketua Yayasan <?= $detail->nama_yayasan ?> perihal Rekomendasi
+								<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Berdasarkan permohonan dari Saudara <?= $detail->nama_pemohon ?> selaku ketua Yayasan <?= $detail->nama_yayasan ?> perihal Rekomendasi
 									Pendirian Kelompok Bimbingan <?= $detail->nama_kelompok_bimbingan ?>. Setelah dilakukan peninjauan terhadap Kantor Sekretariat Kelompok Bimbingan
 									<?= $detail->nama_kelompok_bimbingan ?> yang berdomisili di <?= $detail->domisili_kelompok_bimbingan ?> maka Kepala Kantor Kementerian Agama Kab. Klaten dengan ini memberikan rekomendasi
 									kepada:
@@ -230,9 +268,9 @@
 
 							<!-- Paragraf 2 -->
 							<div class="isi_surat">
-								<p>&emsp;&emsp;&emsp;Rekomendasi ini dibuat sebagai pertimbangan untuk mendapatkan izin operasional dalam
+								<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rekomendasi ini dibuat sebagai pertimbangan untuk mendapatkan izin operasional dalam
 									Pendirian Kelompok Bimbingan <?= $detail->nama_kelompok_bimbingan ?> sebagai Penyelenggara Bimbingan Ibadah Haji di Kabupaten Klaten.</p>
-								<p>&emsp;&emsp;&emsp;Demikian surat ini kami sampaikan untuk dapat dipergunakan sebagaimana
+								<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demikian surat ini kami sampaikan untuk dapat dipergunakan sebagaimana
 									mestinya.
 								</p>
 							</div>

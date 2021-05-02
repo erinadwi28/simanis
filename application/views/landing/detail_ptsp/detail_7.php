@@ -75,34 +75,28 @@
 				</div>
 				<div class="col-md-6 content-detail text-center">
 					<div class="row mb-4">
-						<div class="col-md-12">
-							<div class="card shadow">
-								<div class="card-header text-center mb-0 py-1">
-									<h4>Waktu</h4>
-								</div>
-								<div class="card-body">
-									<p class="card-text">2 hari
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row mb-4">
 						<div class="col-md-12 syarat">
 							<div class="card shadow">
 								<div class="card-header text-center mb-0 py-1">
-									<h4>Persyaratan</h4>
+									<h4>Standar Operasional Prosedur</h4>
 								</div>
 								<div class="card-body">
 									<ol type="1" class="ml-3 list">
-										<li>Surat permohonan rekomendasi kepada Kepala Kantor Kemenag Kab. Klaten;</li>
-										<li>Surat permohonan kepada Kepala Kanwil Kemenag Jateng;</li>
-										<li>Akte Notaris Pendirian Yayasan;</li>
-										<li>Memiliki kantor sekretariat tetap dan ruang kegiatan bimbingan;</li>
-										<li>Memiliki susunan pengurus;</li>
-										<li>Memiliki pembimbing haji bersertifikat;</li>
-										<li>Rencana program bimbingan manasik;</li>
-										<li>Berita Acara hasil verifikasi berkas.</li>
+									<li>Pemohon mengunduh Surat Permohonan.</li>
+							<li>Pemohon mengisi Surat Permohonan yang ditujukan kepada Kepala Kantor Kemenag Klaten.
+							</li>
+							<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+							<li>Pemohon mengunggah Surat Permohonan. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+							<li>Pemohon mengunggah Akte Notaris Pendirian Yayasan. <br> (Format: PDF, Ukuran: Max 1 MB)
+							</li>
+							<li>Pemohon mengunggah bukti foto kantor sekretariat tetap dan ruang kegiatan bimbingan.
+								<br> (Format: PDF, Ukuran: Max 10 MB)</li>
+							<li>Pemohon mengunggah dokumen susunan pengurus. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+							<li>Pemohon mengunggah sertifikat pembimbing haji. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+							<li>Pemohon mengunggah dokumen rencana program bimbingan manasik. <br> (Format: PDF, Ukuran:
+								Max 1 MB)</li>
+							<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
+							</li>
 									</ol>
 								</div>
 							</div>

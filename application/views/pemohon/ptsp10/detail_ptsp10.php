@@ -668,28 +668,28 @@
 			</div>
 
 			<!-- Berita Acara -->
-			<!-- <div class="col-xs-12 col-sm-3">
-				<div class="card shadow mb-4">
-					<div class="card-header">
-						<center>
-							<h6 class="m-0 font-weight-bold">Berita Acara</h6>
-						</center>
-					</div>
-					<div class="card-body">
-						<center>
-							<?php if ($detail->srt_pernyataan != null) { ?>
-								<p><?= $detail->srt_pernyataan; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp10/srt_pernyataan/<?= $detail->srt_pernyataan ?>" target="_blank">
+			<?php if ($detail->berita_acara != null) { ?>
+				<div class="col-xs-12 col-sm-3">
+					<div class="card shadow mb-4">
+						<div class="card-header">
+							<center>
+								<h6 class="m-0 font-weight-bold">Berita Acara</h6>
+							</center>
+						</div>
+						<div class="card-body">
+							<center>
+
+								<p><?= $detail->berita_acara; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp10/berita_acara/<?= $detail->berita_acara ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
-							<?php } elseif ($detail->srt_pernyataan == null) { ?>
-								<p class="mb-0">Belum ada</p>
-							<?php } ?>
-						</center>
+
+							</center>
+						</div>
 					</div>
 				</div>
-			</div> -->
+			<?php } ?>
 		</div>
 
 		<!-- Button Selesai -->

@@ -35,6 +35,17 @@
 						</ol>
 					</nav>
 			</div>
+		<?php } elseif ($detail->status == 'Proses Tim Teknis') { ?>
+			<div class="d-sm-flex align-items-center justify-content-between">
+				<h3 class="judullist py-3">Detail Permohonan</h1>
+					<nav aria-label="breadcrumb" class="nav-breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+							<li class="breadcrumb-item" aria-current="page"><a href="<?= base_url('dashboard/list_permohonan_prosesTimTeknis') ?>">Permohonan Proses Tim Teknis</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Detail</li>
+						</ol>
+					</nav>
+			</div>
 		<?php } elseif ($detail->status == 'Proses Kasi') { ?>
 			<div class="d-sm-flex align-items-center justify-content-between">
 				<h3 class="judullist py-3">Detail Permohonan</h1>
@@ -227,47 +238,63 @@
 									<td><?= $detail->jml_petugas_doa; ?></td>
 								</tr>
 
-								<!-- DINAMIS MENYESUAIKAN JUMLAH PETUGAS DOA -->
-								<!-- <?php if ($detail->nama_petugas_doa != null) { ?>
-							<tr>
-								<td><b>Nama Petugas Do'a 1</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td> </td>
-								<td><?= $detail->nama_petugas_doa; ?></td>
-							</tr>
 							<?php } ?>
-							<?php if ($detail->nip_petugas_doa != null) { ?>
-							<tr>
-								<td><b>NIP Petugas Do'a 1</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td> </td>
-								<td><?= $detail->nip_petugas_doa; ?></td>
-							</tr>
+							<?php
+							$no = 1;
+							foreach ($data_petugas_doa as $detail) {
+							?>
+								<tr>
+									<td><b>Petugas Doa</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td> </td>
+									<td><?= $no++ ?></td>
+								</tr>
+
+								<?php if ($detail->nama_petugas_doa != null) { ?>
+									<tr>
+										<td><b>Nama Petugas Do'a</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->nama_petugas_doa; ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->nip_petugas_doa != null) { ?>
+									<tr>
+										<td><b>NIP Petugas Do'a</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->nip_petugas_doa; ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->pangkat_petugas_doa != null) { ?>
+									<tr>
+										<td><b>Pangkat Doa Petugas Do'a</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->pangkat_petugas_doa; ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->jabatan_petugas_doa != null) { ?>
+									<tr>
+										<td><b>Jabatan Petugas Do'a</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->jabatan_petugas_doa; ?></td>
+									</tr>
+								<?php } ?>
+								<br>
 							<?php } ?>
-							<?php if ($detail->pangkat_doa != null) { ?>
-							<tr>
-								<td><b>Pangkat Doa Petugas Do'a 1</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td> </td>
-								<td><?= $detail->pangkat_doa; ?></td>
-							</tr>
-							<?php } ?>
-							<?php if ($detail->jabatan_petugas_doa != null) { ?>
-							<tr>
-								<td><b>Jabatan Petugas Do'a 1</b></td>
-								<td> </td>
-								<td> </td>
-								<td>:</td>
-								<td> </td>
-								<td><?= $detail->jabatan_petugas_doa; ?></td>
-							</tr>
-							<?php } ?> -->
+							<?php foreach ($detail_ptsp as $detail) { ?>
 
 								<tr>
 									<td><b>Tanggal Permohonan</b></td>
@@ -352,14 +379,14 @@
 
 				<!-- Button Setujui Final & No Surat -->
 				<?php
-				if ($detail->status == 'Selesai') { ?>
+								if ($detail->status == 'Selesai' && $detail->no_surat == null) { ?>
 					<div class="row clearfix">
 						<div class="col-md-12">
 							<form class="form-horizontal" id="no_surat_ptsp01" enctype="multipart/form-data" action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp01/<?= $detail->id_permohonan_ptsp ?>" method="POST">
 								<div class="row clearfix">
 									<div class="col-md-1"></div>
 									<div class="input-group col-md-3 px-2 mb-2">
-										<input type="text" class="form-control " id="no_surat" name="no_surat" value=".../Kk.11.10/05/Hj.00/<?= date("m/Y") ?>" required>
+										<input type="text" class="form-control " id="no_surat" name="no_surat" value=".../Kk.11.10/.../BA.05/<?= date("m/Y") ?>" required>
 									</div>
 									<div class="input-group col-md-3 px-2 mb-2">
 										<input type="text" class="form-control " id="sifat" name="sifat" value="" placeholder="sifat surat..." required>

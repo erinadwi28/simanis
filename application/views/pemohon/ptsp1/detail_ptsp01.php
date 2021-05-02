@@ -171,11 +171,14 @@
 							foreach ($data_petugas_doa as $detail) {
 							?>
 								<tr>
-									<td><b>Petugas Doa <?= $no++ ?></b></td>
-									<br>
+									<td><b>Petugas Doa</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td> </td>
+									<td><?= $no++ ?></td>
 								</tr>
 
-								<!-- DINAMIS MENYESUAIKAN JUMLAH PETUGAS DOA -->
 								<?php if ($detail->nama_petugas_doa != null) { ?>
 									<tr>
 										<td><b>Nama Petugas Do'a</b></td>

@@ -73,13 +73,36 @@
 						</div>
 					<?php } ?>
 				</div>
+
+				<?php if ($detail->berita_acara != null) { ?>
+					<!-- Proposal Berita Acara -->
+					<div class="card shadow mb-4">
+						<div class="card-header">
+							<center>
+								<h6 class="m-0 font-weight-bold">Berita Acara</h6>
+							</center>
+						</div>
+
+						<div class="card-body">
+							<center>
+
+								<p><?= $detail->berita_acara; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp15/berita_acara/<?= $detail->berita_acara ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+
+							</center>
+						</div>
+					</div>
+				<?php } ?>
 			</div>
 			<div class="col-md-8 mb-0">
 				<!-- Detail Data -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
 						<h6 class="m-0 font-weight-bold text-center">Permohonan Ijin Operasional Madin</h6>
-						
+
 					</div>
 					<div class="card-body">
 						<table class="table-hover table-responsive">

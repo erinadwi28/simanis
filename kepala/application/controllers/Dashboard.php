@@ -22,6 +22,7 @@ class Dashboard extends CI_Controller
         $data_permohonan['permohonan_pending'] = $this->m_kepala->jml_permohonan_pending()->result();
         $data_permohonan['permohonan_prosesFO'] = $this->m_kepala->jml_permohonan_prosesFO()->result();
         $data_permohonan['permohonan_prosesBO'] = $this->m_kepala->jml_permohonan_prosesBO()->result();
+        $data_permohonan['permohonan_prosesTimTeknis'] = $this->m_kepala->jml_permohonan_prosesTimTeknis()->result();
         $data_permohonan['permohonan_prosesKasi'] = $this->m_kepala->jml_permohonan_prosesKasi()->result();
         $data_permohonan['permohonan_prosesKasubag'] = $this->m_kepala->jml_permohonan_prosesKasubag()->result();
         $data_permohonan['permohonan_selesai'] = $this->m_kepala->jml_permohonan_selesai()->result();
@@ -186,6 +187,22 @@ class Dashboard extends CI_Controller
         $this->load->view('footer');
     }
 
+    //list data permohonan proses Tim Teknis
+    public function list_permohonan_prosesTimTeknis()
+    {
+        $data_title['title'] = 'List Permohonan Proses Tim Teknis';
+        $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
+        $this->session->userdata('id_kepala')])->row_array();
+
+        $data_detail['data_permohonan'] = $this->m_kepala->get_list_data_permohonan('Proses Tim Teknis')->result();
+
+        $this->load->view('header', $data_title);
+        $this->load->view('kepala/sidebar');
+        $this->load->view('topbar', $data);
+        $this->load->view('kepala/list_permohonan_prosesTimTeknis', $data_detail);
+        $this->load->view('footer');
+    }
+
     //list data permohonan proses Kasi
     public function list_permohonan_prosesKasi()
     {
@@ -244,6 +261,7 @@ class Dashboard extends CI_Controller
         $data_detail['detail_permohonan'] = $this->m_kepala->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
 
         if ($id_layanan == 1) {
+            $data_detail['data_petugas_doa'] = $this->m_kepala->data_petugas_doa($id_permohonan_ptsp)->result();
             $data_detail['detail_ptsp'] = $this->m_kepala->get_detail_ptsp($id_permohonan_ptsp, 'ptsp01')->result();
         } elseif ($id_layanan == 2) {
             $data_detail['detail_ptsp'] = $this->m_kepala->get_detail_ptsp($id_permohonan_ptsp, 'ptsp02')->result();

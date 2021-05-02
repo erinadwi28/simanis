@@ -75,30 +75,21 @@
 				</div>
 				<div class="col-md-6 content-detail text-center">
 					<div class="row mb-4">
-						<div class="col-md-12">
-							<div class="card shadow">
-								<div class="card-header text-center mb-0 py-1">
-									<h4>Waktu</h4>
-								</div>
-								<div class="card-body">
-									<p class="card-text">1 hari
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row mb-4">
 						<div class="col-md-12 syarat">
 							<div class="card shadow">
 								<div class="card-header text-center mb-0 py-1">
-									<h4>Persyaratan</h4>
+									<h4>Standar Operasional Prosedur</h4>
 								</div>
 								<div class="card-body">
 									<ol type="1" class="ml-3 list">
-										<li>Surat Rekomendasi dari Madrasah Asal (difotocopy 1 lembar);</li>
-										<li>Surat Penerimaan /Kuota dari sekolah yang akan dituju (difotocopy 1 lembar);</li>
-										<li>Raport Terakhir (di fotocopy 1 lembar)</li>
-										<li>Hasil Rekomendasi dibuat Rangkap 2 (1 lembar untuk ybs dan 1 lembar utk arsip)</li>
+									<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+							<li>Pemohon mengunggah surat rekomendasi dari madrasah asal. <br> (Format: PDF, Ukuran: Max
+								1 MB)</li>
+							<li>Pemohon mengunggah surat penerimaan/kuota dari sekolah yang akan dituju. <br> (Format:
+								PDF, Ukuran: Max 1 MB)</li>
+							<li>Pemohon mengunggah rapot terakhir. <br> (Format: PDF, Ukuran: Max 10 MB)</li>
+							<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
+							</li>
 									</ol>
 								</div>
 							</div>
