@@ -331,7 +331,7 @@ class Dashboard extends CI_Controller
             $this->load->view('pemohon/ptsp26/detail_ptsp26', $data_detail);
         } elseif ($id_layanan == 27) {
             $this->load->view('pemohon/ptsp27/detail_ptsp27', $data_detail);
-        } 
+        }
         $this->load->view('footer');
     }
 
@@ -1099,8 +1099,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp05)->get('ptsp05')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp05/fc_ktp/' . $item->ktp;
+                if ($item->fc_ktp != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp05/fc_ktp/' . $item->fc_ktp;
                     unlink($target_file);
                 }
 
@@ -2355,7 +2355,7 @@ class Dashboard extends CI_Controller
         $this->session->set_flashdata('success', 'disimpan');
         redirect('dashboard/detail_ptsp08/' . $id_permohonan);
     }
-    
+
 
     //tampil sop ptsp09
     public function sop_ptsp09()
@@ -2479,8 +2479,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp09)->get('ptsp09')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/srt_permohonan/' . $item->ktp;
+                if ($item->srt_permohonan != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/srt_permohonan/' . $item->srt_permohonan;
                     unlink($target_file);
                 }
 
@@ -2517,8 +2517,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp09)->get('ptsp09')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/akte_notaris/' . $item->ktp;
+                if ($item->akte_notaris != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/akte_notaris/' . $item->akte_notaris;
                     unlink($target_file);
                 }
 
@@ -2555,8 +2555,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp09)->get('ptsp09')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/izin_usaha/' . $item->ktp;
+                if ($item->izin_usaha != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/izin_usaha/' . $item->izin_usaha;
                     unlink($target_file);
                 }
 
@@ -2593,8 +2593,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp09)->get('ptsp09')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/skud/' . $item->ktp;
+                if ($item->skud != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/skud/' . $item->skud;
                     unlink($target_file);
                 }
 
@@ -2631,8 +2631,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp09)->get('ptsp09')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/npwp/' . $item->ktp;
+                if ($item->npwp != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/npwp/' . $item->npwp;
                     unlink($target_file);
                 }
 
@@ -2669,8 +2669,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp09)->get('ptsp09')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/srt_rekomendasi_pemkab/' . $item->ktp;
+                if ($item->srt_rekomendasi_pemkab != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/srt_rekomendasi_pemkab/' . $item->srt_rekomendasi_pemkab;
                     unlink($target_file);
                 }
 
@@ -2707,8 +2707,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp09)->get('ptsp09')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/laporan_keuangan/' . $item->ktp;
+                if ($item->laporan_keuangan != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/laporan_keuangan/' . $item->laporan_keuangan;
                     unlink($target_file);
                 }
 
@@ -2745,8 +2745,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp09)->get('ptsp09')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/susunan_pengurus/' . $item->ktp;
+                if ($item->susunan_pengurus != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/susunan_pengurus/' . $item->susunan_pengurus;
                     unlink($target_file);
                 }
 
@@ -2783,8 +2783,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp09)->get('ptsp09')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/data_pemegang_saham/' . $item->ktp;
+                if ($item->data_pemegang_saham != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/data_pemegang_saham/' . $item->data_pemegang_saham;
                     unlink($target_file);
                 }
 
@@ -2821,8 +2821,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp09)->get('ptsp09')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/data_direksi_komisaris/' . $item->ktp;
+                if ($item->data_direksi_komisaris != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp09/data_direksi_komisaris/' . $item->data_direksi_komisaris;
                     unlink($target_file);
                 }
 
@@ -2967,8 +2967,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp10)->get('ptsp10')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/srt_permohonan/' . $item->ktp;
+                if ($item->srt_permohonan != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/srt_permohonan/' . $item->srt_permohonan;
                     unlink($target_file);
                 }
 
@@ -3005,8 +3005,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp10)->get('ptsp10')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/akte_notaris/' . $item->ktp;
+                if ($item->akte_notaris != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/akte_notaris/' . $item->akte_notaris;
                     unlink($target_file);
                 }
 
@@ -3043,8 +3043,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp10)->get('ptsp10')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/izin_usaha/' . $item->ktp;
+                if ($item->izin_usaha != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/izin_usaha/' . $item->izin_usaha;
                     unlink($target_file);
                 }
 
@@ -3081,8 +3081,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp10)->get('ptsp10')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/skud/' . $item->ktp;
+                if ($item->skud != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/skud/' . $item->skud;
                     unlink($target_file);
                 }
 
@@ -3119,8 +3119,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp10)->get('ptsp10')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/npwp/' . $item->ktp;
+                if ($item->npwp != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/npwp/' . $item->npwp;
                     unlink($target_file);
                 }
 
@@ -3157,8 +3157,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp10)->get('ptsp10')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/srt_rekomendasi_pemkab/' . $item->ktp;
+                if ($item->srt_rekomendasi_pemkab != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/srt_rekomendasi_pemkab/' . $item->srt_rekomendasi_pemkab;
                     unlink($target_file);
                 }
 
@@ -3195,8 +3195,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp10)->get('ptsp10')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/laporan_keuangan/' . $item->ktp;
+                if ($item->laporan_keuangan != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/laporan_keuangan/' . $item->laporan_keuangan;
                     unlink($target_file);
                 }
 
@@ -3233,8 +3233,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp10)->get('ptsp10')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/susunan_pengurus/' . $item->ktp;
+                if ($item->susunan_pengurus != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/susunan_pengurus/' . $item->susunan_pengurus;
                     unlink($target_file);
                 }
 
@@ -3271,8 +3271,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp10)->get('ptsp10')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/sk/' . $item->ktp;
+                if ($item->sk != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/sk/' . $item->sk;
                     unlink($target_file);
                 }
 
@@ -3309,8 +3309,8 @@ class Dashboard extends CI_Controller
                 $item = $this->db->where('id_ptsp', $id_ptsp10)->get('ptsp10')->row();
 
                 //replace foto lama 
-                if ($item->ktp != null) {
-                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/bukti_pemberangkatan/' . $item->ktp;
+                if ($item->bukti_pemberangkatan != null) {
+                    $target_file = './assets/dashboard/pemohon/ptsp/ptsp10/bukti_pemberangkatan/' . $item->bukti_pemberangkatan;
                     unlink($target_file);
                 }
 
@@ -3714,7 +3714,7 @@ class Dashboard extends CI_Controller
         redirect('dashboard/detail_ptsp12/' . $id_permohonan);
     }
 
-    
+
     //tampil sop ptsp13
     public function sop_ptsp13()
     { // $id_permohonan
@@ -4428,7 +4428,7 @@ class Dashboard extends CI_Controller
         redirect('dashboard/detail_ptsp16/' . $id_permohonan);
     }
 
-    
+
     //tampil sop ptsp17
     public function sop_ptsp17()
     { // $id_permohonan
@@ -4893,15 +4893,15 @@ class Dashboard extends CI_Controller
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
-        $this->load->view('topbar',$data);
+        $this->load->view('topbar', $data);
         $this->load->view('pemohon/ptsp19/sop_ptsp19');
         $this->load->view('footer');
     }
     //tampil form ptsp19
-	public function form_ptsp19()
-	{ // $id_permohonan
+    public function form_ptsp19()
+    { // $id_permohonan
         $data_title['title'] = 'Form Permohonan';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
@@ -4913,7 +4913,7 @@ class Dashboard extends CI_Controller
         $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('pemohon/ptsp19/form_ptsp19',$data_detail);
+        $this->load->view('pemohon/ptsp19/form_ptsp19', $data_detail);
         $this->load->view('footer');
     }
     // aksi pengajuan ptsp19
@@ -4945,18 +4945,18 @@ class Dashboard extends CI_Controller
     }
     //tampil detail ptsp19
     public function detail_ptsp19($id_permohonan)
-    { 
-        $data_title['title'] = 'Detail Permohonan'; 
+    {
+        $data_title['title'] = 'Detail Permohonan';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
         $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp19($id_permohonan)->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
-        $this->load->view('topbar',$data);
-        $this->load->view('pemohon/ptsp19/detail_ptsp19',$data_detail);
+        $this->load->view('topbar', $data);
+        $this->load->view('pemohon/ptsp19/detail_ptsp19', $data_detail);
         $this->load->view('footer');
     }
     //upload surat permohonan ptsp19
@@ -5071,8 +5071,8 @@ class Dashboard extends CI_Controller
     }
 
 
-	//tampil sop ptsp20
-	public function sop_ptsp20()
+    //tampil sop ptsp20
+    public function sop_ptsp20()
     { // $id_permohonan
         $data_title['title'] = 'Standar Operasional Prosedur';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
@@ -5085,9 +5085,9 @@ class Dashboard extends CI_Controller
         $this->load->view('pemohon/ptsp20/sop_ptsp20');
         $this->load->view('footer');
     }
-	//tampil form ptsp20
-	public function form_ptsp20()
-	{ // $id_permohonan
+    //tampil form ptsp20
+    public function form_ptsp20()
+    { // $id_permohonan
         $data_title['title'] = 'Form Permohonan';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
@@ -5099,7 +5099,7 @@ class Dashboard extends CI_Controller
         $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('pemohon/ptsp20/form_ptsp20',$data_detail);
+        $this->load->view('pemohon/ptsp20/form_ptsp20', $data_detail);
         $this->load->view('footer');
     }
     // aksi pengajuan ptsp20
@@ -5130,9 +5130,9 @@ class Dashboard extends CI_Controller
         $this->session->set_flashdata('success', 'disimpan');
         redirect('dashboard/detail_ptsp20/' . $id_permohonan);
     }
-	//tampil detail ptsp20
-	public function detail_ptsp20($id_permohonan)
-	{ // $id_permohonan
+    //tampil detail ptsp20
+    public function detail_ptsp20($id_permohonan)
+    { // $id_permohonan
         $data_title['title'] = 'Detail Permohonan';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
@@ -5143,7 +5143,7 @@ class Dashboard extends CI_Controller
         $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('pemohon/ptsp20/detail_ptsp20',$data_detail);
+        $this->load->view('pemohon/ptsp20/detail_ptsp20', $data_detail);
         $this->load->view('footer');
     }
     //upload surat permohonan ptsp20
@@ -5222,9 +5222,9 @@ class Dashboard extends CI_Controller
         $this->session->set_flashdata('success', 'disimpan');
         redirect('dashboard/detail_ptsp20/' . $permohonan);
     }
-	//tampil form ubah ptsp20
-	public function form_ubah_ptsp20($id_permohonan)
-	{ // $id_permohonan
+    //tampil form ubah ptsp20
+    public function form_ubah_ptsp20($id_permohonan)
+    { // $id_permohonan
         $data_title['title'] = 'Ubah Permohonan';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
@@ -5267,15 +5267,15 @@ class Dashboard extends CI_Controller
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
-        $this->load->view('topbar',$data);
+        $this->load->view('topbar', $data);
         $this->load->view('pemohon/ptsp21/sop_ptsp21');
         $this->load->view('footer');
     }
     //tampil form ptsp21
-	public function form_ptsp21()
-	{ // $id_permohonan
+    public function form_ptsp21()
+    { // $id_permohonan
         $data_title['title'] = 'Form Permohonan';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
@@ -5287,7 +5287,7 @@ class Dashboard extends CI_Controller
         $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('pemohon/ptsp21/form_ptsp21',$data_detail);
+        $this->load->view('pemohon/ptsp21/form_ptsp21', $data_detail);
         $this->load->view('footer');
     }
     // aksi pengajuan ptsp21
@@ -5319,18 +5319,18 @@ class Dashboard extends CI_Controller
     }
     //tampil detail ptsp21
     public function detail_ptsp21($id_permohonan)
-    { 
-        $data_title['title'] = 'Detail Permohonan'; 
+    {
+        $data_title['title'] = 'Detail Permohonan';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
         $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp21($id_permohonan)->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
-        $this->load->view('topbar',$data);
-        $this->load->view('pemohon/ptsp21/detail_ptsp21',$data_detail);
+        $this->load->view('topbar', $data);
+        $this->load->view('pemohon/ptsp21/detail_ptsp21', $data_detail);
         $this->load->view('footer');
     }
     //upload surat permohonan ptsp21
@@ -5372,8 +5372,8 @@ class Dashboard extends CI_Controller
         redirect('dashboard/detail_ptsp21/' . $permohonan);
     }
     //tampil form ubah ptsp21
-	public function form_ubah_ptsp21($id_permohonan)
-	{ // $id_permohonan
+    public function form_ubah_ptsp21($id_permohonan)
+    { // $id_permohonan
         $data_title['title'] = 'Ubah Permohonan';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
@@ -5548,7 +5548,7 @@ class Dashboard extends CI_Controller
     public function update_formulir_ptsp22($id_ptsp)
     {
         if ($_FILES != null) {
-            $this->aksi_upload_formulir_ptsp22 ($id_ptsp);
+            $this->aksi_upload_formulir_ptsp22($id_ptsp);
         }
         $permohonan = $this->input->post('id_permohonan_ptsp');
         $this->session->set_flashdata('success', 'disimpan');
@@ -5595,15 +5595,15 @@ class Dashboard extends CI_Controller
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
-        $this->load->view('topbar',$data);
+        $this->load->view('topbar', $data);
         $this->load->view('pemohon/ptsp23/sop_ptsp23');
         $this->load->view('footer');
     }
     //tampil form ptsp23
-	public function form_ptsp23()
-	{ // $id_permohonan
+    public function form_ptsp23()
+    { // $id_permohonan
         $data_title['title'] = 'Form Permohonan';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
@@ -5615,7 +5615,7 @@ class Dashboard extends CI_Controller
         $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('pemohon/ptsp23/form_ptsp23',$data_detail);
+        $this->load->view('pemohon/ptsp23/form_ptsp23', $data_detail);
         $this->load->view('footer');
     }
     // aksi pengajuan ptsp23
@@ -5654,18 +5654,18 @@ class Dashboard extends CI_Controller
     }
     //tampil detail ptsp23
     public function detail_ptsp23($id_permohonan)
-    { 
-        $data_title['title'] = 'Detail Permohonan'; 
+    {
+        $data_title['title'] = 'Detail Permohonan';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
         $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp23($id_permohonan)->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
-        $this->load->view('topbar',$data);
-        $this->load->view('pemohon/ptsp23/detail_ptsp23',$data_detail);
+        $this->load->view('topbar', $data);
+        $this->load->view('pemohon/ptsp23/detail_ptsp23', $data_detail);
         $this->load->view('footer');
     }
     //upload surat permohonan ptsp23
@@ -5707,8 +5707,8 @@ class Dashboard extends CI_Controller
         redirect('dashboard/detail_ptsp23/' . $permohonan);
     }
     //tampil form ubah ptsp23
-	public function form_ubah_ptsp23($id_permohonan)
-	{ // $id_permohonan
+    public function form_ubah_ptsp23($id_permohonan)
+    { // $id_permohonan
         $data_title['title'] = 'Ubah Permohonan';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
@@ -6084,9 +6084,9 @@ class Dashboard extends CI_Controller
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
-        $this->load->view('topbar',$data);
+        $this->load->view('topbar', $data);
         $this->load->view('pemohon/ptsp26/sop_ptsp26');
         $this->load->view('footer');
     }
@@ -6101,10 +6101,10 @@ class Dashboard extends CI_Controller
         $detailhere = array('id_pemohon' => $this->session->userdata('id_pemohon'));
         $data_detail['detail_profil_saya'] = $this->m_pemohon->get_detail_profil_saya($detailhere, 'pemohon')->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
-        $this->load->view('topbar',$data);
-        $this->load->view('pemohon/ptsp26/form_ptsp26',$data_detail);
+        $this->load->view('topbar', $data);
+        $this->load->view('pemohon/ptsp26/form_ptsp26', $data_detail);
         $this->load->view('footer');
     }
     // aksi pengajuan ptsp26
@@ -6135,16 +6135,16 @@ class Dashboard extends CI_Controller
     //tampil detail permohonan ptsp26
     public function detail_ptsp26($id_permohonan)
     {
-        $data_title['title'] = 'Detail Permohonan';                
+        $data_title['title'] = 'Detail Permohonan';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
         $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp26($id_permohonan)->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
-        $this->load->view('pemohon/ptsp26/detail_ptsp26',$data_detail);
+        $this->load->view('pemohon/ptsp26/detail_ptsp26', $data_detail);
         $this->load->view('footer');
     }
     //upload surat permohonan ptsp26
@@ -6227,9 +6227,9 @@ class Dashboard extends CI_Controller
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
-        $this->load->view('topbar',$data);
+        $this->load->view('topbar', $data);
         $this->load->view('pemohon/ptsp27/sop_ptsp27');
         $this->load->view('footer');
     }
@@ -6244,10 +6244,10 @@ class Dashboard extends CI_Controller
         $detailhere = array('id_pemohon' => $this->session->userdata('id_pemohon'));
         $data_detail['detail_profil_saya'] = $this->m_pemohon->get_detail_profil_saya($detailhere, 'pemohon')->result();
 
-        $this->load->view('header',$data_title);
+        $this->load->view('header', $data_title);
         $this->load->view('pemohon/sidebar_pemohon');
-        $this->load->view('topbar',$data);
-        $this->load->view('pemohon/ptsp27/form_ptsp27',$data_detail);
+        $this->load->view('topbar', $data);
+        $this->load->view('pemohon/ptsp27/form_ptsp27', $data_detail);
         $this->load->view('footer');
     }
     // aksi pengajuan ptsp27
@@ -6361,8 +6361,4 @@ class Dashboard extends CI_Controller
         $this->session->set_flashdata('success', 'disimpan');
         redirect('dashboard/detail_ptsp27/' . $id_permohonan);
     }
-
-
 }
-
-
