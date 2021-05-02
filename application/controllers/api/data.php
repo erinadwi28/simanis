@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 require APPPATH . '/libraries/REST_Controller.php';
 use Restserver\Libraries\REST_Controller;
 
-class data extends REST_Controller {
+class Data extends REST_Controller {
 
     function __construct()
     {
@@ -134,9 +134,9 @@ class data extends REST_Controller {
     // Rest Api Login/Register
     public function pemohon_get(){
 
-        $nama = $this->get('nama');
+        $email = $this->get('email');
 
-        if($nama === NULL){
+        if($email === NULL){
             $data = $this->db->get("pemohon") -> result_array();
             if ($data){
                 $this->response([
@@ -157,7 +157,7 @@ class data extends REST_Controller {
                 ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
             }
         }else {
-            $this->db->where(array("nama"=>$nama));
+            $this->db->where(array("email"=>$email));
             $data = $this->db->get("pemohon") -> result_array();
             if ($data){
                 $this->response([
@@ -188,15 +188,17 @@ class data extends REST_Controller {
             'nama' => $this->post('nama'),
             'foto_profil_pemohon' => $this->post('foto_profil_pemohon'),
             'no_hp' => $this->post('no_hp'),
-            'update' => $this->post('update'),
             'status_delete' => $this->post('status_delete'),
             'role_pemohon' => $this->post('role_pemohon')
         ];
         $this->db->insert("pemohon",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function pemohon_delete(){}
@@ -232,9 +234,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("permohonan_ptsp",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function layanan_delete(){}
@@ -277,9 +282,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp01",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp01_delete(){}
@@ -323,9 +331,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp02",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp02_delete(){}
@@ -361,9 +372,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp03",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp03_delete(){}
@@ -399,9 +413,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp04",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp04_delete(){}
@@ -445,9 +462,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp05",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp05_delete(){}
@@ -492,9 +512,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp06",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp06_delete(){}
@@ -538,9 +561,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp07",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp07_delete(){}
@@ -588,9 +614,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp08",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp08_delete(){}
@@ -638,9 +667,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp09",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp09_delete(){}
@@ -688,9 +720,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp10",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp10_delete(){}
@@ -737,9 +772,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp11",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp11_delete(){}
@@ -779,9 +817,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp12",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp12_delete(){}
@@ -825,9 +866,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp13",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp13_delete(){}
@@ -871,9 +915,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp14",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp14_delete(){}
@@ -914,9 +961,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp15",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp15_delete(){}
@@ -958,9 +1008,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp16",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp16_delete(){}
@@ -1010,9 +1063,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp17",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp17_delete(){}
@@ -1054,9 +1110,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp18",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp18_delete(){}
@@ -1097,9 +1156,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp19",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp19_delete(){}
@@ -1141,9 +1203,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp20",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp20_delete(){}
@@ -1183,9 +1248,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp21",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp21_delete(){}
@@ -1223,9 +1291,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp22",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp22_delete(){}
@@ -1272,9 +1343,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp23",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp23_delete(){}
@@ -1314,9 +1388,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp24",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp24_delete(){}
@@ -1354,9 +1431,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp25",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp25_delete(){}
@@ -1394,9 +1474,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp26",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp26_delete(){}
@@ -1436,9 +1519,12 @@ class data extends REST_Controller {
         ];
         $this->db->insert("ptsp27",$data);
         $this->set_response([
-            'code' => 201,
-            'message' => 'Data Tersedia',
-            'data' => $data,
+            'meta' => [
+                'success' => true,
+                'message' => "Successfully",
+                'code' => 200,
+            ],
+            'data' => $data
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function ptsp27_delete(){}
