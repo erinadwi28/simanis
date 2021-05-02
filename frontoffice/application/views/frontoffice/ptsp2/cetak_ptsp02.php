@@ -222,6 +222,7 @@
 		       </td>
 		    </tr>
 		</table>
+		<br>
 		<!-- Paragraf 1 / isi surat-->
 		<table width="530">
 			<tr>
@@ -233,7 +234,6 @@
 		    </tr>
 		</table>
 		<?php } ?>
-		<br>
 		<!-- Pelaksanaan -->
 		<?php foreach ($detail_ptsp as $detail) { ?>
 		<table width="530">
@@ -269,7 +269,6 @@
 			</tr>
 		</table>
 		<?php } ?>
-		
 		<br>
 		<!-- ketentuan -->
 		<table>
@@ -301,11 +300,11 @@
 		       </td>
 		    </tr>
 		</table>
-		<br><br>
+		<br>
 		<table width="500">
 			<tr>
 				<td width="300"><br><br><br><br></td>
-				<td class="text" align="center">Kepala Kantor Kementrian Agama <br> Kabupaten Klaten<br><br><br><br><br>
+				<td class="text" align="center">Kepala Kantor Kementrian Agama <br> Kabupaten Klaten<br><br><br><br>
 					<u style = "color: #000000;">Drs.H.Masmin Afif,M.Ag</u><br>NIP.196706131994031002</td>
 			</tr>
 	     </table>
