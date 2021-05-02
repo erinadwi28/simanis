@@ -5,7 +5,7 @@
 	<div id="content">
 
 		<!-- Topbar -->
-		<nav class="navbar navbar-expand navbar-light bg-white topbar mb-2 static-top shadow">
+		<nav class="navbar navbar-expand navbar-light bg-white topbar mb-3 static-top shadow">
 
 			<!-- Sidebar Toggle (Topbar) -->
 			<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -13,8 +13,8 @@
 			</button>
 
 			<!-- Topbar Welcome -->
-			<div class="topbar-welcome ml-2">
-				<p class="mb-0 ">Halo, Admin Tim Teknis !</p>
+			<div class="topbar-welcome ml-2 text-gray-600">
+				<i class="fas fa-calendar-alt"></i>&nbsp; <span id="top-info-date" class="top-info-date"></span>&nbsp; | &nbsp;<span class="mb-0 ">Halo, Admin Tim Teknis !</span>
 			</div>
 
 			<!-- Topbar Navbar -->
@@ -44,7 +44,7 @@
 					<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 						<a class="dropdown-item" href="<?= base_url() ?>dashboard/profil">
 							<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-							Profile
+							Profil Saya
 						</a>
 						<a class="dropdown-item" href="<?= base_url() ?>dashboard/form_ubahsandi">
 							<i class="fas fa-user-lock fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -53,7 +53,7 @@
 						<div class="dropdown-divider"></div>
 						<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
 							<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-							Logout
+							Keluar
 						</a>
 					</div>
 				</li>

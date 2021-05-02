@@ -31,7 +31,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-primary">
-								Permohonan Masuk</div>
+								Masuk</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($total_notif as $total_notif) { ?>
@@ -60,7 +60,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-success">
-								Permohonan Selesai BO</div>
+								Selesai BO</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($permohonan_selesaiBO as $selesaiBO) { ?>
@@ -82,13 +82,13 @@
 		</div>
 
 		<!-- Data Permohonan Proses Kasi-->
-		<!-- <div class="col-xl-3 col-md-3 mb-3">
+		<div class="col-xl-3 col-md-3 mb-3">
 			<div class="card border-left-primary shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-primary">
-								Permohonan Proses Kasi</div>
+								Proses Kasi</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($permohonan_prosesKasi as $prosesKasi) { ?>
@@ -107,7 +107,7 @@
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div>
 	</div>
 </div>
 <!-- /.container-fluid -->

@@ -21,7 +21,7 @@
 <!-- Logout Modal-->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 	aria-hidden="true">
-	<div class="modal-dialog" role="document">
+	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin Ingin Keluar ?</h5>
@@ -30,14 +30,14 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				Tekan Logout untuk melanjutkan <br>
-				Tekan Cancel untuk membatalkan
+				Tekan Keluar untuk melanjutkan <br>
+				Tekan Batal untuk membatalkan
 			</div>
 			<div class="modal-footer">
-				<button class="btn btn-secondary" type="button" data-dismiss="modal">
-					Cancel
+				<button class="btn btn-tolak btn-sm px-3" type="button" data-dismiss="modal">
+					Batal
 				</button>
-				<a class="btn btn-primary" href="<?= base_url('masuk/logout') ?>">Logout</a>
+				<a class="btn btn-primary btn-sm px-3" href="<?= base_url('masuk/logout') ?>">Keluar</a>
 			</div>
 		</div>
 	</div>
@@ -64,6 +64,22 @@
 <script src="<?= base_url('assets/dashboard/library/parsley/parsley.js') ?>"></script>
 
 <script src="<?= base_url('assets/dashboard/js/script.js') ?>"></script>
+
+<script>
+        var tw = new Date();
+        if (tw.getTimezoneOffset() == 0)(a = tw.getTime() + (7 * 60 * 60 * 1000))
+        else(a = tw.getTime());
+        tw.setTime(a);
+        var tahun = tw.getFullYear();
+        var hari = tw.getDay();
+        var bulan = tw.getMonth();
+        var tanggal = tw.getDate();
+        var hariarray = new Array("Minggu,", "Senin,", "Selasa,", "Rabu,", "Kamis,", "Jum'at,", "Sabtu,");
+        var bulanarray = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus",
+            "September", "Oktober", "Nopember", "Desember");
+        document.getElementById("top-info-date").innerHTML = hariarray[hari] + " " + tanggal + " " + bulanarray[bulan] +
+            " " + tahun + " ";
+</script>
 </body>
 
 </html>

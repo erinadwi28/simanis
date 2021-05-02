@@ -52,7 +52,7 @@
 								<label for="Alamat" class="col-sm-3 col-form-label">Alamat</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<textarea type="text" class="form-control" id="alamat" name="alamat" value="" placeholder="masukkan alamat disini..."></textarea>
+										<textarea type="text" class="form-control" id="alamat" name="alamat" value="" placeholder="masukkan alamat disini..." required></textarea>
 									</div>
 								</div>
 							</div>

@@ -37,9 +37,9 @@
       </a>
       <div id="menupermohonanptsp" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_validasi_kemenag') ?>">Proses KEMENAG</a>
-          <a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_pending') ?>">Permohonan Pending</a>
-          <a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Permohonan Selesai</a>
+          <a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Masuk</a>
+          <a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_pending') ?>">Pending</a>
+          <a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_selesai_tim_teknis') ?>">Selesai Tim Teknis</a>
         </div>
       </div>
     </li>

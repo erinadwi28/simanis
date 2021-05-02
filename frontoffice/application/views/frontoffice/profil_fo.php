@@ -4,8 +4,8 @@
     <?php
     foreach ($detail_profil_saya as $detail) { ?>
         <div class="d-sm-flex align-items-center justify-content-between mb-4 judullist">
-            <h3>Profil Front Office</h3>
-            <a href="">
+            <h3>Profil Saya</h3>
+            <a href="<?= base_url('dashboard') ?>">
                 <button id="btn_kembali" class="btn btn-sm btn-warning" type="submit">
                     <i class="fa fa-arrow-left">
                     </i> Kembali
@@ -24,7 +24,7 @@
                         </center>
                     </div>
                     <center>
-                        <div class="card-body" style="padding: 15px;">
+                        <div class="card-body">
                             <!-- <a href="<?= base_url(); ?>/assets/uploads/warga/<?= $saya->foto_profil_warga; ?>" data-gallery="mygallery" data-title="Foto Profil" data-toggle="lightbox"> -->
                             <img src="<?= base_url(); ?>../assets/dashboard/images/frontoffice/profil/<?= $fo['foto_profil_fo'] ?>" alt="foto profil" class="img-fluid">
                         </div>
@@ -39,11 +39,9 @@
                                     <div class="input-group">
                                         <div class="form-group-upload">
                                             <div class="custom-file">
-                                                <label class="custom-file-label" for="file-upload-profil">pilih foto
+                                                <label class="custom-file-label" for="file-upload">pilih foto
                                                     profil...</label>
-                                                <input type="file" class="custom-file-input" id="file-upload-profil" name="berkas">
-                                                <!-- <i class=" fas fa-exclamation-circle"></i>
-                                            <h6>Error massage</h6> -->
+                                                <input type="file" class="custom-file-input" id="file-upload" name="berkas" required>
                                             </div>
                                         </div>
                                     </div>
@@ -51,8 +49,7 @@
                             <?php } ?>
                             <center>
                                 <button class="btn btn-sm btn-primary" type="submit">
-                                    <i class="fa fa-upload">
-                                    </i> Upload
+                                    <i class="fa fa-upload"></i>
                                 </button>
                             </center>
                         </form>
@@ -99,13 +96,11 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="card-footer">
+                    <!-- <div class="card-footer">
                         <em class="float-center small text-danger">*Anda bisa mengubah Kata Sandi serta Foto Profil, Foto KTP, dan Foto KK. <br>
                             Untuk ubah data harap hubungi Nomor Telepon berikut : <br>
                             No Telepon : 085713609299</em>
-
-
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

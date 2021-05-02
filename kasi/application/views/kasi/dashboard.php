@@ -2,7 +2,7 @@
 <div class="container-fluid">
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between mb-2">
-		<h1 class="h3 mb-0">Dashboard Kasi</h1>
+		<h1 class="h3 mb-0">Dashboard</h1>
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -31,7 +31,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-primary">
-								Permohonan Masuk</div>
+								Masuk</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($total_notif as $total_notif) { ?>
@@ -60,7 +60,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-success">
-								Permohonan Selesai Kasi <?= $kasi['sie'] ?></div>
+								Selesai Kasi <?= $kasi['sie'] ?></div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($permohonan_selesaiKasi as $selesaiKasi) { ?>
@@ -88,7 +88,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-primary">
-								Permohonan Proses Kasubag TU</div>
+								Proses Kasubag TU</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($permohonan_prosesKasubag as $prosesKasubag) { ?>

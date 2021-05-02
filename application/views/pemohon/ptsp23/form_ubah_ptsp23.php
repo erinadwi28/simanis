@@ -148,7 +148,7 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="date" class="form-control" id="tgl_mulai_mengajar" name="tgl_mulai_mengajar" 
-									value="<?= $detail->tgl_mulai_mengajar ?>"  >
+									value="<?= $detail->tgl_mulai_mengajar ?>" required>
 								</div>
 							</div>
 						</div>

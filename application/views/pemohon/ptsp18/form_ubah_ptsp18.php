@@ -39,7 +39,7 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="no_srt_permohonan" name="no_srt_permohonan"
-									value="<?= $detail->no_srt_permohonan ?>" placeholder="masukkan no surat takmir disini...">
+									value="<?= $detail->no_srt_permohonan ?>" placeholder="masukkan no surat takmir disini..." required>
 								</div>
 							</div>
 						</div>

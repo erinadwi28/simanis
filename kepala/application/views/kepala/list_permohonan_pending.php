@@ -36,15 +36,14 @@
             foreach ($data_permohonan as $permohonan) {
             ?>
               <tr>
-                <td><?= $no++ ?></td>
+                <td class="text-center"><?= $no++ ?></td>
                 <td><?= $permohonan->nama_layanan ?></td>
                 <td><?= format_indo(date($permohonan->tgl_permohonan)); ?></td>
-                <td><label class="badge badge-danger"><i class="far fa-times-circle"><?= $permohonan->status ?></i></label></td>
-                <td>
+                <td><label class="badge badge-danger"><i class="far fa-times-circle"> <?= $permohonan->status ?></i></label></td>
+                <td class="text-center">
                   <a href="<?= base_url() ?>dashboard/detail_data_permohonan/<?= $permohonan->id_permohonan_ptsp ?>/<?= $permohonan->id_layanan ?>">
                     <button id="btn_simpan" class="btn btn-sm btn-primary" type="submit">
-                      <i class="far fa-eye nav-icon"></i>
-                      Detail
+                      <i class="fas fa-search"></i>
                     </button>
                   </a>
                 </td>

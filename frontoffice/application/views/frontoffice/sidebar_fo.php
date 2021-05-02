@@ -37,13 +37,13 @@
 			</a>
 			<div id="menupermohonanptsp" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
-					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Permohonan Masuk</a>
-					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_pending') ?>">Permohonan Pending</a>
-					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_selesaiFO') ?>">Permohonan Selesai FO</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_masuk') ?>">Masuk</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_pending') ?>">Pending</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_selesaiFO') ?>">Selesai FO</a>
 					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_prosesBO') ?>">Proses BO</a>
 					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_prosesKasi') ?>">Proses Kasi</a>
 					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_prosesKasubag') ?>">Proses Kasubag</a>
-					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Permohonan Selesai</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Selesai</a>
 				</div>
 			</div>
 		</li>

@@ -20,7 +20,7 @@ class Dashboard extends CI_Controller
 
         public function index()
         {
-                $data_title['title'] = 'SIMANIS: Dashboard';
+                $data_title['title'] = 'SIMELATI: Dashboard';
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();

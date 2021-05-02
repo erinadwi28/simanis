@@ -23,7 +23,8 @@
   <link href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" rel="stylesheet" type="text/css" />
   <link href="<?= base_url('../assets/dashboard/css/dashboard.css') ?>" rel="stylesheet" type="text/css" />
   <link href="<?= base_url('../assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.css') ?>" rel="stylesheet" type="text/css" />
-
+  <!-- Parsley -->
+	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/library/parsley/parsley.css') ?>">
 </head>
 
 <body id="page-top">

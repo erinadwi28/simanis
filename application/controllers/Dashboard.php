@@ -16,7 +16,7 @@ class Dashboard extends CI_Controller
 
     public function index()
     {
-        $data_title['title'] = 'SIMANIS: Dashboard';
+        $data_title['title'] = 'SIMELATI: Dashboard';
         $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
         $this->session->userdata('id_pemohon')])->row_array();
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();

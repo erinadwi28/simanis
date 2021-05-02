@@ -59,6 +59,24 @@ $('#file-upload-10').change(function () {
 	$(this).prev('label').text(file);
 });
 
+// Pemohon
+// Ubah pass
+$('#ubah_pass').parsley();
+
+$(document).ready(function() {
+		var cek = $(".form-checkbox").val();
+		$(".form-checkbox").click(function() {
+			if ($(this).is(":checked")) {
+				$(".form-password").attr("type", "text");
+			} else {
+				$(".form-password").attr("type", "password");
+			}
+		});
+});
+
+// Upload Foto Profil
+$('#form_upload_foto_profil').parsley();
+
 // PTSP01
 $('#form_ptsp01').parsley();
 

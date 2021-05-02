@@ -2,7 +2,7 @@
 <div class="container-fluid">
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between mb-2">
-		<h1 class="h3 mb-0">Dashboard Kepala</h1>
+		<h1 class="h3 mb-0">Dashboard</h1>
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -31,7 +31,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-danger">
-								Permohonan Pending</div>
+								Pending</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($permohonan_pending as $pending) { ?>
@@ -58,7 +58,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-primary">
-								Permohonan Proses FO</div>
+								Proses FO</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($permohonan_prosesFO as $prosesFO) { ?>
@@ -85,7 +85,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-primary">
-								Permohonan Proses BO</div>
+								Proses BO</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($permohonan_prosesBO as $prosesBO) { ?>
@@ -114,7 +114,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-primary">
-								Permohonan Proses Tim Teknis</div>
+								Proses Tim Teknis</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($permohonan_prosesTimTeknis as $prosesTimTeknis) { ?>
@@ -146,7 +146,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-primary">
-								Permohonan Proses Kasi</div>
+								Proses Kasi</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($permohonan_prosesKasi as $prosesKasi) { ?>
@@ -175,7 +175,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-primary">
-								Permohonan Proses Kasubag</div>
+								Proses Kasubag</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($permohonan_prosesKasubag as $prosesKasubag) { ?>
@@ -204,7 +204,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-success">
-								Permohonan Selesai</div>
+								Selesai</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($permohonan_selesai as $selesai) { ?>

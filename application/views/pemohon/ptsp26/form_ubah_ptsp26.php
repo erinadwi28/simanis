@@ -68,7 +68,7 @@
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="tujuan_permohonan_data" name="tujuan_permohonan_data"
 									 value="<?= $detail->tujuan_permohonan_data ?>" required
-									 placeholder="masukkan Permohonan data disini...">
+									 placeholder="masukkan tujuan permohonan data disini...">
 								</div>
 							</div>
 						</div>

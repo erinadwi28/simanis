@@ -34,13 +34,12 @@
                 <td><?= $no++ ?></td>
                 <td><?= $permohonan->nama_layanan ?></td>
                 <td><?= format_indo(date($permohonan->tgl_permohonan)); ?></td>
-                <td><label class="badge badge-info"><i class="far fa-clock"><?= $permohonan->status ?></i>
+                <td><label class="badge badge-info"><i class="far fa-clock"> <?= $permohonan->status ?></i>
                   </label></td>
                 <td>
-                  <div>
+                  <div class="text-center">
                     <a href="<?= base_url() ?>dashboard/detail_data_permohonan/<?= $permohonan->id_permohonan_ptsp ?>/<?= $permohonan->id_layanan ?>" class="btn btn-primary btn-sm">
-                      <i class="far fa-eye nav-icon"></i>
-                      Detail
+                      <i class="fas fa-search"></i>
                     </a>
                   </div>
                 </td>

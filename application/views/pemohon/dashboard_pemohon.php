@@ -60,7 +60,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-danger">
-								Permohonan Pending</div>
+								Pending</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($permohonan_pending as $pending) { ?>
@@ -88,7 +88,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-success">
-								Permohonan Selesai</div>
+								Selesai</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($permohonan_selesai as $selesai) { ?>
@@ -366,6 +366,7 @@
 								13. Rek. Izin Operasional Lembaga Baru</div>
 						</div>
 					</div>
+					<br>
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<a href="<?= base_url('dashboard/sop_ptsp13') ?>" class="badge badge-warning float-right">Selengkapnya <i class="fas fa-arrow-right"></i></a>
@@ -616,6 +617,7 @@
 								26. Data Lembaga Agama & Keagamaan</div>
 						</div>
 					</div>
+					<br>
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<center>

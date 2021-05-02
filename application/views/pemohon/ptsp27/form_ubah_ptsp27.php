@@ -71,7 +71,7 @@
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="tujuan_permohonan_suket_penghasilan"
 										name="tujuan_permohonan_suket_penghasilan" value="<?= $detail->tujuan_permohonan_suket_penghasilan; ?>" required
-										placeholder="masukkan Perihal Konsultasi disini...">
+										placeholder="masukkan tujuan permohonan data disini...">
 								</div>
 							</div>
 						</div>

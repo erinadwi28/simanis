@@ -50,7 +50,7 @@
 								<div class="col-sm-9">
 									<div class="form-line focused">
 										<textarea type="text" class="form-control" id="alamat" name="alamat" 
-										value="" placeholder="masukkan alamat disini..."><?= $detail->alamat ?></textarea>
+										value="" placeholder="masukkan alamat disini..." required><?= $detail->alamat ?></textarea>
 									</div>
 								</div>
 							</div>

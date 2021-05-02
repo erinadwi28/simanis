@@ -31,7 +31,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-primary">
-								Permohonan Masuk</div>
+								Masuk</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($total_notif as $total_notif) { ?>
@@ -55,12 +55,40 @@
 
 		<!-- Data Selesai Tim Teknis-->
 		<div class="col-xl-3 col-md-3 mb-3">
+			<div class="card border-left-danger shadow-lg">
+				<div class="card-body px-3">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-0">
+							<div class="h6 text-danger">
+								Pending</div>
+							<div class="h4 mb-0 text-gray-800">
+								<?php
+								foreach ($permohonan_selesai_tim_teknis as $selesai) { ?>
+									<?= $selesai->permohonan_selesai_tim_teknis; ?>
+								<?php } ?>
+							</div>
+						</div>
+						<div class="col-auto">
+							<i class="fas fa-clock fa-2x text-gray-300"></i>
+						</div>
+					</div>
+					<div class="row mt-1">
+						<div class="col-md-12">
+							<a href="<?= base_url('dashboard/list_permohonan_selesai_tim_teknis') ?>" class="badge badge-danger float-right"><i class="far fa-eye nav-icon"></i> Lihat</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Data Selesai Tim Teknis-->
+		<div class="col-xl-3 col-md-3 mb-3">
 			<div class="card border-left-success shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="h6 text-success">
-								Permohonan Selesai Tim Teknis</div>
+								Selesai Tim Teknis</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
 								foreach ($permohonan_selesai_tim_teknis as $selesai) { ?>

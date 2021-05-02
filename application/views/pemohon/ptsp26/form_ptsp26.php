@@ -76,7 +76,7 @@
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="tujuan_permohonan_data"
 										name="tujuan_permohonan_data" value="" required
-										placeholder="masukkan Permohonan data disini...">
+										placeholder="masukkan tujuan permohonan data disini...">
 								</div>
 							</div>
 						</div>

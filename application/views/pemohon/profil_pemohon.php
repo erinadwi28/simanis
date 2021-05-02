@@ -24,7 +24,7 @@
                         </center>
                     </div>
                     <center>
-                        <div class="card-body" style="padding: 15px;">
+                        <div class="card-body">
                             <img src="<?= base_url(); ?>/assets/dashboard/images/pemohon/profil/<?= $pemohon['foto_profil_pemohon'] ?>" alt="foto profil" class="img-fluid">
                         </div>
                     </center>
@@ -38,11 +38,10 @@
                                     <div class="input-group">
                                         <div class="form-group-upload">
                                             <div class="custom-file">
-                                                <label class="custom-file-label" for="file-upload-profil">pilih foto
+                                                <label class="custom-file-label" for="file-upload">pilih foto
                                                     profil...</label>
-                                                <input type="file" class="custom-file-input" id="file-upload-profil" name="berkas">
-                                                <!-- <i class=" fas fa-exclamation-circle"></i>
-                                            <h6>Error massage</h6> -->
+                                                <input type="file" class="custom-file-input" id="file-upload" name="berkas" required>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -50,8 +49,7 @@
                             <?php } ?>
                             <center>
                                 <button class="btn btn-sm btn-primary" type="submit">
-                                    <i class="fa fa-upload">
-                                    </i> Upload
+                                    <i class="fa fa-upload"></i> 
                                 </button>
                             </center>
                         </form>
@@ -108,11 +106,9 @@
                         </table>
                     </div>
                     <div class="card-footer">
-                        <em class="float-center small text-danger">*Anda bisa mengubah Kata Sandi serta Foto Profil, Foto KTP, dan Foto KK. <br>
+                        <em class="float-center small text-danger">*Anda bisa mengubah Kata Sandi serta Foto Profil.
                             Untuk ubah data harap hubungi Nomor Telepon berikut : <br>
                             No Telepon : 085713609299</em>
-
-
                     </div>
                 </div>
             </div>

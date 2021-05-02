@@ -196,11 +196,11 @@
 		</div>
 		<!-- Permohonan Selesai-->
 		<div class="col-xl-3 col-md-3 mb-3">
-			<div class="card border-left-info shadow-lg">
+			<div class="card border-left-success shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
-							<div class="h6 text-info">
+							<div class="h6 text-success">
 								Selesai Validasi</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
@@ -215,7 +215,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_permohonan_selesai') ?>" class="badge badge-info float-right"><i class="far fa-eye nav-icon"></i>
+							<a href="<?= base_url('dashboard/list_permohonan_selesai') ?>" class="badge badge-success float-right"><i class="far fa-eye nav-icon"></i>
 								Lihat</a>
 						</div>
 					</div>
@@ -225,11 +225,11 @@
 
 		<!-- Permohonan Arsip-->
 		<div class="col-xl-3 col-md-3 mb-3">
-			<div class="card border-left-success shadow-lg">
+			<div class="card border-left-info shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
-							<div class="h6 text-success">
+							<div class="h6 text-info">
 								Arsip Permohonan</div>
 							<div class="h4 mb-0 text-gray-800">
 								<?php
@@ -244,7 +244,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_permohonan_arsip') ?>" class="badge badge-success float-right"><i class="far fa-eye nav-icon"></i>
+							<a href="<?= base_url('dashboard/list_permohonan_arsip') ?>" class="badge badge-info float-right"><i class="far fa-eye nav-icon"></i>
 								Lihat</a>
 						</div>
 					</div>
