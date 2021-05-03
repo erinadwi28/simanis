@@ -210,6 +210,7 @@
 							</tr>
 						</table>
 					</center>
+					<br>
 
 						<!-- NO SURAT -->
 						<?php

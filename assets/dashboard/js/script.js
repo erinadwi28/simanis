@@ -2,60 +2,90 @@
 $('#file-upload').change(function () {
 	var i = $(this).prev('label').clone();
 	var file = $('#file-upload')[0].files[0].name;
+	if (file.length > 25){
+		file = file.substr(0, 15) + '...' +  file.substr(-10) ;
+	}
 	$(this).prev('label').text(file);
 });
 
 $('#file-upload-2').change(function () {
 	var i = $(this).prev('label').clone();
 	var file = $('#file-upload-2')[0].files[0].name;
+	if (file.length > 25){
+		file = file.substr(0, 15) + '...' +  file.substr(-10) ;
+	}
 	$(this).prev('label').text(file);
 });
 
 $('#file-upload-3').change(function () {
 	var i = $(this).prev('label').clone();
 	var file = $('#file-upload-3')[0].files[0].name;
+	if (file.length > 25){
+		file = file.substr(0, 15) + '...' +  file.substr(-10) ;
+	}
 	$(this).prev('label').text(file);
 });
 
 $('#file-upload-4').change(function () {
 	var i = $(this).prev('label').clone();
 	var file = $('#file-upload-4')[0].files[0].name;
+	if (file.length > 28){
+		file = file.substring(0, 28) + '...' ;
+	}
 	$(this).prev('label').text(file);
 });
 
 $('#file-upload-5').change(function () {
 	var i = $(this).prev('label').clone();
 	var file = $('#file-upload-5')[0].files[0].name;
+	if (file.length > 25){
+		file = file.substr(0, 15) + '...' +  file.substr(-10) ;
+	}
 	$(this).prev('label').text(file);
 });
 
 $('#file-upload-6').change(function () {
 	var i = $(this).prev('label').clone();
 	var file = $('#file-upload-6')[0].files[0].name;
+	if (file.length > 25){
+		file = file.substr(0, 15) + '...' +  file.substr(-10) ;
+	}
 	$(this).prev('label').text(file);
 });
 
 $('#file-upload-7').change(function () {
 	var i = $(this).prev('label').clone();
 	var file = $('#file-upload-7')[0].files[0].name;
+	if (file.length > 25){
+		file = file.substr(0, 15) + '...' +  file.substr(-10) ;
+	}
 	$(this).prev('label').text(file);
 });
 
 $('#file-upload-8').change(function () {
 	var i = $(this).prev('label').clone();
 	var file = $('#file-upload-8')[0].files[0].name;
+	if (file.length > 25){
+		file = file.substr(0, 15) + '...' +  file.substr(-10) ;
+	}
 	$(this).prev('label').text(file);
 });
 
 $('#file-upload-9').change(function () {
 	var i = $(this).prev('label').clone();
 	var file = $('#file-upload-9')[0].files[0].name;
+	if (file.length > 25){
+		file = file.substr(0, 15) + '...' +  file.substr(-10) ;
+	}
 	$(this).prev('label').text(file);
 });
 
 $('#file-upload-10').change(function () {
 	var i = $(this).prev('label').clone();
 	var file = $('#file-upload-10')[0].files[0].name;
+	if (file.length > 25){
+		file = file.substr(0, 15) + '...' +  file.substr(-10) ;
+	}
 	$(this).prev('label').text(file);
 });
 

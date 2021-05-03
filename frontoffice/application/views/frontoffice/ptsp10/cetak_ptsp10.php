@@ -197,6 +197,7 @@
 								</tr>
 							</table>
 						</center>
+						<br>
 						<div class="no_surat">
 							<center>
 								<p><b>REKOMENDASI </b><br>
