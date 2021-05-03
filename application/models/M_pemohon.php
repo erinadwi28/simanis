@@ -106,6 +106,23 @@ class M_pemohon extends CI_Model
         $this->db->update('permohonan_ptsp', $data);
     }
 
+    //get data notif permohonan
+    public function list_notif_permohonan()
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->where('permohonan_ptsp.id_pemohon', $this->session->userdata('id_pemohon'));
+        $this->db->where('permohonan_ptsp.status_delete', 0);
+        $this->db->where('notif_pemohon', 'Belum Dibaca');
+        $this->db->where("(status = 'Pending' 
+		OR status = 'Selesai')", null, false);
+        $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
     //get data validasi kemenag
     public function list_permohonan_validasi_kemenag()
     {

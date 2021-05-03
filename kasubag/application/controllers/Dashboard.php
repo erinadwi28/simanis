@@ -304,8 +304,14 @@ class Dashboard extends CI_Controller
         //update status permohonan menjadi selesai
         public function aksi_setujui_permohonan($id_permohonan_ptsp)
         {
+                $kepala = $this->m_kasubag->get_data_kepala()->result();
+                foreach ($kepala as $key) {
+                        $id_kepala = $key->id_kepala;
+                }
+
                 $data = array(
                         'id_kasubag' => $this->session->userdata('id_kasubag'),
+                        'id_kepala' => $id_kepala,
                         'notif_pemohon' => 'Belum Dibaca',
                         'status' => 'Selesai',
                         'tgl_persetujuan_kasubag' => date("Y/m/d")

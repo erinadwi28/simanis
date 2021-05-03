@@ -16,9 +16,7 @@
 
 	<!-- Custom fonts for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/vendor/fontawesome-free/css/all.min.css') ?>" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
@@ -120,7 +118,6 @@
 			margin-right: 0px;
 			padding: 0;
 		}
-
 	</style>
 
 </head>
@@ -137,8 +134,7 @@
 								<td></td>
 								<td class="img">
 									<center>
-										<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
-											width="100" height="100">
+										<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>" width="100" height="100">
 									</center>
 								</td>
 								<td width="400" style="padding-left: 10px;">
@@ -162,67 +158,67 @@
 
 					<!-- REK & NO -->
 					<?php foreach ($detail_ptsp as $detail) { ?>
-					<center>
-						<p class="no_surat"><b>REKOMENDASI</b><br>
-							Nomor : <?= $detail->no_surat ?></p>
-					</center>
+						<center>
+							<p class="no_surat"><b>REKOMENDASI</b><br>
+								Nomor : <?= $detail->no_surat ?></p>
+						</center>
 
-					<br>
-					<!-- ISI -->
-					<div class="badan_surat isi_surat">
-
-						<p>Assalamu'alaikum Wr. Wb</p>
-						<div class="paragraf">
-							<p>Kepala Kantor Kementerian Agama Kab. Klaten dengan ini menerangkan bahwa:</p>
-							<br>
-						</div>
-						<table class="table table-bordered">
-							<thead>
-								<tr>
-									<th style="width: 30px; padding:2px">No</th>
-									<th style="width: 160px; padding:0px">Nama</th>
-									<th style="width: 190px; padding:0px">Alamat</th>
-									<th style="width: 130px; padding:0px">Tempat/Tgl Lahir</th>
-									<th style="width: 120px; padding:0px">No.Telp</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td style="text-align: center; padding:2px">1.</td>
-									<td style="padding:2px"><?= $detail->nama ?></td>
-									<td style="padding:2px"><?= $detail->alamat ?></td>
-									<td style="padding:2px"><?= $detail->tempat_lahir ?>, <?= $detail->tanggal_lahir ?></td>
-									<td style="padding:2px"><?= $detail->no_hp ?></td>
-								</tr>
-							</tbody>
-						</table>
-
-						<div class="isi_surat paragraf">
-							<p>Adalah calon Jamaah Umrah/Haji Khusus yang terdaftar di <?= $detail->nama_agen ?>
-								sebagai Penyelenggara Ibadah Umrah/Haji Khusus yang terdaftar resmi pada
-								Kementerian Agama dengan SK Nomor: <?= $detail->no_sk_agen ?> Tahun
-								<?= $detail->tahun_sk ?>.
-							</p>
-							<p>Rekomendasi ini dibuat sebagai pertimbangan dalam pembuatan paspor untuk
-								keperluan kepergian Ibadah Umrah/Haji Khusus yang bersangkutan.
-							</p>
-							<p>Demikian rekomendasi ini kami buat untuk dipergunakan sebagimana mestinya.
-							</p>
-							<br>
-						</div>
-
-						<p>Wassalmu'alaikum Wr. Wb.</p>
 						<br>
-					</div>
+						<!-- ISI -->
+						<div class="badan_surat isi_surat">
 
-					<!-- TTD -->
-					<div class="row">
-						<div class="ttd_surat col">
-							Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?> <br>
-							Kepala<br><br><br><br>Anif Solikhin
+							<p>Assalamu'alaikum Wr. Wb</p>
+							<div class="paragraf">
+								<p>Kepala Kantor Kementerian Agama Kab. Klaten dengan ini menerangkan bahwa:</p>
+								<br>
+							</div>
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th style="width: 30px; padding:2px">No</th>
+										<th style="width: 160px; padding:0px">Nama</th>
+										<th style="width: 190px; padding:0px">Alamat</th>
+										<th style="width: 130px; padding:0px">Tempat/Tgl Lahir</th>
+										<th style="width: 120px; padding:0px">No.Telp</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td style="text-align: center; padding:2px">1.</td>
+										<td style="padding:2px"><?= $detail->nama ?></td>
+										<td style="padding:2px"><?= $detail->alamat ?></td>
+										<td style="padding:2px"><?= $detail->tempat_lahir ?>, <?= $detail->tanggal_lahir ?></td>
+										<td style="padding:2px"><?= $detail->no_hp ?></td>
+									</tr>
+								</tbody>
+							</table>
+
+							<div class="isi_surat paragraf">
+								<p>Adalah calon Jamaah Umrah/Haji Khusus yang terdaftar di <?= $detail->nama_agen ?>
+									sebagai Penyelenggara Ibadah Umrah/Haji Khusus yang terdaftar resmi pada
+									Kementerian Agama dengan SK Nomor: <?= $detail->no_sk_agen ?> Tahun
+									<?= $detail->tahun_sk ?>.
+								</p>
+								<p>Rekomendasi ini dibuat sebagai pertimbangan dalam pembuatan paspor untuk
+									keperluan kepergian Ibadah Umrah/Haji Khusus yang bersangkutan.
+								</p>
+								<p>Demikian rekomendasi ini kami buat untuk dipergunakan sebagimana mestinya.
+								</p>
+								<br>
+							</div>
+
+							<p>Wassalmu'alaikum Wr. Wb.</p>
+							<br>
 						</div>
-					</div>
-					<?php } ?>
+
+						<!-- TTD -->
+						<div class="row">
+							<div class="ttd_surat col">
+								Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?> <br>
+							<?php } ?>
+							<?php foreach ($data_kepala as $detail) { ?>Kepala<br><br><br><br><?= $detail->nama ?><?php } ?>
+							</div>
+						</div>
 				</div>
 			</div>
 		</div>

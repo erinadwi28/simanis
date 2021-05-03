@@ -1164,6 +1164,7 @@ class Dashboard extends CI_Controller
                 redirect('dashboard/detail_data_permohonan/' . $permohonan . '/27');
         }
 
+        //aksi cetak dari list permohonan selesai
         public function cetak_ptsp($id_permohonan_ptsp, $id_layanan)
         {
                 $data_permohonan = array(
@@ -1176,58 +1177,83 @@ class Dashboard extends CI_Controller
                 if ($id_layanan == 1) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp01')->result();
                         $data_detail['data_petugas_doa'] = $this->m_fo->data_petugas_doa($id_permohonan_ptsp)->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 2) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp02')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 3) {
                         redirect('dashboard/list_permohonan_selesai');
                 } elseif ($id_layanan == 4) {
                         redirect('dashboard/list_permohonan_selesai');
                 } elseif ($id_layanan == 5) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 6) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp06')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 7) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp07')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 8) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp08')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 9) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp09')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 10) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp10')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 11) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp11')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 12) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp12')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 13) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp13')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 14) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp14')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 15) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp15')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 16) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp16')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 17) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp17')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 18) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp18')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 19) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp19')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 20) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp20')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 21) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp21')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 22) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp22')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 23) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp23')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 24) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp24')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 25) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp25')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 26) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp26')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 27) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp27')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 }
 
                 $dompdf = new Dompdf();
@@ -1349,5 +1375,213 @@ class Dashboard extends CI_Controller
                 }
 
                 redirect('dashboard/list_permohonan_selesai');
+        }
+
+        //aksi cetak dari list arsip
+        public function cetak_arsip($id_permohonan_ptsp, $id_layanan)
+        {
+                $data_detail['detail_permohonan'] = $this->m_fo->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
+
+                if ($id_layanan == 1) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp01')->result();
+                        $data_detail['data_petugas_doa'] = $this->m_fo->data_petugas_doa($id_permohonan_ptsp)->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 2) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp02')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 3) {
+                        redirect('dashboard/list_permohonan_arsip');
+                } elseif ($id_layanan == 4) {
+                        redirect('dashboard/list_permohonan_arsip');
+                } elseif ($id_layanan == 5) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 6) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp06')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 7) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp07')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 8) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp08')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 9) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp09')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 10) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp10')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 11) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp11')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 12) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp12')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 13) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp13')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 14) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp14')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 15) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp15')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 16) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp16')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 17) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp17')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 18) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp18')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 19) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp19')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 20) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp20')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 21) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp21')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 22) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp22')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 23) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp23')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 24) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp24')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 25) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp25')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 26) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp26')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                } elseif ($id_layanan == 27) {
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp27')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                }
+
+                $dompdf = new Dompdf();
+
+                if ($id_layanan == 1) {
+                        $html = $this->load->view('frontoffice/ptsp1/cetak_ptsp01', $data_detail, true);
+                } elseif ($id_layanan == 2) {
+                        $html = $this->load->view('frontoffice/ptsp2/cetak_ptsp02', $data_detail, true);
+                } elseif ($id_layanan == 3) {
+                        $html = $this->load->view('frontoffice/ptsp3/cetak_ptsp03', $data_detail, true);
+                } elseif ($id_layanan == 4) {
+                        $html = $this->load->view('frontoffice/ptsp4/cetak_ptsp04', $data_detail, true);
+                } elseif ($id_layanan == 5) {
+                        $html = $this->load->view('frontoffice/ptsp5/cetak_ptsp05', $data_detail, true);
+                } elseif ($id_layanan == 6) {
+                        $html = $this->load->view('frontoffice/ptsp6/cetak_ptsp06', $data_detail, true);
+                } elseif ($id_layanan == 7) {
+                        $html = $this->load->view('frontoffice/ptsp7/cetak_ptsp07', $data_detail, true);
+                } elseif ($id_layanan == 8) {
+                        $html = $this->load->view('frontoffice/ptsp8/cetak_ptsp08', $data_detail, true);
+                } elseif ($id_layanan == 9) {
+                        $html = $this->load->view('frontoffice/ptsp9/cetak_ptsp09', $data_detail, true);
+                } elseif ($id_layanan == 10) {
+                        $html = $this->load->view('frontoffice/ptsp10/cetak_ptsp10', $data_detail, true);
+                } elseif ($id_layanan == 11) {
+                        $html = $this->load->view('frontoffice/ptsp11/cetak_ptsp11', $data_detail, true);
+                } elseif ($id_layanan == 12) {
+                        $html = $this->load->view('frontoffice/ptsp12/cetak_ptsp12', $data_detail, true);
+                } elseif ($id_layanan == 13) {
+                        $html = $this->load->view('frontoffice/ptsp13/cetak_ptsp13', $data_detail, true);
+                } elseif ($id_layanan == 14) {
+                        $html = $this->load->view('frontoffice/ptsp14/cetak_ptsp14', $data_detail, true);
+                } elseif ($id_layanan == 15) {
+                        $html = $this->load->view('frontoffice/ptsp15/cetak_ptsp15', $data_detail, true);
+                } elseif ($id_layanan == 16) {
+                        $html = $this->load->view('frontoffice/ptsp16/cetak_ptsp16', $data_detail, true);
+                } elseif ($id_layanan == 17) {
+                        $html = $this->load->view('frontoffice/ptsp17/cetak_ptsp17', $data_detail, true);
+                } elseif ($id_layanan == 18) {
+                        $html = $this->load->view('frontoffice/ptsp18/cetak_ptsp18', $data_detail, true);
+                } elseif ($id_layanan == 19) {
+                        $html = $this->load->view('frontoffice/ptsp19/cetak_ptsp19', $data_detail, true);
+                } elseif ($id_layanan == 20) {
+                        $html = $this->load->view('frontoffice/ptsp20/cetak_ptsp20', $data_detail, true);
+                } elseif ($id_layanan == 21) {
+                        $html = $this->load->view('frontoffice/ptsp21/cetak_ptsp21', $data_detail, true);
+                } elseif ($id_layanan == 22) {
+                        $html = $this->load->view('frontoffice/ptsp22/cetak_ptsp22', $data_detail, true);
+                } elseif ($id_layanan == 23) {
+                        $html = $this->load->view('frontoffice/ptsp23/cetak_ptsp23', $data_detail, true);
+                } elseif ($id_layanan == 24) {
+                        $html = $this->load->view('frontoffice/ptsp24/cetak_ptsp24', $data_detail, true);
+                } elseif ($id_layanan == 25) {
+                        $html = $this->load->view('frontoffice/ptsp25/cetak_ptsp25', $data_detail, true);
+                } elseif ($id_layanan == 26) {
+                        $html = $this->load->view('frontoffice/ptsp26/cetak_ptsp26', $data_detail, true);
+                } elseif ($id_layanan == 27) {
+                        $html = $this->load->view('frontoffice/ptsp27/cetak_ptsp27', $data_detail, true);
+                }
+
+                $dompdf->loadHtml($html);
+                $dompdf->setPaper('A4', 'portrait');
+                $dompdf->render();
+
+                if ($id_layanan == 1) {
+                        $dompdf->stream('Permohonan Rohaniawan dan Petugas Doa');
+                } elseif ($id_layanan == 2) {
+                        $dompdf->stream('Rekomendasi Kegiatan Keagamaan');
+                } elseif ($id_layanan == 3) {
+                        $dompdf->stream('Legalisir Ijazah');
+                } elseif ($id_layanan == 4) {
+                        $dompdf->stream('Legalisir Dokumen Kepegawaian, Surat, Piagam, Sertifikat');
+                } elseif ($id_layanan == 5) {
+                        $dompdf->stream('Permohonan Surat Keterangan Haji Pertama');
+                } elseif ($id_layanan == 6) {
+                        $dompdf->stream('Permohonan Rekomendasi Paspor Haji dan Umrah');
+                } elseif ($id_layanan == 7) {
+                        $dompdf->stream('Permohonan Rekomendasi Izin Pendirian KBIHU');
+                } elseif ($id_layanan == 8) {
+                        $dompdf->stream('Permohonan Rekomendasi Izin Perpanjangan Operasional KBIHU');
+                } elseif ($id_layanan == 9) {
+                        $dompdf->stream('Permohonan Rekomendasi Izin Pendirian Penyelenggara Perjalanan Ibadah Umroh (PPIU) dan Perjalanan Ibadah Haji Khusus (PIHK)');
+                } elseif ($id_layanan == 10) {
+                        $dompdf->stream('Permohonan Rekomendasi Izin Perpanjangan Operasional Penyelenggara Perjalanan Ibadah Umroh (PPIU) dan Perjalanan Ibadah Haji Khusus (PIHK)');
+                } elseif ($id_layanan == 11) {
+                        $dompdf->stream('Permohonan Rekomendasi Pindah Siswa Madrasah');
+                } elseif ($id_layanan == 12) {
+                        $dompdf->stream('Permohonan Rekomendasi Bantuan RA/Madrasah');
+                } elseif ($id_layanan == 13) {
+                        $dompdf->stream('Permohonan Rekomendasi Ijin Operasional Lembaga Baru');
+                } elseif ($id_layanan == 14) {
+                        $dompdf->stream('Permohonan Ijop LPQ');
+                } elseif ($id_layanan == 15) {
+                        $dompdf->stream('Permohonan Ijop Madin');
+                } elseif ($id_layanan == 16) {
+                        $dompdf->stream('Rekomendasi Proposal PD Pontren (Bantuan Sarpras / pembangunan / rehabilitasi bangunan)');
+                } elseif ($id_layanan == 17) {
+                        $dompdf->stream('Permohonan Tambahan Jam Mengajar Guru');
+                } elseif ($id_layanan == 18) {
+                        $dompdf->stream('Rekomendasi Permohonan Bantuan Masjid');
+                } elseif ($id_layanan == 19) {
+                        $dompdf->stream('Permohonan Petugas Siaran Keagamaan');
+                } elseif ($id_layanan == 20) {
+                        $dompdf->stream('Permohonan Ijin Operasional Majlis Taklim');
+                } elseif ($id_layanan == 21) {
+                        $dompdf->stream('Permohonan Arah ukur kiblat');
+                } elseif ($id_layanan == 22) {
+                        $dompdf->stream('Rekomendasi Permohonan ID Masjid dan Musala');
+                } elseif ($id_layanan == 23) {
+                        $dompdf->stream('PERMOHONAN MUTASI GPAI PNS');
+                } elseif ($id_layanan == 24) {
+                        $dompdf->stream('Rekomendasi Pajak Kendaraan Bermotor Layanan Sosial Rumah Ibadah');
+                } elseif ($id_layanan == 25) {
+                        $dompdf->stream('Konsultasi dan informasi sertifikasi halal, zakat dan wakaf');
+                } elseif ($id_layanan == 26) {
+                        $dompdf->stream('Permohonan Data Lembaga Agama dan Keagamaan, Rumah Ibadah, Peristiwa Nikah, Jumlah Guru , Haji');
+                } elseif ($id_layanan == 27) {
+                        $dompdf->stream('Permohonan Surat Ket Tambahan Penghasilan');
+                }
+
+                redirect('dashboard/list_permohonan_arsip');
         }
 }

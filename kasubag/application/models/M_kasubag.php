@@ -76,6 +76,18 @@ class M_kasubag extends CI_Model
         return $this->db->get();
     }
 
+    //get list data permohonan dengan status tertentu
+    public function get_data_kepala()
+    {
+        $this->db->select('id_kepala');
+        $this->db->from('kepala');
+        $this->db->where('status_delete', 0);
+
+        $data = $this->db->get();
+
+        return $data;
+    }
+
     //get list data permohonan yang sudah disetujui kasubag
     public function get_list_data_permohonan_selesaiKasubag()
     {
