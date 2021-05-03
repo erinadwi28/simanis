@@ -101,7 +101,6 @@ class Dashboard extends CI_Controller
 
         $sie = $this->session->userdata('sie');
         $data['total_notif'] = $this->m_kasi->jml_notif($sie)->result();
-        $data_permohonan['total_notif'] = $this->m_kasi->jml_notif()->result();
 
         $this->load->view('header', $data_title);
         $this->load->view('kasi/sidebar', $data);
@@ -261,7 +260,7 @@ class Dashboard extends CI_Controller
             $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp18')->result();
         } elseif ($id_layanan == 19) {
             $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp19')->result();
-        } elseif ($id_layanan ==20) {
+        } elseif ($id_layanan == 20) {
             $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp20')->result();
         } elseif ($id_layanan == 21) {
             $data_detail['detail_ptsp'] = $this->m_kasi->get_detail_ptsp($id_permohonan_ptsp, 'ptsp21')->result();
@@ -429,5 +428,4 @@ class Dashboard extends CI_Controller
             redirect('dashboard/list_permohonan_masuk');
         }
     }
-
 }
