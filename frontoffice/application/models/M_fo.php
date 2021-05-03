@@ -249,6 +249,18 @@ class M_fo extends CI_Model
         return $hasil;
     }
 
+    //data kepala 
+    public function get_data_kepala($id_permohonan)
+    {
+        $this->db->select('kepala.*');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('kepala', 'permohonan_ptsp.id_kepala = kepala.id_kepala', 'INNER');
+        $this->db->where('permohonan_ptsp.id_permohonan_ptsp', $id_permohonan);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
     public function get_data_pemohon($id_pemohon)
     {
         $this->db->select('pemohon.*');

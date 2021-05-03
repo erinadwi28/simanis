@@ -300,12 +300,14 @@
 			</tr>
 		</table>
 		<br>
-		<table width="500">
-			<tr>
-				<td width="400"><br><br><br><br></td>
-				<td class="text" align="center">Kepala<br><br><br><br>Arif Solikhin</td>
-			</tr>
-		</table>
+		<?php foreach ($data_kepala as $detail) { ?>
+			<table width="500">
+				<tr>
+					<td width="400"><br><br><br><br></td>
+					<td class="text" align="center">Kepala<br><br><br><br><?= $detail->nama ?></td>
+				</tr>
+			</table>
+		<?php } ?>
 	</center>
 </body>
 

@@ -156,102 +156,103 @@
 			border-style: solid;
 			color: #000000 !important;
 		}
-		
 	</style>
 </head>
+
 <body>
-<center>
+	<center>
 
 		<?php foreach ($detail_ptsp as $detail) { ?>
-		<table width="530">
-			<tr>
-				<td></td>
-				<td class="img">
-					<center>
-						<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
-						width="110" height="110">
-					</center>
-				</td>
-				<td width="400">
-					<center>
-						<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
-						<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
-						<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
-						<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
-						<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
-					</center>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="3">
-					<div class="garis"></div>
-				</td>
-			</tr>
-		</table>
-		
-		<table width="530">
-			<tr>
-			<td>
-				<center>
-				<font size="3"></font><b>SURAT KETERANGAN</b> </font><br>
-				<font size="2">Nomor : <?= $detail->no_surat ?> </font>
-				</center>
-			</td>
-			</tr>
-		</table>
-		<br>
-		<table width="530">
-			<tr  text-align= "justify">
-		       <td>
-			       <font size="2">
-					    &ensp;&ensp; Menindak lanjuti surat permohonan dari Saudara <?= $detail->nama_pemohon ?> 
-				   		tentang Permohonan Surat Keterangan Haji Pertama, dengan ini Kepala Kantor Kementrian Agama 
-						Kabupaten Klaten menerangkan bahwa :
-				   </font>
-		       </td>
-		    </tr>
-		</table>
-		<br>
-		<table>
-			<tr class="text2">
-				<td></td>
-				<td>Nama</td>
-				<td>: <?= $detail->nama_pemohon ?> </td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>Tempat dan Tanggal Lahir</td>
-				<td>: <?= format_indo(date($detail->tanggal_lahir)); ?> </td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>Alamat </td>
-				<td>: <?= $detail->alamat ?> </td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>Nomor Porsi</td>
-				<td>: <?= $detail->nomor_porsi ?> </td>
-			</tr>
-		</table>
-		<table width="530">
-			<tr>
-		       <td>
-			       <font size="2">adalah jemaah haji Kabupaten Klaten Tahun 
-					   <?= $detail->tahun_angkatan_haji_hijriah ?> H / <?= $detail->tahun_angkatan_haji_masehi ?> M 
-					   dan perjalanan ibadah hajinya merupakan yang pertama.</font>
-			       <font size="2">&ensp;&ensp; Demikian surat ini kami sampaikan untuk dapat di pergunakan sebagaimana mestinya.<br></font>
-		       </td>
-		    </tr>
-		</table>
-		<br>
-		<table width="530">
-			<tr>
-				<td width="380"><br><br><br><br></td>
-				<td class="text" align="center">Kelaten,<?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>Kepala<br><br><br><br>Arif Solikhin</td>
-			</tr>
-	     </table>		 
-		<?php } ?>
+			<table width="530">
+				<tr>
+					<td></td>
+					<td class="img">
+						<center>
+							<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>" width="110" height="110">
+						</center>
+					</td>
+					<td width="400">
+						<center>
+							<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
+							<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
+							<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
+							<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
+							<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
+						</center>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<div class="garis"></div>
+					</td>
+				</tr>
+			</table>
+
+			<table width="530">
+				<tr>
+					<td>
+						<center>
+							<font size="3"></font><b>SURAT KETERANGAN</b> </font><br>
+							<font size="2">Nomor : <?= $detail->no_surat ?> </font>
+						</center>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table width="530">
+				<tr text-align="justify">
+					<td>
+						<font size="2">
+							&ensp;&ensp; Menindak lanjuti surat permohonan dari Saudara <?= $detail->nama_pemohon ?>
+							tentang Permohonan Surat Keterangan Haji Pertama, dengan ini Kepala Kantor Kementrian Agama
+							Kabupaten Klaten menerangkan bahwa :
+						</font>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table>
+				<tr class="text2">
+					<td></td>
+					<td>Nama</td>
+					<td>: <?= $detail->nama_pemohon ?> </td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Tempat dan Tanggal Lahir</td>
+					<td>: <?= format_indo(date($detail->tanggal_lahir)); ?> </td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Alamat </td>
+					<td>: <?= $detail->alamat ?> </td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Nomor Porsi</td>
+					<td>: <?= $detail->nomor_porsi ?> </td>
+				</tr>
+			</table>
+			<table width="530">
+				<tr>
+					<td>
+						<font size="2">adalah jemaah haji Kabupaten Klaten Tahun
+							<?= $detail->tahun_angkatan_haji_hijriah ?> H / <?= $detail->tahun_angkatan_haji_masehi ?> M
+							dan perjalanan ibadah hajinya merupakan yang pertama.</font>
+						<font size="2">&ensp;&ensp; Demikian surat ini kami sampaikan untuk dapat di pergunakan sebagaimana mestinya.<br></font>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table width="530">
+				<tr>
+					<td width="380"><br><br><br><br></td>
+					<td class="text" align="center">Kelaten,<?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><?php } ?>
+						<?php foreach ($data_kepala as $detail) { ?><br>Kepala<br><br><br><br><?= $detail->nama ?><?php } ?>
+					</td>
+				</tr>
+			</table>
 	</center>
 </body>
+
 </html>

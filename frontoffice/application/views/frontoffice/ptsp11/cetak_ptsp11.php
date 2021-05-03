@@ -87,7 +87,7 @@
 			margin-left: 0.0375em;
 			font-size: 11pt;
 			line-height: 1.2em;
-			}
+		}
 
 		.identitas {
 			margin-left: 2.8125em;

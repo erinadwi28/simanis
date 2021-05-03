@@ -36,9 +36,15 @@
                                 <td><?= format_indo(date($permohonan->tgl_permohonan)); ?></td>
                                 <td><label class="badge badge-success"><i class="far fa-clock text-status"> <?= $permohonan->status ?></i>
                                     </label></td>
-                                <td class="text-center">
+                                <td class="text-center" width="90px">
+                                    <!-- Button Detail -->
                                     <a href="<?= base_url() ?>dashboard/detail_data_permohonan/<?= $permohonan->id_permohonan_ptsp ?>/<?= $permohonan->id_layanan ?>" class="btn btn-primary btn-sm">
                                         <i class="fas fa-search"></i>
+                                    </a>
+
+                                    <!-- Button Print -->
+                                    <a href="<?= base_url() ?>dashboard/cetak_arsip/<?= $permohonan->id_permohonan_ptsp ?>/<?= $permohonan->id_layanan ?>" class="btn btn-primary btn-sm">
+                                        <i class="fa fa-print"></i>
                                     </a>
                                 </td>
                             </tr>

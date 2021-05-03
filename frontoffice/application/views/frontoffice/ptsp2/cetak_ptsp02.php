@@ -156,7 +156,6 @@
 			border-style: solid;
 			color: #000000 !important;
 		}
-		
 	</style>
 </head>
 
@@ -164,150 +163,153 @@
 	<center>
 
 		<?php foreach ($detail_ptsp as $detail) { ?>
-		<table width="530">
-			<tr>
-				<td></td>
-				<td class="img">
-					<center>
-						<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
-						width="110" height="110">
-					</center>
-				</td>
-				<td width="400">
-					<center>
-						<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
-						<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
-						<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
-						<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
-						<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
-					</center>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="3">
-					<div class="garis"></div>
-				</td>
-			</tr>
 			<table width="530">
 				<tr>
-					<td class="text2"><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
+					<td></td>
+					<td class="img">
+						<center>
+							<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>" width="110" height="110">
+						</center>
+					</td>
+					<td width="400">
+						<center>
+							<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
+							<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
+							<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
+							<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
+							<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
+						</center>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<div class="garis"></div>
+					</td>
+				</tr>
+				<table width="530">
+					<tr>
+						<td class="text2"><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
+					</tr>
+				</table>
+			</table>
+
+			<table>
+				<tr class="text2">
+					<td width="40">Nomer</td>
+					<td>: <?= $detail->no_surat ?></td>
+				</tr>
+				<tr>
+					<td>Sifat</td>
+					<td>: <?= $detail->sifat ?></td>
+				</tr>
+				<tr>
+					<td>Lampiran</td>
+					<td>: <?= $detail->jml_lampiran ?></td>
+				</tr>
+				<tr>
+					<td>Hal</td>
+					<td>: Surat Ijin Rekomendasi Kegiatan</td>
 				</tr>
 			</table>
-		</table>
-		
-		<table>
-			<tr class="text2">
-				<td width="40" >Nomer</td>
-				<td>: <?= $detail->no_surat ?></td>
-			</tr>
-			<tr>
-				<td>Sifat</td>
-				<td>: <?= $detail->sifat ?></td>
-			</tr>
-			<tr>
-				<td>Lampiran</td>
-				<td>: <?= $detail->jml_lampiran ?></td>
-			</tr>
-			<tr>
-				<td>Hal</td>
-				<td>: Surat Ijin Rekomendasi Kegiatan</td>
-			</tr>
-		</table>
-		<br>
-		<!-- KEPADA -->
-		<table width="530">
-			<tr>
-		       <td>
-			       <font size="2">Kpd yth.<br><?= $detail->pemohon ?><br>Di tempat</font>
-		       </td>
-		    </tr>
-		</table>
-		<br>
-		<!-- Paragraf 1 / isi surat-->
-		<table width="530">
-			<tr>
-		       <td>
-			       <font size="2">&emsp;&emsp; Diberitahukan dengan hormat, setelah membaca dan memperhatikan surat permohonan Rekomendasi dari 
-					   	<?= $detail->pemohon ?>, Nomor<?= $detail->no_srt_permohonan ?>, tanggal <?= format_indo(date($detail->tgl_srt_permohonan)); ?> 
-				   		perihal seperti pokok surat dengan mengadakan kegiatan yang akan dilaksanakan pada:</font>
-		       </td>
-		    </tr>
-		</table>
+			<br>
+			<!-- KEPADA -->
+			<table width="530">
+				<tr>
+					<td>
+						<font size="2">Kpd yth.<br><?= $detail->pemohon ?><br>Di tempat</font>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<!-- Paragraf 1 / isi surat-->
+			<table width="530">
+				<tr>
+					<td>
+						<font size="2">&emsp;&emsp; Diberitahukan dengan hormat, setelah membaca dan memperhatikan surat permohonan Rekomendasi dari
+							<?= $detail->pemohon ?>, Nomor<?= $detail->no_srt_permohonan ?>, tanggal <?= format_indo(date($detail->tgl_srt_permohonan)); ?>
+							perihal seperti pokok surat dengan mengadakan kegiatan yang akan dilaksanakan pada:</font>
+					</td>
+				</tr>
+			</table>
 		<?php } ?>
 		<!-- Pelaksanaan -->
 		<?php foreach ($detail_ptsp as $detail) { ?>
-		<table width="530">
-			<tr class="text2">
-				<td width="20"></td>
-				<td width="120">Hari</td>
-				<td>: <?= $detail->hari_kegiatan ?></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>Tempat</td>
-				<td>: <?= $detail->tempat_kegiatan ?></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>Waktu</td>
-				<td>: <?= $detail->waktu_kegiatan ?> WIB</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>Acara</td>
-				<td>:<?= $detail->nama_kegiatan ?></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>Jumlah Peserta</td>
-				<td>:<?= $detail->jml_peserta ?></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>Agenda Kegiatan</td>
-				<td>:<?= $detail->agenda_kegiatan ?></td>
-			</tr>
-		</table>
+			<table width="530">
+				<tr class="text2">
+					<td width="20"></td>
+					<td width="120">Hari</td>
+					<td>: <?= $detail->hari_kegiatan ?></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Tempat</td>
+					<td>: <?= $detail->tempat_kegiatan ?></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Waktu</td>
+					<td>: <?= $detail->waktu_kegiatan ?> WIB</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Acara</td>
+					<td>:<?= $detail->nama_kegiatan ?></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Jumlah Peserta</td>
+					<td>:<?= $detail->jml_peserta ?></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Agenda Kegiatan</td>
+					<td>:<?= $detail->agenda_kegiatan ?></td>
+				</tr>
+			</table>
 		<?php } ?>
 		<br>
 		<!-- ketentuan -->
 		<table>
 			<tr>
-		       	<td colspan="2"><b>Maka dengan ini kami memberi Rekomendasi atas kegiatan tersebut dengan ketentuan:</b></td>
-		    </tr>
+				<td colspan="2"><b>Maka dengan ini kami memberi Rekomendasi atas kegiatan tersebut dengan ketentuan:</b></td>
+			</tr>
 			<tr>
-				<td width="10"></td> 
+				<td width="10"></td>
 				<td>1. Tetap menjaga persatuan dan kesatuan dalam kegiatan dan masyarakat.</td>
 			</tr>
 			<tr>
-				<td></td> 
+				<td></td>
 				<td>2. Menjaga kondusifitas lingkungan / wilayah Kabupaten Klaten.</td>
 			</tr>
 			<tr>
-				<td></td> 
+				<td></td>
 				<td>3. Agar tetap berkoordinasi dengan pihak keamanan serta pihak terkait.</td>
 			</tr>
 			<tr>
-				<td></td> 
+				<td></td>
 				<td>4. Agar menjauhkan dari paham-paham Radikalisme serta menghindari dari unsur SARA.</td>
 			</tr>
 		</table>
 
 		<table width="530">
 			<tr>
-		       <td>
-			       <font size="2">Demikian surat ini kami sampaikan untuk dapat di pergunakan sebagaimana mestinya.<br></font>
-		       </td>
-		    </tr>
+				<td>
+					<font size="2">Demikian surat ini kami sampaikan untuk dapat di pergunakan sebagaimana mestinya.<br></font>
+				</td>
+			</tr>
 		</table>
 		<br>
-		<table width="500">
-			<tr>
-				<td width="300"><br><br><br><br></td>
-				<td class="text" align="center">Kepala Kantor Kementrian Agama <br> Kabupaten Klaten<br><br><br><br>
-					<u style = "color: #000000;">Drs.H.Masmin Afif,M.Ag</u><br>NIP.196706131994031002</td>
-			</tr>
-	     </table>
+		<?php foreach ($data_kepala as $detail) { ?>
+			<table width="500">
+				<tr>
+					<td width="300"><br><br><br><br></td>
+					<td class="text" align="center">Kepala Kantor Kementrian Agama <br> Kabupaten Klaten<br><br><br><br>
+						<u style="color: #000000;"><?= $detail->nama ?></u><br><?= $detail->nip ?>
+					</td>
+				</tr>
+			</table>
+		<?php } ?>
 	</center>
 </body>
+
 </html>

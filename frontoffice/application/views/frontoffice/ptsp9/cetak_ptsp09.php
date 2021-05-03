@@ -50,13 +50,13 @@
 		}
 
 		.badan_surat {
-			
+
 			margin-left: 60px;
 		}
 
 		.row {
 			font-size: 11pt;
-			
+
 		}
 
 		.no_surat {
@@ -65,7 +65,7 @@
 
 		.tujuan_surat {
 			font-size: 11pt;
-			
+
 		}
 
 		.paragraf {
@@ -187,7 +187,6 @@
 			font-size: 11pt;
 			margin-left: 400px;
 		}
-
 	</style>
 
 </head>
@@ -203,34 +202,33 @@
 				<div class="card shadow mb-4">
 					<div class="card-body">
 						<!-- KOP SURAT -->
-					<center>
-						<table width="530">
-							<tr>
-								<td></td>
-								<td class="img">
-									<center>
-										<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
-											width="100" height="100">
-									</center>
-								</td>
-								<td width="400" style="padding-left: 10px;">
-									<center>
-										<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
-										<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
-										<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
-										<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
-										<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
-										<br>
-									</center>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="3">
-									<div class="garis"></div>
-								</td>
-							</tr>
-						</table>
-					</center>
+						<center>
+							<table width="530">
+								<tr>
+									<td></td>
+									<td class="img">
+										<center>
+											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>" width="100" height="100">
+										</center>
+									</td>
+									<td width="400" style="padding-left: 10px;">
+										<center>
+											<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
+											<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
+											<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
+											<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
+											<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
+											<br>
+										</center>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3">
+										<div class="garis"></div>
+									</td>
+								</tr>
+							</table>
+						</center>
 
 						<!-- NO SURAT -->
 						<?php
@@ -238,8 +236,8 @@
 							<div class="no_surat">
 								<center>
 									<p><b>REKOMENDASI</b> <br>
-									Nomor: <?= $detail->no_surat ?></p>
-									</center>
+										Nomor: <?= $detail->no_surat ?></p>
+								</center>
 							</div>
 
 							<!-- PEMBUKA -->
@@ -306,13 +304,13 @@
 
 							<!-- Tanggal -->
 							<div class="row">
-							<div class="col-md-9">
+								<div class="col-md-9">
 								</div>
 								<div class="col-md-3">
-								<div class="ttd_surat">
-									Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?> <br>
-									Kepala
-								</div>
+									<div class="ttd_surat">
+										Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?> <br>
+										Kepala
+									</div>
 								</div>
 							</div>
 						<?php } ?>
@@ -321,11 +319,13 @@
 						<div class="row">
 							<div class="col-md-9">
 							</div>
-							<div class="col-md-3">
-								<div class="ttd_surat">
-									Anif Solikhin<br>
+							<?php foreach ($data_kepala as $detail) { ?>
+								<div class="col-md-3">
+									<div class="ttd_surat">
+										<?= $detail->nama ?><br>
+									</div>
 								</div>
-							</div>
+							<?php } ?>
 						</div>
 					</div>
 				</div>
