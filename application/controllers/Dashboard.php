@@ -149,6 +149,23 @@ class Dashboard extends CI_Controller
         }
     }
 
+    //list notif permohonan 
+    public function list_notif_permohonan()
+    {
+        $data_title['title'] = 'List Permohonan Proses Kemenag';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $data_detail['data_permohonan'] = $this->m_pemohon->list_notif_permohonan()->result();
+
+        $this->load->view('header', $data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar', $data);
+        $this->load->view('pemohon/list_notif_permohonan', $data_detail);
+        $this->load->view('footer');
+    }
+
     //list permohonan masuk
     public function list_permohonan_validasi_kemenag()
     {

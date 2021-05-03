@@ -6,13 +6,13 @@
 
 		<!-- Topbar -->
 		<nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow mb-3">
-			
-		<!-- Sidebar Toggle (Topbar) -->
+
+			<!-- Sidebar Toggle (Topbar) -->
 			<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3 sidebar-toggle">
 				<i class="fa fa-bars"></i>
 			</button>
 
-		<!-- Topbar Welcome -->
+			<!-- Topbar Welcome -->
 			<div class="topbar-welcome ml-2 text-gray-600">
 				<i class="fas fa-calendar-alt"></i>&nbsp; <span id="top-info-date" class="top-info-date"></span>&nbsp; | &nbsp;<span class="mb-0 ">Halo, Selamat datang !</span>
 			</div>
@@ -21,7 +21,7 @@
 			<ul class="navbar-nav ml-auto">
 				<!-- Nav Item - Alerts -->
 				<li class="nav-item dropdown no-arrow mx-1">
-					<a class="nav-link" href="#">
+					<a class="nav-link" href="<?= base_url('dashboard/list_notif_permohonan') ?>">
 						<i class="fas fa-bell fa-fw"></i>
 						<!-- Counter - Alerts -->
 						<span class="badge badge-danger badge-counter">
