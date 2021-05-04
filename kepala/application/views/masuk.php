@@ -39,11 +39,6 @@
 								<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 							</div>
 
-							<div class="d-flex mb-3 align-items-center">
-								<span class="ml-auto"><a href="#" class="lupa_sandi"> <small> Lupa Kata Sandi
-											?</small></a></span>
-							</div>
-
 							<div class="g-recaptcha mb-2" data-sitekey="6LcWJXwaAAAAAJpeWzQao7fZOgv3zBsUTCLH4t0b">
 							</div>
 
