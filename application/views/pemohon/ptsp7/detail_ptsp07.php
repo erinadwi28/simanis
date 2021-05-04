@@ -42,6 +42,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= $detail->no_surat ?></td>
 									</tr>
 								<?php } ?>

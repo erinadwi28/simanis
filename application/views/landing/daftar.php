@@ -41,6 +41,10 @@
                                 <label for="nama">Nama | Erina Dwi U</label>
                                 <input type="nama" class="form-control" id="nama" name="nama" required>
                             </div>
+                            <div class="form-group first shadow">
+                                <label for="nama">No HandPhone</label>
+                                <input type="nama" class="form-control" id="no_hp" name="no_hp" required>
+                            </div>
                             <div class="form-group last shadow">
                                 <label for="kata_sandi">Kata Sandi</label>
                                 <input type="password" class="form-control" id="kata_sandi" name="kata_sandi" required>

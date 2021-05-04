@@ -68,24 +68,27 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= $detail->no_surat ?></td>
 									</tr>
 								<?php } ?>
 								<?php if ($detail->sifat != null) { ?>
 									<tr>
-										<td><b>Nomor Surat</b></td>
+										<td><b>Sifat</b></td>
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= $detail->sifat ?></td>
 									</tr>
 								<?php } ?>
 								<?php if ($detail->jml_lampiran != null) { ?>
 									<tr>
-										<td><b>Nomor Surat</b></td>
+										<td><b>Jumlah Lampiran</b></td>
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= $detail->jml_lampiran ?></td>
 									</tr>
 								<?php } ?>

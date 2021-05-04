@@ -125,7 +125,7 @@
 				</div>
 			</div>
 		</li> -->
-		<li class="nav-item">
+		<!-- <li class="nav-item">
 			<a class="nav-link " href="<?= base_url('frontoffice/list_berita') ?>">
 				<i class="fa fa-book"></i>
 				<span>Berita</span>
@@ -143,7 +143,7 @@
 					<a class="collapse-item" href="<?= base_url('frontoffice/lsit_data_pengaduan') ?>">Lap. Pengaduan</a>
 				</div>
 			</div>
-		</li>
+		</li> -->
 
 		<!-- Divider -->
 		<hr class="sidebar-divider d-none d-md-block">
