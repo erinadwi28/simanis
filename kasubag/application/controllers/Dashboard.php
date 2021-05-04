@@ -348,7 +348,7 @@ class Dashboard extends CI_Controller
                 $this->email->subject('Informasi Permohonan Anda');
 
                 // Isi email
-                $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan bahwasannya permohonan anda telah <b>disetujui</b>, dan sudah bisa diambil di Kantor Kementrian Agama Kabupaten Klaten yang berada di JL.Ronggowarsito Klaten<br><br>Terimakasih<br>Salam,<br><br>Kementrian Agama Kabupaten Klaten');
+                $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan bahwasannya permohonan anda telah <b>disetujui</b>, dan sudah bisa diambil di Kantor Kementrian Agama Kabupaten Klaten yang berada di JL.Ronggowarsito Klaten<br><br>Terimakasih<br>Salam,<br><br>Kementerian Agama Kabupaten Klaten');
 
                 // Tampilkan pesan sukses atau error
                 $this->email->send();

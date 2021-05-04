@@ -21,7 +21,7 @@
 			<ul class="navbar-nav ml-auto">
 				<!-- Nav Item - Alerts -->
 				<li class="nav-item dropdown no-arrow mx-1">
-					<a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a class="nav-link dropdown-toggle" href="<?= base_url('dashboard/list_permohonan_masuk') ?>">
 						<i class="fas fa-bell fa-fw"></i>
 						<!-- Counter - Alerts -->
 						<span class="badge badge-danger badge-counter">

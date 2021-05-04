@@ -447,7 +447,7 @@ class Dashboard extends CI_Controller
         $this->email->subject('Informasi Permohonan Anda');
 
         // Isi email
-        $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan kepada pemohon bahwasannya permohonan anda dipending dikarenakan ' . $this->input->post('keterangan') . ', mohon pemberitahuan ini untuk segera ditindak lanjuti. <br>Terimakasih<br>Salam,<br><br>Kementrian Agama Kabupaten Klaten');
+        $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan kepada pemohon bahwasannya permohonan anda dipending dikarenakan ' . $this->input->post('keterangan') . ', mohon pemberitahuan ini untuk segera ditindak lanjuti. <br>Terimakasih<br>Salam,<br><br>Kementerian Agama Kabupaten Klaten');
 
         // Tampilkan pesan sukses atau error
         $this->email->send();
@@ -694,7 +694,7 @@ class Dashboard extends CI_Controller
     //tampil detail ptsp25
     public function detail_ptsp25()
     {
-        $data_title['title'] = 'Detail Permohonan';                
+        $data_title['title'] = 'Detail Permohonan';
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 
@@ -710,7 +710,7 @@ class Dashboard extends CI_Controller
     //tampil detail ptsp26
     public function detail_ptsp26()
     {
-        $data_title['title'] = 'Detail Permohonan';                
+        $data_title['title'] = 'Detail Permohonan';
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 
@@ -726,7 +726,7 @@ class Dashboard extends CI_Controller
     //tampil detail ptsp27
     public function detail_ptsp27()
     {
-        $data_title['title'] = 'Detail Permohonan';                
+        $data_title['title'] = 'Detail Permohonan';
         $data['bo'] = $this->db->get_where('bo', ['id_bo' =>
         $this->session->userdata('id_bo')])->row_array();
 
