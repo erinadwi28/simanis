@@ -573,7 +573,7 @@
 				<div class="col-md-4 item-ptsp">
 					<div class="card shadow text-center d-flex flex-column mb-3">
 						<div class="card-body justify-content-center">
-							<div class="content-item mb-0 px-0 py-3">
+							<div class="content-item mb-0 px-0 py-2">
 								<div class="row">
 									<div class="round-number">
 										24
@@ -615,7 +615,7 @@
 				<div class="col-md-4 item-ptsp">
 					<div class="card shadow text-center d-flex flex-column mb-3">
 						<div class="card-body justify-content-center">
-							<div class="content-item mb-0 px-0 py-3">
+							<div class="content-item mb-0 px-0 py-2">
 								<div class="row">
 									<div class="round-number">
 										26

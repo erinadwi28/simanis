@@ -20,6 +20,7 @@
 		.body {
 			color: #000000;
 			font-family: Calibri, Helvetica, Arial, sans-serif;
+			font-size: 11pt;
 		}
 
 		table {
@@ -159,7 +160,7 @@
 	</style>
 </head>
 
-<body>
+<body class="body">
 	<center>
 
 		<?php foreach ($detail_ptsp as $detail) { ?>

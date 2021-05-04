@@ -209,7 +209,7 @@
 								</tr>
 							</table>
 						</center>
-
+						<br>
 						<!-- NO SURAT -->
 						<?php
 						foreach ($detail_ptsp as $detail) { ?>
