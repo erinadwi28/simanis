@@ -138,7 +138,7 @@
 								<?php } ?>
 								<?php if ($detail->jml_lampiran != null) { ?>
 									<tr>
-										<td><b>Lampiran</b></td>
+										<td><b>Jumlah Lampiran</b></td>
 										<td> </td>
 										<td> </td>
 										<td>:</td>

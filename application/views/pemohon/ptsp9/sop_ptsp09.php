@@ -23,9 +23,8 @@
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
 						<ol type="1" class="ml-0 list-syarat">
-							<li>Pemohon mengunduh Surat Permohonan, unduh dengan <b><a
-										href="<?= base_url() ?>assets/pemohon/sop/ptsp07/srt_permohonan.pdf"
-										target="_blank">[klik disini]</a></b></li>
+							<li>Pemohon mengunduh Surat Permohonan, unduh dengan <b>
+							<a href="<?= base_url() ?>assets/dashboard/unduhan/pemohon/ptsp9/Template%20Surat%20Permohonan.docx">[klik disini]</a></b></li>
 							<li>Pemohon mengisi Surat Permohonan yang ditujukan kepada Kepala Kantor Kemenag Klaten.
 							</li>
 							<li>Pemohon mengisi formulir dalam aplikasi ini.</li>

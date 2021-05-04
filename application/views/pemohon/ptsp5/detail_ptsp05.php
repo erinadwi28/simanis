@@ -42,6 +42,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= $detail->no_surat ?></td>
 									</tr>
 								<?php } ?>
@@ -163,7 +164,7 @@
 							</tbody>
 						</table>
 						<?php if ($detail->status == 'Pending') { ?>
-							<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen dibawah</em>
+							<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen disamping</em>
 						<?php } ?>
 					</div>
 

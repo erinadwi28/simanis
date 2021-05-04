@@ -133,8 +133,8 @@
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
 				<ol type="1" class="ml-0 list-syarat modal-content-syarat">
-						<li>Pemohon mengunduh Surat Permohonan, <br> unduh dengan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp05/srt_permohonan.pdf" target="_blank">[klik disini]</a></b></li>
-						<li>Pemohon mengunduh Surat Pernyataan Pergi Haji Pertama, <br> unduh dengan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp05/srt_pernyataan.pdf" target="_blank">[klik disini]</a></b></li>
+						<li>Pemohon mengunduh Surat Permohonan, <br> unduh dengan <b><a href="<?= base_url() ?>assets/dashboard/unduhan/pemohon/ptsp5/Template%20Surat%20Permohonan.docx">[klik disini]</a></b></li>
+						<li>Pemohon mengunduh Surat Pernyataan Pergi Haji Pertama, <br> unduh dengan <b><a href="<?= base_url() ?>assets/dashboard/unduhan/pemohon/ptsp5/Template%20Surat%20Pernyataan.docx">[klik disini]</a></b></li>
 						<li>Pemohon mengisi Surat Permohonan yang ditujukan kepada Kepala Kantor Kemenag Klaten.</li>
 						<li>Pemohon mengisi Surat Pernyataan Pergi Haji Pertama dengan memberikan materai Rp.10.000.</li>
 						<li>Pemohon mengisi formulir dalam aplikasi ini.</li>

@@ -97,7 +97,7 @@
 						<li>Pemohon mengunggah FC (Fotocopy) Ijazah/STTB/SKP yang akan disahkan. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
 						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses pengesahan telah selesai.</li>
 						<li>Pemohon mengambil dokumen legalisir dengan membawa dokumen asli.</li>
-						<li>Jika Pengambilan dokumen legalisir diwakilkan maka wajib membawa <b> <a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-01.pdf" target="_blank">FM-PI-01</a></b> dan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-02.pdf" target="_blank">FM-PI-02</a></b>.</li>
+						<!-- <li>Jika Pengambilan dokumen legalisir diwakilkan maka wajib membawa <b> <a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-01.pdf" target="_blank">FM-PI-01</a></b> dan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp03/FM-PI-02.pdf" target="_blank">FM-PI-02</a></b>.</li> -->
 					</ol>
 				</p>
 			</div>

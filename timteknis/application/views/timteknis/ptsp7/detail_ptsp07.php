@@ -372,11 +372,6 @@
 					<?php } ?>
 				</div>
 			</div>
-
-
-
-
-			<!--End Content Profile-->
 		</div>
 		<!-- Button Tolak & Setujui Awal Surat Masuk -->
 		<div class="row clearfix float-right px-2">
@@ -394,8 +389,9 @@
 					</button>
 				</a>
 			<?php } ?>
+			</div>
 		<?php } ?>
-		</div>
 		<!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->
+</div>
