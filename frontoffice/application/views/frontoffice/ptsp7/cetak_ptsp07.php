@@ -183,7 +183,7 @@
 						<!-- KOP SURAT -->
 						<!-- KOP SURAT -->
 						<center>
-							<table width="530">
+							<table width="478">
 								<tr>
 									<td></td>
 									<td class="img">
@@ -191,7 +191,7 @@
 											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>" width="100" height="100">
 										</center>
 									</td>
-									<td width="400" style="padding-left: 10px;">
+									<td width="430" style="padding-left: 10px;">
 										<center>
 											<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
 											<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>

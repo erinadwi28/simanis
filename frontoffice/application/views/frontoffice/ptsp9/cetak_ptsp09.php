@@ -202,39 +202,8 @@
 				<div class="card shadow mb-4">
 					<div class="card-body">
 						<!-- KOP SURAT -->
-<<<<<<< HEAD
-					<center>
-						<table width="530">
-							<tr>
-								<td></td>
-								<td class="img">
-									<center>
-										<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
-											width="100" height="100">
-									</center>
-								</td>
-								<td width="400" style="padding-left: 10px;">
-									<center>
-										<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
-										<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
-										<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
-										<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
-										<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
-										<br>
-									</center>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="3">
-									<div class="garis"></div>
-								</td>
-							</tr>
-						</table>
-					</center>
-					<br>
-=======
 						<center>
-							<table width="530">
+							<table width="478">
 								<tr>
 									<td></td>
 									<td class="img">
@@ -242,7 +211,7 @@
 											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>" width="100" height="100">
 										</center>
 									</td>
-									<td width="400" style="padding-left: 10px;">
+									<td width="430" style="padding-left: 10px;">
 										<center>
 											<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
 											<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
@@ -260,7 +229,6 @@
 								</tr>
 							</table>
 						</center>
->>>>>>> 993d8654df36e40b28a4b08a05f92d7ed63aca74
 
 						<!-- NO SURAT -->
 						<?php
