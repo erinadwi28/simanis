@@ -181,6 +181,16 @@
 										<td><?= $detail->no_surat ?></td>
 									</tr>
 								<?php } ?>
+								<?php if ($detail->no_statistik != null) { ?>
+									<tr>
+										<td><b>No. Statistik</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->no_statistik ?></td>
+									</tr>
+								<?php } ?>
 								<tr>
 									<td><b>Nama Majelis Taklim</b></td>
 									<td> </td>
@@ -237,16 +247,6 @@
 									<td> </td>
 									<td><?= $detail->tahun_berdiri ?></td>
 								</tr>
-								<?php if ($detail->no_statistik != null) { ?>
-									<tr>
-										<td><b>No. Statistik</b></td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td><?= $detail->nomor_statistik ?></td>
-									</tr>
-								<?php } ?>
 								<tr>
 									<td><b>No. Handphone</b></td>
 									<td> </td>
@@ -282,6 +282,16 @@
 										<td>:</td>
 										<td> </td>
 										<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_persetujuan_tim_teknis != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Tim Teknis</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_tim_teknis)); ?></td>
 									</tr>
 								<?php } ?>
 								<?php if ($detail->tgl_persetujuan_kasi != null) { ?>

@@ -187,6 +187,46 @@
 										<td><?= $detail->no_surat ?></td>
 									</tr>
 								<?php } ?>
+								<?php if ($detail->no_berita_acara_verifikasi_dok != null) { ?>
+									<tr>
+										<td><b>Nomor Berita Acara Verifikasi Dokumen</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->no_berita_acara_verifikasi_dok ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_berita_acara_verifikasi_dok != null) { ?>
+									<tr>
+										<td><b>Tanggal Berita Acara Verifikasi Dokumen</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_berita_acara_verifikasi_dok)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->no_berita_acara_verifikasi_lap != null) { ?>
+									<tr>
+										<td><b>Nomor Berita Acara Verifikasi Lapangan</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->no_berita_acara_verifikasi_lap ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_berita_acara_verifikasi_lap != null) { ?>
+									<tr>
+										<td><b>Tanggal Berita Acara Verifikasi Lapangan</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_berita_acara_verifikasi_lap)); ?></td>
+									</tr>
+								<?php } ?>
 								<tr>
 									<td><b>Nama Yayasan</b></td>
 									<td> </td>
@@ -236,15 +276,15 @@
 									<td><?= $detail->alamat_calon_madrasah ?></td>
 								</tr>
 								<tr>
-									<td><b>No. Akte Notaris</b></td>
+									<td><b>Nama Calon Penyelenggara</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= $detail->nama_calon_madrasah ?></td>
+									<td><?= $detail->nama_calon_penyelenggara ?></td>
 								</tr>
 								<tr>
-									<td><b>No. Pengesahan Akte Notaris</b></td>
+									<td><b>No. Akte Notaris</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
@@ -252,12 +292,20 @@
 									<td><?= $detail->akte_notaris ?></td>
 								</tr>
 								<tr>
-									<td><b>No. Handphone</b></td>
+									<td><b>No. Pengesahan Akte Notaris</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
 									<td> </td>
 									<td><?= $detail->pengesahan_akte_notaris ?></td>
+								</tr>
+								<tr>
+									<td><b>No. Handphone</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td> </td>
+									<td><?= $detail->no_hp ?></td>
 								</tr>
 								<tr>
 									<td><b>Tanggal Permohonan</b></td>
@@ -286,6 +334,16 @@
 										<td>:</td>
 										<td> </td>
 										<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_persetujuan_tim_teknis != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Tim Teknis</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_tim_teknis)); ?></td>
 									</tr>
 								<?php } ?>
 								<?php if ($detail->tgl_persetujuan_kasi != null) { ?>

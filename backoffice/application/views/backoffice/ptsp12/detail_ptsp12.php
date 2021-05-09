@@ -128,7 +128,7 @@
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= $detail->tgl_srt_permohonan ?></td>
+									<td><?= format_indo(date($detail->tgl_srt_permohonan)); ?></td>
 								</tr>
 								<tr>
 									<td><b>Keperluan</b></td>

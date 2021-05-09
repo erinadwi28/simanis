@@ -324,7 +324,7 @@
 									<input type="text" class="form-control " id="no_surat" name="no_surat" value=".../Kk.11.10/06/BA.00/<?= date("m/Y") ?>" required>
 								</div>
 								<div class="input-group col-md-3 px-2 mb-2">
-									<input type="text" min="0" class="form-control " id="nomor_surat_tugas" name="nomor_surat_tugas" value="" placeholder="No. Surat Tugas" required>
+									<input type="text" min="0" class="form-control " id="no_surat_tugas" name="no_surat_tugas" value="" placeholder="No. Surat Tugas" required>
 								</div>
 								<div class="input-group col-md-2 px-2 mb-2">
 									<input type="text" class="form-control " id="sifat" name="sifat" value="" placeholder="Sifat surat" required>

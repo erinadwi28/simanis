@@ -83,13 +83,34 @@
 					<div class="card-body">
 						<table class="table-hover table-responsive">
 							<tbody>
-								<?php if ($detail->no_surat != null && $detail->status == 'Selesai') { ?>
+								<?php if ($detail->no_surat != null) { ?>
 									<tr>
 										<td><b>Nomor Surat</b></td>
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= $detail->no_surat ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->sifat != null) { ?>
+									<tr>
+										<td><b>Sifat Surat</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->sifat ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->jml_lampiran != null) { ?>
+									<tr>
+										<td><b>Jumlah Lampiran</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->jml_lampiran ?></td>
 									</tr>
 								<?php } ?>
 								<tr>
@@ -214,7 +235,7 @@
 						<?php } ?>
 					</div>
 
-					
+
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
 							<div class="float-right">

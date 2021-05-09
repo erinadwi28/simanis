@@ -25,7 +25,7 @@
 			font-family: Calibri, Helvetica, Arial, sans-serif;
 			font-size: 11pt;
 		}
-		
+
 		.kopsurat p {
 			font-weight: bold;
 			line-height: 1em;
@@ -194,27 +194,30 @@
 										</div>
 									</div>
 								</div>
-								<div class="row ttd_kades">
-									<div class="col-md-6 ">
-									</div>
-									<div class="col-md-6">
-
-									</div>
+							<?php } ?>
+							<div class="row ttd_kades">
+								<div class="col-md-6 ">
 								</div>
-								<br> <br>
-								<div class="row">
-									<div class="col-md-6">
-									</div>
+								<div class="col-md-6">
+
+								</div>
+							</div>
+							<br> <br>
+							<div class="row">
+								<div class="col-md-6">
+								</div>
+								<?php
+								foreach ($data_kepala as $detail) { ?>
 									<div class="col-md-6">
 										<div class="isi_surat">
 											<center>
-												<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
-												Nip. 197004201995031003
+												<u><b><?= $detail->nama ?></b></u><br>
+												Nip. <?= $detail->nip ?>
 											</center>
 										</div>
 									</div>
-								</div>
-							<?php } ?>
+								<?php } ?>
+							</div>
 						</div>
 					</div>
 				</div>

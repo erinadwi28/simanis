@@ -176,64 +176,70 @@
 								</center>
 							</div><br>
 							<div class="isi_surat identitas">
-								<table class="table-responsive" cellpadding="5">
-									<tbody>
-										<tr>
-											<td><b>NAMA</b></td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td> </td>
-										</tr>
-										<tr>
-											<td><b>ALAMAT</b></td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td> </td>
-										</tr>
-										<tr>
-											<td><b>PEKERJAAN</b></td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td> </td>
-										</tr>
-										<tr>
-											<td><b>NOMOR HP</b></td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td> </td>
-										</tr>
-										<tr>
-											<td><b>PERIHAL KONSULTASI</b></td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td> </td>
-										</tr>
-									</tbody>
+								<table class="table" cellpadding="5">
+									<?php
+									foreach ($detail_ptsp as $detail) { ?>
+										<tbody>
+											<tr>
+												<td><b>NAMA</b></td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td><?= $detail->nama_pemohon; ?></td>
+											</tr>
+											<tr>
+												<td><b>ALAMAT</b></td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td><?= $detail->alamat ?></td>
+											</tr>
+											<tr>
+												<td><b>PEKERJAAN</b></td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td><?= $detail->pekerjaan ?></td>
+											</tr>
+											<tr>
+												<td><b>NOMOR HP</b></td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td><?= $detail->no_hp ?></td>
+											</tr>
+											<tr>
+												<td><b>PERIHAL KONSULTASI</b></td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+												<td><?= $detail->perihal_konsultasi ?></td>
+											</tr>
+										</tbody>
+									<?php } ?>
 								</table>
 							</div>
 							<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 							<div class="row">
 								<div class="col-md-6"></div>
 								<div class="col-md-6">
-									<div class="isi_surat">
-										<center>
-											Klaten, ..................<br>
-											Pemohon,
-											<br><br>
+									<?php
+									foreach ($detail_ptsp as $detail) { ?>
+										<div class="isi_surat">
+											<center>
+												Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
+												Pemohon,
+												<br><br>
 
-											(..................)
-										</center>
-									</div>
+												(<?= $detail->nama_pemohon ?>)
+											</center>
+										</div>
+									<?php } ?>
 								</div>
 							</div>
 							<div class="row ttd_kades">
@@ -274,91 +280,100 @@
 							</center>
 						</div>
 						<div class="isi_surat identitas">
-							<table border="1" cellpadding="5" width="630px">
-								<br><br>
-								<p>Data Pemohon Konsultasi</p>
-								<tr>
-									<td width="30px">1</td>
-									<td width="190px">Nama</td>
-									<td> </td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>Alamat</td>
-									<td> </td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>Telp</td>
-									<td> </td>
-								</tr>
-							</table>
+							<?php
+							foreach ($detail_ptsp as $detail) { ?>
+								<table border="1" cellpadding="5" width="630px">
+									<br><br>
+									<p>Data Pemohon Konsultasi</p>
+									<tr>
+										<td width="30px">1</td>
+										<td width="190px">Nama</td>
+										<td><?= $detail->nama_pemohon ?></td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>Alamat</td>
+										<td><?= $detail->alamat ?></td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>Telp</td>
+										<td><?= $detail->no_hp ?></td>
+									</tr>
+								</table>
+							<?php } ?>
 						</div>
 						<div class="isi_surat identitas">
-							<table border="1" cellpadding="5" width="630px">
-								<br><br>
-								<p>Petugas Penerima</p>
-								<tr>
-									<td width="30px">1</td>
-									<td width="190px">Nama</td>
-									<td> </td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>NIP</td>
-									<td> </td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>Pangkat/Golru</td>
-									<td> </td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td>Jabatan</td>
-									<td> </td>
-								</tr>
-							</table>
+							<?php
+							foreach ($detail_ptsp as $detail) { ?>
+								<table border="1" cellpadding="5" width="630px">
+									<br><br>
+									<p>Petugas Penerima</p>
+									<tr>
+										<td width="30px">1</td>
+										<td width="190px">Nama</td>
+										<td><?= $detail->nama_petugas ?></td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>NIP</td>
+										<td><?= $detail->nip_petugas ?></td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>Pangkat/Golru</td>
+										<td><?= $detail->pangkat_golongan ?></td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>Jabatan</td>
+										<td><?= $detail->jabatan ?></td>
+									</tr>
+								</table>
+							<?php } ?>
 						</div>
 
 						<div class="isi_surat identitas">
-							<table border="1" cellpadding="5" width="630px">
-								<br><br>
-								<tr>
-									<td width="30px">1</td>
-									<td width="190px">Hari /Tanggal </td>
-									<td colspan="3"> </td>
-								</tr>
-								<tr>
-									<td>2<br><br><br><br><br><br> </td>
-									<td>Materi Konsultasi<br><br><br><br><br><br> </td>
-									<td colspan="3"> </td>
-								</tr>
-								<tr>
-									<td>3<br><br><br><br><br><br><br><br><br><br><br> </td>
-									<td>Hasil Konsultasi<br><br><br><br><br><br><br><br><br><br><br> </td>
-									<td colspan="3"> </td>
-								</tr>
-								<tr>
-									<td>4<br><br><br><br><br><br> </td>
-									<td>Tindak Lanjut Konsultasi<br><br><br><br><br><br> </td>
-									<td colspan="3"> </td>
-								</tr>
-								<tr>
-									<td colspan="3"> </td>
-									<td> </td>
-									<td>Klaten,................</td>
-								</tr>
-								<tr>
-									<td width="250px" colspan="3">
-										<center>Petugas Penerima<br><br><br><br> (..................) </center>
-									</td>
-									<td> </td>
-									<td width="250px">
-										<center>Yang Berkonsultasi<br><br><br><br> (..................) </center>
-									</td>
-								</tr>
-							</table>
+							<?php
+							foreach ($detail_ptsp as $detail) { ?>
+								<table border="1" cellpadding="5" width="630px">
+									<br><br>
+									<tr>
+										<td width="30px">1</td>
+										<td width="190px">Hari /Tanggal </td>
+										<td colspan="3"><?= $detail->hari_konsultasi ?></td>
+									</tr>
+									<tr>
+										<td>2<br><br><br><br><br><br> </td>
+										<td>Materi Konsultasi<br><br><br><br><br><br> </td>
+										<td colspan="3"> </td>
+									</tr>
+									<tr>
+										<td>3<br><br><br><br><br><br><br><br><br><br><br> </td>
+										<td>Hasil Konsultasi<br><br><br><br><br><br><br><br><br><br><br> </td>
+										<td colspan="3"> </td>
+									</tr>
+									<tr>
+										<td>4<br><br><br><br><br><br> </td>
+										<td>Tindak Lanjut Konsultasi<br><br><br><br><br><br> </td>
+										<td colspan="3"> </td>
+									</tr>
+									<tr>
+										<td colspan="3"> </td>
+										<td> </td>
+										<td>Klaten,................</td>
+									</tr>
+									<tr>
+										<td width="250px" colspan="3">
+											<center>Petugas Penerima<br><br><br><br> (<?= $detail->nama_petugas ?>) </center>
+										</td>
+										<td> </td>
+										<td width="250px">
+											<center>Yang Berkonsultasi<br><br><br><br> (<?= $detail->nama_pemohon ?>) </center>
+										</td>
+									</tr>
+								</table>
+							<?php } ?>
 						</div>
 					</div>
 				</div>

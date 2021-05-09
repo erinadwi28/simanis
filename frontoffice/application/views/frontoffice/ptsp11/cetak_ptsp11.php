@@ -204,13 +204,13 @@
 						<?php foreach ($detail_ptsp as $detail) { ?>
 							<div class="isi_surat paragraf">
 								<p> Menindaklanjuti surat dari Kepala <?= $detail->nama_sekolah_asal ?> Nomor : <?= $detail->no_srt_rek_sekolah_asal ?>
-									tanggal <?= $detail->tgl_srt_rek_sekolah_asal ?> perihal ..............., maka dengan ini Kepala Kantor Kementerian Agma Kabupaten Klaten
+									tanggal <?= $detail->tgl_srt_rek_sekolah_asal ?> perihal permohonan rekomendasi, maka dengan ini Kepala Kantor Kementerian Agama Kabupaten Klaten
 									memberikan rekomendasi pindah sekolah kepada : </p>
 							</div>
 						<?php } ?>
 
 						<div class="isi_surat identitas">
-							<table class="table-responsive">
+							<table>
 								<?php foreach ($detail_ptsp as $detail) { ?>
 									<tbody>
 										<tr>
@@ -285,7 +285,7 @@
 						<br>
 						<div class="isi_surat paragraf">
 							<p>
-								Demikian rekomendasi ini dibuat untuk dapat dipergunakan sebagaimana mestinya
+								Demikian rekomendasi ini dibuat untuk dapat dipergunakan sebagaimana mestinya.
 							</p>
 						</div>
 						<div class="row">
@@ -311,12 +311,15 @@
 							<div class="col-md-6">
 							</div>
 							<div class="col-md-6">
-								<div class="badan_surat isi_surat">
-									<center>
-										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-										<u><b>Anif Solikhin</b></u>
-									</center>
-								</div>
+								<?php
+								foreach ($data_kepala as $detail) { ?>
+									<div class="badan_surat isi_surat">
+										<center>
+											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+											<u><b><?= $detail->nama ?></b></u>
+										</center>
+									</div>
+								<?php } ?>
 							</div>
 						</div>
 					</div>

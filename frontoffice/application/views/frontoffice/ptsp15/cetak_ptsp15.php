@@ -244,6 +244,14 @@
 													<td><?= $detail->tahun_berdiri ?></td>
 												</tr>
 												<tr>
+													<td>Nomor Statistik</td>
+													<td> </td>
+													<td> </td>
+													<td>:</td>
+													<td> </td>
+													<td><?= $detail->no_statistik ?></td>
+												</tr>
+												<tr>
 													<td>No Telp</td>
 													<td> </td>
 													<td> </td>
@@ -271,14 +279,19 @@
 											<div class="badan_surat isi_surat">
 												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 												<p>Ditetapkan di : Klaten <br>
-													Pada Tanggal : &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; 20 <br>
-													Kepala </p><br><br><br><br>
-												<b>Anif Solikhin</b><br>
+													Pada Tanggal : &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
+													Kepala
+												</p>
+											<?php } ?>
+											<br><br><br><br>
+											<?php
+											foreach ($data_kepala as $detail) { ?>
+												<b><?= $detail->nama; ?></b><br>
+											<?php } ?>
 											</div>
 										</div>
 									</div>
 								</div>
-							<?php } ?>
 						</div>
 					</div>
 				</div>

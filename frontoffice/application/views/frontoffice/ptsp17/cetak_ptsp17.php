@@ -264,16 +264,19 @@
 							<div class="col-md-9">
 							</div>
 							<div class="col-md-3">
-								<div class="badan_surat isi_surat">
-									<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-									Anif Solikhin<br>
-								</div>
+								<?php
+								foreach ($data_kepala as $detail) { ?>
+									<div class="badan_surat isi_surat">
+										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+										<?= $detail->nama ?><br>
+									</div>
+								<?php } ?>
 							</div>
 						</div>
 						<div>
-							Tempusan: <br>
+							Tembusan: <br>
 							1. Kepala Seksi PAIS Kankemenag Kab. Klaten; <br>
-							2. Korwil Pendidikan Kec. Karngdowo; <br>
+							2. Korwil Pendidikan Kec. Karangdowo; <br>
 							3. Kepala SD Negeri 2 Demangan Kec. Karangdowo <br>
 							4. Kepala SD Negeri 3 Karangwungu Kec. Karangdowo <br>
 							5. Sdr. M. Zajid, S.Ag. NIP. 19740512 200501 1 003; <br>

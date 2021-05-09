@@ -110,24 +110,46 @@
 
 				<!-- Upload suket_penghasilan -->
 				<div class="card shadow mb-4">
-					<div class="card-header">
-						<center>
-							<h6 class="m-0 font-weight-bold">Suket Penghasilan</h6>
-						</center>
-					</div>
-					<div class="card-body">
-						<center>
-							<?php if ($detail->suket_penghasilan != null) { ?>
-								<p><?= $detail->suket_penghasilan; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp27/suket_penghasilan/<?= $detail->suket_penghasilan ?>" target="_blank">
-									<i class="fa fa-download nav-icon">
-									</i> Klik untuk melihat
-								</a>
-							<?php } elseif ($detail->suket_penghasilan == null) { ?>
-								<p>Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
-							<?php } ?>
-						</center>
-					</div>
+					<?php
+					if ($detail->suket_penghasilan == null && $detail->status == 'Selesai') { ?>
+						<div class="card-header">
+							<center>
+								<h6 class="m-0 font-weight-bold">Suket Penghasilan</h6>
+							</center>
+						</div>
+						<div class="card-body">
+							<center>
+								<?php if ($detail->suket_penghasilan != null) { ?>
+									<p><?= $detail->suket_penghasilan; ?></p>
+									<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp27/suket_penghasilan/<?= $detail->suket_penghasilan ?>" target="_blank">
+										<i class="fa fa-download nav-icon">
+										</i> Klik untuk melihat
+									</a>
+								<?php } elseif ($detail->suket_penghasilan == null) { ?>
+									<p>Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
+								<?php } ?>
+							</center>
+						</div>
+					<?php } elseif ($detail->suket_penghasilan != null) { ?>
+						<div class="card-header">
+							<center>
+								<h6 class="m-0 font-weight-bold">Suket Penghasilan</h6>
+							</center>
+						</div>
+						<div class="card-body">
+							<center>
+								<?php if ($detail->suket_penghasilan != null) { ?>
+									<p><?= $detail->suket_penghasilan; ?></p>
+									<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp27/suket_penghasilan/<?= $detail->suket_penghasilan ?>" target="_blank">
+										<i class="fa fa-download nav-icon">
+										</i> Klik untuk melihat
+									</a>
+								<?php } elseif ($detail->suket_penghasilan == null) { ?>
+									<p>Belum ada lampiran</p>
+								<?php } ?>
+							</center>
+						</div>
+					<?php } ?>
 					<?php if ($detail->status == 'Selesai') { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_suket_penghasilan_ptsp27/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_suket_penghasilan">

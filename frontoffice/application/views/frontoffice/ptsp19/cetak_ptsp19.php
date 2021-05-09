@@ -237,13 +237,16 @@
 						</div>
 						<div class="col-md-6">
 							<div class="badan_surat isi_surat">
-								<div class="badan_surat isi_surat">
-									<center>
-										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-										<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
-										Nip. 197004201995031003
-									</center>
-								</div>
+								<?php
+								foreach ($data_kepala as $detail) { ?>
+									<div class="badan_surat isi_surat">
+										<center>
+											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+											<u><b><?= $detail->nama ?></b></u><br>
+											Nip. <?= $detail->nip ?>
+										</center>
+									</div>
+								<?php } ?>
 							</div>
 						</div>
 					</div>
@@ -272,13 +275,17 @@
 								</object>
 							</div>
 						</div>
-						<div class="no_surat">
-							<center>
-								<p><u><b>SURAT TUGAS</b></u><br>
-									<b>Nomor :...... /Kk.11.10/6/KP.01.2/03/2021 </b>
-								</p>
-							</center>
-						</div><br>
+						<?php
+						foreach ($detail_ptsp as $detail) {  ?>
+							<div class="no_surat">
+								<center>
+									<p><u><b>SURAT TUGAS</b></u><br>
+										<b>Nomor :<?= $detail->no_surat_tugas ?> </b>
+									</p>
+								</center>
+							</div>
+						<?php } ?>
+						<br>
 						<div>
 
 							<P><b>Menimbang : </b>
@@ -330,13 +337,16 @@
 							<div class="col-md-6">
 							</div>
 							<div class="col-md-6">
-								<div class="badan_surat isi_surat">
-									<center>
-										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-										Klaten,....../..../...... <br>
-										Kepala
-									</center>
-								</div>
+								<?php
+								foreach ($detail_ptsp as $detail) { ?>
+									<div class="badan_surat isi_surat">
+										<center>
+											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+											Klaten,<?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?> <br>
+											Kepala
+										</center>
+									</div>
+								<?php } ?>
 							</div>
 						</div>
 					</div>
@@ -346,23 +356,28 @@
 						</div>
 						<div class="col-md-6">
 							<div class="badan_surat isi_surat">
-								<div class="badan_surat isi_surat">
-									<center>
-										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-										<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
-										Nip. 197004201995031003
-									</center>
-								</div>
+								<?php
+								foreach ($data_kepala as $detail) { ?>
+									<div class="badan_surat isi_surat">
+										<center>
+											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+											<u><b><?= $detail->nama ?></b></u><br>
+											Nip. <?= $detail->nip ?>
+										</center>
+									</div>
+								<?php } ?>
 							</div>
 						</div>
 					</div>
-					<div class="isi_surat">
-						<p>Tembusan :</p>
-						<ol>
-							<li>Kepala Studio RSPD Klaten</li>
-
-						</ol>
-					</div>
+					<?php
+					foreach ($detail_ptsp as $detail) { ?>
+						<div class="isi_surat">
+							<p>Tembusan :</p>
+							<ol>
+								<li>Kepala Studio <?= $detail->nama_studio ?></li>
+							</ol>
+						</div>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
@@ -525,13 +540,16 @@
 							<div class="col-md-6">
 							</div>
 							<div class="col-md-6">
-								<div class="badan_surat isi_surat">
-									<center>
-										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-										Klaten,....../..../...... <br>
-										Kepala
-									</center>
-								</div>
+								<?php
+								foreach ($detail_ptsp as $detail) { ?>
+									<div class="badan_surat isi_surat">
+										<center>
+											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+											Klaten,<?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
+											Kepala
+										</center>
+									</div>
+								<?php } ?>
 							</div>
 						</div>
 						<br> <br>
@@ -540,13 +558,16 @@
 							</div>
 							<div class="col-md-6">
 								<div class="badan_surat isi_surat">
-									<div class="badan_surat isi_surat">
-										<center>
-											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-											<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
-											Nip. 197004201995031003
-										</center>
-									</div>
+									<?php
+									foreach ($data_kepala as $detail) { ?>
+										<div class="badan_surat isi_surat">
+											<center>
+												<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+												<u><b><?= $detail->nama ?></b></u><br>
+												Nip. <?= $detail->nip ?>
+											</center>
+										</div>
+									<?php } ?>
 								</div>
 							</div>
 						</div>

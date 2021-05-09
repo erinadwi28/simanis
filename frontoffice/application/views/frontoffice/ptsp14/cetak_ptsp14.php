@@ -309,14 +309,17 @@
 											<div class="badan_surat isi_surat">
 												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 												<p>Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></p>
+											<?php } ?>
+											<?php
+											foreach ($data_kepala as $detail) { ?>
 												<h6>MENTERI AGAMA</h6>
 												Kepala Kantor Kementerian Agama
 												Kabupaten Klaten<br><br><br><br>
-												<b>Anif Solikhin</b><br>
+												<b><?= $detail->nama; ?></b><br>
+											<?php } ?>
 											</div>
 										</div>
 									</div>
-								<?php } ?>
 								</div>
 						</div>
 					</div>

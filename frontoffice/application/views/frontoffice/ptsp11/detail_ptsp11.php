@@ -129,6 +129,14 @@
 									<td><?= $detail->tempat_lahir_siswa ?></td>
 								</tr>
 								<tr>
+									<td><b>Jenis Kelamin</b></td>
+									<td> </td>
+									<td> </td>
+									<td>:</td>
+									<td> </td>
+									<td><?= $detail->jenis_kelamin ?></td>
+								</tr>
+								<tr>
 									<td><b>Tanggal Lahir</b></td>
 									<td> </td>
 									<td> </td>

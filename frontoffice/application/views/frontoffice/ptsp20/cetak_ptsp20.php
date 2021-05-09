@@ -278,13 +278,16 @@
 							<div class="row">
 								<div class="col-md-6"></div>
 								<div class="col-md-6">
-									<div class="badan_surat isi_surat">
-										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-										<P>
-											<u><b>H. Anif Solikhim. S.Ag. M S I</b></u><br>
-											Nip. 197004201995031003
-										</P>
-									</div>
+									<?php
+									foreach ($data_kepala as $detail) { ?>
+										<div class="badan_surat isi_surat">
+											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+											<P>
+												<u><b><?= $detail->nama ?></b></u><br>
+												Nip. <?= $detail->nip ?>
+											</P>
+										</div>
+									<?php } ?>
 								</div>
 							</div>
 						</div>

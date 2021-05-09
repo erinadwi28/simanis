@@ -108,49 +108,52 @@
 				</div>
 
 				<!-- Upload Jadwal -->
-				<div class="card shadow mb-4">
-					<div class="card-header">
-						<center>
-							<h6 class="m-0 font-weight-bold">Jadwal</h6>
-						</center>
-					</div>
-					<div class="card-body">
-						<center>
-							<?php if ($detail->jadwal != null) { ?>
-								<p><?= $detail->jadwal; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp25/jadwal/<?= $detail->jadwal ?>" target="_blank">
-									<i class="fa fa-download nav-icon">
-									</i> Klik untuk melihat
-								</a>
-							<?php } elseif ($detail->jadwal == null) { ?>
-								<p>Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
-							<?php } ?>
-						</center>
-					</div>
-					<?php if ($detail->status == 'Selesai') { ?>
-						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_jadwal_ptsp25/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_jadwal">
-								<div class="form-group">
-									<div class="input-group">
-										<div class="form-group-upload">
-											<div class="custom-file">
-												<label class="custom-file-label" for="file-upload-2">pilih file...</label>
-												<input type="file" class="custom-file-input" id="file-upload-2" name="jadwal" value="<?= $detail->jadwal ?>">
-												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
+				<?php
+				if ($detail->status == 'Selesai') { ?>
+					<div class="card shadow mb-4">
+						<div class="card-header">
+							<center>
+								<h6 class="m-0 font-weight-bold">Jadwal</h6>
+							</center>
+						</div>
+						<div class="card-body">
+							<center>
+								<?php if ($detail->jadwal != null) { ?>
+									<p><?= $detail->jadwal; ?></p>
+									<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp25/jadwal/<?= $detail->jadwal ?>" target="_blank">
+										<i class="fa fa-download nav-icon">
+										</i> Klik untuk melihat
+									</a>
+								<?php } elseif ($detail->jadwal == null) { ?>
+									<p>Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
+								<?php } ?>
+							</center>
+						</div>
+						<?php if ($detail->jadwal == null && $detail->status_cetak != 1) { ?>
+							<div class="card-footer">
+								<form action="<?= base_url('dashboard/update_jadwal_ptsp25/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_jadwal">
+									<div class="form-group">
+										<div class="input-group">
+											<div class="form-group-upload">
+												<div class="custom-file">
+													<label class="custom-file-label" for="file-upload-2">pilih file...</label>
+													<input type="file" class="custom-file-input" id="file-upload-2" name="jadwal" value="<?= $detail->jadwal ?>">
+													<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								<center>
-									<button class="btn btn-sm btn-primary" type="submit">
-										<i class="fa fa-upload">
-										</i>
-									</button>
-								</center>
-							</form>
-						</div>
-					<?php } ?>
-				</div>
+									<center>
+										<button class="btn btn-sm btn-primary" type="submit">
+											<i class="fa fa-upload">
+											</i>
+										</button>
+									</center>
+								</form>
+							</div>
+						<?php } ?>
+					</div>
+				<?php } ?>
 
 			</div>
 			<div class="col-md-8 mb-2">
@@ -161,6 +164,66 @@
 					<div class="card-body">
 						<table class="table-hover table-responsive">
 							<tbody>
+								<?php if ($detail->hari_konsultasi != null) { ?>
+									<tr>
+										<td><b>Hari Konsultasi</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->hari_konsultasi ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->jam_konsultasi != null) { ?>
+									<tr>
+										<td><b>Jam Konsultasi</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->jam_konsultasi ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->nama_petugas != null) { ?>
+									<tr>
+										<td><b>Nama Petugas</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->nama_petugas ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->nip_petugas != null) { ?>
+									<tr>
+										<td><b>NIP Petugas</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->nip_petugas ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->pangkat_golongan != null) { ?>
+									<tr>
+										<td><b>Pangkat Golongan</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->pangkat_golongan ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->jabatan != null) { ?>
+									<tr>
+										<td><b>Jabatan</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->jabatan ?></td>
+									</tr>
+								<?php } ?>
 								<tr>
 									<td><b>Nama</b></td>
 									<td> </td>

@@ -169,6 +169,16 @@
 										<td><?= $detail->masa_berlaku ?></td>
 									</tr>
 								<?php } ?>
+								<?php if ($detail->nomor_statistik != null) { ?>
+									<tr>
+										<td><b>Nomor Statistik</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->nomor_statistik ?></td>
+									</tr>
+								<?php } ?>
 								<tr>
 									<td><b>Nama LPQ</b></td>
 									<td> </td>

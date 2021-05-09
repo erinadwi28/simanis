@@ -201,12 +201,12 @@
 						<?php foreach ($detail_ptsp as $detail) { ?>
 							<div class="isi_surat paragraf">
 								<p> Menindaklanjuti surat permohonan dari Kepala <?= $detail->nama_sekolah ?> Nomor : <?= $detail->no_srt_permohonan ?>
-									tanggal <?= format_indo(date($detail->tgl_srt_permohonan)); ?> perihal sebagaimana dalam pokok surat, maka dengan ini Kepala Kantor Kementerian Agma Kabupaten Klaten
-									memberikan rekomendasi untuk mengajukan bantuan sarana prasarana </p>
+									tanggal <?= format_indo(date($detail->tgl_srt_permohonan)); ?> perihal sebagaimana dalam pokok surat, maka dengan ini Kepala Kantor Kementerian Agama Kabupaten Klaten
+									memberikan rekomendasi untuk mengajukan bantuan sarana prasarana. </p>
 							</div>
 							<div class="isi_surat paragraf">
 								<p>
-									Demikian rekomendasi ini dibuat untuk keperluan mendapatkan bantuan hibah Bupati Klaten
+									Demikian rekomendasi ini dibuat untuk keperluan mendapatkan bantuan hibah Bupati Klaten.
 								</p>
 							</div>
 						<?php } ?>
@@ -233,12 +233,15 @@
 							<div class="col-md-6">
 							</div>
 							<div class="col-md-6">
-								<div class="badan_surat isi_surat">
-									<center>
-										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-										<u><b>Anif Solikhin</b></u>
-									</center>
-								</div>
+								<?php
+								foreach ($data_kepala as $detail) { ?>
+									<div class="badan_surat isi_surat">
+										<center>
+											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+											<u><b><?= $detail->nama ?></b></u>
+										</center>
+									</div>
+								<?php } ?>
 							</div>
 						</div>
 						<div>

@@ -62,15 +62,17 @@
 		.kepala_sertifikat p {
 			margin-top: 3px;
 		}
-		.row{
+
+		.row {
 			font-size: 14pt;
 			font-family: 'Times New Roman';
 		}
+
 		.no_surat {
 			font-size: 14pt;
 		}
 
-		.tujuan_surat{
+		.tujuan_surat {
 			font-size: 14pt;
 			font-family: 'Times New Roman';
 		}
@@ -144,7 +146,6 @@
 			border-color: #000;
 			margin-left: 15px;
 		}
-
 	</style>
 
 </head>
@@ -158,33 +159,35 @@
 			</div>
 			<div class="col-md-8">
 				<div class="card shadow mb-4">
-					
-				<div class="card-body">
-							<div class="kopsurat row">
-								<div class="col-md-12 mb-3">
-									<object data="" type="image">
-										<img class="img-fluid" alt="logo_kop_surat"
-											src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
-									</object>
-								</div>
+
+					<div class="card-body">
+						<div class="kopsurat row">
+							<div class="col-md-12 mb-3">
+								<object data="" type="image">
+									<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
+								</object>
 							</div>
-                            <div class="no_surat">
+						</div>
+						<?php
+						foreach ($detail_ptsp as $detail) { ?>
+							<div class="no_surat">
 								<center>
 									<p><u><b>SURAT TUGAS</b></u><br>
-										<b>Nomor : </b>
+										<b>Nomor : <?= $detail->no_surat ?> </b>
 									</p>
 								</center>
-							</div><br>
+							</div>
+							<br>
 							<div class="isi_surat">
 								<p align="justify">
-									&emsp;&emsp; Dengan ini Kepala Kantor Kementrian Agama Kabupaten Klaten berdasarkan surat permohonan 
-									Kepala SD Negri Sapen Kec. Manisrenggo Kab. Klaten tanggal 31 Desember 2019 tentang Permohonan 
-									Guru Pendidikan Agama Islam dan persetujuan Kepala Seksi Pendidikan Agama Islam tanggal 04 Februari 2020, 
-									memerintahkan kepada Pegawai Negri Sipil :   
+									&emsp;&emsp; Dengan ini Kepala Kantor Kementrian Agama Kabupaten Klaten berdasarkan surat permohonan
+									Kepala <?= $detail->nama_sekolah_satmikal ?> Kec. <?= $detail->kecamatan_sekolah_satmikal ?> Kab. <?= $detail->kabupaten_sekolah_satmikal ?> tanggal <?= format_indo(date($detail->tgl_srt_permohonan)); ?> tentang Permohonan
+									Guru Pendidikan Agama Islam dan persetujuan Kepala Seksi Pendidikan Agama Islam tanggal <?= format_indo(date($detail->tgl_srt_persetujuan_pengawas_pai)); ?>,
+									memerintahkan kepada Pegawai Negri Sipil :
 								</p>
 							</div>
 							<div class="isi_surat identitas">
-								<table class="table-responsive">
+								<table class="table">
 									<tbody>
 										<tr>
 											<td>&emsp;&emsp; Nama</td>
@@ -192,7 +195,7 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td></td>
+											<td><?= $detail->nama_pns ?></td>
 										</tr>
 										<tr>
 											<td>&emsp;&emsp; NIP</td>
@@ -200,7 +203,7 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td></td>
+											<td><?= $detail->nip ?></td>
 										</tr>
 										<tr>
 											<td>&emsp;&emsp; Pangkat/Gol. Ruang</td>
@@ -208,7 +211,7 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td></td>
+											<td><?= $detail->pangkat_pns ?></td>
 										</tr>
 										<tr>
 											<td>&emsp;&emsp; Jabatan</td>
@@ -216,7 +219,7 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td></td>
+											<td><?= $detail->jabatan ?></td>
 										</tr>
 										<tr>
 											<td>&emsp;&emsp; Ditugaskan di</td>
@@ -224,7 +227,7 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td></td>
+											<td><?= $detail->nama_sekolah_tujuan ?></td>
 										</tr>
 										<tr>
 											<td>&emsp;&emsp; Terhitung mulai tanggal</td>
@@ -232,18 +235,18 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td></td>
+											<td><?= format_indo(date($detail->tgl_mulai_mengajar)); ?></td>
 										</tr>
 									</tbody>
 								</table>
 							</div><br>
 							<div class="isi_surat">
 								<p align="justify">
-									untuk segera melaksanakan tugas sebagai Guru Pertama pada Kantor Kementrian Agama kab. Klaten 
-									ditugaskan di SD Negri 1 Sukorini Kec. Manisrenggo Kab. Klaten dan SD Negri Sapen Kec. Manisrenggo Kab. Klaten.  
+									untuk segera melaksanakan tugas sebagai Guru Pertama pada Kantor Kementrian Agama kab. Klaten
+									ditugaskan di <?= $detail->nama_sekolah_tujuan ?> Kec. <?= $detail->kecamatan_sekolah_tujuan ?> Kab. <?= $detail->kabupaten_sekolah_tujuan ?> dan <?= $detail->nama_sekolah_satmikal ?> Kec. <?= $detail->kecamatan_sekolah_satmikal ?> Kab. <?= $detail->kabupaten_sekolah_satmikal ?>.
 								</p>
 								<p align="justify">
-									&emsp;&emsp; Demikian untuk maklum dan dilaksanakan sebagaimana mestinya. 
+									&emsp;&emsp; Demikian untuk maklum dan dilaksanakan sebagaimana mestinya.
 								</p>
 							</div><br><br><br>
 							<div class="row">
@@ -253,54 +256,57 @@
 									<div class="badan_surat isi_surat">
 										<center>
 											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-											Klaten, 03 Maret 2020<br>
+											Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 											Kepala
 										</center>
 									</div>
 								</div>
 							</div>
-							
-							<div class="row ttd_kades">
-								<div class="col-md-6 ">
-								</div>
-								<div class="col-md-6">
-
-								</div>
+						<?php } ?>
+						<div class="row ttd_kades">
+							<div class="col-md-6 ">
 							</div>
-							<br> <br>	
-							<div class="row">
-								<div class="col-md-6">
-								</div>
-								<div class="col-md-6">
+							<div class="col-md-6">
+
+							</div>
+						</div>
+						<br> <br>
+						<div class="row">
+							<div class="col-md-6">
+							</div>
+							<div class="col-md-6">
+								<?php
+								foreach ($data_kepala as $detail) { ?>
 									<div class="badan_surat isi_surat">
 										<center>
 											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-											<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
-											Nip. 197004201995031003
+											<u><b><?= $detail->nama ?></b></u><br>
+											Nip. <?= $detail->nip ?>
 										</center>
 									</div>
-								</div>
-							</div>
-
-							<div class="isi_surat">
-								<p>Tembusan :</p>
-								<ol>
-									<li>Kepala Seksi PAIS KanKemenag Kab. Klaten,</li>
-									<li>Korwil Pendidikan Kec. Manisrenggo,</li>
-									<li>Kepala SD Negri 1 Sukorini Kec. Manisrenggo,</li>
-									<li>Kepala SD Negri Sapen Kec. Manisrenggo,</li>
-									<li>Sdr. Riyadi Tri Hidayat, S.Pd.I. NIP. 19741221 200501 1 002,</li>
-									<li>Arsip.</li>
-								</ol>
-							</div>
-									</div>
-									</div>
-								</div>
+								<?php } ?>
 							</div>
 						</div>
+
+						<div class="isi_surat">
+							<p>Tembusan :</p>
+							<ol>
+								<li>Kepala Seksi PAIS KanKemenag Kab. Klaten,</li>
+								<li>Korwil Pendidikan Kec. Manisrenggo,</li>
+								<li>Kepala SD Negri 1 Sukorini Kec. Manisrenggo,</li>
+								<li>Kepala SD Negri Sapen Kec. Manisrenggo,</li>
+								<li>Sdr. Riyadi Tri Hidayat, S.Pd.I. NIP. 19741221 200501 1 002,</li>
+								<li>Arsip.</li>
+							</ol>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+	</div>
+	</div>
+	</div>
 	</div>
 	</div>
 	<!-- /.container-fluid -->

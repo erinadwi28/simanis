@@ -246,12 +246,15 @@
 							<div class="col-md-6">
 							</div>
 							<div class="col-md-6">
-								<div class="badan_surat isi_surat">
-									<center>
-										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-										<u><b>Anif Solikhin</b></u>
-									</center>
-								</div>
+								<?php
+								foreach ($data_kepala as $detail) { ?>
+									<div class="badan_surat isi_surat">
+										<center>
+											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+											<u><b><?= $detail->nama ?></b></u>
+										</center>
+									</div>
+								<?php } ?>
 							</div>
 						</div>
 						<div>

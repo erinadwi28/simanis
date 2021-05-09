@@ -160,6 +160,26 @@
 										<td><?= $detail->no_surat ?></td>
 									</tr>
 								<?php } ?>
+								<?php if ($detail->tgl_pengukuran != null) { ?>
+									<tr>
+										<td><b>Tanggal Pengukuran</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->tgl_pengukuran ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->jam_pengukuran != null) { ?>
+									<tr>
+										<td><b>Jam Pengukuran</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->jam_pengukuran ?></td>
+									</tr>
+								<?php } ?>
 								<tr>
 									<td><b>Nama Masjid</b></td>
 									<td> </td>
@@ -243,6 +263,16 @@
 										<td>:</td>
 										<td> </td>
 										<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_persetujuan_tim_teknis != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Tim Teknis</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_tim_teknis)); ?></td>
 									</tr>
 								<?php } ?>
 								<?php if ($detail->tgl_persetujuan_kasi != null) { ?>

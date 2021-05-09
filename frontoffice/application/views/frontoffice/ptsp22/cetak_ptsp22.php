@@ -62,15 +62,17 @@
 		.kepala_sertifikat p {
 			margin-top: 3px;
 		}
-		.row{
+
+		.row {
 			font-size: 14pt;
 			font-family: 'Times New Roman';
 		}
+
 		.no_surat {
 			font-size: 14pt;
 		}
 
-		.tujuan_surat{
+		.tujuan_surat {
 			font-size: 14pt;
 			font-family: 'Times New Roman';
 		}
@@ -144,7 +146,6 @@
 			border-color: #000;
 			margin-left: 15px;
 		}
-
 	</style>
 
 </head>
@@ -158,30 +159,35 @@
 			</div>
 			<div class="col-md-8">
 				<div class="card shadow mb-4">
-					
-				<div class="card-body">
-							<div class="kopsurat row">
-								<div class="col-md-12 mb-3">
-									<object data="" type="image">
-										<img class="img-fluid" alt="logo_kop_surat"
-											src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
-									</object>
-								</div>
+
+					<div class="card-body">
+						<div class="kopsurat row">
+							<div class="col-md-12 mb-3">
+								<object data="" type="image">
+									<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
+								</object>
 							</div>
-                            <div class="no_surat">
+						</div>
+						<?php
+						foreach ($detail_ptsp as $detail) { ?>
+							<div class="no_surat">
 								<center>
 									<p><u><b>SURAT KETERANGAN</b></u><br>
-										<b>Nomor : </b>
+										<b>Nomor : <?= $detail->no_surat ?></b>
 									</p>
 								</center>
-							</div><br>
-							<div class="isi_surat">
-								<p align="justify">
-									Yang bertanda tangan dibawah ini :
-								</p>
 							</div>
-							<div class="isi_surat identitas">
-								<table class="table-responsive">
+						<?php } ?>
+						<br>
+						<div class="isi_surat">
+							<p align="justify">
+								Yang bertanda tangan dibawah ini :
+							</p>
+						</div>
+						<div class="isi_surat identitas">
+							<table class="table">
+								<?php
+								foreach ($data_kepala as $detail) { ?>
 									<tbody>
 										<tr>
 											<td width="130px">&emsp;&emsp; Nama</td>
@@ -189,7 +195,7 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td>H. Anif Solikhin, S.Ag. MSI</td>
+											<td><?= $detail->nama ?></td>
 										</tr>
 										<tr>
 											<td>&emsp;&emsp; NIP</td>
@@ -197,7 +203,7 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td>197004201995031003</td>
+											<td><?= $detail->nip ?></td>
 										</tr>
 										<tr>
 											<td>&emsp;&emsp; Jabatan</td>
@@ -208,23 +214,26 @@
 											<td>Kepala Kantor Kementrian Agama Kabupaten Klaten</td>
 										</tr>
 									</tbody>
-								</table>
-							</div><br>
-							<div class="isi_surat">
-								<p align="justify">
-									menerangkan dengan sesungguhnya bahwa masjid di bawah ini :
-								</p>
-							</div>
-							<div class="isi_surat identitas">
-								<table class="table-responsive">
+								<?php } ?>
+							</table>
+						</div><br>
+						<div class="isi_surat">
+							<p align="justify">
+								menerangkan dengan sesungguhnya bahwa masjid di bawah ini :
+							</p>
+						</div>
+						<div class="isi_surat identitas">
+							<?php
+							foreach ($detail_ptsp as $detail) { ?>
+								<table class="table">
 									<tbody>
-                                         <tr>
+										<tr>
 											<td width="130px"> Nama Masjid</td>
 											<td> </td>
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td> </td>
+											<td><?= $detail->nama_masjid ?></td>
 										</tr>
 										<tr>
 											<td>&emsp;&emsp; Tipologi</td>
@@ -232,7 +241,7 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td> </td>
+											<td><?= $detail->tipologi ?></td>
 										</tr>
 										<tr>
 											<td>&emsp;&emsp; Alamat</td>
@@ -240,59 +249,69 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td> </td>
+											<td><?= $detail->alamat ?></td>
 										</tr>
 									</tbody>
 								</table>
-							</div> <br>
-							<div class="isi_surat">
+							<?php } ?>
+						</div> <br>
+						<div class="isi_surat">
+							<?php
+							foreach ($detail_ptsp as $detail) { ?>
 								<p align="justify">
-									Adalah benar telah terdaftar pada Sistem Informasi Masjid Kementrian Agama dengan Nomor Indentitas Nasional Masjid : .....
+									Adalah benar telah terdaftar pada Sistem Informasi Masjid Kementrian Agama dengan Nomor Indentitas Nasional Masjid : <?= $detail->no_id_masjid ?>
 								</p>
-								<p align="justify">
-									Demikian Surat Keterangan ini dibuat untuk dapat digunakan sebagaimana mestinya.
-								</p>
-							</div><br><br><br>
-							<div class="row">
-								<div class="col-md-6">
-								</div>
-								<div class="col-md-6">
+							<?php } ?>
+							<p align="justify">
+								Demikian Surat Keterangan ini dibuat untuk dapat digunakan sebagaimana mestinya.
+							</p>
+						</div><br><br><br>
+						<div class="row">
+							<div class="col-md-6">
+							</div>
+							<div class="col-md-6">
+								<?php
+								foreach ($detail_ptsp as $detail) { ?>
 									<div class="badan_surat isi_surat">
 										<center>
 											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-											Klaten, 03 Maret 2020<br>
+											Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 											Kepala
 										</center>
 									</div>
-								</div>
+								<?php } ?>
 							</div>
-							
-							<div class="row ttd_kades">
-								<div class="col-md-6 ">
-								</div>
-								<div class="col-md-6">
+						</div>
 
-								</div>
+						<div class="row ttd_kades">
+							<div class="col-md-6 ">
 							</div>
-							<br> <br>
-							<div class="row">
-								<div class="col-md-6">
-								</div>
-								<div class="col-md-6">
+							<div class="col-md-6">
+
+							</div>
+						</div>
+						<br> <br>
+						<div class="row">
+							<div class="col-md-6">
+							</div>
+							<div class="col-md-6">
+								<?php
+								foreach ($data_kepala as $detail) { ?>
 									<div class="badan_surat isi_surat">
 										<center>
 											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-											<u><b>H. Anif Solikhin, S.Ag. MSI</b></u><br>
-											Nip. 197004201995031003
+											<u><b><?= $detail->nama ?></b></u><br>
+											Nip. <?= $detail->nip ?>
 										</center>
 									</div>
-									</div>
-								</div>
+								<?php } ?>
 							</div>
 						</div>
+					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	</div>
 	<!-- /.container-fluid -->

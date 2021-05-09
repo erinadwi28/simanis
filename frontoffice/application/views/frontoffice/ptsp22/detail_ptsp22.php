@@ -127,6 +127,31 @@
 						</center>
 					</div>
 				</div>
+				<!-- Surat Keterangan ID masjid -->
+				<?php
+				if ($detail->srt_ket_id_masjid != null) { ?>
+					<div class="card shadow mb-4">
+						<div class="card-header py-3">
+							<center>
+								<h6 class="m-0 font-weight-bold">Surat Keterangan ID Masjid </h6>
+							</center>
+						</div>
+
+						<div class="card-body">
+							<center>
+								<?php if ($detail->srt_ket_id_masjid != null) { ?>
+									<p><?= $detail->srt_ket_id_masjid; ?></p>
+									<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp22/srt_ket_id_masjid/<?= $detail->srt_ket_id_masjid ?>" target="_blank">
+										<i class="fa fa-download nav-icon">
+										</i> Klik untuk melihat
+									</a>
+								<?php } elseif ($detail->srt_ket_id_masjid == null) { ?>
+									<p>Belum ada lampiran</p>
+								<?php } ?>
+							</center>
+						</div>
+					</div>
+				<?php } ?>
 			</div>
 			<div class="col-md-8 mb-0">
 				<!-- Detail Data -->
@@ -146,6 +171,16 @@
 										<td>:</td>
 										<td> </td>
 										<td><?= $detail->no_surat ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->no_id_masjid != null) { ?>
+									<tr>
+										<td><b>Nomor ID Masjid</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->no_id_masjid ?></td>
 									</tr>
 								<?php } ?>
 								<tr>
