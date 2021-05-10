@@ -455,3 +455,8 @@ $('#formubah_ptsp27').parsley();
 
 $('#formupload_ptsp27_1').parsley();
 
+//Dashboard Admin
+$('#form_tambah').parsley();
+
+$('#form_ubah').parsley();
+

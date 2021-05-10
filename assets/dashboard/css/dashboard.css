@@ -233,4 +233,22 @@ a:hover {
 .card .card-preview {
   padding: 50px;
 }
+
+.border-left-user {
+  border-left: 0.25rem solid #F69D1B !important;
+}
+
+.badge-user {
+  color: #fff;
+  background-color: #F69D1B !important;
+}
+
+.badge-user:hover {
+  color: #fff;
+  background-color: #ee9818 !important;
+}
+
+.text-user {
+  color: #007530;
+}
 /*# sourceMappingURL=dashboard.css.map */

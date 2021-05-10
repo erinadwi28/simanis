@@ -274,4 +274,22 @@ a {
 }
 }
 
+.border-left-user {
+	border-left: .25rem solid #F69D1B!important;
+}
+
+.badge-user {
+	color: #fff;
+	background-color: #F69D1B!important;
+
+	&:hover {
+		color: #fff;
+	background-color: #ee9818!important;
+	}
+}
+
+.text-user {
+	color: #007530;
+}
+
 
