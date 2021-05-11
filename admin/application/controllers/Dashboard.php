@@ -1591,7 +1591,7 @@ class Dashboard extends CI_Controller
                 $this->load->view('header', $data_title);
                 $this->load->view('admin/sidebar');
                 $this->load->view('topbar');
-                $this->load->view('admin/pemohon/list_pemohon');
+                $this->load->view('admin/pemohon/form_ubah_sandi');
                 $this->load->view('footer');
         }
 }
