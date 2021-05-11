@@ -1578,10 +1578,10 @@ class Dashboard extends CI_Controller
         }
 
         
-        //list permohonan masuk
-        public function list_pemohon()
+        //list
+        public function list_timteknis()
         {
-                $data_title['title'] = 'List Pemohon';
+                $data_title['title'] = 'List Kasi';
                 // $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 // $this->session->userdata('id_fo')])->row_array();
                 // $data['total_notif'] = $this->m_fo->jml_notif()->result();
@@ -1591,7 +1591,7 @@ class Dashboard extends CI_Controller
                 $this->load->view('header', $data_title);
                 $this->load->view('admin/sidebar');
                 $this->load->view('topbar');
-                $this->load->view('admin/pemohon/form_ubah_sandi');
+                $this->load->view('admin/timteknis/list_timteknis');
                 $this->load->view('footer');
         }
 }
