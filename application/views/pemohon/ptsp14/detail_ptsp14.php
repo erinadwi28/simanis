@@ -106,7 +106,7 @@
 					<div class="card-body">
 						<table class="table-hover table-responsive">
 							<tbody>
-								<?php if ($detail->no_surat != null && $detail->status == 'Selesai') { ?>
+								<?php if ($detail->no_surat != null) { ?>
 									<tr>
 										<td><b>Nomor Surat</b></td>
 										<td> </td>
@@ -114,6 +114,26 @@
 										<td>:</td>
 										<td> </td>
 										<td><?= $detail->no_surat ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->masa_berlaku != null) { ?>
+									<tr>
+										<td><b>Masa Berlaku</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->masa_berlaku ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->nomor_statistik != null) { ?>
+									<tr>
+										<td><b>Nomor Statistik</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->nomor_statistik ?></td>
 									</tr>
 								<?php } ?>
 								<tr>

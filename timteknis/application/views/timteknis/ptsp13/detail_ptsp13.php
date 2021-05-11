@@ -204,7 +204,7 @@
 										<td> </td>
 										<td>:</td>
 										<td> </td>
-										<td><?= $detail->tgl_berita_acara_verifikasi_dok ?></td>
+										<td><?= format_indo(date($detail->tgl_berita_acara_verifikasi_dok)); ?></td>
 									</tr>
 								<?php } ?>
 								<?php if ($detail->no_berita_acara_verifikasi_lap != null) { ?>
@@ -224,7 +224,7 @@
 										<td> </td>
 										<td>:</td>
 										<td> </td>
-										<td><?= $detail->tgl_berita_acara_verifikasi_lap ?></td>
+										<td><?= format_indo(date($detail->tgl_berita_acara_verifikasi_lap)); ?></td>
 									</tr>
 								<?php } ?>
 								<tr>
@@ -249,7 +249,7 @@
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= $detail->tgl_srt_pemohon ?></td>
+									<td><?= format_indo(date($detail->tgl_srt_pemohon)); ?></td>
 								</tr>
 								<tr>
 									<td><b>Hal Surat Permohonan</b></td>

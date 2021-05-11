@@ -129,7 +129,7 @@
 										<td> </td>
 										<td>:</td>
 										<td> </td>
-										<td><?= $detail->tgl_pengukuran ?></td>
+										<td><?= format_indo(date($detail->tgl_pengukuran)); ?></td>
 									</tr>
 								<?php } ?>
 								<?php if ($detail->jam_pengukuran != null) { ?>
@@ -272,12 +272,12 @@
 				</div>
 
 				<?php if ($detail->status == 'Proses Tim Teknis') { ?>
-					<!-- Input Nomor Statistik -->
+					<!-- Input tanggal dan janm pengukuran -->
 
 					<div class="card shadow mb-4">
 						<div class="card-header">
 							<center>
-								<h6 class="m-0 font-weight-bold">Inputkan Nomor Statistik terlebih dahulu untuk menyetujui</h6>
+								<h6 class="m-0 font-weight-bold">Inputkan Tanggal pengukuran dan Jam pengukuran terlebih dahulu untuk menyetujui</h6>
 							</center>
 						</div>
 						<div class="card-body">
