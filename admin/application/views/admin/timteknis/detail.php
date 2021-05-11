@@ -2,11 +2,11 @@
 <div class="container-fluid">
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between">
-		<h3 class="judullist py-3">Detail Data Pemohon</h3>
+		<h3 class="judullist py-3">Detail Data Tim Teknis</h3>
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Pemohon</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Tim Teknis</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Detail</li>
 			</ol>
 		</nav>
@@ -35,7 +35,7 @@
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td>Erina Dwi Utami</td>
+								<td>Rahma Maulani</td>
 							</tr>
 							<tr>
 								<td><b>Email</b></td>
@@ -43,7 +43,7 @@
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td>erinadwi@gmail.com</td>
+								<td>rahmau@gmail.com</td>
 							</tr>
 							<tr>
 								<td><b>No HandPhone</b></td>
@@ -59,13 +59,9 @@
 				<div class="card-footer">
 					<div class="float-right">
 						<a href="#">
-							<button id="btn_ubah" class="btn btn-sm btn-primary mr-1" type="submit">
-								<i class="fa fa-lock nav-icon">
-								</i> Ubah Sandi
-							</button>
 							<button id="btn_ubah" class="btn btn-sm btn-primary" type="submit">
 								<i class="fa fa-edit nav-icon">
-								</i> Ubah Data
+								</i> Ubah
 							</button>
 						</a>
 					</div>

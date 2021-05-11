@@ -3,11 +3,11 @@
 
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between">
-		<h3 class="judullist py-3">Form Ubah Sandi Pemohon</h3>
+		<h3 class="judullist py-3">Form Ubah Sandi Kepala</h3>
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/sop_ptsp01') ?>">Pemohon</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/sop_ptsp01') ?>">Kepala</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Ubah Sandi</li>
 			</ol>
 		</nav>
