@@ -45,14 +45,12 @@
 
 		.badan_surat {
 			color: #000;
+			
+			margin-left: 60px;
 		}
 
 		.badan_surat .row {
 			color: #000;
-		}
-
-		.badan_surat {
-			margin-left: 60px;
 		}
 
 
@@ -68,13 +66,6 @@
 			font-size: 11pt;
 		}
 
-		.paragraf {
-			/* text-indent: 2.8125em; */
-			text-align: justify;
-			text-indent: 50px;
-			font-size: 11pt;
-		}
-
 		.isi_surat {
 			margin-left: 0.0375em;
 			font-size: 11pt;
@@ -85,19 +76,6 @@
 			margin-left: 2.8125em;
 			margin-bottom: 0.3125em;
 		}
-
-		.img_ttd {
-			width: 200px;
-			margin-right: 110px;
-		}
-
-		.ttd_kepala {
-			display: block;
-			position: absolute;
-			float: left;
-			margin-right: -400px;
-		}
-
 		.img-fluid {
 			max-width: 100%;
 			height: auto;
@@ -111,21 +89,6 @@
 			margin-left: auto;
 		}
 
-		.bawah {
-			display: block;
-			position: absolute;
-			float: right;
-			margin-right: 160px;
-		}
-
-		.kepala {
-			display: block;
-			position: absolute;
-			float: left;
-			margin-top: 200px;
-			margin-right: -500px;
-		}
-
 		.table {
 			color: #000;
 		}
@@ -134,6 +97,19 @@
 			border-width: 2px;
 			border-color: #000;
 			margin-left: 15px;
+		}
+
+		.garis {
+			border: 2px;
+			border-style: solid;
+			color: #000000 !important;
+			margin-top: 5px;
+			margin-right: 17px;
+		}
+
+		.ttd_surat {
+			font-size: 11pt;
+			margin-left: 470px;
 		}
 	</style>
 
@@ -149,14 +125,36 @@
 			<div class="col-md-8">
 				<div class="card shadow mb-4">
 					<div class="card-body">
-
-						<div class="kopsurat row">
-							<div class="col-md-12 mb-3">
-								<object data="" type="image">
-									<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
-								</object>
-							</div>
-						</div>
+					<!-- KOP SURAT -->
+					<center>
+							<table width="478">
+								<tr>
+									<td></td>
+									<td class="img">
+										<center>
+											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
+												width="100" height="100">
+										</center>
+									</td>
+									<td width="430" style="padding-left: 10px;">
+										<center>
+											<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
+											<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
+											<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
+											<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
+											<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
+											<br>
+										</center>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3">
+										<div class="garis"></div>
+									</td>
+								</tr>
+							</table>
+						</center>
+						<br>
 						<?php
 						foreach ($detail_ptsp as $detail) { ?>
 							<div class="no_surat">
@@ -244,7 +242,7 @@
 								<div class="col-md-9">
 								</div>
 								<div class="col-md-3">
-									<div class="badan_surat isi_surat">
+									<div class="ttd_surat">
 										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 										Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 										Kepala
@@ -252,27 +250,21 @@
 								</div>
 							</div>
 						<?php } ?>
-						<div class="row ttd_kepala">
-							<div class="col-md-6 ">
-							</div>
-							<div class="col-md-6">
-
-							</div>
-						</div>
-						<br> <br>
+						<br> <br> <br> <br>
 						<div class="row">
 							<div class="col-md-9">
 							</div>
 							<div class="col-md-3">
 								<?php
 								foreach ($data_kepala as $detail) { ?>
-									<div class="badan_surat isi_surat">
+									<div class="ttd_surat">
 										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
 										<?= $detail->nama ?><br>
 									</div>
 								<?php } ?>
 							</div>
 						</div>
+						<br> <br> <br>
 						<div>
 							Tembusan: <br>
 							1. Kepala Seksi PAIS Kankemenag Kab. Klaten; <br>
@@ -282,9 +274,6 @@
 							5. Sdr. M. Zajid, S.Ag. NIP. 19740512 200501 1 003; <br>
 							6. Arsip
 						</div>
-
-
-
 					</div>
 				</div>
 			</div>

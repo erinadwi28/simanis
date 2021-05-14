@@ -32,7 +32,6 @@
 		}
 
 		.card-body {
-			padding: 5rem;
 			color: black;
 		}
 
@@ -45,12 +44,6 @@
 			font-size: 12pt;
 		}
 
-		.paragraf {
-			/* text-indent: 2.8125em; */
-			text-align: justify;
-			text-indent: 50px;
-		}
-
 		.isi_surat {
 			margin-left: 0.0375em;
 			font-size: 11pt;
@@ -60,18 +53,6 @@
 		.identitas {
 			margin-left: 2.8125em;
 			margin-bottom: 0.3125em;
-		}
-
-		.img_ttd {
-			width: 200px;
-			margin-right: 110px;
-		}
-
-		.ttd_kepala {
-			display: block;
-			position: absolute;
-			float: left;
-			margin-right: -400px;
 		}
 
 		.img-fluid {
@@ -86,20 +67,17 @@
 			margin-right: auto;
 			margin-left: auto;
 		}
-
-		.bawah {
-			display: block;
-			position: absolute;
-			float: right;
-			margin-right: 160px;
+		.garis {
+			border: 2px;
+			border-style: solid;
+			color: #000000 !important;
+			margin-top: 5px;
+			margin-right: 17px;
 		}
 
-		.kepala {
-			display: block;
-			position: absolute;
-			float: left;
-			margin-top: 200px;
-			margin-right: -500px;
+		.ttd_surat {
+			font-size: 11pt;
+			margin-left: 470px;
 		}
 	</style>
 
@@ -115,16 +93,36 @@
 			<div class="col-md-8">
 				<div class="card shadow mb-4">
 					<div class="card-body">
+						<!-- KOP SURAT -->
 						<center>
-							<div class="kopsurat row">
-								<div class="col-md-12 mb-3">
-									<object data="" type="image">
-										<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/') ?>images/kop_surat.png">
-									</object>
-								</div>
-							</div>
+							<table width="478">
+								<tr>
+									<td></td>
+									<td class="img">
+										<center>
+											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
+												width="100" height="100">
+										</center>
+									</td>
+									<td width="430" style="padding-left: 10px;">
+										<center>
+											<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
+											<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
+											<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
+											<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
+											<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
+											<br>
+										</center>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3">
+										<div class="garis"></div>
+									</td>
+								</tr>
+							</table>
 						</center>
-
+						<br>
 						<div class="badan_surat">
 							<?php foreach ($detail_ptsp as $detail) { ?>
 								<div class="no_surat">
@@ -134,8 +132,8 @@
 										</p>
 									</center>
 								</div>
-								<div class="isi_surat paragraf">
-									<p class="text-justify">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Berdasarkan surat dari Takmir Masjid <?= $detail->nama_masjid ?> Nomor :
+								<div class="isi_surat">
+						<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Berdasarkan surat dari Takmir Masjid <?= $detail->nama_masjid ?> Nomor :
 										<?= $detail->no_srt_permohonan ?>
 										tanggal <?= format_indo(date($detail->tgl_srt_permohonan)); ?> perihal Permohonan Surat Rekomendasi dan
 										memperhatikan kelengkapan
@@ -176,44 +174,32 @@
 										</tbody>
 									</table>
 								</div>
-
-								<br>
-								<div class="isi_surat paragraf">
+								<div class="isi_surat">
 									<p>untuk mendapatkan bantuan renovasi masjid dari Gubernur Jawa Tengah.</p>
-									<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Demikian rekomendasi ini kami buat untuk dipergunakan sebagimana mestinya.</p>
+									<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Demikian rekomendasi ini kami buat untuk dipergunakan sebagimana mestinya.</p>
 								</div>
+								<br> <br>
 								<div class="row">
-									<div class="col-md-6">
+									<div class="col-md-9">
 									</div>
-									<div class="col-md-6">
-										<div class="isi_surat">
-											<center>
+									<div class="col-md-3">
+										<div class="ttd_surat">
 												Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 												Kepala
-											</center>
 										</div>
 									</div>
 								</div>
 							<?php } ?>
-							<div class="row ttd_kades">
-								<div class="col-md-6 ">
-								</div>
-								<div class="col-md-6">
-
-								</div>
-							</div>
-							<br> <br>
+							<br> <br> <br> <br>
 							<div class="row">
-								<div class="col-md-6">
+								<div class="col-md-9">
 								</div>
 								<?php
 								foreach ($data_kepala as $detail) { ?>
-									<div class="col-md-6">
-										<div class="isi_surat">
-											<center>
+									<div class="col-md-3">
+										<div class="ttd_surat">
 												<u><b><?= $detail->nama ?></b></u><br>
 												Nip. <?= $detail->nip ?>
-											</center>
 										</div>
 									</div>
 								<?php } ?>

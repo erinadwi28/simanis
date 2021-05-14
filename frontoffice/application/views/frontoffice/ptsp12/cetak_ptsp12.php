@@ -60,7 +60,7 @@
 		}
 
 		.no_surat {
-			font-size: 14pt;
+			font-size: 11pt;
 		}
 
 		.tujuan_surat {
@@ -90,13 +90,6 @@
 			margin-right: 110px;
 		}
 
-		.ttd_kepala {
-			display: block;
-			position: absolute;
-			float: left;
-			margin-right: -400px;
-		}
-
 		.img-fluid {
 			max-width: 100%;
 			height: auto;
@@ -110,14 +103,6 @@
 			margin-left: auto;
 		}
 
-		.kepala {
-			display: block;
-			position: absolute;
-			float: left;
-			margin-top: 200px;
-			margin-right: -500px;
-		}
-
 		.table {
 			color: #000;
 		}
@@ -126,6 +111,19 @@
 			border-width: 2px;
 			border-color: #000;
 			margin-left: 15px;
+		}
+
+		.garis {
+			border: 2px;
+			border-style: solid;
+			color: #000000 !important;
+			margin-top: 5px;
+			margin-right: 17px;
+		}
+
+		.ttd_surat {
+			font-size: 11pt;
+			margin-left: 470px;
 		}
 	</style>
 
@@ -142,13 +140,36 @@
 				<div class="card shadow mb-4">
 
 					<div class="card-body">
-						<div class="kopsurat row">
-							<div class="col-md-12 mb-3">
-								<object data="" type="image">
-									<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
-								</object>
-							</div>
-						</div>
+						<!-- KOP SURAT -->
+						<center>
+							<table width="478">
+								<tr>
+									<td></td>
+									<td class="img">
+										<center>
+											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
+												width="100" height="100">
+										</center>
+									</td>
+									<td width="430" style="padding-left: 10px;">
+										<center>
+											<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
+											<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
+											<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
+											<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
+											<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
+											<br>
+										</center>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3">
+										<div class="garis"></div>
+									</td>
+								</tr>
+							</table>
+						</center>
+						<br>
 						<div class="row">
 							<?php foreach ($detail_ptsp as $detail) { ?>
 								<div class="col-md-10">
@@ -160,6 +181,44 @@
 												<td>:</td>
 												<td></td>
 												<td><?= $detail->no_surat ?></td>
+												<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
 											</tr>
 											<tr>
 												<td>Sifat</td>
@@ -185,67 +244,54 @@
 										</tbody>
 									</table>
 								</div>
-								<div class="col-md-2">
-									<p><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></p>
-								</div>
 							<?php } ?>
 						</div>
-						<br> <br>
+						<br> <br> <br>
 						<?php foreach ($detail_ptsp as $detail) { ?>
 							<div class="tujuan_surat">
 								<p>Yth. <?= $detail->nama_tujuan; ?> <br>
 									di <?= $detail->tempat_tujuan; ?></p>
 							</div>
 						<?php }  ?>
-
+						<br> <br>
 						<?php foreach ($detail_ptsp as $detail) { ?>
-							<div class="isi_surat paragraf">
-								<p> Menindaklanjuti surat permohonan dari Kepala <?= $detail->nama_sekolah ?> Nomor : <?= $detail->no_srt_permohonan ?>
+							<div class="isi_surat">
+								<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menindaklanjuti surat permohonan dari Kepala <?= $detail->nama_sekolah ?> Nomor : <?= $detail->no_srt_permohonan ?>
 									tanggal <?= format_indo(date($detail->tgl_srt_permohonan)); ?> perihal sebagaimana dalam pokok surat, maka dengan ini Kepala Kantor Kementerian Agama Kabupaten Klaten
 									memberikan rekomendasi untuk mengajukan bantuan sarana prasarana. </p>
 							</div>
-							<div class="isi_surat paragraf">
-								<p>
-									Demikian rekomendasi ini dibuat untuk keperluan mendapatkan bantuan hibah Bupati Klaten.
+							<div class="isi_surat">
+								<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demikian rekomendasi ini dibuat untuk keperluan mendapatkan bantuan hibah Bupati Klaten.
 								</p>
 							</div>
 						<?php } ?>
+						<br> <br> <br>
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-9">
 							</div>
-							<div class="col-md-6">
-								<div class="badan_surat isi_surat">
-									<center>
+							<div class="col-md-3">
+								<div class="ttd_surat">
 										Kepala
-									</center>
 								</div>
 							</div>
 						</div>
-						<div class="row ttd_kepala">
-							<div class="col-md-6 ">
-							</div>
-							<div class="col-md-6">
-
-							</div>
-						</div>
-						<br> <br>
+						<br> <br> <br> <br>
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-9">
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-3">
 								<?php
 								foreach ($data_kepala as $detail) { ?>
-									<div class="badan_surat isi_surat">
-										<center>
+									<div class="ttd_surat">
 											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-											<u><b><?= $detail->nama ?></b></u>
-										</center>
+											<?= $detail->nama ?>
 									</div>
 								<?php } ?>
 							</div>
 						</div>
+						<br> <br> <br>
 						<div>
-							Tempusan Yth: <br>
+							Tembusan Yth: <br>
 							Ka. Kanwil. Kemenag. Prov. Jateng</div>
 					</div>
 				</div>

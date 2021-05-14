@@ -22,6 +22,8 @@
 	<style>
 		.body {
 			color: #000;
+			font-family: Calibri, Helvetica, Arial, sans-serif;
+			font-size: 11pt;
 		}
 
 		.logosurat {
@@ -36,21 +38,13 @@
 			line-height: 1em;
 		}
 
-		.card-body {
-			padding: 5rem;
-		}
-
 		.badan_surat {
 			color: #000;
+			margin-left: 60px;
 		}
 
 		.badan_surat .row {
 			color: #000;
-		}
-
-		.badan_surat {
-			font-family: 'Times New Roman';
-			margin-left: 60px;
 		}
 
 		.kepala_sertifikat {
@@ -66,35 +60,15 @@
 			font-size: 14pt;
 		}
 
-		.paragraf {
-			/* text-indent: 2.8125em; */
-			text-align: justify;
-			font-family: 'Times New Roman';
-			text-indent: 50px;
-		}
-
 		.isi_surat {
 			margin-left: 0.0375em;
 			font-size: 11pt;
 			line-height: 1.2em;
-			font-family: 'Times New Roman';
 		}
 
 		.identitas {
 			margin-left: 2.8125em;
 			margin-bottom: 0.3125em;
-		}
-
-		.img_ttd {
-			width: 200px;
-			margin-right: 110px;
-		}
-
-		.ttd_kepala {
-			display: block;
-			position: absolute;
-			float: left;
-			margin-right: -400px;
 		}
 
 		.img-fluid {
@@ -108,21 +82,6 @@
 			padding-left: 0.75rem;
 			margin-right: auto;
 			margin-left: auto;
-		}
-
-		.bawah {
-			display: block;
-			position: absolute;
-			float: right;
-			margin-right: 160px;
-		}
-
-		.kepala {
-			display: block;
-			position: absolute;
-			float: left;
-			margin-top: 200px;
-			margin-right: -500px;
 		}
 
 		.table {
@@ -141,6 +100,7 @@
 			background-size: cover;
 			overflow: hidden;
 		}
+		
 	</style>
 
 </head>

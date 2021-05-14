@@ -327,6 +327,10 @@ $('#formubah_ptsp13').parsley();
 
 $('#no_surat_ptsp13').parsley();
 
+$('#berita_acara_verifikasi_dok').parsley();
+
+$('#berita_acara_verifikasi_lap').parsley();
+
 $('#formba_ptsp13').parsley();
 
 // PTSP14
@@ -338,6 +342,8 @@ $('#formubah_ptsp14').parsley();
 
 $('#no_surat_ptsp14').parsley();
 
+$('#berita_acara_ptsp14').parsley();
+
 $('#formba_ptsp14').parsley();
 
 // PTSP15
@@ -348,6 +354,8 @@ $('#formupload_ptsp15_1').parsley();
 $('#formubah_ptsp15').parsley();
 
 $('#no_surat_ptsp15').parsley();
+
+$('#berita_acara_ptsp15').parsley();
 
 $('#formba_ptsp15').parsley();
 

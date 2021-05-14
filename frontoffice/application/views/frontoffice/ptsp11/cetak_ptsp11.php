@@ -16,7 +16,9 @@
 
 	<!-- Custom fonts for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/vendor/fontawesome-free/css/all.min.css') ?>" />
-	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+		rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
@@ -94,17 +96,6 @@
 			margin-bottom: 0.3125em;
 		}
 
-		.img_ttd {
-			width: 200px;
-			margin-right: 110px;
-		}
-
-		.ttd_kepala {
-			display: block;
-			position: absolute;
-			float: left;
-			margin-right: -400px;
-		}
 
 		.img-fluid {
 			max-width: 100%;
@@ -119,21 +110,6 @@
 			margin-left: auto;
 		}
 
-		.bawah {
-			display: block;
-			position: absolute;
-			float: right;
-			margin-right: 160px;
-		}
-
-		.kepala {
-			display: block;
-			position: absolute;
-			float: left;
-			margin-top: 200px;
-			margin-right: -500px;
-		}
-
 		.table {
 			color: #000;
 		}
@@ -143,6 +119,20 @@
 			border-color: #000;
 			margin-left: 15px;
 		}
+
+		.garis {
+			border: 2px;
+			border-style: solid;
+			color: #000000 !important;
+			margin-top: 5px;
+			margin-right: 17px;
+		}
+
+		.ttd_surat {
+			font-size: 11pt;
+			margin-left: 470px;
+		}
+
 	</style>
 
 </head>
@@ -158,167 +148,234 @@
 				<div class="card shadow mb-4">
 
 					<div class="card-body">
-						<div class="kopsurat row">
-							<div class="col-md-12 mb-3">
-								<object data="" type="image">
-									<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
-								</object>
-							</div>
-						</div>
+						<!-- KOP SURAT -->
+						<center>
+							<table width="478">
+								<tr>
+									<td></td>
+									<td class="img">
+										<center>
+											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
+												width="100" height="100">
+										</center>
+									</td>
+									<td width="430" style="padding-left: 10px;">
+										<center>
+											<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
+											<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
+											<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
+											<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
+											<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
+											<br>
+										</center>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3">
+										<div class="garis"></div>
+									</td>
+								</tr>
+							</table>
+						</center>
+						<br>
 						<div class="row">
 							<?php foreach ($detail_ptsp as $detail) { ?>
-								<div class="col-md-10">
-									<table>
-										<tbody>
-											<tr>
-												<td>Nomor</td>
-												<td></td>
-												<td>:</td>
-												<td></td>
-												<td><?= $detail->no_surat ?></td>
-											</tr>
-											<tr>
-												<td>Lampiran</td>
-												<td></td>
-												<td>:</td>
-												<td></td>
-												<td><?= $detail->jml_lampiran ?> Lembar</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							<?php } ?>
-							<div class="col-md-2">
-								<p>........................... 2021</p>
+							<div class="col-md-8">
+								<table>
+									<tbody>
+										<tr>
+											<td>Nomor</td>
+											<td></td>
+											<td>:</td>
+											<td></td>
+											<td><?= $detail->no_surat ?></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>............. 2021</td>
+										</tr>
+										<tr>
+											<td>Lampiran</td>
+											<td></td>
+											<td>:</td>
+											<td></td>
+											<td><?= $detail->jml_lampiran ?> Lembar</td>
+										</tr>
+										<tr>
+											<td>Hal</td>
+											<td></td>
+											<td>:</td>
+											<td></td>
+											<td>Rekomendasi (STATIS ATAU DINAMIS YA INI ?)</td>
+										</tr>
+									</tbody>
+								</table>
 							</div>
+							<!-- <div class="col-md-4">
+									<p>....................2021</p>
+								</div> -->
+							<?php } ?>
 						</div>
 						<br> <br>
 						<?php foreach ($detail_ptsp as $detail) { ?>
-							<div class="tujuan_surat">
-								<p>Yth.Kepala Sekolah <br>
-									SMP Sunan Kalijogo, Cngkringan, Sleman <br>
-									ditempat</p>
-							</div>
+						<div class="tujuan_surat">
+							<p>Yth.Kepala Sekolah <br>
+								SMP Sunan Kalijogo, Cngkringan, Sleman <br>
+								ditempat</p>
+						</div>
 						<?php } ?>
-
+						<br>
 						<?php foreach ($detail_ptsp as $detail) { ?>
-							<div class="isi_surat paragraf">
-								<p> Menindaklanjuti surat dari Kepala <?= $detail->nama_sekolah_asal ?> Nomor : <?= $detail->no_srt_rek_sekolah_asal ?>
-									tanggal <?= $detail->tgl_srt_rek_sekolah_asal ?> perihal permohonan rekomendasi, maka dengan ini Kepala Kantor Kementerian Agama Kabupaten Klaten
-									memberikan rekomendasi pindah sekolah kepada : </p>
-							</div>
+						<div class="isi_surat">
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menindaklanjuti surat dari Kepala
+								<?= $detail->nama_sekolah_asal ?> Nomor : <?= $detail->no_srt_rek_sekolah_asal ?>
+								tanggal <?= $detail->tgl_srt_rek_sekolah_asal ?> perihal permohonan rekomendasi, maka
+								dengan ini Kepala Kantor Kementerian Agama Kabupaten Klaten
+								memberikan rekomendasi pindah sekolah kepada : </p>
+						</div>
 						<?php } ?>
 
 						<div class="isi_surat identitas">
 							<table>
 								<?php foreach ($detail_ptsp as $detail) { ?>
-									<tbody>
-										<tr>
-											<td><b>Nama</b></td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td><?= $detail->nama_siswa ?></td>
-										</tr>
-										<tr>
-											<td><b>Tempat/Tanggal Lahir</b></td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td><?= $detail->tempat_lahir_siswa ?>, <?= $detail->tgl_lahir_siswa ?>
-											</td>
-										</tr>
-										<tr>
-											<td><b>Jenis Kelamin</b></td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td><?= $detail->jenis_kelamin ?></td>
-										</tr>
-										<tr>
-											<td><b>NISN</b></td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td><?= $detail->nisn ?></td>
-										</tr>
-										<tr>
-											<td><b>Kelas</b></td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td><?= $detail->kelas ?></td>
-										</tr>
-										<tr>
-											<td><b>Asal Madrasah</b></td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td><?= $detail->nama_sekolah_asal ?></td>
-										</tr>
-										<tr>
-											<td><b>Sekolah Tujuan</b></td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td><?= $detail->nama_sekolah_tujuan ?></td>
-										</tr>
-										<tr>
-											<td><b>Alasan Pindah</b></td>
-											<td> </td>
-											<td> </td>
-											<td>:</td>
-											<td> </td>
-											<td><?= $detail->alasan_pindah ?></td>
-										</tr>
-									</tbody>
+								<tbody>
+									<tr>
+										<td><b>Nama</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->nama_siswa ?></td>
+									</tr>
+									<tr>
+										<td><b>Tempat/Tanggal Lahir</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->tempat_lahir_siswa ?>, <?= $detail->tgl_lahir_siswa ?>
+										</td>
+									</tr>
+									<tr>
+										<td><b>Jenis Kelamin</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->jenis_kelamin ?></td>
+									</tr>
+									<tr>
+										<td><b>NISN</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->nisn ?></td>
+									</tr>
+									<tr>
+										<td><b>Kelas</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->kelas ?></td>
+									</tr>
+									<tr>
+										<td><b>Asal Madrasah</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->nama_sekolah_asal ?></td>
+									</tr>
+									<tr>
+										<td><b>Sekolah Tujuan</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->nama_sekolah_tujuan ?></td>
+									</tr>
+									<tr>
+										<td><b>Alasan Pindah</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->alasan_pindah ?></td>
+									</tr>
+								</tbody>
 								<?php } ?>
 							</table>
 						</div>
 						<br>
-						<div class="isi_surat paragraf">
+						<div class="isi_surat">
 							<p>
-								Demikian rekomendasi ini dibuat untuk dapat dipergunakan sebagaimana mestinya.
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demikian rekomendasi ini dibuat untuk dapat dipergunakan
+								sebagaimana mestinya.
 							</p>
 						</div>
+						<br>
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-9">
 							</div>
-							<div class="col-md-6">
-								<div class="badan_surat isi_surat">
-									<center>
-										Kepala
-									</center>
+							<div class="col-md-3">
+								<div class="ttd_surat">
+									Kepala
 								</div>
 							</div>
 						</div>
-						<div class="row ttd_kepala">
-							<div class="col-md-6 ">
-							</div>
-							<div class="col-md-6">
-
-							</div>
-						</div>
-						<br> <br>
+						<br> <br> <br> <br>
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-9">
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-3">
 								<?php
 								foreach ($data_kepala as $detail) { ?>
-									<div class="badan_surat isi_surat">
-										<center>
-											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-											<u><b><?= $detail->nama ?></b></u>
-										</center>
-									</div>
+								<div class="ttd_surat">
+									<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+									<?= $detail->nama ?>
+
+								</div>
 								<?php } ?>
 							</div>
 						</div>

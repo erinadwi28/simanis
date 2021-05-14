@@ -264,7 +264,7 @@
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload">pilih
 													file...</label>
-												<input type="file" class="custom-file-input" id="file-upload" name="srt_rekomendasi" value="<?= $detail->srt_rekomendasi ?>">
+												<input type="file" class="custom-file-input" id="file-upload" name="srt_rekomendasi" value="<?= $detail->srt_rekomendasi ?>" required>
 												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
 											</div>
 										</div>
@@ -310,7 +310,7 @@
 										<div class="form-group-upload">
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload-2">pilih file...</label>
-												<input type="file" class="custom-file-input" id="file-upload-2" name="srt_penerimaan" value="<?= $detail->srt_penerimaan ?>">
+												<input type="file" class="custom-file-input" id="file-upload-2" name="srt_penerimaan" value="<?= $detail->srt_penerimaan ?>" required>
 												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload-2" value="<?= $detail->id_permohonan_ptsp ?>">
 											</div>
 										</div>
@@ -351,13 +351,13 @@
 					</div>
 					<?php if ($detail->status == 'Pending') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_raport_ptsp11/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_pts11_3">
+							<form action="<?= base_url('dashboard/update_raport_ptsp11/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp11_3">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload-3">pilih file...</label>
-												<input type="file" class="custom-file-input" id="file-upload-3" name="raport" value="<?= $detail->raport ?>">
+												<input type="file" class="custom-file-input" id="file-upload-3" name="raport" value="<?= $detail->raport ?>" required>
 												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload-3" value="<?= $detail->id_permohonan_ptsp ?>">
 											</div>
 										</div>
