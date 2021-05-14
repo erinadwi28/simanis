@@ -85,7 +85,7 @@
 						<center>
 							<?php if ($detail->berita_acara_verifikasi_dok != null) { ?>
 								<p><?= $detail->berita_acara_verifikasi_dok; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp13/berita_acara_verifikasi_dok/<?= $detail->berita_acara_verifikasi_dok ?>" target="_blank">
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp13/berita_acara_verifikasi_dok/<?= $detail->berita_acara_verifikasi_dok ?>" target="_blank" >
 
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
@@ -103,7 +103,7 @@
 										<div class="form-group-upload">
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload-2">pilih file...</label>
-												<input type="file" class="custom-file-input" id="file-upload-2" name="berita_acara_verifikasi_dok" value="">
+												<input type="file" class="custom-file-input" id="file-upload-2" name="berita_acara_verifikasi_dok" value="" required>
 												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
 												<input type="hidden" class="form-control form-user-input" name="id_layanan" id="file-upload" value="<?= $detail->id_layanan ?>">
 											</div>
@@ -150,7 +150,7 @@
 										<div class="form-group-upload">
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload-2">pilih file...</label>
-												<input type="file" class="custom-file-input" id="file-upload-2" name="berita_acara_verifikasi_lap" value="">
+												<input type="file" class="custom-file-input" id="file-upload-2" name="berita_acara_verifikasi_lap" value="" required>
 												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
 												<input type="hidden" class="form-control form-user-input" name="id_layanan" id="file-upload" value="<?= $detail->id_layanan ?>">
 											</div>

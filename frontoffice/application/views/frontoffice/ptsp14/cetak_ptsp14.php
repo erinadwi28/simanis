@@ -84,12 +84,6 @@
 			margin-left: 2.8125em;
 			margin-bottom: 0.3125em;
 		}
-
-		.img_ttd {
-			width: 200px;
-			margin-right: 110px;
-		}
-
 		.ttd_kepala {
 			display: block;
 			position: absolute;
