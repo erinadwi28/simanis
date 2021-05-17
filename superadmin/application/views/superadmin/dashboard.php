@@ -41,7 +41,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_permohonan_masuk') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
+							<a href="<?= base_url('dashboard/list_pemohon') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
 								Lihat</a>
 						</div>
 					</div>

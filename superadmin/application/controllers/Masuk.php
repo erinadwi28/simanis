@@ -7,12 +7,12 @@ class Masuk extends CI_Controller
         {
                 parent::__construct();
 
-                $this->load->model('M_fo', 'm_fo');
+                $this->load->model('M_super_admin', 'm_super_admin');
         }
 
         public function index()
         {
-                if ($this->session->userdata('role_fo')) {
+                if ($this->session->userdata('role')) {
                         redirect('dashboard');
                 }
                 $this->load->view('header_masuk');
@@ -56,17 +56,17 @@ class Masuk extends CI_Controller
                                 $kata_sandi_hash = sha1($kata_sandi);
                                 $status_delete = '0';
 
-                                $fo = $this->m_fo->cek_email($email, $status_delete);
+                                $super_admin = $this->m_super_admin->cek_email($email, $status_delete);
 
-                                if ($fo) {
+                                if ($super_admin) {
                                         //fo ada
-                                        if ($kata_sandi_hash === $fo['kata_sandi']) {
+                                        if ($kata_sandi_hash === $super_admin['kata_sandi']) {
                                                 //kata sandi benar
 
                                                 $data = [
-                                                        'email' => $fo['email'],
-                                                        'id_fo' => $fo['id_fo'],
-                                                        'role_fo' => $fo['role_fo'],
+                                                        'email' => $super_admin['email'],
+                                                        'id_super_admin' => $super_admin['id_super_admin'],
+                                                        'role' => $super_admin['role'],
                                                 ];
 
                                                 $this->session->set_userdata($data);
@@ -79,7 +79,7 @@ class Masuk extends CI_Controller
                                         }
                                 } else {
                                         //gagal login
-                                        $this->session->set_flashdata('error', '<b>Email</b> tidak terdaftar sebagai FO');
+                                        $this->session->set_flashdata('error', '<b>Email</b> tidak terdaftar sebagai Super Admin');
                                         redirect('masuk');
                                 }
                         } else {
@@ -95,7 +95,7 @@ class Masuk extends CI_Controller
         public function logout()
         {
                 //untuk membersihkan session dan mengembalikannya ke halaman login
-                $this->session->unset_userdata('role_fo');
+                $this->session->unset_userdata('role');
 
                 $this->session->set_flashdata('success', 'Berhasil <b>Logout</b>');
                 redirect('masuk');

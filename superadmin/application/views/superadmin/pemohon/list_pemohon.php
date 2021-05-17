@@ -29,10 +29,14 @@
 						</tr>
 					</thead>
 					<tbody>
+					<?php
+						$no = 1;
+						foreach ($data_user as $data) {
+						?>
 						<tr>
-							<td class="text-center">1</td>
-							<td>1234567890</td>
-							<td>Erina Dwi Utami</td>
+							<td class="text-center"><?= $no++ ?></td>
+							<td><?= $data->nik ?></td>
+							<td><?= $data->nama ?></td>
 
 							<td class="text-center">
 								<a href="" class="btn btn-primary btn-sm">
@@ -43,6 +47,7 @@
 								</a>
 							</td>
 						</tr>
+						<?php }?>
 					</tbody>
 				</table>
 			</div>
