@@ -130,7 +130,7 @@
 								<?php } ?>
 							</center>
 						</div>
-						<?php if ($detail->data == null && $detail->status_cetak != 1) { ?>
+						<?php if ($detail->data == null || $detail->status_cetak != 1) { ?>
 							<div class="card-footer">
 								<form action="<?= base_url('dashboard/update_data_ptsp26/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_data">
 									<div class="form-group">

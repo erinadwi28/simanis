@@ -59,6 +59,7 @@ class Daftar extends CI_Controller
                                                 'email' => $this->input->post('email'),
                                                 'kata_sandi' => $kata_sandi_hash,
                                                 'nama' => $this->input->post('nama'),
+                                                'no_hp' => $this->input->post('no_hp'),
                                         );
 
                                         $this->m_pemohon->register($data);

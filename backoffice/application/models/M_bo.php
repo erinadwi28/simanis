@@ -78,9 +78,10 @@ class M_bo extends CI_Model
     //get list data permohonan dengan status tertentu
     public function get_list_data_permohonan($status, $sie)
     {
-        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan, pemohon.nama');
         $this->db->from('permohonan_ptsp');
         $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->join('pemohon', 'permohonan_ptsp.id_pemohon = pemohon.id_pemohon', 'INNER');
         $this->db->where('permohonan_ptsp.status', $status);
         $this->db->where('permohonan_ptsp.sie', $sie);
         $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'asc');
@@ -91,9 +92,10 @@ class M_bo extends CI_Model
     //get list data permohonan yang sudah disetujui BO
     public function get_list_data_permohonan_selesaiBO($sie)
     {
-        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan, pemohon.nama');
         $this->db->from('permohonan_ptsp');
         $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->join('pemohon', 'permohonan_ptsp.id_pemohon = pemohon.id_pemohon', 'INNER');
         $this->db->where("(permohonan_ptsp.id_bo != 'null')");
         $this->db->where("(permohonan_ptsp.status != 'Pending')");
         $this->db->where('permohonan_ptsp.sie', $sie);
@@ -173,6 +175,13 @@ class M_bo extends CI_Model
 
     //tambah jadwal konsultasi ptsp25
     public function tambah_jadwal_konsultasi($where, $data, $tabel)
+    {
+        $this->db->where('id_ptsp ', $where);
+        $this->db->update($tabel, $data);
+    }
+
+    //input_no_id_masjid ptsp22
+    public function input_no_id_masjid($where, $data, $tabel)
     {
         $this->db->where('id_ptsp ', $where);
         $this->db->update($tabel, $data);

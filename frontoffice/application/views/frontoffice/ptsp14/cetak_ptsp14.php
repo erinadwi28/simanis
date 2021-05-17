@@ -84,6 +84,7 @@
 			margin-left: 2.8125em;
 			margin-bottom: 0.3125em;
 		}
+
 		.ttd_kepala {
 			display: block;
 			position: absolute;
@@ -272,29 +273,9 @@
 									<div class="isi_surat">
 										<p>&nbsp;&nbsp; &nbsp; Dengan Nomor Statistik Pendidikan Al-Qur'an :</p>
 									</div>
-									<div class="">
-										<table class="table table-bordered ">
-											<tbody>
-												<tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-											</tbody>
-											</tr>
-										</table>
 
-									</div>
 									<div class="no_statistik">
-
+										<?= $detail->no_statistik ?>
 									</div>
 									<br> <br>
 									<div class="row">

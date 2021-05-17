@@ -167,7 +167,7 @@
 										<td> </td>
 										<td>:</td>
 										<td> </td>
-										<td><?= $detail->tgl_pengukuran ?></td>
+										<td><?= format_indo(date($detail->tgl_pengukuran)); ?></td>
 									</tr>
 								<?php } ?>
 								<?php if ($detail->jam_pengukuran != null) { ?>

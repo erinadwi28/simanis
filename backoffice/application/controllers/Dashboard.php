@@ -350,7 +350,7 @@ class Dashboard extends CI_Controller
         $this->load->view('footer');
     }
 
-    //update status permohonan menjadi Proses Kasi
+    //insert jadwal_konsultasi
     public function jadwal_konsultasi()
     {
         $data = array(
@@ -369,6 +369,23 @@ class Dashboard extends CI_Controller
         $this->m_bo->tambah_jadwal_konsultasi($id_ptsp, $data, 'ptsp25');
 
         $this->session->set_flashdata('success', 'petugas sukses ditambahkan');
+        redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
+    }
+
+    //insert no_id_masjid
+    public function input_no_id_masjid()
+    {
+        $data = array(
+            'no_id_masjid' => $this->input->post('no_id_masjid'),
+        );
+
+        $id_ptsp = $this->input->post('id_ptsp');
+        $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
+        $id_layanan = $this->input->post('id_layanan');
+
+        $this->m_bo->input_no_id_masjid($id_ptsp, $data, 'ptsp22');
+
+        $this->session->set_flashdata('success', 'No ID Masjid sukses disimpan');
         redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
     }
 

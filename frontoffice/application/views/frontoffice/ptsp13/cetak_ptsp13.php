@@ -100,7 +100,6 @@
 			background-size: cover;
 			overflow: hidden;
 		}
-		
 	</style>
 
 </head>
@@ -238,29 +237,9 @@
 									<div class="isi_surat">
 										<p>&nbsp;&nbsp; &nbsp; Dengan Nomor Statistik Pendidikan Al-Qur'an :</p>
 									</div>
-									<div class="">
-										<table class="table table-bordered ">
-											<tbody>
-												<tr>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
-													<td>xx</td>
-											</tbody>
-											</tr>
-										</table>
 
-									</div>
 									<div class="no_statistik">
-
+										<?= $detail->no_statistik ?>
 									</div>
 									<br> <br>
 									<div class="row">
@@ -268,15 +247,18 @@
 										<div class="col-md-6">
 											<div class="badan_surat isi_surat">
 												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-												<p>Klaten, 03 Maret 2020</p>
-												<h6>MENTERI AGAMA</h6>
-												Kepala Kantor Kementerian Agama
-												Kabupaten Klaten<br><br><br><br>
-												<b>Anif Solikhin</b><br>
+												<p>Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></p>
+											<?php } ?>
+											<h6>MENTERI AGAMA</h6>
+											Kepala Kantor Kementerian Agama
+											Kabupaten Klaten<br><br><br><br>
+											<?php
+											foreach ($data_kepala as $detail) { ?>
+												<b><?= $detail->nama ?></b><br>
+											<?php } ?>
 											</div>
 										</div>
 									</div>
-								<?php } ?>
 								</div>
 						</div>
 					</div>

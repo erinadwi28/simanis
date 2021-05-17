@@ -1114,7 +1114,8 @@ class Dashboard extends CI_Controller
                 }
                 $permohonan = $this->input->post('id_permohonan_ptsp');
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $permohonan . '/26');
+                // redirect('dashboard/detail_data_permohonan/' . $permohonan . '/26');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         //upload suket_penghasilan ptsp27
@@ -1153,7 +1154,7 @@ class Dashboard extends CI_Controller
                 }
                 $permohonan = $this->input->post('id_permohonan_ptsp');
                 $this->session->set_flashdata('success', 'disimpan');
-                redirect('dashboard/detail_data_permohonan/' . $permohonan . '/27');
+                redirect('dashboard/list_permohonan_selesai');
         }
 
         //aksi cetak dari list permohonan selesai
@@ -1241,11 +1242,9 @@ class Dashboard extends CI_Controller
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp25')->result();
                         $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 26) {
-                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp26')->result();
-                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                        redirect('dashboard/list_permohonan_selesai');
                 } elseif ($id_layanan == 27) {
-                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp27')->result();
-                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                        redirect('dashboard/list_permohonan_selesai');
                 }
 
                 $dompdf = new Dompdf();
@@ -1333,7 +1332,7 @@ class Dashboard extends CI_Controller
                 } elseif ($id_layanan == 11) {
                         $dompdf->stream('Permohonan Rekomendasi Pindah Siswa Madrasah');
                 } elseif ($id_layanan == 12) {
-                        $dompdf->stream('Permohonan Rekomendasi Bantuan RA/Madrasah');
+                        $dompdf->stream('Permohonan Rekomendasi Bantuan RA Madrasah');
                 } elseif ($id_layanan == 13) {
                         $dompdf->stream('Permohonan Rekomendasi Ijin Operasional Lembaga Baru');
                 } elseif ($id_layanan == 14) {
@@ -1449,11 +1448,9 @@ class Dashboard extends CI_Controller
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp25')->result();
                         $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 26) {
-                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp26')->result();
-                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                        redirect('dashboard/list_permohonan_arsip');
                 } elseif ($id_layanan == 27) {
-                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp27')->result();
-                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
+                        redirect('dashboard/list_permohonan_arsip');
                 }
 
                 $dompdf = new Dompdf();
@@ -1541,7 +1538,7 @@ class Dashboard extends CI_Controller
                 } elseif ($id_layanan == 11) {
                         $dompdf->stream('Permohonan Rekomendasi Pindah Siswa Madrasah');
                 } elseif ($id_layanan == 12) {
-                        $dompdf->stream('Permohonan Rekomendasi Bantuan RA/Madrasah');
+                        $dompdf->stream('Permohonan Rekomendasi Bantuan RA Madrasah');
                 } elseif ($id_layanan == 13) {
                         $dompdf->stream('Permohonan Rekomendasi Ijin Operasional Lembaga Baru');
                 } elseif ($id_layanan == 14) {
