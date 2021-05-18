@@ -20,6 +20,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Nama Pemohon</th>
                             <th>Jenis Layanan</th>
                             <th>Tanggal Permohonan</th>
                             <th>Status</th>
@@ -33,6 +34,7 @@
                         ?>
                             <tr>
                                 <td class="text-center"><?= $no++ ?></td>
+                                <td><?= $permohonan->nama ?></td>
                                 <td><?= $permohonan->nama_layanan ?></td>
                                 <td><?= format_indo(date($permohonan->tgl_permohonan)); ?></td>
                                 <td><label class="badge badge-success"><i class="far fa-check-circle"> <?= $permohonan->status ?></i></label></td>

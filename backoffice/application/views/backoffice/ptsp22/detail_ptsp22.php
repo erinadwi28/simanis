@@ -256,7 +256,6 @@
 						</table>
 					</div>
 				</div>
-
 				<div class="row clearfix">
 					<div class="col-md-12">
 						<form class="form-horizontal" id="no_id_masjid_ptsp22" enctype="multipart/form-data" action="" method="POST">
@@ -268,6 +267,38 @@
 						</form>
 					</div>
 				</div>
+				<?php if ($detail->status == 'Proses BO') { ?>
+					<div class="card shadow mb-4">
+						<div class="card-header py-3">
+							<h6 class="m-0 font-weight-bold text-center">Form Input Nomor ID Masjid</h6>
+						</div>
+						<div class="card-body">
+							<form class="form-horizontal" id="formpetugas_ptsp01" enctype="multipart/form-data" action="<?= base_url('dashboard/input_no_id_masjid') ?>" method="POST">
+								<div class="form-group row">
+									<label for="no_id_masjid" class="col-sm-3 col-form-label">Nomor ID Masjid</label>
+									<div class="col-sm-9">
+										<div class="form-line focused">
+											<input type="text" class="form-control" id="no_id_masjid" name="no_id_masjid" value="" placeholder="masukkan No Id Masjid disini..." required>
+										</div>
+									</div>
+								</div>
+								<?php
+								foreach ($detail_ptsp as $detail) { ?>
+									<input type="hidden" class="form-control" id="id_ptsp" name="id_ptsp" value="<?= $detail->id_ptsp ?>">
+									<input type="hidden" class="form-control" id="id_permohonan_ptsp" name="id_permohonan_ptsp" value="<?= $detail->id_permohonan_ptsp ?>">
+									<input type="hidden" class="form-control" id="id_layanan" name="id_layanan" value="<?= $detail->id_layanan ?>">
+								<?php } ?>
+								<div class="form-group row px-2 float-right mb-0">
+									<button id="btn_simpan" class="btn btn-sm btn-primary" type="submit">
+										<i class="far fa-save nav-icon">
+										</i> Simpan
+									</button>
+
+								</div>
+							</form>
+						</div>
+					</div>
+				<?php } ?>
 
 				<!-- Button Tolak & Setujui Awal Surat Masuk -->
 				<div class="row clearfix float-right px-2">

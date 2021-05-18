@@ -328,7 +328,12 @@
 				<div class="card shadow mb-4">
 					<div class="card-header">
 						<center>
-							<h6 class="m-0 font-weight-bold">Unggah Berita Acara terlebih dahulu untuk menyetujui</h6>
+							<?php if ($detail->berita_acara != null) { ?>
+								<h6 class="m-0 font-weight-bold">Berita Acara</h6>
+							<?php } elseif ($detail->berita_acara == null) { ?>
+								<h6 class="m-0 font-weight-bold">Unggah Berita Acara terlebih dahulu untuk menyetujui</h6>
+							<?php } ?>
+
 						</center>
 					</div>
 
@@ -389,9 +394,9 @@
 					</button>
 				</a>
 			<?php } ?>
-			</div>
-		<?php } ?>
-		<!-- /.container-fluid -->
+		</div>
+	<?php } ?>
+	<!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->
 </div>

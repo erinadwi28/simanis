@@ -150,7 +150,7 @@
 							</center>
 						</div>
 					<?php } ?>
-					<?php if ($detail->status == 'Selesai') { ?>
+					<?php if ($detail->suket_penghasilan == null || $detail->status_cetak != 1) { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_suket_penghasilan_ptsp27/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_suket_penghasilan">
 								<div class="form-group">

@@ -77,7 +77,11 @@
 				<div class="card shadow mb-4">
 					<div class="card-header">
 						<center>
-							<h6 class="m-0 font-weight-bold">Unggah Berita Acara Verifikasi Dokumen terlebih dahulu untuk menyetujui</h6>
+							<?php if ($detail->berita_acara_verifikasi_dok != null) { ?>
+								<h6 class="m-0 font-weight-bold">Berita Acara Verifikasi Dokumen</h6>
+							<?php } elseif ($detail->berita_acara_verifikasi_dok == null) { ?>
+								<h6 class="m-0 font-weight-bold">Unggah Berita Acara Verifikasi Dokumen terlebih dahulu untuk menyetujui</h6>
+							<?php } ?>
 						</center>
 					</div>
 
@@ -85,7 +89,7 @@
 						<center>
 							<?php if ($detail->berita_acara_verifikasi_dok != null) { ?>
 								<p><?= $detail->berita_acara_verifikasi_dok; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp13/berita_acara_verifikasi_dok/<?= $detail->berita_acara_verifikasi_dok ?>" target="_blank" >
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp13/berita_acara_verifikasi_dok/<?= $detail->berita_acara_verifikasi_dok ?>" target="_blank">
 
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
@@ -124,7 +128,11 @@
 				<div class="card shadow mb-4">
 					<div class="card-header">
 						<center>
-							<h6 class="m-0 font-weight-bold">Unggah Berita Acara Verifikasi Lapangan terlebih dahulu untuk menyetujui</h6>
+							<?php if ($detail->berita_acara_verifikasi_lap != null) { ?>
+								<h6 class="m-0 font-weight-bold">Berita Acara Verifikasi Lapangan</h6>
+							<?php } elseif ($detail->berita_acara_verifikasi_lap == null) { ?>
+								<h6 class="m-0 font-weight-bold">Unggah Berita Acara Verifikasi Lapangan terlebih dahulu untuk menyetujui</h6>
+							<?php } ?>
 						</center>
 					</div>
 

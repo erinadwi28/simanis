@@ -129,7 +129,7 @@
 								<?php } ?>
 							</center>
 						</div>
-						<?php if ($detail->jadwal == null && $detail->status_cetak != 1) { ?>
+						<?php if ($detail->jadwal == null || $detail->status_cetak != 1) { ?>
 							<div class="card-footer">
 								<form action="<?= base_url('dashboard/update_jadwal_ptsp25/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_jadwal">
 									<div class="form-group">

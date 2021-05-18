@@ -81,9 +81,10 @@ class M_tim_teknis extends CI_Model
     //get list data permohonan dengan status tertentu
     public function get_list_data_permohonan($status, $sie)
     {
-        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan, pemohon.nama');
         $this->db->from('permohonan_ptsp');
         $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->join('pemohon', 'permohonan_ptsp.id_pemohon = pemohon.id_pemohon', 'INNER');
         $this->db->where('permohonan_ptsp.status', $status);
         $this->db->where('permohonan_ptsp.sie', $sie);
         $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
@@ -94,9 +95,10 @@ class M_tim_teknis extends CI_Model
     //get list data permohonan yang sudah disetujui timteknis
     public function get_list_data_permohonan_selesai_tim_teknis($sie)
     {
-        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan, pemohon.nama');
         $this->db->from('permohonan_ptsp');
         $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->join('pemohon', 'permohonan_ptsp.id_pemohon = pemohon.id_pemohon', 'INNER');
         $this->db->where("(permohonan_ptsp.id_tim_teknis != 'null')");
         $this->db->where('permohonan_ptsp.sie', $sie);
         $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
