@@ -205,7 +205,7 @@
 							</p>
 						</div>
 						<div class="isi_surat identitas">
-							<table class="table">
+							<table>
 								<?php
 								foreach ($data_kepala as $detail) { ?>
 									<table>

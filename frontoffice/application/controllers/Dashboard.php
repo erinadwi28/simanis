@@ -1307,7 +1307,11 @@ class Dashboard extends CI_Controller
                 }
 
                 $dompdf->loadHtml($html);
-                $dompdf->setPaper('A4', 'portrait');
+                if($id_layanan == 21){
+                        $dompdf->setPaper('A4', 'landscape');        
+                }else{
+                        $dompdf->setPaper('A4', 'portrait');
+                }
                 $dompdf->render();
 
                 if ($id_layanan == 1) {
@@ -1515,7 +1519,11 @@ class Dashboard extends CI_Controller
                 }
 
                 $dompdf->loadHtml($html);
-                $dompdf->setPaper('A4', 'portrait');
+                if($id_layanan == 21){
+                        $dompdf->setPaper('A4', 'landscape');        
+                }else{
+                        $dompdf->setPaper('A4', 'portrait');
+                }
                 $dompdf->render();
 
                 if ($id_layanan == 1) {

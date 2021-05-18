@@ -305,6 +305,18 @@
 					<?php } ?>
 				</div>
 
+				<div class="row clearfix">
+						<div class="col-md-12">
+							<form class="form-horizontal" id="no_surat_ptsp27" enctype="multipart/form-data" action="" method="POST">
+								<div class="input-group mb-3 col-md-6 float-right p-0">
+									<input type="text" class="form-control " id="no_surat" name="no_surat" value=".../Kk.11.10/06/KU.1.1/<?= date("m/Y") ?>" required>
+									<button class="btn btn-sm btn-primary" type="submit" id="button-addon2"><i class="fas fa-check-circle">
+										</i> Terima</button>
+								</div>
+							</form>
+						</div>
+					</div>
+
 			</div>
 		</div>
 	<?php } ?>

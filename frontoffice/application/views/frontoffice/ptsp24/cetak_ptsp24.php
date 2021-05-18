@@ -16,12 +16,16 @@
 
 	<!-- Custom fonts for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/vendor/fontawesome-free/css/all.min.css') ?>" />
-	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+		rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
 		.body {
 			color: #000;
+			font-family: Calibri, Helvetica, Arial, sans-serif;
+			font-size: 11pt;
 		}
 
 		.logosurat {
@@ -37,9 +41,9 @@
 
 		}
 
-		.card-body {
+		/* .card-body {
 			padding: 5rem;
-		}
+		} */
 
 		.badan_surat {
 			color: #000;
@@ -50,7 +54,6 @@
 		}
 
 		.badan_surat {
-			font-family: 'Times New Roman';
 			margin-left: 60px;
 		}
 
@@ -64,32 +67,28 @@
 		}
 
 		.row {
-			font-size: 14pt;
-			font-family: 'Times New Roman';
+			font-size: 11pt;
 		}
 
 		.no_surat {
-			font-size: 14pt;
+			font-size: 11pt;
 		}
 
 		.tujuan_surat {
-			font-size: 14pt;
-			font-family: 'Times New Roman';
+			font-size: 11pt;
 		}
 
 		.paragraf {
 			/* text-indent: 2.8125em; */
 			text-align: justify;
-			font-family: 'Times New Roman';
 			text-indent: 50px;
 			font-size: 14pt;
 		}
 
 		.isi_surat {
 			margin-left: 0.0375em;
-			font-size: 14pt;
+			font-size: 11pt;
 			line-height: 1.2em;
-			font-family: 'Times New Roman';
 		}
 
 		.identitas {
@@ -97,17 +96,6 @@
 			margin-bottom: 0.3125em;
 		}
 
-		.img_ttd {
-			width: 200px;
-			margin-right: 110px;
-		}
-
-		.ttd_kepala {
-			display: block;
-			position: absolute;
-			float: left;
-			margin-right: -400px;
-		}
 
 		.img-fluid {
 			max-width: 100%;
@@ -122,21 +110,6 @@
 			margin-left: auto;
 		}
 
-		.bawah {
-			display: block;
-			position: absolute;
-			float: right;
-			margin-right: 160px;
-		}
-
-		.kepala {
-			display: block;
-			position: absolute;
-			float: left;
-			margin-top: 200px;
-			margin-right: -500px;
-		}
-
 		.table {
 			color: #000;
 		}
@@ -146,6 +119,20 @@
 			border-color: #000;
 			margin-left: 15px;
 		}
+
+		.garis {
+			border: 2px;
+			border-style: solid;
+			color: #000000 !important;
+			margin-top: 5px;
+			margin-right: 17px;
+		}
+
+		.ttd_surat {
+			font-size: 11pt;
+			margin-left: 470px;
+		}
+
 	</style>
 
 </head>
@@ -161,52 +148,70 @@
 				<div class="card shadow mb-4">
 
 					<div class="card-body">
-						<div class="kopsurat row">
-							<div class="col-md-12 mb-3">
-								<object data="" type="image">
-									<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
-								</object>
-							</div>
-						</div>
+						<!-- KOP SURAT -->
+						<center>
+							<table width="478">
+								<tr>
+									<td></td>
+									<td class="img">
+										<center>
+											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
+												width="100" height="100">
+										</center>
+									</td>
+									<td width="430" style="padding-left: 10px;">
+										<center>
+											<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
+											<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
+											<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
+											<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
+											<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
+											<br>
+										</center>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3">
+										<div class="garis"></div>
+									</td>
+								</tr>
+							</table>
+						</center>
+						<br>
 						<div class="isi_surat identitas">
-							<table class="table">
+							<table>
 								<?php
 								foreach ($detail_ptsp as $detail) { ?>
 									<tbody>
 										<tr>
 											<td>Nomor</td>
 											<td> </td>
-											<td> </td>
 											<td>:</td>
-											<td> </td>
-											<td>&emsp;&emsp; <?= $detail->no_surat ?>
-												&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-												&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-												<?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
+											<td> <?= $detail->no_surat?></td>
 										</tr>
 										<tr>
 											<td>Hal</td>
 											<td> </td>
-											<td> </td>
 											<td>:</td>
-											<td> </td>
 											<td>Permohonan keringanan biaya Pajak Kendaraan</td>
 										</tr>
 									</tbody>
 								<?php } ?>
 							</table>
 						</div>
-						<br><br><br>
+						<br>
 						<?php
 						foreach ($detail_ptsp as $detail) { ?>
-							<div class="isi_surat paragraf">
-								<p>Kepada Yth. <br> Sdr. <?= $detail->pemilik_kendaraan ?> <br> Di Klaten</p> <br>
+							<div class="isi_surat  paragraf">
+								<p>Kepada Yth.
+								<br> Sdr. <?= $detail->pemilik_kendaraan ?>
+								<br> Di Klaten</p>
 								<p>Dengan Hormat, </p>
-								<p>&emsp;&emsp; Bersama ini kami menerangkan bahwa :</p>
+								<p>ini kami menerangkan bahwa :</p>
 							</div>
 						<?php } ?>
 						<div class="isi_surat identitas">
-							<table class="table">
+							<table>
 								<tbody>
 									<tr>
 										<td>Nama</td>
@@ -245,18 +250,15 @@
 								</p>
 							</div>
 						<?php } ?>
-						<br><br><br>
-
+						<br>
 						<div class="row">
 							<div class="col-md-6">
 							</div>
 							<div class="col-md-6">
-								<div class="badan_surat isi_surat">
-									<center>
+								<div class="badan_surat ttd_surat">
 										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 										Klaten, 03 Maret 2020<br>
 										An. Kepala Penyelenggara Katolik
-									</center>
 								</div>
 							</div>
 						</div>
@@ -273,14 +275,13 @@
 							<div class="col-md-6">
 							</div>
 							<div class="col-md-6">
-								<div class="badan_surat isi_surat">
-									<center>
+								<div class="badan_surat ttd_surat">
 										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
 										<u><b>Drs. YB.Heru Kristomo</b></u><br>
-									</center>
 								</div>
 							</div>
 						</div>
+						<br><br><br>
 						<div class="isi_surat">
 							<p>Tembusan :</p>
 							<ol>

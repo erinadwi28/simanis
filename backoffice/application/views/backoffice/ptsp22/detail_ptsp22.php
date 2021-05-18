@@ -257,6 +257,18 @@
 					</div>
 				</div>
 
+				<div class="row clearfix">
+					<div class="col-md-12">
+						<form class="form-horizontal" id="no_id_masjid_ptsp22" enctype="multipart/form-data" action="" method="POST">
+							<div class="input-group mb-3 col-md-6 float-right p-0">
+								<input type="text" class="form-control " id="no_id_masjid" name="no_id_masjid" value="" placeholder="mauksan no id masjid..." required>
+								<button class="btn btn-sm btn-primary" type="submit" id="button-addon2"><i class="fas fa-check-circle">
+									</i> Kirim</button>
+							</div>
+						</form>
+					</div>
+				</div>
+
 				<!-- Button Tolak & Setujui Awal Surat Masuk -->
 				<div class="row clearfix float-right px-2">
 					<?php if ($detail->status == 'Proses BO') { ?>
