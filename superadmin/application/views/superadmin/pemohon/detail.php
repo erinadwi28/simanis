@@ -11,7 +11,8 @@
 			</ol>
 		</nav>
 	</div>
-
+	<?php foreach ($detail_pemohon as $detail) {
+		?>
 	<!-- Detail input -->
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
@@ -27,7 +28,7 @@
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td>123456789</td>
+								<td><?= $detail->nik ?></td>
 							</tr>
 							<tr>
 								<td><b>Nama</b></td>
@@ -35,7 +36,7 @@
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td>Erina Dwi Utami</td>
+								<td><?= $detail->nama ?></td>
 							</tr>
 							<tr>
 								<td><b>Email</b></td>
@@ -43,15 +44,15 @@
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td>erinadwi@gmail.com</td>
+								<td><?= $detail->email ?></td>
 							</tr>
 							<tr>
-								<td><b>No HandPhone</b></td>
+								<td><b>No Handphone</b></td>
 								<td> </td>
 								<td> </td>
 								<td>:</td>
 								<td> </td>
-								<td>085713609299</td>
+								<td><?= $detail->no_hp ?></td>
 							</tr>
 						</tbody>
 					</table>
@@ -63,17 +64,26 @@
 								<i class="fa fa-lock nav-icon">
 								</i> Ubah Sandi
 							</button>
+						</a>
+						<a href="#">
 							<button id="btn_ubah" class="btn btn-sm btn-primary" type="submit">
 								<i class="fa fa-edit nav-icon">
 								</i> Ubah Data
 							</button>
 						</a>
+						<!-- <a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>" class="mr-2">
+							<button id=" btn_tolak" class="btn btn-sm btn-tolak" type="submit">
+								<i class="fas fa-times-circle">
+								</i> Tolak
+							</button>
+						</a> -->
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-2"></div>
 	</div>
+	<?php } ?>
 	<!--End Content-->
 </div>
 <!-- /.container-fluid -->

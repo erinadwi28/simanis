@@ -164,7 +164,22 @@ class Dashboard extends CI_Controller
                 $this->load->view('superadmin/pemohon/list_pemohon', $data_detail);
                 $this->load->view('footer');
         }
+        //menampilkan detail data permohonan dari list permohonan
+        public function detail_data_pemohon($id_pemohon)
+        {
+                $data_title['title'] = 'Detail Pemohon';
+                $data['super_admin'] = $this->db->get_where('super_admin', ['id_super_admin' =>
+                $this->session->userdata('id_super_admin')])->row_array();
+                $data['total_notif'] = $this->m_super_admin->jml_notif()->result();
 
+                $data_detail['detail_pemohon'] = $this->m_super_admin->get_data_pemohon($id_pemohon)->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('superadmin/sidebar');
+                $this->load->view('topbar', $data);
+                $this->load->view('superadmin/pemohon/detail', $data_detail);
+                $this->load->view('footer');
+        }
         //list permohonan pending
         public function list_permohonan_pending()
         {

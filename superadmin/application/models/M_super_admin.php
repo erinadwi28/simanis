@@ -89,11 +89,11 @@ class M_super_admin extends CI_Model
     public function get_data_pemohon($id_pemohon)
     {
         $this->db->select('pemohon.*');
-        $this->db->from('permohonan_ptsp');
-        $this->db->join('pemohon', 'permohonan_ptsp.id_pemohon = pemohon.id_pemohon', 'INNER');
-        $this->db->where('permohonan_ptsp.id_pemohon', $id_pemohon);
+        $this->db->from('pemohon');
+        $this->db->order_by('pemohon.id_pemohon', 'desc');
 
-        return $this->db->get()->row();
+        $hasil= $this->db->get();
+        return $hasil;
     }
 
     //get list data pemohon

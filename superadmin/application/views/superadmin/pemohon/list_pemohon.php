@@ -39,7 +39,7 @@
 							<td><?= $data->nama ?></td>
 
 							<td class="text-center">
-								<a href="" class="btn btn-primary btn-sm">
+								<a href="<?= base_url() ?>dashboard/detail_data_pemohon/<?= $data->id_pemohon ?>" class="btn btn-primary btn-sm">
 									<i class="fas fa-search"></i>
 								</a>
 								<a href="" class="btn btn-tolak btn-sm">
