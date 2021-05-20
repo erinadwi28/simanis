@@ -16,9 +16,7 @@
 
 	<!-- Custom fonts for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/vendor/fontawesome-free/css/all.min.css') ?>" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
@@ -132,7 +130,6 @@
 			font-size: 11pt;
 			margin-left: 470px;
 		}
-
 	</style>
 
 </head>
@@ -155,8 +152,7 @@
 									<td></td>
 									<td class="img">
 										<center>
-											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
-												width="100" height="100">
+											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>" width="100" height="100">
 										</center>
 									</td>
 									<td width="430" style="padding-left: 10px;">
@@ -187,7 +183,7 @@
 											<td>Nomor</td>
 											<td> </td>
 											<td>:</td>
-											<td> <?= $detail->no_surat?></td>
+											<td> <?= $detail->no_surat ?></td>
 										</tr>
 										<tr>
 											<td>Hal</td>
@@ -200,95 +196,105 @@
 							</table>
 						</div>
 						<br>
-						<?php
-						foreach ($detail_ptsp as $detail) { ?>
-							<div class="isi_surat  paragraf">
-								<p>Kepada Yth.
-								<br> Sdr. <?= $detail->pemilik_kendaraan ?>
-								<br> Di Klaten</p>
-								<p>Dengan Hormat, </p>
-								<p>ini kami menerangkan bahwa :</p>
-							</div>
-						<?php } ?>
+
+						<div class="isi_surat  paragraf">
+							<p>Kepada Yth.
+								<br> Sdr. Kepala Up 3 AD Kab.Klaten
+								<br> Di Klaten
+							</p><br>
+							<p>Dengan Hormat, </p><br>
+							<p>Bersama ini kami menerangkan, bahwa saya :</p>
+						</div>
+
 						<div class="isi_surat identitas">
-							<table>
-								<tbody>
-									<tr>
-										<td>Nama</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>Drs. YB Heru Kristomo</td>
-									</tr>
-									<tr>
-										<td>NIP</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>19670909 200003 1001</td>
-									</tr>
-									<tr>
-										<td>Jabatan</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>Penyelenggara Bimas Katolik Kantor Kementrian Agama Kab. Klaten</td>
-									</tr>
-								</tbody>
-							</table>
+							<?php
+							foreach ($data_kepala as $detail) { ?>
+								<table>
+									<tbody>
+										<tr>
+											<td>Nama</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td><?= $detail->nama ?></td>
+										</tr>
+										<tr>
+											<td>NIP</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td><?= $detail->nip ?></td>
+										</tr>
+										<tr>
+											<td>Jabatan</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td>Kepala Kantor Kementrian Agama Kab. Klaten</td>
+										</tr>
+									</tbody>
+								</table>
+							<?php } ?>
 						</div><br>
 						<?php
 						foreach ($detail_ptsp as $detail) { ?>
 							<div class="isi_surat paragraf">
 								<p align="justify">&emsp;&emsp; Menerangkan bahwa kendaraan roda <?= $detail->jml_roda_kendaraan ?> <?= $detail->merek_kendaraan ?> dengan Nomor Polisi <?= $detail->no_polisi ?>,
-									milik PGPM Paroki Bunda Maria Dari Sakramen Mahakudus sebagai <?= $detail->fungsional_kendaraan ?> di wilayah Klaten Kota dan sekitarnya untuk itu <b>mohon keringanan pajak kendaraan.</b>
+									milik <?= $detail->pemilik_kendaraan ?> sebagai <?= $detail->fungsional_kendaraan ?> di wilayah Klaten Kota dan sekitarnya untuk itu <b>mohon keringanan pajak kendaraan.</b>
 									<br>&emsp;&emsp; Demikian permohonan ini dibuat, agar digunakan sebagaimana mestinya.
 									<br>Terima kasih.
 								</p>
 							</div>
-						<?php } ?>
-						<br>
-						<div class="row">
-							<div class="col-md-6">
-							</div>
-							<div class="col-md-6">
-								<div class="badan_surat ttd_surat">
+
+							<br>
+							<div class="row">
+								<div class="col-md-6">
+								</div>
+								<div class="col-md-6">
+									<div class="badan_surat ttd_surat">
 										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-										Klaten, 03 Maret 2020<br>
-										An. Kepala Penyelenggara Katolik
+										Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
+									<?php } ?>
+									Kepala
+									</div>
 								</div>
 							</div>
-						</div>
 
-						<div class="row ttd_kades">
-							<div class="col-md-6 ">
-							</div>
-							<div class="col-md-6">
+							<div class="row ttd_kades">
+								<div class="col-md-6 ">
+								</div>
+								<div class="col-md-6">
 
+								</div>
 							</div>
-						</div>
-						<br> <br>
-						<div class="row">
-							<div class="col-md-6">
-							</div>
-							<div class="col-md-6">
-								<div class="badan_surat ttd_surat">
+							<br> <br>
+							<div class="row">
+								<div class="col-md-6">
+								</div>
+								<div class="col-md-6">
+									<div class="badan_surat ttd_surat">
 										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-										<u><b>Drs. YB.Heru Kristomo</b></u><br>
+										<?php
+										foreach ($data_kepala as $detail) { ?>
+											<u><b><?= $detail->nama ?></b></u><br>
+										<?php } ?>
+									</div>
 								</div>
 							</div>
-						</div>
-						<br><br><br>
-						<div class="isi_surat">
-							<p>Tembusan :</p>
-							<ol>
-								<li>KanKemenag Kab. Klaten</li>
-								<li>Gereja Katolik Paroki Bunda Maria dan Sakramen Mahakudus di Klaten</li>
-							</ol>
-						</div>
+							<br><br><br>
+							<div class="isi_surat">
+								<p>Tembusan :</p>
+								<ol>
+									<li>KaKanmenag Kab. Klaten</li>
+									<?php
+									foreach ($detail_ptsp as $detail) { ?>
+										<li><?= $detail->pemilik_kendaraan ?> di Klaten</li>
+									<?php } ?>
+								</ol>
+							</div>
 					</div>
 				</div>
 			</div>

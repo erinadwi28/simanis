@@ -355,10 +355,11 @@ class Dashboard extends CI_Controller
     {
         $data = array(
             'hari_konsultasi' => $this->input->post('hari_konsultasi'),
+            'tgl_konsultasi' => $this->input->post('tgl_konsultasi'),
             'jam_konsultasi' => $this->input->post('jam_konsultasi'),
             'nama_petugas' => $this->input->post('nama_petugas'),
             'nip_petugas' => $this->input->post('nip_petugas'),
-            'pangkat_golongan' => $this->input->post('pangkat_golongan'),
+            'pangkat_golongan' => $this->input->post('pangkat_gol'),
             'jabatan' => $this->input->post('jabatan'),
         );
 

@@ -97,6 +97,15 @@
 										<td><?= $detail->hari_konsultasi ?></td>
 									</tr>
 								<?php } ?>
+								<?php if ($detail->tgl_konsultasi != null) { ?>
+									<tr>
+										<td><b>Tanggal Konsultasi</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td><?= format_indo(date($detail->tgl_konsultasi)) ?></td>
+									</tr>
+								<?php } ?>
 								<?php if ($detail->jam_konsultasi != null) { ?>
 									<tr>
 										<td><b>Jam KOnsultasi</b></td>
@@ -253,7 +262,15 @@
 									<label for="hari_konsultasi" class="col-sm-3 col-form-label">Hari Konsultasi</label>
 									<div class="col-sm-9">
 										<div class="form-line focused">
-											<input type="text" class="form-control" id="hari_konsultasi" name="hari_konsultasi" value="" placeholder="masukkan nama disini..." required>
+											<input type="text" class="form-control" id="hari_konsultasi" name="hari_konsultasi" value="" placeholder="masukkan hari disini..." required>
+										</div>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="tgl_konsultasi" class="col-sm-3 col-form-label">Tanggal Konsultasi</label>
+									<div class="col-sm-9">
+										<div class="form-line focused">
+											<input type="date" class="form-control" id="tgl_konsultasi" name="tgl_konsultasi" value="" placeholder="masukkan tanggal disini..." required>
 										</div>
 									</div>
 								</div>
@@ -261,7 +278,7 @@
 									<label for="jam_konsultasi" class="col-sm-3 col-form-label">Jam Konsultasi</label>
 									<div class="col-sm-9">
 										<div class="form-line focused">
-											<input type="text" class="form-control" id="jam_konsultasi" name="jam_konsultasi" value="" placeholder="masukkan NIP disini..." required data-parsley-type="number">
+											<input type="text" class="form-control" id="jam_konsultasi" name="jam_konsultasi" value="" placeholder="masukkan jam disini..." required>
 										</div>
 									</div>
 								</div>
@@ -269,7 +286,7 @@
 									<label for="nama_petugas" class="col-sm-3 col-form-label">Nama Petugas</label>
 									<div class="col-sm-9">
 										<div class="form-line focused">
-											<input type="text" class="form-control" id="nama_petugas" name="nama_petugas" value="" placeholder="masukkan pangkat do'a disini..." required>
+											<input type="text" class="form-control" id="nama_petugas" name="nama_petugas" value="" placeholder="masukkan nama petugas disini..." required>
 										</div>
 									</div>
 								</div>
@@ -282,10 +299,10 @@
 									</div>
 								</div>
 								<div class="form-group row">
-									<label for="pangkat_gol" class="col-sm-3 col-form-label">Pangkat Petugas</label>
+									<label for="pangkat_golongan" class="col-sm-3 col-form-label">Pangkat Petugas</label>
 									<div class="col-sm-9">
 										<div class="form-line focused">
-											<input type="text" class="form-control" id="pangkat_gol" name="pangkat_gol" value="" placeholder="masukkan pangkat do'a disini..." required>
+											<input type="text" class="form-control" id="pangkat_golongan" name="pangkat_golongan" value="" placeholder="masukkan pangkat do'a disini..." required>
 										</div>
 									</div>
 								</div>

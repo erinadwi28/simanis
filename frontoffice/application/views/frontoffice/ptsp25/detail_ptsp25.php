@@ -174,6 +174,16 @@
 										<td><?= $detail->hari_konsultasi ?></td>
 									</tr>
 								<?php } ?>
+								<?php if ($detail->tgl_konsultasi != null) { ?>
+									<tr>
+										<td><b>Tanggal Konsultasi</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_konsultasi)) ?></td>
+									</tr>
+								<?php } ?>
 								<?php if ($detail->jam_konsultasi != null) { ?>
 									<tr>
 										<td><b>Jam Konsultasi</b></td>
