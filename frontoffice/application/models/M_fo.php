@@ -36,6 +36,17 @@ class M_fo extends CI_Model
         return $hasil;
     }
 
+    // jumlah notif permohonan masuk
+    public function jml_laporan()
+    {
+        $this->db->select('id_pengaduan, COUNT(id_pengaduan) as total_laporan');
+        $this->db->from('aduan_layanan');
+        $this->db->where('id_fo', null);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
     // hitung jumlah permohonan status pending
     public function jml_permohonan_pending()
     {
@@ -142,6 +153,13 @@ class M_fo extends CI_Model
         return $this->db->get_where($tabel, $detailhere);
     }
 
+    // insert_idfo
+    public function insert_idfo($detailhere, $id_pengaduan)
+    {
+        $this->db->where('id_pengaduan', $id_pengaduan);
+        $this->db->update('aduan_layanan', $detailhere);
+    }
+
     // aksi ubah data profil saya                                                                                                       
     public function aksi_ubah_data_profil_saya($detailhere, $data, $table)
     {
@@ -190,6 +208,37 @@ class M_fo extends CI_Model
         $this->db->where('permohonan_ptsp.status', $status);
         $this->db->where('permohonan_ptsp.status_cetak', 0);
         $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'asc');
+
+        return $this->db->get();
+    }
+
+    //get get_list_data_laporan_masuk
+    public function get_list_data_laporan_masuk()
+    {
+        $this->db->select('*');
+        $this->db->from('aduan_layanan');
+        $this->db->where('id_fo', null);
+        $this->db->order_by('id_pengaduan', 'asc');
+
+        return $this->db->get();
+    }
+
+    //get get_list_data_laporan
+    public function get_list_data_laporan()
+    {
+        $this->db->select('*');
+        $this->db->from('aduan_layanan');
+        $this->db->order_by('id_pengaduan', 'desc');
+
+        return $this->db->get();
+    }
+
+    // get_data_laporan
+    public function get_data_laporan($id_pengaduan)
+    {
+        $this->db->select('*');
+        $this->db->from('aduan_layanan');
+        $this->db->where('id_pengaduan', $id_pengaduan);
 
         return $this->db->get();
     }

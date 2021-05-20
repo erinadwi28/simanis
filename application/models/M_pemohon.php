@@ -8,6 +8,12 @@ class M_pemohon extends CI_Model
         return $this->db->insert('pemohon', $data);
     }
 
+    //insert_laporan
+    public function insert_laporan($data)
+    {
+        return $this->db->insert('aduan_layanan', $data);
+    }
+
     // Cek email untuk login
     public function cek_email($email, $status_delete)
     {

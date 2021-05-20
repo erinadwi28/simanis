@@ -18,6 +18,7 @@ class Dashboard extends CI_Controller
         $data_title['title'] = 'SIMELATI: Dashboard';
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
+        $data['total_laporan'] = $this->m_kepala->jml_laporan()->result();
 
         $data_permohonan['permohonan_pending'] = $this->m_kepala->jml_permohonan_pending()->result();
         $data_permohonan['permohonan_prosesFO'] = $this->m_kepala->jml_permohonan_prosesFO()->result();
@@ -39,6 +40,7 @@ class Dashboard extends CI_Controller
         $data_title['title'] = 'Profil Saya';
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
+        $data['total_laporan'] = $this->m_kepala->jml_laporan()->result();
 
         $detailhere = array('id_kepala' => $this->session->userdata('id_kepala'));
         $data_detail['detail_profil_saya'] = $this->m_kepala->get_detail_profil_saya($detailhere, 'kepala')->result();
@@ -97,6 +99,7 @@ class Dashboard extends CI_Controller
         $data_title['title'] = 'Ubah Kata Sandi Saya';
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
+        $data['total_laporan'] = $this->m_kepala->jml_laporan()->result();
 
         $this->load->view('header', $data_title);
         $this->load->view('kepala/sidebar');
@@ -139,12 +142,67 @@ class Dashboard extends CI_Controller
         }
     }
 
+    //list_laporan_masuk
+    public function list_laporan_masuk()
+    {
+        $data_title['title'] = 'List Laporan Masuk';
+        $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
+        $this->session->userdata('id_kepala')])->row_array();
+        $data['total_laporan'] = $this->m_kepala->jml_laporan()->result();
+
+        $data_detail['data_laporan'] = $this->m_kepala->get_list_data_laporan_masuk()->result();
+
+        $this->load->view('header', $data_title);
+        $this->load->view('kepala/sidebar');
+        $this->load->view('topbar', $data);
+        $this->load->view('kepala/list_laporan_masuk', $data_detail);
+        $this->load->view('footer');
+    }
+
+    //list_laporan
+    public function list_laporan()
+    {
+        $data_title['title'] = 'List Laporan';
+        $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
+        $this->session->userdata('id_kepala')])->row_array();
+        $data['total_laporan'] = $this->m_kepala->jml_laporan()->result();
+
+        $data_detail['data_laporan'] = $this->m_kepala->get_list_data_laporan()->result();
+
+        $this->load->view('header', $data_title);
+        $this->load->view('kepala/sidebar');
+        $this->load->view('topbar', $data);
+        $this->load->view('kepala/list_laporan_masuk', $data_detail);
+        $this->load->view('footer');
+    }
+
+    //detail_laporan
+    public function detail_laporan($id_pengaduan)
+    {
+        $data_title['title'] = 'Detail Laporan';
+        $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
+        $this->session->userdata('id_kepala')])->row_array();
+        $data['total_laporan'] = $this->m_kepala->jml_laporan()->result();
+
+        $detailhere = array('id_kepala' => $this->session->userdata('id_kepala'));
+        $this->m_kepala->insert_idkepala($detailhere, $id_pengaduan);
+
+        $data_detail['data_laporan'] = $this->m_kepala->get_data_laporan($id_pengaduan)->result();
+
+        $this->load->view('header', $data_title);
+        $this->load->view('kepala/sidebar');
+        $this->load->view('topbar', $data);
+        $this->load->view('kepala/detail_laporan', $data_detail);
+        $this->load->view('footer');
+    }
+
     //list data permohonan pending
     public function list_permohonan_pending()
     {
         $data_title['title'] = 'List Permohonan Pending';
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
+        $data['total_laporan'] = $this->m_kepala->jml_laporan()->result();
 
         $data_detail['data_permohonan'] = $this->m_kepala->get_list_data_permohonan('Pending')->result();
 
@@ -161,6 +219,7 @@ class Dashboard extends CI_Controller
         $data_title['title'] = 'List Permohonan Proses FO';
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
+        $data['total_laporan'] = $this->m_kepala->jml_laporan()->result();
 
         $data_detail['data_permohonan'] = $this->m_kepala->get_list_data_permohonan('Validasi Kemenag')->result();
 
@@ -177,6 +236,7 @@ class Dashboard extends CI_Controller
         $data_title['title'] = 'List Permohonan Proses FO';
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
+        $data['total_laporan'] = $this->m_kepala->jml_laporan()->result();
 
         $data_detail['data_permohonan'] = $this->m_kepala->get_list_data_permohonan('Proses BO')->result();
 
@@ -193,6 +253,7 @@ class Dashboard extends CI_Controller
         $data_title['title'] = 'List Permohonan Proses Tim Teknis';
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
+        $data['total_laporan'] = $this->m_kepala->jml_laporan()->result();
 
         $data_detail['data_permohonan'] = $this->m_kepala->get_list_data_permohonan('Proses Tim Teknis')->result();
 
@@ -209,6 +270,7 @@ class Dashboard extends CI_Controller
         $data_title['title'] = 'List Permohonan Proses Kasi';
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
+        $data['total_laporan'] = $this->m_kepala->jml_laporan()->result();
 
         $data_detail['data_permohonan'] = $this->m_kepala->get_list_data_permohonan('Proses Kasi')->result();
 
@@ -225,6 +287,7 @@ class Dashboard extends CI_Controller
         $data_title['title'] = 'List Permohonan Proses Kasubag';
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
+        $data['total_laporan'] = $this->m_kepala->jml_laporan()->result();
 
         $data_detail['data_permohonan'] = $this->m_kepala->get_list_data_permohonan('Proses Kasubag')->result();
 
@@ -241,6 +304,7 @@ class Dashboard extends CI_Controller
         $data_title['title'] = 'List Permohonan Selesai';
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
+        $data['total_laporan'] = $this->m_kepala->jml_laporan()->result();
 
         $data_detail['data_permohonan'] = $this->m_kepala->get_list_data_permohonan('Selesai')->result();
 
@@ -257,6 +321,7 @@ class Dashboard extends CI_Controller
         $data_title['title'] = 'Detail Permohonan';
         $data['kepala'] = $this->db->get_where('kepala', ['id_kepala' =>
         $this->session->userdata('id_kepala')])->row_array();
+        $data['total_laporan'] = $this->m_kepala->jml_laporan()->result();
 
         $data_detail['detail_permohonan'] = $this->m_kepala->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
 

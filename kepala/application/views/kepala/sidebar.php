@@ -47,6 +47,12 @@
         </div>
       </div>
     </li>
+    <!-- Nav Item - Laporan -->
+    <li class="nav-item ">
+      <a class="nav-link" href="<?= base_url('dashboard/list_laporan') ?>">
+        <i class="fas fa-comment fa-fw"></i>
+        <span>Laporan</span></a>
+    </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

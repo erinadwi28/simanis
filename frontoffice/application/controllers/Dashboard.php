@@ -24,6 +24,7 @@ class Dashboard extends CI_Controller
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['total_laporan'] = $this->m_fo->jml_laporan()->result();
                 $data_permohonan['permohonan_validasi_kemenag'] = $this->m_fo->jml_notif()->result();
                 $data_permohonan['permohonan_pending'] = $this->m_fo->jml_permohonan_pending()->result();
                 $data_permohonan['permohonan_selesaiFO'] = $this->m_fo->jml_permohonan_selesaiFO()->result();
@@ -47,6 +48,7 @@ class Dashboard extends CI_Controller
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['total_laporan'] = $this->m_fo->jml_laporan()->result();
 
                 $detailhere = array('id_fo' => $this->session->userdata('id_fo'));
                 $data_detail['detail_profil_saya'] = $this->m_fo->get_detail_profil_saya($detailhere, 'fo')->result();
@@ -112,6 +114,7 @@ class Dashboard extends CI_Controller
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['total_laporan'] = $this->m_fo->jml_laporan()->result();
 
                 $detailhere = array('id_fo' => $this->session->userdata('id_fo'));
                 $data_detail['detail_profil_saya'] = $this->m_fo->get_detail_profil_saya($detailhere, 'fo')->result();
@@ -164,6 +167,7 @@ class Dashboard extends CI_Controller
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['total_laporan'] = $this->m_fo->jml_laporan()->result();
 
                 $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan('Validasi Kemenag')->result();
 
@@ -174,6 +178,63 @@ class Dashboard extends CI_Controller
                 $this->load->view('footer');
         }
 
+        //list laporan masuk
+        public function list_laporan_masuk()
+        {
+                $data_title['title'] = 'List Laporan Masuk';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['total_laporan'] = $this->m_fo->jml_laporan()->result();
+
+                $data_detail['data_laporan'] = $this->m_fo->get_list_data_laporan_masuk()->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/list_laporan_masuk', $data_detail);
+                $this->load->view('footer');
+        }
+
+        //list laporan
+        public function list_laporan()
+        {
+                $data_title['title'] = 'List Laporan';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['total_laporan'] = $this->m_fo->jml_laporan()->result();
+
+                $data_detail['data_laporan'] = $this->m_fo->get_list_data_laporan()->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/list_laporan_masuk', $data_detail);
+                $this->load->view('footer');
+        }
+
+        //detail laporan
+        public function detail_laporan($id_pengaduan)
+        {
+                $data_title['title'] = 'Detail Laporan';
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['total_laporan'] = $this->m_fo->jml_laporan()->result();
+
+                $detailhere = array('id_fo' => $this->session->userdata('id_fo'));
+                $this->m_fo->insert_idfo($detailhere, $id_pengaduan);
+
+                $data_detail['data_laporan'] = $this->m_fo->get_data_laporan($id_pengaduan)->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('topbar', $data);
+                $this->load->view('frontoffice/detail_laporan', $data_detail);
+                $this->load->view('footer');
+        }
+
         //list permohonan pending
         public function list_permohonan_pending()
         {
@@ -181,6 +242,7 @@ class Dashboard extends CI_Controller
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['total_laporan'] = $this->m_fo->jml_laporan()->result();
 
                 $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan('Pending')->result();
 
@@ -198,6 +260,7 @@ class Dashboard extends CI_Controller
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['total_laporan'] = $this->m_fo->jml_laporan()->result();
 
                 $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan_selesaiFO()->result();
 
@@ -215,6 +278,7 @@ class Dashboard extends CI_Controller
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['total_laporan'] = $this->m_fo->jml_laporan()->result();
 
                 $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan('Proses BO')->result();
 
@@ -232,6 +296,7 @@ class Dashboard extends CI_Controller
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['total_laporan'] = $this->m_fo->jml_laporan()->result();
 
                 $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan('Proses Tim Teknis')->result();
 
@@ -249,6 +314,7 @@ class Dashboard extends CI_Controller
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['total_laporan'] = $this->m_fo->jml_laporan()->result();
 
                 $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan('Proses Kasi')->result();
 
@@ -266,6 +332,7 @@ class Dashboard extends CI_Controller
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['total_laporan'] = $this->m_fo->jml_laporan()->result();
 
                 $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan('Proses Kasubag')->result();
 
@@ -283,6 +350,7 @@ class Dashboard extends CI_Controller
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['total_laporan'] = $this->m_fo->jml_laporan()->result();
 
                 $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan_selesai('Selesai')->result();
 
@@ -300,6 +368,7 @@ class Dashboard extends CI_Controller
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['total_laporan'] = $this->m_fo->jml_laporan()->result();
 
                 $data_detail['data_permohonan'] = $this->m_fo->get_list_data_permohonan_arsip('Selesai', 1)->result();
 
@@ -317,6 +386,7 @@ class Dashboard extends CI_Controller
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['total_laporan'] = $this->m_fo->jml_laporan()->result();
 
                 $data_detail['detail_permohonan'] = $this->m_fo->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
 
@@ -515,6 +585,7 @@ class Dashboard extends CI_Controller
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['total_laporan'] = $this->m_fo->jml_laporan()->result();
 
                 $data_detail['id_permohonan_ptsp'] = $this->db->get_where('permohonan_ptsp', ['id_permohonan_ptsp' =>
                 $id_permohonan_ptsp])->row_array();
@@ -590,6 +661,7 @@ class Dashboard extends CI_Controller
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
                 $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['total_laporan'] = $this->m_fo->jml_laporan()->result();
 
                 $data_detail['data_pemohon'] = $this->m_fo->get_data_pemohon_ptsp($id_permohonan_ptsp)->result();
 

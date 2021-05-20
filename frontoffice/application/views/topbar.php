@@ -31,6 +31,18 @@
 						</span>
 					</a>
 				</li>
+				<li class="nav-item dropdown no-arrow mx-1">
+					<a class="nav-link " href="<?= base_url() ?>dashboard/list_laporan_masuk">
+						<i class="fas fa-comment fa-fw"></i>
+						<!-- Counter - Alerts -->
+						<span class="badge badge-danger badge-counter">
+							<?php
+							foreach ($total_laporan as $total_laporan) { ?>
+								<?= $total_laporan->total_laporan; ?>
+							<?php } ?>
+						</span>
+					</a>
+				</li>
 
 				<!-- Nav Item - User Information -->
 				<li class="nav-item dropdown no-arrow">

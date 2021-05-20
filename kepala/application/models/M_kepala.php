@@ -189,4 +189,53 @@ class M_kepala extends CI_Model
         $hasil = $this->db->get();
         return $hasil;
     }
+
+    // jumlah notif permohonan masuk
+    public function jml_laporan()
+    {
+        $this->db->select('id_pengaduan, COUNT(id_pengaduan) as total_laporan');
+        $this->db->from('aduan_layanan');
+        $this->db->where('id_kepala', null);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
+    //get get_list_data_laporan_masuk
+    public function get_list_data_laporan_masuk()
+    {
+        $this->db->select('*');
+        $this->db->from('aduan_layanan');
+        $this->db->where('id_kepala', null);
+        $this->db->order_by('id_pengaduan', 'asc');
+
+        return $this->db->get();
+    }
+
+    // insert_idkepala
+    public function insert_idkepala($detailhere, $id_pengaduan)
+    {
+        $this->db->where('id_pengaduan', $id_pengaduan);
+        $this->db->update('aduan_layanan', $detailhere);
+    }
+
+    // get_data_laporan
+    public function get_data_laporan($id_pengaduan)
+    {
+        $this->db->select('*');
+        $this->db->from('aduan_layanan');
+        $this->db->where('id_pengaduan', $id_pengaduan);
+
+        return $this->db->get();
+    }
+
+    //get get_list_data_laporan
+    public function get_list_data_laporan()
+    {
+        $this->db->select('*');
+        $this->db->from('aduan_layanan');
+        $this->db->order_by('id_pengaduan', 'desc');
+
+        return $this->db->get();
+    }
 }
