@@ -23,26 +23,31 @@
 					<thead>
 						<tr>
 							<th>No</th>
-							<th>NIK</th>
+							<th>Email</th>
 							<th>Nama</th>
 							<th>Aksi</th>
 						</tr>
 					</thead>
 					<tbody>
+					<?php
+						$no = 1;
+						foreach ($data_user as $data) {
+						?>
 						<tr>
-							<td class="text-center">1</td>
-							<td>1234567890</td>
-							<td>Erina Dwi Utami</td>
+							<td class="text-center"><?= $no++ ?></td>
+							<td><?= $data->email ?></td>
+							<td><?= $data->nama ?></td>
 
 							<td class="text-center">
-								<a href="" class="btn btn-primary btn-sm">
+								<a href="<?= base_url() ?>dashboard/detail_data_kepala/<?= $data->id_kepala ?>" class="btn btn-primary btn-sm">
 									<i class="fas fa-search"></i>
 								</a>
-								<a href="" class="btn btn-tolak btn-sm">
+								<a href="#" class="btn btn-tolak btn-sm">
 									<i class="fas fa-trash-alt"></i>
 								</a>
 							</td>
 						</tr>
+						<?php }?>
 					</tbody>
 				</table>
 			</div>

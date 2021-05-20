@@ -2,11 +2,11 @@
 <div class="container-fluid">
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between">
-		<h3 class="judullist py-3">Data Kasubag</h3>
+		<h3 class="judullist py-3">Data Pemohon</h3>
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Kasubag</li>
+				<li class="breadcrumb-item active" aria-current="page">Pemohon</li>
 			</ol>
 		</nav>
 	</div>
@@ -29,20 +29,25 @@
 						</tr>
 					</thead>
 					<tbody>
+					<?php
+						$no = 1;
+						foreach ($data_user as $data) {
+						?>
 						<tr>
-							<td class="text-center">1</td>
-							<td>1234567890</td>
-							<td>Erina Dwi Utami</td>
+							<td class="text-center"><?= $no++ ?></td>
+							<td><?= $data->nik ?></td>
+							<td><?= $data->nama ?></td>
 
 							<td class="text-center">
-								<a href="" class="btn btn-primary btn-sm">
+								<a href="<?= base_url() ?>dashboard/detail_data_pemohon/<?= $data->id_pemohon ?>" class="btn btn-primary btn-sm">
 									<i class="fas fa-search"></i>
 								</a>
-								<a href="" class="btn btn-tolak btn-sm">
+								<a href="#" class="btn btn-tolak btn-sm">
 									<i class="fas fa-trash-alt"></i>
 								</a>
 							</td>
 						</tr>
+						<?php }?>
 					</tbody>
 				</table>
 			</div>

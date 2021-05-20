@@ -102,9 +102,9 @@ class Dashboard extends CI_Controller
                                 $this->db->update('fo', $data);
                         }
                 }
-
+                $url = $_SERVER['HTTP_REFERER'];
                 $this->session->set_flashdata('success', 'diubah');
-                redirect('dashboard/profil_fo');
+                redirect($url);
         }
 
         //menampilkan halaman form ubah kata sandi

@@ -2,11 +2,11 @@
 <div class="container-fluid">
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between">
-		<h3 class="judullist py-3">Data Pemohon</h3>
+		<h3 class="judullist py-3">Data Kasubag</h3>
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Pemohon</li>
+				<li class="breadcrumb-item active" aria-current="page">Kasubag</li>
 			</ol>
 		</nav>
 	</div>
@@ -23,7 +23,7 @@
 					<thead>
 						<tr>
 							<th>No</th>
-							<th>NIK</th>
+							<th>Email</th>
 							<th>Nama</th>
 							<th>Aksi</th>
 						</tr>
@@ -35,20 +35,19 @@
 						?>
 						<tr>
 							<td class="text-center"><?= $no++ ?></td>
-							<td><?= $data->nik ?></td>
+							<td><?= $data->email ?></td>
 							<td><?= $data->nama ?></td>
 
 							<td class="text-center">
-								<a href="<?= base_url() ?>dashboard/detail_data_pemohon/<?= $data->id_pemohon ?>" class="btn btn-primary btn-sm">
+								<a href="<?= base_url() ?>dashboard/detail_data_kasubag/<?= $data->id_kasubag ?>" class="btn btn-primary btn-sm">
 									<i class="fas fa-search"></i>
 								</a>
-								<a href="" class="btn btn-tolak btn-sm">
+								<a href="#" class="btn btn-tolak btn-sm">
 									<i class="fas fa-trash-alt"></i>
 								</a>
 							</td>
 						</tr>
 						<?php }?>
-					</tbody>
 				</table>
 			</div>
 		</div>

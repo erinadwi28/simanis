@@ -600,6 +600,13 @@ class M_pemohon extends CI_Model
         $this->db->update($table, $data);
     }
 
+    //aksi update data pemohon
+    public function update_pemohon($where, $data, $table)
+    {
+        $this->db->where('id_pemohon', $where);
+        $this->db->update($table, $data);
+    }
+
     //update status permohonan
     public function update_status_permohonan($where, $data, $tabel)
     {

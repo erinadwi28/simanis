@@ -7,7 +7,7 @@ class Masuk extends CI_Controller
         {
                 parent::__construct();
 
-                $this->load->model('M_super_admin', 'm_super_admin');
+                $this->load->model('M_admin', 'm_admin');
         }
 
         public function index()
@@ -56,17 +56,17 @@ class Masuk extends CI_Controller
                                 $kata_sandi_hash = sha1($kata_sandi);
                                 $status_delete = '0';
 
-                                $super_admin = $this->m_super_admin->cek_email($email, $status_delete);
+                                $admin = $this->m_admin->cek_email($email, $status_delete);
 
-                                if ($super_admin) {
+                                if ($admin) {
                                         //fo ada
-                                        if ($kata_sandi_hash === $super_admin['kata_sandi']) {
+                                        if ($kata_sandi_hash === $admin['kata_sandi']) {
                                                 //kata sandi benar
 
                                                 $data = [
-                                                        'email' => $super_admin['email'],
-                                                        'id_super_admin' => $super_admin['id_super_admin'],
-                                                        'role' => $super_admin['role'],
+                                                        'email' => $admin['email'],
+                                                        'id_admin' => $admin['id_admin'],
+                                                        'role' => $admin['role'],
                                                 ];
 
                                                 $this->session->set_userdata($data);
@@ -79,7 +79,7 @@ class Masuk extends CI_Controller
                                         }
                                 } else {
                                         //gagal login
-                                        $this->session->set_flashdata('error', '<b>Email</b> tidak terdaftar sebagai Super Admin');
+                                        $this->session->set_flashdata('error', '<b>Email</b> tidak terdaftar sebagai Admin');
                                         redirect('masuk');
                                 }
                         } else {

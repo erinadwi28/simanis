@@ -66,7 +66,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_permohonan_prosesBO') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
+							<a href="<?= base_url('dashboard/list_fo') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
 								Lihat</a>
 						</div>
 					</div>
@@ -91,7 +91,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_permohonan_prosesTimTeknis') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
+							<a href="<?= base_url('dashboard/list_bo') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
 								Lihat</a>
 						</div>
 					</div>
@@ -116,7 +116,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_permohonan_prosesKasi') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
+							<a href="<?= base_url('dashboard/list_kasi') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
 								Lihat</a>
 						</div>
 					</div>
@@ -144,7 +144,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_permohonan_masuk') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
+							<a href="<?= base_url('dashboard/list_kasubag') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
 								Lihat</a>
 						</div>
 					</div>
@@ -169,7 +169,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_permohonan_prosesBO') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
+							<a href="<?= base_url('dashboard/list_kepala') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
 								Lihat</a>
 						</div>
 					</div>

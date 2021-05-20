@@ -48,7 +48,20 @@ class Dashboard extends CI_Controller
         $this->load->view('pemohon/profil_pemohon', $data_detail);
         $this->load->view('footer');
     }
-
+    // update pemohon
+    public function update_pemohon($id_pemohon)
+    {
+        $data = array(
+            'no_hp' => $this->input->post('no_hp'),
+            'nik' => $this->input->post('nik'),
+            'nama' => $this->input->post('nama'),
+            'email' => $this->input->post('email'),
+        );
+        $this->m_pemohon->update_pemohon($id_pemohon, $data);
+        $url = $_SERVER['HTTP_REFERER'];
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect ($url);
+    }
     //ubah foto profil
     public function upload_foto_profil()
     {
@@ -92,9 +105,9 @@ class Dashboard extends CI_Controller
                 $this->db->update('pemohon', $data);
             }
         }
-
+        $url = $_SERVER['HTTP_REFERER'];
         $this->session->set_flashdata('success', 'diubah');
-        redirect('dashboard/profil_pemohon');
+        redirect($url);
     }
 
     //menampilkan halaman form ubah kata sandi
@@ -133,19 +146,46 @@ class Dashboard extends CI_Controller
         $where = $this->session->userdata('id_pemohon');
 
         $fo = $this->m_pemohon->get_pemohon($where);
-
+        $url = $_SERVER['HTTP_REFERER'];
         if ($konfirmasi === $kata_sandi_baru) {
             if ($data_lama === $fo['kata_sandi']) {
                 $this->m_pemohon->update_sandi($where, $data_baru, 'pemohon');
                 $this->session->set_flashdata('success', '<b>Kata Sandi</b> Berhasil Diubah');
-                redirect('dashboard/form_ubahsandi');
+                redirect($url);
             } else {
                 $this->session->set_flashdata('error', '<b>Kata Sandi Lama</b> Salah');
-                redirect('dashboard/form_ubahsandi');
+                redirect($url);
             }
         } else {
             $this->session->set_flashdata('error', 'Konfirmasi Sandi<b> Tidak Sesuai</b>');
-            redirect('dashboard/form_ubahsandi');
+            redirect($url);
+        }
+    }
+
+    // aksi ubah sandi tanpa sandi awal untuk admin
+    public function ubah_sandi_admin()
+    {
+
+        $kata_sandi_baru = $this->input->post('kata_sandi_baru');
+        $kata_sandi_hash = sha1($kata_sandi_baru);
+
+        $data_baru = array(
+            'kata_sandi' => $kata_sandi_hash,
+        );
+
+        $konfirmasi = $this->input->post('konfirmasi');
+
+        $where = $this->session->userdata('id_pemohon');
+
+        $fo = $this->m_pemohon->get_pemohon($where);
+        $url = $_SERVER['HTTP_REFERER'];
+        if ($konfirmasi === $kata_sandi_baru) {
+                $this->m_pemohon->update_sandi($where, $data_baru, 'pemohon');
+                $this->session->set_flashdata('success', '<b>Kata Sandi</b> Berhasil Diubah');
+                redirect($url);
+        } else {
+            $this->session->set_flashdata('error', 'Konfirmasi Sandi<b> Tidak Sesuai</b>');
+            redirect($url);
         }
     }
 
