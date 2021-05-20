@@ -1239,7 +1239,8 @@ class Dashboard extends CI_Controller
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp24')->result();
                         $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 25) {
-                        redirect('dashboard/list_permohonan_selesai');
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp25')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 26) {
                         redirect('dashboard/list_permohonan_selesai');
                 } elseif ($id_layanan == 27) {
@@ -1448,7 +1449,8 @@ class Dashboard extends CI_Controller
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp24')->result();
                         $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 25) {
-                        redirect('dashboard/list_permohonan_arsip');
+                        $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp25')->result();
+                        $data_detail['data_kepala'] = $this->m_fo->get_data_kepala($id_permohonan_ptsp)->result();
                 } elseif ($id_layanan == 26) {
                         redirect('dashboard/list_permohonan_arsip');
                 } elseif ($id_layanan == 27) {
