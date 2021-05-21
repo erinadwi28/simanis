@@ -22,6 +22,7 @@
 	<style>
 		.body {
 			color: #000;
+			font-size: 14pt;
 		}
 
 		.logosurat {
@@ -36,9 +37,6 @@
 			line-height: 1em;
 		}
 
-		.card-body {
-			padding: 5rem;
-		}
 
 		.badan_surat {
 			color: #000;
@@ -51,19 +49,20 @@
 		.badan_surat {
 			font-family: 'Times New Roman';
 			margin-left: 60px;
+			font-size: 14pt;
 		}
 
 		.kepala_sertifikat {
-			font-weight: bold;
-			font-size: 14pt;
+			margin-top: 2px;
+		}
+
+		.alamat_kantor {
+			font-size:11pt;
 		}
 
 		.kepala_sertifikat p {
 			margin-top: 3px;
-		}
-
-		.no_surat {
-			font-size: 14pt;
+			font-size: 9pt;
 		}
 
 		.paragraf {
@@ -75,14 +74,16 @@
 
 		.isi_surat {
 			margin-left: 0.0375em;
-			font-size: 11pt;
+			font-size: 14pt;
 			line-height: 1.2em;
 			font-family: 'Times New Roman';
+
 		}
 
 		.identitas {
 			margin-left: 2.8125em;
 			margin-bottom: 0.3125em;
+			font-size: 14pt;
 		}
 
 		.ttd_kepala {
@@ -99,25 +100,10 @@
 
 		.container-fluid {
 			width: 100%;
-			padding-right: 0.75rem;
-			padding-left: 0.75rem;
+			padding-right: 0.25rem;
+			padding-left: 0.25rem;
 			margin-right: auto;
 			margin-left: auto;
-		}
-
-		.bawah {
-			display: block;
-			position: absolute;
-			float: right;
-			margin-right: 160px;
-		}
-
-		.kepala {
-			display: block;
-			position: absolute;
-			float: left;
-			margin-top: 200px;
-			margin-right: -500px;
 		}
 
 		.table {
@@ -130,11 +116,9 @@
 			margin-left: 15px;
 		}
 
-		.card {
-			position: relative;
-			background: url(<?= base_url('../assets/dashboard/images/frontoffice/ptsp/bg_ptsp14.png') ?>) no-repeat;
-			background-size: cover;
-			overflow: hidden;
+		.ttd_surat {
+			margin-left: 300px;
+			font-size: 14pt;
 		}
 	</style>
 
@@ -165,25 +149,25 @@
 								<div class="badan_surat">
 									<center>
 										<div class="kepala_Sertifikat">
-											<h5 style="margin-top: 20px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></h5>
-											<h6><b>KANTOR KABUPATEN KLATEN </b></h6>
+											<h4 style="margin-top: 10px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA <br>
+											KANTOR KABUPATEN KLATEN </b></h4>
 											<p>Jalan Ronggowarsito Klaten <br>
 												Telepon/Faksimili (0272)321154 <br>
-												Website : http://klaten.kemenag.go.id <br> <br> </p>
+												Website : http://klaten.kemenag.go.id</p>
 										</div>
 									</center>
 									<center>
 										<div class="no_surat">
-											<h5><b>PIAGAM TANDA DAFTAR</b></h5>
-											<h5><b>LEMBAGA PENDIDIKAN AL-QUR'AN (LPQ)</b></h5>
-											<p><b> Nomor:<?= $detail->no_surat ?></b></p>
+											<h5><b>PIAGAM TANDA DAFTAR</b> <br>
+											<b>LEMBAGA PENDIDIKAN AL-QUR'AN (LPQ)</b> <br>
+											<b> Nomor:<?= $detail->no_surat ?></b>
+										</h5>
 										</div>
 									</center>
-									<br>
 									<div class="isi_surat">
 										<p>&nbsp; &nbsp; &nbsp; Diberikan kepada :</p>
 									</div>
-									<div class="isi_surat identitas">
+									<div class="identitas">
 										<table>
 											<tbody>
 												<tr>
@@ -266,30 +250,25 @@
 													<td> </td>
 													<td><?= format_indo(date($detail->berlaku)) ?></td>
 												</tr>
-
 											</tbody>
 										</table>
 									</div>
 									<div class="isi_surat">
-										<p>&nbsp;&nbsp; &nbsp; Dengan Nomor Statistik Pendidikan Al-Qur'an :</p>
+										<p>&nbsp;&nbsp; &nbsp; Dengan Nomor Statistik Pendidikan Al-Qur'an : <br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $detail->nomor_statistik ?> </p>
 									</div>
-
-									<div class="no_statistik">
-										<?= $detail->no_statistik ?>
-									</div>
-									<br> <br>
 									<div class="row">
 										<div class="col-md-6"></div>
 										<div class="col-md-6">
-											<div class="badan_surat isi_surat">
+											<div class="ttd_surat">
 												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 												<p>Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></p>
 											<?php } ?>
 											<?php
 											foreach ($data_kepala as $detail) { ?>
-												<h6>MENTERI AGAMA</h6>
+												<b>a.n. MENTERI AGAMA</b>  <br>
 												Kepala Kantor Kementerian Agama
-												Kabupaten Klaten<br><br><br><br>
+												Kabupaten Klaten<br><br><br> <br>
 												<b><?= $detail->nama; ?></b><br>
 											<?php } ?>
 											</div>
