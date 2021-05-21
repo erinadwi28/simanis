@@ -94,7 +94,6 @@
 
 
 		<div class="row clearfix">
-
 			<div class="col-md-4 mb-0">
 				<!-- Proposal Permohonan -->
 				<div class="card shadow mb-4">
@@ -141,9 +140,9 @@
 						</center>
 					</div>
 				</div>
-				</div>
+				
 			<?php } ?>
-			
+			</div>
 			<div class="col-md-8 mb-4">
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
