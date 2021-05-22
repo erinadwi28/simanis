@@ -264,11 +264,5 @@
 				</a>
 			<?php } ?>
 		</div>
+	<?php } ?>
 </div>
-</div>
-<!--End Content Profile-->
-</div>
-<!-- /.container-fluid -->
-</div>
-<!-- End of Main Content -->
-<?php } ?>
