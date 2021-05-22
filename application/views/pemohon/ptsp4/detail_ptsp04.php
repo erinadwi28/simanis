@@ -25,58 +25,51 @@
 		</div>
 
 		<div class="row">
-		<div class="col-md-4 mb-0">
+			<div class="col-md-4 mb-0">
 				<!-- Upload fc_dokumen -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
 						<center>
-							<h6 class="m-0 font-weight-bold">Fotocopy Ijazah</h6>
+							<h6 class="m-0 font-weight-bold">Dokumen</h6>
 						</center>
 					</div>
 
 					<div class="card-body">
 						<center>
 							<?php if ($detail->fc_dokumen != null) { ?>
-							<p><?= $detail->fc_dokumen; ?></p>
-							<a id="btn_upload" class="btn btn-sm btn-primary"
-								href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp04/fc_dokumen/<?= $detail->fc_dokumen ?>"
-								target="_blank">
-								<i class="fa fa-download nav-icon">
-								</i> Klik untuk melihat
-							</a>
+								<p><?= $detail->fc_dokumen; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>./assets/dashboard/pemohon/ptsp/ptsp04/fc_dokumen/<?= $detail->fc_dokumen ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
 							<?php } elseif ($detail->fc_dokumen == null) { ?>
-							<p>Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
+								<p>Belum ada lampiran <br> Silahkan unggah terlebih dahulu</p>
 							<?php } ?>
 						</center>
 					</div>
 
 					<?php if ($detail->status == 'Pending') { ?>
-					<div class="card-footer">
-						<form action="<?= base_url('dashboard/update_fc_dokumen_ptsp04/' . $detail->id_ptsp) ?>"
-							enctype="multipart/form-data" method="post" accept-charset="utf-8"
-							id="form_upload_fc_dokumen">
-							<div class="form-group">
-								<div class="input-group">
-									<div class="form-group-upload">
-										<div class="custom-file">
-											<label class="custom-file-label" for="file-upload">pilih file...</label>
-											<input type="file" class="custom-file-input" id="file-upload"
-												name="fc_dokumen" value="<?= $detail->fc_dokumen ?>">
-											<input type="hidden" class="form-control form-user-input"
-												name="id_permohonan_ptsp" id="file-upload"
-												value="<?= $detail->id_permohonan_ptsp ?>">
+						<div class="card-footer">
+							<form action="<?= base_url('dashboard/update_fc_dokumen_ptsp04/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_fc_dokumen">
+								<div class="form-group">
+									<div class="input-group">
+										<div class="form-group-upload">
+											<div class="custom-file">
+												<label class="custom-file-label" for="file-upload">pilih file...</label>
+												<input type="file" class="custom-file-input" id="file-upload" name="fc_dokumen" value="<?= $detail->fc_dokumen ?>">
+												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<center>
-								<button class="btn btn-sm btn-primary" type="submit">
-									<i class="fa fa-upload">
-									</i>
-								</button>
-							</center>
-						</form>
-					</div>
+								<center>
+									<button class="btn btn-sm btn-primary" type="submit">
+										<i class="fa fa-upload">
+										</i>
+									</button>
+								</center>
+							</form>
+						</div>
 					<?php } ?>
 				</div>
 			</div>

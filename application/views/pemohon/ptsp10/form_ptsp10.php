@@ -20,9 +20,8 @@
 			<div class="col-xs col-sm-8">
 				<div class="card shadow mb-5">
 					<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Izin Perpanjang Operasional <br>
-					Penyelengara Perjalanan Ibadah Umroh (PPIU) dan Perjalanan Ibadah Haji Khusus (PIHK)
-				</h6>
+						<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Izin Perpanjangan Operasional <br> Penyelenggara Perjalanan Ibadah Umroh (PPIU) dan Perjalanan Ibadah Haji Khusus (PIHK)
+						</h6>
 					</div>
 					<div class="card-body">
 						<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
@@ -32,7 +31,7 @@
 								<label for="nama_pemohon" class="col-sm-3 col-form-label">Nama Pemohon</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="nama_pemohon" name="nama_pemohon" value="<?= $detail->nama ?>"	placeholder="masukkan nama pemohon disini..." required>
+										<input type="text" class="form-control" id="nama_pemohon" name="nama_pemohon" value="<?= $detail->nama ?>" placeholder="masukkan nama pemohon disini..." required>
 									</div>
 								</div>
 							</div>
@@ -56,8 +55,7 @@
 								<label for="domisili_kantor_cabang" class="col-sm-3 col-form-label">Domisili Kantor Cabang</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<textarea type="text" class="form-control" id="domisili_kantor_cabang" name="domisili_kantor_cabang" value="" placeholder="masukkan domisili kantor cabang disini..."
-										required></textarea>
+										<textarea type="text" class="form-control" id="domisili_kantor_cabang" name="domisili_kantor_cabang" value="" placeholder="masukkan domisili kantor cabang disini..." required></textarea>
 									</div>
 								</div>
 							</div>
@@ -65,8 +63,7 @@
 								<label for="alamat_kantor_cabang" class="col-sm-3 col-form-label">Alamat Kantor Cabang</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<textarea type="text" class="form-control" id="alamat_kantor_cabang" name="alamat_kantor_cabang" value="" placeholder="masukkan alamat kantor cabang disini..."
-										required></textarea>
+										<textarea type="text" class="form-control" id="alamat_kantor_cabang" name="alamat_kantor_cabang" value="" placeholder="masukkan alamat kantor cabang disini..." required></textarea>
 									</div>
 								</div>
 							</div>
@@ -74,13 +71,11 @@
 								<label for="no_hp" class="col-sm-3 col-form-label">No. HandPhone</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="no_hp" name="no_hp" value=""
-										placeholder="masukkan no hp disini..." 
-										required data-parsley-type="number" minlength="11">
+										<input type="text" class="form-control" id="no_hp" name="no_hp" value="" placeholder="masukkan no hp disini..." required data-parsley-type="number" minlength="11">
 									</div>
 								</div>
 							</div>
-							
+
 					</div>
 				<?php } ?>
 				<div class="card-footer">
@@ -117,7 +112,7 @@
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
 				<ol type="1" class="ml-0 list-syarat modal-content-syarat">
-							<li>Pemohon mengunduh Surat Permohonan, unduh dengan <b><a href="<?= base_url() ?>assets/dashboard/unduhan/pemohon/ptsp10/Template%20Surat%20Permohonan.docx">[klik disini]</a></b></li>
+					<li>Pemohon mengunduh Surat Permohonan, unduh dengan <b><a href="<?= base_url() ?>assets/dashboard/unduhan/pemohon/ptsp10/Template%20Surat%20Permohonan.docx">[klik disini]</a></b></li>
 					<li>Pemohon mengisi Surat Permohonan yang ditujukan kepada Kepala Kantor Kemenag Klaten.</li>
 					<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
 					<li>Pemohon mengunggah Surat Permohonan. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
@@ -126,8 +121,8 @@
 					<li>Pemohon mengunggah Surat Izin Usaha pendirian perjalanan wisata paling singkat 2 tahun.<br> (Format: PDF, Ukuran: Max 1 MB)</li>
 					<li>Pemohon mengunggah NPWP perusahaan dan pimpinan perusahaan. <br> (Format: PDF, Ukuran:Max 1 MB)</li>
 					<li>Pemohon mengunggah Surat Rekomendasi PEMKAB setempat. <br> (Format: PDF, Ukuran:Max 1 MB)</li>
-					<li>Pemohon mengunggah Laporan Keuangan yang sehat selama 1 tahun terakhir dan telah diaudit akuntan publik yang terdaftar dengan 
-					opini minimal Wajar Dengan Pengecualian (WDP). <br> (Format: PDF, Ukuran:Max 10 MB)</li>
+					<li>Pemohon mengunggah Laporan Keuangan yang sehat selama 1 tahun terakhir dan telah diaudit akuntan publik yang terdaftar dengan
+						opini minimal Wajar Dengan Pengecualian (WDP). <br> (Format: PDF, Ukuran:Max 10 MB)</li>
 					<li>Pemohon mengunggah Dokumen Susunan Pengurus, Data Pemegang Saham, Anggota Direksi dan Komisaris. <br> (Format: PDF, Ukuran: Max 10 MB)</li>
 					<li>Pemohon mengunggah Laporan Bukti Pemberangkatan jemaah minimal 200 orang. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
 					<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.</li>

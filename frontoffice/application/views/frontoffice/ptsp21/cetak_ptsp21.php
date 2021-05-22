@@ -73,7 +73,7 @@
 			text-indent: 50px;
 			font-size: 11pt;
 		}
-		
+
 		.isi_surat {
 			margin-left: 0;
 			font-size: 11pt;
@@ -188,22 +188,23 @@
 										<img class="logosurat" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag.png') ?>">
 									</object>
 								</div>
-								<?php foreach ($detail_ptsp as $detail) { ?>
 								<div class="badan_surat">
-									<div class="kepala_Sertifikat">
-										<h3 style="margin-top: 20px;"><b>SERTIFIKAT</b></h3>
+									<?php foreach ($detail_ptsp as $detail) { ?>
+										<div class="kepala_Sertifikat">
+											<h3 style="margin-top: 20px;"><b>SERTIFIKAT</b></h3>
 											<h5><b>Nomor : <?= $detail->no_surat ?> </b></h5>
 											<p>Kepala Kantor Kementrian Agama Kabupaten Klaten Menerangkan bahwa : </p>
-									</div>
-									<div class="no_surat">
-										<h5><b>MASJID/MUSHALLA <?= $detail->nama_masjid ?></b></h5>
-										<p>Dukuh <?= $detail->dukuh ?>, RT <?= $detail->rt ?>, RW <?= $detail->rw ?>, Desa <?= $detail->desa ?>, Kecamatan <?= $detail->kecamatan ?>, Kabupaten Klaten</p>
-									</div>
+										</div>
+										<div class="no_surat">
+											<h5><b>MASJID/MUSHALLA <?= $detail->nama_masjid ?></b></h5>
+											<p>Dukuh <?= $detail->dukuh ?>, RT <?= $detail->rt ?>, RW <?= $detail->rw ?>, Desa <?= $detail->desa ?>, Kecamatan <?= $detail->kecamatan ?>, Kabupaten Klaten</p>
+										</div>
+									<?php } ?>
 									<br>
 									<div class="isi_surat">
 										<p>Telah dilakukan pengukuran arah kiblat : </p>
 										<p> Oleh Tim Sertifikat Arah Kiblat Kabupaten Klaten</p>
-										
+
 										<p>....................20...M</p>
 										<p>Pada hari,.....tanggal,..........................................................................</p>
 										<p>...................14...H</p>
@@ -215,129 +216,146 @@
 										<div class="col-md-6">
 											<div class="badan_surat ttd_surat">
 												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-												<p>Klaten,..........................,20... <br>
-													Kepala, </p><br><br>
-												<b>H. Anif Solikhin, S.Ag. MSI</b><br>
-												Nip. 197004201995031003
+												<?php
+												foreach ($detail_ptsp as $detail) { ?>
+													<p>Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?> <br>
+														Kepala,
+													</p>
+												<?php } ?>
+												<br><br>
+												<?php
+												foreach ($data_kepala as $detail) { ?>
+													<b><?= $detail->nama ?></b><br>
+													Nip. <?= $detail->nip ?>
+												<?php } ?>
 											</div>
 										</div>
 									</div>
-								</center>
-							</div>
-							<?php } ?>
+							</center>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	</div>
 	<!-- /.container-fluid -->
-	
+
 	<!-- Begin Page Content -->
 	<div class="container-fluid">
 		<!-- Page Heading -->
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card shadow mb-4">
-						<div class="card-body">
-							<?php foreach ($detail_ptsp as $detail) { ?>
-							<div class="badan_surat">
-								<center>
+					<div class="card-body">
+						<div class="badan_surat">
+							<center>
+								<?php foreach ($detail_ptsp as $detail) { ?>
 									<div class="kepala_Sertifikat">
 										<h6><b>BERITA ACARA PENGUKURAN ARAH KIBLAT</b></h6>
-										<h6><b>MASJID/MUSHALLA..............</b></h6>
-										<h6><b>Dukuh,....RT,.....RW,.......Desa,....Kecamatan,.......Kabupaten Klaten</b></h6>
+										<h6><b>MASJID/MUSHALLA <?= $detail->nama_masjid ?></b></h6>
+										<h6><b>Dukuh, <?= $detail->dukuh ?> RT, <?= $detail->rt ?> RW, <?= $detail->rw ?> Desa, <?= $detail->desa ?> Kecamatan, <?= $detail->kecamatan ?> Kabupaten Klaten</b></h6>
 									</div>
-								</center>
-								<table>
-									<tr>
-										<td width="400">
-											<p><b>Data Astronomi dengan menggunakan Ephimeris :
-											<br> Hari : ..........,...............20........</b></p>
-										</td>
-										<td>
-											<p><b>Gambar Arah Kiblat :</b></p>
-										</td>
-									</tr>
+								<?php } ?>
+							</center>
+							<table>
+								<tr>
+									<td width="400">
+										<p><b>Data Astronomi dengan menggunakan Ephimeris :
+												<br> Hari : ..........,...............20........</b></p>
+									</td>
+									<td>
+										<p><b>Gambar Arah Kiblat :</b></p>
+									</td>
+								</tr>
+								<br>
+								<tr>
+									<td>
+										<div>
+											<table border="1">
+												<tr>
+													<td width=200>Lintang Tempat</td>
+													<td width=100>.......&ordm;......&ordm;.....&ordm;</td>
+												</tr>
+												<tr>
+													<td>Bujur Tempat</td>
+													<td>.......&ordm;......&ordm;.....&ordm;</td>
+												</tr>
+												<tr>
+													<td>Waktu Pengukuran</td>
+													<td>.......,......WIB</td>
+												</tr>
+												<tr>
+													<td>Dekhinasi Matahari</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>True Norht</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Sudut Waktu Matahari</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Azimuth Matahari</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Azimuth Kiblat</td>
+													<td>.......&ordm;......&ordm;.....&ordm;</td>
+												</tr>
+												<tr>
+													<td>Rashdul Kiblat</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Tim Pengukur</td>
+													<td>1.
+														<br>2.
+														<br>3.
+													</td>
+												</tr>
+												<tr>
+													<td>Saksi</td>
+													<td>1.
+														<br>2.
+														<br>3.
+													</td>
+												</tr>
+											</table>
+										</div>
+									</td>
+									<td>
+										gambar
+									</td>
+								</tr>
+							</table>
+
+							<div style="margin-left:500">
+								<?php
+								foreach ($detail_ptsp as $detail) { ?>
+									Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?>
+								<?php } ?>
+								Kepala, Seksi Bimbingan Masyarakat Islam
+								<br><br>
+								<?php
+								foreach ($data_kepala as $detail) { ?>
+									<?= $detail->nama ?>
 									<br>
-									<tr>
-										<td>
-											<div>
-												<table border="1">
-													<tr>
-														<td width=200>Lintang Tempat</td>
-														<td width=100>.......&ordm;......&ordm;.....&ordm;</td>
-													</tr>
-													<tr>
-														<td>Bujur Tempat</td>
-														<td>.......&ordm;......&ordm;.....&ordm;</td>
-													</tr>
-													<tr>
-														<td>Waktu Pengukuran</td>
-														<td>.......,......WIB</td>
-													</tr>
-													<tr>
-														<td>Dekhinasi Matahari</td>
-														<td></td>
-													</tr>
-													<tr>
-														<td>True Norht</td>
-														<td></td>
-													</tr>
-													<tr>
-														<td>Sudut Waktu Matahari</td>
-														<td></td>
-													</tr>
-													<tr>
-														<td>Azimuth Matahari</td>
-														<td></td>
-													</tr>
-													<tr>
-														<td>Azimuth Kiblat</td>
-														<td>.......&ordm;......&ordm;.....&ordm;</td>
-													</tr>
-													<tr>
-														<td>Rashdul Kiblat</td>
-														<td></td>
-													</tr>
-													<tr>
-														<td>Tim Pengukur</td>
-														<td>1.
-															<br>2.
-															<br>3.
-														</td>
-													</tr>
-													<tr>
-														<td>Saksi</td>
-														<td>1.
-															<br>2.
-															<br>3.
-														</td>
-													</tr>
-												</table>
-											</div>
-										</td>
-										<td>
-											gambar
-										</td>
-									</tr>
-								</table>
-								<div style="margin-left:500">
-								Klaten,..........................,20...
-									Kepala, Seksi Bimbingan Masyarakat Islam 
-									<br><br>
-								H. Anif Solikhin, S.Ag. MSI
-								Nip. 197004201995031003
-								</div>
+									Nip. <?= $detail->nip; ?>
+								<?php } ?>
 							</div>
-							<?php } ?>
+
 						</div>
+
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- /.container-fluid -->
-	
+
 	<!-- End of Main Content -->
 </body>
 

@@ -363,7 +363,7 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td><?= $detail->tempat_lahir_siswa ?>, <?= $detail->tgl_lahir_siswa ?>
+											<td><?= $detail->tempat_lahir_siswa ?>, <?= format_indo(date($detail->tgl_lahir_siswa)); ?>
 											</td>
 										</tr>
 										<tr>

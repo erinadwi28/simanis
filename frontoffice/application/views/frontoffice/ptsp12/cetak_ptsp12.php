@@ -217,6 +217,91 @@
 												<td></td>
 												<td></td>
 												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
 												<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
 											</tr>
 											<tr>
@@ -257,7 +342,7 @@
 							<div class="isi_surat">
 								<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menindaklanjuti surat permohonan dari Kepala <?= $detail->nama_sekolah ?> Nomor : <?= $detail->no_srt_permohonan ?>
 									tanggal <?= format_indo(date($detail->tgl_srt_permohonan)); ?> perihal sebagaimana dalam pokok surat, maka dengan ini Kepala Kantor Kementerian Agama Kabupaten Klaten
-									memberikan rekomendasi untuk <?= $detail->keperluan; ?>. </p>
+									memberikan Rekomendasi untuk mengajukan bantuan <?= $detail->keperluan; ?>. </p>
 							</div>
 							<div class="isi_surat">
 								<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demikian rekomendasi ini dibuat untuk dapat dipergunakan

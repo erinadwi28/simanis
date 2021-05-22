@@ -103,7 +103,7 @@
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
+									<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
 								</tr>
 								<?php if ($detail->tgl_persetujuan_fo != null) { ?>
 									<tr>

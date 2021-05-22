@@ -208,7 +208,7 @@
 							<div class="isi_surat">
 								<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Berdasarkan permohonan dari Saudara <?= $detail->nama_pemohon ?> selaku Pimpinan PT
 									<?= $detail->nama_pt ?> perihal
-									Rekomendasi Perpanjang Izin Operasional Kantor Cabang PPIU. Setelah dilakukan peninjauan
+									Rekomendasi Perpanjangan Izin Operasional Kantor Cabang PPIU. Setelah dilakukan peninjauan
 									terhadap Kantor
 									Cabang PT <?= $detail->nama_pt ?> yang berdomisili di
 									<?= $detail->domisili_kantor_cabang ?> maka Kepala Kantor Kementerian Agama Kab. Klaten

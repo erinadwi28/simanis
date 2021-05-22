@@ -113,8 +113,7 @@
 			<div class="col-md-8 mb-4">
 				<div class="card shadow">
 					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Izin Perpanjangan Operasional
-							KBIHU</h6>
+						<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Izin Pendirian Penyelenggara Perjalanan Ibadah Umroh (PPIU) dan Perjalanan Ibadah Haji Khusus (PIHK)</h6>
 					</div>
 					<div class="card-body">
 						<table class="table-hover table-responsive">
@@ -183,7 +182,7 @@
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
+									<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
 								</tr>
 								<?php if ($detail->tgl_persetujuan_fo != null) { ?>
 									<tr>
@@ -203,6 +202,16 @@
 										<td>:</td>
 										<td> </td>
 										<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_persetujuan_tim_teknis != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Tim Teknis</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_tim_teknis)); ?></td>
 									</tr>
 								<?php } ?>
 								<?php if ($detail->tgl_persetujuan_kasi != null) { ?>

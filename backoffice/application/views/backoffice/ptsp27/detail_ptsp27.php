@@ -83,11 +83,23 @@
 					<div class="card-body">
 						<table class="table-hover table-responsive">
 							<tbody>
+								<!-- <?php
+										if ($detail->no_surat != null) { ?>
+									<tr>
+										<td><b>Nomor Surat</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->no_surat ?></td>
+									</tr>
+								<?php } ?> -->
 								<tr>
 									<td><b>Nama</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->nama_pemohon ?></td>
 								</tr>
 								<tr>
@@ -95,6 +107,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->alamat ?></td>
 								</tr>
 								<tr>
@@ -102,6 +115,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->pekerjaan ?></td>
 								</tr>
 								<tr>
@@ -109,6 +123,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->no_hp ?></td>
 								</tr>
 								<tr>
@@ -116,6 +131,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
+									<td> </td>
 									<td><?= $detail->tujuan_permohonan_suket_penghasilan ?></td>
 								</tr>
 								<tr>
@@ -123,7 +139,8 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
-									<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
+									<td> </td>
+									<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
 								</tr>
 								<?php if ($detail->tgl_persetujuan_fo != null) { ?>
 									<tr>
@@ -131,6 +148,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= format_indo(date($detail->tgl_persetujuan_fo)); ?></td>
 									</tr>
 								<?php } ?>
@@ -140,6 +158,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
 									</tr>
 								<?php } ?>
@@ -149,6 +168,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= format_indo(date($detail->tgl_persetujuan_tim_teknis)); ?></td>
 									</tr>
 								<?php } ?>
@@ -158,6 +178,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= format_indo(date($detail->tgl_persetujuan_kasi)); ?></td>
 									</tr>
 								<?php } ?>
@@ -167,6 +188,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
 									</tr>
 								<?php } ?>
@@ -176,6 +198,7 @@
 										<td> </td>
 										<td> </td>
 										<td>:</td>
+										<td> </td>
 										<td><?= $detail->keterangan; ?></td>
 									</tr>
 								<?php } ?>

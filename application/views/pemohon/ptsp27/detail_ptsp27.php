@@ -108,6 +108,17 @@
 					<div class="card-body">
 						<table class="table-hover table-responsive">
 							<tbody>
+								<!-- <?php
+										if ($detail->no_surat != null) { ?>
+									<tr>
+										<td><b>Nomor Surat</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->no_surat ?></td>
+									</tr>
+								<?php } ?> -->
 								<tr>
 									<td><b>Nama Pemohon</b></td>
 									<td> </td>

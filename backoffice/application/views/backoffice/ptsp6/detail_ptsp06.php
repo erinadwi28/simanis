@@ -74,7 +74,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
-									<td><?= $detail->tanggal_lahir ?></td>
+									<td><?= format_indo(date($detail->tanggal_lahir)); ?></td>
 								</tr>
 								<tr>
 									<td><b>No. HandPhone</b></td>
@@ -109,7 +109,7 @@
 									<td> </td>
 									<td> </td>
 									<td>:</td>
-									<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
+									<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
 								</tr>
 								<?php if ($detail->tgl_persetujuan_fo != null) { ?>
 									<tr>

@@ -1190,6 +1190,19 @@ class Dashboard extends CI_Controller
                 redirect('dashboard/list_permohonan_selesai');
         }
 
+        // aksi update ptsp24
+        public function aksi_update_pengajuan_ptsp27($id_permohonan)
+        {
+                $data_ptsp = array(
+                        'no_surat' => $this->input->post('no_surat')
+                );
+
+                $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp27');
+
+                $this->session->set_flashdata('success', 'disimpan');
+                redirect('dashboard/list_permohonan_selesai');
+        }
+
         //upload suket_penghasilan ptsp27
         private function aksi_upload_suket_penghasilan_ptsp27($id_ptsp27)
         {

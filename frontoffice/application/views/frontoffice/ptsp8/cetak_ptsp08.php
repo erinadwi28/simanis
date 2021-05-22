@@ -21,7 +21,7 @@
 		.body {
 			color: #000;
 			font-family: Calibri, Helvetica, Arial, sans-serif;
-			font-size: 11;
+			font-size: 11pt;
 		}
 
 		.logosurat {

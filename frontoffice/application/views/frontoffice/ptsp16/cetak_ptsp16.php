@@ -127,8 +127,7 @@
 									<td></td>
 									<td class="img">
 										<center>
-											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
-												width="100" height="100">
+											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>" width="100" height="100">
 										</center>
 									</td>
 									<td width="430" style="padding-left: 10px;">
@@ -162,41 +161,41 @@
 												<td>:</td>
 												<td><?= $detail->no_surat ?></td>
 												<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
 											</tr>
 											<tr>
 												<td>Sifat</td>
@@ -256,7 +255,7 @@
 							</div>
 							<div class="col-md-3">
 								<div class="ttd_surat">
-										Kepala
+									Kepala
 								</div>
 							</div>
 						</div>
@@ -268,8 +267,8 @@
 								<?php
 								foreach ($data_kepala as $detail) { ?>
 									<div class="ttd_surat">
-											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-											<?= $detail->nama ?>
+										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+										<?= $detail->nama ?>
 									</div>
 								<?php } ?>
 							</div>

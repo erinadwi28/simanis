@@ -114,28 +114,28 @@
 				</div>
 				<!-- Suket Penghasilan -->
 				<?php if ($detail->suket_penghasilan != null) { ?>
-				<div class="card shadow mb-4">
-					<div class="card-header py-3">
-						<center>
-							<h6 class="m-0 font-weight-bold">Surat Keterangan Penghasilan</h6>
-						</center>
-					</div>
+					<div class="card shadow mb-4">
+						<div class="card-header py-3">
+							<center>
+								<h6 class="m-0 font-weight-bold">Surat Keterangan Penghasilan</h6>
+							</center>
+						</div>
 
-					<div class="card-body">
-						<center>
-							<?php if ($detail->suket_penghasilan != null) { ?>
-								<p><?= $detail->suket_penghasilan; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp27/suket_penghasilan/<?= $detail->suket_penghasilan ?>" target="_blank">
-									<i class="fa fa-download nav-icon">
-									</i> Klik untuk melihat
-								</a>
-							<?php } elseif ($detail->suket_penghasilan == null) { ?>
-								<p class="mb-0">Belum ada lampiran</p>
-							<?php } ?>
-						</center>
+						<div class="card-body">
+							<center>
+								<?php if ($detail->suket_penghasilan != null) { ?>
+									<p><?= $detail->suket_penghasilan; ?></p>
+									<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp27/suket_penghasilan/<?= $detail->suket_penghasilan ?>" target="_blank">
+										<i class="fa fa-download nav-icon">
+										</i> Klik untuk melihat
+									</a>
+								<?php } elseif ($detail->suket_penghasilan == null) { ?>
+									<p class="mb-0">Belum ada lampiran</p>
+								<?php } ?>
+							</center>
+						</div>
 					</div>
-				</div>
-				<?php }?>
+				<?php } ?>
 			</div>
 			<div class="col-md-8 mb-0">
 				<!-- Detail Data -->
@@ -146,6 +146,17 @@
 					<div class="card-body">
 						<table class="table-hover table-responsive">
 							<tbody>
+								<!-- <?php
+										if ($detail->no_surat != null) { ?>
+									<tr>
+										<td><b>Nomor Surat</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->no_surat ?></td>
+									</tr>
+								<?php } ?> -->
 								<tr>
 									<td><b>Nama</b></td>
 									<td> </td>
@@ -258,7 +269,7 @@
 						</table>
 					</div>
 					<div class="card-footer">
-						
+
 					</div>
 				</div>
 			</div>

@@ -17,29 +17,28 @@
 		<div class="col-md-8 mb-4">
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Izin Perpanjang Operasional <br>
-						Penyelengara Perjalanan Ibadah Umroh (PPIU) dan Perjalanan Ibadah Haji Khusus (PIHK)
+					<h6 class="m-0 font-weight-bold text-center">Permohonan Rekomendasi Izin Perpanjangan Operasional <br> Penyelenggara Perjalanan Ibadah Umroh (PPIU) dan Perjalanan Ibadah Haji Khusus (PIHK)
 					</h6>
 				</div>
 				<div class="card-body ">
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
-						<ol type="1" class="ml-0 list-syarat">
-							<li>Pemohon mengunduh Surat Permohonan, unduh dengan <b><a href="<?= base_url() ?>assets/dashboard/unduhan/pemohon/ptsp10/Template%20Surat%20Permohonan.docx">[klik disini]</a></b></li>
-							<li>Pemohon mengisi Surat Permohonan yang ditujukan kepada Kepala Kantor Kemenag Klaten.</li>
-							<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
-							<li>Pemohon mengunggah Surat Permohonan. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon mengunggah SK PPIU yang masih berlaku. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon mengunggah Akte Notaris Pendirian Perusahaan. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon mengunggah Surat Izin Usaha pendirian perjalanan wisata paling singkat 2 tahun.<br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon mengunggah NPWP perusahaan dan pimpinan perusahaan. <br> (Format: PDF, Ukuran:Max 1 MB)</li>
-							<li>Pemohon mengunggah Surat Rekomendasi PEMKAB setempat. <br> (Format: PDF, Ukuran:Max 1 MB)</li>
-							<li>Pemohon mengunggah Laporan Keuangan yang sehat selama 1 tahun terakhir dan telah diaudit akuntan publik yang terdaftar dengan 
+					<ol type="1" class="ml-0 list-syarat">
+						<li>Pemohon mengunduh Surat Permohonan, unduh dengan <b><a href="<?= base_url() ?>assets/dashboard/unduhan/pemohon/ptsp10/Template%20Surat%20Permohonan.docx">[klik disini]</a></b></li>
+						<li>Pemohon mengisi Surat Permohonan yang ditujukan kepada Kepala Kantor Kemenag Klaten.</li>
+						<li>Pemohon mengisi formulir dalam aplikasi ini.</li>
+						<li>Pemohon mengunggah Surat Permohonan. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon mengunggah SK PPIU yang masih berlaku. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon mengunggah Akte Notaris Pendirian Perusahaan. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon mengunggah Surat Izin Usaha pendirian perjalanan wisata paling singkat 2 tahun.<br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon mengunggah NPWP perusahaan dan pimpinan perusahaan. <br> (Format: PDF, Ukuran:Max 1 MB)</li>
+						<li>Pemohon mengunggah Surat Rekomendasi PEMKAB setempat. <br> (Format: PDF, Ukuran:Max 1 MB)</li>
+						<li>Pemohon mengunggah Laporan Keuangan yang sehat selama 1 tahun terakhir dan telah diaudit akuntan publik yang terdaftar dengan
 							opini minimal Wajar Dengan Pengecualian (WDP). <br> (Format: PDF, Ukuran:Max 10 MB)</li>
-							<li>Pemohon mengunggah Dokumen Susunan Pengurus, Data Pemegang Saham, Anggota Direksi dan Komisaris. <br> (Format: PDF, Ukuran: Max 10 MB)</li>
-							<li>Pemohon mengunggah Laporan Bukti Pemberangkatan jemaah minimal 200 orang. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.</li>
-						</ol>
+						<li>Pemohon mengunggah Dokumen Susunan Pengurus, Data Pemegang Saham, Anggota Direksi dan Komisaris. <br> (Format: PDF, Ukuran: Max 10 MB)</li>
+						<li>Pemohon mengunggah Laporan Bukti Pemberangkatan jemaah minimal 200 orang. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.</li>
+					</ol>
 					</p>
 				</div>
 				<div class="card-footer">

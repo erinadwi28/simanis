@@ -187,7 +187,7 @@
 										<td style="text-align: center; padding:2px">1.</td>
 										<td style="padding:2px"><?= $detail->nama ?></td>
 										<td style="padding:2px"><?= $detail->alamat ?></td>
-										<td style="padding:2px"><?= $detail->tempat_lahir ?>, <?= $detail->tanggal_lahir ?></td>
+										<td style="padding:2px"><?= $detail->tempat_lahir ?>, <?= format_indo(date($detail->tanggal_lahir)); ?></td>
 										<td style="padding:2px"><?= $detail->no_hp ?></td>
 									</tr>
 								</tbody>

@@ -71,7 +71,7 @@
 			text-indent: 50px;
 			font-size: 11pt;
 		}
-		
+
 		.isi_surat {
 			margin-left: 0.0375em;
 			font-size: 11pt;
@@ -196,7 +196,7 @@
 							<div class="no_surat">
 								<center>
 									<p><u><b>SURAT KETERANGAN</b></u><br>
-										<b>Nomor : </b>
+										<b>Nomor : <?= $detail->no_surat ?> </b>
 									</p>
 								</center>
 							</div>
@@ -409,23 +409,23 @@
 						<br><br><br><br>
 						<div class="row">
 							<div class="col-md-6">
-								<div class="badan_surat ">									
+								<div class="badan_surat ">
 									<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-								<table>
-									<tr>
-										<td width="300px">Pejabat Pembuat Komitmen<br><br><br><br></td>
-										<td>Klaten, 03 Maret 2020<br>
-										Bendahara Pengeluaran Kementrian <br>
-										Agama Kantor Kab. Klaten<br><br><br><br></td>
-									</tr>
-									
-									<tr>
-										<td><u><b>DRS. H. WAHIB</b></u><br>
-										Nip. 196805281995031001 </td>
-										<td><u><b>AULIA NOOR HAYATI</b></u><br>
-										Nip. 198312202011012006 </td>
-									</tr>
-								</table>	
+									<table>
+										<tr>
+											<td width="300px">Pejabat Pembuat Komitmen<br><br><br><br></td>
+											<td>Klaten, 03 Maret 2020<br>
+												Bendahara Pengeluaran Kementrian <br>
+												Agama Kantor Kab. Klaten<br><br><br><br></td>
+										</tr>
+
+										<tr>
+											<td><u><b>DRS. H. WAHIB</b></u><br>
+												Nip. 196805281995031001 </td>
+											<td><u><b>AULIA NOOR HAYATI</b></u><br>
+												Nip. 198312202011012006 </td>
+										</tr>
+									</table>
 								</div>
 							</div>
 						</div>

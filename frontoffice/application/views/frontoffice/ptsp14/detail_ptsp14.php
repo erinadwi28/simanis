@@ -117,31 +117,31 @@
 						</center>
 					</div>
 				</div>
-			
 
-			<?php if ($detail->berita_acara != null) { ?>
-				<!-- Proposal Berita Acara -->
-				<div class="card shadow mb-4">
-					<div class="card-header">
-						<center>
-							<h6 class="m-0 font-weight-bold">Berita Acara</h6>
-						</center>
+
+				<?php if ($detail->berita_acara != null) { ?>
+					<!-- Proposal Berita Acara -->
+					<div class="card shadow mb-4">
+						<div class="card-header">
+							<center>
+								<h6 class="m-0 font-weight-bold">Berita Acara</h6>
+							</center>
+						</div>
+
+						<div class="card-body">
+							<center>
+
+								<p><?= $detail->berita_acara; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara/<?= $detail->berita_acara ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+
+							</center>
+						</div>
 					</div>
 
-					<div class="card-body">
-						<center>
-
-							<p><?= $detail->berita_acara; ?></p>
-							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara/<?= $detail->berita_acara ?>" target="_blank">
-								<i class="fa fa-download nav-icon">
-								</i> Klik untuk melihat
-							</a>
-
-						</center>
-					</div>
-				</div>
-				
-			<?php } ?>
+				<?php } ?>
 			</div>
 			<div class="col-md-8 mb-4">
 				<div class="card shadow mb-4">
@@ -296,6 +296,16 @@
 										<td>:</td>
 										<td> </td>
 										<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_persetujuan_tim_teknis != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Tim Teknis</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_tim_teknis)); ?></td>
 									</tr>
 								<?php } ?>
 								<?php if ($detail->tgl_persetujuan_kasi != null) { ?>

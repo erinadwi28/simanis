@@ -103,7 +103,7 @@
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
+									<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
 								</tr>
 								<?php if ($detail->tgl_persetujuan_fo != null) { ?>
 									<tr>
@@ -123,6 +123,16 @@
 										<td>:</td>
 										<td> </td>
 										<td><?= format_indo(date($detail->tgl_persetujuan_bo)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_persetujuan_tim_teknis != null) { ?>
+									<tr>
+										<td><b>Tanggal Persetujuan Tim Teknis</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_persetujuan_tim_teknis)); ?></td>
 									</tr>
 								<?php } ?>
 								<?php if ($detail->tgl_persetujuan_kasi != null) { ?>

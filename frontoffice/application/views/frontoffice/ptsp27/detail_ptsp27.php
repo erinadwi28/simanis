@@ -108,10 +108,9 @@
 					</div>
 				</div>
 
-				<!-- Upload suket_penghasilan -->
-				<div class="card shadow mb-4">
-					<?php
-					if ($detail->suket_penghasilan == null && $detail->status == 'Selesai') { ?>
+				<?php
+				if ($detail->status == 'Selesai') { ?>
+					<div class="card shadow mb-4">
 						<div class="card-header">
 							<center>
 								<h6 class="m-0 font-weight-bold">Suket Penghasilan</h6>
@@ -130,50 +129,32 @@
 								<?php } ?>
 							</center>
 						</div>
-					<?php } elseif ($detail->suket_penghasilan != null) { ?>
-						<div class="card-header">
-							<center>
-								<h6 class="m-0 font-weight-bold">Suket Penghasilan</h6>
-							</center>
-						</div>
-						<div class="card-body">
-							<center>
-								<?php if ($detail->suket_penghasilan != null) { ?>
-									<p><?= $detail->suket_penghasilan; ?></p>
-									<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp27/suket_penghasilan/<?= $detail->suket_penghasilan ?>" target="_blank">
-										<i class="fa fa-download nav-icon">
-										</i> Klik untuk melihat
-									</a>
-								<?php } elseif ($detail->suket_penghasilan == null) { ?>
-									<p>Belum ada lampiran</p>
-								<?php } ?>
-							</center>
-						</div>
-					<?php } ?>
-					<?php if ($detail->suket_penghasilan == null || $detail->status_cetak != 1) { ?>
-						<div class="card-footer">
-							<form action="<?= base_url('dashboard/update_suket_penghasilan_ptsp27/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_suket_penghasilan">
-								<div class="form-group">
-									<div class="input-group">
-										<div class="form-group-upload">
-											<div class="custom-file">
-												<label class="custom-file-label" for="file-upload-2">pilih file...</label>
-												<input type="file" class="custom-file-input" id="file-upload-2" name="suket_penghasilan" value="<?= $detail->suket_penghasilan ?>">
-												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
+						<?php if ($detail->suket_penghasilan == null || $detail->status_cetak != 1) { ?>
+							<div class="card-footer">
+								<form action="<?= base_url('dashboard/update_suket_penghasilan_ptsp27/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_suket_penghasilan">
+									<div class="form-group">
+										<div class="input-group">
+											<div class="form-group-upload">
+												<div class="custom-file">
+													<label class="custom-file-label" for="file-upload-2">pilih file...</label>
+													<input type="file" class="custom-file-input" id="file-upload-2" name="suket_penghasilan" value="<?= $detail->suket_penghasilan ?>">
+													<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								<center>
-									<button class="btn btn-sm btn-primary" type="submit">
-										<i class="fa fa-upload">
-										</i>
-									</button>
-								</center>
-							</form>
-						</div>
-					<?php } ?>
-				</div>
+									<center>
+										<button class="btn btn-sm btn-primary" type="submit">
+											<i class="fa fa-upload">
+											</i>
+										</button>
+									</center>
+								</form>
+							</div>
+						<?php } ?>
+					</div>
+				<?php } ?>
+
 			</div>
 			<div class="col-md-8 mb-2">
 				<div class="card shadow mb-4">
@@ -183,6 +164,17 @@
 					<div class="card-body">
 						<table class="table-hover table-responsive">
 							<tbody>
+								<!-- <?php
+										if ($detail->no_surat != null) { ?>
+									<tr>
+										<td><b>Nomor Surat</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->no_surat ?></td>
+									</tr>
+								<?php } ?> -->
 								<tr>
 									<td><b>Nama Pemohon</b></td>
 									<td> </td>
@@ -305,9 +297,11 @@
 					<?php } ?>
 				</div>
 
-				<div class="row clearfix">
+				<!-- <?php
+						if ($detail->status == 'Selesai' && $detail->no_surat == null) { ?>
+					<div class="row clearfix">
 						<div class="col-md-12">
-							<form class="form-horizontal" id="no_surat_ptsp27" enctype="multipart/form-data" action="" method="POST">
+							<form class="form-horizontal" id="no_surat_ptsp27" enctype="multipart/form-data" action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp27/<?= $detail->id_permohonan_ptsp ?>" method="POST">
 								<div class="input-group mb-3 col-md-6 float-right p-0">
 									<input type="text" class="form-control " id="no_surat" name="no_surat" value=".../Kk.11.10/06/KU.1.1/<?= date("m/Y") ?>" required>
 									<button class="btn btn-sm btn-primary" type="submit" id="button-addon2"><i class="fas fa-check-circle">
@@ -316,6 +310,7 @@
 							</form>
 						</div>
 					</div>
+				<?php } ?> -->
 
 			</div>
 		</div>

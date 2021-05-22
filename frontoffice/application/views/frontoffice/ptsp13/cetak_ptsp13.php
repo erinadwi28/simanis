@@ -148,7 +148,7 @@
 										<p>&nbsp; &nbsp; &nbsp; Diberikan kepada :</p>
 									</div>
 									<div class="isi_surat identitas">
-										<table class="table-responsive">
+										<table class="table">
 											<tbody>
 												<tr>
 													<td>Nama LPQ</td>

@@ -116,7 +116,7 @@
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= $detail->tgl_srt_permohonan; ?></td>
+									<td><?= format_indo(date($detail->tgl_srt_permohonan)); ?></td>
 								</tr>
 								<tr>
 									<td><b>No Surat Permohonan</b></td>
@@ -140,7 +140,7 @@
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= $detail->tgl_acara; ?></td>
+									<td><?= format_indo(date($detail->tgl_acara)); ?></td>
 								</tr>
 								<tr>
 									<td><b>Waktu Acara</b></td>
@@ -172,7 +172,7 @@
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= format_indo(date($detail->tgl_permohonan)) ?></td>
+									<td><?= format_indo(date($detail->tgl_permohonan)); ?></td>
 								</tr>
 								<?php if ($detail->tgl_persetujuan_fo != null) { ?>
 									<tr>

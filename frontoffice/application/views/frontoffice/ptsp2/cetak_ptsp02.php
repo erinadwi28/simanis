@@ -226,7 +226,7 @@
 				<tr>
 					<td>
 						<font size="2">&emsp;&emsp; Diberitahukan dengan hormat, setelah membaca dan memperhatikan surat permohonan Rekomendasi dari
-							<?= $detail->pemohon ?>, Nomor<?= $detail->no_srt_permohonan ?>, tanggal <?= format_indo(date($detail->tgl_srt_permohonan)); ?>
+							<?= $detail->pemohon ?>, Nomor: <?= $detail->no_srt_permohonan ?>, tanggal <?= format_indo(date($detail->tgl_srt_permohonan)); ?>
 							perihal seperti pokok surat dengan mengadakan kegiatan yang akan dilaksanakan pada:</font>
 					</td>
 				</tr>
@@ -237,8 +237,8 @@
 			<table width="530">
 				<tr class="text2">
 					<td width="20"></td>
-					<td width="120">Hari</td>
-					<td>: <?= $detail->hari_kegiatan ?></td>
+					<td width="120">Hari/Tanggal</td>
+					<td>: <?= $detail->hari_kegiatan ?>, <?= format_indo(date($detail->tgl_kegiatan)); ?></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -253,17 +253,17 @@
 				<tr>
 					<td></td>
 					<td>Acara</td>
-					<td>:<?= $detail->nama_kegiatan ?></td>
+					<td>: <?= $detail->nama_kegiatan ?></td>
 				</tr>
 				<tr>
 					<td></td>
 					<td>Jumlah Peserta</td>
-					<td>:<?= $detail->jml_peserta ?></td>
+					<td>: <?= $detail->jml_peserta ?></td>
 				</tr>
 				<tr>
 					<td></td>
 					<td>Agenda Kegiatan</td>
-					<td>:<?= $detail->agenda_kegiatan ?></td>
+					<td>: <?= $detail->agenda_kegiatan ?></td>
 				</tr>
 			</table>
 		<?php } ?>
@@ -304,7 +304,7 @@
 				<tr>
 					<td width="300"><br><br><br><br></td>
 					<td class="text" align="center">Kepala Kantor Kementrian Agama <br> Kabupaten Klaten<br><br><br><br>
-						<u style="color: #000000;"><?= $detail->nama ?></u><br><?= $detail->nip ?>
+						<u style="color: #000000;"><?= $detail->nama ?></u><br>NIP. <?= $detail->nip ?>
 					</td>
 				</tr>
 			</table>

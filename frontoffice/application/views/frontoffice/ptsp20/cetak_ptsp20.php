@@ -71,7 +71,7 @@
 			text-indent: 50px;
 			font-size: 11pt;
 		}
-		
+
 		.isi_surat {
 			margin-left: 0.0375em;
 			font-size: 11pt;
@@ -202,13 +202,13 @@
 										</div>
 									</center>
 									<p style="margin-left: 90px;">&emsp;<b>PIAGAM IZIN OPERASIONAL MAJELIS TAKLIM</b>
-									<br><b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Nomor : <?= $detail->no_surat ?></b>
+										<br><b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Nomor : <?= $detail->no_surat ?></b>
 									</p>
 									</center>
 								</div><br>
 								<div class="isi_surat">
 									<p align="justify">&emsp;&emsp;
-										Dengan ini Kepala Kantor Kementrian Agama Kabupaten Klaten memberikan Statistik Majelis Taklim Kepada :
+										Dengan ini Kepala Kantor Kementrian Agama Kabupaten Klaten memberikan Nomor Statistik Majelis Taklim Kepada :
 									</p>
 								</div>
 								<div class="isi_surat identitas">
@@ -309,10 +309,13 @@
 								<div class="col-md-6">
 									<div class="badan_surat ttd_surat">
 										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-										<P>
-											<u><b>H. Anif Solikhim. S.Ag. M S I</b></u><br>
-											Nip. 197004201995031003
-										</P>
+										<?php
+										foreach ($data_kepala as $detail) { ?>
+											<P>
+												<u><b><?= $detail->nama ?></b></u><br>
+												Nip. <?= $detail->nip ?>
+											</P>
+										<?php } ?>
 									</div>
 								</div>
 							</div>

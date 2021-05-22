@@ -220,7 +220,7 @@
 				<tr>
 					<td></td>
 					<td>Tempat dan Tanggal Lahir</td>
-					<td>: <?= format_indo(date($detail->tanggal_lahir)); ?> </td>
+					<td>: <?= $detail->tempat_lahir ?>, <?= format_indo(date($detail->tanggal_lahir)); ?> </td>
 				</tr>
 				<tr>
 					<td></td>
@@ -247,8 +247,9 @@
 			<table width="530">
 				<tr>
 					<td width="380"><br><br><br><br></td>
-					<td class="text" align="center">Kelaten,<?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><?php } ?>
-						<?php foreach ($data_kepala as $detail) { ?><br>Kepala<br><br><br><br><?= $detail->nama ?><?php } ?>
+					<td class="text" align="center">Kelaten,<?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?>
+					<?php } ?>
+					<?php foreach ($data_kepala as $detail) { ?><br>Kepala<br><br><br><br><?= $detail->nama ?><?php } ?>
 					</td>
 				</tr>
 			</table>
