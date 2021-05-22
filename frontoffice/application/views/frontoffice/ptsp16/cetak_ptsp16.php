@@ -195,7 +195,7 @@
 												<td></td>
 												<td></td>
 												<td></td>
-												<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
+												<td style="margin-left: 300px;"><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
 											</tr>
 											<tr>
 												<td>Sifat</td>
@@ -227,6 +227,7 @@
 									di <br>
 									<?= $detail->tempat_tujuan ?></p>
 							</div>
+							<br>
 							<div class="isi_surat">
 								<p>Assalamu'alaikum Wr. Wb.</p>
 							</div>

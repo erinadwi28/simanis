@@ -225,7 +225,7 @@
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload">pilih
 													file...</label>
-												<input type="file" class="custom-file-input" id="file-upload" name="srt_permohonan" value="<?= $detail->srt_permohonan ?>">
+												<input type="file" class="custom-file-input" id="file-upload" name="srt_permohonan" value="<?= $detail->srt_permohonan ?>" required>
 												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
 											</div>
 										</div>
@@ -271,7 +271,7 @@
 										<div class="form-group-upload">
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload-2">pilih file...</label>
-												<input type="file" class="custom-file-input" id="file-upload-2" name="fc_sk_ijin_operasi" value="<?= $detail->fc_sk_ijin_operasi ?>">
+												<input type="file" class="custom-file-input" id="file-upload-2" name="fc_sk_ijin_operasi" value="<?= $detail->fc_sk_ijin_operasi ?>" required>
 												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload-2" value="<?= $detail->id_permohonan_ptsp ?>">
 											</div>
 										</div>
@@ -318,7 +318,7 @@
 										<div class="form-group-upload">
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload-3">pilih file...</label>
-												<input type="file" class="custom-file-input" id="file-upload-3" name="fc_ktp" value="<?= $detail->fc_ktp ?>">
+												<input type="file" class="custom-file-input" id="file-upload-3" name="fc_ktp" value="<?= $detail->fc_ktp ?>" required>
 												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload-3" value="<?= $detail->id_permohonan_ptsp ?>">
 											</div>
 										</div>
@@ -366,7 +366,7 @@
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload-4">pilih
 													file...</label>
-												<input type="file" class="custom-file-input" id="file-upload-4" name="fc_kk" value="<?= $detail->fc_kk ?>">
+												<input type="file" class="custom-file-input" id="file-upload-4" name="fc_kk" value="<?= $detail->fc_kk ?>" required>
 												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload-4" value="<?= $detail->id_permohonan_ptsp ?>">
 											</div>
 										</div>
@@ -414,7 +414,7 @@
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload-5">pilih
 													file...</label>
-												<input type="file" class="custom-file-input" id="file-upload-5" name="fc_dokumen" value="<?= $detail->fc_dokumen ?>">
+												<input type="file" class="custom-file-input" id="file-upload-5" name="fc_dokumen" value="<?= $detail->fc_dokumen ?>" required>
 												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload-5" value="<?= $detail->id_permohonan_ptsp ?>">
 											</div>
 										</div>

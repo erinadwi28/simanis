@@ -90,7 +90,8 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="no_hp" name="no_hp" 
-									value="" placeholder="masukkan no handpone disini...">
+									value="" placeholder="masukkan no handpone disini..." required data-parsley-type="number"
+										minlength="11">
 								</div>
 							</div>
 						</div>	

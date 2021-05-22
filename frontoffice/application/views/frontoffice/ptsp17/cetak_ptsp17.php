@@ -38,11 +38,6 @@
 			line-height: 1em;
 		}
 
-		.card-body {
-			padding: 5rem;
-			color: black;
-		}
-
 		.badan_surat {
 			color: #000;
 			
