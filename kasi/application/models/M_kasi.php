@@ -97,7 +97,7 @@ class M_kasi extends CI_Model
         $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
         $this->db->join('pemohon', 'permohonan_ptsp.id_pemohon = pemohon.id_pemohon', 'INNER');
         $this->db->where("(permohonan_ptsp.id_kasi != 'null')");
-        $this->db->where("(permohonan_ptsp.status != 'Proses Kasubag')");
+        $this->db->where("(permohonan_ptsp.status != 'Pending')");
         $this->db->where('permohonan_ptsp.sie', $sie);
         $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
 
