@@ -240,7 +240,7 @@
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
-							<?php } elseif ($detail->ktp == null) { ?>
+							<?php } elseif ($detail->foto_kantor == null) { ?>
 								<p class="mb-0">Belum ada lampiran</p>
 							<?php } ?>
 						</center>

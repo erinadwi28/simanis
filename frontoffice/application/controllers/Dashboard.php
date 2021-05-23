@@ -1393,6 +1393,8 @@ class Dashboard extends CI_Controller
                 $dompdf->loadHtml($html);
                 if ($id_layanan == 21) {
                         $dompdf->setPaper('A4', 'landscape');
+                } elseif ($id_layanan == 14) {
+                        $dompdf->setPaper('F4', 'portrait');
                 } else {
                         $dompdf->setPaper('A4', 'portrait');
                 }

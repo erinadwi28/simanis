@@ -930,6 +930,8 @@ class Dashboard extends CI_Controller
         $data = array(
             'tgl_pengukuran' => $this->input->post('tgl_pengukuran'),
             'jam_pengukuran' => $this->input->post('jam_pengukuran'),
+            'hari_pengukuran' => $this->input->post('hari_pengukuran'),
+            'tgl_pengukuran_hijriyah' => $this->input->post('tgl_pengukuran_hijriyah'),
         );
 
         $this->m_tim_teknis->update_data_ptsp($id_ptsp, $data, 'ptsp21');

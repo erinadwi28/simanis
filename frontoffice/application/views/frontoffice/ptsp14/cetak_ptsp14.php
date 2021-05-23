@@ -57,7 +57,7 @@
 		}
 
 		.alamat_kantor {
-			font-size:11pt;
+			font-size: 11pt;
 		}
 
 		.kepala_sertifikat p {
@@ -150,7 +150,7 @@
 									<center>
 										<div class="kepala_Sertifikat">
 											<h4 style="margin-top: 10px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA <br>
-											KANTOR KABUPATEN KLATEN </b></h4>
+													KANTOR KABUPATEN KLATEN </b></h4>
 											<p>Jalan Ronggowarsito Klaten <br>
 												Telepon/Faksimili (0272)321154 <br>
 												Website : http://klaten.kemenag.go.id</p>
@@ -159,9 +159,9 @@
 									<center>
 										<div class="no_surat">
 											<h5><b>PIAGAM TANDA DAFTAR</b> <br>
-											<b>LEMBAGA PENDIDIKAN AL-QUR'AN (LPQ)</b> <br>
-											<b> Nomor:<?= $detail->no_surat ?></b>
-										</h5>
+												<b>LEMBAGA PENDIDIKAN AL-QUR'AN (LPQ)</b> <br>
+												<b> Nomor:<?= $detail->no_surat ?></b>
+											</h5>
 										</div>
 									</center>
 									<div class="isi_surat">
@@ -255,7 +255,15 @@
 									</div>
 									<div class="isi_surat">
 										<p>&nbsp;&nbsp; &nbsp; Dengan Nomor Statistik Pendidikan Al-Qur'an : <br>
-										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $detail->nomor_statistik ?> </p>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<?php
+											$str = $detail->nomor_statistik;
+											$arr = str_split($str);
+											foreach ($arr as $value) {
+												echo "$value &nbsp;&nbsp;";
+											}
+
+											?> </p>
 									</div>
 									<div class="row">
 										<div class="col-md-6"></div>
@@ -266,7 +274,7 @@
 											<?php } ?>
 											<?php
 											foreach ($data_kepala as $detail) { ?>
-												<b>a.n. MENTERI AGAMA</b>  <br>
+												<b>a.n. MENTERI AGAMA</b> <br>
 												Kepala Kantor Kementerian Agama
 												Kabupaten Klaten<br><br><br> <br>
 												<b><?= $detail->nama; ?></b><br>

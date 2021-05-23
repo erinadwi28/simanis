@@ -126,14 +126,34 @@
 										<td><?= $detail->no_surat ?></td>
 									</tr>
 								<?php } ?>
-								<?php if ($detail->tgl_pengukuran != null) { ?>
+								<?php if ($detail->hari_pengukuran != null) { ?>
 									<tr>
-										<td><b>Tanggal Pengukuran</b></td>
+										<td><b>Hari Pengukuran</b></td>
 										<td> </td>
 										<td> </td>
 										<td>:</td>
 										<td> </td>
-										<td><?= format_indo(date($detail->tgl_pengukuran)); ?></td>
+										<td><?= $detail->hari_pengukuran ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_pengukuran != null) { ?>
+									<tr>
+										<td><b>Tanggal Pengukuran Masehi</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_pengukuran)); ?> M</td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_pengukuran_hijriyah != null) { ?>
+									<tr>
+										<td><b>Tanggal Pengukuran Hijriyah</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->tgl_pengukuran_hijriyah ?> H</td>
 									</tr>
 								<?php } ?>
 								<?php if ($detail->jam_pengukuran != null) { ?>
@@ -287,10 +307,26 @@
 						<div class="card-body">
 							<form class="form-horizontal mt-4" id="formba_ptsp14" enctype="multipart/form-data" action="<?= base_url('dashboard/update_data_ptsp21/' . $detail->id_ptsp) ?>" method="POST">
 								<div class="form-group row">
-									<label for="tgl_pengukuran" class="col-sm-3 col-form-label">Tanggal Pengukuran</label>
+									<label for="hari_pengukuran" class="col-sm-3 col-form-label">Hari Pengukuran</label>
+									<div class="col-sm-8 ml-1">
+										<div class="form-line focused">
+											<input type="text" class="form-control" id="hari_pengukuran" name="hari_pengukuran" value="" required>
+										</div>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="tgl_pengukuran" class="col-sm-3 col-form-label">Tanggal Pengukuran Masehi</label>
 									<div class="col-sm-8 ml-1">
 										<div class="form-line focused">
 											<input type="date" class="form-control" id="tgl_pengukuran" name="tgl_pengukuran" value="" required>
+										</div>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="tgl_pengukuran_hijriyah" class="col-sm-3 col-form-label">Tanggal Pengukuran Hijriyah</label>
+									<div class="col-sm-8 ml-1">
+										<div class="form-line focused">
+											<input type="text" class="form-control" id="tgl_pengukuran_hijriyah" name="tgl_pengukuran_hijriyah" value="" required>
 										</div>
 									</div>
 								</div>

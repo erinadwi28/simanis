@@ -199,18 +199,18 @@
 											<h5><b>MASJID/MUSHALLA <?= $detail->nama_masjid ?></b></h5>
 											<p>Dukuh <?= $detail->dukuh ?>, RT <?= $detail->rt ?>, RW <?= $detail->rw ?>, Desa <?= $detail->desa ?>, Kecamatan <?= $detail->kecamatan ?>, Kabupaten Klaten</p>
 										</div>
-									<?php } ?>
-									<br>
-									<div class="isi_surat">
-										<p>Telah dilakukan pengukuran arah kiblat : </p>
-										<p> Oleh Tim Sertifikat Arah Kiblat Kabupaten Klaten</p>
+										<br>
+										<div class="isi_surat">
+											<p>Telah dilakukan pengukuran arah kiblat : </p>
+											<p> Oleh Tim Sertifikat Arah Kiblat Kabupaten Klaten</p>
 
-										<p>....................20...M</p>
-										<p>Pada hari,.....tanggal,..........................................................................</p>
-										<p>...................14...H</p>
-										</p>
-										<p>Dengan rashadul kiblat/waktu pengukuran pukul ............... WIB</p>
-									</div>
+											<p><?= format_indo(date($detail->tgl_pengukuran)); ?> M</p>
+											<p>Pada hari,<?= $detail->hari_pengukuran ?> tanggal,<?= format_indo(date($detail->tgl_pengukuran)); ?></p>
+											<p><?= $detail->tgl_pengukuran_hijriyah ?></p>
+											</p>
+											<p>Dengan rashadul kiblat/waktu pengukuran pukul <?= $detail->jam_pengukuran ?> WIB</p>
+										</div>
+									<?php } ?>
 									<br><br>
 									<div class="row">
 										<div class="col-md-6">

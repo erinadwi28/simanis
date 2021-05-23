@@ -73,6 +73,31 @@
 							<?php } ?>
 						</center>
 					</div>
+
+					<?php if ($detail->status == 'Proses BO') { ?>
+						<div class="card-footer">
+							<form action="<?= base_url('dashboard/update_jadwal_siaran_ptsp19/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="jadwal_siaran">
+								<div class="form-group">
+									<div class="input-group">
+										<div class="form-group-upload">
+											<div class="custom-file">
+												<label class="custom-file-label" for="file-upload-2">pilih file...</label>
+												<input type="file" class="custom-file-input" id="file-upload-2" name="jadwal_siaran" value="<?= $detail->jadwal_siaran ?>">
+												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
+												<input type="hidden" class="form-control form-user-input" name="id_layanan" id="file-upload" value="<?= $detail->id_layanan ?>">
+											</div>
+										</div>
+									</div>
+								</div>
+								<center>
+									<button class="btn btn-sm btn-primary" type="submit">
+										<i class="fa fa-upload">
+										</i>
+									</button>
+								</center>
+							</form>
+						</div>
+					<?php } ?>
 				</div>
 			</div>
 			<div class="col-md-8 mb-0">

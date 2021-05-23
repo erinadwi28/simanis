@@ -174,14 +174,34 @@
 										<td><?= $detail->no_surat ?></td>
 									</tr>
 								<?php } ?>
-								<?php if ($detail->tgl_pengukuran != null) { ?>
+								<?php if ($detail->hari_pengukuran != null) { ?>
 									<tr>
-										<td><b>Tanggal Pengukuran</b></td>
+										<td><b>Hari Pengukuran</b></td>
 										<td> </td>
 										<td> </td>
 										<td>:</td>
 										<td> </td>
-										<td><?= format_indo(date($detail->tgl_pengukuran)) ?></td>
+										<td><?= $detail->hari_pengukuran ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_pengukuran != null) { ?>
+									<tr>
+										<td><b>Tanggal Pengukuran Masehi</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_pengukuran)); ?> M</td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_pengukuran_hijriyah != null) { ?>
+									<tr>
+										<td><b>Tanggal Pengukuran Hijriyah</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->tgl_pengukuran_hijriyah ?> H</td>
 									</tr>
 								<?php } ?>
 								<?php if ($detail->jam_pengukuran != null) { ?>
