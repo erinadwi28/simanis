@@ -14,7 +14,11 @@
 	<!--Tittle Icon-->
 	<link rel="shortcut icon" href="<?= base_url('../assets/landing/images/') ?>title.png" />
 
-	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<!-- Custom fonts for this template-->
+	<link rel="stylesheet" href="<?= base_url('../assets/vendor/fontawesome-free/css/all.min.css') ?>" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+		rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
@@ -28,7 +32,7 @@
 			height: 130px;
 			width: 130px;
 			margin-top: -20px;
-			margin-left: 170px;
+			margin-left: 15px;
 		}
 
 		.kopsurat p {
@@ -65,26 +69,21 @@
 			font-size: 11pt;
 		}
 
-		.paragraf {
-			/* text-indent: 2.8125em; */
-			text-align: justify;
-			text-indent: 50px;
-			font-size: 11pt;
-		}
-		
 		.isi_surat {
-			margin-left: 0.0375em;
+			margin-left: 0;
 			font-size: 11pt;
-			line-height: 1.5em;
-			text-align: justify;
-			margin-top: 5x;
+			line-height: 1.2em;
 		}
 
 		.identitas {
-			margin-left: 2.8125em;
+			margin-left: 0;
 			margin-bottom: 0.3125em;
 		}
 
+		.img_ttd {
+			width: 200px;
+			margin-right: 110px;
+		}
 
 		.img-fluid {
 			max-width: 100%;
@@ -99,60 +98,31 @@
 			margin-left: auto;
 		}
 
-
 		.table {
+			width: 100%;
 			color: #000;
-		}
-
-		.table-bordered {
-			border-width: 2px;
-			border-color: #000;
-			margin-left: 15px;
-		}
-
-		tbody {
-			line-height: 1.5em;
-		}
-
-		.petugas>.nomor {
-			padding-right: 0px;
-		}
-
-		.petugas>.data {
-			padding-left: -0px;
-			margin-left: -15px;
-		}
-
-		p {
+			margin-left: 0px;
 			margin-bottom: 0px;
 		}
 
-		.pelaksanaan {
-			margin-left: 0px;
-		}
-
-		.ketentuan {
-			margin-left: 10px;
-		}
-
-		.tgl {
-			text-align: right;
-		}
-
-		.kpl {
-			margin-left: 509px;
-		}
-
-		.rekomendasi {
+		thead {
+			padding: 0px;
 			text-align: center;
 		}
 
-		.img {
-			padding-top: 10px;
+		.table-bordered {
+			border: 1px solid #000;
+
 		}
 
-		.img img {
-			padding-left: 10px;
+		.table-bordered thead tr,
+		.table-bordered thead th {
+			border: 1px solid #000;
+
+		}
+
+		.table-bordered tbody td {
+			border: 1px solid #000;
 		}
 
 		.garis {
@@ -165,9 +135,11 @@
 
 		.ttd_surat {
 			font-size: 11pt;
-			margin-left: 350px;
+			margin-left: 370px;
 		}
+
 	</style>
+
 </head>
 
 <body class="body" id="page-top">
@@ -181,14 +153,36 @@
 				<div class="card shadow mb-4">
 
 					<div class="card-body">
-						<div class="kopsurat row">
-							<div class="col-md-12 mb-3">
-								<object data="" type="image">
-									<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
-								</object>
-							</div>
-						</div>
-
+						<!-- KOP SURAT -->
+						<center>
+							<table width="478">
+								<tr>
+									<td></td>
+									<td class="img">
+										<center>
+											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
+												width="100" height="100">
+										</center>
+									</td>
+									<td width="430" style="padding-left: 10px;">
+										<center>
+											<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
+											<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
+											<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
+											<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
+											<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
+											<br>
+										</center>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3">
+										<div class="garis"></div>
+									</td>
+								</tr>
+							</table>
+						</center>
+						<br><br>
 						<div class="badan_surat">
 							<div class="no_surat">
 								<center>
@@ -258,37 +252,60 @@
 												(<?= $detail->nama_pemohon ?>)
 										</div>
 									<?php } ?>
+								</div>		
 								</div>
-							</div>
-							</div><br><br>
 						</div>
 					</div>
-				</div>
+				</div>						
+</body>
+<!-- /.container-fluid -->
+
+<!-- halaman ke2 -->
+<br><br><br>
+<br><br><br>
+
+<body class="body" id="page-top">
+	<!-- Begin Page Content -->
+	<div class="container-fluid">
+		<!-- Page Heading -->
+		<div class="row">
+			<div class="col-md-2">
 			</div>
-		</div>
-	</div>
-	</div>
-	<!-- /.container-fluid -->
-	</div>
-	<!-- End of Main Content -->
+			<div class="col-md-8">
+				<div class="card shadow mb-4">
 
-	<!-- Page Heading -->
-	<div class="row">
-		<div class="col-md-2">
-		</div>
-		<div class="col-md-8">
-			<div class="card shadow mb-4">
-
-				<div class="card-body">
-					<div class="kopsurat row">
-						<div class="col-md-12 mb-3">
-							<object data="" type="image">
-								<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
-							</object>
-						</div>
-					</div>
-
-					<div class="badan_surat">
+					<div class="card-body">
+						<!-- KOP SURAT -->
+						<center>
+							<table width="478">
+								<tr>
+									<td></td>
+									<td class="img">
+										<center>
+											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
+												width="100" height="100">
+										</center>
+									</td>
+									<td width="430" style="padding-left: 10px;">
+										<center>
+											<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
+											<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
+											<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
+											<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
+											<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
+											<br>
+										</center>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3">
+										<div class="garis"></div>
+									</td>
+								</tr>
+							</table>
+						</center>
+					<br><br>
+						<div class="badan_surat">
 						<div class="no_surat">
 							<center>
 								<p><u>LEMBAR KONSULTASI</u> </p>
@@ -298,7 +315,7 @@
 							<?php
 							foreach ($detail_ptsp as $detail) { ?>
 								<table border="1" cellpadding="5" width="530px">
-									<br><br>
+									<br>
 									<p>Data Pemohon Konsultasi</p>
 									<tr>
 										<td width="30px">1</td>
@@ -391,11 +408,9 @@
 							<?php } ?>
 						</div>
 					</div>
-				</div>		
+				</div>
 			</div>
 		</div>
-	</div>
-	</div>
 </body>
-
+<!-- /.container-fluid -->
 </html>

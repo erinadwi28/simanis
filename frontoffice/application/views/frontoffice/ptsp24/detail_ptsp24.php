@@ -285,7 +285,7 @@
 						<div class="col-md-12">
 							<form class="form-horizontal" id="no_surat_ptsp24" enctype="multipart/form-data" action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp24/<?= $detail->id_permohonan_ptsp ?>" method="POST">
 								<div class="input-group mb-3 col-md-6 float-right p-0">
-									<input type="text" class="form-control " id="no_surat" name="no_surat" value="" required>
+									<input type="text" class="form-control " id="no_surat" name="no_surat" value=".../Kk.11.10/04/8/KS.01./<?= date("m/Y") ?>" required>
 									<button class="btn btn-sm btn-primary" type="submit" id="button-addon2"><i class="fas fa-check-circle">
 										</i> Terima</button>
 								</div>
