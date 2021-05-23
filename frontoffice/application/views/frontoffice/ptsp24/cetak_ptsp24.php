@@ -184,6 +184,61 @@
 											<td> </td>
 											<td>:</td>
 											<td> <?= $detail->no_surat ?></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
 										</tr>
 										<tr>
 											<td>Hal</td>
@@ -195,14 +250,13 @@
 								<?php } ?>
 							</table>
 						</div>
-						<br>
 
 						<div class="isi_surat  paragraf">
 							<p>Kepada Yth.
 								<br> Sdr. Kepala Up 3 AD Kab.Klaten
 								<br> Di Klaten
 							</p><br>
-							<p>Dengan Hormat, </p><br>
+							<p>Dengan Hormat, </p>
 							<p>Bersama ini kami menerangkan, bahwa saya :</p>
 						</div>
 
@@ -238,27 +292,27 @@
 									</tbody>
 								</table>
 							<?php } ?>
-						</div><br>
+						</div>
 						<?php
 						foreach ($detail_ptsp as $detail) { ?>
 							<div class="isi_surat paragraf">
-								<p align="justify">&emsp;&emsp; Menerangkan bahwa kendaraan roda <?= $detail->jml_roda_kendaraan ?> <?= $detail->merek_kendaraan ?> dengan Nomor Polisi <?= $detail->no_polisi ?>,
+								<p align="justify">Menerangkan bahwa kendaraan roda <?= $detail->jml_roda_kendaraan ?> <?= $detail->merek_kendaraan ?> dengan Nomor Polisi <?= $detail->no_polisi ?>,
 									milik <?= $detail->pemilik_kendaraan ?> sebagai <?= $detail->fungsional_kendaraan ?> di wilayah Klaten Kota dan sekitarnya untuk itu <b>mohon keringanan pajak kendaraan.</b>
 									<br>&emsp;&emsp; Demikian permohonan ini dibuat, agar digunakan sebagaimana mestinya.
 									<br>Terima kasih.
 								</p>
 							</div>
-
+							<?php } ?>
 							<br>
 							<div class="row">
 								<div class="col-md-6">
 								</div>
 								<div class="col-md-6">
-									<div class="badan_surat ttd_surat">
-										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-										Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
-									<?php } ?>
-									Kepala
+									<div class="badan_surat ttd_surat">									
+										An. Kepala
+											Penyelenggara Katolik
+											<br><br><br><br>
+											Drs.YB.Heru Kristomo
 									</div>
 								</div>
 							</div>
