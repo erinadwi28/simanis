@@ -19,7 +19,7 @@
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Rek. Pajak Bendaraan Bermotor Layanan Sosial Rumah Ibadah</h6>
+					<h6 class="m-0 font-weight-bold text-center">Rek. Pajak Kendaraan Bermotor Layanan Sosial Rumah Ibadah</h6>
 				</div>
 				<div class="card-body">
 					<form class="form-horizontal" id="form_ptsp24" enctype="multipart/form-data"

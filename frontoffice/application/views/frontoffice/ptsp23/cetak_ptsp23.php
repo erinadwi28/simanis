@@ -307,7 +307,7 @@
 						</div>
 
 						<div class="badan_surat">
-							<small>Tembusan :</small>
+							<p>Tembusan :</small>
 							<ol>
 								<li>Kepala Seksi PAIS KanKemenag Kab. Klaten,</li>
 								<li>Korwil Pendidikan Kec. Manisrenggo,</li>

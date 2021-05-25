@@ -576,7 +576,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								24. Rek. Pajak Bendaraan Bermotor Layanan Sosial Rumah Ibadah</div>
+								24. Rek. Pajak Kendaraan Bermotor Layanan Sosial Rumah Ibadah</div>
 						</div>
 					</div>
 					<div class="row mt-3">

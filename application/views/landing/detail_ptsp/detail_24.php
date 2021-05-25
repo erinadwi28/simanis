@@ -63,7 +63,7 @@
 		<div class="container">
 			<div class="row text-center">
 				<div class="col-md-12">
-					<h4>Rekomendasi Pajak Bendaraan Bermotor Layanan Sosial Rumah Ibadah</h4>
+					<h4>Rekomendasi Pajak Kendaraan Bermotor Layanan Sosial Rumah Ibadah</h4>
 				</div>
 
 			</div>

@@ -580,7 +580,7 @@
 									</div>
 									<div class="col-md-10 justify content-list mb-0">
 										<p class="card-text">
-											Rekomendasi Pajak Bendaraan Bermotor Layanan Sosial Rumah Ibadah
+											Rekomendasi Pajak Kendaraan Bermotor Layanan Sosial Rumah Ibadah
 										</p>
 									</div>
 								</div>

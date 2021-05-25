@@ -238,7 +238,7 @@
 									<?php } ?>
 								</table>
 							</div>
-							<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+							<br> <br> <br> <br> <br> <br> 
 							<div class="row">
 								<div class="col-md-6"></div>
 								<div class="col-md-6">
@@ -247,7 +247,7 @@
 										<div class="badan_surat ttd_surat">
 												Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 												Pemohon,
-												<br><br>
+												<br><br><br><br>
 
 												(<?= $detail->nama_pemohon ?>)
 										</div>
@@ -261,6 +261,7 @@
 <!-- /.container-fluid -->
 
 <!-- halaman ke2 -->
+<br><br><br>
 <br><br><br>
 <br><br><br>
 
