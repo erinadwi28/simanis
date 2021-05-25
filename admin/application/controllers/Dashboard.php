@@ -172,13 +172,46 @@ class Dashboard extends CI_Controller
                 $this->session->userdata('id_admin')])->row_array();
                 $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-                $data_detail['detail_pemohon'] = $this->m_admin->get_data_pemohon($id_pemohon)->result();
+                $data_detail['detail_pemohon'] = $this->m_admin->get_data_pemohon($id_pemohon, 'pemohon')->result();
 
                 $this->load->view('header', $data_title);
                 $this->load->view('admin/sidebar');
                 $this->load->view('topbar', $data);
                 $this->load->view('admin/pemohon/detail', $data_detail);
                 $this->load->view('footer');
+        }
+        //menampilkan detail data pemohon
+        public function tambah_data_pemohon()
+        {
+                $data_title['title'] = 'Detail Pemohon';
+                $data['admin'] = $this->db->get_where('admin', ['id_admin' =>
+                $this->session->userdata('id_admin')])->row_array();
+                $data['total_notif'] = $this->m_admin->jml_notif()->result();
+
+                $this->load->view('header', $data_title);
+                $this->load->view('admin/sidebar');
+                $this->load->view('topbar', $data);
+                $this->load->view('admin/pemohon/form_tambah');
+                $this->load->view('footer');
+        }
+        // aksi tambah pemohon
+        public function aksi_tambah_pemohon()
+        {
+                $kata_sandi = $this->input->post('kata_sandi');
+                $kata_sandi_hash = sha1($kata_sandi);
+
+                $data_pemohon = array(
+                'nik' => $this->input->post('nik'),
+                'no_hp' => $this->input->post('no_hp'),
+                'email' => $this->input->post('email'),
+                'nama' => $this->input->post('nama'),
+                'foto_profil_pemohon' => 'placeholder_profil.png',
+                'kata_sandi' => $kata_sandi_hash,
+                );
+
+                $this->m_admin->tambah_pemohon($data_pemohon, 'pemohon');
+                $this->session->set_flashdata('success', 'Pemohon berhasil ditambah');
+                redirect('dashboard/list_pemohon/');
         }
         //menampilkan detail data pemohon
         public function ubah_sandi_pemohon($id_pemohon)
@@ -237,13 +270,46 @@ class Dashboard extends CI_Controller
                $this->session->userdata('id_admin')])->row_array();
                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-               $data_detail['detail_fo'] = $this->m_admin->get_data_fo($id_fo)->result();
+               $data_detail['detail_fo'] = $this->m_admin->get_data_fo($id_fo, 'fo')->result();
 
                $this->load->view('header', $data_title);
                $this->load->view('admin/sidebar');
                $this->load->view('topbar', $data);
                $this->load->view('admin/frontoffice/detail', $data_detail);
                $this->load->view('footer');
+       }
+       //menampilkan detail data fo
+       public function tambah_data_fo()
+       {
+               $data_title['title'] = 'Detail Front Office';
+               $data['admin'] = $this->db->get_where('admin', ['id_admin' =>
+               $this->session->userdata('id_admin')])->row_array();
+               $data['total_notif'] = $this->m_admin->jml_notif()->result();
+
+               $this->load->view('header', $data_title);
+               $this->load->view('admin/sidebar');
+               $this->load->view('topbar', $data);
+               $this->load->view('admin/frontoffice/form_tambah');
+               $this->load->view('footer');
+       }
+       // aksi tambah fo
+       public function aksi_tambah_fo()
+       {
+               $kata_sandi = $this->input->post('kata_sandi');
+               $kata_sandi_hash = sha1($kata_sandi);
+
+               $data_fo = array(
+               'no_hp' => $this->input->post('no_hp'),
+               'email' => $this->input->post('email'),
+               'nama' => $this->input->post('nama'),
+               'sie' => $this->input->post('sie'),
+               'foto_profil_fo' => 'placeholder_profil.png',
+               'kata_sandi' => $kata_sandi_hash,
+               );
+
+               $this->m_admin->tambah_fo($data_fo, 'fo');
+               $this->session->set_flashdata('success', 'Front Office berhasil ditambah');
+               redirect('dashboard/list_fo/');
        }
        //menampilkan detail data fo
        public function ubah_sandi_fo($id_fo)
@@ -302,13 +368,46 @@ class Dashboard extends CI_Controller
                $this->session->userdata('id_admin')])->row_array();
                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-               $data_detail['detail_bo'] = $this->m_admin->get_data_bo($id_bo)->result();
+               $data_detail['detail_bo'] = $this->m_admin->get_data_bo($id_bo, 'bo')->result();
 
                $this->load->view('header', $data_title);
                $this->load->view('admin/sidebar');
                $this->load->view('topbar', $data);
                $this->load->view('admin/backoffice/detail', $data_detail);
                $this->load->view('footer');
+       }
+       //menampilkan detail data bo
+       public function tambah_data_bo()
+       {
+               $data_title['title'] = 'Detail Back Office';
+               $data['admin'] = $this->db->get_where('admin', ['id_admin' =>
+               $this->session->userdata('id_admin')])->row_array();
+               $data['total_notif'] = $this->m_admin->jml_notif()->result();
+
+               $this->load->view('header', $data_title);
+               $this->load->view('admin/sidebar');
+               $this->load->view('topbar', $data);
+               $this->load->view('admin/backoffice/form_tambah');
+               $this->load->view('footer');
+       }
+       // aksi tambah bo
+       public function aksi_tambah_bo()
+       {
+               $kata_sandi = $this->input->post('kata_sandi');
+               $kata_sandi_hash = sha1($kata_sandi);
+
+               $data_bo = array(
+               'no_hp' => $this->input->post('no_hp'),
+               'email' => $this->input->post('email'),
+               'nama' => $this->input->post('nama'),
+               'sie' => $this->input->post('sie'),
+               'foto_profil_bo' => 'placeholder_profil.png',
+               'kata_sandi' => $kata_sandi_hash,
+               );
+
+               $this->m_admin->tambah_bo($data_bo, 'bo');
+               $this->session->set_flashdata('success', 'Back Office berhasil ditambah');
+               redirect('dashboard/list_bo/');
        }
        //menampilkan detail data bo
        public function ubah_sandi_bo($id_bo)
@@ -366,13 +465,46 @@ class Dashboard extends CI_Controller
                $this->session->userdata('id_admin')])->row_array();
                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-               $data_detail['detail_kasi'] = $this->m_admin->get_data_kasi($id_kasi)->result();
+               $data_detail['detail_kasi'] = $this->m_admin->get_data_kasi($id_kasi, 'kasi')->result();
 
                $this->load->view('header', $data_title);
                $this->load->view('admin/sidebar');
                $this->load->view('topbar', $data);
                $this->load->view('admin/kasi/detail', $data_detail);
                $this->load->view('footer');
+       }
+       //menampilkan detail data kasi
+       public function tambah_data_kasi()
+       {
+               $data_title['title'] = 'Detail Kasi';
+               $data['admin'] = $this->db->get_where('admin', ['id_admin' =>
+               $this->session->userdata('id_admin')])->row_array();
+               $data['total_notif'] = $this->m_admin->jml_notif()->result();
+
+               $this->load->view('header', $data_title);
+               $this->load->view('admin/sidebar');
+               $this->load->view('topbar', $data);
+               $this->load->view('admin/kasi/form_tambah');
+               $this->load->view('footer');
+       }
+       // aksi tambah kasi
+       public function aksi_tambah_kasi()
+       {
+               $kata_sandi = $this->input->post('kata_sandi');
+               $kata_sandi_hash = sha1($kata_sandi);
+
+               $data_kasi = array(
+               'no_hp' => $this->input->post('no_hp'),
+               'email' => $this->input->post('email'),
+               'nama' => $this->input->post('nama'),
+               'sie' => $this->input->post('sie'),
+               'foto_profil_kasi' => 'placeholder_profil.png',
+               'kata_sandi' => $kata_sandi_hash,
+               );
+
+               $this->m_admin->tambah_kasi($data_kasi, 'kasi');
+               $this->session->set_flashdata('success', 'Kasi berhasil ditambah');
+               redirect('dashboard/list_kasi/');
        }
        //menampilkan detail data kasi
        public function ubah_sandi_kasi($id_kasi)
@@ -430,13 +562,45 @@ class Dashboard extends CI_Controller
                $this->session->userdata('id_admin')])->row_array();
                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-               $data_detail['detail_kasubag'] = $this->m_admin->get_data_kasubag($id_kasubag)->result();
+               $data_detail['detail_kasubag'] = $this->m_admin->get_data_kasubag($id_kasubag, 'kasubag')->result();
 
                $this->load->view('header', $data_title);
                $this->load->view('admin/sidebar');
                $this->load->view('topbar', $data);
                $this->load->view('admin/kasubag/detail', $data_detail);
                $this->load->view('footer');
+       }
+       //menampilkan detail data kasubag
+       public function tambah_data_kasubag()
+       {
+               $data_title['title'] = 'Detail Kasubag';
+               $data['admin'] = $this->db->get_where('admin', ['id_admin' =>
+               $this->session->userdata('id_admin')])->row_array();
+               $data['total_notif'] = $this->m_admin->jml_notif()->result();
+
+               $this->load->view('header', $data_title);
+               $this->load->view('admin/sidebar');
+               $this->load->view('topbar', $data);
+               $this->load->view('admin/kasubag/form_tambah');
+               $this->load->view('footer');
+       }
+       // aksi tambah kasubag
+       public function aksi_tambah_kasubag()
+       {
+               $kata_sandi = $this->input->post('kata_sandi');
+               $kata_sandi_hash = sha1($kata_sandi);
+
+               $data_kasubag = array(
+               'no_hp' => $this->input->post('no_hp'),
+               'email' => $this->input->post('email'),
+               'nama' => $this->input->post('nama'),
+               'foto_profil_kasubag' => 'placeholder_profil.png',
+               'kata_sandi' => $kata_sandi_hash,
+               );
+
+               $this->m_admin->tambah_kasubag($data_kasubag, 'kasubag');
+               $this->session->set_flashdata('success', 'Kasubag berhasil ditambah');
+               redirect('dashboard/list_kasubag/');
        }
        //menampilkan detail data kasubag
        public function ubah_sandi_kasubag($id_kasubag)
@@ -494,13 +658,46 @@ class Dashboard extends CI_Controller
                $this->session->userdata('id_admin')])->row_array();
                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-               $data_detail['detail_kepala'] = $this->m_admin->get_data_kepala($id_kepala)->result();
+               $data_detail['detail_kepala'] = $this->m_admin->get_data_kepala($id_kepala, 'kepala')->result();
 
                $this->load->view('header', $data_title);
                $this->load->view('admin/sidebar');
                $this->load->view('topbar', $data);
                $this->load->view('admin/kepala/detail', $data_detail);
                $this->load->view('footer');
+       }
+       //menampilkan detail data kepala
+       public function tambah_data_kepala()
+       {
+               $data_title['title'] = 'Detail Kepala';
+               $data['admin'] = $this->db->get_where('admin', ['id_admin' =>
+               $this->session->userdata('id_admin')])->row_array();
+               $data['total_notif'] = $this->m_admin->jml_notif()->result();
+
+               $this->load->view('header', $data_title);
+               $this->load->view('admin/sidebar');
+               $this->load->view('topbar', $data);
+               $this->load->view('admin/kepala/form_tambah');
+               $this->load->view('footer');
+       }
+       // aksi tambah kepala
+       public function aksi_tambah_kepala()
+       {
+               $kata_sandi = $this->input->post('kata_sandi');
+               $kata_sandi_hash = sha1($kata_sandi);
+
+               $data_kepala = array(
+               'no_hp' => $this->input->post('no_hp'),
+               'email' => $this->input->post('email'),
+               'nama' => $this->input->post('nama'),
+               'nip' => $this->input->post('nip'),
+               'foto_profil_kepala' => 'placeholder_profil.png',
+               'kata_sandi' => $kata_sandi_hash,
+               );
+
+               $this->m_admin->tambah_kepala($data_kepala, 'kepala');
+               $this->session->set_flashdata('success', 'Kepala berhasil ditambah');
+               redirect('dashboard/list_kepala/');
        }
        //menampilkan detail data kepala
        public function ubah_sandi_kepala($id_kepala)
@@ -558,13 +755,46 @@ class Dashboard extends CI_Controller
                $this->session->userdata('id_admin')])->row_array();
                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-               $data_detail['detail_timteknis'] = $this->m_admin->get_data_timteknis($id_tim_teknis)->result();
+               $data_detail['detail_timteknis'] = $this->m_admin->get_data_timteknis($id_tim_teknis, 'tim_teknis')->result();
 
                $this->load->view('header', $data_title);
                $this->load->view('admin/sidebar');
                $this->load->view('topbar', $data);
                $this->load->view('admin/timteknis/detail', $data_detail);
                $this->load->view('footer');
+       }
+       //menampilkan detail data Tim teknis
+       public function tambah_data_timteknis()
+       {
+               $data_title['title'] = 'Detail Tim Teknis';
+               $data['admin'] = $this->db->get_where('admin', ['id_admin' =>
+               $this->session->userdata('id_admin')])->row_array();
+               $data['total_notif'] = $this->m_admin->jml_notif()->result();
+
+               $this->load->view('header', $data_title);
+               $this->load->view('admin/sidebar');
+               $this->load->view('topbar', $data);
+               $this->load->view('admin/timteknis/form_tambah');
+               $this->load->view('footer');
+       }
+       // aksi tambah tim teknis
+       public function aksi_tambah_timteknis()
+       {
+               $kata_sandi = $this->input->post('kata_sandi');
+               $kata_sandi_hash = sha1($kata_sandi);
+
+               $data_timteknis = array(
+               'no_hp' => $this->input->post('no_hp'),
+               'email' => $this->input->post('email'),
+               'nama' => $this->input->post('nama'),
+               'sie' => $this->input->post('sie'),
+               'foto_profil_tim_teknis' => 'placeholder_profil.png',
+               'kata_sandi' => $kata_sandi_hash,
+               );
+
+               $this->m_admin->tambah_timteknis($data_timteknis, 'tim_teknis');
+               $this->session->set_flashdata('success', 'Tim Teknis berhasil ditambah');
+               redirect('dashboard/list_timteknis/');
        }
        //menampilkan detail data timteknis
        public function ubah_sandi_timteknis($id_tim_teknis)

@@ -63,13 +63,14 @@ class M_admin extends CI_Model
         return $hasil;
     }
 
-    public function get_data_pemohon($id_pemohon)
+    public function get_data_pemohon($detailhere, $tabel)
     {
-        $this->db->select('pemohon.*');
-        $this->db->from('pemohon');
-        $this->db->order_by('pemohon.id_pemohon', 'desc');
+        $this->db->select('*');
+        $this->db->from($tabel);
+        $this->db->where('id_pemohon', $detailhere);
 
-        $hasil= $this->db->get();
+        $hasil = $this->db->get();
+
         return $hasil;
     }
 
@@ -82,13 +83,14 @@ class M_admin extends CI_Model
 
         return $this->db->get();
     }
-    public function get_data_fo($id_fo)
+    public function get_data_fo($detailhere, $tabel)
     {
-        $this->db->select('fo.*');
-        $this->db->from('fo');
-        $this->db->order_by('fo.id_fo', 'desc');
+        $this->db->select('*');
+        $this->db->from($tabel);
+        $this->db->where('id_fo', $detailhere);
 
-        $hasil= $this->db->get();
+        $hasil = $this->db->get();
+
         return $hasil;
     }
 
@@ -101,13 +103,14 @@ class M_admin extends CI_Model
 
         return $this->db->get();
     }
-    public function get_data_bo($id_bo)
+    public function get_data_bo($detailhere, $tabel)
     {
-        $this->db->select('bo.*');
-        $this->db->from('bo');
-        $this->db->order_by('bo.id_bo', 'desc');
+        $this->db->select('*');
+        $this->db->from($tabel);
+        $this->db->where('id_bo', $detailhere);
 
-        $hasil= $this->db->get();
+        $hasil = $this->db->get();
+
         return $hasil;
     }
 
@@ -120,13 +123,14 @@ class M_admin extends CI_Model
 
         return $this->db->get();
     }
-    public function get_data_kasi($id_kasi)
+    public function get_data_kasi($detailhere, $tabel)
     {
-        $this->db->select('kasi.*');
-        $this->db->from('kasi');
-        $this->db->order_by('kasi.id_kasi', 'desc');
+        $this->db->select('*');
+        $this->db->from($tabel);
+        $this->db->where('id_kasi', $detailhere);
 
-        $hasil= $this->db->get();
+        $hasil = $this->db->get();
+
         return $hasil;
     }
 
@@ -139,13 +143,14 @@ class M_admin extends CI_Model
 
         return $this->db->get();
     }
-    public function get_data_kasubag($id_kasubag)
+    public function get_data_kasubag($detailhere, $tabel)
     {
-        $this->db->select('kasubag.*');
-        $this->db->from('kasubag');
-        $this->db->order_by('kasubag.id_kasubag', 'desc');
+        $this->db->select('*');
+        $this->db->from($tabel);
+        $this->db->where('id_kasubag', $detailhere);
 
-        $hasil= $this->db->get();
+        $hasil = $this->db->get();
+
         return $hasil;
     }
 
@@ -158,13 +163,14 @@ class M_admin extends CI_Model
 
         return $this->db->get();
     }
-    public function get_data_kepala($id_kepala)
+    public function get_data_kepala($detailhere, $tabel)
     {
-        $this->db->select('kepala.*');
-        $this->db->from('kepala');
-        $this->db->order_by('kepala.id_kepala', 'desc');
+        $this->db->select('*');
+        $this->db->from($tabel);
+        $this->db->where('id_kepala', $detailhere);
 
-        $hasil= $this->db->get();
+        $hasil = $this->db->get();
+
         return $hasil;
     }
 
@@ -177,13 +183,14 @@ class M_admin extends CI_Model
 
         return $this->db->get();
     }
-    public function get_data_timteknis($id_tim_teknis)
+    public function get_data_timteknis($detailhere, $tabel)
     {
-        $this->db->select('tim_teknis.*');
-        $this->db->from('tim_teknis');
-        $this->db->order_by('tim_teknis.id_tim_teknis', 'desc');
+        $this->db->select('*');
+        $this->db->from($tabel);
+        $this->db->where('id_tim_teknis', $detailhere);
 
-        $hasil= $this->db->get();
+        $hasil = $this->db->get();
+
         return $hasil;
     }
 
@@ -195,5 +202,40 @@ class M_admin extends CI_Model
         $this->db->order_by('tim_teknis.id_tim_teknis', 'desc');
 
         return $this->db->get();
+    }
+    //aksi tambah data pemohon
+    public function tambah_pemohon($data_pemohon, $tabel)
+    {
+        $this->db->insert($tabel, $data_pemohon);
+    }
+    //aksi tambah data fo
+    public function tambah_fo($data_fo, $tabel)
+    {
+        $this->db->insert($tabel, $data_fo);
+    }
+    //aksi tambah data bo
+    public function tambah_bo($data_bo, $tabel)
+    {
+        $this->db->insert($tabel, $data_bo);
+    }
+    //aksi tambah data kasi
+    public function tambah_kasi($data_kasi, $tabel)
+    {
+        $this->db->insert($tabel, $data_kasi);
+    }
+    //aksi tambah data kasubag
+    public function tambah_kasubag($data_kasubag, $tabel)
+    {
+        $this->db->insert($tabel, $data_kasubag);
+    }
+    //aksi tambah data kepala
+    public function tambah_kepala($data_kepala, $tabel)
+    {
+        $this->db->insert($tabel, $data_kepala);
+    }
+    //aksi tambah data tim teknis
+    public function tambah_timteknis($data_timteknis, $tabel)
+    {
+        $this->db->insert($tabel, $data_timteknis);
     }
 }
