@@ -15,12 +15,28 @@
 
 	<!--Begin Content Profile-->
 	<div class="row clearfix">
-		<div class="col-xs-12 col-sm-2"></div>
+		<div class="col-xs-12 col-sm-2">
+		<?php if ($this->session->flashdata('success')) : ?>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <?= $this->session->flashdata('success') ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php elseif ($this->session->flashdata('error')) : ?>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <?= $this->session->flashdata('error') ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php endif ?>
+		</div>
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-body">
 					<form class="form-horizontal mt-4" id="form_tambah" enctype="multipart/form-data"
-						action="<?= base_url('dashboard/aksi_pengajuan_ptsp01') ?>" method="POST">
+						action="<?= base_url('dashboard/aksi_tambah_pemohon') ?>" method="POST">
 						<div class="form-group row">
 							<label for="nik" class="col-sm-3 col-form-label">NIK</label>
 							<div class="col-sm-9">

@@ -234,7 +234,7 @@ class Ptsp extends CI_Controller {
 	}
 	public function detail_permohonan_24()
 	{   
-        $data_title['title'] = 'Rekomendasi Pajak Bendaraan Bermotor Layanan Sosial Rumah Ibadah';
+        $data_title['title'] = 'Rekomendasi Pajak Kendaraan Bermotor Layanan Sosial Rumah Ibadah';
 
         $this->load->view('landing/header/header', $data_title);
         $this->load->view('landing/top_navbar/top_navbar');

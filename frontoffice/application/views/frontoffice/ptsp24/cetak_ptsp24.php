@@ -90,7 +90,7 @@
 		}
 
 		.identitas {
-			margin-left: 2.8125em;
+			margin-left: 0.0375em;
 			margin-bottom: 0.3125em;
 		}
 
@@ -250,12 +250,13 @@
 								<?php } ?>
 							</table>
 						</div>
-
-						<div class="isi_surat  paragraf">
+						<br>
+						<div class="isi_surat">
 							<p>Kepada Yth.
 								<br> Sdr. Kepala Up 3 AD Kab.Klaten
 								<br> Di Klaten
-							</p><br>
+							</p>
+							<br><br><br>
 							<p>Dengan Hormat, </p>
 							<p>Bersama ini kami menerangkan, bahwa saya :</p>
 						</div>
@@ -311,8 +312,6 @@
 									<div class="badan_surat ttd_surat">									
 										An. Kepala
 											Penyelenggara Katolik
-											<br><br><br><br>
-											Drs.YB.Heru Kristomo
 									</div>
 								</div>
 							</div>
