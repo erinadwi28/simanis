@@ -28,7 +28,7 @@
 		.logosurat {
 			height: 130px;
 			width: 130px;
-			margin-top: -20px;
+			margin-top: 0px;
 			margin-left: 15px;
 		}
 
@@ -48,7 +48,7 @@
 
 		.badan_surat {
 			font-family: 'Times New Roman';
-			margin-left: 60px;
+			margin-left: 10px;
 			font-size: 14pt;
 		}
 
@@ -120,6 +120,10 @@
 			margin-left: 300px;
 			font-size: 14pt;
 		}
+
+		.body {
+			line-height: 23.5px;
+		}
 	</style>
 
 </head>
@@ -135,20 +139,13 @@
 				<div class="card shadow mb-4">
 					<div class="card-body">
 						<div class="card-body">
-							<center>
-								<div class="logosurat row">
-									<div class="col-md-12 mb-3">
-										<object data="" type="image">
-											<img class="logosurat" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag.png') ?>">
-										</object>
-									</div>
-								</div>
-							</center>
-
 							<?php foreach ($detail_ptsp as $detail) { ?>
 								<div class="badan_surat">
 									<center>
 										<div class="kepala_Sertifikat">
+										<object data="" type="image">
+											<img class="logosurat" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag.png') ?>">
+										</object>
 											<h4 style="margin-top: 10px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA <br>
 													KANTOR KABUPATEN KLATEN </b></h4>
 											<p>Jalan Ronggowarsito Klaten <br>
@@ -270,15 +267,16 @@
 										<div class="col-md-6">
 											<div class="ttd_surat">
 												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-												<p>Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></p>
+												<p>Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?> <br>
 											<?php } ?>
 											<?php
 											foreach ($data_kepala as $detail) { ?>
 												<b>a.n. MENTERI AGAMA</b> <br>
 												Kepala Kantor Kementerian Agama
-												Kabupaten Klaten<br><br><br> <br>
-												<b><?= $detail->nama; ?></b><br>
+												Kabupaten Klaten<br><br><br>
+												<b><?= $detail->nama; ?></b>
 											<?php } ?>
+											</p>
 											</div>
 										</div>
 									</div>
