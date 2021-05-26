@@ -99,7 +99,7 @@
 				</div>
 				<div class="card-footer">
 					<div class="float-right">
-						<a href="<?= base_url() ?>dashboard/ubah_sandi_fo<?= $detail->id_fo ?>">
+						<a href="<?= base_url() ?>dashboard/ubah_sandi_fo/<?= $detail->id_fo ?>">
 							<button id="btn_ubah" class="btn btn-sm btn-primary mr-1" type="submit">
 								<i class="fa fa-lock nav-icon">
 								</i> Ubah Sandi

@@ -7,7 +7,7 @@
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/sop_ptsp01') ?>">Kepala</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_kepala') ?>">Kepala</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Tambah Data</li>
 			</ol>
 		</nav>
@@ -19,13 +19,28 @@
 		<div class="col-xs col-sm-8">
 			<div class="card shadow mb-5">
 				<div class="card-body">
+				<?php if ($this->session->flashdata('success')) : ?>
+					<div class="alert alert-success alert-dismissible fade show" role="alert">
+						<?= $this->session->flashdata('success') ?>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				<?php elseif ($this->session->flashdata('error')) : ?>
+					<div class="alert alert-danger alert-dismissible fade show" role="alert">
+						<?= $this->session->flashdata('error') ?>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				<?php endif ?>
 					<form class="form-horizontal mt-4" id="form_tambah" enctype="multipart/form-data"
-						action="<?= base_url('dashboard/aksi_pengajuan_ptsp01') ?>" method="POST">
+						action="<?= base_url('dashboard/aksi_tambah_kepala') ?>" method="POST">
 						<div class="form-group row">
-							<label for="nik" class="col-sm-3 col-form-label">NIK</label>
+							<label for="nik" class="col-sm-3 col-form-label">NIP</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nik" name="nik"
+									<input type="text" class="form-control" id="nip" name="nip"
 										value="" placeholder="masukkan NIK disini..." required data-parsley-type="number">
 								</div>
 							</div>
@@ -49,12 +64,11 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="no_hp" class="col-sm-3 col-form-label">No. HandPhone</label>
+							<label for="no_hp" class="col-sm-3 col-form-label">No. Handphone</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="no_hp" name="no_hp" value=""
-										placeholder="masukkan no handphone disini..." required
-										data-parsley-type="number" minlength="11">
+										placeholder="masukkan no handphone disini..." required minlength="11">
 								</div>
 							</div>
 						</div>

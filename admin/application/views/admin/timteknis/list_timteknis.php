@@ -13,8 +13,23 @@
 
 	<div class="card shadow mb-4">
 		<div class="card-body">
+			<?php if ($this->session->flashdata('success')) : ?>
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+					<?= $this->session->flashdata('success') ?>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			<?php elseif ($this->session->flashdata('error')) : ?>
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					<?= $this->session->flashdata('error') ?>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			<?php endif ?>
 			<!-- btn tambah -->
-			<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+			<a href="<?= base_url() ?>dashboard/tambah_data_timteknis" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
 					class="fa fa-plus fa-sm text-white-50"></i> Tambah
 				Data</a>
 			<hr>
@@ -42,7 +57,7 @@
 								<a href="<?= base_url() ?>dashboard/detail_data_timteknis/<?= $data->id_tim_teknis ?>" class="btn btn-primary btn-sm">
 									<i class="fas fa-search"></i>
 								</a>
-								<a href="#" class="btn btn-tolak btn-sm">
+								<a href="#" class="btn btn-tolak btn-sm" data-toggle="modal" data-target="#timteknisDeleteModal">
 									<i class="fas fa-trash-alt"></i>
 								</a>
 							</td>

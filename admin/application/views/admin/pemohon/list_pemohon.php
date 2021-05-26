@@ -57,7 +57,7 @@
 								<a href="<?= base_url() ?>dashboard/detail_data_pemohon/<?= $data->id_pemohon ?>" class="btn btn-primary btn-sm">
 									<i class="fas fa-search"></i>
 								</a>
-								<a href="#" class="btn btn-tolak btn-sm">
+								<a href="#" class="btn btn-tolak btn-sm" data-toggle="modal" data-target="#pemohonDeleteModal">
 									<i class="fas fa-trash-alt"></i>
 								</a>
 							</td>

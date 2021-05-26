@@ -221,7 +221,7 @@ class Dashboard extends CI_Controller
                 $this->session->userdata('id_admin')])->row_array();
                 $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-                $data_detail['detail_pemohon'] = $this->m_admin->get_data_pemohon($id_pemohon)->result();
+                $data_detail['detail_pemohon'] = $this->m_admin->get_data_pemohon($id_pemohon, 'pemohon')->result();
 
                 $this->load->view('header', $data_title);
                 $this->load->view('admin/sidebar');
@@ -237,7 +237,7 @@ class Dashboard extends CI_Controller
                 $this->session->userdata('id_admin')])->row_array();
                 $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-                $data_detail['detail_pemohon'] = $this->m_admin->get_data_pemohon($id_pemohon)->result();
+                $data_detail['detail_pemohon'] = $this->m_admin->get_data_pemohon($id_pemohon, 'pemohon')->result();
 
                 $this->load->view('header', $data_title);
                 $this->load->view('admin/sidebar');
@@ -319,7 +319,7 @@ class Dashboard extends CI_Controller
                $this->session->userdata('id_admin')])->row_array();
                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-               $data_detail['detail_fo'] = $this->m_admin->get_data_fo($id_fo)->result();
+               $data_detail['detail_fo'] = $this->m_admin->get_data_fo($id_fo, 'fo')->result();
 
                $this->load->view('header', $data_title);
                $this->load->view('admin/sidebar');
@@ -335,7 +335,7 @@ class Dashboard extends CI_Controller
                $this->session->userdata('id_admin')])->row_array();
                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-               $data_detail['detail_fo'] = $this->m_admin->get_data_fo($id_fo)->result();
+               $data_detail['detail_fo'] = $this->m_admin->get_data_fo($id_fo, 'fo')->result();
 
                $this->load->view('header', $data_title);
                $this->load->view('admin/sidebar');
@@ -417,7 +417,7 @@ class Dashboard extends CI_Controller
                $this->session->userdata('id_admin')])->row_array();
                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-               $data_detail['detail_bo'] = $this->m_admin->get_data_bo($id_bo)->result();
+               $data_detail['detail_bo'] = $this->m_admin->get_data_bo($id_bo, 'bo')->result();
 
                $this->load->view('header', $data_title);
                $this->load->view('admin/sidebar');
@@ -433,7 +433,7 @@ class Dashboard extends CI_Controller
                $this->session->userdata('id_admin')])->row_array();
                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-               $data_detail['detail_bo'] = $this->m_admin->get_data_bo($id_bo)->result();
+               $data_detail['detail_bo'] = $this->m_admin->get_data_bo($id_bo, 'bo')->result();
 
                $this->load->view('header', $data_title);
                $this->load->view('admin/sidebar');
@@ -514,7 +514,7 @@ class Dashboard extends CI_Controller
                $this->session->userdata('id_admin')])->row_array();
                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-               $data_detail['detail_kasi'] = $this->m_admin->get_data_kasi($id_kasi)->result();
+               $data_detail['detail_kasi'] = $this->m_admin->get_data_kasi($id_kasi, 'kasi')->result();
 
                $this->load->view('header', $data_title);
                $this->load->view('admin/sidebar');
@@ -530,7 +530,7 @@ class Dashboard extends CI_Controller
                $this->session->userdata('id_admin')])->row_array();
                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-               $data_detail['detail_kasi'] = $this->m_admin->get_data_kasi($id_kasi)->result();
+               $data_detail['detail_kasi'] = $this->m_admin->get_data_kasi($id_kasi, 'kasi')->result();
 
                $this->load->view('header', $data_title);
                $this->load->view('admin/sidebar');
@@ -610,7 +610,7 @@ class Dashboard extends CI_Controller
                $this->session->userdata('id_admin')])->row_array();
                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-               $data_detail['detail_kasubag'] = $this->m_admin->get_data_kasubag($id_kasubag)->result();
+               $data_detail['detail_kasubag'] = $this->m_admin->get_data_kasubag($id_kasubag, 'kasubag')->result();
 
                $this->load->view('header', $data_title);
                $this->load->view('admin/sidebar');
@@ -626,7 +626,7 @@ class Dashboard extends CI_Controller
                $this->session->userdata('id_admin')])->row_array();
                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-               $data_detail['detail_kasubag'] = $this->m_admin->get_data_kasubag($id_kasubag)->result();
+               $data_detail['detail_kasubag'] = $this->m_admin->get_data_kasubag($id_kasubag, 'kasubag')->result();
 
                $this->load->view('header', $data_title);
                $this->load->view('admin/sidebar');
@@ -707,7 +707,7 @@ class Dashboard extends CI_Controller
                $this->session->userdata('id_admin')])->row_array();
                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-               $data_detail['detail_kepala'] = $this->m_admin->get_data_kepala($id_kepala)->result();
+               $data_detail['detail_kepala'] = $this->m_admin->get_data_kepala($id_kepala, 'kepala')->result();
 
                $this->load->view('header', $data_title);
                $this->load->view('admin/sidebar');
@@ -723,7 +723,7 @@ class Dashboard extends CI_Controller
                $this->session->userdata('id_admin')])->row_array();
                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-               $data_detail['detail_kepala'] = $this->m_admin->get_data_kepala($id_kepala)->result();
+               $data_detail['detail_kepala'] = $this->m_admin->get_data_kepala($id_kepala, 'kepala')->result();
 
                $this->load->view('header', $data_title);
                $this->load->view('admin/sidebar');
@@ -804,7 +804,7 @@ class Dashboard extends CI_Controller
                $this->session->userdata('id_admin')])->row_array();
                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-               $data_detail['detail_timteknis'] = $this->m_admin->get_data_timteknis($id_tim_teknis)->result();
+               $data_detail['detail_timteknis'] = $this->m_admin->get_data_timteknis($id_tim_teknis, 'tim_teknis')->result();
 
                $this->load->view('header', $data_title);
                $this->load->view('admin/sidebar');
@@ -820,7 +820,7 @@ class Dashboard extends CI_Controller
                $this->session->userdata('id_admin')])->row_array();
                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-               $data_detail['detail_timteknis'] = $this->m_admin->get_data_timteknis($id_tim_teknis)->result();
+               $data_detail['detail_timteknis'] = $this->m_admin->get_data_timteknis($id_tim_teknis, 'tim_teknis')->result();
 
                $this->load->view('header', $data_title);
                $this->load->view('admin/sidebar');

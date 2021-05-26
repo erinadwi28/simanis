@@ -7,7 +7,7 @@
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/sop_ptsp01') ?>">Kasi</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_kepala') ?>">Kasi</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Tambah Data</li>
 			</ol>
 		</nav>
@@ -20,16 +20,7 @@
 			<div class="card shadow mb-5">
 				<div class="card-body">
 					<form class="form-horizontal mt-4" id="form_tambah" enctype="multipart/form-data"
-						action="<?= base_url('dashboard/aksi_pengajuan_ptsp01') ?>" method="POST">
-						<div class="form-group row">
-							<label for="nik" class="col-sm-3 col-form-label">NIK</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="nik" name="nik"
-										value="" placeholder="masukkan NIK disini..." required data-parsley-type="number">
-								</div>
-							</div>
-						</div>
+						action="<?= base_url('dashboard/aksi_tambah_kasi') ?>" method="POST">
 						<div class="form-group row">
 							<label for="nama" class="col-sm-3 col-form-label">Nama</label>
 							<div class="col-sm-9">
@@ -49,12 +40,20 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="no_hp" class="col-sm-3 col-form-label">No. HandPhone</label>
+							<label for="no_hp" class="col-sm-3 col-form-label">No. Handphone</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="no_hp" name="no_hp" value=""
-										placeholder="masukkan no handphone disini..." required
-										data-parsley-type="number" minlength="11">
+										placeholder="masukkan no handphone disini..." required minlength="11">
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="sie" class="col-sm-3 col-form-label">SIE</label>
+							<div class="col-sm-9">
+								<div class="form-line focused">
+									<input type="text" class="form-control" id="sie" name="sie"
+										value="" placeholder="masukkan SIE disini..." required>
 								</div>
 							</div>
 						</div>
