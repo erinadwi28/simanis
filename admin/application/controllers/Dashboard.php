@@ -149,7 +149,7 @@ class Dashboard extends CI_Controller
         }
 
         //list permohonan masuk
-        public function list_pemohon()
+        public function list_data_pemohon()
         {
                 $data_title['title'] = 'List Pemohon';
                 $data['admin'] = $this->db->get_where('admin', ['id_admin' =>
@@ -245,9 +245,68 @@ class Dashboard extends CI_Controller
                 $this->load->view('admin/pemohon/form_ubah', $data_detail);
                 $this->load->view('footer');
         }
+        //ubah foto profil
+        public function upload_foto_profil_pemohon($id_pemohon)
+        {
+
+                $config['upload_path']          = '../assets/dashboard/images/pemohon/profil/';
+                $config['allowed_types']        = 'gif|jpg|png|jpeg';
+                $config['file_name']            = 'profil-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+                $this->load->library('upload', $config);
+                if (!empty($_FILES['berkas']['name'])) {
+                if ($this->upload->do_upload('berkas')) {
+
+                        $uploadData = $this->upload->data();
+
+                        //Compres Foto
+                        $config['image_library'] = 'gd2';
+                        $config['source_image'] = '../assets/dashboard/images/pemohon/profil/' . $uploadData['file_name'];
+                        $config['create_thumb'] = FALSE;
+                        $config['maintain_ratio'] = TRUE;
+                        $config['quality'] = '100%';
+                        $config['width'] = 480;
+                        $config['height'] = 640;
+
+                        $config['new_image'] = '../assets/dashboard/images/pemohon/profil/' . $uploadData['file_name'];
+                        $this->load->library('image_lib', $config);
+                        $this->image_lib->resize();
+
+                        $item = $this->db->where('id_pemohon', $id_pemohon)->get('pemohon')->row();
+
+                        //replace foto lama 
+                        if ($item->foto_profil_pemohon != "placeholder_profil.png") {
+                        $target_file = '../assets/dashboard/images/pemohon/profil/' . $item->foto_profil_pemohon;
+                        unlink($target_file);
+                        }
+
+                        $data['foto_profil_pemohon'] = $uploadData['file_name'];
+
+                        $this->db->where('id_pemohon', $id_pemohon);
+                        $this->db->update('pemohon', $data);
+                }
+                }
+                $url = $_SERVER['HTTP_REFERER'];
+                $this->session->set_flashdata('success', 'diubah');
+                redirect($url);
+        }
+        // aksi update pemohon
+        public function aksi_update_pemohon($id_pemohon)
+        {
+                $data_pemohon = array(
+                'nik' => $this->input->post('nik'),
+                'no_hp' => $this->input->post('no_hp'),
+                'email' => $this->input->post('email'),
+                'nama' => $this->input->post('nama'),
+                );
+
+                $this->m_admin->update_pemohon($id_pemohon, $data_pemohon, 'pemohon');
+                $this->session->set_flashdata('success', 'Data Pemohon berhasil diperbarui');
+                redirect('dashboard/detail_data_pemohon/' . $id_pemohon);
+        }
 
        //list fo
-       public function list_fo()
+       public function list_data_fo()
        {
                $data_title['title'] = 'List Front Office';
                $data['admin'] = $this->db->get_where('admin', ['id_admin' =>
@@ -343,9 +402,68 @@ class Dashboard extends CI_Controller
                $this->load->view('admin/frontoffice/form_ubah', $data_detail);
                $this->load->view('footer');
        }
+       //ubah foto profil
+       public function upload_foto_profil_fo($id_fo)
+       {
+
+               $config['upload_path']          = '../assets/dashboard/images/frontoffice/profil/';
+               $config['allowed_types']        = 'gif|jpg|png|jpeg';
+               $config['file_name']            = 'profil-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+               $this->load->library('upload', $config);
+               if (!empty($_FILES['berkas']['name'])) {
+               if ($this->upload->do_upload('berkas')) {
+
+                       $uploadData = $this->upload->data();
+
+                       //Compres Foto
+                       $config['image_library'] = 'gd2';
+                       $config['source_image'] = '../assets/dashboard/images/frontoffice/profil/' . $uploadData['file_name'];
+                       $config['create_thumb'] = FALSE;
+                       $config['maintain_ratio'] = TRUE;
+                       $config['quality'] = '100%';
+                       $config['width'] = 480;
+                       $config['height'] = 640;
+
+                       $config['new_image'] = '../assets/dashboard/images/frontoffice/profil/' . $uploadData['file_name'];
+                       $this->load->library('image_lib', $config);
+                       $this->image_lib->resize();
+
+                       $item = $this->db->where('id_fo', $id_fo)->get('fo')->row();
+
+                       //replace foto lama 
+                       if ($item->foto_profil_fo != "placeholder_profil.png") {
+                       $target_file = '../assets/dashboard/images/frontoffice/profil/' . $item->foto_profil_fo;
+                       unlink($target_file);
+                       }
+
+                       $data['foto_profil_fo'] = $uploadData['file_name'];
+
+                       $this->db->where('id_fo', $id_fo);
+                       $this->db->update('fo', $data);
+               }
+               }
+               $url = $_SERVER['HTTP_REFERER'];
+               $this->session->set_flashdata('success', 'diubah');
+               redirect($url);
+       }
+       // aksi update fo
+       public function aksi_update_fo($id_fo)
+       {
+               $data_fo= array(
+               'sie' => $this->input->post('sie'),
+               'no_hp' => $this->input->post('no_hp'),
+               'email' => $this->input->post('email'),
+               'nama' => $this->input->post('nama'),
+               );
+
+               $this->m_admin->update_fo($id_fo, $data_fo, 'fo');
+               $this->session->set_flashdata('success', 'Data Front Office berhasil diperbarui');
+               redirect('dashboard/detail_data_fo/' . $id_fo);
+       }
 
        //list bo
-       public function list_bo()
+       public function list_data_bo()
        {
                $data_title['title'] = 'List Back Office';
                $data['admin'] = $this->db->get_where('admin', ['id_admin' =>
@@ -441,8 +559,67 @@ class Dashboard extends CI_Controller
                $this->load->view('admin/backoffice/form_ubah', $data_detail);
                $this->load->view('footer');
        }
+       //ubah foto profil
+       public function upload_foto_profil_bo($id_bo)
+       {
+
+               $config['upload_path']          = '../assets/dashboard/images/backoffice/profil/';
+               $config['allowed_types']        = 'gif|jpg|png|jpeg';
+               $config['file_name']            = 'profil-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+               $this->load->library('upload', $config);
+               if (!empty($_FILES['berkas']['name'])) {
+               if ($this->upload->do_upload('berkas')) {
+
+                       $uploadData = $this->upload->data();
+
+                       //Compres Foto
+                       $config['image_library'] = 'gd2';
+                       $config['source_image'] = '../assets/dashboard/images/backoffice/profil/' . $uploadData['file_name'];
+                       $config['create_thumb'] = FALSE;
+                       $config['maintain_ratio'] = TRUE;
+                       $config['quality'] = '100%';
+                       $config['width'] = 480;
+                       $config['height'] = 640;
+
+                       $config['new_image'] = '../assets/dashboard/images/backoffice/profil/' . $uploadData['file_name'];
+                       $this->load->library('image_lib', $config);
+                       $this->image_lib->resize();
+
+                       $item = $this->db->where('id_bo', $id_bo)->get('bo')->row();
+
+                       //replace foto lama 
+                       if ($item->foto_profil_bo != "placeholder_profil.png") {
+                       $target_file = '../assets/dashboard/images/backoffice/profil/' . $item->foto_profil_bo;
+                       unlink($target_file);
+                       }
+
+                       $data['foto_profil_bo'] = $uploadData['file_name'];
+
+                       $this->db->where('id_bo', $id_bo);
+                       $this->db->update('bo', $data);
+               }
+               }
+               $url = $_SERVER['HTTP_REFERER'];
+               $this->session->set_flashdata('success', 'diubah');
+               redirect($url);
+       }
+       // aksi update bo
+       public function aksi_update_bo($id_bo)
+       {
+               $data_bo= array(
+               'sie' => $this->input->post('sie'),
+               'no_hp' => $this->input->post('no_hp'),
+               'email' => $this->input->post('email'),
+               'nama' => $this->input->post('nama'),
+               );
+
+               $this->m_admin->update_bo($id_bo, $data_bo, 'bo');
+               $this->session->set_flashdata('success', 'Data Back Office berhasil diperbarui');
+               redirect('dashboard/detail_data_bo/' . $id_bo);
+       }
        //list kasi
-       public function list_kasi()
+       public function list_data_kasi()
        {
                $data_title['title'] = 'List Kasi';
                $data['admin'] = $this->db->get_where('admin', ['id_admin' =>
@@ -538,8 +715,67 @@ class Dashboard extends CI_Controller
                $this->load->view('admin/kasi/form_ubah', $data_detail);
                $this->load->view('footer');
        }
+       //ubah foto profil
+       public function upload_foto_profil_kasi($id_kasi)
+       {
+
+               $config['upload_path']          = '../assets/dashboard/images/kasi/profil/';
+               $config['allowed_types']        = 'gif|jpg|png|jpeg';
+               $config['file_name']            = 'profil-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+               $this->load->library('upload', $config);
+               if (!empty($_FILES['berkas']['name'])) {
+               if ($this->upload->do_upload('berkas')) {
+
+                       $uploadData = $this->upload->data();
+
+                       //Compres Foto
+                       $config['image_library'] = 'gd2';
+                       $config['source_image'] = '../assets/dashboard/images/kasi/profil/' . $uploadData['file_name'];
+                       $config['create_thumb'] = FALSE;
+                       $config['maintain_ratio'] = TRUE;
+                       $config['quality'] = '100%';
+                       $config['width'] = 480;
+                       $config['height'] = 640;
+
+                       $config['new_image'] = '../assets/dashboard/images/kasi/profil/' . $uploadData['file_name'];
+                       $this->load->library('image_lib', $config);
+                       $this->image_lib->resize();
+
+                       $item = $this->db->where('id_kasi', $id_kasi)->get('kasi')->row();
+
+                       //replace foto lama 
+                       if ($item->foto_profil_kasi != "placeholder_profil.png") {
+                       $target_file = '../assets/dashboard/images/kasi/profil/' . $item->foto_profil_kasi;
+                       unlink($target_file);
+                       }
+
+                       $data['foto_profil_kasi'] = $uploadData['file_name'];
+
+                       $this->db->where('id_kasi', $id_kasi);
+                       $this->db->update('kasi', $data);
+               }
+               }
+               $url = $_SERVER['HTTP_REFERER'];
+               $this->session->set_flashdata('success', 'diubah');
+               redirect($url);
+       }
+       // aksi update kasi
+       public function aksi_update_kasi($id_kasi)
+       {
+               $data_kasi= array(
+               'sie' => $this->input->post('sie'),
+               'no_hp' => $this->input->post('no_hp'),
+               'email' => $this->input->post('email'),
+               'nama' => $this->input->post('nama'),
+               );
+
+               $this->m_admin->update_kasi($id_kasi, $data_kasi, 'kasi');
+               $this->session->set_flashdata('success', 'Data Kasi berhasil diperbarui');
+               redirect('dashboard/detail_data_kasi/' . $id_kasi);
+       }
        //list kasubag
-       public function list_kasubag()
+       public function list_data_kasubag()
        {
                $data_title['title'] = 'List Kasubag';
                $data['admin'] = $this->db->get_where('admin', ['id_admin' =>
@@ -634,8 +870,66 @@ class Dashboard extends CI_Controller
                $this->load->view('admin/kasubag/form_ubah', $data_detail);
                $this->load->view('footer');
        }
+       //ubah foto profil
+       public function upload_foto_profil_kasubag($id_kasubag)
+       {
+
+               $config['upload_path']          = '../assets/dashboard/images/kasubag/profil/';
+               $config['allowed_types']        = 'gif|jpg|png|jpeg';
+               $config['file_name']            = 'profil-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+               $this->load->library('upload', $config);
+               if (!empty($_FILES['berkas']['name'])) {
+               if ($this->upload->do_upload('berkas')) {
+
+                       $uploadData = $this->upload->data();
+
+                       //Compres Foto
+                       $config['image_library'] = 'gd2';
+                       $config['source_image'] = '../assets/dashboard/images/kasubag/profil/' . $uploadData['file_name'];
+                       $config['create_thumb'] = FALSE;
+                       $config['maintain_ratio'] = TRUE;
+                       $config['quality'] = '100%';
+                       $config['width'] = 480;
+                       $config['height'] = 640;
+
+                       $config['new_image'] = '../assets/dashboard/images/kasubag/profil/' . $uploadData['file_name'];
+                       $this->load->library('image_lib', $config);
+                       $this->image_lib->resize();
+
+                       $item = $this->db->where('id_kasubag', $id_kasubag)->get('kasubag')->row();
+
+                       //replace foto lama 
+                       if ($item->foto_profil_kasubag != "placeholder_profil.png") {
+                       $target_file = '../assets/dashboard/images/kasubag/profil/' . $item->foto_profil_kasubag;
+                       unlink($target_file);
+                       }
+
+                       $data['foto_profil_kasubag'] = $uploadData['file_name'];
+
+                       $this->db->where('id_kasubag', $id_kasubag);
+                       $this->db->update('kasubag', $data);
+               }
+               }
+               $url = $_SERVER['HTTP_REFERER'];
+               $this->session->set_flashdata('success', 'diubah');
+               redirect($url);
+       }
+       // aksi update kasubag
+       public function aksi_update_kasubag($id_kasubag)
+       {
+               $data_kasubag= array(
+               'no_hp' => $this->input->post('no_hp'),
+               'email' => $this->input->post('email'),
+               'nama' => $this->input->post('nama'),
+               );
+
+               $this->m_admin->update_kasubag($id_kasubag, $data_kasubag, 'kasubag');
+               $this->session->set_flashdata('success', 'Data Kasubag berhasil diperbarui');
+               redirect('dashboard/detail_data_kasubag/' . $id_kasubag);
+       }
        //list kepala
-       public function list_kepala()
+       public function list_data_kepala()
        {
                $data_title['title'] = 'List Kepala';
                $data['admin'] = $this->db->get_where('admin', ['id_admin' =>
@@ -731,8 +1025,67 @@ class Dashboard extends CI_Controller
                $this->load->view('admin/kepala/form_ubah', $data_detail);
                $this->load->view('footer');
        }
+       //ubah foto profil
+       public function upload_foto_profil_kepala($id_kepala)
+       {
+
+               $config['upload_path']          = '../assets/dashboard/images/kepala/profil/';
+               $config['allowed_types']        = 'gif|jpg|png|jpeg';
+               $config['file_name']            = 'profil-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+               $this->load->library('upload', $config);
+               if (!empty($_FILES['berkas']['name'])) {
+               if ($this->upload->do_upload('berkas')) {
+
+                       $uploadData = $this->upload->data();
+
+                       //Compres Foto
+                       $config['image_library'] = 'gd2';
+                       $config['source_image'] = '../assets/dashboard/images/kepala/profil/' . $uploadData['file_name'];
+                       $config['create_thumb'] = FALSE;
+                       $config['maintain_ratio'] = TRUE;
+                       $config['quality'] = '100%';
+                       $config['width'] = 480;
+                       $config['height'] = 640;
+
+                       $config['new_image'] = '../assets/dashboard/images/kepala/profil/' . $uploadData['file_name'];
+                       $this->load->library('image_lib', $config);
+                       $this->image_lib->resize();
+
+                       $item = $this->db->where('id_kepala', $id_kepala)->get('kepala')->row();
+
+                       //replace foto lama 
+                       if ($item->foto_profil_kepala != "placeholder_profil.png") {
+                       $target_file = '../assets/dashboard/images/kepala/profil/' . $item->foto_profil_kepala;
+                       unlink($target_file);
+                       }
+
+                       $data['foto_profil_kepala'] = $uploadData['file_name'];
+
+                       $this->db->where('id_kepala', $id_kepala);
+                       $this->db->update('kepala', $data);
+               }
+               }
+               $url = $_SERVER['HTTP_REFERER'];
+               $this->session->set_flashdata('success', 'diubah');
+               redirect($url);
+       }
+       // aksi update kepala
+       public function aksi_update_kepala($id_kepala)
+       {
+               $data_kepala= array(
+               'nip' => $this->input->post('nip'),
+               'no_hp' => $this->input->post('no_hp'),
+               'email' => $this->input->post('email'),
+               'nama' => $this->input->post('nama'),
+               );
+
+               $this->m_admin->update_kepala($id_kepala, $data_kepala, 'kepala');
+               $this->session->set_flashdata('success', 'Data Kepala berhasil diperbarui');
+               redirect('dashboard/detail_data_kepala/' . $id_kepala);
+       }
        //list timteknis
-       public function list_timteknis()
+       public function list_data_timteknis()
        {
                $data_title['title'] = 'List Tim Teknis';
                $data['admin'] = $this->db->get_where('admin', ['id_admin' =>
@@ -828,49 +1181,63 @@ class Dashboard extends CI_Controller
                $this->load->view('admin/timteknis/form_ubah', $data_detail);
                $this->load->view('footer');
        }
-        //ubah foto profil
-        public function upload_foto_profil_pemohon($id_pemohon)
-        {
+       //ubah foto profil
+       public function upload_foto_profil_timteknis($id_tim_teknis)
+       {
 
-                $config['upload_path']          = './assets/dashboard/images/pemohon/profil/';
-                $config['allowed_types']        = 'gif|jpg|png|jpeg';
-                $config['file_name']            = 'profil-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+               $config['upload_path']          = '../assets/dashboard/images/timteknis/profil/';
+               $config['allowed_types']        = 'gif|jpg|png|jpeg';
+               $config['file_name']            = 'profil-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
 
-                $this->load->library('upload', $config);
-                if (!empty($_FILES['berkas']['name'])) {
-                if ($this->upload->do_upload('berkas')) {
+               $this->load->library('upload', $config);
+               if (!empty($_FILES['berkas']['name'])) {
+               if ($this->upload->do_upload('berkas')) {
 
-                        $uploadData = $this->upload->data();
+                       $uploadData = $this->upload->data();
 
-                        //Compres Foto
-                        $config['image_library'] = 'gd2';
-                        $config['source_image'] = './assets/dashboard/images/pemohon/profil/' . $uploadData['file_name'];
-                        $config['create_thumb'] = FALSE;
-                        $config['maintain_ratio'] = TRUE;
-                        $config['quality'] = '100%';
-                        $config['width'] = 480;
-                        $config['height'] = 640;
+                       //Compres Foto
+                       $config['image_library'] = 'gd2';
+                       $config['source_image'] = '../assets/dashboard/images/timteknis/profil/' . $uploadData['file_name'];
+                       $config['create_thumb'] = FALSE;
+                       $config['maintain_ratio'] = TRUE;
+                       $config['quality'] = '100%';
+                       $config['width'] = 480;
+                       $config['height'] = 640;
 
-                        $config['new_image'] = './assets/dashboard/images/pemohon/profil/' . $uploadData['file_name'];
-                        $this->load->library('image_lib', $config);
-                        $this->image_lib->resize();
+                       $config['new_image'] = '../assets/dashboard/images/timteknis/profil/' . $uploadData['file_name'];
+                       $this->load->library('image_lib', $config);
+                       $this->image_lib->resize();
 
-                        $item = $this->db->where('id_pemohon', $id_pemohon)->get('pemohon')->row();
+                       $item = $this->db->where('id_tim_teknis', $id_tim_teknis)->get('tim_teknis')->row();
 
-                        //replace foto lama 
-                        if ($item->foto_profil_pemohon != "placeholder_profil.png") {
-                        $target_file = './assets/dashboard/images/pemohon/profil/' . $item->foto_profil_pemohon;
-                        unlink($target_file);
-                        }
+                       //replace foto lama 
+                       if ($item->foto_profil_tim_teknis != "placeholder_profil.png") {
+                       $target_file = '../assets/dashboard/images/timteknis/profil/' . $item->foto_profil_tim_teknis;
+                       unlink($target_file);
+                       }
 
-                        $data['foto_profil_pemohon'] = $uploadData['file_name'];
+                       $data['foto_profil_fo'] = $uploadData['file_name'];
 
-                        $this->db->where('id_pemohon', $id_pemohon);
-                        $this->db->update('pemohon', $data);
-                }
-                }
-                $url = $_SERVER['HTTP_REFERER'];
-                $this->session->set_flashdata('success', 'diubah');
-                redirect($url);
-        }
+                       $this->db->where('id_tim_teknis', $id_tim_teknis);
+                       $this->db->update('tim_teknis', $data);
+               }
+               }
+               $url = $_SERVER['HTTP_REFERER'];
+               $this->session->set_flashdata('success', 'diubah');
+               redirect($url);
+       }
+       // aksi update timteknis
+       public function aksi_update_timteknis($id_tim_teknis)
+       {
+               $data_timteknis= array(
+               'sie' => $this->input->post('sie'),
+               'no_hp' => $this->input->post('no_hp'),
+               'email' => $this->input->post('email'),
+               'nama' => $this->input->post('nama'),
+               );
+
+               $this->m_admin->update_timteknis($id_tim_teknis, $data_timteknis, 'tim_teknis');
+               $this->session->set_flashdata('success', 'Data Tim Teknis berhasil diperbarui');
+               redirect('dashboard/detail_data_timteknis/' . $id_tim_teknis);
+       }
 }

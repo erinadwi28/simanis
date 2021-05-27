@@ -238,4 +238,46 @@ class M_admin extends CI_Model
     {
         $this->db->insert($tabel, $data_timteknis);
     }
+    //aksi update data pemohon
+    public function update_pemohon($where, $data, $table)
+    {
+        $this->db->where('id_pemohon', $where);
+        $this->db->update($table, $data);
+    }
+    //aksi update data fo
+    public function update_fo($where, $data, $table)
+    {
+        $this->db->where('id_fo', $where);
+        $this->db->update($table, $data);
+    }
+    //aksi update data bo
+    public function update_bo($where, $data, $table)
+    {
+        $this->db->where('id_bo', $where);
+        $this->db->update($table, $data);
+    }
+    //aksi update data kasi
+    public function update_kasi($where, $data, $table)
+    {
+        $this->db->where('id_kasi', $where);
+        $this->db->update($table, $data);
+    }
+    //aksi update data kasubag
+    public function update_kasubag($where, $data, $table)
+    {
+        $this->db->where('id_kasubag', $where);
+        $this->db->update($table, $data);
+    }
+    //aksi update data kepala
+    public function update_kepala($where, $data, $table)
+    {
+        $this->db->where('id_kepala', $where);
+        $this->db->update($table, $data);
+    }
+    //aksi update data timteknis
+    public function update_timteknis($where, $data, $table)
+    {
+        $this->db->where('id_tim_teknis', $where);
+        $this->db->update($table, $data);
+    }
 }

@@ -7,7 +7,7 @@
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_kepala') ?>">Kasubag</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_data_kasubag') ?>">Kasubag</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Tambah Data</li>
 			</ol>
 		</nav>

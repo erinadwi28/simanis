@@ -7,7 +7,7 @@
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_timteknis') ?>">Tim Teknis</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_data_timteknis') ?>">Tim Teknis</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Tambah Data</li>
 			</ol>
 		</nav>
@@ -44,8 +44,7 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="no_hp" name="no_hp" value=""
-										placeholder="masukkan no handphone disini..." required
-										data-parsley-type="number" minlength="11">
+										placeholder="masukkan no handphone disini..." required minlength="11">
 								</div>
 							</div>
 						</div>

@@ -6,7 +6,7 @@
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Front Office</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_data_fo') ?>">Front Office</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Detail</li>
 			</ol>
 		</nav>
@@ -31,22 +31,19 @@
 
                     <!-- Upload Foto Profil -->
                     <div class="card-footer py-3">
-                        <form action="<?= base_url('dashboard/upload_foto_profil_fo/') ?>" enctype="multipart/form-data" method="POST" accept-charset="utf-8" id="form_upload_foto_profil">
-                            <?php
-                            foreach ($detail_fo as $saya) { ?>
+                        <form action="<?= base_url('dashboard/upload_foto_profil_fo/' . $detail->id_fo) ?>" enctype="multipart/form-data" method="POST" accept-charset="utf-8" id="form_upload_foto_profil">
                                 <div class="form-group ml-2 mr-2">
                                     <div class="input-group">
                                         <div class="form-group-upload">
                                             <div class="custom-file">
                                                 <label class="custom-file-label" for="file-upload">pilih foto
                                                     profil...</label>
-                                                <input type="file" class="custom-file-input" id="file-upload" name="berkas" required>
-                                                
+                                                <input type="file" class="custom-file-input" id="file-upload" name="berkas" value="<?= $detail->foto_profil_fo; ?>" required>
+                                                <input type="hidden" class="form-control form-user-input" name="id_fo" id="file-upload" value="<?= $detail->id_fo ?>">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            <?php } ?>
                             <center>
                                 <button class="btn btn-sm btn-primary" type="submit">
                                     <i class="fa fa-upload"></i> 

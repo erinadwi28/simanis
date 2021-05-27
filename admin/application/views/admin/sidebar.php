@@ -30,7 +30,7 @@
 		</div>
 
 		<!-- Nav Item - Main Menu -->
-		<li class="nav-item">
+		<!-- <li class="nav-item">
 			<a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menupermohonanptsp" for="" aria-expanded="true" aria-controls="collapsePages">
 				<i class="fa fa-book"></i>
 				<span>Permohonan PTSP</span>
@@ -46,7 +46,7 @@
 					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Selesai</a>
 				</div>
 			</div>
-		</li>
+		</li> -->
 		<li class="nav-item">
 			<a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatapemohon" for="" aria-expanded="true" aria-controls="collapsePages">
 				<i class="fa fa-user"></i>
@@ -54,9 +54,18 @@
 			</a>
 			<div id="menudatapemohon" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
-					<a class="collapse-item" href="<?= base_url('frontoffice/list_data_pemohon') ?>">Data Pemohon</a>
-					<a class="collapse-item" href="<?= base_url('frontoffice/form_cari_nik_ubah_kata_sandi_pemohon') ?>">Ubah
-						Sandi Pemohon</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_data_pemohon') ?>">Data Pemohon</a>
+				</div>
+			</div>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#menudatafrontoffice" for="" aria-expanded="true" aria-controls="collapsePages">
+				<i class="fa fa-user"></i>
+				<span>Data FrontOffice</span>
+			</a>
+			<div id="menudatafrontoffice" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+				<div class="bg-white py-2 collapse-inner rounded">
+					<a class="collapse-item" href="<?= base_url('dashboard/list_data_fo') ?>">Data Front Office</a>
 				</div>
 			</div>
 		</li>
@@ -67,9 +76,7 @@
 			</a>
 			<div id="menudatabackoffice" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
-					<a class="collapse-item" href="<?= base_url('frontoffice/list_data_backoffice') ?>">Data Back Office</a>
-					<a class="collapse-item" href="<?= base_url('frontoffice/form_cari_nik_ubah_kata_sandi_backoffice') ?>">Ubah
-						Sandi Back Office</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_data_bo') ?>">Data Back Office</a>
 				</div>
 			</div>
 		</li>
@@ -80,9 +87,7 @@
 			</a>
 			<div id="menudatakasi" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
-					<a class="collapse-item" href="<?= base_url('frontoffice/list_data_kasi') ?>">Data Kasi</a>
-					<a class="collapse-item" href="<?= base_url('frontoffice/form_cari_nik_ubah_kata_sandi_kasi') ?>">Ubah
-						Sandi Kasi</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_data_kasi') ?>">Data Kasi</a>
 				</div>
 			</div>
 		</li>
@@ -93,9 +98,7 @@
 			</a>
 			<div id="menudatatimteknis" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
-					<a class="collapse-item" href="<?= base_url('frontoffice/list_data_timteknis') ?>">Data Tim Teknis</a>
-					<a class="collapse-item" href="<?= base_url('frontoffice/form_cari_nik_ubah_kata_sandi_timteknis') ?>">Ubah
-						Sandi Tim Teknis</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_data_timteknis') ?>">Data Tim Teknis</a>
 				</div>
 			</div>
 		</li>
@@ -106,9 +109,7 @@
 			</a>
 			<div id="menudatakasubag" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
-					<a class="collapse-item" href="<?= base_url('frontoffice/list_data_kasubag') ?>">Data Kasubag</a>
-					<a class="collapse-item" href="<?= base_url('frontoffice/form_cari_nik_ubah_kata_sandi_kasubag') ?>">Ubah
-						Sandi Kasubag</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_data_kasubag') ?>">Data Kasubag</a>
 				</div>
 			</div>
 		</li>
@@ -119,9 +120,7 @@
 			</a>
 			<div id="menudatakepala" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
-					<a class="collapse-item" href="<?= base_url('frontoffice/list_data_kepala') ?>">Data Kepala</a>
-					<a class="collapse-item" href="<?= base_url('frontoffice/form_cari_nik_ubah_kata_sandi_kepala') ?>">Ubah
-						Sandi Kepala</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_data_kepala') ?>">Data Kepala</a>
 				</div>
 			</div>
 		</li>

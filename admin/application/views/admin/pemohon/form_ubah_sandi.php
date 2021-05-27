@@ -7,7 +7,7 @@
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/sop_ptsp01') ?>">Pemohon</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_data_pemohon') ?>">Pemohon</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Ubah Sandi</li>
 			</ol>
 		</nav>

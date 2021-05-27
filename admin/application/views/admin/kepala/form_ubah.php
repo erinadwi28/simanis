@@ -7,12 +7,13 @@
 		<nav aria-label="breadcrumb" class="nav-breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/sop_ptsp01') ?>">Kepala</a></li>
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_data_kepala') ?>">Kepala</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Ubah Data</li>
 			</ol>
 		</nav>
 	</div>
 
+	<?php foreach ($detail_kepala as $data) { ?>
 	<!--Begin Content Profile-->
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
@@ -20,13 +21,13 @@
 			<div class="card shadow mb-5">
 				<div class="card-body">
 					<form class="form-horizontal mt-4" id="form_ubah" enctype="multipart/form-data"
-						action="<?= base_url('dashboard/aksi_pengajuan_ptsp01') ?>" method="POST">
+						action="<?= base_url('dashboard/aksi_update_kepala/' . $data->id_kepala) ?>" method="POST">
 						<div class="form-group row">
-							<label for="nik" class="col-sm-3 col-form-label">NIK</label>
+							<label for="nik" class="col-sm-3 col-form-label">NIP</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="nik" name="nik"
-										value="" placeholder="masukkan NIK disini..." required data-parsley-type="number">
+									<input type="text" class="form-control" id="nip" name="nip"
+										value="<?= $data->nip; ?>" placeholder="<?= $data->nip; ?>" required data-parsley-type="number">
 								</div>
 							</div>
 						</div>
@@ -35,7 +36,7 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="text" class="form-control" id="nama" name="nama"
-										value="" placeholder="masukkan nama disini..." required>
+										value="<?= $data->nama; ?>" placeholder="<?= $data->nama; ?>" required>
 								</div>
 							</div>
 						</div>
@@ -44,26 +45,16 @@
 							<div class="col-sm-9">
 								<div class="form-line focused">
 									<input type="email" class="form-control" id="email" name="email"
-										value="" placeholder="masukkan email disini..." required>
+										value="<?= $data->email; ?>" placeholder="<?= $data->email; ?>" required>
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="no_hp" class="col-sm-3 col-form-label">No. HandPhone</label>
+							<label for="no_hp" class="col-sm-3 col-form-label">No. Handphone</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">
-									<input type="text" class="form-control" id="no_hp" name="no_hp" value=""
-										placeholder="masukkan no handphone disini..." required
-										data-parsley-type="number" minlength="11">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="no_hp" class="col-sm-3 col-form-label">Kata Sandi</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="kata_sandi" name="kata_sandi" value=""
-										placeholder="masukkan kata sandi disini..." required>
+									<input type="text" class="form-control" id="no_hp" name="no_hp" value="<?= $data->no_hp; ?>"
+										placeholder="<?= $data->no_hp; ?>" required>
 								</div>
 							</div>
 						</div>
@@ -81,6 +72,7 @@
 		</div>
 		<div class="col-xs-12 col-sm-2"></div>
 	</div>
+	<?php } ?>
 	<!--End Content Profile-->
 </div>
 <!-- /.container-fluid -->

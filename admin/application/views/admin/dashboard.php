@@ -41,7 +41,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_pemohon') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
+							<a href="<?= base_url('dashboard/list_data_pemohon') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
 								Lihat</a>
 						</div>
 					</div>
@@ -66,7 +66,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_fo') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
+							<a href="<?= base_url('dashboard/list_data_fo') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
 								Lihat</a>
 						</div>
 					</div>
@@ -91,7 +91,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_bo') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
+							<a href="<?= base_url('dashboard/list_data_bo') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
 								Lihat</a>
 						</div>
 					</div>
@@ -116,7 +116,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_kasi') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
+							<a href="<?= base_url('dashboard/list_data_kasi') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
 								Lihat</a>
 						</div>
 					</div>
@@ -144,7 +144,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_kasubag') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
+							<a href="<?= base_url('dashboard/list_data_kasubag') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
 								Lihat</a>
 						</div>
 					</div>
@@ -169,7 +169,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_kepala') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
+							<a href="<?= base_url('dashboard/list_data_kepala') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
 								Lihat</a>
 						</div>
 					</div>
@@ -194,7 +194,7 @@
 					</div>
 					<div class="row mt-1">
 						<div class="col-md-12">
-							<a href="<?= base_url('dashboard/list_timteknis') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
+							<a href="<?= base_url('dashboard/list_data_timteknis') ?>" class="badge badge-user float-right"><i class="far fa-eye nav-icon"></i>
 								Lihat</a>
 						</div>
 					</div>
@@ -207,18 +207,18 @@
 
 
 	<!-- Page Heading Data Permohonan PTSP -->
-	<div class="card shadow h-100 p-0 mb-3">
+	<!-- <div class="card shadow h-100 p-0 mb-3">
 		<div class="card-body px-3 py-2 title-track">
 			<div class="align-items-center justify-content-between text-center">
 				<h1 class="h5 mb-0 text-bold text-light">Data Permohonan PTSP</h1>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<!-- Content Row -->
-	<div class="row">
+	<!-- <div class="row"> -->
 		<!-- Data Proses FO -->
-		<div class="col-xl-3 col-md-3 mb-3">
+		<!-- <div class="col-xl-3 col-md-3 mb-3">
 			<div class="card border-left-primary shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
@@ -244,9 +244,9 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- Data Proses BO -->
-		<div class="col-xl-3 col-md-3 mb-3">
+		<!-- <div class="col-xl-3 col-md-3 mb-3">
 			<div class="card border-left-primary shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
@@ -272,9 +272,9 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- Data Proses Tim Teknis -->
-		<div class="col-xl-3 col-md-3 mb-3">
+		<!-- <div class="col-xl-3 col-md-3 mb-3">
 			<div class="card border-left-primary shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
@@ -300,9 +300,9 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- Data Proses Kasi-->
-		<div class="col-xl-3 col-md-3 mb-3">
+		<!-- <div class="col-xl-3 col-md-3 mb-3">
 			<div class="card border-left-primary shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
@@ -330,10 +330,10 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row"> -->
 
 		<!-- Data Proses Kasubag-->
-		<div class="col-xl-3 col-md-3 mb-3">
+		<!-- <div class="col-xl-3 col-md-3 mb-3">
 			<div class="card border-left-primary shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
@@ -359,10 +359,10 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<!-- Data Pending-->
-		<div class="col-xl-3 col-md-3 mb-3">
+		<!-- <div class="col-xl-3 col-md-3 mb-3">
 			<div class="card border-left-danger shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
@@ -387,9 +387,9 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- Permohonan Selesai-->
-		<div class="col-xl-3 col-md-3 mb-3">
+		<!-- <div class="col-xl-3 col-md-3 mb-3">
 			<div class="card border-left-success shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
@@ -415,10 +415,10 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<!-- Permohonan Arsip-->
-		<div class="col-xl-3 col-md-3 mb-3">
+		<!-- <div class="col-xl-3 col-md-3 mb-3">
 			<div class="card border-left-info shadow-lg">
 				<div class="card-body px-3">
 					<div class="row no-gutters align-items-center">
@@ -444,7 +444,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<!-- Data Selesai FO-->
 		<!-- <div class="col-xl-3 col-md-3 mb-3">
@@ -473,8 +473,8 @@
 				</div>
 			</div>
 		</div> -->
-
-	</div>
+<!-- 
+	</div> -->
 
 </div>
 <!-- /.container-fluid -->
