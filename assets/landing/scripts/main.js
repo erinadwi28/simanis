@@ -67,7 +67,3 @@ $('#form_daftar_kepala').parsley();
 $('#form_masuk_timteknis').parsley();
 // Daftar tim teknis
 $('#form_daftar_timteknis').parsley();
-
-
-
-
