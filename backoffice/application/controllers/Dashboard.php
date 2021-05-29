@@ -359,7 +359,7 @@ class Dashboard extends CI_Controller
             'jam_konsultasi' => $this->input->post('jam_konsultasi'),
             'nama_petugas' => $this->input->post('nama_petugas'),
             'nip_petugas' => $this->input->post('nip_petugas'),
-            'pangkat_golongan' => $this->input->post('pangkat_gol'),
+            'pangkat_golongan' => $this->input->post('pangkat_golongan'),
             'jabatan' => $this->input->post('jabatan'),
         );
 

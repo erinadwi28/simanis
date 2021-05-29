@@ -208,16 +208,16 @@
 										<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
 									</tr>
 								<?php } ?>
-									<tr>
-									<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
+								<tr>
+									<?php if ($detail->keterangan != null && $detail->status == 'Pending') { ?>
 										<td><b>Keterangan Permohonan Pending</b></td>
 										<td> </td>
 										<td> </td>
 										<td>:</td>
 										<td> </td>
 										<td><?= $detail->keterangan; ?></td>
-									</tr>
-								<?php } ?>
+								</tr>
+							<?php } ?>
 							</tbody>
 						</table>
 					</div>
@@ -368,20 +368,20 @@
 			</div>
 		</div>
 
-	<!-- Button Setujui -->
-	<div class="row clearfix float-right px-2">
-		<?php if ($detail->status == 'Proses Kasi') { ?>
-		<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
-			<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
-				<i class="fas fa-check-circle">
-				</i> Terima
-			</button>
-		</a>
-		<?php } ?>
-	</div>
+		<!-- Button Setujui -->
+		<div class="row clearfix float-right px-2">
+			<?php if ($detail->status == 'Proses Kasi') { ?>
+				<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
+					<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
+						<i class="fas fa-check-circle">
+						</i> Terima
+					</button>
+				</a>
+			<?php } ?>
+		</div>
 
 	<?php } ?>
-<!--End Content Profile-->
+	<!--End Content Profile-->
 </div>
 <!-- /.container-fluid -->
 </div>

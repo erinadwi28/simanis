@@ -168,60 +168,62 @@
 								</tr>
 							<?php } ?>
 							<?php
-							$no = 1;
-							foreach ($data_petugas_doa as $detail) {
+							if ($detail->status != 'Proses BO') {
+								$no = 1;
+								foreach ($data_petugas_doa as $detail) {
 							?>
-								<tr>
-									<td><b>Petugas Doa</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td> </td>
-									<td><?= $no++ ?></td>
-								</tr>
+									<tr>
+										<td><b>Petugas Doa</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $no++ ?></td>
+									</tr>
 
-								<?php if ($detail->nama_petugas_doa != null) { ?>
-									<tr>
-										<td><b>Nama Petugas Do'a</b></td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td><?= $detail->nama_petugas_doa; ?></td>
-									</tr>
-								<?php } ?>
-								<?php if ($detail->nip_petugas_doa != null) { ?>
-									<tr>
-										<td><b>NIP Petugas Do'a</b></td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td><?= $detail->nip_petugas_doa; ?></td>
-									</tr>
-								<?php } ?>
-								<?php if ($detail->pangkat_petugas_doa != null) { ?>
-									<tr>
-										<td><b>Pangkat Doa Petugas Do'a</b></td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td><?= $detail->pangkat_petugas_doa; ?></td>
-									</tr>
-								<?php } ?>
-								<?php if ($detail->jabatan_petugas_doa != null) { ?>
-									<tr>
-										<td><b>Jabatan Petugas Do'a</b></td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td><?= $detail->jabatan_petugas_doa; ?></td>
-									</tr>
-								<?php } ?>
-								<br>
-							<?php } ?>
+									<?php if ($detail->nama_petugas_doa != null) { ?>
+										<tr>
+											<td><b>Nama Petugas Do'a</b></td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td><?= $detail->nama_petugas_doa; ?></td>
+										</tr>
+									<?php } ?>
+									<?php if ($detail->nip_petugas_doa != null) { ?>
+										<tr>
+											<td><b>NIP Petugas Do'a</b></td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td><?= $detail->nip_petugas_doa; ?></td>
+										</tr>
+									<?php } ?>
+									<?php if ($detail->pangkat_petugas_doa != null) { ?>
+										<tr>
+											<td><b>Pangkat Doa Petugas Do'a</b></td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td><?= $detail->pangkat_petugas_doa; ?></td>
+										</tr>
+									<?php } ?>
+									<?php if ($detail->jabatan_petugas_doa != null) { ?>
+										<tr>
+											<td><b>Jabatan Petugas Do'a</b></td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td><?= $detail->jabatan_petugas_doa; ?></td>
+										</tr>
+									<?php } ?>
+									<br>
+							<?php }
+							} ?>
 							<?php foreach ($detail_ptsp as $detail) { ?>
 								<tr>
 									<td><b>Tanggal Permohonan</b></td>
@@ -261,7 +263,7 @@
 										<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
 									</tr>
 								<?php } ?>
-								<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
+								<?php if ($detail->status == 'Pending') { ?>
 									<tr>
 										<td><b>Keterangan Permohonan Pending</b></td>
 										<td> </td>

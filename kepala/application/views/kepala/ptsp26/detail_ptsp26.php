@@ -142,7 +142,7 @@
 							Ibadah, Peristiwa Nikah, Jumlah Guru , Haji</h6>
 					</div>
 					<div class="card-body">
-					<table class="table-hover table-responsive">
+						<table class="table-hover table-responsive">
 							<tbody>
 								<tr>
 									<td><b>Nama</b></td>
@@ -242,7 +242,7 @@
 										<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
 									</tr>
 								<?php } ?>
-								<?php if ($detail->keterangan != null && $detail->status != 'Selesai') { ?>
+								<?php if ($detail->keterangan != null && $detail->status == 'Pending') { ?>
 									<tr>
 										<td><b>Keterangan Permohonan Pending</b></td>
 										<td> </td>
@@ -256,7 +256,7 @@
 						</table>
 					</div>
 					<div class="card-footer">
-						
+
 					</div>
 				</div>
 			</div>

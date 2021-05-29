@@ -71,6 +71,9 @@ class M_tim_teknis extends CI_Model
         $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_selesai_tim_teknis');
         $this->db->from('permohonan_ptsp');
         $this->db->where("(id_tim_teknis != 'null')");
+        $this->db->where("(status != 'Pending')");
+        $this->db->where("(status != 'Validasi Kemenag')");
+        $this->db->where("(status != 'Proses BO')");
         $this->db->where('sie', $sie);
         $this->db->where('status_delete', 0);
 
@@ -100,6 +103,9 @@ class M_tim_teknis extends CI_Model
         $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
         $this->db->join('pemohon', 'permohonan_ptsp.id_pemohon = pemohon.id_pemohon', 'INNER');
         $this->db->where("(permohonan_ptsp.id_tim_teknis != 'null')");
+        $this->db->where("(permohonan_ptsp.status != 'Pending')");
+        $this->db->where("(permohonan_ptsp.status != 'Validasi Kemenag')");
+        $this->db->where("(permohonan_ptsp.status != 'Proses BO')");
         $this->db->where('permohonan_ptsp.sie', $sie);
         $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
 

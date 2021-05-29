@@ -40,7 +40,7 @@
 
 		.badan_surat {
 			color: #000;
-			
+
 			margin-left: 60px;
 		}
 
@@ -71,6 +71,7 @@
 			margin-left: 2.8125em;
 			margin-bottom: 0.3125em;
 		}
+
 		.img-fluid {
 			max-width: 100%;
 			height: auto;
@@ -120,15 +121,14 @@
 			<div class="col-md-8">
 				<div class="card shadow mb-4">
 					<div class="card-body">
-					<!-- KOP SURAT -->
-					<center>
+						<!-- KOP SURAT -->
+						<center>
 							<table width="478">
 								<tr>
 									<td></td>
 									<td class="img">
 										<center>
-											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
-												width="100" height="100">
+											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>" width="100" height="100">
 										</center>
 									</td>
 									<td width="430" style="padding-left: 10px;">
@@ -260,15 +260,18 @@
 							</div>
 						</div>
 						<br> <br> <br>
-						<div>
-							Tembusan: <br>
-							1. Kepala Seksi PAIS Kankemenag Kab. Klaten; <br>
-							2. Korwil Pendidikan Kec. Karangdowo; <br>
-							3. Kepala SD Negeri 2 Demangan Kec. Karangdowo <br>
-							4. Kepala SD Negeri 3 Karangwungu Kec. Karangdowo <br>
-							5. Sdr. M. Zajid, S.Ag. NIP. 19740512 200501 1 003; <br>
-							6. Arsip
-						</div>
+						<?php
+						foreach ($detail_ptsp as $detail) { ?>
+							<div>
+								Tembusan: <br>
+								1. Kepala Seksi PAIS Kankemenag Kab. Klaten; <br>
+								2. Korwil Pendidikan Kec. <?= $detail->kecamatan ?>; <br>
+								3. <?= $detail->nama_sekolah_satmikal ?> Kec. <?= $detail->kecamatan_sekolah_satmikal ?> <br>
+								4. <?= $detail->nama_sekolah_tujuan ?> Kec. <?= $detail->kecamatan_sekolah_tujuan ?> <br>
+								5. Sdr. <?= $detail->nama_pns ?> NIP. <?= $detail->nip ?>; <br>
+								6. Arsip
+							</div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>

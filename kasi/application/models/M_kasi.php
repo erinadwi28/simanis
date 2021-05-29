@@ -55,6 +55,7 @@ class M_kasi extends CI_Model
         $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_selesaiKasi');
         $this->db->from('permohonan_ptsp');
         $this->db->where("(id_kasi != 'null')");
+        $this->db->where("(status != 'Pending')");
         $this->db->where('sie', $sie);
         $this->db->where('status_delete', 0);
 

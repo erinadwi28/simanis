@@ -204,7 +204,7 @@
 										<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
 									</tr>
 								<?php } ?>
-								<?php if ($detail->keterangan != null && $detail->status == 'Pending') { ?>
+								<?php if ($detail->status == 'Pending') { ?>
 									<tr>
 										<td><b>Keterangan Permohonan Pending</b></td>
 										<td> </td>

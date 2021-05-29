@@ -55,6 +55,8 @@ class M_bo extends CI_Model
         $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_selesaiBO');
         $this->db->from('permohonan_ptsp');
         $this->db->where("(id_bo != 'null')");
+        $this->db->where("(status != 'Pending')");
+        $this->db->where("(status != 'Validasi Kemenag')");
         $this->db->where('sie', $sie);
         $this->db->where('status_delete', 0);
 
@@ -98,6 +100,7 @@ class M_bo extends CI_Model
         $this->db->join('pemohon', 'permohonan_ptsp.id_pemohon = pemohon.id_pemohon', 'INNER');
         $this->db->where("(permohonan_ptsp.id_bo != 'null')");
         $this->db->where("(permohonan_ptsp.status != 'Pending')");
+        $this->db->where("(permohonan_ptsp.status != 'Validasi Kemenag')");
         $this->db->where('permohonan_ptsp.sie', $sie);
         $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
 
