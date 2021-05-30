@@ -93,7 +93,7 @@
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
 				<ol type="1" class="ml-0 list-syarat modal-content-syarat">
-					<li>Pemohon mengunduh surat rekomendasi ditujukan kepada Kepala Kankemenag Kab. Klaten, ditandatangani oleh takmir masjid yang bersangkutan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp22/srt_permohonan.pdf" target="_blank">[klik disini]</a></b></li>
+					<li>Pemohon mengunduh surat rekomendasi ditujukan kepada Kepala Kankemenag Kab. Klaten, ditandatangani oleh takmir masjid yang bersangkutan <b><a href="<?= base_url() ?>assets/dashboard/unduhan/pemohon/ptsp22/srt_permohonan_ptsp22.docx" target="_blank">[klik disini]</a></b></li>
 					<li>Pemohon mengunduh dan Mengisi Formulir, <br> unduh dengan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp22/srt_pernyataan.pdf" target="_blank">[klik disini]</a></b></li>
 					<li>Pemohon mengisi Surat Permohonan yang ditujukan kepada Kepala Kantor Kemenag Klaten.</li>
 					<li>Pemohon mengisi Formulir</li>
