@@ -257,22 +257,23 @@
 								<?php } ?>
 							</tbody>
 						</table>
-					</div>	
 					</div>
-						<div class="float-right">
-							<?php if ($detail->status == 'Proses Kasubag') { ?>
-								<a href="<?= base_url() ?>dashboard/aksi_setujui_permohonan/<?= $detail->id_permohonan_ptsp ?>">
-									<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
-										<i class="fas fa-check-circle">
-										</i> Terima
-									</button>
-								</a>
-							<?php } ?>
-						</div>
 				</div>
+				<div class="float-right">
+					<?php if ($detail->status == 'Proses Kasubag') { ?>
+						<a href="<?= base_url() ?>dashboard/aksi_setujui_permohonan/<?= $detail->id_permohonan_ptsp ?>">
+							<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
+								<i class="fas fa-check-circle">
+								</i> Terima
+							</button>
+						</a>
+					<?php } ?>
+				</div>
+			</div>
 		<?php } ?>
 		<!--End Content Profile-->
 		</div>
 		<!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->
+</div>

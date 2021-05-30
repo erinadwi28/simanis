@@ -173,8 +173,8 @@
 <body class="body" id="page-top">
 	<!-- Begin Page Content -->
 	<div class="container-fluid">
-			<!-- Page Heading -->
-			<div class="row">
+		<!-- Page Heading -->
+		<div class="row">
 			<div class="col-md-2">
 			</div>
 			<div class="col-md-8">
@@ -299,9 +299,9 @@
 										Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 										Kepala
 										<br><br>
-										<?php foreach ($data_kepala as $detail) { ?>
+										<!-- <?php foreach ($data_kepala as $detail) { ?>
 											<?= $detail->nama ?>
-										<?php } ?>
+										<?php } ?> -->
 									</div>
 								</div>
 							</div>
@@ -312,7 +312,7 @@
 							<div class="col-md-6">
 							</div>
 						</div>
-						<br> <br> 
+						<br> <br>
 						<div class="row">
 							<div class="col-md-6">
 							</div>
@@ -321,8 +321,8 @@
 								foreach ($data_kepala as $detail) { ?>
 									<div class="badan_surat ttd_surat">
 										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-										<!-- <u><b><?= $detail->nama ?></b></u><br>
-										Nip. <?= $detail->nip ?> -->
+										<?= $detail->nama ?><br>
+										<!-- Nip. <?= $detail->nip ?> -->
 									</div>
 								<?php } ?>
 							</div>
