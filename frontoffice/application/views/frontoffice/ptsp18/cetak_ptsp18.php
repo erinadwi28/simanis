@@ -48,6 +48,7 @@
 			margin-left: 0.0375em;
 			font-size: 11pt;
 			line-height: 1.2em;
+			text-align: justify;
 		}
 
 		.identitas {
@@ -77,7 +78,7 @@
 
 		.ttd_surat {
 			font-size: 11pt;
-			margin-left: 470px;
+			margin-left: 500px;
 		}
 	</style>
 
@@ -132,6 +133,7 @@
 										</p>
 									</center>
 								</div>
+								<br>
 								<div class="isi_surat">
 						<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Berdasarkan surat dari Takmir Masjid <?= $detail->nama_masjid ?> Nomor :
 										<?= $detail->no_srt_permohonan ?>
@@ -174,6 +176,7 @@
 										</tbody>
 									</table>
 								</div>
+								<br>
 								<div class="isi_surat">
 									<p>untuk mendapatkan bantuan renovasi masjid dari Gubernur Jawa Tengah.</p>
 									<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Demikian rekomendasi ini kami buat untuk dipergunakan sebagimana mestinya.</p>

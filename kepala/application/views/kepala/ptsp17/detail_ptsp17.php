@@ -133,7 +133,7 @@
 									<td><?= $detail->kecamatan ?></td>
 								</tr>
 								<tr>
-									<td><b>Nama Sekolah Stminkal</b></td>
+									<td><b>Nama Sekolah Satminkal</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>

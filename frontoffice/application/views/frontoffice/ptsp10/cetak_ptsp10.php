@@ -87,6 +87,7 @@
 			margin-left: 0.0375em;
 			font-size: 11pt;
 			line-height: 1.2em;
+			text-align: justify;
 		}
 
 		.identitas {
@@ -147,7 +148,7 @@
 
 		.ttd_surat {
 			font-size: 11pt;
-			margin-left: 400px;
+			margin-left: 500px;
 		}
 	</style>
 
@@ -201,6 +202,7 @@
 									</p>
 								</center>
 							</div>
+							<br> <br>
 							<div class="isi_surat">
 								<p> Assalamu'alaikum Wr. Wb.
 								</p>
@@ -239,6 +241,7 @@
 									</tbody>
 								</table>
 							</div>
+							<br>
 							<div class="isi_surat">
 								<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rekomendasi ini dibuat untuk menjadi pertimbangan Perpanjangan Izin Operasional Kantor
 									Cabang PPIU sebagai Penyelenggara

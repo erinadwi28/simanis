@@ -87,6 +87,7 @@
 			margin-left: 0.0375em;
 			font-size: 11pt;
 			line-height: 1.2em;
+			text-align: justify;
 		}
 
 		.identitas {
@@ -128,7 +129,7 @@
 
 		.ttd_surat {
 			font-size: 11pt;
-			margin-left: 470px;
+			margin-left: 500px;
 		}
 	</style>
 
@@ -326,7 +327,7 @@
 								</div> -->
 							<?php } ?>
 						</div>
-						<br> <br>
+						<br> <br> <br>
 						<?php foreach ($detail_ptsp as $detail) { ?>
 							<div class="tujuan_surat">
 								<p>Yth.Kepala Sekolah <br>
@@ -334,7 +335,7 @@
 									ditempat</p>
 							</div>
 						<?php } ?>
-						<br>
+						<br> <br>
 						<?php foreach ($detail_ptsp as $detail) { ?>
 							<div class="isi_surat">
 								<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menindaklanjuti surat dari Kepala
@@ -350,7 +351,7 @@
 								<?php foreach ($detail_ptsp as $detail) { ?>
 									<tbody>
 										<tr>
-											<td><b>Nama</b></td>
+											<td>Nama</td>
 											<td> </td>
 											<td> </td>
 											<td>:</td>
@@ -358,7 +359,7 @@
 											<td><?= $detail->nama_siswa ?></td>
 										</tr>
 										<tr>
-											<td><b>Tempat/Tanggal Lahir</b></td>
+											<td>Tempat/Tanggal Lahir</td>
 											<td> </td>
 											<td> </td>
 											<td>:</td>
@@ -367,7 +368,7 @@
 											</td>
 										</tr>
 										<tr>
-											<td><b>Jenis Kelamin</b></td>
+											<td>Jenis Kelamin</td>
 											<td> </td>
 											<td> </td>
 											<td>:</td>
@@ -375,7 +376,7 @@
 											<td><?= $detail->jenis_kelamin ?></td>
 										</tr>
 										<tr>
-											<td><b>NISN</b></td>
+											<td>NISN</td>
 											<td> </td>
 											<td> </td>
 											<td>:</td>
@@ -383,7 +384,7 @@
 											<td><?= $detail->nisn ?></td>
 										</tr>
 										<tr>
-											<td><b>Kelas</b></td>
+											<td>Kelas</td>
 											<td> </td>
 											<td> </td>
 											<td>:</td>
@@ -391,7 +392,7 @@
 											<td><?= $detail->kelas ?></td>
 										</tr>
 										<tr>
-											<td><b>Asal Madrasah</b></td>
+											<td>Asal Madrasah</td>
 											<td> </td>
 											<td> </td>
 											<td>:</td>
@@ -399,7 +400,7 @@
 											<td><?= $detail->nama_sekolah_asal ?></td>
 										</tr>
 										<tr>
-											<td><b>Sekolah Tujuan</b></td>
+											<td>Sekolah Tujuan</td>
 											<td> </td>
 											<td> </td>
 											<td>:</td>
@@ -407,7 +408,7 @@
 											<td><?= $detail->nama_sekolah_tujuan ?></td>
 										</tr>
 										<tr>
-											<td><b>Alasan Pindah</b></td>
+											<td>Alasan Pindah</td>
 											<td> </td>
 											<td> </td>
 											<td>:</td>

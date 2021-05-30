@@ -64,6 +64,7 @@
 			margin-left: 0.0375em;
 			font-size: 11pt;
 			line-height: 1.2em;
+			text-align: justify;
 		}
 
 		.identitas {
@@ -104,7 +105,7 @@
 
 		.ttd_surat {
 			font-size: 11pt;
-			margin-left: 470px;
+			margin-left: 500px;
 		}
 	</style>
 
@@ -195,7 +196,94 @@
 												<td></td>
 												<td></td>
 												<td></td>
-												<td style="margin-left: 300px;"><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
 											</tr>
 											<tr>
 												<td>Sifat</td>
@@ -219,7 +307,7 @@
 									</table>
 								</div>
 							</div>
-							<br> <br>
+							<br> <br> <br>
 
 							<div class="tujuan_surat">
 								<p>Kepada Yth. <br>

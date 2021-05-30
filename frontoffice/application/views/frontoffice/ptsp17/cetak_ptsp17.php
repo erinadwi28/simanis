@@ -65,6 +65,7 @@
 			margin-left: 0.0375em;
 			font-size: 11pt;
 			line-height: 1.2em;
+			text-align: justify;
 		}
 
 		.identitas {
@@ -105,7 +106,7 @@
 
 		.ttd_surat {
 			font-size: 11pt;
-			margin-left: 470px;
+			margin-left: 500px;
 		}
 	</style>
 
@@ -159,6 +160,7 @@
 									</p>
 								</center>
 							</div>
+							<br>
 							<div class="isi_surat">
 								<p> Dengan ini Kepala Kantor Kementerian Agama Kabupaten Klaten berdasarkan surat
 									permohonan Sdr.<?= $detail->nama_pns ?> tanggal <?= format_indo(date($detail->tgl_srt_permohonan)); ?>
@@ -223,6 +225,7 @@
 									</tbody>
 								</table>
 							</div>
+							<br>
 							<div class="isi_surat">
 								<p>untuk segera melaksanakan tugas sebagai Guru Muda pada Kantor Kementerian Agama
 									Kab. Klaten ditugaskan di <?= $detail->nama_sekolah_tujuan ?> Kec. <?= $detail->kecamatan_sekolah_tujuan ?> dan <?= $detail->nama_sekolah_satmikal ?> Kec. <?= $detail->kecamatan_sekolah_satmikal ?> Kabupaten <?= $detail->kabupaten_sekolah_satmikal ?>
