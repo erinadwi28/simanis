@@ -71,7 +71,7 @@
 			text-indent: 50px;
 			font-size: 11pt;
 		}
-		
+
 		.isi_surat {
 			margin-left: 0.0375em;
 			font-size: 11pt;
@@ -207,7 +207,7 @@
 								</p>
 							</div>
 							<div class="isi_surat identitas">
-								<table >
+								<table>
 									<tbody>
 										<tr>
 											<td>&emsp;&emsp; Nama</td>
@@ -274,11 +274,13 @@
 								</div>
 								<div class="col-md-6">
 									<div class="badan_surat ttd_surat">
-											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-											Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
-											Kepala
-											<br><br>
-											Anif Solokin
+										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+										Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
+										Kepala
+										<br><br>
+										<?php foreach ($data_kepala as $detail) { ?>
+											<?= $detail->nama ?>
+										<?php } ?>
 									</div>
 								</div>
 							</div>
@@ -298,25 +300,29 @@
 								<?php
 								foreach ($data_kepala as $detail) { ?>
 									<div class="badan_surat ttd_surat">
-											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-											<u><b><?= $detail->nama ?></b></u><br>
-											Nip. <?= $detail->nip ?>
+										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+										<!-- <u><b><?= $detail->nama ?></b></u><br>
+										Nip. <?= $detail->nip ?> -->
+										<?= $detail->nama ?>
 									</div>
 								<?php } ?>
 							</div>
 						</div>
 
-						<div class="badan_surat">
-							<p>Tembusan :</small>
-							<ol>
-								<li>Kepala Seksi PAIS KanKemenag Kab. Klaten,</li>
-								<li>Korwil Pendidikan Kec. Manisrenggo,</li>
-								<li>Kepala SD Negri 1 Sukorini Kec. Manisrenggo,</li>
-								<li>Kepala SD Negri Sapen Kec. Manisrenggo,</li>
-								<li>Sdr. Riyadi Tri Hidayat, S.Pd.I. NIP. 19741221 200501 1 002,</li>
-								<li>Arsip.</li>
-							</ol>
-						</div>
+						<?php
+						foreach ($detail_ptsp as $detail) { ?>
+							<div class="badan_surat">
+								<p>Tembusan :</small>
+								<ol>
+									<li>Kepala Seksi PAIS KanKemenag Kab. Klaten,</li>
+									<li>Korwil Pendidikan Kec. <?= $detail->kecamatan_sekolah_tujuan ?>,</li>
+									<li>Kepala <?= $detail->nama_sekolah_tujuan ?> Kec. <?= $detail->kecamatan_sekolah_satmikal ?>,</li>
+									<li>Kepala <?= $detail->nama_sekolah_satmikal ?> Kec. <?= $detail->kecamatan_sekolah_tujuan ?>,</li>
+									<li>Sdr. <?= $detail->nama_pns ?> NIP. <?= $detail->nip ?>,</li>
+									<li>Arsip.</li>
+								</ol>
+							</div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
