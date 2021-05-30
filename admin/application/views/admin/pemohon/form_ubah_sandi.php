@@ -12,7 +12,8 @@
 			</ol>
 		</nav>
 	</div>
-	
+	<?php foreach ($detail_pemohon as $detail) {
+		?>
 	<div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
@@ -44,17 +45,17 @@
 				<div class="col-md-12 mb-3">
 					<div class="card shadow mb-3">
 						<div class="card-body">
-							<form role="form" action="<?= 'http://localhost/simanis/' ?>dashboard/ubah_sandi_admin" method="post"
+							<form role="form" action="<?= base_url('dashboard/aksi_ubah_sandi_pemohon/' . $detail->id_pemohon) ?>" method="post"
 								id="ubah_pass">
 								<div class="row">
                   <div class="col-md-12">
                     <div class="form-group-pass mt-3">
-                      <label class="label-control" for="kata_sandi_baru"><b>Masukkan Kata Sandi Baru</b></label>
-                      <input type="password" placeholder="masukkan disini..." class="form-control form-user-input form-password" name="kata_sandi_baru" id="kata_sandi_baru" required minlength="8">
+                      <label class="label-control" for="kata_sandi"><b>Masukkan Kata Sandi Baru</b></label>
+                      <input type="password" placeholder="masukkan disini..." class="form-control form-user-input form-password" name="kata_sandi" id="kata_sandi" required minlength="8">
                     </div>
                     <div class="form-group-pass mt-3">
                       <label class="label-control" for="konfirmasi"><b>Ulangi Kata Sandi Baru</b></label>
-                      <input type="password" placeholder="masukan ulang kata sandi baru disini..." class="form-control form-user-input form-password" name="konfirmasi" id="konfirmasi" required minlength="8" data-parsley-equalto="#kata_sandi_baru">
+                      <input type="password" placeholder="masukan ulang kata sandi baru disini..." class="form-control form-user-input form-password" name="konfirmasi" id="konfirmasi" required minlength="8" data-parsley-equalto="#kata_sandi">
                       <input type="checkbox" class="form-checkbox" /> lihat
                       kata sandi
                       <br />
@@ -76,6 +77,7 @@
 			</div>
 		</div>
 	</div>
+  <?php } ?>
 	<!--End Content Profile-->
 </div>
 <!-- /.container-fluid -->

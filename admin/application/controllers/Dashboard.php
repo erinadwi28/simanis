@@ -24,37 +24,44 @@ class Dashboard extends CI_Controller
                 $data['admin'] = $this->db->get_where('admin', ['id_admin' =>
                 $this->session->userdata('id_admin')])->row_array();
                 $data['total_notif'] = $this->m_admin->jml_notif()->result();
-        
+                $data_user['pemohon'] = $this->m_admin->get_list_data_pemohon()->num_rows();
+                $data_user['fo'] = $this->m_admin->get_list_data_fo()->num_rows();
+                $data_user['bo'] = $this->m_admin->get_list_data_bo()->num_rows();
+                $data_user['kasi'] = $this->m_admin->get_list_data_kasi()->num_rows();
+                $data_user['kasubag'] = $this->m_admin->get_list_data_kasubag()->num_rows();
+                $data_user['kepala'] = $this->m_admin->get_list_data_kepala()->num_rows();
+                $data_user['timteknis'] = $this->m_admin->get_list_data_timteknis()->num_rows();
+                
                 $this->load->view('header', $data_title);
                 $this->load->view('admin/sidebar', $data);
                 $this->load->view('topbar', $data);
-                $this->load->view('admin/dashboard');
+                $this->load->view('admin/dashboard', $data_user);
                 $this->load->view('footer');
         }
 
-        public function profil_admin()
+        public function profil()
         {
                 $data_title['title'] = 'Profil Saya';
-                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
-                $this->session->userdata('id_fo')])->row_array();
-                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['admin'] = $this->db->get_where('admin', ['id_admin' =>
+                $this->session->userdata('id_admin')])->row_array();
+                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-                $detailhere = array('id_fo' => $this->session->userdata('id_fo'));
-                $data_detail['detail_profil_saya'] = $this->m_fo->get_detail_profil_saya($detailhere, 'fo')->result();
+                $detailhere = array('id_admin' => $this->session->userdata('id_admin'));
+                $data_detail['detail_profil_saya'] = $this->m_admin->get_detail_profil_saya($detailhere, 'admin')->result();
 
                 $this->load->view('header', $data_title);
-                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('admin/sidebar');
                 $this->load->view('topbar', $data);
-                $this->load->view('frontoffice/profil_fo', $data_detail);
+                $this->load->view('admin/profil', $data_detail);
                 $this->load->view('footer');
         }
 
         //ubah foto profil
         public function upload_foto_profil()
         {
-                $id_fo = $this->session->userdata('id_fo');
+                $id_admin = $this->session->userdata('id_admin');
 
-                $config['upload_path']          = './../assets/dashboard/images/frontoffice/profil/';
+                $config['upload_path']          = '../assets/dashboard/images/admin/profil/';
                 $config['allowed_types']        = 'gif|jpg|png|jpeg';
                 $config['file_name']            = 'profil-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
 
@@ -66,51 +73,51 @@ class Dashboard extends CI_Controller
 
                                 //Compres Foto
                                 $config['image_library'] = 'gd2';
-                                $config['source_image'] = './../assets/dashboard/images/frontoffice/profil/' . $uploadData['file_name'];
+                                $config['source_image'] = '../assets/dashboard/images/admin/profil/' . $uploadData['file_name'];
                                 $config['create_thumb'] = FALSE;
                                 $config['maintain_ratio'] = TRUE;
                                 $config['quality'] = '100%';
                                 $config['width'] = 480;
                                 $config['height'] = 640;
 
-                                $config['new_image'] = './../assets/dashboard/images/frontoffice/profil/' . $uploadData['file_name'];
+                                $config['new_image'] = '../assets/dashboard/images/admin/profil/' . $uploadData['file_name'];
                                 $this->load->library('image_lib', $config);
                                 $this->image_lib->resize();
 
-                                $item = $this->db->where('id_fo', $id_fo)->get('fo')->row();
+                                $item = $this->db->where('id_admin', $id_admin)->get('admin')->row();
 
                                 //replace foto lama 
-                                if ($item->foto_profil_fo != "placeholder_profil.png") {
-                                        $target_file = './../assets/dashboard/images/frontoffice/profil/' . $item->foto_profil_fo;
+                                if ($item->foto_profil != "placeholder_profil.png") {
+                                        $target_file = '../assets/dashboard/images/admin/profil/' . $item->foto_profil;
                                         unlink($target_file);
                                 }
 
-                                $data['foto_profil_fo'] = $uploadData['file_name'];
+                                $data['foto_profil'] = $uploadData['file_name'];
 
-                                $this->db->where('id_fo', $id_fo);
-                                $this->db->update('fo', $data);
+                                $this->db->where('id_admin', $id_admin);
+                                $this->db->update('admin', $data);
                         }
                 }
 
                 $this->session->set_flashdata('success', 'diubah');
-                redirect('dashboard/profil_fo');
+                redirect('dashboard/profil');
         }
 
         //menampilkan halaman form ubah kata sandi
         public function form_ubahsandi()
         {
                 $data_title['title'] = 'Ubah Kata Sandi Saya';
-                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
-                $this->session->userdata('id_fo')])->row_array();
-                $data['total_notif'] = $this->m_fo->jml_notif()->result();
+                $data['admin'] = $this->db->get_where('admin', ['id_admin' =>
+                $this->session->userdata('id_admin')])->row_array();
+                $data['total_notif'] = $this->m_admin->jml_notif()->result();
 
-                $detailhere = array('id_fo' => $this->session->userdata('id_fo'));
-                $data_detail['detail_profil_saya'] = $this->m_fo->get_detail_profil_saya($detailhere, 'fo')->result();
+                $detailhere = array('id_admin' => $this->session->userdata('id_admin'));
+                $data_detail['detail_profil_saya'] = $this->m_admin->get_detail_profil_saya($detailhere, 'admin')->result();
 
                 $this->load->view('header', $data_title);
-                $this->load->view('frontoffice/sidebar_fo');
+                $this->load->view('admin/sidebar');
                 $this->load->view('topbar', $data);
-                $this->load->view('frontoffice/ubahsandifo', $data_detail);
+                $this->load->view('admin/ubahsandi', $data_detail);
                 $this->load->view('footer');
         }
 
@@ -129,13 +136,13 @@ class Dashboard extends CI_Controller
 
                 $konfirmasi = $this->input->post('konfirmasi');
 
-                $where = $this->session->userdata('id_fo');
+                $where = $this->session->userdata('id_admin');
 
-                $fo = $this->m_fo->get_fo($where);
+                $admin = $this->m_admin->get_admin($where);
 
                 if ($konfirmasi === $kata_sandi_baru) {
-                        if ($data_lama === $fo['kata_sandi']) {
-                                $this->m_fo->update_sandi($where, $data_baru, 'fo');
+                        if ($data_lama === $admin['kata_sandi']) {
+                                $this->m_admin->update_sandi($where, $data_baru, 'admin');
                                 $this->session->set_flashdata('success', '<b>Kata Sandi</b> Berhasil Diubah');
                                 redirect('dashboard/form_ubahsandi');
                         } else {
@@ -228,6 +235,33 @@ class Dashboard extends CI_Controller
                 $this->load->view('topbar', $data);
                 $this->load->view('admin/pemohon/form_ubah_sandi', $data_detail);
                 $this->load->view('footer');
+        }
+        // aksi ubah sandi pemohon
+        public function aksi_ubah_sandi_pemohon($id_pemohon)
+        {
+                $kata_sandi = $this->input->post('kata_sandi');
+                $kata_sandi_hash = sha1($kata_sandi);
+
+                $data_baru = array(
+                        'kata_sandi' => $kata_sandi_hash,
+                );
+
+                $this->m_admin->update_sandi_pemohon($id_pemohon, $data_baru, 'pemohon');
+                $this->session->set_flashdata('success', '<b>Kata Sandi</b> Berhasil Diubah');
+                redirect('dashboard/detail_data_pemohon/'. $id_pemohon);
+                        
+        }
+        // aksi delete pemohon
+        public function aksi_hapus_pemohon($id_pemohon)
+        {
+                $data_baru = array(
+                        'status_delete' => 1,
+                );
+
+                $this->m_admin->hapus_pemohon($id_pemohon, $data_baru, 'pemohon');
+                $this->session->set_flashdata('success', '<b>User Pemohon</b> Berhasil Dihapus');
+                redirect('dashboard/list_data_pemohon/');
+                        
         }
         //menampilkan detail data pemohon
         public function ubah_pemohon($id_pemohon)
@@ -386,6 +420,33 @@ class Dashboard extends CI_Controller
                $this->load->view('admin/frontoffice/form_ubah_sandi', $data_detail);
                $this->load->view('footer');
        }
+       // aksi ubah sandi fo
+       public function aksi_ubah_sandi_fo($id_fo)
+       {
+               $kata_sandi = $this->input->post('kata_sandi');
+               $kata_sandi_hash = sha1($kata_sandi);
+
+               $data_baru = array(
+                       'kata_sandi' => $kata_sandi_hash,
+               );
+
+               $this->m_admin->update_sandi_fo($id_fo, $data_baru, 'fo');
+               $this->session->set_flashdata('success', '<b>Kata Sandi</b> Berhasil Diubah');
+               redirect('dashboard/detail_data_fo/'. $id_fo);
+                       
+       }
+       // aksi delete fo
+       public function aksi_hapus_fo($id_fo)
+       {
+               $data_baru = array(
+                       'status_delete' => 1,
+               );
+
+               $this->m_admin->hapus_fo($id_fo, $data_baru, 'fo');
+               $this->session->set_flashdata('success', '<b>User Front Office</b> Berhasil Dihapus');
+               redirect('dashboard/list_data_fo/');
+                       
+       }
        //menampilkan detail data fo
        public function ubah_fo($id_fo)
        {
@@ -543,6 +604,33 @@ class Dashboard extends CI_Controller
                $this->load->view('admin/backoffice/form_ubah_sandi', $data_detail);
                $this->load->view('footer');
        }
+       // aksi ubah sandi bo
+       public function aksi_ubah_sandi_bo($id_bo)
+       {
+               $kata_sandi = $this->input->post('kata_sandi');
+               $kata_sandi_hash = sha1($kata_sandi);
+
+               $data_baru = array(
+                       'kata_sandi' => $kata_sandi_hash,
+               );
+
+               $this->m_admin->update_sandi_bo($id_bo, $data_baru, 'bo');
+               $this->session->set_flashdata('success', '<b>Kata Sandi</b> Berhasil Diubah');
+               redirect('dashboard/detail_data_bo/'. $id_bo);
+                       
+       }
+       // aksi delete bo
+       public function aksi_hapus_bo($id_bo)
+       {
+               $data_baru = array(
+                       'status_delete' => 1,
+               );
+
+               $this->m_admin->hapus_bo($id_bo, $data_baru, 'bo');
+               $this->session->set_flashdata('success', '<b>User Back Office</b> Berhasil Dihapus');
+               redirect('dashboard/list_data_bo/');
+                       
+       }
        //menampilkan detail data bo
        public function ubah_bo($id_bo)
        {
@@ -699,6 +787,33 @@ class Dashboard extends CI_Controller
                $this->load->view('admin/kasi/form_ubah_sandi', $data_detail);
                $this->load->view('footer');
        }
+       // aksi ubah sandi kasi
+       public function aksi_ubah_sandi_kasi($id_kasi)
+       {
+               $kata_sandi = $this->input->post('kata_sandi');
+               $kata_sandi_hash = sha1($kata_sandi);
+
+               $data_baru = array(
+                       'kata_sandi' => $kata_sandi_hash,
+               );
+
+               $this->m_admin->update_sandi_kasi($id_kasi, $data_baru, 'kasi');
+               $this->session->set_flashdata('success', '<b>Kata Sandi</b> Berhasil Diubah');
+               redirect('dashboard/detail_data_kasi/'. $id_kasi);
+                       
+       }
+       // aksi delete kasi
+       public function aksi_hapus_kasi($id_kasi)
+       {
+               $data_baru = array(
+                       'status_delete' => 1,
+               );
+
+               $this->m_admin->hapus_kasi($id_kasi, $data_baru, 'kasi');
+               $this->session->set_flashdata('success', '<b>User Kasi</b> Berhasil Dihapus');
+               redirect('dashboard/list_data_kasi/');
+                       
+       }
        //menampilkan detail data kasi
        public function ubah_kasi($id_kasi)
        {
@@ -854,6 +969,33 @@ class Dashboard extends CI_Controller
                $this->load->view('admin/kasubag/form_ubah_sandi', $data_detail);
                $this->load->view('footer');
        }
+       // aksi ubah sandi kasubag
+       public function aksi_ubah_sandi_kasubag($id_kasubag)
+       {
+               $kata_sandi = $this->input->post('kata_sandi');
+               $kata_sandi_hash = sha1($kata_sandi);
+
+               $data_baru = array(
+                       'kata_sandi' => $kata_sandi_hash,
+               );
+
+               $this->m_admin->update_sandi_kasubag($id_kasubag, $data_baru, 'kasubag');
+               $this->session->set_flashdata('success', '<b>Kata Sandi</b> Berhasil Diubah');
+               redirect('dashboard/detail_data_kasubag/'. $id_kasubag);
+                       
+       }
+       // aksi delete kasubag
+       public function aksi_hapus_kasubag($id_kasubag)
+       {
+               $data_baru = array(
+                       'status_delete' => 1,
+               );
+
+               $this->m_admin->hapus_kasubag($id_kasubag, $data_baru, 'kasubag');
+               $this->session->set_flashdata('success', '<b>User Kasubag</b> Berhasil Dihapus');
+               redirect('dashboard/list_data_kasubag/');
+                       
+       }
        //menampilkan detail data kasubag
        public function ubah_kasubag($id_kasubag)
        {
@@ -1008,6 +1150,33 @@ class Dashboard extends CI_Controller
                $this->load->view('topbar', $data);
                $this->load->view('admin/kepala/form_ubah_sandi', $data_detail);
                $this->load->view('footer');
+       }
+       // aksi ubah sandi kepala
+       public function aksi_ubah_sandi_kepala($id_kepala)
+       {
+               $kata_sandi = $this->input->post('kata_sandi');
+               $kata_sandi_hash = sha1($kata_sandi);
+
+               $data_baru = array(
+                       'kata_sandi' => $kata_sandi_hash,
+               );
+
+               $this->m_admin->update_sandi_kepala($id_kepala, $data_baru, 'kepala');
+               $this->session->set_flashdata('success', '<b>Kata Sandi</b> Berhasil Diubah');
+               redirect('dashboard/detail_data_kepala/'. $id_kepala);
+                       
+       }
+       // aksi delete kepala
+       public function aksi_hapus_kepala($id_kepala)
+       {
+               $data_baru = array(
+                       'status_delete' => 1,
+               );
+
+               $this->m_admin->hapus_kepala($id_kepala, $data_baru, 'kepala');
+               $this->session->set_flashdata('success', '<b>User Kepala</b> Berhasil Dihapus');
+               redirect('dashboard/list_data_kepala/');
+                       
        }
        //menampilkan detail data kepala
        public function ubah_kepala($id_kepala)
@@ -1165,6 +1334,33 @@ class Dashboard extends CI_Controller
                $this->load->view('admin/timteknis/form_ubah_sandi', $data_detail);
                $this->load->view('footer');
        }
+       // aksi ubah sandi tim teknis
+       public function aksi_ubah_sandi_timteknis($id_tim_teknis)
+       {
+               $kata_sandi = $this->input->post('kata_sandi');
+               $kata_sandi_hash = sha1($kata_sandi);
+
+               $data_baru = array(
+                       'kata_sandi' => $kata_sandi_hash,
+               );
+
+               $this->m_admin->update_sandi_timteknis($id_tim_teknis, $data_baru, 'tim_teknis');
+               $this->session->set_flashdata('success', '<b>Kata Sandi</b> Berhasil Diubah');
+               redirect('dashboard/detail_data_timteknis/'. $id_tim_teknis);
+                       
+       }
+       // aksi delete tim teknis
+       public function aksi_hapus_timteknis($id_tim_teknis)
+       {
+               $data_baru = array(
+                       'status_delete' => 1,
+               );
+
+               $this->m_admin->hapus_timteknis($id_tim_teknis, $data_baru, 'tim_teknis');
+               $this->session->set_flashdata('success', '<b>User Tim Teknis</b> Berhasil Dihapus');
+               redirect('dashboard/list_data_timteknis/');
+                       
+       }
        //menampilkan detail data timteknis
        public function ubah_timteknis($id_tim_teknis)
        {
@@ -1240,4 +1436,6 @@ class Dashboard extends CI_Controller
                $this->session->set_flashdata('success', 'Data Tim Teknis berhasil diperbarui');
                redirect('dashboard/detail_data_timteknis/' . $id_tim_teknis);
        }
+
+        
 }

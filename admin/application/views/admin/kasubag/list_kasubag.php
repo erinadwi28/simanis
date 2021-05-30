@@ -57,7 +57,7 @@
 								<a href="<?= base_url() ?>dashboard/detail_data_kasubag/<?= $data->id_kasubag ?>" class="btn btn-primary btn-sm">
 									<i class="fas fa-search"></i>
 								</a>
-								<a href="#" class="btn btn-tolak btn-sm" data-toggle="modal" data-target="#kasubagDeleteModal">
+								<a href="#" class="btn btn-tolak btn-sm" data-toggle="modal" data-target="#kasubagDeleteModal<?= $data->id_kasubag ?>">
 									<i class="fas fa-trash-alt"></i>
 								</a>
 							</td>
@@ -72,3 +72,30 @@
 <!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->
+<?php
+foreach ($data_user as $data) {
+?>
+<!-- kasubag delete Modal-->
+<div class="modal fade" id="kasubagDeleteModal<?= $data->id_kasubag ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+	aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin Ingin Menghapus Data Kasubag ?</h5>
+				<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				Tekan Hapus untuk melanjutkan <br>
+				Tekan Batal untuk membatalkan
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-primary btn-sm" href="<?= base_url('dashboard/aksi_hapus_kasubag/' . $data->id_kasubag) ?>">Hapus</a>
+				<button class="btn btn-tolak btn-sm" type="button" data-dismiss="modal">
+					Batal
+				</button>
+			</div>
+		</div>
+	</div>
+</div> <?php }?>

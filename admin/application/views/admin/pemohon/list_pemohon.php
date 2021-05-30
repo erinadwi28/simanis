@@ -57,7 +57,7 @@
 								<a href="<?= base_url() ?>dashboard/detail_data_pemohon/<?= $data->id_pemohon ?>" class="btn btn-primary btn-sm">
 									<i class="fas fa-search"></i>
 								</a>
-								<a href="#" class="btn btn-tolak btn-sm" data-toggle="modal" data-target="#pemohonDeleteModal">
+								<a href="#" class="btn btn-tolak btn-sm" data-toggle="modal" data-target="#pemohonDeleteModal<?= $data->id_pemohon ?>">
 									<i class="fas fa-trash-alt"></i>
 								</a>
 							</td>
@@ -73,3 +73,30 @@
 <!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->
+<!-- pemohon delete Modal-->
+<?php
+foreach ($data_user as $data) {
+?>
+<div class="modal fade" id="pemohonDeleteModal<?= $data->id_pemohon ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+	aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin Ingin Menghapus Data Pemohon ?</h5>
+				<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				Tekan Hapus untuk melanjutkan <br>
+				Tekan Batal untuk membatalkan
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-primary btn-sm" href="<?= base_url('dashboard/aksi_hapus_pemohon/' . $data->id_pemohon) ?>">Hapus</a>
+				<button class="btn btn-tolak btn-sm" type="button" data-dismiss="modal">
+					Batal
+				</button>
+			</div>
+		</div>
+	</div>
+</div> <?php }?>
