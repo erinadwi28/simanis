@@ -310,7 +310,7 @@
 									<label for="hari_pengukuran" class="col-sm-3 col-form-label">Hari Pengukuran</label>
 									<div class="col-sm-8 ml-1">
 										<div class="form-line focused">
-											<input type="text" class="form-control" id="hari_pengukuran" name="hari_pengukuran" value="" required>
+											<input type="text" class="form-control" id="hari_pengukuran" name="hari_pengukuran" value="" placeholder="masukkan hari pengukuran disini..." required>
 										</div>
 									</div>
 								</div>
@@ -318,7 +318,7 @@
 									<label for="tgl_pengukuran" class="col-sm-3 col-form-label">Tanggal Pengukuran Masehi</label>
 									<div class="col-sm-8 ml-1">
 										<div class="form-line focused">
-											<input type="date" class="form-control" id="tgl_pengukuran" name="tgl_pengukuran" value="" required>
+											<input type="date" class="form-control" id="tgl_pengukuran" name="tgl_pengukuran" value="" placeholder="masukkan tanggal pengukuran disini..." required>
 										</div>
 									</div>
 								</div>
@@ -326,7 +326,7 @@
 									<label for="tgl_pengukuran_hijriyah" class="col-sm-3 col-form-label">Tanggal Pengukuran Hijriyah</label>
 									<div class="col-sm-8 ml-1">
 										<div class="form-line focused">
-											<input type="text" class="form-control" id="tgl_pengukuran_hijriyah" name="tgl_pengukuran_hijriyah" value="" required>
+											<input type="text" class="form-control" id="tgl_pengukuran_hijriyah" name="tgl_pengukuran_hijriyah" value="" placeholder="masukkan tanggal pengukuran hijriyah disini..." required>
 										</div>
 									</div>
 								</div>
@@ -334,7 +334,7 @@
 									<label for="jam_pengukuran" class="col-sm-3 col-form-label">Jam Pengukuran</label>
 									<div class="col-sm-8 ml-1">
 										<div class="form-line focused">
-											<input type="text" class="form-control" id="jam_pengukuran" name="jam_pengukuran" value="" required>
+											<input type="text" class="form-control" id="jam_pengukuran" name="jam_pengukuran" value="" placeholder="masukkan jam pengukuran disini..." required>
 										</div>
 									</div>
 								</div>

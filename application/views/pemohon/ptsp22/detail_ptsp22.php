@@ -151,7 +151,7 @@
 				<!-- Detail Data -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-center">Rek. Rek. ID Masjid & Musala</h6>
+						<h6 class="m-0 font-weight-bold text-center">Rekomendasi ID Masjid & Musala</h6>
 					</div>
 					<div class="card-body">
 						<table class="table-hover table-responsive">
@@ -270,7 +270,7 @@
 							</tbody>
 						</table>
 						<?php if ($detail->status == 'Pending') { ?>
-							<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen dibawah</em>
+							<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen disamping</em>
 						<?php } ?>
 					</div>
 

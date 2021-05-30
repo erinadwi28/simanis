@@ -114,9 +114,10 @@
 		}
 
 		.ttd_surat {
-			margin-left: 430px;
+			margin-left: 500px;
 			margin-right: 0px;
 			padding: 0;
+			width: 200px;
 		}
 	</style>
 

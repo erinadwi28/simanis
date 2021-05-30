@@ -188,7 +188,7 @@
 				</tr>
 				<table width="530">
 					<tr>
-						<td class="text2"><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
+						<td class="text2"></td>
 					</tr>
 				</table>
 			</table>
@@ -197,6 +197,8 @@
 				<tr class="text2">
 					<td width="40">Nomer</td>
 					<td>: <?= $detail->no_surat ?></td>
+					<td width="230"> </td>
+					<td class="text2"><?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?></td>
 				</tr>
 				<tr>
 					<td>Sifat</td>

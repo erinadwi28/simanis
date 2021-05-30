@@ -309,7 +309,8 @@
 							</tbody>
 						</table>
 					</div>
-					<div class="card-footer">
+					<br>
+					</div>
 						<div class="float-right">
 							<?php if ($detail->status == 'Proses Kasi') { ?>
 								<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
@@ -321,9 +322,7 @@
 							<?php } ?>
 						</div>
 					</div>
-				</div>
 			</div>
-		</div>
 	<?php } ?>
 	<!--End Content Profile-->
 </div>

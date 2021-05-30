@@ -180,12 +180,13 @@
 			border-style: solid;
 			color: #000000 !important;
 			margin-top: 5px;
-			margin-right: 17px;
+			margin-right: 30px;
 		}
 
 		.ttd_surat {
 			font-size: 11pt;
-			margin-left: 400px;
+			margin-left: 480px;
+			width: 200px;
 		}
 	</style>
 

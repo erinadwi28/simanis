@@ -79,7 +79,7 @@
 				<!-- Detail Data -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-center">Mutasi GPAI PNS</h6>
+						<h6 class="m-0 font-weight-bold text-center">Permohonan Mutasi GPAI PNS</h6>
 					</div>
 					<div class="card-body">
 						<table class="table-hover table-responsive">
@@ -196,7 +196,7 @@
 									<td> </td>
 									<td>:</td>
 									<td> </td>
-									<td><?= $detail->tgl_mulai_mengajar ?></td>
+									<td><?= format_indo(date($detail->tgl_mulai_mengajar)); ?></td>
 								</tr>
 								<tr>
 									<td><b>No. HandPhone</b></td>

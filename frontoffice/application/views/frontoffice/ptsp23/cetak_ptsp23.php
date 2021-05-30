@@ -50,7 +50,7 @@
 		}
 
 		.badan_surat {
-			margin-left: 60px;
+			margin-left: 55px;
 		}
 
 		.row {
@@ -71,7 +71,7 @@
 			text-indent: 50px;
 			font-size: 11pt;
 		}
-		
+
 		.isi_surat {
 			margin-left: 0.0375em;
 			font-size: 11pt;
@@ -165,7 +165,7 @@
 
 		.ttd_surat {
 			font-size: 11pt;
-			margin-left: 400px;
+			margin-left: 450px;
 		}
 	</style>
 </head>
@@ -173,21 +173,42 @@
 <body class="body" id="page-top">
 	<!-- Begin Page Content -->
 	<div class="container-fluid">
-		<!-- Page Heading -->
-		<div class="row">
+			<!-- Page Heading -->
+			<div class="row">
 			<div class="col-md-2">
 			</div>
 			<div class="col-md-8">
 				<div class="card shadow mb-4">
-
 					<div class="card-body">
-						<div class="kopsurat row">
-							<div class="col-md-12 mb-3">
-								<object data="" type="image">
-									<img class="img-fluid" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/kop_surat.png') ?>">
-								</object>
-							</div>
-						</div>
+						<!-- KOP SURAT -->
+						<center>
+							<table width="478">
+								<tr>
+									<td></td>
+									<td class="img">
+										<center>
+											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>" width="100" height="100">
+										</center>
+									</td>
+									<td width="430" style="padding-left: 10px;">
+										<center>
+											<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
+											<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
+											<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
+											<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
+											<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
+											<br>
+										</center>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3">
+										<div class="garis"></div>
+									</td>
+								</tr>
+							</table>
+						</center>
+						<br>
 						<?php
 						foreach ($detail_ptsp as $detail) { ?>
 							<div class="no_surat">
@@ -207,7 +228,7 @@
 								</p>
 							</div>
 							<div class="isi_surat identitas">
-								<table >
+								<table>
 									<tbody>
 										<tr>
 											<td>&emsp;&emsp; Nama</td>
@@ -274,11 +295,13 @@
 								</div>
 								<div class="col-md-6">
 									<div class="badan_surat ttd_surat">
-											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-											Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
-											Kepala
-											<br><br>
-											Anif Solokin
+										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+										Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
+										Kepala
+										<br><br>
+										<?php foreach ($data_kepala as $detail) { ?>
+											<?= $detail->nama ?>
+										<?php } ?>
 									</div>
 								</div>
 							</div>
@@ -287,10 +310,9 @@
 							<div class="col-md-6 ">
 							</div>
 							<div class="col-md-6">
-
 							</div>
 						</div>
-						<br> <br>
+						<br> <br> 
 						<div class="row">
 							<div class="col-md-6">
 							</div>
@@ -298,25 +320,28 @@
 								<?php
 								foreach ($data_kepala as $detail) { ?>
 									<div class="badan_surat ttd_surat">
-											<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-											<u><b><?= $detail->nama ?></b></u><br>
-											Nip. <?= $detail->nip ?>
+										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+										<!-- <u><b><?= $detail->nama ?></b></u><br>
+										Nip. <?= $detail->nip ?> -->
 									</div>
 								<?php } ?>
 							</div>
 						</div>
 
-						<div class="badan_surat">
-							<p>Tembusan :</small>
-							<ol>
-								<li>Kepala Seksi PAIS KanKemenag Kab. Klaten,</li>
-								<li>Korwil Pendidikan Kec. Manisrenggo,</li>
-								<li>Kepala SD Negri 1 Sukorini Kec. Manisrenggo,</li>
-								<li>Kepala SD Negri Sapen Kec. Manisrenggo,</li>
-								<li>Sdr. Riyadi Tri Hidayat, S.Pd.I. NIP. 19741221 200501 1 002,</li>
-								<li>Arsip.</li>
-							</ol>
-						</div>
+						<?php
+						foreach ($detail_ptsp as $detail) { ?>
+							<div class="badan_surat">
+								<p>Tembusan :</small>
+								<ol>
+									<li>Kepala Seksi PAIS KanKemenag Kab. Klaten,</li>
+									<li>Korwil Pendidikan Kec. <?= $detail->kecamatan_sekolah_tujuan ?>,</li>
+									<li>Kepala <?= $detail->nama_sekolah_tujuan ?> Kec. <?= $detail->kecamatan_sekolah_satmikal ?>,</li>
+									<li>Kepala <?= $detail->nama_sekolah_satmikal ?> Kec. <?= $detail->kecamatan_sekolah_tujuan ?>,</li>
+									<li>Sdr. <?= $detail->nama_pns ?> NIP. <?= $detail->nip ?>,</li>
+									<li>Arsip.</li>
+								</ol>
+							</div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>

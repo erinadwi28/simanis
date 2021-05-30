@@ -97,7 +97,7 @@
 						<center>
 							<?php if ($detail->berita_acara != null) { ?>
 								<p><?= $detail->berita_acara; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp20/berita_acara/<?= $detail->berita_acara ?>" target="_blank">
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp20/berita_acara/<?= $detail->berita_acara ?>" target="_blank" require>
 
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
@@ -305,7 +305,8 @@
 								<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
 								<input type="hidden" class="form-control form-user-input" name="id_layanan" id="file-upload" value="<?= $detail->id_layanan ?>">
 						</div>
-						<div class="card-footer">
+						</div>
+						<div >
 							<!-- Button Simpan -->
 							<div class="row clearfix float-right px-2">
 								<div class="float-right">
@@ -319,11 +320,10 @@
 							</div>
 						</div>
 						</form>
-					</div>
 				<?php } ?>
 			</div>
 		</div>
-
+		<br>
 		<!-- Button Tolak & Setujui BA -->
 		<div class="row clearfix float-right px-2">
 			<?php if ($detail->status == 'Proses Tim Teknis') { ?>

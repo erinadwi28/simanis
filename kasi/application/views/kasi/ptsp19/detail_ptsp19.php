@@ -293,11 +293,13 @@
 										<td> </td>
 										<td><?= $detail->keterangan; ?></td>
 									</tr>
-								<?php } ?>
+									<?php } ?>
 							</tbody>
 						</table>
+						</div>
+						<br>
 					</div>
-					<div class="card-footer">
+					<div>
 						<div class="float-right">
 							<?php if ($detail->status == 'Proses Kasi') { ?>
 								<a href="<?= base_url() ?>dashboard/aksi_update_status_setujui/<?= $detail->id_permohonan_ptsp ?>">
@@ -309,7 +311,6 @@
 							<?php } ?>
 						</div>
 					</div>
-				</div>
 			</div>
 		</div>
 	<?php } ?>
