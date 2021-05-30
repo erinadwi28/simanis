@@ -50,7 +50,7 @@
 		}
 
 		.badan_surat {
-			margin-left: 55px;
+			margin-left: 40px;
 		}
 
 		.row {

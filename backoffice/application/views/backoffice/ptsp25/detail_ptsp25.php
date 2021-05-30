@@ -294,7 +294,7 @@
 									<label for="nip_petugas" class="col-sm-3 col-form-label">NIP Petugas</label>
 									<div class="col-sm-9">
 										<div class="form-line focused">
-											<input type="text" class="form-control" id="nip_petugas" name="nip_petugas" value="" placeholder="masukkan jabatan disini..." required>
+											<input type="text" class="form-control" id="nip_petugas" name="nip_petugas" value="" placeholder="masukkan Nip petugas disini..." required>
 										</div>
 									</div>
 								</div>
@@ -302,7 +302,7 @@
 									<label for="pangkat_golongan" class="col-sm-3 col-form-label">Pangkat Petugas</label>
 									<div class="col-sm-9">
 										<div class="form-line focused">
-											<input type="text" class="form-control" id="pangkat_golongan" name="pangkat_golongan" value="" placeholder="masukkan pangkat do'a disini..." required>
+											<input type="text" class="form-control" id="pangkat_golongan" name="pangkat_golongan" value="" placeholder="masukkan pangkat petugas disini..." required>
 										</div>
 									</div>
 								</div>
@@ -310,7 +310,7 @@
 									<label for="jabatan" class="col-sm-3 col-form-label">Jabatan Petugas</label>
 									<div class="col-sm-9">
 										<div class="form-line focused">
-											<input type="text" class="form-control" id="jabatan" name="jabatan" value="" placeholder="masukkan jabatan disini..." required>
+											<input type="text" class="form-control" id="jabatan" name="jabatan" value="" placeholder="masukkan jabatan petugas disini..." required>
 										</div>
 									</div>
 								</div>
