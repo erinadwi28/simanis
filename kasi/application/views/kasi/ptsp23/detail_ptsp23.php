@@ -224,7 +224,7 @@
 									<td><?= format_indo(date($detail->tgl_mulai_mengajar)) ?></td>
 								</tr>
 								<tr>
-									<td><b>No. Handphone</b></td>
+									<td><b>No. HandPhone</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>

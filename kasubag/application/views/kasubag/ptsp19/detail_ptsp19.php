@@ -77,7 +77,7 @@
 				<!-- Detail Data -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-center">Petugas Siaran Keagamaan</h6>
+						<h6 class="m-0 font-weight-bold text-center">Permohonan Petugas Siaran Keagamaan</h6>
 					</div>
 					<div class="card-body">
 						<table class="table-hover table-responsive">
@@ -246,10 +246,10 @@
 										<td><?= $detail->keterangan; ?></td>
 									</tr>
 								<?php } ?>
-							</tbody>
+								</tbody>
 						</table>
+					</div>	
 					</div>
-					<div >
 						<div class="float-right">
 							<?php if ($detail->status == 'Proses Kasubag') { ?>
 								<a href="<?= base_url() ?>dashboard/aksi_setujui_permohonan/<?= $detail->id_permohonan_ptsp ?>">
@@ -260,12 +260,10 @@
 								</a>
 							<?php } ?>
 						</div>
-					</div>
 				</div>
-			</div>
-			<!--End Content Profile-->
-		</div>
-	<?php } ?>
-	<!-- /.container-fluid -->
+		<?php } ?>
+<!--End Content Profile-->
+</div>
+<!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->

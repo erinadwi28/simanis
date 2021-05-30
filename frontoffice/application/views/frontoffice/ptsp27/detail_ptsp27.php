@@ -113,7 +113,7 @@
 					<div class="card shadow mb-4">
 						<div class="card-header">
 							<center>
-								<h6 class="m-0 font-weight-bold">Suket Penghasilan</h6>
+								<h6 class="m-0 font-weight-bold">Surat Keterangan Penghasilan</h6>
 							</center>
 						</div>
 						<div class="card-body">
