@@ -136,7 +136,7 @@
 				<!-- Detail Data -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-center">Petugas Siaran Keagamaan</h6>
+						<h6 class="m-0 font-weight-bold text-center">Permohonan Petugas Siaran Keagamaan</h6>
 					</div>
 					<div class="card-body">
 						<table class="table-hover table-responsive">
@@ -316,5 +316,5 @@
 		<!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->
-
+</div>
 <!-- End of Main Content -->

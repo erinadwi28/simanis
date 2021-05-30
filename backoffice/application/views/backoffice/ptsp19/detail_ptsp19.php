@@ -104,7 +104,7 @@
 				<!-- Detail Data -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-center">Petugas Siaran Keagamaan</h6>
+						<h6 class="m-0 font-weight-bold text-center">Permohonan Petugas Siaran Keagamaan</h6>
 					</div>
 					<div class="card-body">
 						<table class="table-hover table-responsive">
@@ -182,7 +182,7 @@
 									<td><?= format_indo(date($detail->tgl_srt_permohonan)) ?></td>
 								</tr>
 								<tr>
-									<td><b>Agamar</b></td>
+									<td><b>Agama</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>

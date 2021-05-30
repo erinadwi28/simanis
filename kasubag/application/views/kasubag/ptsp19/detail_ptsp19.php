@@ -77,7 +77,7 @@
 				<!-- Detail Data -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-center">Petugas Siaran Keagamaan</h6>
+						<h6 class="m-0 font-weight-bold text-center">Permohonan Petugas Siaran Keagamaan</h6>
 					</div>
 					<div class="card-body">
 						<table class="table-hover table-responsive">
@@ -249,23 +249,22 @@
 							</tbody>
 						</table>
 					</div>
-					<div >
-						<div class="float-right">
-							<?php if ($detail->status == 'Proses Kasubag') { ?>
-								<a href="<?= base_url() ?>dashboard/aksi_setujui_permohonan/<?= $detail->id_permohonan_ptsp ?>">
-									<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
-										<i class="fas fa-check-circle">
-										</i> Terima
-									</button>
-								</a>
-							<?php } ?>
-						</div>
-					</div>
+				</div>
+				<div class="float-right">
+					<?php if ($detail->status == 'Proses Kasubag') { ?>
+						<a href="<?= base_url() ?>dashboard/aksi_setujui_permohonan/<?= $detail->id_permohonan_ptsp ?>">
+							<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
+								<i class="fas fa-check-circle">
+								</i> Terima
+							</button>
+						</a>
+					<?php } ?>
 				</div>
 			</div>
-			<!--End Content Profile-->
+		<?php } ?>
+		<!--End Content Profile-->
 		</div>
-	<?php } ?>
-	<!-- /.container-fluid -->
+		<!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->
+</div>

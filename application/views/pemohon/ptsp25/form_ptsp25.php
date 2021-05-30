@@ -17,85 +17,73 @@
 	<div class="row clearfix">
 		<div class="col-xs-12 col-sm-2"></div>
 		<?php foreach ($detail_profil_saya as $detail) { ?>
-		<div class="col-xs col-sm-8">
-			<div class="card shadow mb-5">
-				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-center">Konsultasi dan informasi sertifikasi halal,zakat dan
-						wakaf</h6>
-				</div>
-				<div class="card-body">
-					<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i
-							class="fas fa-info-circle"></i></button>
-					<br>
-					<form class="form-horizontal mt-4" id="form_ptsp25" enctype="multipart/form-data"
-						action="<?= base_url('dashboard/aksi_pengajuan_ptsp25') ?>" method="POST">
-						<div class="form-group row">
-							<label for="nama_pemohon" class="col-sm-3 col-form-label">Nama</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="nama_pemohon" name="nama_pemohon"
-										value="<?= $detail->nama; ?>" 
-										placeholder="masukkan nama disini..." required>
+			<div class="col-xs col-sm-8">
+				<div class="card shadow mb-5">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-center">Konsultasi dan informasi sertifikasi halal,zakat dan
+							wakaf</h6>
+					</div>
+					<div class="card-body">
+						<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
+						<br>
+						<form class="form-horizontal mt-4" id="form_ptsp25" enctype="multipart/form-data" action="<?= base_url('dashboard/aksi_pengajuan_ptsp25') ?>" method="POST">
+							<div class="form-group row">
+								<label for="nama_pemohon" class="col-sm-3 col-form-label">Nama</label>
+								<div class="col-sm-9">
+									<div class="form-line focused">
+										<input type="text" class="form-control" id="nama_pemohon" name="nama_pemohon" value="<?= $detail->nama; ?>" placeholder="masukkan nama disini..." required>
 
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="form-group row">
-							<label for="Alamat_lengkap" class="col-sm-3 col-form-label">Alamat Lengkap</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<textarea type="text" class="form-control" id="alamat" name="alamat" 
-									value="" required
-									placeholder="masukkan alamat disini..."></textarea>
+							<div class="form-group row">
+								<label for="Alamat_lengkap" class="col-sm-3 col-form-label">Alamat Lengkap</label>
+								<div class="col-sm-9">
+									<div class="form-line focused">
+										<textarea type="text" class="form-control" id="alamat" name="alamat" value="" required placeholder="masukkan alamat disini..."></textarea>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="form-group row">
-							<label for="Pekerjaan" class="col-sm-3 col-form-label">Pekerjaan</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" 
-										value="" required
-										placeholder="masukkan pekerjaan disini...">
+							<div class="form-group row">
+								<label for="Pekerjaan" class="col-sm-3 col-form-label">Pekerjaan</label>
+								<div class="col-sm-9">
+									<div class="form-line focused">
+										<input type="text" class="form-control" id="pekerjaan" name="pekerjaan" value="" required placeholder="masukkan pekerjaan disini...">
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="form-group row">
+							<div class="form-group row">
 								<label for="no_hp" class="col-sm-3 col-form-label">No. HandPhone</label>
 								<div class="col-sm-9">
 									<div class="form-line focused">
-										<input type="text" class="form-control" id="no_hp" name="no_hp" value=""
-										placeholder="masukkan no hp disini..." 
-										required data-parsley-type="number" minlength="11">
+										<input type="text" class="form-control" id="no_hp" name="no_hp" value="" placeholder="masukkan no hp disini..." required data-parsley-type="number" minlength="11">
 									</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="Perihal_konsultasi" class="col-sm-3 col-form-label">Perihal Konsultasi</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="text" class="form-control" id="perihal_konsultasi"
-										name="perihal_konsultasi" value="" required
-										placeholder="masukkan Perihal Konsultasi disini...">
 								</div>
 							</div>
-						</div>
+							<div class="form-group row">
+								<label for="Perihal_konsultasi" class="col-sm-3 col-form-label">Perihal Konsultasi</label>
+								<div class="col-sm-9">
+									<div class="form-line focused">
+										<input type="text" class="form-control" id="perihal_konsultasi" name="perihal_konsultasi" value="" required placeholder="masukkan Perihal Konsultasi disini...">
+									</div>
+								</div>
+							</div>
 						<?php } ?>
-				</div>
-				<div class="card-footer">
-					<div class="float-right">
-						<a href="#">
-							<button id="btn_simpan" class="btn btn-sm btn-primary" type="submit">
-								<i class="far fa-save nav-icon">
-								</i> Simpan
-							</button>
-						</a>
 					</div>
+					<div class="card-footer">
+						<div class="float-right">
+							<a href="#">
+								<button id="btn_simpan" class="btn btn-sm btn-primary" type="submit">
+									<i class="far fa-save nav-icon">
+									</i> Simpan
+								</button>
+							</a>
+						</div>
+					</div>
+					</form>
 				</div>
-				</form>
 			</div>
-		</div>
-		<!--End Content Profile-->
+			<!--End Content Profile-->
 	</div>
 	<!-- /.container-fluid -->
 </div>
@@ -114,11 +102,11 @@
 			<div class="modal-body">
 				<h6 class="modal-title-syarat"><b>Persyaratan :</b></h6>
 				<p class="modal-content-syarat mb-0">
-					<ol type="1" class="ml-0 list-syarat modal-content-syarat">
+				<ol type="1" class="ml-0 list-syarat modal-content-syarat">
 					<li>Pemohon membuat surat permohonan ditujukan kepada Kepala Kantor Kementerian Agama Kab. Klaten</li>
-						<li>Pemohon mengunggah surat permohonan yang telah dibuat. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.</li>
-					</ol>
+					<li>Pemohon mengunggah surat permohonan yang telah dibuat. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+					<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.</li>
+				</ol>
 				</p>
 			</div>
 			<div class="modal-footer">
@@ -126,4 +114,5 @@
 			</div>
 		</div>
 	</div>
+</div>
 </div>
