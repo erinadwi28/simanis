@@ -468,3 +468,5 @@ $('#form_tambah').parsley();
 
 $('#form_ubah').parsley();
 
+// Keterangan Pending
+$('#formketerangan').parsley()

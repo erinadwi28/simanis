@@ -27,7 +27,7 @@
                                     <div class="col-md-2"></div>
                                     <div class="col-md-8 mt-4 mb-2">
                                         <div class="form-group-surat">
-                                            <textarea type="text" class="form-control mb-2" name="keterangan" id="keterangan" placeholder="Masukan keterangan disini..."></textarea>
+                                            <textarea type="text" class="form-control mb-2" name="keterangan" id="keterangan" placeholder="Masukan keterangan disini..." required></textarea>
                                         </div>
                                         <input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="id_permohonan_ptsp" value="<?= $id_permohonan_ptsp['id_permohonan_ptsp']; ?>">
                                         <input type="hidden" class="form-control form-user-input" name="id_pemohon" id="id_pemohon" value="<?= $id_permohonan_ptsp['id_pemohon']; ?>">

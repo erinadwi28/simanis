@@ -193,20 +193,20 @@
 					<td>
 						<center>
 							<font size="3"></font><b>SURAT KETERANGAN</b> </font><br>
-							<font size="2">Nomor : <?= $detail->no_surat ?> </font>
+							<p>Nomor : <?= $detail->no_surat ?> </p>
 						</center>
 					</td>
 				</tr>
 			</table>
-			<br>
+			
 			<table width="530">
 				<tr text-align="justify">
 					<td>
-						<font size="2">
+						<p>
 							&ensp;&ensp; Menindak lanjuti surat permohonan dari Saudara <?= $detail->nama_pemohon ?>
 							tentang Permohonan Surat Keterangan Haji Pertama, dengan ini Kepala Kantor Kementrian Agama
 							Kabupaten Klaten menerangkan bahwa :
-						</font>
+						</p>
 					</td>
 				</tr>
 			</table>
@@ -233,13 +233,14 @@
 					<td>: <?= $detail->nomor_porsi ?> </td>
 				</tr>
 			</table>
+			<br>
 			<table width="530">
 				<tr>
 					<td>
-						<font size="2">adalah jemaah haji Kabupaten Klaten Tahun
+						<p>adalah jemaah haji Kabupaten Klaten Tahun
 							<?= $detail->tahun_angkatan_haji_hijriah ?> H / <?= $detail->tahun_angkatan_haji_masehi ?> M
-							dan perjalanan ibadah hajinya merupakan yang pertama.</font>
-						<font size="2">&ensp;&ensp; Demikian surat ini kami sampaikan untuk dapat di pergunakan sebagaimana mestinya.<br></font>
+							dan perjalanan ibadah hajinya merupakan yang pertama.</p>
+						<p>&ensp;&ensp; Demikian surat ini kami sampaikan untuk dapat di pergunakan sebagaimana mestinya.<br></p>
 					</td>
 				</tr>
 			</table>
@@ -247,7 +248,7 @@
 			<table width="530">
 				<tr>
 					<td width="380"><br><br><br><br></td>
-					<td class="text" align="center">Kelaten,<?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?>
+					<td class="text" align="center">Klaten,<?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?>
 					<?php } ?>
 					<?php foreach ($data_kepala as $detail) { ?><br>Kepala<br><br><br><br><?= $detail->nama ?><?php } ?>
 					</td>
