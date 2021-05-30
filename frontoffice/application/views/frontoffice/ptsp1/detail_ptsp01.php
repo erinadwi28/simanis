@@ -379,7 +379,7 @@
 
 				<!-- Button Setujui Final & No Surat -->
 				<?php
-								if ($detail->status == 'Selesai' && $detail->no_surat == null) { ?>
+					if ($detail->status == 'Selesai' && $detail->no_surat == null) { ?>
 					<div class="row clearfix">
 						<div class="col-md-12">
 							<form class="form-horizontal" id="no_surat_ptsp01" enctype="multipart/form-data" action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp01/<?= $detail->id_permohonan_ptsp ?>" method="POST">

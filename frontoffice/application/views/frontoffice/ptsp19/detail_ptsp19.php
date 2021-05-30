@@ -301,7 +301,7 @@
 				<!-- Button Tolak & Setujui Awal Surat Masuk -->
 				<div class="row clearfix float-right px-2">
 					<?php if ($detail->status == 'Validasi Kemenag') { ?>
-						<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>" class="mr-2" class="mr-2">
+						<a href="<?= base_url() ?>dashboard/form_input_keterangan/<?= $detail->id_permohonan_ptsp ?>" class="mr-2">
 							<button id=" btn_tolak" class="btn btn-sm btn-tolak" type="submit">
 								<i class="fas fa-times-circle">
 								</i> Tolak

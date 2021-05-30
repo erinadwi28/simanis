@@ -86,7 +86,9 @@
 		.isi_surat {
 			margin-left: 0.0375em;
 			font-size: 11pt;
-			line-height: 1.2em;
+			/* line-height: 1.5em; */
+			text-align: justify;
+			margin-top: 5x;
 		}
 
 		.identitas {
@@ -128,7 +130,7 @@
 
 		.ttd_surat {
 			font-size: 11pt;
-			margin-left: 470px;
+			margin-left: 500px;
 		}
 	</style>
 
@@ -173,7 +175,6 @@
 								</tr>
 							</table>
 						</center>
-						<br>
 						<div class="isi_surat identitas">
 							<table>
 								<?php
@@ -184,6 +185,30 @@
 											<td> </td>
 											<td>:</td>
 											<td> <?= $detail->no_surat ?></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>
@@ -256,7 +281,7 @@
 								<br> Sdr. Kepala Up 3 AD Kab.Klaten
 								<br> Di Klaten
 							</p>
-							<br><br><br>
+							<br>
 							<p>Dengan Hormat, </p>
 							<p>Bersama ini kami menerangkan, bahwa saya :</p>
 						</div>
@@ -296,8 +321,8 @@
 						</div>
 						<?php
 						foreach ($detail_ptsp as $detail) { ?>
-							<div class="isi_surat paragraf">
-								<p align="justify">Menerangkan bahwa kendaraan roda <?= $detail->jml_roda_kendaraan ?> <?= $detail->merek_kendaraan ?> dengan Nomor Polisi <?= $detail->no_polisi ?>,
+							<div class="isi_surat ">
+								<p>Menerangkan bahwa kendaraan roda <?= $detail->jml_roda_kendaraan ?> <?= $detail->merek_kendaraan ?> dengan Nomor Polisi <?= $detail->no_polisi ?>,
 									milik <?= $detail->pemilik_kendaraan ?> sebagai <?= $detail->fungsional_kendaraan ?> di wilayah Klaten Kota dan sekitarnya untuk itu <b>mohon keringanan pajak kendaraan.</b>
 									<br>&emsp;&emsp; Demikian permohonan ini dibuat, agar digunakan sebagaimana mestinya.
 									<br>Terima kasih.
@@ -337,7 +362,7 @@
 									</div>
 								</div>
 							</div>
-							<br><br><br>
+							<br><br>
 							<div class="isi_surat">
 								<p>Tembusan :</p>
 								<ol>

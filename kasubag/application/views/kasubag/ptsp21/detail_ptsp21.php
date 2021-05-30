@@ -261,7 +261,8 @@
 							</tbody>
 						</table>
 					</div>
-					<div class="card-footer">
+					<br>
+					</div>
 						<div class="float-right">
 							<?php if ($detail->status == 'Proses Kasubag') { ?>
 								<a href="<?= base_url() ?>dashboard/aksi_setujui_permohonan/<?= $detail->id_permohonan_ptsp ?>">
@@ -272,9 +273,7 @@
 								</a>
 							<?php } ?>
 						</div>
-					</div>
 				</div>
-			</div>
 		</div>
 	<?php } ?>
 	<!--End Content Profile-->

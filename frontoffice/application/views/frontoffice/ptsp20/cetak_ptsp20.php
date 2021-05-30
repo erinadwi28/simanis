@@ -165,7 +165,7 @@
 
 		.ttd_surat {
 			font-size: 11pt;
-			margin-left: 350px;
+			margin-left: 500px;
 		}
 	</style>
 </head>

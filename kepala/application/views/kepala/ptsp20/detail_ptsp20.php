@@ -338,9 +338,6 @@
 							</tbody>
 						</table>
 					</div>
-					<div class="card-footer">
-
-					</div>
 				</div>
 			</div>
 		<?php } ?>

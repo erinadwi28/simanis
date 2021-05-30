@@ -142,7 +142,7 @@
 				<!-- Detail Data -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-center">Rekomendasi Pajak Bendaraan Bermotor Layanan Sosial Rumah Ibadah</h6>
+						<h6 class="m-0 font-weight-bold text-center">Rekomendasi Pajak Kendaraan Bermotor Layanan Sosial Rumah Ibadah</h6>
 					</div>
 					<div class="card-body">
 						<table class="table-hover table-responsive">
@@ -275,9 +275,6 @@
 								<?php } ?>
 							</tbody>
 						</table>
-					</div>
-					<div class="card-footer">
-
 					</div>
 				</div>
 			</div>
