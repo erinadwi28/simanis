@@ -84,6 +84,18 @@ class M_admin extends CI_Model
 
         return $this->db->get();
     }
+
+    //get list data pemohon non aktif
+    public function get_list_data_pemohon_non_aktif()
+    {
+        $this->db->select('pemohon.*');
+        $this->db->from('pemohon');
+        $this->db->where('status_delete', 1);
+        $this->db->order_by('pemohon.id_pemohon', 'desc');
+
+        return $this->db->get();
+    }
+
     public function get_data_fo($detailhere, $tabel)
     {
         $this->db->select('*');
@@ -105,6 +117,17 @@ class M_admin extends CI_Model
 
         return $this->db->get();
     }
+
+    public function get_list_data_fo_non_aktif()
+    {
+        $this->db->select('fo.*');
+        $this->db->from('fo');
+        $this->db->where('status_delete', 1);
+        $this->db->order_by('fo.id_fo', 'desc');
+
+        return $this->db->get();
+    }
+
     public function get_data_bo($detailhere, $tabel)
     {
         $this->db->select('*');
@@ -126,6 +149,17 @@ class M_admin extends CI_Model
 
         return $this->db->get();
     }
+
+    public function get_list_data_bo_non_aktif()
+    {
+        $this->db->select('bo.*');
+        $this->db->from('bo');
+        $this->db->where('status_delete', 1);
+        $this->db->order_by('bo.id_bo', 'desc');
+
+        return $this->db->get();
+    }
+
     public function get_data_kasi($detailhere, $tabel)
     {
         $this->db->select('*');
@@ -147,6 +181,17 @@ class M_admin extends CI_Model
 
         return $this->db->get();
     }
+
+    public function get_list_data_kasi_non_aktif()
+    {
+        $this->db->select('kasi.*');
+        $this->db->from('kasi');
+        $this->db->where('status_delete', 1);
+        $this->db->order_by('kasi.id_kasi', 'desc');
+
+        return $this->db->get();
+    }
+
     public function get_data_kasubag($detailhere, $tabel)
     {
         $this->db->select('*');
@@ -168,6 +213,17 @@ class M_admin extends CI_Model
 
         return $this->db->get();
     }
+
+    public function get_list_data_kasubag_non_aktif()
+    {
+        $this->db->select('kasubag.*');
+        $this->db->from('kasubag');
+        $this->db->where('status_delete', 1);
+        $this->db->order_by('kasubag.id_kasubag', 'desc');
+
+        return $this->db->get();
+    }
+
     public function get_data_kepala($detailhere, $tabel)
     {
         $this->db->select('*');
@@ -189,6 +245,17 @@ class M_admin extends CI_Model
 
         return $this->db->get();
     }
+
+    public function get_list_data_kepala_non_aktif()
+    {
+        $this->db->select('kepala.*');
+        $this->db->from('kepala');
+        $this->db->where('status_delete', 1);
+        $this->db->order_by('kepala.id_kepala', 'desc');
+
+        return $this->db->get();
+    }
+
     public function get_data_timteknis($detailhere, $tabel)
     {
         $this->db->select('*');
@@ -210,6 +277,17 @@ class M_admin extends CI_Model
 
         return $this->db->get();
     }
+
+    public function get_list_data_timteknis_non_aktif()
+    {
+        $this->db->select('tim_teknis.*');
+        $this->db->from('tim_teknis');
+        $this->db->where('status_delete', 1);
+        $this->db->order_by('tim_teknis.id_tim_teknis', 'desc');
+
+        return $this->db->get();
+    }
+
     //aksi tambah data pemohon
     public function tambah_pemohon($data_pemohon, $tabel)
     {
