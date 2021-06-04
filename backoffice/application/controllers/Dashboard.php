@@ -363,6 +363,48 @@ class Dashboard extends CI_Controller
             'jabatan' => $this->input->post('jabatan'),
         );
 
+        $email = $this->m_bo->get_data_pemohon($this->input->post('id_pemohon'));
+        // Konfigurasi email
+        $config = [
+            'mailtype'  => 'html',
+            'charset'   => 'utf-8',
+            'protocol'  => 'smtp',
+            'smtp_host' => 'smtp.gmail.com',
+            'smtp_user' => 'klatenkemenag7@gmail.com',  // Email gmail
+            'smtp_pass'   => 'dpdzadjbieahxykx',  // Password gmail
+            'smtp_crypto' => 'ssl',
+            'smtp_port'   => 465,
+            'crlf'    => "\r\n",
+            'newline' => "\r\n"
+        ];
+
+        // Load library email dan konfigurasinya
+        $this->load->library('email', $config);
+
+        // Email dan nama pengirim
+        $this->email->from('no-reply@simanisklaten.com', 'simanisklaten.com');
+
+        // Email penerima
+        $this->email->to($email->email); // Ganti dengan email tujuan
+
+        // Lampiran email, isi dengan url/path file
+        //     $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
+
+        // Subject email
+        $this->email->subject('Informasi Permohonan Anda');
+
+        // Isi email
+        $this->email->message('<b>Kepada Yth. ' . $email->nama . '</b>, <br><br> Menginformasikan kepada pemohon bahwasannya permohonan konsultasi  anda sudah disetujui, berikut adalah jadwal konsultasi anda :<br><br>
+        Hari         : ' . $this->input->post('hari_konsultasi') . '<br> 
+        Tanggal      : ' . $this->input->post('tgl_konsultasi') . '<br>
+        Jam          : ' . $this->input->post('jam_konsultasi') . '<br> 
+        Nama Petugas : ' . $this->input->post('nama_petugas') . '<br> 
+        Nip Petugas  : ' . $this->input->post('nip_petugas') . '<br><br>
+        Demikian pemberitahuan ini disampaikan. <br>Terimakasih<br>Salam,<br><br>Kementerian Agama Kabupaten Klaten');
+
+        // Tampilkan pesan sukses atau error
+        $this->email->send();
+
         $id_ptsp = $this->input->post('id_ptsp');
         $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
         $id_layanan = $this->input->post('id_layanan');
