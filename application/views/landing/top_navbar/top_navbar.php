@@ -7,7 +7,7 @@
                 <i class="fas fa-phone-volume"></i>&nbsp;<span id="top-info-telp" class="top-info-telp"> (0274)
                     884201 - 207&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;</span>
                 <i class="fas fa-envelope"></i>&nbsp;<span id="top-info-email" class="top-info-email"> <a href="mailto:kabklaten@kemenag.go.id" style="text-decoration:none">kabklaten@kemenag.go.id</a></span>
-                <span id="top-info-petasite" class="top-info-petasite float-right">| &nbsp;&nbsp;&nbsp;<a href="#">Peta
+                <span id="top-info-petasite" class="top-info-petasite float-right">| &nbsp;&nbsp;&nbsp;<a href="<?= base_url('peta_situs') ?>">Peta
                         Situs</a> </span>
                 <span id="top-info-facebook" class="top-info-facebook float-right mr-3"> <a href="https://web.facebook.com/kakankemenagklaten/" style="text-decoration:none"><i class="fab fa-facebook"></i></a>
 

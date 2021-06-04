@@ -166,7 +166,7 @@ body {
   .owl-dots {
     bottom: 36%;
   }
-} 
+}
 
 .owl-dots span {
   width: 15px !important;
@@ -764,5 +764,14 @@ body {
 
 .list-syarat li {
   text-align: justify;
+}
+
+.peta_situs a {
+  text-decoration: none;
+  color: #007530;
+}
+
+.peta_situs a:hover {
+  color: #F69D1B;
 }
 /*# sourceMappingURL=main.css.map */
