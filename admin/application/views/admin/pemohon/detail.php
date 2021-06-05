@@ -50,29 +50,33 @@
 								<img src="<?= base_url() ?>../assets/dashboard/images/pemohon/profil/<?= $detail->foto_profil_pemohon ?>" alt="foto profil" class="img-fluid">
 							</div>
 						</center>
-
-						<!-- Upload Foto Profil -->
-						<div class="card-footer py-3">
-							<form action="<?= base_url('dashboard/upload_foto_profil_pemohon/' . $detail->id_pemohon) ?>" enctype="multipart/form-data" method="POST" accept-charset="utf-8" id="form_upload_foto_profil">
-								<div class="form-group ml-2 mr-2">
-									<div class="input-group">
-										<div class="form-group-upload">
-											<div class="custom-file">
-												<label class="custom-file-label" for="file-upload">pilih foto
-													profil...</label>
-												<input type="file" class="custom-file-input" id="file-upload" name="berkas" value="<?= $detail->foto_profil_pemohon; ?>" required>
-												<input type="hidden" class="form-control form-user-input" name="id_pemohon" id="file-upload" value="<?= $detail->id_pemohon ?>">
+						<?php if ($detail->status_delete == 0) { ?>
+							<!-- Upload Foto Profil -->
+							<div class="card-footer py-3">
+								<form action="<?= base_url('dashboard/upload_foto_profil_pemohon/' . $detail->id_pemohon) ?>" enctype="multipart/form-data" method="POST" accept-charset="utf-8" id="form_upload_foto_profil">
+									<div class="form-group ml-2 mr-2">
+										<div class="input-group">
+											<div class="form-group-upload">
+												<div class="custom-file">
+													<label class="custom-file-label" for="file-upload">pilih foto
+														profil...</label>
+													<input type="file" class="custom-file-input" id="file-upload" name="berkas" value="<?= $detail->foto_profil_pemohon; ?>" required>
+													<input type="hidden" class="form-control form-user-input" name="id_pemohon" id="file-upload" value="<?= $detail->id_pemohon ?>">
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								<center>
-									<button class="btn btn-sm btn-primary" type="submit">
-										<i class="fa fa-upload"></i>
-									</button>
-								</center>
-							</form>
-						</div>
+									<center>
+										<button class="btn btn-sm btn-primary" type="submit">
+											<i class="fa fa-upload"></i>
+										</button>
+									</center>
+								</form>
+							</div>
+						<?php } else { ?>
+							<div class="card-footer py-3">
+							</div>
+						<?php } ?>
 					</div>
 				</div>
 				<div class="col-md-8 mb-4">
