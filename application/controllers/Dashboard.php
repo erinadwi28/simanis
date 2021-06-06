@@ -162,33 +162,6 @@ class Dashboard extends CI_Controller
         }
     }
 
-    // aksi ubah sandi tanpa sandi awal untuk admin
-    public function ubah_sandi_admin()
-    {
-
-        $kata_sandi_baru = $this->input->post('kata_sandi_baru');
-        $kata_sandi_hash = sha1($kata_sandi_baru);
-
-        $data_baru = array(
-            'kata_sandi' => $kata_sandi_hash,
-        );
-
-        $konfirmasi = $this->input->post('konfirmasi');
-
-        $where = $this->session->userdata('id_pemohon');
-
-        $fo = $this->m_pemohon->get_pemohon($where);
-        $url = $_SERVER['HTTP_REFERER'];
-        if ($konfirmasi === $kata_sandi_baru) {
-                $this->m_pemohon->update_sandi($where, $data_baru, 'pemohon');
-                $this->session->set_flashdata('success', '<b>Kata Sandi</b> Berhasil Diubah');
-                redirect($url);
-        } else {
-            $this->session->set_flashdata('error', 'Konfirmasi Sandi<b> Tidak Sesuai</b>');
-            redirect($url);
-        }
-    }
-
     //list notif permohonan 
     public function list_notif_permohonan()
     {

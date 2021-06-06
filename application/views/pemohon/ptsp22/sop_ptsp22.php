@@ -3,12 +3,12 @@
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between">
 		<h3 class="judullist py-3">Standar Operasional Prosedur</h3>
-			<nav aria-label="breadcrumb" class="nav-breadcrumb">
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-					<li class="breadcrumb-item active" aria-current="page">SOP</li>
-				</ol>
-			</nav>
+		<nav aria-label="breadcrumb" class="nav-breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item active" aria-current="page">SOP</li>
+			</ol>
+		</nav>
 	</div>
 
 	<div class="row">
@@ -22,12 +22,19 @@
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
 						<ol type="1" class="ml-0 list-syarat">
-							<li>Pemohon mengunduh surat rekomendasi ditujukan kepada Kepala Kankemenag Kab. Klaten, ditandatangani oleh takmir masjid yang bersangkutan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp22/srt_permohonan.pdf" target="_blank">[klik disini]</a></b></li>
-							<li>Pemohon mengunduh dan Mengisi Formulir, <br> unduh dengan <b><a href="<?= base_url() ?>assets/pemohon/sop/ptsp22/srt_pernyataan.pdf" target="_blank">[klik disini]</a></b></li>
-							<li>Pemohon mengisi Surat Permohonan yang ditujukan kepada Kepala Kantor Kemenag Klaten.</li>
+							<li>Pemohon mengunduh surat rekomendasi ditujukan kepada Kepala Kankemenag Kab. Klaten,
+								ditandatangani oleh takmir masjid yang bersangkutan <b><a href="<?= base_url() ?>assets/dashboard/unduhan/pemohon/ptsp22/Template%20Surat%20Permohonan.docx"
+										target="_blank">[klik disini]</a></b></li>
+							<li>Pemohon mengunduh dan Mengisi Formulir, <br> unduh dengan <b><a
+										href="<?= base_url() ?>assets/dashboard/unduhan/pemohon/ptsp22/Template%20Formulir.docx"
+										target="_blank">[klik disini]</a></b></li>
+							<li>Pemohon mengisi Surat Permohonan yang ditujukan kepada Kepala Kantor Kemenag Klaten.
+							</li>
 							<li>Pemohon mengisi Formulir</li>
-							<li>Pemohon mengunggah Surat Permohonan dan Surat Pernyataan yang telah diisi. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-							<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.</li>
+							<li>Pemohon mengunggah Surat Permohonan dan Surat Pernyataan yang telah diisi. <br> (Format:
+								PDF, Ukuran: Max 1 MB)</li>
+							<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.
+							</li>
 						</ol>
 					</p>
 				</div>

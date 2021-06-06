@@ -231,7 +231,7 @@
 									<td><?= $detail->kecamatan ?></td>
 								</tr>
 								<tr>
-									<td><b>No. Handphone</b></td>
+									<td><b>No. HandPhone</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>

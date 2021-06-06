@@ -872,3 +872,14 @@ $breakpoint-tablet: 768px;
 		text-align: justify;
 	}
 }
+
+.peta_situs {
+	a {
+		text-decoration: none;
+		color: #007530;
+
+		&:hover {
+			color: #F69D1B;
+		}
+	}
+} 

@@ -457,6 +457,8 @@ $("#form_ptsp25").parsley();
 
 $("#formubah_ptsp25").parsley();
 
+$("#nippetugas_ptsp25").parsley();
+
 // PTSP026
 $("#form_ptsp26").parsley();
 

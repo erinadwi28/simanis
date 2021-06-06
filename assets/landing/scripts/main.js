@@ -67,3 +67,14 @@ $('#form_daftar_kepala').parsley();
 $('#form_masuk_timteknis').parsley();
 // Daftar tim teknis
 $('#form_daftar_timteknis').parsley();
+
+$(document).ready(function () {
+	var cek = $(".form-checkbox").val();
+	$(".form-checkbox").click(function () {
+		if ($(this).is(":checked")) {
+			$(".form-password").attr("type", "text");
+		} else {
+			$(".form-password").attr("type", "password");
+		}
+	});
+});

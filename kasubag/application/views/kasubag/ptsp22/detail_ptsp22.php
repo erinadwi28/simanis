@@ -34,7 +34,7 @@
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
 						<center>
-							<h6 class="m-0 font-weight-bold">Rek. ID Masjid & Musala</h6>
+							<h6 class="m-0 font-weight-bold">Surat Permohonan</h6>
 						</center>
 					</div>
 					<div class="card-body">

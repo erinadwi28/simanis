@@ -55,29 +55,27 @@
 					</div>
 				</div>
 
+				<!-- FC Dokumen -->
+				<?php if ($detail->jadwal != null) { ?>
+					<div class="card shadow mb-4">
+						<div class="card-header py-3">
+							<center>
+								<h6 class="m-0 font-weight-bold">Jadwal Konsultasi</h6>
+							</center>
+						</div>
 
+						<div class="card-body">
+							<center>
+								<p><?= $detail->jadwal; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp25/jadwal/<?= $detail->jadwal ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							</center>
+						</div>
+					</div>
+				<?php } ?>
 			</div>
-
-			<!-- FC Dokumen -->
-			<?php if ($detail->jadwal != null) { ?>
-				<div class="card shadow mb-4">
-					<div class="card-header py-3">
-						<center>
-							<h6 class="m-0 font-weight-bold">Jadwal Konsultasi</h6>
-						</center>
-					</div>
-
-					<div class="card-body">
-						<center>
-							<p><?= $detail->jadwal; ?></p>
-							<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp25/jadwal/<?= $detail->jadwal ?>" target="_blank">
-								<i class="fa fa-download nav-icon">
-								</i> Klik untuk melihat
-							</a>
-						</center>
-					</div>
-				</div>
-			<?php } ?>
 
 			<div class="col-md-8 mb-0 col-xs-12">
 				<div class="card shadow mb-4">
@@ -294,7 +292,7 @@
 									<label for="nip_petugas" class="col-sm-3 col-form-label">NIP Petugas</label>
 									<div class="col-sm-9">
 										<div class="form-line focused">
-											<input type="text" class="form-control" id="nip_petugas" name="nip_petugas" value="" placeholder="masukkan jabatan disini..." required>
+											<input type="text" class="form-control" id="nip_petugas" name="nip_petugas" value="" placeholder="masukkan Nip petugas disini..." required>
 										</div>
 									</div>
 								</div>
@@ -302,7 +300,7 @@
 									<label for="pangkat_golongan" class="col-sm-3 col-form-label">Pangkat Petugas</label>
 									<div class="col-sm-9">
 										<div class="form-line focused">
-											<input type="text" class="form-control" id="pangkat_golongan" name="pangkat_golongan" value="" placeholder="masukkan pangkat do'a disini..." required>
+											<input type="text" class="form-control" id="pangkat_golongan" name="pangkat_golongan" value="" placeholder="masukkan pangkat petugas disini..." required>
 										</div>
 									</div>
 								</div>
@@ -310,7 +308,7 @@
 									<label for="jabatan" class="col-sm-3 col-form-label">Jabatan Petugas</label>
 									<div class="col-sm-9">
 										<div class="form-line focused">
-											<input type="text" class="form-control" id="jabatan" name="jabatan" value="" placeholder="masukkan jabatan disini..." required>
+											<input type="text" class="form-control" id="jabatan" name="jabatan" value="" placeholder="masukkan jabatan petugas disini..." required>
 										</div>
 									</div>
 								</div>
@@ -319,6 +317,7 @@
 									<input type="hidden" class="form-control" id="id_ptsp" name="id_ptsp" value="<?= $detail->id_ptsp ?>">
 									<input type="hidden" class="form-control" id="id_permohonan_ptsp" name="id_permohonan_ptsp" value="<?= $detail->id_permohonan_ptsp ?>">
 									<input type="hidden" class="form-control" id="id_layanan" name="id_layanan" value="<?= $detail->id_layanan ?>">
+									<input type="hidden" class="form-control" id="id_pemohon" name="id_pemohon" value="<?= $detail->id_pemohon ?>">
 								<?php } ?>
 								<div class="form-group row px-2 float-right mb-0">
 									<button id="btn_simpan" class="btn btn-sm btn-primary" type="submit">

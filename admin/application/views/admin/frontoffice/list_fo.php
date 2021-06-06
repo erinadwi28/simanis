@@ -29,8 +29,7 @@
 				</div>
 			<?php endif ?>
 			<!-- btn tambah -->
-			<a href="<?= base_url() ?>dashboard/tambah_data_fo" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-					class="fa fa-plus fa-sm text-white-50"></i> Tambah
+			<a href="<?= base_url() ?>dashboard/tambah_data_fo" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-plus fa-sm text-white-50"></i> Tambah
 				Data</a>
 			<hr>
 			<div class="table-responsive">
@@ -44,25 +43,25 @@
 						</tr>
 					</thead>
 					<tbody>
-					<?php
+						<?php
 						$no = 1;
 						foreach ($data_user as $data) {
 						?>
-						<tr>
-							<td class="text-center"><?= $no++ ?></td>
-							<td><?= $data->email ?></td>
-							<td><?= $data->nama ?></td>
+							<tr>
+								<td class="text-center"><?= $no++ ?></td>
+								<td><?= $data->email ?></td>
+								<td><?= $data->nama ?></td>
 
-							<td class="text-center">
-								<a href="<?= base_url() ?>dashboard/detail_data_fo/<?= $data->id_fo ?>" class="btn btn-primary btn-sm">
-									<i class="fas fa-search"></i>
-								</a>
-								<a href="#" class="btn btn-tolak btn-sm" data-toggle="modal" data-target="#foDeleteModal">
-									<i class="fas fa-trash-alt"></i>
-								</a>
-							</td>
-						</tr>
-						<?php }?>
+								<td class="text-center">
+									<a href="<?= base_url() ?>dashboard/detail_data_fo/<?= $data->id_fo ?>" class="btn btn-primary btn-sm">
+										<i class="fas fa-search"></i>
+									</a>
+									<a href="#" class="btn btn-tolak btn-sm" data-toggle="modal" data-target="#foDeleteModal<?= $data->id_fo ?>">
+										<i class="fas fa-trash-alt"></i>
+									</a>
+								</td>
+							</tr>
+						<?php } ?>
 					</tbody>
 				</table>
 			</div>
@@ -73,3 +72,29 @@
 <!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->
+<?php
+foreach ($data_user as $data) {
+?>
+	<!-- fo delete Modal-->
+	<div class="modal fade" id="foDeleteModal<?= $data->id_fo ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin Ingin Menghapus Data Front Office ?</h5>
+					<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Tekan Hapus untuk melanjutkan <br>
+					Tekan Batal untuk membatalkan
+				</div>
+				<div class="modal-footer">
+					<a class="btn btn-primary btn-sm" href="<?= base_url('dashboard/aksi_hapus_fo/' . $data->id_fo) ?>">Hapus</a>
+					<button class="btn btn-tolak btn-sm" type="button" data-dismiss="modal">
+						Batal
+					</button>
+				</div>
+			</div>
+		</div>
+	</div> <?php } ?>

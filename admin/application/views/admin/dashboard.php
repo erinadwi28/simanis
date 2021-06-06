@@ -32,7 +32,7 @@
 							<div class="h6 text-user">
 								Pemohon</div>
 							<div class="h4 mb-0 text-gray-800">
-								10
+									<?= $pemohon; ?>
 							</div>
 						</div>
 						<div class="col-auto">
@@ -57,7 +57,7 @@
 							<div class="h6 text-user">
 								Front Office</div>
 							<div class="h4 mb-0 text-gray-800">
-								10
+								<?= $fo; ?>
 							</div>
 						</div>
 						<div class="col-auto">
@@ -82,7 +82,7 @@
 							<div class="h6 text-user">
 								Back Office</div>
 							<div class="h4 mb-0 text-gray-800">
-								10
+								<?= $bo; ?>
 							</div>
 						</div>
 						<div class="col-auto">
@@ -107,7 +107,7 @@
 							<div class="h6 text-user">
 								Kasi</div>
 							<div class="h4 mb-0 text-gray-800">
-								10
+								<?= $kasi; ?>
 							</div>
 						</div>
 						<div class="col-auto">
@@ -135,7 +135,7 @@
 							<div class="h6 text-user">
 								Kasubag</div>
 							<div class="h4 mb-0 text-gray-800">
-								10
+								<?= $kasubag; ?>
 							</div>
 						</div>
 						<div class="col-auto">
@@ -160,7 +160,7 @@
 							<div class="h6 text-user">
 								Kepala</div>
 							<div class="h4 mb-0 text-gray-800">
-								10
+								<?= $kepala; ?>
 							</div>
 						</div>
 						<div class="col-auto">
@@ -185,7 +185,7 @@
 							<div class="h6 text-user">
 								Tim Teknis</div>
 							<div class="h4 mb-0 text-gray-800">
-								10
+								<?= $timteknis; ?>
 							</div>
 						</div>
 						<div class="col-auto">

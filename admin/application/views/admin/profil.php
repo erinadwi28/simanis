@@ -25,8 +25,7 @@
                     </div>
                     <center>
                         <div class="card-body">
-                            <!-- <a href="<?= base_url(); ?>/assets/uploads/warga/<?= $saya->foto_profil_warga; ?>" data-gallery="mygallery" data-title="Foto Profil" data-toggle="lightbox"> -->
-                            <img src="<?= base_url(); ?>../assets/dashboard/images/frontoffice/profil/<?= $fo['foto_profil_fo'] ?>" alt="foto profil" class="img-fluid">
+                            <img src="<?= base_url(); ?>../assets/dashboard/images/admin/profil/<?= $admin['foto_profil'] ?>" alt="foto profil" class="img-fluid">
                         </div>
                     </center>
 

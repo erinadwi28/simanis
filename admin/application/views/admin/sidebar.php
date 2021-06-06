@@ -55,6 +55,7 @@
 			<div id="menudatapemohon" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
 					<a class="collapse-item" href="<?= base_url('dashboard/list_data_pemohon') ?>">Data Pemohon</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_data_pemohon_non_aktif') ?>">Data Pemohon Non Aktif</a>
 				</div>
 			</div>
 		</li>
@@ -66,6 +67,7 @@
 			<div id="menudatafrontoffice" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
 					<a class="collapse-item" href="<?= base_url('dashboard/list_data_fo') ?>">Data Front Office</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_data_fo_non_aktif') ?>">Data Front Office Non Aktif</a>
 				</div>
 			</div>
 		</li>
@@ -77,6 +79,7 @@
 			<div id="menudatabackoffice" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
 					<a class="collapse-item" href="<?= base_url('dashboard/list_data_bo') ?>">Data Back Office</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_data_bo_non_aktif') ?>">Data Back Office Non Aktif</a>
 				</div>
 			</div>
 		</li>
@@ -88,6 +91,7 @@
 			<div id="menudatakasi" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
 					<a class="collapse-item" href="<?= base_url('dashboard/list_data_kasi') ?>">Data Kasi</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_data_kasi_non_aktif') ?>">Data Kasi Non Aktif</a>
 				</div>
 			</div>
 		</li>
@@ -99,6 +103,7 @@
 			<div id="menudatatimteknis" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
 					<a class="collapse-item" href="<?= base_url('dashboard/list_data_timteknis') ?>">Data Tim Teknis</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_data_timteknis_non_aktif') ?>">Data Tim Teknis Non Aktif</a>
 				</div>
 			</div>
 		</li>
@@ -110,6 +115,7 @@
 			<div id="menudatakasubag" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
 					<a class="collapse-item" href="<?= base_url('dashboard/list_data_kasubag') ?>">Data Kasubag</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_data_kasubag_non_aktif') ?>">Data Kasubag Non Aktif</a>
 				</div>
 			</div>
 		</li>
@@ -121,6 +127,7 @@
 			<div id="menudatakepala" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
 					<a class="collapse-item" href="<?= base_url('dashboard/list_data_kepala') ?>">Data Kepala</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_data_kepala_non_aktif') ?>">Data Kepala Non Aktif</a>
 				</div>
 			</div>
 		</li>

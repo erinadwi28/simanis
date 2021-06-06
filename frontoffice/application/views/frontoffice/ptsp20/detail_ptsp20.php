@@ -183,7 +183,7 @@
 								<?php } ?>
 								<?php if ($detail->no_statistik != null) { ?>
 									<tr>
-										<td><b>No. Statistik</b></td>
+										<td><b>Nomor Statistik</b></td>
 										<td> </td>
 										<td> </td>
 										<td>:</td>

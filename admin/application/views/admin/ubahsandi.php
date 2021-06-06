@@ -47,7 +47,7 @@
                   <div class="col-md-12">
                     <div class="form-group-pass">
                       <label class="label-control" for="kata_sandi_awal"><b>Masukkan Kata Sandi Lama</b></label>
-                      <input type="password" placeholder="masukkan disini..." class="form-control form-user-input form-password" name="kata_sandi_awal" id="kata_sandi_awal" required minlength="8">
+                      <input type="password" placeholder="masukkan disini..." class="form-control form-user-input form-password" name="kata_sandi_awal" id="kata_sandi_awal" required>
                     </div>
                     <div class="form-group-pass mt-3">
                       <label class="label-control" for="kata_sandi_baru"><b>Masukkan Kata Sandi Baru</b></label>

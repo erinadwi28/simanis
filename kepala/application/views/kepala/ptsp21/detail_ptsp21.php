@@ -263,7 +263,7 @@
 									<td><?= $detail->kecamatan ?></td>
 								</tr>
 								<tr>
-									<td><b>No. Handphone</b></td>
+									<td><b>No. HandPhone</b></td>
 									<td> </td>
 									<td> </td>
 									<td>:</td>
@@ -343,16 +343,6 @@
 					</div>
 					<br>
 					</div>
-						<div class="float-right">
-							<?php if ($detail->status == 'Proses Kasubag') { ?>
-								<a href="<?= base_url() ?>dashboard/aksi_setujui_permohonan/<?= $detail->id_permohonan_ptsp ?>">
-									<button id="btn_terima" class="btn btn-sm btn-primary" type="submit">
-										<i class="fas fa-check-circle">
-										</i> Terima
-									</button>
-								</a>
-							<?php } ?>
-						</div>
 				</div>
 		</div>
 	<?php } ?>
