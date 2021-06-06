@@ -1,3 +1,41 @@
+<?php
+  //database connection config
+  $hostname="localhost";
+  $db_user="root";
+  $db_pass="";
+  $db_name="simanis";
+
+  //connecting to database
+  $connection=mysqli_connect($hostname, $db_user, $db_pass, $db_name);
+  if(mysqli_connect_errno()){
+    die("Error connecting to the database");
+  }
+  //adding new visitor
+  $visitor_ip=$_SERVER['REMOTE_ADDR'];
+
+  //checking if visitor is unique
+  $query= "SELECT * FROM counter WHERE ip_address='$visitor_ip'";
+  $result=mysqli_query($connection, $query);
+  //checking query error
+  if(!$result){
+    die("Retriving Query Error <br>".$query);
+  }
+  $total_visitors=mysqli_num_rows($result);
+  if ($total_visitors<1){
+	$query= "INSERT INTO counter(ip_address) VALUES('$visitor_ip')";
+	$result=mysqli_query($connection, $query);
+  }
+  //retriving existing visitors
+  $query= "SELECT * FROM counter";
+  $result=mysqli_query($connection, $query);
+
+  //checking query error
+  if(!$result){
+    die("Retriving Query Error <br>".$query);
+  }
+  $total_visitors=mysqli_num_rows($result);
+
+?>
 <!-- Navbar -->
 <div class="container-fluid">
 	<div class="row bg-white">
@@ -64,6 +102,11 @@
 				<img src="<?= base_url('assets/landing/images/wa.png')?>" width="32" height="32">
 				<p><a href="https://api.whatsapp.com/send?phone=628112650662&text=Info" target="_blank">Chat Haji <br> &
 						Umrah</a></p>
+			</li>
+			<li>	
+				<h2 style="padding-left:10px;">
+					<?php echo $total_visitors; ?>
+				</h2>
 			</li>
 		</ul>
 	</div>
