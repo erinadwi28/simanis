@@ -42,6 +42,23 @@ class Dashboard extends CI_Controller
                 $this->load->view('footer');
         }
 
+        public function cetak_ptsp14()
+        {
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+
+                $this->load->view('frontoffice/ptsp14/cetak_ptsp14');
+        }
+
+	public function cetak_ptsp15()
+        {
+                $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
+                $this->session->userdata('id_fo')])->row_array();
+
+                $this->load->view('frontoffice/ptsp15/cetak_ptsp15');
+        }
+
+
         public function profil_fo()
         {
                 $data_title['title'] = 'Profil Saya';

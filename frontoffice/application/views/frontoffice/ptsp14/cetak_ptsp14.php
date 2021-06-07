@@ -16,7 +16,9 @@
 
 	<!-- Custom fonts for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/vendor/fontawesome-free/css/all.min.css') ?>" />
-	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+		rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
@@ -117,13 +119,46 @@
 		}
 
 		.ttd_surat {
-			margin-left: 300px;
 			font-size: 14pt;
 		}
 
 		.body {
 			line-height: 23.5px;
+			background-image: <?=base_url('../assets/dashboard/images/frontoffice/ptsp/bg_ptsp14.png') ?>;
 		}
+
+	/* css untuk surat keterangan */
+		.body-2{
+			/* color: #000;
+			font-family: Calibri, Helvetica, Arial, sans-serif;
+			font-size: 11pt; */
+		}
+
+		.isi_suket{
+			margin-left: 0.0375em;
+			font-size: 11pt;
+			line-height: 1.2em;
+			text-align: justify;
+		}
+
+		.identitassuket {
+			margin-left: 2.8125em;
+			margin-bottom: 0.3125em;
+		}
+
+		.garis {
+			border: 2px;
+			border-style: solid;
+			color: #000000 !important;
+			margin-top: 5px;
+			margin-right: 17px;
+		}
+
+
+		.ttd_surat_2 {
+			font-size: 11pt;
+		}
+
 	</style>
 
 </head>
@@ -139,148 +174,127 @@
 				<div class="card shadow mb-4">
 					<div class="card-body">
 						<div class="card-body">
-							<?php foreach ($detail_ptsp as $detail) { ?>
-								<div class="badan_surat">
-									<center>
-										<div class="kepala_Sertifikat">
+							<div class="badan_surat">
+								<center>
+									<div class="kepala_Sertifikat">
 										<object data="" type="image">
-											<img class="logosurat" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag.png') ?>">
+											<img class="logosurat" alt="logo_kop_surat"
+												src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/bg_ptsp14.png') ?>">
 										</object>
-											<h4 style="margin-top: 10px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA <br>
-													KANTOR KABUPATEN KLATEN </b></h4>
-											<p>Jalan Ronggowarsito Klaten <br>
-												Telepon/Faksimili (0272)321154 <br>
-												Website : http://klaten.kemenag.go.id</p>
-										</div>
-									</center>
-									<center>
-										<div class="no_surat">
-											<h5><b>PIAGAM TANDA DAFTAR</b> <br>
-												<b>LEMBAGA PENDIDIKAN AL-QUR'AN (LPQ)</b> <br>
-												<b> Nomor:<?= $detail->no_surat ?></b>
-											</h5>
-										</div>
-									</center>
-									<div class="isi_surat">
-										<p>&nbsp; &nbsp; &nbsp; Diberikan kepada :</p>
+										<h4 style="margin-top: 10px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA <br>
+												KANTOR KABUPATEN KLATEN </b></h4>
+										<p>Jalan Ronggowarsito Klaten <br>
+											Telepon/Faksimili (0272)321154 <br>
+											Website : http://klaten.kemenag.go.id</p>
 									</div>
-									<div class="identitas">
-										<table>
-											<tbody>
-												<tr>
-													<td>Nama LPQ</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td> </td>
-													<td><?= $detail->nama_lpq ?></td>
-												</tr>
-												<tr>
-													<td>Alamat</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td> </td>
-													<td><?= $detail->alamat ?></td>
-												</tr>
-												<tr>
-													<td>Desa</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td> </td>
-													<td><?= $detail->desa ?></td>
-												</tr>
-												<tr>
-													<td>Kecamatan</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td> </td>
-													<td><?= $detail->kecamatan ?></td>
-												</tr>
-												<tr>
-													<td>Kabupaten</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td> </td>
-													<td><?= $detail->kabupaten ?></td>
-												</tr>
-												<tr>
-													<td>Provinsi</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td> </td>
-													<td><?= $detail->provinsi ?></td>
-												</tr>
-												<tr>
-													<td>Yayasan</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td> </td>
-													<td><?= $detail->nama_yayasan ?></td>
-												</tr>
-												<tr>
-													<td>SK Menkumham RI</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td> </td>
-													<td><?= $detail->no_sk_menkumham_ri ?></td>
-												</tr>
-												<tr>
-													<td>Tahun Berdiri</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td> </td>
-													<td><?= $detail->tahun_berdiri ?></td>
-												</tr>
-												<tr>
-													<td>Berlaku</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td> </td>
-													<td><?= format_indo(date($detail->berlaku)) ?></td>
-												</tr>
-											</tbody>
-										</table>
+								</center>
+								<center>
+									<div class="no_surat">
+										<h5><b>PIAGAM TANDA DAFTAR</b> <br>
+											<b>LEMBAGA PENDIDIKAN AL-QUR'AN (LPQ)</b> <br>
+											<b> Nomor:</b>
+										</h5>
 									</div>
-									<div class="isi_surat">
-										<p>&nbsp;&nbsp; &nbsp; Dengan Nomor Statistik Pendidikan Al-Qur'an : <br>
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-											<?php
-											$str = $detail->nomor_statistik;
-											$arr = str_split($str);
-											foreach ($arr as $value) {
-												echo "$value &nbsp;&nbsp;";
-											}
+								</center>
+								<div class="isi_surat">
+									<p>&nbsp; &nbsp; &nbsp; Diberikan kepada :</p>
+								</div>
+								<div class="identitas">
+									<table>
+										<tbody>
+											<tr>
+												<td>Nama LPQ</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+											</tr>
+											<tr>
+												<td>Alamat</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+											</tr>
+											<tr>
+												<td>Desa</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+											</tr>
+											<tr>
+												<td>Kecamatan</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+											</tr>
+											<tr>
+												<td>Kabupaten</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+											</tr>
+											<tr>
+												<td>Provinsi</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+											</tr>
+											<tr>
+												<td>Yayasan</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+											</tr>
+											<tr>
+												<td>SK Menkumham RI</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+											</tr>
+											<tr>
+												<td>Tahun Berdiri</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+											</tr>
+											<tr>
+												<td>Berlaku</td>
+												<td> </td>
+												<td> </td>
+												<td>:</td>
+												<td> </td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="isi_surat">
+									<p>&nbsp;&nbsp; &nbsp; Dengan Nomor Statistik Pendidikan Al-Qur'an : <br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</p>
+								</div>
+								<div class="row">
+									<div class="col-md-6"></div>
+									<div class="col-md-6">
+										<div class="ttd_surat">
+											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+											<p> <br>
 
-											?> </p>
-									</div>
-									<div class="row">
-										<div class="col-md-6"></div>
-										<div class="col-md-6">
-											<div class="ttd_surat">
-												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-												<p>Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?> <br>
-											<?php } ?>
-											<?php
-											foreach ($data_kepala as $detail) { ?>
 												<b>a.n. MENTERI AGAMA</b> <br>
 												Kepala Kantor Kementerian Agama
 												Kabupaten Klaten<br><br><br>
-												<b><?= $detail->nama; ?></b>
-											<?php } ?>
+												<b></b>
 											</p>
-											</div>
 										</div>
 									</div>
 								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -292,5 +306,208 @@
 
 	<!-- End of Main Content -->
 </body>
+
+<body class="body-2" id="page-top">
+	<!-- Begin Page Content -->
+	<div class="container-fluid">
+		<!-- Page Heading -->
+		<div class="row">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-8">
+				<div class="card shadow mb-4">
+					<div class="card-body">
+						<!-- KOP SURAT -->
+						<center>
+							<table width="478">
+								<tr>
+									<td></td>
+									<td class="img">
+										<center>
+											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
+												width="100" height="100">
+										</center>
+									</td>
+									<td width="430" style="padding-left: 10px;">
+										<center>
+											<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
+											<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
+											<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
+											<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
+											<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
+											<br>
+										</center>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3">
+										<div class="garis"></div>
+									</td>
+								</tr>
+							</table>
+						</center>
+						<br>
+						<div class="no_surat">
+							<center>
+								<p><b>SURAT KETERANGAN </b><br>
+									<b>Nomor : .../Kk.11.10/3/PP.00.4/05/2021</b>
+								</p>
+							</center>
+						</div>
+						<br>
+
+						<div class="identitassuket">
+							<table>
+								<tbody>
+									<tr>
+										<td>Yang bertanda tangan di bawah ini :</td>
+									</tr>
+									<tr>
+										<td>Nama</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>H.Anif Solikhin, S.Ag., M.SI</td>
+									</tr>
+									<tr>
+										<td>NIP</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>XXX</td>
+									</tr>
+									<tr>
+										<td>Jabatan</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>Kepala Kantor Kementerian Agama Kab. Klaten</td>
+									</tr>
+									<tr>
+										<td>Dengan ini menerangkan bahwa :</td>
+									</tr>
+									<tr>
+										<td>Nama Lembaga</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>Xxx</td>
+									</tr>
+									<tr>
+										<td>NSTPQ</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>Xxx</td>
+									</tr>
+									<tr>
+										<td>Alamat</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>Xxx</td>
+									</tr>
+									<tr>
+										<td>Desa</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>Xxx</td>
+									</tr>
+									<tr>
+										<td>Kecamatan</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>Xxx</td>
+									</tr>
+									<tr>
+										<td>Yayasan</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>Xxx</td>
+									</tr>
+									<tr>
+										<td>SK Menkumham RI</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>Xxx</td>
+									</tr>
+									<tr>
+										<td>Masa Berlaku</td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td>Xxx</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<br>
+						<div class="identitassuket">
+							Bahwa lembaga tersebut telah mendapat izin operasional dari Kantor Kementerian Agama
+							Kabupaten Klaten dan berkomitmen untuk melaksanakan semua kegiatan sesuai dengan tuntunan
+							Islam dan peraturan
+							perundang-undangan yang berlaku serta selalu berkoordinasi dengan Dinas/Instansi terkait.
+							<br>
+							Demikian untuk menjadikan perhatian dan dapat dipergunakan sebagaimana mestinya
+						</div>
+						<div class="row">
+							<div class="col-md-9">
+							</div>
+							<div class="col-md-3">
+								<div class="ttd_surat_2">
+									<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+									Klaten, ......<br>
+									Kepala
+								</div>
+							</div>
+						</div>
+						<br> <br> <br> <br>
+						<div class="row">
+							<div class="col-md-9">
+							</div>
+							<div class="col-md-3">
+
+								<div class="ttd_surat_2">
+									<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+									Anif Solikhin
+								</div>
+							</div>
+						</div>
+
+						<div>
+							Tembusan: <br>
+							1. Yth. Ka. Kesbangpol Linmas Kab.Klaten; <br>
+							2. Yth. Camat ........; <br>
+							3. Yth. Ka. KUA Kec.......; <br>
+							4. Kepala Desa.......
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.container-fluid -->
+
+	<!-- End of Main Content -->
+</body>
+
+
+
 
 </html>

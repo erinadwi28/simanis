@@ -95,39 +95,8 @@
 		}
 
 		.ttd_surat {
+			margin-left: 300px;
 			font-size: 14pt;
-		}
-
-		/* css untuk surat keterangan */
-		.body-2{
-			/* color: #000;
-			font-family: Calibri, Helvetica, Arial, sans-serif;
-			font-size: 11pt; */
-		}
-
-		.isi_suket{
-			margin-left: 0.0375em;
-			font-size: 11pt;
-			line-height: 1.2em;
-			text-align: justify;
-		}
-
-		.identitassuket {
-			margin-left: 2.8125em;
-			margin-bottom: 0.3125em;
-		}
-
-		.garis {
-			border: 2px;
-			border-style: solid;
-			color: #000000 !important;
-			margin-top: 5px;
-			margin-right: 17px;
-		}
-
-
-		.ttd_surat_2 {
-			font-size: 11pt;
 		}
 		
 	</style>
@@ -155,7 +124,7 @@
 								</div>
 							</center>
 
-							
+							<?php foreach ($detail_ptsp as $detail) { ?>
 								<div class="badan_surat">
 									<center>
 										<div class="kepala_Sertifikat">
@@ -170,7 +139,7 @@
 										<div class="no_surat">
 											<h5><b>PIAGAM PENYELENGARAAN <br>
 											 MADRASAH DINIYAH TAKMILIYAH (MDT)</b> <br>
-											<b> Nomor:xx</b>
+											<b> Nomor:<?= $detail->no_surat ?></b>
 											</h5>
 										</div>
 									</center>
@@ -187,7 +156,7 @@
 													<td> </td>
 													<td>:</td>
 													<td> </td>
-													
+													<td><?= $detail->nama_mtd ?></td>
 												</tr>
 												<tr>
 													<td>Alamat</td>
@@ -195,7 +164,7 @@
 													<td> </td>
 													<td>:</td>
 													<td> </td>
-													
+													<td><?= $detail->alamat ?></td>
 												</tr>
 												<tr>
 													<td>Desa</td>
@@ -203,7 +172,7 @@
 													<td> </td>
 													<td>:</td>
 													<td> </td>
-													
+													<td><?= $detail->desa ?></td>
 												</tr>
 												<tr>
 													<td>Kecamatan</td>
@@ -211,7 +180,7 @@
 													<td> </td>
 													<td>:</td>
 													<td> </td>
-													
+													<td><?= $detail->kecamatan ?></td>
 												</tr>
 												<tr>
 													<td>Kabupaten</td>
@@ -219,7 +188,7 @@
 													<td> </td>
 													<td>:</td>
 													<td> </td>
-													
+													<td><?= $detail->kabupaten ?></td>
 												</tr>
 												<tr>
 													<td>Provinsi</td>
@@ -227,7 +196,7 @@
 													<td> </td>
 													<td>:</td>
 													<td> </td>
-													
+													<td><?= $detail->provinsi ?></td>
 												</tr>
 												<tr>
 													<td>Tahun Berdiri</td>
@@ -235,7 +204,7 @@
 													<td> </td>
 													<td>:</td>
 													<td> </td>
-													
+													<td><?= $detail->tahun_berdiri ?></td>
 												</tr>
 												<tr>
 													<td>Nomor Statistik</td>
@@ -243,7 +212,7 @@
 													<td> </td>
 													<td>:</td>
 													<td> </td>
-													
+													<td><?= $detail->nomor_statistik ?></td>
 												</tr>
 												<tr>
 													<td>No Telp</td>
@@ -251,7 +220,7 @@
 													<td> </td>
 													<td>:</td>
 													<td> </td>
-													
+													<td><?= $detail->no_hp ?></td>
 												</tr>
 											</tbody>
 										</table>
@@ -268,13 +237,15 @@
 											<div class="ttd_surat">
 												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 												<p>Ditetapkan di : Klaten <br>
-													Pada Tanggal : &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; ...<br>
+													Pada Tanggal : &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 													Kepala
 												</p>
+											<?php } ?>
 											<br><br><br><br>
-											
-												<b>Xxx</b><br>
-											
+											<?php
+											foreach ($data_kepala as $detail) { ?>
+												<b><?= $detail->nama; ?></b><br>
+											<?php } ?>
 											</div>
 										</div>
 									</div>
@@ -285,182 +256,6 @@
 			</div>
 		</div>
 	</div>
-	</div>
-	<!-- /.container-fluid -->
-
-	<!-- End of Main Content -->
-</body>
-
-<body class="body-2" id="page-top">
-	<!-- Begin Page Content -->
-	<div class="container-fluid">
-		<!-- Page Heading -->
-		<div class="row">
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-8">
-				<div class="card shadow mb-4">
-					<div class="card-body">
-						<!-- KOP SURAT -->
-						<center>
-							<table width="478">
-								<tr>
-									<td></td>
-									<td class="img">
-										<center>
-											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
-												width="100" height="100">
-										</center>
-									</td>
-									<td width="430" style="padding-left: 10px;">
-										<center>
-											<font size="4"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></font><br>
-											<font size="3">KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN</font><br>
-											<font size="2"><i>Jalan Ronggowarsito Klaten</i></font><br>
-											<font size="2"><i>Telepon/Faksimili (0272) 321154</i></font><br>
-											<font size="2"><i>Website http://klaten.kemenag.go.id</i></font>
-											<br>
-										</center>
-									</td>
-								</tr>
-								<tr>
-									<td colspan="3">
-										<div class="garis"></div>
-									</td>
-								</tr>
-							</table>
-						</center>
-						<br>
-						<div class="no_surat">
-							<center>
-								<p><b>SURAT KETERANGAN </b><br>
-									<b>Nomor : .../Kk.11.10/3/PP.00.4/04/2021</b>
-								</p>
-							</center>
-						</div>
-						<br>
-
-						<div class="identitassuket">
-							<table>
-								<tbody>
-									<tr>
-										<td>Yang bertanda tangan di bawah ini :</td>
-									</tr>
-									<tr>
-										<td>Nama</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>H.Anif Solikhin, S.Ag., M.SI</td>
-									</tr>
-									<tr>
-										<td>NIP</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>XXX</td>
-									</tr>
-									<tr>
-										<td>Jabatan</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>Kepala Kantor Kementerian Agama Kab. Klaten</td>
-									</tr>
-									<tr>
-										<td>Dengan ini menerangkan bahwa :</td>
-									</tr>
-									<tr>
-										<td>Nama Lembaga</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>Xxx</td>
-									</tr>
-									<tr>
-										<td>NSMDT</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>Xxx</td>
-									</tr>
-									<tr>
-										<td>Alamat</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>Xxx</td>
-									</tr>
-									<tr>
-										<td>Desa</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>Xxx</td>
-									</tr>
-									<tr>
-										<td>Kecamatan</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>Xxx</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<br>
-						<div class="identitassuket">
-							Bahwa lembaga tersebut telah mendapat izin operasional dari Kantor Kementerian Agama
-							Kabupaten Klaten dan berkomitmen untuk melaksanakan semua kegiatan sesuai dengan tuntunan
-							Islam dan peraturan
-							perundang-undangan yang berlaku serta selalu berkoordinasi dengan Dinas/Instansi terkait.
-							<br>
-							Demikian untuk menjadikan perhatian dan dapat dipergunakan sebagaimana mestinya
-						</div>
-						<div class="row">
-							<div class="col-md-9">
-							</div>
-							<div class="col-md-3">
-								<div class="ttd_surat_2">
-									<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-									Klaten, ......<br>
-									Kepala
-								</div>
-							</div>
-						</div>
-						<br> <br> <br> <br>
-						<div class="row">
-							<div class="col-md-9">
-							</div>
-							<div class="col-md-3">
-
-								<div class="ttd_surat_2">
-									<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-									Anif Solikhin
-								</div>
-							</div>
-						</div>
-
-						<div>
-							Tembusan: <br>
-							1. Yth. Ka. Kesbangpol Linmas Kab.Klaten; <br>
-							2. Yth. Camat ........; <br>
-							3. Yth. Ka. KUA Kec.......; <br>
-							4. Kepala Desa.......
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
 	<!-- /.container-fluid -->
 
