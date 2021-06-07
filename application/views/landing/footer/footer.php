@@ -50,6 +50,7 @@
         <div class="row border-top justify-content-center align-items-center pt-4">
             <div class="col-auto text-gray-500 font-weight-light mb-4">
                 2021 Copyright Kementerian Agama Kab. Klaten • All rights reserved
+                
             </div>
         </div>
     </div>
