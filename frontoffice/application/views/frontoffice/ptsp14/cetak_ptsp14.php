@@ -54,9 +54,6 @@
 			font-size: 14pt;
 		}
 
-		.kepala_sertifikat {
-			margin-top: 2px;
-		}
 
 		.alamat_kantor {
 			font-size: 11pt;
@@ -124,16 +121,9 @@
 
 		.body {
 			line-height: 23.5px;
-			background-image: <?=base_url('../assets/dashboard/images/frontoffice/ptsp/bg_ptsp14.png') ?>;
 		}
 
 	/* css untuk surat keterangan */
-		.body-2{
-			/* color: #000;
-			font-family: Calibri, Helvetica, Arial, sans-serif;
-			font-size: 11pt; */
-		}
-
 		.isi_suket{
 			margin-left: 0.0375em;
 			font-size: 11pt;
@@ -142,8 +132,8 @@
 		}
 
 		.identitassuket {
-			margin-left: 2.8125em;
-			margin-bottom: 0.3125em;
+			text-align: justify;
+			font-size: 11pt;
 		}
 
 		.garis {
@@ -158,28 +148,32 @@
 		.ttd_surat_2 {
 			font-size: 11pt;
 		}
-
+		
+		.sertif {
+		background: url(<?=base_url('../assets/dashboard/images/frontoffice/ptsp/bg_ptsp14_3.png') ?>);
+		background-repeat: no-repeat;
+		background-size: contain;
+		margin-left: 20px;
+		}
 	</style>
 
 </head>
 
-<body class="body" id="page-top">
+<body class="body " id="page-top">
 	<!-- Begin Page Content -->
 	<div class="container-fluid">
 		<!-- Page Heading -->
 		<div class="row">
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-8">
+			<div class="col sertif">
 				<div class="card shadow mb-4">
 					<div class="card-body">
 						<div class="card-body">
-							<div class="badan_surat">
+							<div class="badan_surat" style="margin-top: 30px;">
 								<center>
 									<div class="kepala_Sertifikat">
 										<object data="" type="image">
 											<img class="logosurat" alt="logo_kop_surat"
-												src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/bg_ptsp14.png') ?>">
+												src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag.png') ?>">
 										</object>
 										<h4 style="margin-top: 10px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA <br>
 												KANTOR KABUPATEN KLATEN </b></h4>
@@ -280,12 +274,10 @@
 									</p>
 								</div>
 								<div class="row">
-									<div class="col-md-6"></div>
-									<div class="col-md-6">
+									<div class="col">
 										<div class="ttd_surat">
 											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 											<p> <br>
-
 												<b>a.n. MENTERI AGAMA</b> <br>
 												Kepala Kantor Kementerian Agama
 												Kabupaten Klaten<br><br><br>
@@ -300,16 +292,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	</div>
-	<!-- /.container-fluid -->
-
-	<!-- End of Main Content -->
-</body>
-
-<body class="body-2" id="page-top">
-	<!-- Begin Page Content -->
-	<div class="container-fluid">
 		<!-- Page Heading -->
 		<div class="row">
 			<div class="col-md-2">
@@ -489,7 +471,7 @@
 							</div>
 						</div>
 
-						<div>
+						<div class="ttd_surat_2">
 							Tembusan: <br>
 							1. Yth. Ka. Kesbangpol Linmas Kab.Klaten; <br>
 							2. Yth. Camat ........; <br>
@@ -506,8 +488,5 @@
 
 	<!-- End of Main Content -->
 </body>
-
-
-
 
 </html>
