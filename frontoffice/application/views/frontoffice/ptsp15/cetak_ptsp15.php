@@ -99,13 +99,13 @@
 		}
 
 		/* css untuk surat keterangan */
-		.body-2{
+		.body-2 {
 			/* color: #000;
 			font-family: Calibri, Helvetica, Arial, sans-serif;
 			font-size: 11pt; */
 		}
 
-		.isi_suket{
+		.isi_suket {
 			margin-left: 0.0375em;
 			font-size: 11pt;
 			line-height: 1.2em;
@@ -129,7 +129,6 @@
 		.ttd_surat_2 {
 			font-size: 11pt;
 		}
-		
 	</style>
 
 </head>
@@ -155,12 +154,14 @@
 								</div>
 							</center>
 
-							
-								<div class="badan_surat">
+
+							<div class="badan_surat">
+								<?php
+								foreach ($detail_ptsp as $detail) { ?>
 									<center>
 										<div class="kepala_Sertifikat">
 											<h4 style="margin-top: 10px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA <br>
-											KANTOR KABUPATEN KLATEN </b></h4>
+													KANTOR KABUPATEN KLATEN </b></h4>
 											<p>Jalan Ronggowarsito Klaten <br>
 												Telepon/Faksimili (0272)321154 <br>
 												Website : http://klaten.kemenag.go.id</p>
@@ -169,8 +170,8 @@
 									<center>
 										<div class="no_surat">
 											<h5><b>PIAGAM PENYELENGARAAN <br>
-											 MADRASAH DINIYAH TAKMILIYAH (MDT)</b> <br>
-											<b> Nomor:xx</b>
+													MADRASAH DINIYAH TAKMILIYAH (MDT)</b> <br>
+												<b> Nomor: <?= $detail->no_surat ?></b>
 											</h5>
 										</div>
 									</center>
@@ -186,79 +187,79 @@
 													<td> </td>
 													<td> </td>
 													<td>:</td>
-													<td> </td>
-													
+													<td><?= $detail->nama_mtd ?></td>
+
 												</tr>
 												<tr>
 													<td>Alamat</td>
 													<td> </td>
 													<td> </td>
 													<td>:</td>
-													<td> </td>
-													
+													<td><?= $detail->alamat ?></td>
+
 												</tr>
 												<tr>
 													<td>Desa</td>
 													<td> </td>
 													<td> </td>
 													<td>:</td>
-													<td> </td>
-													
+													<td><?= $detail->desa ?></td>
+
 												</tr>
 												<tr>
 													<td>Kecamatan</td>
 													<td> </td>
 													<td> </td>
 													<td>:</td>
-													<td> </td>
-													
+													<td><?= $detail->kecamatan ?></td>
+
 												</tr>
 												<tr>
 													<td>Kabupaten</td>
 													<td> </td>
 													<td> </td>
 													<td>:</td>
-													<td> </td>
-													
+													<td><?= $detail->kabupaten ?></td>
+
 												</tr>
 												<tr>
 													<td>Provinsi</td>
 													<td> </td>
 													<td> </td>
 													<td>:</td>
-													<td> </td>
-													
+													<td><?= $detail->provinsi ?></td>
+
 												</tr>
 												<tr>
 													<td>Tahun Berdiri</td>
 													<td> </td>
 													<td> </td>
 													<td>:</td>
-													<td> </td>
-													
+													<td><?= $detail->tahun_berdiri ?></td>
+
 												</tr>
 												<tr>
 													<td>Nomor Statistik</td>
 													<td> </td>
 													<td> </td>
 													<td>:</td>
-													<td> </td>
-													
+													<td><?= $detail->nomor_statistik ?></td>
+
 												</tr>
 												<tr>
 													<td>No Telp</td>
 													<td> </td>
 													<td> </td>
 													<td>:</td>
-													<td> </td>
-													
+													<td><?= $detail->no_hp ?></td>
+
 												</tr>
 											</tbody>
 										</table>
 									</div>
 									<div class="isi_surat">
-										<p>Madrasah Diniyah Taklimiyah (MDT) tersebut telah terdaftar di 
-											Kantor Kementerian Agama Kabupaten Klaten sebagai Lembaga 
+										<p>Madrasah Diniyah Taklimiyah (MDT) tersebut telah terdaftar di
+											Kantor Kementerian Agama Kabupaten Klaten sebagai Lembaga
 											Pendidikan Keagamaan Islam.</p>
 										<p>Demikian untuk dapat digunakan sebagaimana mestinya.</p>
 									</div>
@@ -268,17 +269,19 @@
 											<div class="ttd_surat">
 												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 												<p>Ditetapkan di : Klaten <br>
-													Pada Tanggal : &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; ...<br>
+													Pada Tanggal : &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 													Kepala
 												</p>
+											<?php } ?>
 											<br><br><br><br>
-											
-												<b>Xxx</b><br>
-											
+											<?php
+											foreach ($data_kepala as $detail) { ?>
+												<b><?= $detail->nama ?></b><br>
+											<?php } ?>
 											</div>
 										</div>
 									</div>
-								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -308,8 +311,7 @@
 									<td></td>
 									<td class="img">
 										<center>
-											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
-												width="100" height="100">
+											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>" width="100" height="100">
 										</center>
 									</td>
 									<td width="430" style="padding-left: 10px;">
@@ -331,13 +333,16 @@
 							</table>
 						</center>
 						<br>
-						<div class="no_surat">
-							<center>
-								<p><b>SURAT KETERANGAN </b><br>
-									<b>Nomor : .../Kk.11.10/3/PP.00.4/04/2021</b>
-								</p>
-							</center>
-						</div>
+						<?php
+						foreach ($detail_ptsp as $detail) { ?>
+							<div class="no_surat">
+								<center>
+									<p><b>SURAT KETERANGAN </b><br>
+										<b>Nomor : <?= $detail->no_surat ?></b>
+									</p>
+								</center>
+							</div>
+						<?php } ?>
 						<br>
 
 						<div class="identitassuket">
@@ -346,73 +351,79 @@
 									<tr>
 										<td>Yang bertanda tangan di bawah ini :</td>
 									</tr>
-									<tr>
-										<td>Nama</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>H.Anif Solikhin, S.Ag., M.SI</td>
-									</tr>
-									<tr>
-										<td>NIP</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>XXX</td>
-									</tr>
-									<tr>
-										<td>Jabatan</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>Kepala Kantor Kementerian Agama Kab. Klaten</td>
-									</tr>
+									<?php
+									foreach ($data_kepala as $detail) { ?>
+										<tr>
+											<td>Nama</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td><?= $detail->nama ?></td>
+										</tr>
+										<tr>
+											<td>NIP</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td><?= $detail->nip ?></td>
+										</tr>
+										<tr>
+											<td>Jabatan</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td>Kepala Kantor Kementerian Agama Kab. Klaten</td>
+										</tr>
+									<?php } ?>
 									<tr>
 										<td>Dengan ini menerangkan bahwa :</td>
 									</tr>
-									<tr>
-										<td>Nama Lembaga</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>Xxx</td>
-									</tr>
-									<tr>
-										<td>NSMDT</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>Xxx</td>
-									</tr>
-									<tr>
-										<td>Alamat</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>Xxx</td>
-									</tr>
-									<tr>
-										<td>Desa</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>Xxx</td>
-									</tr>
-									<tr>
-										<td>Kecamatan</td>
-										<td> </td>
-										<td> </td>
-										<td>:</td>
-										<td> </td>
-										<td>Xxx</td>
-									</tr>
+									<?php
+									foreach ($detail_ptsp as $detail) { ?>
+										<tr>
+											<td>Nama Lembaga</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td><?= $detail->nama_mtd ?></td>
+										</tr>
+										<tr>
+											<td>NSMDT</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td> </td>
+										</tr>
+										<tr>
+											<td>Alamat</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td><?= $detail->alamat ?></td>
+										</tr>
+										<tr>
+											<td>Desa</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td><?= $detail->desa ?></td>
+										</tr>
+										<tr>
+											<td>Kecamatan</td>
+											<td> </td>
+											<td> </td>
+											<td>:</td>
+											<td> </td>
+											<td><?= $detail->kecamatan ?></td>
+										</tr>
+									<?php } ?>
 								</tbody>
 							</table>
 						</div>
@@ -429,11 +440,14 @@
 							<div class="col-md-9">
 							</div>
 							<div class="col-md-3">
-								<div class="ttd_surat_2">
-									<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-									Klaten, ......<br>
-									Kepala
-								</div>
+								<?php
+								foreach ($detail_ptsp as $detail) { ?>
+									<div class="ttd_surat_2">
+										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+										Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
+										Kepala
+									</div>
+								<?php } ?>
 							</div>
 						</div>
 						<br> <br> <br> <br>
@@ -441,22 +455,25 @@
 							<div class="col-md-9">
 							</div>
 							<div class="col-md-3">
-
-								<div class="ttd_surat_2">
-									<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-									Anif Solikhin
-								</div>
+								<?php
+								foreach ($data_kepala as $detail) { ?>
+									<div class="ttd_surat_2">
+										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+										<?= $detail->nama ?>
+									</div>
+								<?php } ?>
 							</div>
 						</div>
-
-						<div>
-							Tembusan: <br>
-							1. Yth. Ka. Kesbangpol Linmas Kab.Klaten; <br>
-							2. Yth. Camat ........; <br>
-							3. Yth. Ka. KUA Kec.......; <br>
-							4. Kepala Desa.......
-
-						</div>
+						<?php
+						foreach ($detail_ptsp as $detail) { ?>
+							<div>
+								Tembusan: <br>
+								1. Yth. Ka. Kesbangpol Linmas Kab.Klaten; <br>
+								2. Yth. Camat <?= $detail->kecamatan ?>; <br>
+								3. Yth. Ka. KUA Kec. <?= $detail->kecamatan ?>; <br>
+								4. Kepala Desa <?= $detail->desa ?>
+							</div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
