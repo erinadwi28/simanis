@@ -16,9 +16,7 @@
 
 	<!-- Custom fonts for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/vendor/fontawesome-free/css/all.min.css') ?>" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
@@ -125,8 +123,8 @@
 			line-height: 23.5px;
 		}
 
-	/* css untuk surat keterangan */
-		.isi_suket{
+		/* css untuk surat keterangan */
+		.isi_suket {
 			margin-left: 0.0375em;
 			font-size: 11pt;
 			line-height: 1.2em;
@@ -150,15 +148,15 @@
 		.ttd_surat_2 {
 			font-size: 11pt;
 		}
-		
+
 		.sertif {
-		background: url(<?=base_url('../assets/dashboard/images/frontoffice/ptsp/bg_ptsp14_3.png') ?>);
-		background-repeat: no-repeat;
-		background-size:contain;
-		background-position-x: center;
-		background-position-y: top;
-		z-index: 200;
-		margin-left: 45px;
+			background: url(<?= base_url('../assets/dashboard/images/frontoffice/ptsp/bg_ptsp14_3.png') ?>);
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position-x: center;
+			background-position-y: top;
+			z-index: 200;
+			margin-left: 45px;
 		}
 	</style>
 
@@ -173,37 +171,36 @@
 				<div class="card shadow mb-4">
 					<div class="card-body">
 						<div class="card-body">
-						<?php
-								foreach ($detail_ptsp as $detail) { ?>
-							<div class="badan_surat" style="margin-top: 20px;">
-								<center>
-									<div class="kepala_Sertifikat">
-										<object data="" type="image">
-											<img class="logosurat" alt="logo_kop_surat"
-												src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag.png') ?>">
-										</object>
-										<h5 style="margin-top: 10px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA <br>
-												KANTOR KABUPATEN KLATEN </b></h5>
-										<p>Jalan Ronggowarsito Klaten <br>
-											Telepon/Faksimili (0272)321154 <br>
-											Website : http://klaten.kemenag.go.id</p>
+							<?php
+							foreach ($detail_ptsp as $detail) { ?>
+								<div class="badan_surat" style="margin-top: 20px;">
+									<center>
+										<div class="kepala_Sertifikat">
+											<object data="" type="image">
+												<img class="logosurat" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag.png') ?>">
+											</object>
+											<h5 style="margin-top: 10px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA <br>
+													KANTOR KABUPATEN KLATEN </b></h5>
+											<p>Jalan Ronggowarsito Klaten <br>
+												Telepon/Faksimili (0272)321154 <br>
+												Website : http://klaten.kemenag.go.id</p>
+										</div>
+									</center>
+									<center>
+										<div class="no_surat">
+											<h6><b>PIAGAM TANDA DAFTAR</b> <br>
+												<b>LEMBAGA PENDIDIKAN AL-QUR'AN (LPQ)</b> <br>
+												<b> Nomor: <?= $detail->no_surat ?></b>
+											</h6>
+										</div>
+									</center>
+									<div class="isi_surat">
+										<p>&nbsp; &nbsp; &nbsp; Diberikan kepada :</p>
 									</div>
-								</center>
-								<center>
-									<div class="no_surat">
-										<h6><b>PIAGAM TANDA DAFTAR</b> <br>
-											<b>LEMBAGA PENDIDIKAN AL-QUR'AN (LPQ)</b> <br>
-											<b> Nomor:</b>
-										</h6>
-									</div>
-								</center>
-								<div class="isi_surat">
-									<p>&nbsp; &nbsp; &nbsp; Diberikan kepada :</p>
-								</div>
-								<div class="identitas">
-									<table>
-										<tbody>
-											<tr>
+									<div class="identitas">
+										<table>
+											<tbody>
+												<tr>
 													<td>Nama LPQ</td>
 													<td> </td>
 													<td> </td>
@@ -273,28 +270,28 @@
 													<td>:</td>
 													<td><?= format_indo(date($detail->berlaku)); ?></td>
 												</tr>
-										</tbody>
-									</table>
-								</div>
-								<div class="isi_surat" >
-										<table border="1" style="margin-left: 20px;">
-										<tr>
-										<p>&nbsp;&nbsp; &nbsp; Dengan Nomor Statistik Pendidikan Al-Qur'an : <br>
-											<td>
-											<?php											
-											$str = $detail->nomor_statistik;
-											$arr = str_split($str);
-											foreach ($arr as $value) {
-												echo "$value &nbsp;&nbsp; | &nbsp;&nbsp;";
-											} ?>
-											</td>
-										</p>
-										</tr>
+											</tbody>
 										</table>
 									</div>
-								<div class="row">
-									<div class="col">
-										<div class="ttd_surat" style="margin-left: 300px;">
+									<div class="isi_surat">
+										<table border="1" style="margin-left: 20px;">
+											<tr>
+												<p>&nbsp;&nbsp; &nbsp; Dengan Nomor Statistik Pendidikan Al-Qur'an : <br>
+													<td>
+														<?php
+														$str = $detail->nomor_statistik;
+														$arr = str_split($str);
+														foreach ($arr as $value) {
+															echo "$value &nbsp;&nbsp; | &nbsp;&nbsp;";
+														} ?>
+													</td>
+												</p>
+											</tr>
+										</table>
+									</div>
+									<div class="row">
+										<div class="col">
+											<div class="ttd_surat" style="margin-left: 300px;">
 												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 												<p>Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 												<?php } ?>
@@ -304,12 +301,12 @@
 													Kepala Kantor Kementerian Agama <br>
 													Kabupaten Klaten<br> <br><br>
 													<b><?= $detail->nama ?></b>
-													<?php } ?>
+												<?php } ?>
 												</p>
 											</div>
+										</div>
 									</div>
 								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -329,8 +326,7 @@
 									<td></td>
 									<td class="img">
 										<center>
-											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
-												width="100" height="100">
+											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>" width="100" height="100">
 										</center>
 									</td>
 									<td width="430" style="padding-left: 10px;">
@@ -362,7 +358,7 @@
 								</center>
 							</div>
 						<?php } ?>
-						
+
 						<div class="identitassuket">
 							<table>
 								<tbody>
@@ -415,7 +411,7 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td> </td>
+											<td><?= $detail->nomor_statistik ?></td>
 										</tr>
 										<tr>
 											<td>Alamat</td>
@@ -483,29 +479,30 @@
 							<div class="col">
 								<?php
 								foreach ($detail_ptsp as $detail) { ?>
-									<div class="ttd_surat_2"  style="margin-left: 450px;">
+									<div class="ttd_surat_2" style="margin-left: 450px;">
 										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 										Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?>
+										<br>
 										Kepala
-									</div> <br>
+									</div>
 								<?php } ?>
 								<?php
 								foreach ($data_kepala as $detail) { ?>
-									<div class="ttd_surat_2"  style="margin-left: 450px;"> <br>
+									<div class="ttd_surat_2" style="margin-left: 450px;"> <br>
 										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
 										<?= $detail->nama ?>
 									</div>
 								<?php } ?>
 								<?php
-						foreach ($detail_ptsp as $detail) { ?>
-							<div class="ttd_surat_2">
-								Tembusan: <br>
-								1. Yth. Ka. Kesbangpol Linmas Kab.Klaten; <br>
-								2. Yth. Camat <?= $detail->kecamatan ?>; <br>
-								3. Yth. Ka. KUA Kec. <?= $detail->kecamatan ?>; <br>
-								4. Kepala Desa <?= $detail->desa ?>
-							</div>
-						<?php } ?>
+								foreach ($detail_ptsp as $detail) { ?>
+									<div class="ttd_surat_2">
+										Tembusan: <br>
+										1. Yth. Ka. Kesbangpol Linmas Kab.Klaten; <br>
+										2. Yth. Camat <?= $detail->kecamatan ?>; <br>
+										3. Yth. Ka. KUA Kec. <?= $detail->kecamatan ?>; <br>
+										4. Kepala Desa <?= $detail->desa ?>
+									</div>
+								<?php } ?>
 							</div>
 						</div>
 					</div>
