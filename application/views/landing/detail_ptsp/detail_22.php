@@ -63,7 +63,7 @@
 		<div class="container">
 			<div class="row text-center">
 				<div class="col-md-12">
-					<h4>Rekomendasi Permohonan ID Masjid dan Musala</h4>
+					<h4>Rekomendasi Permohonan ID Masjid dan Mushalla</h4>
 				</div>
 
 			</div>

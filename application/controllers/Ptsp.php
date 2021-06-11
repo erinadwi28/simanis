@@ -207,7 +207,7 @@ class Ptsp extends CI_Controller {
 	}
 	public function detail_permohonan_21()
 	{   
-        $data_title['title'] = 'Permohonan Arah Ukur Kiblat';
+        $data_title['title'] = 'Permohonan Ukur Arah Kiblat';
 
         $this->load->view('landing/header/header', $data_title);
         $this->load->view('landing/top_navbar/top_navbar');
@@ -216,7 +216,7 @@ class Ptsp extends CI_Controller {
 	}
 	public function detail_permohonan_22()
 	{   
-        $data_title['title'] = 'Rekomendasi Permohonan ID Masjid dan Musala';
+        $data_title['title'] = 'Rekomendasi Permohonan ID Masjid dan Mushalla';
 
         $this->load->view('landing/header/header', $data_title);
         $this->load->view('landing/top_navbar/top_navbar');

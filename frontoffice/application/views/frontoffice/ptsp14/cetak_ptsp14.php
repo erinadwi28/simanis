@@ -24,14 +24,14 @@
 	<style>
 		.body {
 			color: #000;
-			font-size: 14pt;
+			font-size: 11pt;
 			margin-bottom: 0;
 			padding-bottom: 0;
 		}
 
 		.logosurat {
-			height: 130px;
-			width: 130px;
+			height: 110px;
+			width: 110px;
 			margin-top: 0px;
 			margin-left: 10px;
 		}
@@ -53,7 +53,7 @@
 		.badan_surat {
 			font-family: 'Times New Roman';
 			margin-left: 0px;
-			font-size: 14pt;
+			font-size: 11pt;
 		}
 
 
@@ -75,7 +75,7 @@
 
 		.isi_surat {
 			margin-left: 0.0375em;
-			font-size: 14pt;
+			font-size: 11pt;
 			line-height: 1.2em;
 			font-family: 'Times New Roman';
 
@@ -84,7 +84,7 @@
 		.identitas {
 			margin-left: 2.8125em;
 			margin-bottom: 0.3125em;
-			font-size: 14pt;
+			font-size: 11pt;
 		}
 
 		.ttd_kepala {
@@ -118,7 +118,7 @@
 		}
 
 		.ttd_surat {
-			font-size: 14pt;
+			font-size: 11pt;
 		}
 
 		.body {
@@ -182,8 +182,8 @@
 											<img class="logosurat" alt="logo_kop_surat"
 												src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag.png') ?>">
 										</object>
-										<h4 style="margin-top: 10px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA <br>
-												KANTOR KABUPATEN KLATEN </b></h4>
+										<h5 style="margin-top: 10px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA <br>
+												KANTOR KABUPATEN KLATEN </b></h5>
 										<p>Jalan Ronggowarsito Klaten <br>
 											Telepon/Faksimili (0272)321154 <br>
 											Website : http://klaten.kemenag.go.id</p>
@@ -191,10 +191,10 @@
 								</center>
 								<center>
 									<div class="no_surat">
-										<h5><b>PIAGAM TANDA DAFTAR</b> <br>
+										<h6><b>PIAGAM TANDA DAFTAR</b> <br>
 											<b>LEMBAGA PENDIDIKAN AL-QUR'AN (LPQ)</b> <br>
 											<b> Nomor:</b>
-										</h5>
+										</h6>
 									</div>
 								</center>
 								<div class="isi_surat">
@@ -276,20 +276,25 @@
 										</tbody>
 									</table>
 								</div>
-								<div class="isi_surat">
+								<div class="isi_surat" >
+										<table border="1" style="margin-left: 20px;">
+										<tr>
 										<p>&nbsp;&nbsp; &nbsp; Dengan Nomor Statistik Pendidikan Al-Qur'an : <br>
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-											<?php
+											<td>
+											<?php											
 											$str = $detail->nomor_statistik;
 											$arr = str_split($str);
 											foreach ($arr as $value) {
-												echo "$value &nbsp;&nbsp;";
+												echo "$value &nbsp;&nbsp; | &nbsp;&nbsp;";
 											} ?>
+											</td>
 										</p>
+										</tr>
+										</table>
 									</div>
 								<div class="row">
 									<div class="col">
-										<div class="ttd_surat" style="margin-left: 220px;">
+										<div class="ttd_surat" style="margin-left: 300px;">
 												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 												<p>Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 												<?php } ?>
@@ -297,7 +302,7 @@
 												foreach ($data_kepala as $detail) { ?>
 													<b>a.n. MENTERI AGAMA</b> <br>
 													Kepala Kantor Kementerian Agama <br>
-													Kabupaten Klaten<br> <br>
+													Kabupaten Klaten<br> <br><br>
 													<b><?= $detail->nama ?></b>
 													<?php } ?>
 												</p>
@@ -480,13 +485,13 @@
 								foreach ($detail_ptsp as $detail) { ?>
 									<div class="ttd_surat_2"  style="margin-left: 450px;">
 										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-										Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
+										Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?>
 										Kepala
 									</div> <br>
 								<?php } ?>
 								<?php
 								foreach ($data_kepala as $detail) { ?>
-									<div class="ttd_surat_2"  style="margin-left: 450px;">
+									<div class="ttd_surat_2"  style="margin-left: 450px;"> <br>
 										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
 										<?= $detail->nama ?>
 									</div>

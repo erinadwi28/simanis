@@ -25,9 +25,9 @@
 		}
 
 		.logosurat {
-			height: 130px;
-			width: 130px;
-			margin-top: 20px;
+			height: 100px;
+			width: 100px;
+			margin-top: 40px;
 			margin-left: 0;
 			text-align: center;
 		}
@@ -79,7 +79,7 @@
 			font-size: 11pt;
 			line-height: 1.5em;
 			text-align: center;
-			margin-top: 3x;
+			/* margin-top: 1x; */
 		}
 
 		.identitas {
@@ -168,19 +168,25 @@
 		.ttd_surat {
 			font-size: 11pt;
 		}
+		
+		.sertif {
+		background: url(<?=base_url('../assets/dashboard/images/frontoffice/ptsp/bg_ptsp21.png') ?>);
+		background-repeat: no-repeat;
+		background-size:contain;
+		background-position-x: center;
+		background-position-y: top;
+		z-index: 200;
+		margin-left: 80px;
+		}
 	</style>
 </head>
-
-</head>
-
 <body class="body" id="page-top">
 	<!-- Begin Page Content -->
 	<div class="container-fluid">
 		<!-- Page Heading -->
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col sertif">
 				<div class="card shadow mb-4">
-				
 					<div class="card-body">
 						<div class="card-body">
 							<center>
@@ -192,19 +198,17 @@
 								<div class="badan_surat">
 									<?php foreach ($detail_ptsp as $detail) { ?>
 										<div class="kepala_Sertifikat">
-											<h3 style="margin-top: 20px;"><b>SERTIFIKAT</b></h3>
-											<h5><b>Nomor : <?= $detail->no_surat ?> </b></h5>
+											<h4 style="margin-top: 20px;"><b>SERTIFIKAT</b></h4>
+											<h6><b>Nomor : <?= $detail->no_surat ?> </b></h6>
 											<p>Kepala Kantor Kementrian Agama Kabupaten Klaten Menerangkan bahwa : </p>
 										</div>
 										<div class="no_surat">
-											<h5><b>MASJID/MUSHALLA <?= $detail->nama_masjid ?></b></h5>
+											<h6><b>MASJID/MUSHALLA <?= $detail->nama_masjid ?></b></h6>
 											<p>Dukuh <?= $detail->dukuh ?>, RT <?= $detail->rt ?>, RW <?= $detail->rw ?>, Desa <?= $detail->desa ?>, Kecamatan <?= $detail->kecamatan ?>, Kabupaten Klaten</p>
 										</div>
-										<br>
 										<div class="isi_surat">
 											<p>Telah dilakukan pengukuran arah kiblat : </p>
 											<p> Oleh Tim Sertifikat Arah Kiblat Kabupaten Klaten</p>
-
 											<p><?= format_indo(date($detail->tgl_pengukuran)); ?> M</p>
 											<p>Pada hari,<?= $detail->hari_pengukuran ?> tanggal,<?= format_indo(date($detail->tgl_pengukuran)); ?></p>
 											<p><?= $detail->tgl_pengukuran_hijriyah ?></p>
@@ -212,7 +216,6 @@
 											<p>Dengan rashadul kiblat/waktu pengukuran pukul <?= $detail->jam_pengukuran ?> WIB</p>
 										</div>
 									<?php } ?>
-									<br><br>
 									<div class="row">
 										<div class="col-md-6">
 											<div class="badan_surat ttd_surat">
@@ -223,10 +226,10 @@
 														Kepala,
 													</p>
 												<?php } ?>
-												<br><br>
+												<br>
 												<?php
 												foreach ($data_kepala as $detail) { ?>
-													<b><?= $detail->nama ?></b><br>
+													<br><?= $detail->nama ?></br>
 													Nip. <?= $detail->nip ?>
 												<?php } ?>
 											</div>
@@ -239,125 +242,7 @@
 			</div>
 		</div>
 	</div>
-	</div>
 	<!-- /.container-fluid -->
-
-	<!-- Begin Page Content -->
-	<div class="container-fluid">
-		<!-- Page Heading -->
-		<div class="row">
-			<div class="col-md-12">
-				<div class="card shadow mb-4">
-					<div class="card-body">
-						<div class="badan_surat">
-							<center>
-								<?php foreach ($detail_ptsp as $detail) { ?>
-									<div class="kepala_Sertifikat">
-										<h6><b>BERITA ACARA PENGUKURAN ARAH KIBLAT</b></h6>
-										<h6><b>MASJID/MUSHALLA <?= $detail->nama_masjid ?></b></h6>
-										<h6><b>Dukuh, <?= $detail->dukuh ?> RT, <?= $detail->rt ?> RW, <?= $detail->rw ?> Desa, <?= $detail->desa ?> Kecamatan, <?= $detail->kecamatan ?> Kabupaten Klaten</b></h6>
-									</div>
-								<?php } ?>
-							</center>
-							<table>
-								<tr>
-									<td width="400">
-										<p><b>Data Astronomi dengan menggunakan Ephimeris :
-												<br> Hari : ..........,...............20........</b></p>
-									</td>
-									<td>
-										<p><b>Gambar Arah Kiblat :</b></p>
-									</td>
-								</tr>
-								<br>
-								<tr>
-									<td>
-										<div>
-											<table border="1">
-												<tr>
-													<td width=200>Lintang Tempat</td>
-													<td width=100>.......&ordm;......&ordm;.....&ordm;</td>
-												</tr>
-												<tr>
-													<td>Bujur Tempat</td>
-													<td>.......&ordm;......&ordm;.....&ordm;</td>
-												</tr>
-												<tr>
-													<td>Waktu Pengukuran</td>
-													<td>.......,......WIB</td>
-												</tr>
-												<tr>
-													<td>Dekhinasi Matahari</td>
-													<td></td>
-												</tr>
-												<tr>
-													<td>True Norht</td>
-													<td></td>
-												</tr>
-												<tr>
-													<td>Sudut Waktu Matahari</td>
-													<td></td>
-												</tr>
-												<tr>
-													<td>Azimuth Matahari</td>
-													<td></td>
-												</tr>
-												<tr>
-													<td>Azimuth Kiblat</td>
-													<td>.......&ordm;......&ordm;.....&ordm;</td>
-												</tr>
-												<tr>
-													<td>Rashdul Kiblat</td>
-													<td></td>
-												</tr>
-												<tr>
-													<td>Tim Pengukur</td>
-													<td>1.
-														<br>2.
-														<br>3.
-													</td>
-												</tr>
-												<tr>
-													<td>Saksi</td>
-													<td>1.
-														<br>2.
-														<br>3.
-													</td>
-												</tr>
-											</table>
-										</div>
-									</td>
-									<td>
-										gambar
-									</td>
-								</tr>
-							</table>
-
-							<div style="margin-left:500">
-								<?php
-								foreach ($detail_ptsp as $detail) { ?>
-									Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?>
-								<?php } ?>
-								Kepala, Seksi Bimbingan Masyarakat Islam
-								<br><br>
-								<?php
-								foreach ($data_kepala as $detail) { ?>
-									<?= $detail->nama ?>
-									<br>
-									Nip. <?= $detail->nip; ?>
-								<?php } ?>
-							</div>
-
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /.container-fluid -->
-
 	<!-- End of Main Content -->
 </body>
-
 </html>

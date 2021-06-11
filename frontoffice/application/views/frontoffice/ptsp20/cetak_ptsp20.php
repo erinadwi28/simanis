@@ -167,6 +167,15 @@
 			font-size: 11pt;
 			margin-left: 390px;
 		}
+		.sertif {
+			background: url(<?=base_url('../assets/dashboard/images/frontoffice/ptsp/bg_ptsp15.png') ?>);
+		background-repeat: no-repeat;
+		background-size:contain;
+		background-position-x: center;
+		background-position-y: top;
+		z-index: 500;
+		margin-left: 100px;
+		}
 	</style>
 </head>
 
@@ -175,7 +184,7 @@
 	<div class="container-fluid">
 		<!-- Page Heading -->
 		<div class="row">
-			<div class="col-md-2">
+			<div class="col sertif">
 			</div>
 			<div class="col-md-8">
 				<div class="card shadow mb-4">

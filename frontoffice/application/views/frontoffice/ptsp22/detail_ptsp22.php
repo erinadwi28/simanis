@@ -133,7 +133,7 @@
 					<div class="card shadow mb-4">
 						<div class="card-header py-3">
 							<center>
-								<h6 class="m-0 font-weight-bold">Rekomendasi Permohonan ID Masjid dan Musala </h6>
+								<h6 class="m-0 font-weight-bold">Rekomendasi Permohonan ID Masjid dan Mushalla </h6>
 							</center>
 						</div>
 
