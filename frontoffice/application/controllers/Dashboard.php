@@ -1588,7 +1588,7 @@ class Dashboard extends CI_Controller
                 } elseif ($id_layanan == 14) {
                         $html = $this->load->view('frontoffice/ptsp14/cetak_ptsp14', $data_detail, true);
                 } elseif ($id_layanan == 15) {
-                        $html = $this->load->view('frontoffice/ptsp15/cetak_ptsp15', $data_detail, true);
+                        $html = $this->load->view('frontoffice/ptsp15/cetak_ptsp15_2', $data_detail, true);
                 } elseif ($id_layanan == 16) {
                         $html = $this->load->view('frontoffice/ptsp16/cetak_ptsp16', $data_detail, true);
                 } elseif ($id_layanan == 17) {
