@@ -24,14 +24,14 @@
 	<style>
 		.body {
 			color: #000;
-			font-size: 14pt;
+			font-size: 11pt;
 			margin-bottom: 0;
 			padding-bottom: 0;
 		}
 
 		.logosurat {
-			height: 130px;
-			width: 130px;
+			height: 110px;
+			width: 110px;
 			margin-top: 0px;
 			margin-left: 10px;
 		}
@@ -53,7 +53,7 @@
 		.badan_surat {
 			font-family: 'Times New Roman';
 			margin-left: 0px;
-			font-size: 14pt;
+			font-size: 11pt;
 		}
 
 
@@ -74,17 +74,19 @@
 		}
 
 		.isi_surat {
-			margin-left: 0.0375em;
-			font-size: 14pt;
+			margin-left: 50px;
+			margin-right: 50px;
+			font-size: 11pt;
 			line-height: 1.2em;
 			font-family: 'Times New Roman';
+			text-align: justify;
 
 		}
 
 		.identitas {
 			margin-left: 2.8125em;
 			margin-bottom: 0.3125em;
-			font-size: 14pt;
+			font-size: 11pt;
 		}
 
 		.ttd_kepala {
@@ -118,15 +120,15 @@
 		}
 
 		.ttd_surat {
-			font-size: 14pt;
+			font-size: 11pt;
 		}
 
 		.body {
 			line-height: 23.5px;
 		}
 
-	/* css untuk surat keterangan */
-		.isi_suket{
+		/* css untuk surat keterangan */
+		.isi_suket {
 			margin-left: 0.0375em;
 			font-size: 11pt;
 			line-height: 1.2em;
@@ -150,15 +152,19 @@
 		.ttd_surat_2 {
 			font-size: 11pt;
 		}
-		
+
 		.sertif {
-		background: url(<?=base_url('../assets/dashboard/images/frontoffice/ptsp/bg_ptsp15_2.png') ?>);
-		background-repeat: no-repeat;
-		background-size:contain;
-		background-position-x: center;
-		background-position-y: top;
-		z-index: 200;
-		margin-left: 45px;
+			background: url(<?= base_url('../assets/dashboard/images/frontoffice/ptsp/bg_ptsp15_2.png') ?>);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			background-position-x: center;
+			background-position-y: top;
+			z-index: 200;
+		}
+
+		.table_sertif {
+			margin-left: 60px;
+			margin-right: 50px;
 		}
 	</style>
 
@@ -175,15 +181,15 @@
 						<div class="card-body">
 						<?php
 								foreach ($detail_ptsp as $detail) { ?>
-							<div class="badan_surat" style="margin-top: 20px;">
+							<div class="badan_surat" style="margin-top: 30px;">
 								<center>
 									<div class="kepala_Sertifikat">
 										<object data="" type="image">
 											<img class="logosurat" alt="logo_kop_surat"
 												src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag.png') ?>">
 										</object>
-										<h4 style="margin-top: 10px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA <br>
-												KANTOR KABUPATEN KLATEN </b></h4>
+										<h5 style="margin-top: 8px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA <br>
+												KANTOR KABUPATEN KLATEN </b></h5>
 										<p>Jalan Ronggowarsito Klaten <br>
 											Telepon/Faksimili (0272)321154 <br>
 											Website : http://klaten.kemenag.go.id</p>
@@ -191,89 +197,61 @@
 								</center>
 								<center>
 									<div class="no_surat">
-										<h5><b>PIAGAM PENYELENGARAAN</b> <br>
+										<h6><b>PIAGAM PENYELENGARAAN</b> <br>
 											<b>MADRASAH DINIYAH TAKMILIYAH (MDT)</b> <br>
 											<b>Nomor: <?= $detail->no_surat ?></b>
-										</h5>
+										</h6>
 									</div>
 								</center>
 								<div class="isi_surat">
-										<p>Dengan ini Kepala Kantor Kementerian Agama Kabupaten Klaten <br> memberikan NSMDT
-											kepada :</p>
+										Dengan ini Kepala Kantor Kementerian Agama Kabupaten Klaten memberikan NSMDT
+											kepada :
 								</div>
 								<div class="identitas">
-									<table>
+									<table width="600px" class="table_sertif">
 										<tbody>
 												<tr>
 													<td>Nama MDT</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td><?= $detail->nama_mtd ?></td>
+													<td>: <?= $detail->nama_mtd ?></td>
 												</tr>
 												<tr>
 													<td>Alamat</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td><?= $detail->alamat ?></td>
+													<td>: <?= $detail->alamat ?></td>
 
 												</tr>
 												<tr>
 													<td>Desa</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td><?= $detail->desa ?></td>
+													<td>: <?= $detail->desa ?></td>
 
 												</tr>
 												<tr>
 													<td>Kecamatan</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td><?= $detail->kecamatan ?></td>
+													<td>: <?= $detail->kecamatan ?></td>
 
 												</tr>
 												<tr>
 													<td>Kabupaten</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td><?= $detail->kabupaten ?></td>
+													<td>: <?= $detail->kabupaten ?></td>
 
 												</tr>
 												<tr>
 													<td>Provinsi</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td><?= $detail->provinsi ?></td>
+													<td>: <?= $detail->provinsi ?></td>
 
 												</tr>
 												<tr>
 													<td>Tahun Berdiri</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td><?= $detail->tahun_berdiri ?></td>
+													<td>: <?= $detail->tahun_berdiri ?></td>
 
 												</tr>
 												<tr>
-													<td>Nomor Statistik</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td><?= $detail->nomor_statistik ?></td>
+													<td width="100px">Nomor Statistik</td>
+													<td>: <?= $detail->nomor_statistik ?></td>
 
 												</tr>
 												<tr>
 													<td>No Telp</td>
-													<td> </td>
-													<td> </td>
-													<td>:</td>
-													<td><?= $detail->no_hp ?></td>
-
+													<td>: <?= $detail->no_hp ?></td>
 												</tr>
 											</tbody>
 									</table>
@@ -281,12 +259,12 @@
 								<div class="isi_surat">
 										<p>Madrasah Diniyah Taklimiyah (MDT) tersebut telah terdaftar di
 											Kantor Kementerian Agama Kabupaten Klaten sebagai Lembaga
-											Pendidikan Keagamaan Islam.</p>
-										<p>Demikian untuk dapat digunakan sebagaimana mestinya.</p>
+											Pendidikan Keagamaan Islam. <br> Demikian untuk dapat digunakan sebagaimana mestinya.</p>
+										
 									</div>
 								<div class="row">
 									<div class="col">
-										<div class="ttd_surat" style="margin-left: 220px;">
+										<div class="ttd_surat" style="margin-left: 350px;">
 												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 												<p>Ditetapkan di : Klaten <br>
                                                 Pada Tanggal : &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>

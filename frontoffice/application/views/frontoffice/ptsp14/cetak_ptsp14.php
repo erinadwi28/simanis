@@ -72,7 +72,7 @@
 		}
 
 		.isi_surat {
-			margin-left: 0.0375em;
+			margin-left: 80px;
 			font-size: 11pt;
 			line-height: 1.2em;
 			font-family: 'Times New Roman';
@@ -80,7 +80,7 @@
 		}
 
 		.identitas {
-			margin-left: 2.8125em;
+			margin-left: 80px;
 			margin-bottom: 0.3125em;
 			font-size: 11pt;
 		}
@@ -152,11 +152,10 @@
 		.sertif {
 			background: url(<?= base_url('../assets/dashboard/images/frontoffice/ptsp/bg_ptsp14_3.png') ?>);
 			background-repeat: no-repeat;
-			background-size: contain;
+			background-size: 100% 100%;
 			background-position-x: center;
 			background-position-y: top;
 			z-index: 200;
-			margin-left: 45px;
 		}
 	</style>
 
@@ -195,7 +194,7 @@
 										</div>
 									</center>
 									<div class="isi_surat">
-										<p>&nbsp; &nbsp; &nbsp; Diberikan kepada :</p>
+										Diberikan kepada :
 									</div>
 									<div class="identitas">
 										<table>
@@ -276,13 +275,13 @@
 									<div class="isi_surat">
 										<table border="1" style="margin-left: 20px;">
 											<tr>
-												<p>&nbsp;&nbsp; &nbsp; Dengan Nomor Statistik Pendidikan Al-Qur'an : <br>
+												<p>Dengan Nomor Statistik Pendidikan Al-Qur'an : <br>
 													<td>
 														<?php
 														$str = $detail->nomor_statistik;
 														$arr = str_split($str);
 														foreach ($arr as $value) {
-															echo "$value &nbsp;&nbsp; | &nbsp;&nbsp;";
+															echo "&nbsp;&nbsp; $value &nbsp;&nbsp; |";
 														} ?>
 													</td>
 												</p>
@@ -291,7 +290,7 @@
 									</div>
 									<div class="row">
 										<div class="col">
-											<div class="ttd_surat" style="margin-left: 300px;">
+											<div class="ttd_surat" style="margin-left: 350px;">
 												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 												<p>Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 												<?php } ?>
