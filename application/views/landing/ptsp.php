@@ -540,7 +540,7 @@
 									</div>
 									<div class="col-md-10 justify content-list mb-0">
 										<p class="card-text">
-											Rekomendasi Permohonan ID Masjid dan Musala
+											Rekomendasi Permohonan ID Masjid dan Mushalla
 										</p>
 									</div>
 								</div>

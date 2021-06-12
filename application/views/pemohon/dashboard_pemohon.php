@@ -518,7 +518,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								21. Arah Ukur Kiblat</div>
+								21. Ukur Arah Kiblat</div>
 						</div>
 					</div>
 					<div class="row mt-3">
@@ -537,7 +537,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-0">
 							<div class="text-md text-success  mb-1">
-								22. Rek. ID Masjid & Musala</div>
+								22. Rek. ID Masjid & Mushalla</div>
 						</div>
 					</div>
 					<div class="row mt-3">

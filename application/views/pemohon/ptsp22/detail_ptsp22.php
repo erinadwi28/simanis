@@ -151,7 +151,7 @@
 				<!-- Detail Data -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-center">Rekomendasi ID Masjid & Musala</h6>
+						<h6 class="m-0 font-weight-bold text-center">Rekomendasi ID Masjid & Mushalla</h6>
 					</div>
 					<div class="card-body">
 						<table class="table-hover table-responsive">

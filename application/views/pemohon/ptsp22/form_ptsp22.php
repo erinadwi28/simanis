@@ -20,7 +20,7 @@
 			<div class="col-xs col-sm-8">
 				<div class="card shadow mb-5">
 					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-center">Rek. ID Masjid & Musala</h6>
+						<h6 class="m-0 font-weight-bold text-center">Rek. ID Masjid & Mushalla</h6>
 					</div>
 					<div class="card-body">
 						<button class="btn btn-sm btn-danger float-right" data-toggle="modal" data-target="#sopModal"><i class="fas fa-info-circle"></i></button>
