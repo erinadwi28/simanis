@@ -50,7 +50,7 @@ class Dashboard extends CI_Controller
                 $this->load->view('frontoffice/ptsp14/cetak_ptsp14');
         }
 
-	public function cetak_ptsp15()
+        public function cetak_ptsp15()
         {
                 $data['fo'] = $this->db->get_where('fo', ['id_fo' =>
                 $this->session->userdata('id_fo')])->row_array();
@@ -571,7 +571,7 @@ class Dashboard extends CI_Controller
                 $this->load->library('email', $config);
 
                 // Email dan nama pengirim
-                $this->email->from('no-reply@simanisklaten.com', 'simanisklaten.com');
+                $this->email->from('no-reply@simelati.id', 'simelati.id');
 
                 // Email penerima
                 $this->email->to($email->email); // Ganti dengan email tujuan
@@ -647,7 +647,7 @@ class Dashboard extends CI_Controller
                 $this->load->library('email', $config);
 
                 // Email dan nama pengirim
-                $this->email->from('no-reply@simanisklaten.com', 'simanisklaten.com');
+                $this->email->from('no-reply@simelati.id', 'simelati.id');
 
                 // Email penerima
                 $this->email->to($email->email); // Ganti dengan email tujuan
@@ -983,6 +983,7 @@ class Dashboard extends CI_Controller
         {
                 $data_ptsp = array(
                         'no_surat' => $this->input->post('no_surat'),
+                        'no_surat_keterangan' => $this->input->post('no_surat_keterangan'),
                         'masa_berlaku' => $this->input->post('masa_berlaku')
                 );
 
@@ -996,7 +997,8 @@ class Dashboard extends CI_Controller
         public function aksi_update_pengajuan_ptsp15($id_permohonan)
         {
                 $data_ptsp = array(
-                        'no_surat' => $this->input->post('no_surat')
+                        'no_surat' => $this->input->post('no_surat'),
+                        'no_surat_keterangan' => $this->input->post('no_surat_keterangan')
                 );
 
                 $this->m_fo->update_ptsp($id_permohonan, $data_ptsp, 'ptsp15');

@@ -16,9 +16,7 @@
 
 	<!-- Custom fonts for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/vendor/fontawesome-free/css/all.min.css') ?>" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
@@ -179,37 +177,36 @@
 				<div class="card shadow mb-4">
 					<div class="card-body">
 						<div class="card-body">
-						<?php
-								foreach ($detail_ptsp as $detail) { ?>
-							<div class="badan_surat" style="margin-top: 30px;">
-								<center>
-									<div class="kepala_Sertifikat">
-										<object data="" type="image">
-											<img class="logosurat" alt="logo_kop_surat"
-												src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag.png') ?>">
-										</object>
-										<h5 style="margin-top: 8px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA <br>
-												KANTOR KABUPATEN KLATEN </b></h5>
-										<p>Jalan Ronggowarsito Klaten <br>
-											Telepon/Faksimili (0272)321154 <br>
-											Website : http://klaten.kemenag.go.id</p>
-									</div>
-								</center>
-								<center>
-									<div class="no_surat">
-										<h6><b>PIAGAM PENYELENGARAAN</b> <br>
-											<b>MADRASAH DINIYAH TAKMILIYAH (MDT)</b> <br>
-											<b>Nomor: <?= $detail->no_surat ?></b>
-										</h6>
-									</div>
-								</center>
-								<div class="isi_surat">
+							<?php
+							foreach ($detail_ptsp as $detail) { ?>
+								<div class="badan_surat" style="margin-top: 30px;">
+									<center>
+										<div class="kepala_Sertifikat">
+											<object data="" type="image">
+												<img class="logosurat" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag.png') ?>">
+											</object>
+											<h5 style="margin-top: 8px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA <br>
+													KANTOR KABUPATEN KLATEN </b></h5>
+											<p>Jalan Ronggowarsito Klaten <br>
+												Telepon/Faksimili (0272)321154 <br>
+												Website : http://klaten.kemenag.go.id</p>
+										</div>
+									</center>
+									<center>
+										<div class="no_surat">
+											<h6><b>PIAGAM PENYELENGARAAN</b> <br>
+												<b>MADRASAH DINIYAH TAKMILIYAH (MDT)</b> <br>
+												<b>Nomor: <?= $detail->no_surat ?></b>
+											</h6>
+										</div>
+									</center>
+									<div class="isi_surat">
 										Dengan ini Kepala Kantor Kementerian Agama Kabupaten Klaten memberikan NSMDT
-											kepada :
-								</div>
-								<div class="identitas">
-									<table width="600px" class="table_sertif">
-										<tbody>
+										kepada :
+									</div>
+									<div class="identitas">
+										<table width="600px" class="table_sertif">
+											<tbody>
 												<tr>
 													<td>Nama MDT</td>
 													<td>: <?= $detail->nama_mtd ?></td>
@@ -254,32 +251,32 @@
 													<td>: <?= $detail->no_hp ?></td>
 												</tr>
 											</tbody>
-									</table>
-								</div>
-								<div class="isi_surat">
+										</table>
+									</div>
+									<div class="isi_surat">
 										<p>Madrasah Diniyah Taklimiyah (MDT) tersebut telah terdaftar di
 											Kantor Kementerian Agama Kabupaten Klaten sebagai Lembaga
 											Pendidikan Keagamaan Islam. <br> Demikian untuk dapat digunakan sebagaimana mestinya.</p>
-										
+
 									</div>
-								<div class="row">
-									<div class="col">
-										<div class="ttd_surat" style="margin-left: 350px;">
+									<div class="row">
+										<div class="col">
+											<div class="ttd_surat" style="margin-left: 350px;">
 												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 												<p>Ditetapkan di : Klaten <br>
-                                                Pada Tanggal : &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
+													Pada Tanggal : &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 													Kepala
 												<?php } ?>
-                                                <br><br>
+												<br><br>
 												<?php
 												foreach ($data_kepala as $detail) { ?>
 													<b><?= $detail->nama ?></b><br>
-													<?php } ?>
+												<?php } ?>
 												</p>
 											</div>
+										</div>
 									</div>
 								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -299,8 +296,7 @@
 									<td></td>
 									<td class="img">
 										<center>
-											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>"
-												width="100" height="100">
+											<img src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag_hitamputih.png') ?>" width="100" height="100">
 										</center>
 									</td>
 									<td width="430" style="padding-left: 10px;">
@@ -327,12 +323,12 @@
 							<div class="no_surat">
 								<center>
 									<p><b>SURAT KETERANGAN </b><br>
-										<b>Nomor : <?= $detail->no_surat ?></b>
+										<b>Nomor : <?= $detail->no_surat_keterangan ?></b>
 									</p>
 								</center>
 							</div>
 						<?php } ?>
-						
+
 						<div class="identitassuket">
 							<table>
 								<tbody>
@@ -429,7 +425,7 @@
 							<div class="col">
 								<?php
 								foreach ($detail_ptsp as $detail) { ?>
-									<div class="ttd_surat_2"  style="margin-left: 450px;">
+									<div class="ttd_surat_2" style="margin-left: 450px;">
 										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 										Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 										Kepala
@@ -437,21 +433,21 @@
 								<?php } ?>
 								<?php
 								foreach ($data_kepala as $detail) { ?>
-									<div class="ttd_surat_2"  style="margin-left: 450px;">
+									<div class="ttd_surat_2" style="margin-left: 450px;">
 										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
 										<?= $detail->nama ?>
 									</div>
 								<?php } ?>
 								<?php
-						foreach ($detail_ptsp as $detail) { ?>
-							<div class="ttd_surat_2">
-								Tembusan: <br>
-								1. Yth. Ka. Kesbangpol Linmas Kab.Klaten; <br>
-								2. Yth. Camat <?= $detail->kecamatan ?>; <br>
-								3. Yth. Ka. KUA Kec. <?= $detail->kecamatan ?>; <br>
-								4. Kepala Desa <?= $detail->desa ?>
-							</div>
-						<?php } ?>
+								foreach ($detail_ptsp as $detail) { ?>
+									<div class="ttd_surat_2">
+										Tembusan: <br>
+										1. Yth. Ka. Kesbangpol Linmas Kab.Klaten; <br>
+										2. Yth. Camat <?= $detail->kecamatan ?>; <br>
+										3. Yth. Ka. KUA Kec. <?= $detail->kecamatan ?>; <br>
+										4. Kepala Desa <?= $detail->desa ?>
+									</div>
+								<?php } ?>
 							</div>
 						</div>
 					</div>
@@ -465,4 +461,3 @@
 </body>
 
 </html>
- 
