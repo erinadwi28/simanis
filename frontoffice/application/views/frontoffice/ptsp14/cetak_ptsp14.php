@@ -267,7 +267,7 @@
 													<td> </td>
 													<td> </td>
 													<td>:</td>
-													<td><?= format_indo(date($detail->berlaku)); ?></td>
+													<td><?= $detail->masa_berlaku ?></td>
 												</tr>
 											</tbody>
 										</table>
@@ -458,7 +458,7 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td><?= format_indo(date($detail->berlaku)); ?></td>
+											<td><?= $detail->masa_berlaku ?></td>
 										</tr>
 									<?php } ?>
 								</tbody>

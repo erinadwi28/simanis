@@ -60,7 +60,7 @@ class Dashboard extends CI_Controller
         $this->m_pemohon->update_pemohon($id_pemohon, $data);
         $url = $_SERVER['HTTP_REFERER'];
         $this->session->set_flashdata('success', 'disimpan');
-        redirect ($url);
+        redirect($url);
     }
     //ubah foto profil
     public function upload_foto_profil()
@@ -4004,7 +4004,7 @@ class Dashboard extends CI_Controller
             'nama_yayasan' => $this->input->post('nama_yayasan'),
             'no_sk_menkumham_ri' => $this->input->post('no_sk_menkumham_ri'),
             'tahun_berdiri' => $this->input->post('tahun_berdiri'),
-            'berlaku' => $this->input->post('berlaku'),
+            // 'berlaku' => $this->input->post('berlaku'),
             'no_hp' => $this->input->post('no_hp'),
         );
 
@@ -4096,7 +4096,7 @@ class Dashboard extends CI_Controller
             'nama_yayasan' => $this->input->post('nama_yayasan'),
             'no_sk_menkumham_ri' => $this->input->post('no_sk_menkumham_ri'),
             'tahun_berdiri' => $this->input->post('tahun_berdiri'),
-            'berlaku' => $this->input->post('berlaku'),
+            // 'berlaku' => $this->input->post('berlaku'),
             'no_hp' => $this->input->post('no_hp'),
         );
 

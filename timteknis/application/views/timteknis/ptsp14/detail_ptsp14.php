@@ -202,13 +202,6 @@
 									<td><?= $detail->tahun_berdiri ?></td>
 								</tr>
 								<tr>
-									<td><b>Berlaku</b></td>
-									<td> </td>
-									<td> </td>
-									<td>:</td>
-									<td><?= format_indo(date($detail->berlaku)); ?></td>
-								</tr>
-								<tr>
 									<td><b>No. Handphone</b></td>
 									<td> </td>
 									<td> </td>
