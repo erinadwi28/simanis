@@ -381,7 +381,7 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td> </td>
+											<td><?= $detail->nomor_statistik ?></td>
 										</tr>
 										<tr>
 											<td>Alamat</td>

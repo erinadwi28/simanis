@@ -98,14 +98,6 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="berlaku" class="col-sm-3 col-form-label">Berlaku</label>
-							<div class="col-sm-9">
-								<div class="form-line focused">
-									<input type="date" class="form-control" id="berlaku" name="berlaku" value="<?= $detail->berlaku ?>" required>
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
 							<label for="No_hp" class="col-sm-3 col-form-label">No. Handphone</label>
 							<div class="col-sm-9">
 								<div class="form-line focused">

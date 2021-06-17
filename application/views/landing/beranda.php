@@ -108,7 +108,6 @@
 			    <?php echo $total_visitors; ?>
 			</p>
 			<p style="font-size:8pt; margin-left:25px; margin-top:2px;">Visitors</p>
-			</li>
 		</ul>
 	</div>
 </div>
@@ -256,7 +255,7 @@
 								satu instansi vertikal Kementerian Agama yang berada dibawah
 								dan bertanggung jawab kepada Kementerian Agama Provinsi
 								Jawa Tengah. Kantor Kementerian Agama Kab. Klaten ini terletak di
-								JL. Ronggowarsito, 57431, Gunungan, Bareng Lor, Kec. Klaten Utara, 
+								JL. Ronggowarsito, 57431, Gunungan, Bareng Lor, Kec. Klaten Utara,
 								Kabupaten Klaten, Jawa Tengah 57468
 							</p>
 							<p class="my-0">
@@ -393,10 +392,15 @@
 								</div>
 								<div class="content-guide mb-0">
 									<p class="mb-0">
+<<<<<<< HEAD
 										Pemohon menunggu notifikasi
 										permohonan yang telah diajukan,
 										jika permohonan telah selesai
 										dapat di ambil.
+=======
+										Pemohon menunggu notifikasi permohonan yang telah diajukan, jika permohonan
+										telah selesai dapat di ambil di Kantor Kementerian Agama Kabupaten Klaten.
+>>>>>>> cd69a621d810e4d7cd814cc901e1a30a972dc840
 									</p>
 								</div>
 							</div>
