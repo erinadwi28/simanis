@@ -392,15 +392,10 @@
 								</div>
 								<div class="content-guide mb-0">
 									<p class="mb-0">
-<<<<<<< HEAD
 										Pemohon menunggu notifikasi
 										permohonan yang telah diajukan,
 										jika permohonan telah selesai
 										dapat di ambil.
-=======
-										Pemohon menunggu notifikasi permohonan yang telah diajukan, jika permohonan
-										telah selesai dapat di ambil di Kantor Kementerian Agama Kabupaten Klaten.
->>>>>>> cd69a621d810e4d7cd814cc901e1a30a972dc840
 									</p>
 								</div>
 							</div>
