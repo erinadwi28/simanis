@@ -1389,11 +1389,19 @@ class Dashboard extends CI_Controller
                         $html = $this->load->view('frontoffice/ptsp27/cetak_ptsp27', $data_detail, true);
                 }
 
+                // $dompdf->loadHtml($html);
+                // if ($id_layanan == 21) {
+                //         $dompdf->setPaper('A4', 'landscape');
+                // } elseif ($id_layanan == 14) {
+                //         $dompdf->setPaper('F4', 'portrait');
+                // } else {
+                //         $dompdf->setPaper('A4', 'portrait');
+                // }
+                // $dompdf->render();
+
                 $dompdf->loadHtml($html);
                 if ($id_layanan == 21) {
                         $dompdf->setPaper('A4', 'landscape');
-                } elseif ($id_layanan == 14) {
-                        $dompdf->setPaper('F4', 'portrait');
                 } else {
                         $dompdf->setPaper('A4', 'portrait');
                 }
