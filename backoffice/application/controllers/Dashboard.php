@@ -382,7 +382,7 @@ class Dashboard extends CI_Controller
         $this->load->library('email', $config);
 
         // Email dan nama pengirim
-        $this->email->from('no-reply@simanisklaten.com', 'simanisklaten.com');
+        $this->email->from('no-reply@simelati.id', 'simelati.id');
 
         // Email penerima
         $this->email->to($email->email); // Ganti dengan email tujuan
@@ -495,7 +495,7 @@ class Dashboard extends CI_Controller
         $this->load->library('email', $config);
 
         // Email dan nama pengirim
-        $this->email->from('no-reply@simanisklaten.com', 'simanisklaten.com');
+        $this->email->from('no-reply@simelati.id', 'simelati.id');
 
         // Email penerima
         $this->email->to($email->email); // Ganti dengan email tujuan

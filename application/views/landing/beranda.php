@@ -104,9 +104,10 @@
 						Umrah</a></p>
 			</li>
 			<li>	
-				<h2 style="padding-left:10px;">
-					<?php echo $total_visitors; ?>
-				</h2>
+			<p style="padding-left:30px; font-size:18pt;">
+			    <?php echo $total_visitors; ?>
+			</p>
+			<p style="font-size:8pt; margin-left:25px; margin-top:2px;">Visitors</p>
 			</li>
 		</ul>
 	</div>
@@ -395,8 +396,7 @@
 										Pemohon menunggu notifikasi
 										permohonan yang telah diajukan,
 										jika permohonan telah selesai
-										dapat di ambil maupun langsung
-										di cetak (masih nggantung).
+										dapat di ambil.
 									</p>
 								</div>
 							</div>

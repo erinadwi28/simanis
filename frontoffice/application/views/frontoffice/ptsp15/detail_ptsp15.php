@@ -152,12 +152,22 @@
 							<tbody>
 								<?php if ($detail->no_surat != null) { ?>
 									<tr>
-										<td><b>Nomor Surat</b></td>
+										<td><b>Nomor Sertifilat</b></td>
 										<td> </td>
 										<td> </td>
 										<td>:</td>
 										<td> </td>
 										<td><?= $detail->no_surat ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->no_surat_keterangan != null) { ?>
+									<tr>
+										<td><b>Nomor Surat Keterangan</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td>
+										<td><?= $detail->no_surat_keterangan ?></td>
 									</tr>
 								<?php } ?>
 								<?php if ($detail->nomor_statistik != null) { ?>
@@ -333,10 +343,13 @@
 							<form class="form-horizontal" id="no_surat_ptsp15" enctype="multipart/form-data" action="<?= base_url() ?>dashboard/aksi_update_pengajuan_ptsp15/<?= $detail->id_permohonan_ptsp ?>" method="POST">
 								<div class="row clearfix">
 									<div class="col-md-1"></div>
-									<div class="input-group col-md-3 px-2 mb-2">
+									<div class="input-group col-md-1 px-2 mb-2">
 									</div>
-									<div class="input-group col-md-6 px-2 mb-2">
+									<div class="input-group col-md-4 px-2 mb-2">
 										<input type="text" class="form-control " id="no_surat" name="no_surat" value=".../Kk.11.10/03/.../<?= date("m/Y") ?>" required>
+									</div>
+									<div class="input-group col-md-4 px-2 mb-2">
+										<input type="text" class="form-control " id="no_surat_keterangan" name="no_surat_keterangan" value="" placeholder="nomor surat keterangan" required>
 									</div>
 									<button class="btn btn-sm btn-primary mb-2 float-right px-2" type="submit" id="button-addon2"><i class="fas fa-check-circle">
 										</i> Terima</button>

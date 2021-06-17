@@ -338,7 +338,7 @@
 							<div class="no_surat">
 								<center>
 									<p><b>SURAT KETERANGAN </b><br>
-										<b>Nomor : <?= $detail->no_surat ?></b>
+										<b>Nomor : <?= $detail->no_surat_keterangan ?></b>
 									</p>
 								</center>
 							</div>
@@ -397,7 +397,7 @@
 											<td> </td>
 											<td>:</td>
 											<td> </td>
-											<td> </td>
+											<td><?= $detail->nomor_statistik ?></td>
 										</tr>
 										<tr>
 											<td>Alamat</td>
