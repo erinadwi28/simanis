@@ -103,7 +103,7 @@
 				<p><a href="https://api.whatsapp.com/send?phone=628112650662&text=Info" target="_blank">Chat Haji <br> &
 						Umrah</a></p>
 			</li>
-			<li>	
+			<li>
 				<h2 style="padding-left:10px;">
 					<?php echo $total_visitors; ?>
 				</h2>
@@ -255,7 +255,7 @@
 								satu instansi vertikal Kementerian Agama yang berada dibawah
 								dan bertanggung jawab kepada Kementerian Agama Provinsi
 								Jawa Tengah. Kantor Kementerian Agama Kab. Klaten ini terletak di
-								JL. Ronggowarsito, 57431, Gunungan, Bareng Lor, Kec. Klaten Utara, 
+								JL. Ronggowarsito, 57431, Gunungan, Bareng Lor, Kec. Klaten Utara,
 								Kabupaten Klaten, Jawa Tengah 57468
 							</p>
 							<p class="my-0">
@@ -392,11 +392,8 @@
 								</div>
 								<div class="content-guide mb-0">
 									<p class="mb-0">
-										Pemohon menunggu notifikasi
-										permohonan yang telah diajukan,
-										jika permohonan telah selesai
-										dapat di ambil maupun langsung
-										di cetak (masih nggantung).
+										Pemohon menunggu notifikasi permohonan yang telah diajukan, jika permohonan
+										telah selesai dapat di ambil di Kantor Kementerian Agama Kabupaten Klaten.
 									</p>
 								</div>
 							</div>
