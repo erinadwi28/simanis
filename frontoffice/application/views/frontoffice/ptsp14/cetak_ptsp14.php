@@ -160,6 +160,9 @@
 			z-index: 200;
 		}
 
+		.table_suket {
+			text-align: justify;
+		}
 	</style>
 
 </head>
@@ -308,6 +311,7 @@
 				</div>
 			</div>
 		</div>
+		<br><br>
 		<!-- Page Heading -->
 		<div class="row">
 			<div class="col-md-2">
@@ -330,11 +334,10 @@
 						</div>
 
 						<div class="identitassuket">
-							<table>
+							<table width="660px" class="table_suket">
 								<tbody>
 									<tr>
-										<td>Menimbang</td>
-										<td>:</td>
+										<td width="110px" valign="top">Menimbang :</td>
 										<td>
 											<ol type="a">
 												<li>bahwa dalam rangka meningkatkan mutu Lembaga Pendidikan Al-Quran,
@@ -351,8 +354,7 @@
 										</td>
 									</tr>
 									<tr>
-										<td>Mengingat</td>
-										<td>:</td>
+										<td valign="top">Mengingat :</td>
 										<td>
 											<ol type="1">
 												<li>Undang-Undang Nomor 20 Tahun 2003 tentang Sistem Pendidikan Nasional (Lembaran Negara Republik Indonesia Tahun 2003 Nomor 78, Tambahan Lembaran Negara Republik Indonesia Nomor 4301);</li>
@@ -371,8 +373,7 @@
 										</td>
 									</tr>
 									<tr>
-										<td>Memperhatikan</td>
-										<td>:</td>
+										<td valign="top">Memperhatikan :</td>
 										<td>
 											<ol type="1">
 												<li>Berita Acara Verifikasi Dokumen Pendaftaran Lembaga ....................... Nomor : ............. Tanggal ......................</li>
@@ -387,14 +388,12 @@
 									
 									
 									<tr>
-										<td>Menetapkan</td>
-										<td>:</td>
+										<td valign="top">Menetapkan :</td>
 										<td>KEPUTUSAN KEPALA KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN TENTANG PEMBERIAN TANDA DAFTAR LEMBAGA ....................
 										</td>
 									</tr>
 									<tr>
-										<td>KESATU</td>
-										<td>:</td>
+										<td valign="top">KESATU :</td>
 										<td>Memberikan Tanda Daftar Lembaga Pendidikan Al Quran :
 										<ol>
 										<li>Nama Lembaga &nbsp;&nbsp;&nbsp; : ...
@@ -407,19 +406,16 @@
 										</td>
 									</tr>
 									<tr>
-										<td>KEDUA</td>
-										<td>:</td>
+										<td valign="top">KEDUA :</td>
 										<td>Tanda Daftar ini diberikan untuk jangka waktu lima (5) tahun terhitung sejak tahun pelajaran setelah ditetapkan keputusan ini dan selanjutnya dapat diperpanjang lagi sesuai dengan ketentuan perundang-undangan.
 										</td>
 									</tr>
 									<tr>
-										<td>KETIGA</td>
-										<td>:</td>
+										<td valign="top">KETIGA :</td>
 										<td>Penyelenggara wajib menyampaikan perkembangan pendidikan sekurang-kurangnya satu (1) tahun ajaran kepada Kepala Kantor Kementerian Agama Kabupaten Klaten.</td>
 									</tr>
 									<tr>
-										<td>KEEMPAT</td>
-										<td>:</td>
+										<td valign="top">KEEMPAT :</td>
 										<td>Keputusan ini berlaku sejak tanggal ditetapkan dengan ketentuan akan diperbaiki sebagaimana mestinya, jika dikemudian hari terdapat kekeliruan.</td>
 									</tr>
 								</tbody>
