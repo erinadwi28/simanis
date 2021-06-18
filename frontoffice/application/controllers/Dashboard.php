@@ -41,6 +41,17 @@ class Dashboard extends CI_Controller
                 $this->load->view('frontoffice/dashboard_fo', $data_permohonan);
                 $this->load->view('footer');
         }
+        public function cetak_ptsp14()
+        {
+                $data_title['title'] = 'Profil Saya';
+
+                $detailhere = array('id_fo' => $this->session->userdata('id_fo'));
+                $data_detail['detail_profil_saya'] = $this->m_fo->get_detail_profil_saya($detailhere, 'fo')->result();
+
+                
+                $this->load->view('frontoffice/ptsp14/cetak_ptsp14', $data_detail);
+                
+        }
         public function profil_fo()
         {
                 $data_title['title'] = 'Profil Saya';

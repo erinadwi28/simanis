@@ -26,7 +26,7 @@
 								ditandatangani oleh takmir masjid yang bersangkutan <b><a href="<?= base_url() ?>assets/dashboard/unduhan/pemohon/ptsp22/Template%20Surat%20Permohonan.docx"
 										target="_blank">[klik disini]</a></b></li>
 							<li>Pemohon mengunduh dan Mengisi Formulir, <br> unduh dengan <b><a
-										href="<?= base_url() ?>assets/dashboard/unduhan/pemohon/ptsp22/Template%20Formulir.docx"
+										href="<?= base_url() ?>assets/dashboard/unduhan/pemohon/ptsp22/Template%20Formulir.xlsx"
 										target="_blank">[klik disini]</a></b></li>
 							<li>Pemohon mengisi Surat Permohonan yang ditujukan kepada Kepala Kantor Kemenag Klaten.
 							</li>
