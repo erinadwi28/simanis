@@ -108,6 +108,7 @@
 			    <?php echo $total_visitors; ?>
 			</p>
 			<p style="font-size:8pt; margin-left:25px; margin-top:2px;">Visitors</p>
+			</li>
 		</ul>
 	</div>
 </div>
