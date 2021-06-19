@@ -119,20 +119,68 @@
 				</div>
 
 
-				<?php if ($detail->berita_acara != null) { ?>
+				<?php if ($detail->berita_acara_verifikasi_dok != null) { ?>
 					<!-- Proposal Berita Acara -->
 					<div class="card shadow mb-4">
 						<div class="card-header">
 							<center>
-								<h6 class="m-0 font-weight-bold">Berita Acara</h6>
+								<h6 class="m-0 font-weight-bold">Berita Acara Verifikasi Dokumen</h6>
 							</center>
 						</div>
 
 						<div class="card-body">
 							<center>
 
-								<p><?= $detail->berita_acara; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara/<?= $detail->berita_acara ?>" target="_blank">
+								<p><?= $detail->berita_acara_verifikasi_dok; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara_verifikasi_dok/<?= $detail->berita_acara_verifikasi_dok ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+
+							</center>
+						</div>
+					</div>
+
+				<?php } ?>
+
+				<?php if ($detail->berita_acara_verifikasi_lap != null) { ?>
+					<!-- Proposal Berita Acara -->
+					<div class="card shadow mb-4">
+						<div class="card-header">
+							<center>
+								<h6 class="m-0 font-weight-bold">Berita Acara Verifikasi Lapangan</h6>
+							</center>
+						</div>
+
+						<div class="card-body">
+							<center>
+
+								<p><?= $detail->berita_acara_verifikasi_lap; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara_verifikasi_lap/<?= $detail->berita_acara_verifikasi_lap ?>" target="_blank">
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+
+							</center>
+						</div>
+					</div>
+
+				<?php } ?>
+
+				<?php if ($detail->berita_acara_rapat != null) { ?>
+					<!-- Proposal Berita Acara -->
+					<div class="card shadow mb-4">
+						<div class="card-header">
+							<center>
+								<h6 class="m-0 font-weight-bold">Berita Acara Verifikasi Rapat Pertimbangan</h6>
+							</center>
+						</div>
+
+						<div class="card-body">
+							<center>
+
+								<p><?= $detail->berita_acara_rapat; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara_rapat/<?= $detail->berita_acara_rapat ?>" target="_blank">
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
@@ -163,12 +211,72 @@
 								<?php } ?>
 								<?php if ($detail->no_surat_keterangan != null) { ?>
 									<tr>
-										<td><b>Nomor Surat Keterangan</b></td>
+										<td><b>Nomor Surat Keputusan</b></td>
 										<td> </td>
 										<td> </td>
 										<td>:</td>
 										<td> </td>
 										<td><?= $detail->no_surat_keterangan ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->no_berita_acara_verifikasi_dok != null) { ?>
+									<tr>
+										<td><b>Nomor Berita Acara Verifikasi Dokumen</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td> 
+										<td> </td>
+										<td><?= $detail->no_berita_acara_verifikasi_dok ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_berita_acara_verifikasi_dok != null) { ?>
+									<tr>
+										<td><b>Tanggal Berita Acara Verifikasi Dokumen</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td>
+										<td> </td> 
+										<td><?= format_indo(date($detail->tgl_berita_acara_verifikasi_dok)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->no_berita_acara_verifikasi_lap != null) { ?>
+									<tr>
+										<td><b>Nomor Berita Acara Verifikasi Lapangan</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td> 
+										<td> </td>
+										<td><?= $detail->no_berita_acara_verifikasi_lap ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_berita_acara_verifikasi_lap != null) { ?>
+									<tr>
+										<td><b>Tanggal Berita Acara Verifikasi Lapangan</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td> 
+										<td> </td>
+										<td><?= format_indo(date($detail->tgl_berita_acara_verifikasi_lap)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->no_berita_acara_rapat != null) { ?>
+									<tr>
+										<td><b>Nomor Berita Acara Rapat</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td> 
+										<td> </td>
+										<td><?= $detail->no_berita_acara_rapat ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_berita_acara_rapat != null) { ?>
+									<tr>
+										<td><b>Tanggal Berita Acara Rapat</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td> 
+										<td> </td> 
+										<td><?= format_indo(date($detail->tgl_berita_acara_rapat)); ?></td>
 									</tr>
 								<?php } ?>
 								<?php if ($detail->masa_berlaku != null) { ?>
@@ -374,7 +482,7 @@
 										<input type="text" class="form-control " id="no_surat" name="no_surat" value=".../Kk.11.10/06/.../<?= date("m/Y") ?>" required>
 									</div>
 									<div class="input-group col-md-3 px-2 mb-2">
-										<input type="text" class="form-control " id="no_surat_keterangan" name="no_surat_keterangan" value="" placeholder="nomor surat keterangan" required>
+										<input type="text" class="form-control " id="no_surat_keterangan" name="no_surat_keterangan" value="" placeholder="nomor surat keputusan" required>
 									</div>
 									<div class="input-group col-md-2 px-2 mb-2">
 										<input type="text" class="form-control " id="masa_berlaku" name="masa_berlaku" placeholder="masa berlaku" value="" required>

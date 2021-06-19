@@ -55,9 +55,111 @@
 				<div class="card shadow mb-4">
 					<div class="card-header">
 						<center>
-							<?php if ($detail->berita_acara != null) { ?>
-								<h6 class="m-0 font-weight-bold">Berita Acara</h6>
-							<?php } elseif ($detail->berita_acara == null) { ?>
+							<?php if ($detail->berita_acara_verifikasi_dok != null) { ?>
+								<h6 class="m-0 font-weight-bold">Berita Acara Verifikasi Dokumen</h6>
+							<?php } elseif ($detail->berita_acara_verifikasi_dok == null) { ?>
+								<h6 class="m-0 font-weight-bold">Unggah Berita Acara Verifikasi Dokumen terlebih dahulu untuk menyetujui</h6>
+							<?php } ?>
+						</center>
+					</div>
+
+					<div class="card-body">
+						<center>
+							<?php if ($detail->berita_acara_verifikasi_dok != null) { ?>
+								<p><?= $detail->berita_acara_verifikasi_dok; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara_verifikasi_dok/<?= $detail->berita_acara_verifikasi_dok ?>" target="_blank">
+
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->berita_acara_verifikasi_dok == null) { ?>
+								<p class="mb-0">Belum ada lampiran</p>
+							<?php } ?>
+						</center>
+					</div>
+					<?php if ($detail->status == 'Proses Tim Teknis') { ?>
+						<div class="card-footer">
+							<form action="<?= base_url('dashboard/upload_berita_acara_verifikasi_dok_ptsp14/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="berita_acara_verifikasi_dok">
+								<div class="form-group">
+									<div class="input-group">
+										<div class="form-group-upload">
+											<div class="custom-file">
+												<label class="custom-file-label" for="file-upload-2">pilih file...</label>
+												<input type="file" class="custom-file-input" id="file-upload-2" name="berita_acara_verifikasi_dok" value="" required>
+												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
+												<input type="hidden" class="form-control form-user-input" name="id_layanan" id="file-upload" value="<?= $detail->id_layanan ?>">
+											</div>
+										</div>
+									</div>
+								</div>
+								<center>
+									<button class="btn btn-sm btn-primary" type="submit">
+										<i class="fa fa-upload">
+										</i>
+									</button>
+								</center>
+							</form>
+						</div>
+					<?php } ?>
+				</div>
+
+				<div class="card shadow mb-4">
+					<div class="card-header">
+						<center>
+							<?php if ($detail->berita_acara_verifikasi_lap != null) { ?>
+								<h6 class="m-0 font-weight-bold">Berita Acara Verifikasi Lapangan</h6>
+							<?php } elseif ($detail->berita_acara_verifikasi_lap == null) { ?>
+								<h6 class="m-0 font-weight-bold">Unggah Berita Acara Verifikasi Lapangan terlebih dahulu untuk menyetujui</h6>
+							<?php } ?>
+						</center>
+					</div>
+
+					<div class="card-body">
+						<center>
+							<?php if ($detail->berita_acara_verifikasi_lap != null) { ?>
+								<p><?= $detail->berita_acara_verifikasi_lap; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara_verifikasi_lap/<?= $detail->berita_acara_verifikasi_lap ?>" target="_blank">
+
+									<i class="fa fa-download nav-icon">
+									</i> Klik untuk melihat
+								</a>
+							<?php } elseif ($detail->berita_acara_verifikasi_lap == null) { ?>
+								<p class="mb-0">Belum ada lampiran</p>
+							<?php } ?>
+						</center>
+					</div>
+					<?php if ($detail->status == 'Proses Tim Teknis') { ?>
+						<div class="card-footer">
+							<form action="<?= base_url('dashboard/upload_berita_acara_verifikasi_lap_ptsp14/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="berita_acara_verifikasi_lap">
+								<div class="form-group">
+									<div class="input-group">
+										<div class="form-group-upload">
+											<div class="custom-file">
+												<label class="custom-file-label" for="file-upload-2">pilih file...</label>
+												<input type="file" class="custom-file-input" id="file-upload-2" name="berita_acara_verifikasi_lap" value="" required>
+												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
+												<input type="hidden" class="form-control form-user-input" name="id_layanan" id="file-upload" value="<?= $detail->id_layanan ?>">
+											</div>
+										</div>
+									</div>
+								</div>
+								<center>
+									<button class="btn btn-sm btn-primary" type="submit">
+										<i class="fa fa-upload">
+										</i>
+									</button>
+								</center>
+							</form>
+						</div>
+					<?php } ?>
+				</div>
+
+				<div class="card shadow mb-4">
+					<div class="card-header">
+						<center>
+							<?php if ($detail->berita_acara_rapat != null) { ?>
+								<h6 class="m-0 font-weight-bold">Berita Acara Rapat Pertimbangan</h6>
+							<?php } elseif ($detail->berita_acara_rapat == null) { ?>
 								<h6 class="m-0 font-weight-bold">Unggah Berita Acara terlebih dahulu untuk menyetujui</h6>
 							<?php } ?>
 						</center>
@@ -65,27 +167,27 @@
 
 					<div class="card-body">
 						<center>
-							<?php if ($detail->berita_acara != null) { ?>
-								<p><?= $detail->berita_acara; ?></p>
-								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara/<?= $detail->berita_acara ?>" target="_blank">
+							<?php if ($detail->berita_acara_rapat != null) { ?>
+								<p><?= $detail->berita_acara_rapat; ?></p>
+								<a id="btn_upload" class="btn btn-sm btn-primary" href="<?= base_url() ?>../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara_rapat/<?= $detail->berita_acara_rapat ?>" target="_blank">
 
 									<i class="fa fa-download nav-icon">
 									</i> Klik untuk melihat
 								</a>
-							<?php } elseif ($detail->berita_acara == null) { ?>
+							<?php } elseif ($detail->berita_acara_rapat == null) { ?>
 								<p class="mb-0">Belum ada lampiran</p>
 							<?php } ?>
 						</center>
 					</div>
 					<?php if ($detail->status == 'Proses Tim Teknis') { ?>
 						<div class="card-footer">
-							<form action="<?= base_url('dashboard/upload_berita_acaraptsp14/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="berita_acara_ptsp14">
+							<form action="<?= base_url('dashboard/upload_berita_acara_rapatptsp14/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="berita_acara_rapat_ptsp14">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-group-upload">
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload-2">pilih file...</label>
-												<input type="file" class="custom-file-input" id="file-upload-2" name="berita_acara" value="" required>
+												<input type="file" class="custom-file-input" id="file-upload-2" name="berita_acara_rapat" value="" required>
 												<input type="hidden" class="form-control form-user-input" name="id_permohonan_ptsp" id="file-upload" value="<?= $detail->id_permohonan_ptsp ?>">
 												<input type="hidden" class="form-control form-user-input" name="id_layanan" id="file-upload" value="<?= $detail->id_layanan ?>">
 											</div>
@@ -113,11 +215,74 @@
 							<tbody>
 								<?php if ($detail->no_surat != null) { ?>
 									<tr>
-										<td><b>Nomor Surat</b></td>
+										<td><b>Nomor Sertifikat</b></td>
 										<td> </td>
 										<td> </td>
 										<td>:</td>
 										<td><?= $detail->no_surat ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->no_surat_keterangan != null) { ?>
+									<tr>
+										<td><b>Nomor Surat Keputusan</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td> 
+										<td><?= $detail->no_surat_keterangan ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->no_berita_acara_verifikasi_dok != null) { ?>
+									<tr>
+										<td><b>Nomor Berita Acara Verifikasi Dokumen</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td> 
+										<td><?= $detail->no_berita_acara_verifikasi_dok ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_berita_acara_verifikasi_dok != null) { ?>
+									<tr>
+										<td><b>Tanggal Berita Acara Verifikasi Dokumen</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td> 
+										<td><?= format_indo(date($detail->tgl_berita_acara_verifikasi_dok)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->no_berita_acara_verifikasi_lap != null) { ?>
+									<tr>
+										<td><b>Nomor Berita Acara Verifikasi Lapangan</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td> 
+										<td><?= $detail->no_berita_acara_verifikasi_lap ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_berita_acara_verifikasi_lap != null) { ?>
+									<tr>
+										<td><b>Tanggal Berita Acara Verifikasi Lapangan</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td> 
+										<td><?= format_indo(date($detail->tgl_berita_acara_verifikasi_lap)); ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->no_berita_acara_rapat != null) { ?>
+									<tr>
+										<td><b>Nomor Berita Acara Rapat</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td> 
+										<td><?= $detail->no_berita_acara_rapat ?></td>
+									</tr>
+								<?php } ?>
+								<?php if ($detail->tgl_berita_acara_rapat != null) { ?>
+									<tr>
+										<td><b>Tanggal Berita Acara Rapat</b></td>
+										<td> </td>
+										<td> </td>
+										<td>:</td> 
+										<td><?= format_indo(date($detail->tgl_berita_acara_rapat)); ?></td>
 									</tr>
 								<?php } ?>
 								<?php if ($detail->masa_berlaku != null) { ?>
@@ -275,14 +440,10 @@
 					</div>
 				</div>
 
-			</div>
-		</div>
-		<?php if ($detail->status == 'Proses Tim Teknis') { ?>
+				<?php if ($detail->status == 'Proses Tim Teknis') { ?>
 			<!-- Input Nomor Statistik -->
-			<div class="row clearfix">
-				<div class="col-xs-12 col-sm-4"></div>
-				<div class="col-xs-12 col-sm-8">
-					<div class="card shadow mb-4">
+			
+				 					<div class="card shadow mb-4">
 						<div class="card-header">
 							<center>
 								<h6 class="m-0 font-weight-bold">Inputkan Nomor Statistik terlebih dahulu untuk menyetujui</h6>
@@ -291,10 +452,66 @@
 						<div class="card-body">
 							<form class="form-horizontal mt-4" id="formba_ptsp14" enctype="multipart/form-data" action="<?= base_url('dashboard/update_no_statistik/' . $detail->id_ptsp) ?>" method="POST">
 								<div class="form-group row">
-									<label for="nomor_statistik" class="col-sm-2 col-form-label">No. Statistik</label>
+									<label for="nomor_statistik" class="col-sm-3 col-form-label">No. Statistik</label>
 									<div class="col-sm-8 ml-1">
 										<div class="form-line focused">
 											<input type="text" class="form-control" id="nomor_statistik" name="nomor_statistik" value="" placeholder="masukkan no statistik verifikasi dok disini..." required>
+										</div>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="no_berita_acara_verifikasi_dok" class="col-sm-3 col-form-label">No. Berita Acara
+										Verifikasi Dokumen</label>
+									<div class="col-sm-8 ml-1">
+										<div class="form-line focused">
+											<input type="text" class="form-control" id="no_berita_acara_verifikasi_dok" name="no_berita_acara_verifikasi_dok" value="" placeholder="masukkan no berita acara verifikasi dok disini..." required>
+										</div>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="tgl_berita_acara_verifikasi_dok" class="col-sm-3 col-form-label">Tgl. Berita
+										Acara
+										Verifikasi Dokumen</label>
+									<div class="col-sm-8 ml-1">
+										<div class="form-line focused">
+											<input type="date" class="form-control" id="tgl_berita_acara_verifikasi_dok" name="tgl_berita_acara_verifikasi_dok" value="" required>
+										</div>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="no_berita_acara_verifikasi_lap" class="col-sm-3 col-form-label">No. Berita Acara
+										Verifikasi lapangan</label>
+									<div class="col-sm-8 ml-1">
+										<div class="form-line focused">
+											<input type="text" class="form-control" id="no_berita_acara_verifikasi_lap" name="no_berita_acara_verifikasi_lap" value="" placeholder="masukkan no berita acara verifikasi lap disini..." required>
+										</div>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="tgl_berita_acara_verifikasi_lap" class="col-sm-3 col-form-label">Tgl. Berita
+										Acara
+										Verifikasi Lapangan</label>
+									<div class="col-sm-8 ml-1">
+										<div class="form-line focused">
+											<input type="date" class="form-control" id="tgl_berita_acara_verifikasi_lap" name="tgl_berita_acara_verifikasi_lap" value="" required>
+										</div>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="no_berita_acara_rapat" class="col-sm-3 col-form-label">No. Berita Acara Rapat</label>
+									<div class="col-sm-8 ml-1">
+										<div class="form-line focused">
+											<input type="text" class="form-control" id="no_berita_acara_rapat" name="no_berita_acara_rapat" value="" placeholder="masukkan no berita acara rapat disini..." required>
+										</div>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="tgl_berita_acara_rapat" class="col-sm-3 col-form-label">Tgl. Berita
+										Acara
+										Rapat</label>
+									<div class="col-sm-8 ml-1">
+										<div class="form-line focused">
+											<input type="date" class="form-control" id="tgl_berita_acara_rapat" name="tgl_berita_acara_rapat" value="" placeholder="masukkan tanggal berita acara rapat disini..." required>
 										</div>
 									</div>
 								</div>
@@ -316,9 +533,12 @@
 						</div>
 						</form>
 					</div>
-				</div>
-			</div>
+				 
 		<?php } ?>
+
+			</div>
+		</div>
+		
 
 		<!-- Button Tolak & Setujui BA -->
 		<div class="row clearfix float-right px-2">
