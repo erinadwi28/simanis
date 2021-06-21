@@ -395,6 +395,7 @@ class Dashboard extends CI_Controller
                 } elseif ($id_layanan == 2) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp02')->result();
                 } elseif ($id_layanan == 3) {
+                        $this->ConvertImage03($id_permohonan_ptsp,$id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp03')->result();
                 } elseif ($id_layanan == 4) {
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp04')->result();
@@ -507,6 +508,22 @@ class Dashboard extends CI_Controller
                 }
 
                 $this->load->view('footer');
+        }
+
+        private function ConvertImage03($id_permohonan_ptsp,$id_layanan){
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp0'.$id_layanan)->row();
+                $fileName = "";
+                if ($item->fc_ijazah != null && strlen($item->fc_ijazah) > 50) {
+                        $photo = $item->fc_ijazah;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'fc_ijazah-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp03/fc_ijazah/' . $fileName;
+                                file_put_contents($directory , $entry);
+                        }
+                $data_ptsp = array('fc_ijazah' => $fileName);
+                $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0'.$id_layanan);
+                }
         }
 
         private function ConvertImage27($id_permohonan_ptsp,$id_layanan){
