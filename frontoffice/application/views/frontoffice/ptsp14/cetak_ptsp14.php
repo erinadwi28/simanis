@@ -280,7 +280,7 @@
 													<td> </td>
 													<td>:</td>
 													<td> </td>
-													<td><?= $detail->berlaku ?></td>
+													<td><?= $detail->masa_berlaku ?></td>
 												</tr>
 											</tbody>
 										</table>
