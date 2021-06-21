@@ -253,17 +253,22 @@ class Data extends REST_Controller {
         $data = [
             'id_pemohon' => $this->post('id_pemohon'),
             'id_layanan' => $this->post('id_layanan'),
-            'sie' => $this->post('sie'),
-            'tgl_permohonan' => $this->post('tgl_permohonan')
+            'sie' => $this->post('sie')
         ];
         $this->db->insert("permohonan_ptsp",$data);
+        $id = $this->db->insert_id();
         $this->set_response([
             'meta' => [
                 'success' => true,
                 'message' => "Successfully",
                 'code' => 200,
             ],
-            'data' => $data
+            'data' => [
+                'id_permohonan_ptsp' => $id,
+                'id_pemohon' => $this->post('id_pemohon'),
+                'id_layanan' => $this->post('id_layanan'),
+                'sie' => $this->post('sie')
+            ],
         ], REST_Controller::HTTP_CREATED); // CREATED (201) being the HTTP response code
     }
     public function layanan_delete(){}
@@ -319,6 +324,7 @@ class Data extends REST_Controller {
     }
     public function ptsp01_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'pemohon' => $this->post('pemohon'),
             'no_hp' => $this->post('no_hp'),
             'tgl_srt_permohonan' => $this->post('tgl_srt_permohonan'),
@@ -393,6 +399,7 @@ class Data extends REST_Controller {
     }
     public function ptsp02_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'pemohon' => $this->post('pemohon'),
             'no_hp' => $this->post('no_hp'),
             'tgl_srt_permohonan' => $this->post('tgl_srt_permohonan'),
@@ -468,6 +475,7 @@ class Data extends REST_Controller {
     }
     public function ptsp03_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama' => $this->post('nama'),
             'no_hp' => $this->post('no_hp'),
             'keperluan_legalisir_ijazah' => $this->post('keperluan_legalisir_ijazah'),
@@ -535,6 +543,7 @@ class Data extends REST_Controller {
     }
     public function ptsp04_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama' => $this->post('nama'),
             'no_hp' => $this->post('no_hp'),
             'keperluan_legalisir_dokumen' => $this->post('keperluan_legalisir_dokumen'),
@@ -602,6 +611,7 @@ class Data extends REST_Controller {
     }
     public function ptsp05_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_pemohon' => $this->post('nama_pemohon'),
             'tempat_lahir' => $this->post('tempat_lahir'),
             'tanggal_lahir' => $this->post('tanggal_lahir'),
@@ -677,6 +687,7 @@ class Data extends REST_Controller {
     }
     public function ptsp06_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama' => $this->post('nama'),
             'alamat' => $this->post('alamat'),
             'tempat_lahir' => $this->post('tempat_lahir'),
@@ -753,6 +764,7 @@ class Data extends REST_Controller {
     }
     public function ptsp07_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_pemohon' => $this->post('nama_pemohon'),
             'nama_yayasan' => $this->post('nama_yayasan'),
             'nama_kelompok_bimbingan' => $this->post('nama_kelompok_bimbingan'),
@@ -828,6 +840,7 @@ class Data extends REST_Controller {
     }
     public function ptsp08_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_pemohon' => $this->post('nama_pemohon'),
             'nama_yayasan' => $this->post('nama_yayasan'),
             'nama_kelompok_bimbingan' => $this->post('nama_kelompok_bimbingan'),
@@ -907,6 +920,7 @@ class Data extends REST_Controller {
     }
     public function ptsp09_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_pemohon' => $this->post('nama_pemohon'),
             'nama_pt' => $this->post('nama_pt'),
             'nama_kantor_cabang' => $this->post('nama_kantor_cabang'),
@@ -986,6 +1000,7 @@ class Data extends REST_Controller {
     }
     public function ptsp10_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_pemohon' => $this->post('nama_pemohon'),
             'nama_pt' => $this->post('nama_pt'),
             'nama_kantor_cabang' => $this->post('nama_kantor_cabang'),
@@ -1065,6 +1080,7 @@ class Data extends REST_Controller {
     }
     public function ptsp11_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_sekolah_tujuan' => $this->post('nama_sekolah_tujuan'),
             'nama_sekolah_asal' => $this->post('nama_sekolah_asal'),
             'no_srt_rek_sekolah_asal' => $this->post('no_srt_rek_sekolah_asal'),
@@ -1143,6 +1159,7 @@ class Data extends REST_Controller {
     }
     public function ptsp12_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_tujuan' => $this->post('nama_tujuan'),
             'tempat_tujuan' => $this->post('tempat_tujuan'),
             'nama_sekolah' => $this->post('nama_sekolah'),
@@ -1214,6 +1231,7 @@ class Data extends REST_Controller {
     }
     public function ptsp13_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_yayasan' => $this->post('nama_yayasan'),
             'no_srt_pemohon' => $this->post('no_srt_pemohon'),
             'tgl_srt_pemohon' => $this->post('tgl_srt_pemohon'),
@@ -1289,6 +1307,7 @@ class Data extends REST_Controller {
     }
     public function ptsp14_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_lpq' => $this->post('nama_lpq'),
             'alamat' => $this->post('alamat'),
             'desa' => $this->post('desa'),
@@ -1364,6 +1383,7 @@ class Data extends REST_Controller {
     }
     public function ptsp15_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_mtd' => $this->post('nama_mtd'),
             'alamat' => $this->post('alamat'),
             'desa' => $this->post('desa'),
@@ -1436,6 +1456,7 @@ class Data extends REST_Controller {
     }
     public function ptsp16_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_tujuan' => $this->post('nama_tujuan'),
             'tempat_tujuan' => $this->post('tempat_tujuan'),
             'nama_instansi_pemohon' => $this->post('nama_instansi_pemohon'),
@@ -1509,6 +1530,7 @@ class Data extends REST_Controller {
     }
     public function ptsp17_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_pns' => $this->post('nama_pns'),
             'tgl_srt_permohonan' => $this->post('tgl_srt_permohonan'),
             'kecamatan' => $this->post('kecamatan'),
@@ -1590,6 +1612,7 @@ class Data extends REST_Controller {
     }
     public function ptsp18_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_masjid' => $this->post('nama_masjid'),
             'no_srt_permohonan' => $this->post('no_srt_permohonan'),
             'tgl_srt_permohonan' => $this->post('tgl_srt_permohonan'),
@@ -1663,6 +1686,7 @@ class Data extends REST_Controller {
     }
     public function ptsp19_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_studio' => $this->post('nama_studio'),
             'kabupaten_studio' => $this->post('kabupaten_studio'),
             'no_srt_permohonan' => $this->post('no_srt_permohonan'),
@@ -1735,6 +1759,7 @@ class Data extends REST_Controller {
     }
     public function ptsp20_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_majelis_taklim' => $this->post('nama_majelis_taklim'),
             'alamat' => $this->post('alamat'),
             'desa' => $this->post('desa'),
@@ -1808,6 +1833,7 @@ class Data extends REST_Controller {
     }
     public function ptsp21_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_masjid' => $this->post('nama_masjid'),
             'dukuh' => $this->post('dukuh'),
             'rt' => $this->post('rt'),
@@ -1879,6 +1905,7 @@ class Data extends REST_Controller {
     }
     public function ptsp22_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_masjid' => $this->post('nama_masjid'),
             'tipologi' => $this->post('tipologi'),
             'alamat' => $this->post('alamat'),
@@ -1948,6 +1975,7 @@ class Data extends REST_Controller {
     }
     public function ptsp23_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_sekolah_satmikal' => $this->post('nama_sekolah_satmikal'),
             'kecamatan_sekolah_satmikal' => $this->post('kecamatan_sekolah_satmikal'),
             'kabupaten_sekolah_satmikal' => $this->post('kabupaten_sekolah_satmikal'),
@@ -2026,6 +2054,7 @@ class Data extends REST_Controller {
     }
     public function ptsp24_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'jml_roda_kendaraan' => $this->post('jml_roda_kendaraan'),
             'merek_kendaraan' => $this->post('merek_kendaraan'),
             'no_polisi' => $this->post('no_polisi'),
@@ -2097,6 +2126,7 @@ class Data extends REST_Controller {
     }
     public function ptsp25_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_pemohon' => $this->post('nama_pemohon'),
             'alamat' => $this->post('alamat'),
             'pekerjaan' => $this->post('pekerjaan'),
@@ -2166,6 +2196,7 @@ class Data extends REST_Controller {
     }
     public function ptsp26_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'nama_pemohon' => $this->post('nama_pemohon'),
             'alamat' => $this->post('alamat'),
             'pekerjaan' => $this->post('pekerjaan'),
@@ -2235,6 +2266,7 @@ class Data extends REST_Controller {
     }
     public function ptsp27_post(){
         $data = [
+            'id_permohonan_ptsp' => $this->post('id_permohonan_ptsp'),
             'suket_penghasilan' => $this->post('suket_penghasilan'),
             'nama_pemohon' => $this->post('nama_pemohon'),
             'alamat' => $this->post('alamat'),
