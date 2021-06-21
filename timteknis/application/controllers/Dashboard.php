@@ -713,10 +713,10 @@ class Dashboard extends CI_Controller
     }
 
     // upload berita acara ptsp14
-    public function upload_berita_acaraptsp14($id_ptsp)
+    public function upload_berita_acara_rapatptsp14($id_ptsp)
     {
         if ($_FILES != null) {
-            $this->aksi_upload_berita_acaraptsp14($id_ptsp);
+            $this->aksi_upload_berita_acara_rapatptsp14($id_ptsp);
         }
         $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
         $id_layanan = $this->input->post('id_layanan');
@@ -725,15 +725,15 @@ class Dashboard extends CI_Controller
     }
 
     //upload berita acara ptsp14
-    private function aksi_upload_berita_acaraptsp14($id_ptsp)
+    private function aksi_upload_berita_acara_rapatptsp14($id_ptsp)
     {
-        $config['upload_path']          = '../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara/';
+        $config['upload_path']          = '../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara_rapat/';
         $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|docx|doc|xlsx|xls';
-        $config['file_name']            = 'berita_acara-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+        $config['file_name']            = 'berita_acara_rapat-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
 
         $this->load->library('upload', $config);
-        if (!empty($_FILES['berita_acara']['name'])) {
-            if ($this->upload->do_upload('berita_acara')) {
+        if (!empty($_FILES['berita_acara_rapat']['name'])) {
+            if ($this->upload->do_upload('berita_acara_rapat')) {
 
                 $uploadData = $this->upload->data();
 
@@ -741,11 +741,93 @@ class Dashboard extends CI_Controller
 
                 //replace foto lama 
                 if ($item->berita_acara != null) {
-                    $target_file = '../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara/' . $item->berita_acara;
+                    $target_file = '../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara_rapat/' . $item->berita_acara_rapat;
                     unlink($target_file);
                 }
 
-                $data['berita_acara'] = $uploadData['file_name'];
+                $data['berita_acara_rapat'] = $uploadData['file_name'];
+
+                $this->db->where('id_ptsp', $id_ptsp);
+                $this->db->update('ptsp14', $data);
+            }
+        }
+    }
+
+    // upload_berita_acara_verifikasi_dok_ptsp14
+    public function upload_berita_acara_verifikasi_dok_ptsp14($id_ptsp)
+    {
+        if ($_FILES != null) {
+            $this->aksi_upload_berita_acara_verifikasi_dokptsp14($id_ptsp);
+        }
+        $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
+        $id_layanan = $this->input->post('id_layanan');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
+    }
+
+    //aksi upload_berita_acara_verifikasi_dok_ptsp14
+    private function aksi_upload_berita_acara_verifikasi_dokptsp14($id_ptsp)
+    {
+        $config['upload_path']          = '../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara_verifikasi_dok/';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|docx|doc|xlsx|xls';
+        $config['file_name']            = 'berita_acara_verifikasi_dok-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+        $this->load->library('upload', $config);
+        if (!empty($_FILES['berita_acara_verifikasi_dok']['name'])) {
+            if ($this->upload->do_upload('berita_acara_verifikasi_dok')) {
+
+                $uploadData = $this->upload->data();
+
+                $item = $this->db->where('id_ptsp', $id_ptsp)->get('ptsp14')->row();
+
+                //replace foto lama 
+                if ($item->berita_acara_verifikasi_dok != null) {
+                    $target_file = '../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara_verifikasi_dok/' . $item->berita_acara_verifikasi_dok;
+                    unlink($target_file);
+                }
+
+                $data['berita_acara_verifikasi_dok'] = $uploadData['file_name'];
+
+                $this->db->where('id_ptsp', $id_ptsp);
+                $this->db->update('ptsp14', $data);
+            }
+        }
+    }
+
+    // upload_berita_acara_verifikasi_lap_ptsp14
+    public function upload_berita_acara_verifikasi_lap_ptsp14($id_ptsp)
+    {
+        if ($_FILES != null) {
+            $this->aksi_upload_berita_acara_verifikasi_lap_ptsp14($id_ptsp);
+        }
+        $id_permohonan_ptsp = $this->input->post('id_permohonan_ptsp');
+        $id_layanan = $this->input->post('id_layanan');
+        $this->session->set_flashdata('success', 'disimpan');
+        redirect('dashboard/detail_data_permohonan/' . $id_permohonan_ptsp . '/' . $id_layanan);
+    }
+
+    //upload berita_acara_verifikasi_lap ptsp13
+    private function aksi_upload_berita_acara_verifikasi_lap_ptsp14($id_ptsp)
+    {
+        $config['upload_path']          = '../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara_verifikasi_lap/';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg|pdf|docx|doc|xlsx|xls';
+        $config['file_name']            = 'berita_acara_verifikasi_lap-' . date('ymd') . '-' . substr(md5(rand()), 0, 10);
+
+        $this->load->library('upload', $config);
+        if (!empty($_FILES['berita_acara_verifikasi_lap']['name'])) {
+            if ($this->upload->do_upload('berita_acara_verifikasi_lap')) {
+
+                $uploadData = $this->upload->data();
+
+                $item = $this->db->where('id_ptsp', $id_ptsp)->get('ptsp14')->row();
+
+                //replace foto lama 
+                if ($item->berita_acara_verifikasi_lap != null) {
+                    $target_file = '../assets/dashboard/pemohon/ptsp/ptsp14/berita_acara_verifikasi_lap/' . $item->berita_acara_verifikasi_lap;
+                    unlink($target_file);
+                }
+
+                $data['berita_acara_verifikasi_lap'] = $uploadData['file_name'];
 
                 $this->db->where('id_ptsp', $id_ptsp);
                 $this->db->update('ptsp14', $data);
@@ -758,6 +840,13 @@ class Dashboard extends CI_Controller
     {
         $data = array(
             'nomor_statistik' => $this->input->post('nomor_statistik'),
+            'no_berita_acara_verifikasi_dok' => $this->input->post('no_berita_acara_verifikasi_dok'),
+            'tgl_berita_acara_verifikasi_dok' => $this->input->post('tgl_berita_acara_verifikasi_dok'),
+            'no_berita_acara_verifikasi_lap' => $this->input->post('no_berita_acara_verifikasi_lap'),
+            'tgl_berita_acara_verifikasi_lap' => $this->input->post('tgl_berita_acara_verifikasi_lap'),
+            'no_berita_acara_rapat' => $this->input->post('no_berita_acara_rapat'),
+            'tgl_berita_acara_rapat' => $this->input->post('tgl_berita_acara_rapat'),
+             
         );
 
         $this->m_tim_teknis->update_data_ptsp($id_ptsp, $data, 'ptsp14');
