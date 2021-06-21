@@ -3,12 +3,12 @@
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between">
 		<h3 class="judullist py-3">Standar Operasional Prosedur</h3>
-			<nav aria-label="breadcrumb" class="nav-breadcrumb">
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-					<li class="breadcrumb-item active" aria-current="page">SOP</li>
-				</ol>
-			</nav>
+		<nav aria-label="breadcrumb" class="nav-breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+				<li class="breadcrumb-item active" aria-current="page">SOP</li>
+			</ol>
+		</nav>
 	</div>
 
 	<div class="row">
@@ -21,12 +21,12 @@
 				<div class="card-body ">
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
-						<ol type="1" class="ml-0 list-syarat">
+					<ol type="1" class="ml-0 list-syarat">
 						<li>Pemohon membuat surat permohonan ditujukan kepada Kepala Kantor Kementerian Agama Kab. Klaten</li>
 						<li>Pemohon mengunggah surat permohonan yang telah dibuat. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
-						<li>Pemohon mengunggah FC (Fotocopy) SK Ijin Operasional PPIU/PIHK. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
+						<li>Pemohon mengunggah FC (Fotocopy) STNK & BPKB. <br> (Format: PDF, Ukuran: Max 1 MB)</li>
 						<li>Pemohon menunggu pemberitahuan dari pihak Kemenag bahwa proses permohonan telah selesai.</li>
-						</ol>
+					</ol>
 					</p>
 				</div>
 				<div class="card-footer">

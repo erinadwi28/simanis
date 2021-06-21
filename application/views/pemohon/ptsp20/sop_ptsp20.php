@@ -23,10 +23,14 @@
 					<h6><b>Persyaratan :</b></h6>
 					<p class="persyaratan mb-0">
 						<ol type="1" class="ml-0 list-syarat">
-							<!-- <li>Pemohon mengunduh surat permohonan yang ditujukan Kepala Kemenag <a href="">Klik Disini!</a></li>
-							<li>Pemohon mengunduh surat rekomendasi Kepala KUA Kecamatan <a href="">Klik Disini!</a></li> -->
-							<li>Pemohon membuat surat permohonan yang ditujukan kepada Kepala Kemenag </li>
-							<li>Pemohon mengunggah surat permohonan yang ditujukan Kepala Kemenag yang telah di buat</li>
+							<li>Pemohon mengunduh surat permohonan yang ditujukan Kepala Kemenag <b><a
+										href="<?= base_url() ?>assets/dashboard/unduhan/pemohon/ptsp20/Template%20Surat%20Permohonan.docx"
+										target="_blank">[klik disini]</a></b></li>
+							<li>Pemohon mengunduh surat rekomendasi Kepala KUA Kecamatan <b><a
+										href="<?= base_url() ?>assets/dashboard/unduhan/pemohon/ptsp20/Template%20Surat%20RekKUA.docx"
+										target="_blank">[klik disini]</a></b></li>
+							<li>Pemohon mengunggah surat permohonan yang ditujukan Kepala Kemenag yang telah di buat
+							</li>
 							<li>Pemohon mengunggah surat rekomendasi Kepala KUA Kecamatan yang telah di isi</li>
 							<li>Pemohon Mengisi dan Melengkapi form pengajuan yang telah disediakan.</li>
 							<li>Pemohon Menunggu Informasi dari Kemenag terkait proses pengajuan permohonan.</li>
