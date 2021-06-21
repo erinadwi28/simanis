@@ -179,9 +179,9 @@
 						<div class="card-body">
 							<?php
 							foreach ($detail_ptsp as $detail) { ?>
-								<div class="badan_surat" style="margin-top: 30px;">
+								<div class="badan_surat">
 									<center>
-										<div class="kepala_Sertifikat">
+										<div class="kepala_Sertifikat" style="margin-top: 50px;">
 											<object data="" type="image">
 												<img class="logosurat" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag.png') ?>">
 											</object>
@@ -267,7 +267,7 @@
 													Pada Tanggal : &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 													Kepala
 												<?php } ?>
-												<br><br>
+												<br><br><br>
 												<?php
 												foreach ($data_kepala as $detail) { ?>
 													<b><?= $detail->nama ?></b><br>

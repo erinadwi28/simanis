@@ -172,13 +172,12 @@
 		.sertif {
 		background: url(<?=base_url('../assets/dashboard/images/frontoffice/ptsp/bg_ptsp21.png') ?>);
 		background-repeat: no-repeat;
-		background-size:contain;
-		background-position-x: center;
-		background-position-y: top;
-		z-index: 200;
-		margin-left: 80px;
+			background-size: 100% 100%;
+			background-position-x: center;
+			background-position-y: top;
+			z-index: 200;
 		}
-	</style>
+	</style> 
 </head>
 <body class="body" id="page-top">
 	<!-- Begin Page Content -->

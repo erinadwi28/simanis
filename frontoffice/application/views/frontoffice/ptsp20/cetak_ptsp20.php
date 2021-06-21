@@ -20,26 +20,24 @@
 	<style>
 		.body {
 			color: #000;
-			font-family: Calibri, Helvetica, Arial, sans-serif;
 			font-size: 11pt;
+			margin-bottom: 0;
+			padding-bottom: 0;
+			font-family: 'Times New Roman';
 		}
 
 		.logosurat {
-			height: 130px;
-			width: 130px;
-			margin-top: -20px;
-			margin-left: 170px;
+			height: 110px;
+			width: 110px;
+			margin-top: 0px;
+			margin-left: 10px;
 		}
 
 		.kopsurat p {
 			font-weight: bold;
 			line-height: 1em;
-
 		}
 
-		/* .card-body {
-			padding: 5rem;
-		} */
 
 		.badan_surat {
 			color: #000;
@@ -50,41 +48,50 @@
 		}
 
 		.badan_surat {
-			margin-left: 60px;
-		}
-
-		.row {
+			font-family: 'Times New Roman';
+			margin-left: 0px;
 			font-size: 11pt;
 		}
 
-		.no_surat {
+
+		.alamat_kantor {
 			font-size: 11pt;
 		}
 
-		.tujuan_surat {
-			font-size: 11pt;
+		.kepala_sertifikat p {
+			margin-top: 15px;
+			font-size: 9pt;
 		}
 
 		.paragraf {
 			/* text-indent: 2.8125em; */
 			text-align: justify;
+			font-family: 'Times New Roman';
 			text-indent: 50px;
-			font-size: 11pt;
 		}
 
 		.isi_surat {
-			margin-left: 0.0375em;
+			margin-left: 50px;
+			margin-right: 50px;
 			font-size: 11pt;
-			line-height: 1.5em;
+			line-height: 1.2em;
+			font-family: 'Times New Roman';
 			text-align: justify;
-			margin-top: 5x;
+
 		}
 
 		.identitas {
 			margin-left: 2.8125em;
 			margin-bottom: 0.3125em;
+			font-size: 11pt;
 		}
 
+		.ttd_kepala {
+			display: block;
+			position: absolute;
+			float: left;
+			margin-right: -400px;
+		}
 
 		.img-fluid {
 			max-width: 100%;
@@ -93,15 +100,14 @@
 
 		.container-fluid {
 			width: 100%;
-			padding-right: 0.75rem;
-			padding-left: 0.75rem;
+			padding-right: 0.25rem;
+			padding-left: 0.25rem;
 			margin-right: auto;
 			margin-left: auto;
 		}
 
-
 		.table {
-			color: #000;
+			font-family: 'Times New Roman';
 		}
 
 		.table-bordered {
@@ -110,49 +116,25 @@
 			margin-left: 15px;
 		}
 
-		tbody {
-			line-height: 1.5em;
+		.ttd_surat {
+			font-size: 11pt;
 		}
 
-		.petugas>.nomor {
-			padding-right: 0px;
+		.body {
+			line-height: 23.5px;
 		}
 
-		.petugas>.data {
-			padding-left: -0px;
-			margin-left: -15px;
+		/* css untuk surat keterangan */
+		.isi_suket {
+			margin-left: 0.0375em;
+			font-size: 11pt;
+			line-height: 1.2em;
+			text-align: justify;
 		}
 
-		p {
-			margin-bottom: 0px;
-		}
-
-		.pelaksanaan {
-			margin-left: 0px;
-		}
-
-		.ketentuan {
-			margin-left: 10px;
-		}
-
-		.tgl {
-			text-align: right;
-		}
-
-		.kpl {
-			margin-left: 509px;
-		}
-
-		.rekomendasi {
-			text-align: center;
-		}
-
-		.img {
-			padding-top: 10px;
-		}
-
-		.img img {
-			padding-left: 10px;
+		.identitassuket {
+			text-align: justify;
+			font-size: 11pt;
 		}
 
 		.garis {
@@ -163,18 +145,23 @@
 			margin-right: 17px;
 		}
 
-		.ttd_surat {
+
+		.ttd_surat_2 {
 			font-size: 11pt;
-			margin-left: 390px;
 		}
+
 		.sertif {
-			background: url(<?=base_url('../assets/dashboard/images/frontoffice/ptsp/bg_ptsp15.png') ?>);
-		background-repeat: no-repeat;
-		background-size:contain;
-		background-position-x: center;
-		background-position-y: top;
-		z-index: 500;
-		margin-left: 100px;
+			background: url(<?= base_url('../assets/dashboard/images/frontoffice/ptsp/bg_ptsp15_2.png') ?>);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			background-position-x: center;
+			background-position-y: top;
+			z-index: 200;
+		}
+
+		.table_sertif {
+			margin-left: 40px;
+			margin-right: 50px;
 		}
 	</style>
 </head>
@@ -184,150 +171,111 @@
 	<div class="container-fluid">
 		<!-- Page Heading -->
 		<div class="row">
+			
 			<div class="col sertif">
-			</div>
-			<div class="col-md-8">
 				<div class="card shadow mb-4">
 					<div class="card-body">
 						<div class="card-body">
-							<center>
-								<div class="logosurat row ">
-									<div class="col-md-12 mb-3">
-										<object data="" type="image">
-											<img class="logosurat" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag.png') ?>">
-										</object>
-									</div>
-								</div>
-							</center>
 							<?php foreach ($detail_ptsp as $detail) { ?>
 								<div class="badan_surat">
 									<center>
-										<div class="kepala_Sertifikat">
-											<h5 style="margin-top: 20px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA</b></h5>
-											<h6><b>KANTOR KEMENTRIAN KABUPATEN KLATEN </b></h6>
+										<div class="kepala_Sertifikat" style="margin-top: 50px;">
+											<object data="" type="image">
+												<img class="logosurat" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag.png') ?>">
+											</object>
+											<h5 style="margin-top: 8px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA <br>
+													KANTOR KABUPATEN KLATEN </b></h5>
 											<p>Jalan Ronggowarsito Klaten <br>
 												Telepon/Faksimili (0272)321154 <br>
-												Website : http://klaten.kemenag.go.id <br> <br> </p>
+												Website : http://klaten.kemenag.go.id</p>
 										</div>
 									</center>
-									<p style="margin-left: 90px;">&emsp;<b>PIAGAM IZIN OPERASIONAL MAJELIS TAKLIM</b>
-										<br><b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Nomor : <?= $detail->no_surat ?></b>
-									</p>
+									
+									<center>
+										<div class="no_surat">
+											<h6><b>PIAGAM IZIN OPERASIONAL MAJELIS TAKLIM</b> <br>
+												<b>Nomor: <?= $detail->no_surat ?></b>
+											</h6>
+										</div>
 									</center>
 								</div><br>
 								<div class="isi_surat">
-									<p align="justify">&emsp;&emsp;
+									
 										Dengan ini Kepala Kantor Kementrian Agama Kabupaten Klaten memberikan Nomor Statistik Majelis Taklim Kepada :
-									</p>
+									
 								</div>
-								<div class="isi_surat identitas">
-									<table>
+								<div class="identitas">
+									<table width="600px" class="table_sertif">
 										<tbody>
 											<tr>
-												<td>&emsp;&emsp;Nama Majelis Taklim </td>
-												<td> </td>
-												<td> </td>
-												<td>:</td>
-												<td> </td>
+												<td width="150px">Nama Majelis Taklim</td>
+												<td width="5px">:</td>
 												<td><?= $detail->nama_majelis_taklim ?></td>
 											</tr>
 											<tr>
-												<td>&emsp;&emsp;Alamat </td>
-												<td> </td>
-												<td> </td>
-												<td>:</td>
-												<td> </td>
+												<td valign="top">Alamat</td>
+												<td valign="top">:</td>
 												<td><?= $detail->alamat ?></td>
 											</tr>
 											<tr>
-												<td>&emsp;&emsp;Desa </td>
-												<td> </td>
-												<td> </td>
+												<td>Desa</td>
 												<td>:</td>
-												<td> </td>
 												<td><?= $detail->desa ?></td>
 											</tr>
 											<tr>
-												<td>&emsp;&emsp;Kecamatan </td>
-												<td> </td>
-												<td> </td>
+												<td>Kecamatan</td>
 												<td>:</td>
-												<td> </td>
 												<td><?= $detail->kecamatan ?></td>
 											</tr>
 											<tr>
-												<td>&emsp;&emsp;Kabupaten </td>
-												<td> </td>
-												<td> </td>
+												<td>Kabupaten</td>
 												<td>:</td>
-												<td> </td>
 												<td><?= $detail->kabupaten ?></td>
 											</tr>
 											<tr>
-												<td>&emsp;&emsp;Provinsi </td>
-												<td> </td>
-												<td> </td>
+												<td>Provinsi</td>
 												<td>:</td>
-												<td> </td>
 												<td><?= $detail->provinsi ?></td>
 											</tr>
 											<tr>
-												<td>&emsp;&emsp;Tahun Berdiri </td>
-												<td> </td>
-												<td> </td>
+												<td>Tahun Berdiri</td>
 												<td>:</td>
-												<td> </td>
 												<td><?= $detail->tahun_berdiri ?></td>
 											</tr>
 											<tr>
-												<td>&emsp;&emsp;Nomor Statistik </td>
-												<td> </td>
-												<td> </td>
+												<td>Nomor Statistik</td>
 												<td>:</td>
-												<td> </td>
 												<td><?= $detail->no_statistik ?></td>
 											</tr>
 										</tbody>
 									</table>
 								</div>
 								<div class="isi_surat">
-									<p align="justify">dan Majelis Taklim tersebut telah terdaftar pada Kantor
+									dan Majelis Taklim tersebut telah terdaftar pada Kantor
 										&emsp; &emsp;Kementrian Agama Kabupaten Klaten
-									</p>
-									<p>Demikian untuk dapat digunakan sebagimana mestinya.</p>
+									<br>
+									Demikian untuk dapat digunakan sebagimana mestinya.
 								</div>
 								<br>
 								<div class="row">
-									<div class="col-md-6">
-									</div>
-									<div class="col-md-6">
-										<div class="badan_surat ttd_surat">
+									
+									<div class="col">
+										<div class="ttd_surat" style="margin-left: 350px;">
 											<P>
-												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
 												Diterapkan di : Klaten <br>
 												Pada Tanggal : <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 												Kepala,
+												<br><br><br>
+												<?php } ?>
+												<?php
+										foreach ($data_kepala as $detail) { ?>
+												<u><b><?= $detail->nama ?></b></u><br>
+												Nip. <?= $detail->nip ?>
+										<?php } ?>
 											</P>
 										</div>
 									</div>
 								</div>
-							<?php } ?>
-							<br> <br>
-							<div class="row">
-								<div class="col-md-6"></div>
-								<div class="col-md-6">
-									<div class="badan_surat ttd_surat">
-										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-										<?php
-										foreach ($data_kepala as $detail) { ?>
-											<P>
-												<u><b><?= $detail->nama ?></b></u><br>
-												Nip. <?= $detail->nip ?>
-											</P>
-										<?php } ?>
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
