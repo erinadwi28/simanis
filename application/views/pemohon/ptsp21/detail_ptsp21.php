@@ -50,7 +50,7 @@
 						</center>
 					</div>
 
-					<?php if ($detail->status == 'Belum Tuntas') { ?>
+					<?php if ($detail->status == 'Belum Tuntas' || $detail->status == 'Pending') { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp21/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_srt_permohonan">
 								<div class="form-group">
@@ -284,12 +284,12 @@
 								<?php } ?>
 							</tbody>
 						</table>
-						<?php if ($detail->status == 'Belum Tuntas') { ?>
+						<?php if ($detail->status == 'Belum Tuntas' || $detail->status == 'Pending') { ?>
 							<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen disamping</em>
 						<?php } ?>
 					</div>
 
-					<?php if ($detail->status == 'Belum Tuntas') { ?>
+					<?php if ($detail->status == 'Belum Tuntas' || $detail->status == 'Pending') { ?>
 						<div class="card-footer">
 							<div class="float-right">
 								<a href="<?= base_url() ?>dashboard/form_ubah_ptsp21/<?= $detail->id_permohonan_ptsp ?>">

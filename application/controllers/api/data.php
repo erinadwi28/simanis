@@ -133,9 +133,7 @@ class Data extends REST_Controller {
 
     // Rest Api Login/Register
     public function pemohon_get(){
-
         $email = $this->get('email');
-
         if($email === NULL){
             $data = $this->db->get("pemohon") -> result_array();
             if ($data){
@@ -205,25 +203,51 @@ class Data extends REST_Controller {
     
     // Rest Api Data Setiap Layanan
     public function layanan_get(){
-        $data = $this->db->get("permohonan_ptsp") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        $id_pemohon = $this->get('id_pemohon');
+        if($id_pemohon === NULL){
+            $data = $this->db->get("permohonan_ptsp") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_pemohon"=>$id_pemohon));
+            $data = $this->db->get("permohonan_ptsp") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+
+        
     }
     public function layanan_post(){
         $data = [
@@ -246,25 +270,52 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp01
     public function ptsp01_get(){
-        $data = $this->db->get("ptsp01") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp01") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp01") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+
     }
     public function ptsp01_post(){
         $data = [
@@ -294,25 +345,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp02
     public function ptsp02_get(){
-        $data = $this->db->get("ptsp02") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp02") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp02") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+
     }
     public function ptsp02_post(){
         $data = [
@@ -343,25 +420,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp03
     public function ptsp03_get(){
-        $data = $this->db->get("ptsp03") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp03") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp03") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp03_post(){
         $data = [
@@ -384,25 +487,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp04
     public function ptsp04_get(){
-        $data = $this->db->get("ptsp04") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp04") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp04") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp04_post(){
         $data = [
@@ -425,25 +554,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp05
     public function ptsp05_get(){
-        $data = $this->db->get("ptsp05") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp05") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp05") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp05_post(){
         $data = [
@@ -474,25 +629,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp06
     public function ptsp06_get(){
-        $data = $this->db->get("ptsp06") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp06") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp06") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp06_post(){
         $data = [
@@ -524,25 +705,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp07
     public function ptsp07_get(){
-        $data = $this->db->get("ptsp07") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp07") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp07") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp07_post(){
         $data = [
@@ -573,25 +780,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp08
     public function ptsp08_get(){
-        $data = $this->db->get("ptsp08") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp08") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp08") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp08_post(){
         $data = [
@@ -626,25 +859,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp09
     public function ptsp09_get(){
-        $data = $this->db->get("ptsp09") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){ 
+            $data = $this->db->get("ptsp09") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp)); 
+            $data = $this->db->get("ptsp09") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+       
     }
     public function ptsp09_post(){
         $data = [
@@ -679,25 +938,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp10
     public function ptsp10_get(){
-        $data = $this->db->get("ptsp10") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp10") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp10") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp10_post(){
         $data = [
@@ -732,25 +1017,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp11
     public function ptsp11_get(){
-        $data = $this->db->get("ptsp11") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp11") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp11") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp11_post(){
         $data = [
@@ -784,25 +1095,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp12
     public function ptsp12_get(){
-        $data = $this->db->get("ptsp12") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp12") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp12") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp12_post(){
         $data = [
@@ -829,25 +1166,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp13
     public function ptsp13_get(){
-        $data = $this->db->get("ptsp13") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp13") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp13") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp13_post(){
         $data = [
@@ -878,25 +1241,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp14
     public function ptsp14_get(){
-        $data = $this->db->get("ptsp14") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp14") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp14") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp14_post(){
         $data = [
@@ -927,25 +1316,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp15
     public function ptsp15_get(){
-        $data = $this->db->get("ptsp15") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp15") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp15") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp15_post(){
         $data = [
@@ -973,25 +1388,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp16
     public function ptsp16_get(){
-        $data = $this->db->get("ptsp16") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp16") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp16") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp16_post(){
         $data = [
@@ -1020,25 +1461,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp17
     public function ptsp17_get(){
-        $data = $this->db->get("ptsp17") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){ 
+            $data = $this->db->get("ptsp17") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp)); 
+            $data = $this->db->get("ptsp17") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+       
     }
     public function ptsp17_post(){
         $data = [
@@ -1075,25 +1542,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp18
     public function ptsp18_get(){
-        $data = $this->db->get("ptsp18") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp18") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp18") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp18_post(){
         $data = [
@@ -1122,25 +1615,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp19
     public function ptsp19_get(){
-        $data = $this->db->get("ptsp19") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){ 
+            $data = $this->db->get("ptsp19") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp)); 
+            $data = $this->db->get("ptsp19") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+       
     }
     public function ptsp19_post(){
         $data = [
@@ -1168,25 +1687,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp20
     public function ptsp20_get(){
-        $data = $this->db->get("ptsp20") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp20") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp20") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp20_post(){
         $data = [
@@ -1215,25 +1760,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp21
     public function ptsp21_get(){
-        $data = $this->db->get("ptsp21") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp21") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp21") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp21_post(){
         $data = [
@@ -1260,25 +1831,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp22
     public function ptsp22_get(){
-        $data = $this->db->get("ptsp22") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp22") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp22") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp22_post(){
         $data = [
@@ -1303,25 +1900,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp23
     public function ptsp23_get(){
-        $data = $this->db->get("ptsp23") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp23") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp23") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp23_post(){
         $data = [
@@ -1355,25 +1978,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp24
     public function ptsp24_get(){
-        $data = $this->db->get("ptsp24") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp24") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp24") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp24_post(){
         $data = [
@@ -1400,25 +2049,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp25
     public function ptsp25_get(){
-        $data = $this->db->get("ptsp25") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp25") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp25") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp25_post(){
         $data = [
@@ -1443,25 +2118,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp26
     public function ptsp26_get(){
-        $data = $this->db->get("ptsp26") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp26") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp26") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp26_post(){
         $data = [
@@ -1486,25 +2187,51 @@ class Data extends REST_Controller {
 
     // Rest Api ptsp27
     public function ptsp27_get(){
-        $data = $this->db->get("ptsp27") -> result_array();
-        if ($data){
-            $this->response([
-                'meta' => [
-                    'success' => true,
-                    'message' => "Successfully",
-                    'code' => 200,
-                ],
-                'data' => $data
-            ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
-        }else{
-            $this->response([
-                'meta' => [
-                    'success' => false,
-                    'message' => "PIN Transaksi Tidak Sesuai",
-                    'code' => 200,
-                ],
-            ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+        
+        $id_permohonan_ptsp = $this->get('id_permohonan_ptsp');
+        if($id_permohonan_ptsp === NULL){
+            $data = $this->db->get("ptsp27") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
+        } else {
+            $this->db->where(array("id_permohonan_ptsp"=>$id_permohonan_ptsp));
+            $data = $this->db->get("ptsp27") -> result_array();
+            if ($data){
+                $this->response([
+                    'meta' => [
+                        'success' => true,
+                        'message' => "Successfully",
+                        'code' => 200,
+                    ],
+                    'data' => $data
+                ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            }else{
+                $this->response([
+                    'meta' => [
+                        'success' => false,
+                        'message' => "PIN Transaksi Tidak Sesuai",
+                        'code' => 200,
+                    ],
+                ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
+            }
         }
+        
     }
     public function ptsp27_post(){
         $data = [
@@ -1513,8 +2240,7 @@ class Data extends REST_Controller {
             'alamat' => $this->post('alamat'),
             'pekerjaan' => $this->post('pekerjaan'),
             'no_hp' => $this->post('no_hp'),
-            'tujuan_permohonan_suket_peng' => $this->post('tujuan_permohonan_suket_peng'),
-            'hasilan' => $this->post('hasilan'),
+            'tujuan_permohonan_suket_penghasilan' => $this->post('tujuan_permohonan_suket_penghasilan'),
             'srt_permohonan' => $this->post('srt_permohonan')
         ];
         $this->db->insert("ptsp27",$data);

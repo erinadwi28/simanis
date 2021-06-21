@@ -262,12 +262,12 @@
 								<?php } ?>
 							</tbody>
 						</table>
-						<?php if ($detail->status == 'Belum Tuntas') { ?>
+						<?php if ($detail->status == 'Belum Tuntas' || $detail->status == 'Pending') { ?>
 							<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen disamping</em>
 						<?php } ?>
 					</div>
 
-					<?php if ($detail->status == 'Belum Tuntas') { ?>
+					<?php if ($detail->status == 'Belum Tuntas' || $detail->status == 'Pending') { ?>
 						<div class="card-footer">
 							<div class="float-right">
 								<a href="<?= base_url() ?>dashboard/form_ubah_ptsp15/<?= $detail->id_permohonan_ptsp ?>">
