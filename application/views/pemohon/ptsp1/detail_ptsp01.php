@@ -49,7 +49,7 @@
 						</center>
 					</div>
 
-					<?php if ($detail->status == 'Belum Tuntas') { ?>
+					<?php if ($detail->status == 'Belum Tuntas' || $detail->status == 'Pending') { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp01/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp01_1">
 								<div class="form-group">
@@ -272,7 +272,7 @@
 						</table>
 					</div>
 
-					<?php if ($detail->status == 'Belum Tuntas') { ?>
+					<?php if ($detail->status == 'Belum Tuntas' || $detail->status == 'Pending') { ?>
 						<div class="card-footer">
 							<div class="float-right">
 								<a href="<?= base_url() ?>dashboard/form_ubah_ptsp01/<?= $detail->id_permohonan_ptsp ?>">
