@@ -16,9 +16,7 @@
 
 	<!-- Custom fonts for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/vendor/fontawesome-free/css/all.min.css') ?>" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link rel="stylesheet" href="<?= base_url('../assets/dashboard/css/sb-admin-2.min.css') ?>" />
 	<style>
@@ -175,36 +173,35 @@
 			<div class="col sertif" style="padding: 0;">
 				<div class="card shadow mb-4">
 					<div class="card-body">
-						<div class="card-body"> 
-						<?php foreach ($detail_ptsp as $detail) { ?>
-							<div class="badan_surat" style="margin-top: 20px;">
-								<center>
-									<div class="kepala_Sertifikat">
-										<object data="" type="image">
-											<img class="logosurat" alt="logo_kop_surat"
-												src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag.png') ?>">
-										</object>
-										<h5 style="margin-top: 10px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA <br>
-												KANTOR KABUPATEN KLATEN </b></h5>
-										<p>Jalan Ronggowarsito Klaten <br>
-											Telepon/Faksimili (0272)321154 <br>
-											Website : http://klaten.kemenag.go.id</p>
+						<div class="card-body">
+							<?php foreach ($detail_ptsp as $detail) { ?>
+								<div class="badan_surat" style="margin-top: 20px;">
+									<center>
+										<div class="kepala_Sertifikat">
+											<object data="" type="image">
+												<img class="logosurat" alt="logo_kop_surat" src="<?= base_url('../assets/dashboard/images/frontoffice/ptsp/logo_kemenag.png') ?>">
+											</object>
+											<h5 style="margin-top: 10px;"><b>KEMENTERIAN AGAMA REPUBLIK INDONESIA <br>
+													KANTOR KABUPATEN KLATEN </b></h5>
+											<p>Jalan Ronggowarsito Klaten <br>
+												Telepon/Faksimili (0272)321154 <br>
+												Website : http://klaten.kemenag.go.id</p>
+										</div>
+									</center>
+									<center>
+										<div class="no_surat">
+											<h6><b>PIAGAM TANDA DAFTAR</b> <br>
+												<b>LEMBAGA PENDIDIKAN AL-QUR'AN (LPQ)</b> <br>
+												<b> Nomor:<?= $detail->no_surat ?></b>
+											</h6>
+										</div>
+									</center>
+									<div class="isi_surat">
+										Diberikan kepada :
 									</div>
-								</center>
-								<center>
-									<div class="no_surat">
-										<h6><b>PIAGAM TANDA DAFTAR</b> <br>
-											<b>LEMBAGA PENDIDIKAN AL-QUR'AN (LPQ)</b> <br>
-											<b> Nomor:<?= $detail->no_surat ?></b>
-										</h6>
-									</div>
-								</center>
-								<div class="isi_surat">
-									Diberikan kepada :
-								</div>
-								<div class="identitas">
-									<table>
-										<tbody>
+									<div class="identitas">
+										<table>
+											<tbody>
 												<tr>
 													<td>Nama LPQ</td>
 													<td> </td>
@@ -283,46 +280,46 @@
 													<td> </td>
 													<td>:</td>
 													<td> </td>
-													<td><?= format_indo(date($detail->berlaku)) ?></td>
+													<td><?= $detail->berlaku ?></td>
 												</tr>
 											</tbody>
-									</table>
-								</div>
-								<div class="isi_surat">
-									<table border="1" style="margin-left: 20px;">
-										<tr>
-											<p>Dengan Nomor Statistik Pendidikan Al-Qur'an : <br>
+										</table>
+									</div>
+									<div class="isi_surat">
+										<table border="1" style="margin-left: 20px;">
+											<tr>
+												<p>Dengan Nomor Statistik Pendidikan Al-Qur'an : <br>
+													<?php
+													$str = $detail->nomor_statistik;
+													$arr = str_split($str);
+													foreach ($arr as $value) {
+														echo "<td> $value </td> ";
+													}
+
+													?>
+												</p>
+											</tr>
+										</table>
+									</div>
+									<div class="row">
+										<div class="col">
+											<div class="ttd_surat" style="margin-left: 350px;">
+												<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+												<p>Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?> <br>
+												<?php } ?>
 												<?php
-											$str = $detail->nomor_statistik;
-											$arr = str_split($str);
-											foreach ($arr as $value) {
-												echo "<td> $value </td> ";
-											}
+												foreach ($data_kepala as $detail) { ?>
+													<b>a.n. MENTERI AGAMA</b> <br>
+													Kepala Kantor Kementerian Agama <br>
+													Kabupaten Klaten<br> <br><br>
+													<b><?= $detail->nama; ?></b>
+												<?php } ?>
 
-											?>
-											</p>
-										</tr>
-									</table>
-								</div>
-								<div class="row">
-									<div class="col">
-										<div class="ttd_surat" style="margin-left: 350px;">
-											<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-											<p>Klaten, <?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?> <br> 
-											<?php } ?>
-											<?php
-											foreach ($data_kepala as $detail) { ?>
-												<b>a.n. MENTERI AGAMA</b> <br>
-												Kepala Kantor Kementerian Agama <br>
-												Kabupaten Klaten<br> <br><br>
-												<b><?= $detail->nama; ?></b>
-											<?php } ?>
-
-											</p>
+												</p>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -334,135 +331,137 @@
 			<div class="col-md-2">
 			</div>
 			<div class="col-md-8">
-			<?php foreach ($detail_ptsp as $detail) { ?>
-				<div class="card shadow mb-4">
-					<div class="card-body">
-						<div class="no_surat">
-							<center>
-								<p><b>KEPUTUSAN KEPALA KANTOR KEMENTERIAN AGAMA <br>
-										KABUPATEN KLATEN</b><br>
-									<b>Nomor : <?= $detail->no_surat_keterangan ; ?> <br>
-										TENTANG <br>
-										PENETAPAN TANDA DAFTAR LPQ <?= $detail->nama_lpq ; ?>
-										<br>
-										KEPALA KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN
-									</b>
-								</p>
-							</center>
-						</div>
+				<?php foreach ($detail_ptsp as $detail) { ?>
+					<div class="card shadow mb-4">
+						<div class="card-body">
+							<div class="no_surat">
+								<center>
+									<p><b>KEPUTUSAN KEPALA KANTOR KEMENTERIAN AGAMA <br>
+											KABUPATEN KLATEN</b><br>
+										<b>Nomor : <?= $detail->no_surat_keterangan; ?> <br>
+											TENTANG <br>
+											PENETAPAN TANDA DAFTAR LPQ <?= $detail->nama_lpq; ?>
+											<br>
+											KEPALA KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN
+										</b>
+									</p>
+								</center>
+							</div>
 
-						<div class="identitassuket">
-							<table width="660px" class="table_suket">
-								<tbody>
-									<tr>
-										<td width="110px" valign="top">Menimbang :</td>
-										<td>
-											<ol type="a">
-												<li>bahwa dalam rangka meningkatkan mutu Lembaga Pendidikan Al-Quran,
-													perlu penetapan Tanda Daftar Lembaga Pendidikan Al-Quran;
-												</li>
-												<li>bahwa lembaga yang tercantum di bawah ini telah memenuhi persyaratan
-													administratif dan teknis, kompetensi pendidik dan tenaga pendidik,
-													dan ketersediaan sarana dan prasarana;</li>
-												<li>bahwa berdasarkan pertimbangan sebagaimana dimaksud dalam huruf a
-													dan b diatas, perlu menetapkan Keputusan Kepala Kantor Kementerian
-													Agama Kabupaten Klaten tentang pemberian Tanda Daftar Lembaga
-													<?= $detail->nama_lpq ; ?></li>
-											</ol>
-										</td>
-									</tr>
-									<tr>
-										<td valign="top">Mengingat :</td>
-										<td>
-											<ol type="1">
-												<li>Undang-Undang Nomor 20 Tahun 2003 tentang Sistem Pendidikan Nasional (Lembaran Negara Republik Indonesia Tahun 2003 Nomor 78, Tambahan Lembaran Negara Republik Indonesia Nomor 4301);</li>
-												<li>Undang-Undang Nomor 14 Tahun 2005 tentang Guru dan Dosen (Lembaran Negara Republik Indonesia Tahun 2005 Nomor 157, Tambahan Lembaran Negara Republik Indonesia Nomor 4586);</li>
-												<li>Undang-Undang Nomor 30 Tahun 2014 tentang Administrasi Pemerintahan (Lembaran Negara Republik Indonesia Tahun 2014 Nomor 292, Tambahan Lembaran Negara Republik Indonesia Nomor 5601);</li>
-												<li>Undang-Undang Nomor 18 Tahun 2019 tentang Pesantren (Lembaran Negara Republik Indonesia Tahun 2019 Nomor 191, Tambahan Lembaran Negara Republik Indonesia Nomor 6406);</li>
-												<li>Peraturan Pemerintah Nomor 19 Tahun 2005 tentang Standart Nasional Pendidikan (Lembaran Negara Republik Indonesia Tahun 2005 Nomor 41, Tambahan Lembaran Negara Republik Indonesia Nomor 4496) sebagaimana telah beberapa kali diubah terakhir dengan Peraturan Pemerintah Nomor 13 Tahun 2015 tentang Perubahan Kedua atas Peraturan Pemerintah Nomor 19 Tahun 2005 tentang Standart Nasional Pendidikan (Lembaran Negara Republik Indonesia Tahun 2015 Nomor 45, Tambahan Lembaran Negara Republik Indonesia Nomor 5670);</li>
-												<li>Peraturan Pemerintah Nomor 55 Tahun 2007 tentang Pendidikan Agama dan Pendidikan Keagamaan (Lembaran Negara Republik Indonesia Tahun 2007 Nomor 124, Tambahan Lembaran Negara Republik Indonesia Nomor 4769); </li>
-												<li>Peraturan Pemerintah Nomor 37 Tahun 2009 tentang Dosen (Lembaran Negara Republik Indonesia Tahun 2009 Nomor 76, Tambahan Lembaran Negara Republik Indonesia Nomor 5007);</li>
-												<li>Peraturan Presiden Nomor 7 Tahun 2015 tentang Organisasi Kementerian Negara (Lembaran Negara Republik Indonesia Tahun 2015 Nomor 8);</li>
-												<li>Peraturan Presiden Nomor 83 Tahun 2015 tentang Kementerian Agama (Lembaran Negara Republik Indonesia Tahun 2015 Nomor 168);</li>
-												<li>Peraturan Menteri Agama Nomor 19 Tahun 2019 tentang Organisasi dan Tata Kerja Instansi Vertikal Kementerian Agama (Berita Negara Republik Indonesia Tahun 2019 Nomor 1115);</li>
-												<li>Peraturan Menteri Agama Nomor 13 Tahun 2014 tentang Pendidikan Keagamaan Islam (Berita Negara Republik Indonesia Tahun 2014 Nomor 822);</li>
-												<li>Peraturan Menteri Agama Nomor 42 Tahun 2016 tentang Organisasi dan Tata Kerja Kementerian Agama (Berita Negara Republik Indonesia Tahun 2016 Nomor 1495).</li>
-											</ol>
-										</td>
-									</tr>
-									<tr>
-										<td valign="top">Memperhatikan :</td>
-										<td>
-											<ol type="1">
-												<li>Berita Acara Verifikasi Dokumen Pendaftaran Lembaga <?= $detail->nama_lpq ; ?> Nomor : <?= $detail->no_berita_acara_verifikasi_dok ; ?> Tanggal <?= format_indo(date($detail->tgl_berita_acara_verifikasi_dok)); ?> </li>
-												<li>Berita Acara Verifikasi Lapangan Pendaftaran Lembaga <?= $detail->nama_lpq ; ?> Nomor : <?= $detail->no_berita_acara_verifikasi_lap ; ?> Tanggal <?= format_indo(date($detail->tgl_berita_acara_verifikasi_lap)); ?> </li>
-												<li>Berita Acara Rapat Pertimbangan Pemberian Tanda Daftar Lembaga Nomor : <?= $detail->no_berita_acara_rapat ; ?> Tanggal <?= format_indo(date($detail->tgl_berita_acara_rapat)); ?> </li>
-											</ol>
-										</td>
-									</tr>
-									<center><tr>
-									<td style="margin-left:400px">MEMUTUSKAN</td>
-									</tr></center>
-									
-									
-									<tr>
-										<td valign="top">Menetapkan :</td>
-										<td>KEPUTUSAN KEPALA KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN TENTANG PEMBERIAN TANDA DAFTAR LEMBAGA <?= $detail->nama_lpq ; ?>
-										</td>
-									</tr>
-									<tr>
-										<td valign="top">KESATU :</td>
-										<td>Memberikan Tanda Daftar Lembaga Pendidikan Al Quran :
-										<ol>
-										<li>Nama Lembaga &nbsp;&nbsp;&nbsp; : <?= $detail->nama_lpq ; ?>
-										</li>
-										<li>Nomor Statistik &nbsp;&nbsp;&nbsp; : <?= $detail->nomor_statistik ; ?>
-										</li>
-										<li>Alamat Lembaga &nbsp; : <?= $detail->alamat ; ?>
-										</li>
-										</ol>
-										</td>
-									</tr>
-									<tr>
-										<td valign="top">KEDUA :</td>
-										<td>Tanda Daftar ini diberikan untuk jangka waktu lima (5) tahun terhitung sejak tahun pelajaran setelah ditetapkan keputusan ini dan selanjutnya dapat diperpanjang lagi sesuai dengan ketentuan perundang-undangan.
-										</td>
-									</tr>
-									<tr>
-										<td valign="top">KETIGA :</td>
-										<td>Penyelenggara wajib menyampaikan perkembangan pendidikan sekurang-kurangnya satu (1) tahun ajaran kepada Kepala Kantor Kementerian Agama Kabupaten Klaten.</td>
-									</tr>
-									<tr>
-										<td valign="top">KEEMPAT :</td>
-										<td>Keputusan ini berlaku sejak tanggal ditetapkan dengan ketentuan akan diperbaiki sebagaimana mestinya, jika dikemudian hari terdapat kekeliruan.</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<div class="row">
-							<div class="col">
+							<div class="identitassuket">
+								<table width="660px" class="table_suket">
+									<tbody>
+										<tr>
+											<td width="110px" valign="top">Menimbang :</td>
+											<td>
+												<ol type="a">
+													<li>bahwa dalam rangka meningkatkan mutu Lembaga Pendidikan Al-Quran,
+														perlu penetapan Tanda Daftar Lembaga Pendidikan Al-Quran;
+													</li>
+													<li>bahwa lembaga yang tercantum di bawah ini telah memenuhi persyaratan
+														administratif dan teknis, kompetensi pendidik dan tenaga pendidik,
+														dan ketersediaan sarana dan prasarana;</li>
+													<li>bahwa berdasarkan pertimbangan sebagaimana dimaksud dalam huruf a
+														dan b diatas, perlu menetapkan Keputusan Kepala Kantor Kementerian
+														Agama Kabupaten Klaten tentang pemberian Tanda Daftar Lembaga
+														<?= $detail->nama_lpq; ?></li>
+												</ol>
+											</td>
+										</tr>
+										<tr>
+											<td valign="top">Mengingat :</td>
+											<td>
+												<ol type="1">
+													<li>Undang-Undang Nomor 20 Tahun 2003 tentang Sistem Pendidikan Nasional (Lembaran Negara Republik Indonesia Tahun 2003 Nomor 78, Tambahan Lembaran Negara Republik Indonesia Nomor 4301);</li>
+													<li>Undang-Undang Nomor 14 Tahun 2005 tentang Guru dan Dosen (Lembaran Negara Republik Indonesia Tahun 2005 Nomor 157, Tambahan Lembaran Negara Republik Indonesia Nomor 4586);</li>
+													<li>Undang-Undang Nomor 30 Tahun 2014 tentang Administrasi Pemerintahan (Lembaran Negara Republik Indonesia Tahun 2014 Nomor 292, Tambahan Lembaran Negara Republik Indonesia Nomor 5601);</li>
+													<li>Undang-Undang Nomor 18 Tahun 2019 tentang Pesantren (Lembaran Negara Republik Indonesia Tahun 2019 Nomor 191, Tambahan Lembaran Negara Republik Indonesia Nomor 6406);</li>
+													<li>Peraturan Pemerintah Nomor 19 Tahun 2005 tentang Standart Nasional Pendidikan (Lembaran Negara Republik Indonesia Tahun 2005 Nomor 41, Tambahan Lembaran Negara Republik Indonesia Nomor 4496) sebagaimana telah beberapa kali diubah terakhir dengan Peraturan Pemerintah Nomor 13 Tahun 2015 tentang Perubahan Kedua atas Peraturan Pemerintah Nomor 19 Tahun 2005 tentang Standart Nasional Pendidikan (Lembaran Negara Republik Indonesia Tahun 2015 Nomor 45, Tambahan Lembaran Negara Republik Indonesia Nomor 5670);</li>
+													<li>Peraturan Pemerintah Nomor 55 Tahun 2007 tentang Pendidikan Agama dan Pendidikan Keagamaan (Lembaran Negara Republik Indonesia Tahun 2007 Nomor 124, Tambahan Lembaran Negara Republik Indonesia Nomor 4769); </li>
+													<li>Peraturan Pemerintah Nomor 37 Tahun 2009 tentang Dosen (Lembaran Negara Republik Indonesia Tahun 2009 Nomor 76, Tambahan Lembaran Negara Republik Indonesia Nomor 5007);</li>
+													<li>Peraturan Presiden Nomor 7 Tahun 2015 tentang Organisasi Kementerian Negara (Lembaran Negara Republik Indonesia Tahun 2015 Nomor 8);</li>
+													<li>Peraturan Presiden Nomor 83 Tahun 2015 tentang Kementerian Agama (Lembaran Negara Republik Indonesia Tahun 2015 Nomor 168);</li>
+													<li>Peraturan Menteri Agama Nomor 19 Tahun 2019 tentang Organisasi dan Tata Kerja Instansi Vertikal Kementerian Agama (Berita Negara Republik Indonesia Tahun 2019 Nomor 1115);</li>
+													<li>Peraturan Menteri Agama Nomor 13 Tahun 2014 tentang Pendidikan Keagamaan Islam (Berita Negara Republik Indonesia Tahun 2014 Nomor 822);</li>
+													<li>Peraturan Menteri Agama Nomor 42 Tahun 2016 tentang Organisasi dan Tata Kerja Kementerian Agama (Berita Negara Republik Indonesia Tahun 2016 Nomor 1495).</li>
+												</ol>
+											</td>
+										</tr>
+										<tr>
+											<td valign="top">Memperhatikan :</td>
+											<td>
+												<ol type="1">
+													<li>Berita Acara Verifikasi Dokumen Pendaftaran Lembaga <?= $detail->nama_lpq; ?> Nomor : <?= $detail->no_berita_acara_verifikasi_dok; ?> Tanggal <?= format_indo(date($detail->tgl_berita_acara_verifikasi_dok)); ?> </li>
+													<li>Berita Acara Verifikasi Lapangan Pendaftaran Lembaga <?= $detail->nama_lpq; ?> Nomor : <?= $detail->no_berita_acara_verifikasi_lap; ?> Tanggal <?= format_indo(date($detail->tgl_berita_acara_verifikasi_lap)); ?> </li>
+													<li>Berita Acara Rapat Pertimbangan Pemberian Tanda Daftar Lembaga Nomor : <?= $detail->no_berita_acara_rapat; ?> Tanggal <?= format_indo(date($detail->tgl_berita_acara_rapat)); ?> </li>
+												</ol>
+											</td>
+										</tr>
+										<center>
+											<tr>
+												<td style="margin-left:400px">MEMUTUSKAN</td>
+											</tr>
+										</center>
 
-								<div class="ttd_surat_2" style="margin-left: 450px;">
-									<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
-									Ditetapkan di :Klaten<br>
-									Pada Tanggal  :<?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
+
+										<tr>
+											<td valign="top">Menetapkan :</td>
+											<td>KEPUTUSAN KEPALA KANTOR KEMENTERIAN AGAMA KABUPATEN KLATEN TENTANG PEMBERIAN TANDA DAFTAR LEMBAGA <?= $detail->nama_lpq; ?>
+											</td>
+										</tr>
+										<tr>
+											<td valign="top">KESATU :</td>
+											<td>Memberikan Tanda Daftar Lembaga Pendidikan Al Quran :
+												<ol>
+													<li>Nama Lembaga &nbsp;&nbsp;&nbsp; : <?= $detail->nama_lpq; ?>
+													</li>
+													<li>Nomor Statistik &nbsp;&nbsp;&nbsp; : <?= $detail->nomor_statistik; ?>
+													</li>
+													<li>Alamat Lembaga &nbsp; : <?= $detail->alamat; ?>
+													</li>
+												</ol>
+											</td>
+										</tr>
+										<tr>
+											<td valign="top">KEDUA :</td>
+											<td>Tanda Daftar ini diberikan untuk jangka waktu lima (5) tahun terhitung sejak tahun pelajaran setelah ditetapkan keputusan ini dan selanjutnya dapat diperpanjang lagi sesuai dengan ketentuan perundang-undangan.
+											</td>
+										</tr>
+										<tr>
+											<td valign="top">KETIGA :</td>
+											<td>Penyelenggara wajib menyampaikan perkembangan pendidikan sekurang-kurangnya satu (1) tahun ajaran kepada Kepala Kantor Kementerian Agama Kabupaten Klaten.</td>
+										</tr>
+										<tr>
+											<td valign="top">KEEMPAT :</td>
+											<td>Keputusan ini berlaku sejak tanggal ditetapkan dengan ketentuan akan diperbaiki sebagaimana mestinya, jika dikemudian hari terdapat kekeliruan.</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="row">
+								<div class="col">
+
+									<div class="ttd_surat_2" style="margin-left: 450px;">
+										<!-- untuk tanggal persetujuan semetrara statis, nanti ditambahkan filed di database dulu -->
+										Ditetapkan di :Klaten<br>
+										Pada Tanggal :<?= format_indo(date($detail->tgl_persetujuan_kasubag)); ?><br>
 									<?php } ?>
 									<?php
-											foreach ($data_kepala as $detail) { ?>
-									a.n. Menteri Agama <br>
-									Kepala Kantor Kementerian Agama 
-									Kabupaten Klaten <br> <br> <br>
-								</div>
+									foreach ($data_kepala as $detail) { ?>
+										a.n. Menteri Agama <br>
+										Kepala Kantor Kementerian Agama
+										Kabupaten Klaten <br> <br> <br>
+									</div>
 
-								<div class="ttd_surat_2" style="margin-left: 450px;"> <br>
-									<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
-									<?= $detail->nama ; ?>
+									<div class="ttd_surat_2" style="margin-left: 450px;"> <br>
+										<!-- untuk nama dan nip kepala semetrara statis, nanti ditambahkan filed di database dulu -->
+										<?= $detail->nama; ?>
 									<?php } ?>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 			</div>
 		</div>
 	</div>
