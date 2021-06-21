@@ -424,7 +424,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
     }
 
@@ -442,7 +442,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
     }
 
@@ -478,7 +478,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('fc_dokumen' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
     }
 
@@ -496,7 +496,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->fc_ktp != null && strlen($item->fc_ktp) > 50) {
             $photo = $item->fc_ktp;
@@ -507,7 +507,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('fc_ktp' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->srt_pernyataan != null && strlen($item->srt_pernyataan) > 50) {
             $photo = $item->srt_pernyataan;
@@ -518,7 +518,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_pernyataan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->bukti_pelunasan != null && strlen($item->bukti_pelunasan) > 50) {
             $photo = $item->bukti_pelunasan;
@@ -529,7 +529,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('bukti_pelunasan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
     }
 
@@ -547,7 +547,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->fc_sk_ijin_operasi != null && strlen($item->fc_sk_ijin_operasi) > 50) {
             $photo = $item->fc_sk_ijin_operasi;
@@ -558,7 +558,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('fc_sk_ijin_operasi' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->fc_ktp != null && strlen($item->fc_ktp) > 50) {
             $photo = $item->fc_ktp;
@@ -569,7 +569,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('fc_ktp' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->fc_kk != null && strlen($item->fc_kk) > 50) {
             $photo = $item->fc_kk;
@@ -580,7 +580,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('fc_kk' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->fc_dokumen != null && strlen($item->fc_dokumen) > 50) {
             $photo = $item->fc_dokumen;
@@ -591,7 +591,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('fc_dokumen' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
     }
 
@@ -609,7 +609,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->akte_notaris != null && strlen($item->akte_notaris) > 50) {
             $photo = $item->akte_notaris;
@@ -620,7 +620,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('akte_notaris' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->foto_kantor != null && strlen($item->foto_kantor) > 50) {
             $photo = $item->foto_kantor;
@@ -631,7 +631,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('foto_kantor' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->susunan_pengurus != null && strlen($item->susunan_pengurus) > 50) {
             $photo = $item->susunan_pengurus;
@@ -642,7 +642,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('susunan_pengurus' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->sertifikat_pembimbing != null && strlen($item->sertifikat_pembimbing) > 50) {
             $photo = $item->sertifikat_pembimbing;
@@ -653,7 +653,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('sertifikat_pembimbing' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->program_manasik != null && strlen($item->program_manasik) > 50) {
             $photo = $item->program_manasik;
@@ -664,7 +664,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('program_manasik' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
     }
 
@@ -682,7 +682,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->akte_notaris != null && strlen($item->akte_notaris) > 50) {
             $photo = $item->akte_notaris;
@@ -693,7 +693,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('akte_notaris' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->foto_kantor != null && strlen($item->foto_kantor) > 50) {
             $photo = $item->foto_kantor;
@@ -704,7 +704,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('foto_kantor' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->susunan_pengurus != null && strlen($item->susunan_pengurus) > 50) {
             $photo = $item->susunan_pengurus;
@@ -715,7 +715,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('susunan_pengurus' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->sertifikat_pembimbing != null && strlen($item->sertifikat_pembimbing) > 50) {
             $photo = $item->sertifikat_pembimbing;
@@ -726,7 +726,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('sertifikat_pembimbing' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->program_manasik != null && strlen($item->program_manasik) > 50) {
             $photo = $item->program_manasik;
@@ -737,7 +737,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('program_manasik' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->laporan_bimbingan != null && strlen($item->laporan_bimbingan) > 50) {
             $photo = $item->laporan_bimbingan;
@@ -748,7 +748,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('laporan_bimbingan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->sertifikat_akreditasi != null && strlen($item->sertifikat_akreditasi) > 50) {
             $photo = $item->sertifikat_akreditasi;
@@ -759,7 +759,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('sertifikat_akreditasi' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->sk_pendirian != null && strlen($item->sk_pendirian) > 50) {
             $photo = $item->sk_pendirian;
@@ -770,7 +770,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('sk_pendirian' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->rincian_penggunaan_biaya_bimbingan != null && strlen($item->rincian_penggunaan_biaya_bimbingan) > 50) {
             $photo = $item->rincian_penggunaan_biaya_bimbingan;
@@ -781,7 +781,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('rincian_penggunaan_biaya_bimbingan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
     }
 
@@ -799,7 +799,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->akte_notaris != null && strlen($item->akte_notaris) > 50) {
             $photo = $item->akte_notaris;
@@ -810,7 +810,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('akte_notaris' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->izin_usaha != null && strlen($item->izin_usaha) > 50) {
             $photo = $item->izin_usaha;
@@ -821,7 +821,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('izin_usaha' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->skud != null && strlen($item->skud) > 50) {
             $photo = $item->skud;
@@ -832,7 +832,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('skud' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->npwp != null && strlen($item->npwp) > 50) {
             $photo = $item->npwp;
@@ -843,7 +843,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('npwp' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->srt_rekomendasi_pemkab != null && strlen($item->srt_rekomendasi_pemkab) > 50) {
             $photo = $item->srt_rekomendasi_pemkab;
@@ -854,7 +854,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_rekomendasi_pemkab' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->laporan_keuangan != null && strlen($item->laporan_keuangan) > 50) {
             $photo = $item->laporan_keuangan;
@@ -865,7 +865,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('laporan_keuangan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->susunan_pengurus != null && strlen($item->susunan_pengurus) > 50) {
             $photo = $item->susunan_pengurus;
@@ -876,7 +876,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('susunan_pengurus' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->data_pemegang_saham != null && strlen($item->data_pemegang_saham) > 50) {
             $photo = $item->data_pemegang_saham;
@@ -887,7 +887,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('data_pemegang_saham' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
         if ($item->data_direksi_komisaris != null && strlen($item->data_direksi_komisaris) > 50) {
             $photo = $item->data_direksi_komisaris;
@@ -898,7 +898,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('data_direksi_komisaris' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
         }
     }
 
@@ -916,7 +916,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->sk != null && strlen($item->sk) > 50) {
             $photo = $item->sk;
@@ -927,7 +927,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('sk' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->akte_notaris != null && strlen($item->akte_notaris) > 50) {
             $photo = $item->akte_notaris;
@@ -938,7 +938,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('akte_notaris' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->izin_usaha != null && strlen($item->izin_usaha) > 50) {
             $photo = $item->izin_usaha;
@@ -949,7 +949,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('izin_usaha' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->skud != null && strlen($item->skud) > 50) {
             $photo = $item->skud;
@@ -960,7 +960,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('skud' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->npwp != null && strlen($item->npwp) > 50) {
             $photo = $item->npwp;
@@ -971,7 +971,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('npwp' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->srt_rekomendasi_pemkab != null && strlen($item->srt_rekomendasi_pemkab) > 50) {
             $photo = $item->srt_rekomendasi_pemkab;
@@ -982,7 +982,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_rekomendasi_pemkab' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->laporan_keuangan != null && strlen($item->laporan_keuangan) > 50) {
             $photo = $item->laporan_keuangan;
@@ -993,7 +993,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('laporan_keuangan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->susunan_pengurus != null && strlen($item->susunan_pengurus) > 50) {
             $photo = $item->susunan_pengurus;
@@ -1004,7 +1004,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('susunan_pengurus' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->bukti_pemberangkatan != null && strlen($item->bukti_pemberangkatan) > 50) {
             $photo = $item->bukti_pemberangkatan;
@@ -1015,7 +1015,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('bukti_pemberangkatan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
     }
 
@@ -1033,7 +1033,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_rekomendasi' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->srt_penerimaan != null && strlen($item->srt_penerimaan) > 50) {
             $photo = $item->srt_penerimaan;
@@ -1044,7 +1044,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_penerimaan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->raport != null && strlen($item->raport) > 50) {
             $photo = $item->raport;
@@ -1055,7 +1055,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('raport' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
     }
 
@@ -1073,7 +1073,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('proposal_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
     }
 
@@ -1091,7 +1091,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->proposal != null && strlen($item->proposal) > 50) {
             $photo = $item->proposal;
@@ -1102,7 +1102,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('proposal' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
     }
 
@@ -1120,7 +1120,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('proposal_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
     }
 
@@ -1138,7 +1138,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('proposal_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
     }
 
@@ -1156,7 +1156,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->proposal != null && strlen($item->proposal) > 50) {
             $photo = $item->proposal;
@@ -1167,7 +1167,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('proposal' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
     }
 
@@ -1185,7 +1185,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->srt_persetujuan_sekolah_satmikal != null && strlen($item->srt_persetujuan_sekolah_satmikal) > 50) {
             $photo = $item->srt_persetujuan_sekolah_satmikal;
@@ -1196,7 +1196,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_persetujuan_sekolah_satmikal' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->srt_persetujuan_sekolah_tujuan != null && strlen($item->srt_persetujuan_sekolah_tujuan) > 50) {
             $photo = $item->srt_persetujuan_sekolah_tujuan;
@@ -1207,7 +1207,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_persetujuan_sekolah_tujuan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
     }
 
@@ -1225,7 +1225,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->proposal != null && strlen($item->proposal) > 50) {
             $photo = $item->proposal;
@@ -1236,7 +1236,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('proposal' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
     }
 
@@ -1254,7 +1254,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->jadwal_siaran != null && strlen($item->jadwal_siaran) > 50) {
             $photo = $item->jadwal_siaran;
@@ -1265,7 +1265,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('jadwal_siaran' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
     }
 
@@ -1283,7 +1283,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->srt_rek_kua != null && strlen($item->srt_rek_kua) > 50) {
             $photo = $item->srt_rek_kua;
@@ -1294,7 +1294,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_rek_kua' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
     }
 
@@ -1312,7 +1312,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
     }
 
@@ -1330,7 +1330,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->formulir != null && strlen($item->formulir) > 50) {
             $photo = $item->formulir;
@@ -1341,7 +1341,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('formulir' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
     }
 
@@ -1359,7 +1359,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
     }
 
@@ -1377,7 +1377,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
         if ($item->fc_dokumen != null && strlen($item->fc_dokumen) > 50) {
             $photo = $item->fc_dokumen;
@@ -1388,7 +1388,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('fc_dokumen' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
     }
 
@@ -1406,7 +1406,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
     }
 
@@ -1424,7 +1424,7 @@ class Dashboard extends CI_Controller
                 file_put_contents($directory, $entry);
             }
             $data_ptsp = array('srt_permohonan' => $fileName);
-            $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+            $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
         }
     }
 
