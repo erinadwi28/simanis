@@ -301,6 +301,7 @@ class Dashboard extends CI_Controller
         } elseif ($id_layanan == 26) {
             $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp26($id_permohonan_ptsp)->result();
         } elseif ($id_layanan == 27) {
+            $this->ConvertImage27($id_permohonan_ptsp,$id_layanan);
             $data_detail['detail_ptsp'] = $this->m_pemohon->get_detail_ptsp27($id_permohonan_ptsp)->result();
         }
 
@@ -363,6 +364,22 @@ class Dashboard extends CI_Controller
             $this->load->view('pemohon/ptsp27/detail_ptsp27', $data_detail);
         }
         $this->load->view('footer');
+    }
+
+    private function ConvertImage27($id_permohonan_ptsp,$id_layanan){
+        $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp'.$id_layanan)->row();
+        $fileName = "";
+        if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+            $photo = $item->srt_permohonan;
+            if (!empty($photo)) {
+                $entry = base64_decode($photo);
+                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                $directory = './assets/dashboard/pemohon/ptsp/ptsp27/srt_permohonan/' . $fileName;
+                file_put_contents($directory , $entry);
+            }
+        $data_ptsp = array('srt_permohonan' => $fileName);
+        $this->m_pemohon->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp'.$id_layanan);
+        }
     }
 
     //update status permohonan
