@@ -58,7 +58,7 @@
 							<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp20/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_srt_permohonan">
 								<div class="form-group">
 									<div class="input-group">
-										<div class="form-group-upload">
+										<div class="form-group-upload col-md-12">
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload">pilih file...</label>
 												<input type="file" class="custom-file-input" id="file-upload" name="srt_permohonan" value="<?= $detail->srt_permohonan ?>">
@@ -103,7 +103,7 @@
 							<form action="<?= base_url('dashboard/update_srt_rek_kua_ptsp20/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="form_upload_srt_rek_kua">
 								<div class="form-group">
 									<div class="input-group">
-										<div class="form-group-upload">
+										<div class="form-group-upload col-md-12">
 											<div class="custom-file">
 												<label class="custom-file-label" for="file-upload-2">pilih file...</label>
 												<input type="file" class="custom-file-input" id="file-upload-2" name="srt_rek_kua" value="<?= $detail->srt_rek_kua ?>">
