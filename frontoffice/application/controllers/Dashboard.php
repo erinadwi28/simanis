@@ -390,61 +390,86 @@ class Dashboard extends CI_Controller
                 $data_detail['detail_permohonan'] = $this->m_fo->get_data_permohonan($id_permohonan_ptsp, 'permohonan_ptsp')->result();
 
                 if ($id_layanan == 1) {
+                        $this->ConvertImage01($id_permohonan_ptsp, $id_layanan);
                         $data_detail['data_petugas_doa'] = $this->m_fo->data_petugas_doa($id_permohonan_ptsp)->result();
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp01')->result();
                 } elseif ($id_layanan == 2) {
+                        $this->ConvertImage02($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp02')->result();
                 } elseif ($id_layanan == 3) {
-                        $this->ConvertImage03($id_permohonan_ptsp,$id_layanan);
+                        $this->ConvertImage03($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp03')->result();
                 } elseif ($id_layanan == 4) {
+                        $this->ConvertImage04($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp04')->result();
                 } elseif ($id_layanan == 5) {
+                        $this->ConvertImage05($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp05')->result();
                 } elseif ($id_layanan == 6) {
+                        $this->ConvertImage06($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp06')->result();
                 } elseif ($id_layanan == 7) {
+                        $this->ConvertImage07($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp07')->result();
                 } elseif ($id_layanan == 8) {
+                        $this->ConvertImage08($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp08')->result();
                 } elseif ($id_layanan == 9) {
+                        $this->ConvertImage09($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp09')->result();
                 } elseif ($id_layanan == 10) {
+                        $this->ConvertImage10($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp10')->result();
                 } elseif ($id_layanan == 11) {
+                        $this->ConvertImage11($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp11')->result();
                 } elseif ($id_layanan == 12) {
+                        $this->ConvertImage12($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp12')->result();
                 } elseif ($id_layanan == 13) {
+                        $this->ConvertImage13($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp13')->result();
                 } elseif ($id_layanan == 14) {
+                        $this->ConvertImage14($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp14')->result();
                 } elseif ($id_layanan == 15) {
+                        $this->ConvertImage15($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp15')->result();
                 } elseif ($id_layanan == 16) {
+                        $this->ConvertImage16($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp16')->result();
                 } elseif ($id_layanan == 17) {
+                        $this->ConvertImage17($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp17')->result();
                 } elseif ($id_layanan == 18) {
+                        $this->ConvertImage18($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp18')->result();
                 } elseif ($id_layanan == 19) {
+                        $this->ConvertImage19($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp19')->result();
                 } elseif ($id_layanan == 20) {
+                        $this->ConvertImage20($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp20')->result();
                 } elseif ($id_layanan == 21) {
+                        $this->ConvertImage21($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp21')->result();
                 } elseif ($id_layanan == 22) {
+                        $this->ConvertImage22($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp22')->result();
                 } elseif ($id_layanan == 23) {
+                        $this->ConvertImage23($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp23')->result();
                 } elseif ($id_layanan == 24) {
+                        $this->ConvertImage24($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp24')->result();
                 } elseif ($id_layanan == 25) {
+                        $this->ConvertImage25($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp25')->result();
                 } elseif ($id_layanan == 26) {
+                        $this->ConvertImage26($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp26')->result();
                 } elseif ($id_layanan == 27) {
-                        $this->ConvertImage27($id_permohonan_ptsp,$id_layanan);
+                        $this->ConvertImage27($id_permohonan_ptsp, $id_layanan);
                         $data_detail['detail_ptsp'] = $this->m_fo->get_detail_ptsp($id_permohonan_ptsp, 'ptsp27')->result();
                 }
 
@@ -510,8 +535,46 @@ class Dashboard extends CI_Controller
                 $this->load->view('footer');
         }
 
-        private function ConvertImage03($id_permohonan_ptsp,$id_layanan){
-                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp0'.$id_layanan)->row();
+        //Convert Image PTSP01
+        private function ConvertImage01($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp0' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp01/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP02
+        private function ConvertImage02($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp0' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp02/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP03
+        private function ConvertImage03($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp0' . $id_layanan)->row();
                 $fileName = "";
                 if ($item->fc_ijazah != null && strlen($item->fc_ijazah) > 50) {
                         $photo = $item->fc_ijazah;
@@ -519,15 +582,931 @@ class Dashboard extends CI_Controller
                                 $entry = base64_decode($photo);
                                 $fileName = 'fc_ijazah-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
                                 $directory = '../assets/dashboard/pemohon/ptsp/ptsp03/fc_ijazah/' . $fileName;
-                                file_put_contents($directory , $entry);
+                                file_put_contents($directory, $entry);
                         }
-                $data_ptsp = array('fc_ijazah' => $fileName);
-                $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0'.$id_layanan);
+                        $data_ptsp = array('fc_ijazah' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
                 }
         }
 
-        private function ConvertImage27($id_permohonan_ptsp,$id_layanan){
-                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp'.$id_layanan)->row();
+        //Convert Image PTSP04
+        private function ConvertImage04($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp0' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->fc_dokumen != null && strlen($item->fc_dokumen) > 50) {
+                        $photo = $item->fc_dokumen;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'fc_dokumen-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp04/fc_dokumen/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('fc_dokumen' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP05
+        private function ConvertImage05($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp0' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp05/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->fc_ktp != null && strlen($item->fc_ktp) > 50) {
+                        $photo = $item->fc_ktp;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'fc_ktp-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp05/fc_ktp/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('fc_ktp' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->srt_pernyataan != null && strlen($item->srt_pernyataan) > 50) {
+                        $photo = $item->srt_pernyataan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_pernyataan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp05/srt_pernyataan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_pernyataan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->bukti_pelunasan != null && strlen($item->bukti_pelunasan) > 50) {
+                        $photo = $item->bukti_pelunasan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'bukti_pelunasan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp05/bukti_pelunasan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('bukti_pelunasan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP06
+        private function ConvertImage06($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp0' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp06/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->fc_sk_ijin_operasi != null && strlen($item->fc_sk_ijin_operasi) > 50) {
+                        $photo = $item->fc_sk_ijin_operasi;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'fc_sk_ijin_operasi-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp06/fc_sk_ijin_operasi/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('fc_sk_ijin_operasi' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->fc_ktp != null && strlen($item->fc_ktp) > 50) {
+                        $photo = $item->fc_ktp;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'fc_ktp-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp06/fc_ktp/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('fc_ktp' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->fc_kk != null && strlen($item->fc_kk) > 50) {
+                        $photo = $item->fc_kk;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'fc_kk-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp06/fc_kk/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('fc_kk' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->fc_dokumen != null && strlen($item->fc_dokumen) > 50) {
+                        $photo = $item->fc_dokumen;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'fc_dokumen-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp06/fc_dokumen/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('fc_dokumen' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP07
+        private function ConvertImage07($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp0' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp07/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->akte_notaris != null && strlen($item->akte_notaris) > 50) {
+                        $photo = $item->akte_notaris;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'akte_notaris-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp07/akte_notaris/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('akte_notaris' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->foto_kantor != null && strlen($item->foto_kantor) > 50) {
+                        $photo = $item->foto_kantor;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'foto_kantor-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp07/foto_kantor/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('foto_kantor' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->susunan_pengurus != null && strlen($item->susunan_pengurus) > 50) {
+                        $photo = $item->susunan_pengurus;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'susunan_pengurus-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp07/susunan_pengurus/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('susunan_pengurus' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->sertifikat_pembimbing != null && strlen($item->sertifikat_pembimbing) > 50) {
+                        $photo = $item->sertifikat_pembimbing;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'sertifikat_pembimbing-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp07/sertifikat_pembimbing/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('sertifikat_pembimbing' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->program_manasik != null && strlen($item->program_manasik) > 50) {
+                        $photo = $item->program_manasik;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'program_manasik-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp07/program_manasik/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('program_manasik' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP08
+        private function ConvertImage08($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp0' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp08/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->akte_notaris != null && strlen($item->akte_notaris) > 50) {
+                        $photo = $item->akte_notaris;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'akte_notaris-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp08/akte_notaris/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('akte_notaris' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->foto_kantor != null && strlen($item->foto_kantor) > 50) {
+                        $photo = $item->foto_kantor;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'foto_kantor-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp08/foto_kantor/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('foto_kantor' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->susunan_pengurus != null && strlen($item->susunan_pengurus) > 50) {
+                        $photo = $item->susunan_pengurus;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'susunan_pengurus-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp08/susunan_pengurus/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('susunan_pengurus' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->sertifikat_pembimbing != null && strlen($item->sertifikat_pembimbing) > 50) {
+                        $photo = $item->sertifikat_pembimbing;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'sertifikat_pembimbing-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp08/sertifikat_pembimbing/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('sertifikat_pembimbing' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->program_manasik != null && strlen($item->program_manasik) > 50) {
+                        $photo = $item->program_manasik;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'program_manasik-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp08/program_manasik/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('program_manasik' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->laporan_bimbingan != null && strlen($item->laporan_bimbingan) > 50) {
+                        $photo = $item->laporan_bimbingan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'laporan_bimbingan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp08/laporan_bimbingan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('laporan_bimbingan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->sertifikat_akreditasi != null && strlen($item->sertifikat_akreditasi) > 50) {
+                        $photo = $item->sertifikat_akreditasi;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'sertifikat_akreditasi-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp08/sertifikat_akreditasi/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('sertifikat_akreditasi' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->sk_pendirian != null && strlen($item->sk_pendirian) > 50) {
+                        $photo = $item->sk_pendirian;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'sk_pendirian-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp08/sk_pendirian/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('sk_pendirian' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->rincian_penggunaan_biaya_bimbingan != null && strlen($item->rincian_penggunaan_biaya_bimbingan) > 50) {
+                        $photo = $item->rincian_penggunaan_biaya_bimbingan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'rincian_penggunaan_biaya_bimbingan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp08/rincian_penggunaan_biaya_bimbingan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('rincian_penggunaan_biaya_bimbingan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP09
+        private function ConvertImage09($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp0' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp09/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->akte_notaris != null && strlen($item->akte_notaris) > 50) {
+                        $photo = $item->akte_notaris;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'akte_notaris-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp09/akte_notaris/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('akte_notaris' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->izin_usaha != null && strlen($item->izin_usaha) > 50) {
+                        $photo = $item->izin_usaha;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'izin_usaha-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp09/izin_usaha/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('izin_usaha' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->skud != null && strlen($item->skud) > 50) {
+                        $photo = $item->skud;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'skud-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp09/skud/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('skud' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->npwp != null && strlen($item->npwp) > 50) {
+                        $photo = $item->npwp;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'npwp-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp09/npwp/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('npwp' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->srt_rekomendasi_pemkab != null && strlen($item->srt_rekomendasi_pemkab) > 50) {
+                        $photo = $item->srt_rekomendasi_pemkab;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_rekomendasi_pemkab-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp09/srt_rekomendasi_pemkab/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_rekomendasi_pemkab' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->laporan_keuangan != null && strlen($item->laporan_keuangan) > 50) {
+                        $photo = $item->laporan_keuangan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'laporan_keuangan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp09/laporan_keuangan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('laporan_keuangan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->susunan_pengurus != null && strlen($item->susunan_pengurus) > 50) {
+                        $photo = $item->susunan_pengurus;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'susunan_pengurus-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp09/susunan_pengurus/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('susunan_pengurus' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->data_pemegang_saham != null && strlen($item->data_pemegang_saham) > 50) {
+                        $photo = $item->data_pemegang_saham;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'data_pemegang_saham-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp09/data_pemegang_saham/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('data_pemegang_saham' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                } else if ($item->data_direksi_komisaris != null && strlen($item->data_direksi_komisaris) > 50) {
+                        $photo = $item->data_direksi_komisaris;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'data_direksi_komisaris-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp09/data_direksi_komisaris/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('data_direksi_komisaris' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp0' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP10
+        private function ConvertImage10($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp10/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->sk != null && strlen($item->sk) > 50) {
+                        $photo = $item->sk;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'sk-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp10/sk/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('sk' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->akte_notaris != null && strlen($item->akte_notaris) > 50) {
+                        $photo = $item->akte_notaris;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'akte_notaris-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp10/akte_notaris/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('akte_notaris' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->izin_usaha != null && strlen($item->izin_usaha) > 50) {
+                        $photo = $item->izin_usaha;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'izin_usaha-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp10/izin_usaha/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('izin_usaha' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->skud != null && strlen($item->skud) > 50) {
+                        $photo = $item->skud;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'skud-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp10/skud/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('skud' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->npwp != null && strlen($item->npwp) > 50) {
+                        $photo = $item->npwp;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'npwp-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp10/npwp/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('npwp' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->srt_rekomendasi_pemkab != null && strlen($item->srt_rekomendasi_pemkab) > 50) {
+                        $photo = $item->srt_rekomendasi_pemkab;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_rekomendasi_pemkab-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp10/srt_rekomendasi_pemkab/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_rekomendasi_pemkab' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->laporan_keuangan != null && strlen($item->laporan_keuangan) > 50) {
+                        $photo = $item->laporan_keuangan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'laporan_keuangan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp10/laporan_keuangan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('laporan_keuangan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->susunan_pengurus != null && strlen($item->susunan_pengurus) > 50) {
+                        $photo = $item->susunan_pengurus;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'susunan_pengurus-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp10/susunan_pengurus/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('susunan_pengurus' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->bukti_pemberangkatan != null && strlen($item->bukti_pemberangkatan) > 50) {
+                        $photo = $item->bukti_pemberangkatan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'bukti_pemberangkatan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp10/bukti_pemberangkatan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('bukti_pemberangkatan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP11
+        private function ConvertImage11($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_rekomendasi != null && strlen($item->srt_rekomendasi) > 50) {
+                        $photo = $item->srt_rekomendasi;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_rekomendasi-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp11/srt_rekomendasi/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_rekomendasi' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->srt_penerimaan != null && strlen($item->srt_penerimaan) > 50) {
+                        $photo = $item->srt_penerimaan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_penerimaan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp11/srt_penerimaan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_penerimaan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->raport != null && strlen($item->raport) > 50) {
+                        $photo = $item->raport;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'raport-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp11/raport/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('raport' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP12
+        private function ConvertImage12($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->proposal_permohonan != null && strlen($item->proposal_permohonan) > 50) {
+                        $photo = $item->proposal_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'proposal_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp12/proposal_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('proposal_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP13
+        private function ConvertImage13($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp13/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->proposal != null && strlen($item->proposal) > 50) {
+                        $photo = $item->proposal;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'proposal-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp13/proposal/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('proposal' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP14
+        private function ConvertImage14($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->proposal_permohonan != null && strlen($item->proposal_permohonan) > 50) {
+                        $photo = $item->proposal_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'proposal_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp14/proposal_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('proposal_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP15
+        private function ConvertImage15($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->proposal_permohonan != null && strlen($item->proposal_permohonan) > 50) {
+                        $photo = $item->proposal_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'proposal_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp15/proposal_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('proposal_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP16
+        private function ConvertImage16($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp16/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->proposal != null && strlen($item->proposal) > 50) {
+                        $photo = $item->proposal;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'proposal-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp16/proposal/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('proposal' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP17
+        private function ConvertImage17($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp17/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->srt_persetujuan_sekolah_satmikal != null && strlen($item->srt_persetujuan_sekolah_satmikal) > 50) {
+                        $photo = $item->srt_persetujuan_sekolah_satmikal;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_persetujuan_sekolah_satmikal-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp17/srt_persetujuan_sekolah_satmikal/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_persetujuan_sekolah_satmikal' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->srt_persetujuan_sekolah_tujuan != null && strlen($item->srt_persetujuan_sekolah_tujuan) > 50) {
+                        $photo = $item->srt_persetujuan_sekolah_tujuan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_persetujuan_sekolah_tujuan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp17/srt_persetujuan_sekolah_tujuan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_persetujuan_sekolah_tujuan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP18
+        private function ConvertImage18($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp18/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->proposal != null && strlen($item->proposal) > 50) {
+                        $photo = $item->proposal;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'proposal-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp18/proposal/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('proposal' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP19
+        private function ConvertImage19($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp19/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->jadwal_siaran != null && strlen($item->jadwal_siaran) > 50) {
+                        $photo = $item->jadwal_siaran;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'jadwal_siaran-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp19/jadwal_siaran/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('jadwal_siaran' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP20
+        private function ConvertImage20($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp20/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->srt_rek_kua != null && strlen($item->srt_rek_kua) > 50) {
+                        $photo = $item->srt_rek_kua;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_rek_kua-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp20/srt_rek_kua/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_rek_kua' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP21
+        private function ConvertImage21($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp21/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP22
+        private function ConvertImage22($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp22/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->formulir != null && strlen($item->formulir) > 50) {
+                        $photo = $item->formulir;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'formulir-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp22/formulir/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('formulir' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP23
+        private function ConvertImage23($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp23/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP24
+        private function ConvertImage24($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp24/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                } else if ($item->fc_dokumen != null && strlen($item->fc_dokumen) > 50) {
+                        $photo = $item->fc_dokumen;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'fc_dokumen-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp24/fc_dokumen/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('fc_dokumen' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP25
+        private function ConvertImage25($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp25/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP26
+        private function ConvertImage26($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp' . $id_layanan)->row();
+                $fileName = "";
+                if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
+                        $photo = $item->srt_permohonan;
+                        if (!empty($photo)) {
+                                $entry = base64_decode($photo);
+                                $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
+                                $directory = '../assets/dashboard/pemohon/ptsp/ptsp26/srt_permohonan/' . $fileName;
+                                file_put_contents($directory, $entry);
+                        }
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
+                }
+        }
+
+        //Convert Image PTSP27
+        private function ConvertImage27($id_permohonan_ptsp, $id_layanan)
+        {
+                $item = $this->db->where('id_permohonan_ptsp', $id_permohonan_ptsp)->get('ptsp' . $id_layanan)->row();
                 $fileName = "";
                 if ($item->srt_permohonan != null && strlen($item->srt_permohonan) > 50) {
                         $photo = $item->srt_permohonan;
@@ -535,10 +1514,10 @@ class Dashboard extends CI_Controller
                                 $entry = base64_decode($photo);
                                 $fileName = 'srt_permohonan-' . date('ymd') . '-' . substr(md5(rand()), 0, 10) . '.pdf';
                                 $directory = '../assets/dashboard/pemohon/ptsp/ptsp27/srt_permohonan/' . $fileName;
-                                file_put_contents($directory , $entry);
+                                file_put_contents($directory, $entry);
                         }
-                $data_ptsp = array('srt_permohonan' => $fileName);
-                $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp'.$id_layanan);
+                        $data_ptsp = array('srt_permohonan' => $fileName);
+                        $this->m_fo->update_ptsp($id_permohonan_ptsp, $data_ptsp, 'ptsp' . $id_layanan);
                 }
         }
 
