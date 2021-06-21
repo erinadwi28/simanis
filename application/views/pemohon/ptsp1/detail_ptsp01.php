@@ -7,15 +7,13 @@
 			<h3 class="judullist py-3">Detail Permohonan</h3>
 			<nav aria-label="breadcrumb" class="nav-breadcrumb">
 				<ol class="breadcrumb">
-					<?php if ($detail->status != 'Pending' && $detail->status != 'Selesai') { ?>
+					<?php if ($detail->status == 'Validasi Kemenag') { ?>
 						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_validasi_kemenag') ?>">Permohonan Proses
-								Kemenag</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_validasi_kemenag') ?>">Permohonan Proses Kemenag</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Detail Permohonan</li>
 					<?php } elseif ($detail->status == 'Selesai') { ?>
 						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Permohonan
-								Selesai</a></li>
+						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Permohonan Selesai</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Detail Permohonan</li>
 					<?php } else { ?>
 						<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
@@ -51,7 +49,7 @@
 						</center>
 					</div>
 
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp01/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp01_1">
 								<div class="form-group">
@@ -274,7 +272,7 @@
 						</table>
 					</div>
 
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<div class="float-right">
 								<a href="<?= base_url() ?>dashboard/form_ubah_ptsp01/<?= $detail->id_permohonan_ptsp ?>">

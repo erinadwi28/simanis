@@ -212,11 +212,11 @@
 								<?php } ?>
 							</tbody>
 						</table>
-						<?php if ($detail->status == 'Pending') { ?>
+						<?php if ($detail->status == 'Belum Tuntas') { ?>
 							<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen disamping</em>
 						<?php } ?>
 					</div>
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<div class="float-right">
 								<a href="<?= base_url() ?>dashboard/form_ubah_ptsp11/<?= $detail->id_permohonan_ptsp ?>">
@@ -255,7 +255,7 @@
 							<?php } ?>
 						</center>
 					</div>
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_srt_rekomendasi_ptsp11/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp11_1">
 								<div class="form-group">
@@ -302,7 +302,7 @@
 							<?php } ?>
 						</center>
 					</div>
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_srt_penerimaan_ptsp11/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp11_2">
 								<div class="form-group">
@@ -349,7 +349,7 @@
 							<?php } ?>
 						</center>
 					</div>
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_raport_ptsp11/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp11_3">
 								<div class="form-group">
@@ -378,7 +378,7 @@
 
 		<!-- Button Selesai -->
 		<div class="row clearfix float-right px-2">
-			<?php if ($detail->status == 'Pending') { ?>
+			<?php if ($detail->status == 'Belum Tuntas') { ?>
 				<a href="<?= base_url() ?>dashboard/aksi_update_status_permohonan/<?= $detail->id_permohonan_ptsp ?>">
 					<button id="btn_selesai" class="btn btn-sm btn-primary" type="submit">
 						<i class="far fa-save nav-icon">

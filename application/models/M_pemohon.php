@@ -79,6 +79,19 @@ class M_pemohon extends CI_Model
         return $hasil;
     }
 
+    // hitung jumlah permohonan status belum tuntas
+    public function jml_permohonan_belum_tuntas()
+    {
+        $this->db->select('id_permohonan_ptsp, COUNT(id_permohonan_ptsp) as permohonan_belum_tuntas');
+        $this->db->from('permohonan_ptsp');
+        $this->db->where('id_pemohon', $this->session->userdata('id_pemohon'));
+        $this->db->where('status', 'Belum Tuntas');
+        $this->db->where('status_delete', 0);
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
     // hitung jumlah permohonan status pending
     public function jml_permohonan_selesai()
     {
@@ -157,6 +170,21 @@ class M_pemohon extends CI_Model
         $this->db->where('permohonan_ptsp.id_pemohon', $this->session->userdata('id_pemohon'));
         $this->db->where('permohonan_ptsp.status_delete', 0);
         $this->db->where('permohonan_ptsp.status', 'Pending');
+        $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
+
+        $hasil = $this->db->get();
+        return $hasil;
+    }
+
+    //get data permohonan belum tuntas
+    public function list_permohonan_belum_tuntas()
+    {
+        $this->db->select('permohonan_ptsp.*, layanan_ptsp.nama_layanan');
+        $this->db->from('permohonan_ptsp');
+        $this->db->join('layanan_ptsp', 'permohonan_ptsp.id_layanan = layanan_ptsp.id_layanan', 'INNER');
+        $this->db->where('permohonan_ptsp.id_pemohon', $this->session->userdata('id_pemohon'));
+        $this->db->where('permohonan_ptsp.status_delete', 0);
+        $this->db->where('permohonan_ptsp.status', 'Belum Tuntas');
         $this->db->order_by('permohonan_ptsp.id_permohonan_ptsp', 'desc');
 
         $hasil = $this->db->get();

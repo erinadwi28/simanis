@@ -6,7 +6,7 @@
 			<h3 class="judullist py-3">Detail Permohonan</h3>
 			<nav aria-label="breadcrumb" class="nav-breadcrumb">
 				<ol class="breadcrumb">
-					<?php if ($detail->status != 'Pending' && $detail->status != 'Selesai') { ?>
+					<?php if ($detail->status == 'Validasi Kemenag') { ?>
 						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
 						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_validasi_kemenag') ?>">Permohonan Proses Kemenag</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Detail Permohonan</li>
@@ -165,12 +165,12 @@
 								<?php } ?>
 							</tbody>
 						</table>
-						<?php if ($detail->status == 'Pending') { ?>
+						<?php if ($detail->status == 'Belum Tuntas') { ?>
 							<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen dibawah</em>
 						<?php } ?>
 					</div>
 
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<div class="float-right">
 								<a href="<?= base_url() ?>dashboard/form_ubah_ptsp08/<?= $detail->id_permohonan_ptsp ?>">
@@ -212,7 +212,7 @@
 
 						</center>
 					</div>
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp08/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_1">
 								<div class="form-group">
@@ -259,7 +259,7 @@
 							<?php } ?>
 						</center>
 					</div>
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_akte_notaris_ptsp08/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_2">
 								<div class="form-group">
@@ -308,7 +308,7 @@
 							<?php } ?>
 						</center>
 					</div>
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_foto_kantor_ptsp08/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_3">
 								<div class="form-group">
@@ -356,7 +356,7 @@
 							<?php } ?>
 						</center>
 					</div>
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_susunan_pengurus_ptsp08/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_4">
 								<div class="form-group">
@@ -408,7 +408,7 @@
 
 						</center>
 					</div>
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_sertifikat_pembimbing_ptsp08/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_5">
 								<div class="form-group">
@@ -455,7 +455,7 @@
 							<?php } ?>
 						</center>
 					</div>
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_program_manasik_ptsp08/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_6">
 								<div class="form-group">
@@ -503,7 +503,7 @@
 							<?php } ?>
 						</center>
 					</div>
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_laporan_bimbingan_ptsp08/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_7">
 								<div class="form-group">
@@ -551,7 +551,7 @@
 							<?php } ?>
 						</center>
 					</div>
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_sertifikat_akreditasi_ptsp08/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_8">
 								<div class="form-group">
@@ -602,7 +602,7 @@
 							<?php } ?>
 						</center>
 					</div>
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_sk_pendirian_ptsp08/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_9">
 								<div class="form-group">
@@ -649,7 +649,7 @@
 							<?php } ?>
 						</center>
 					</div>
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_rincian_penggunaan_biaya_bimbingan_ptsp08/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp08_10">
 								<div class="form-group">
@@ -703,7 +703,7 @@
 
 		<!-- Button Selesai -->
 		<div class="row clearfix float-right px-2">
-			<?php if ($detail->status == 'Pending') { ?>
+			<?php if ($detail->status == 'Belum Tuntas') { ?>
 				<a href="<?= base_url() ?>dashboard/aksi_update_status_permohonan/<?= $detail->id_permohonan_ptsp ?>">
 					<button id="btn_selesai" class="btn btn-sm btn-primary" type="submit">
 						<i class="far fa-save nav-icon">

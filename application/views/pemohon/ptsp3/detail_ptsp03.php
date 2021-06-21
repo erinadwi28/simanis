@@ -7,7 +7,7 @@
 			<h3 class="judullist py-3">Detail Permohonan</h3>
 			<nav aria-label="breadcrumb" class="nav-breadcrumb">
 				<ol class="breadcrumb">
-					<?php if ($detail->status != 'Pending' && $detail->status != 'Selesai') { ?>
+					<?php if ($detail->status == 'Validasi Kemenag') { ?>
 						<li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
 						<li class="breadcrumb-item"><a href="<?= base_url('dashboard/list_permohonan_validasi_kemenag') ?>">Permohonan Proses Kemenag</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Detail Permohonan</li>
@@ -51,7 +51,7 @@
 						</center>
 					</div>
 
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 					<div class="card-footer">
 						<form action="<?= base_url('dashboard/update_fc_ijazah_ptsp03/' . $detail->id_ptsp) ?>"
 							enctype="multipart/form-data" method="post" accept-charset="utf-8"
@@ -175,12 +175,12 @@
 								<?php } ?>
 							</tbody>
 						</table>
-						<?php if ($detail->status == 'Pending') { ?>
+						<?php if ($detail->status == 'Belum Tuntas') { ?>
 							<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen disamping</em>
 						<?php } ?>
 					</div>
 
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<div class="float-right">
 								<a href="<?= base_url() ?>dashboard/form_ubah_ptsp03/<?= $detail->id_permohonan_ptsp ?>">
