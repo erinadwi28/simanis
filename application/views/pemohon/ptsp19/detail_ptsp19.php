@@ -52,7 +52,7 @@
 						</center>
 					</div>
 
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_srt_permohonan_ptsp19/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp19_1">
 								<div class="form-group">
@@ -99,7 +99,7 @@
 						</center>
 					</div>
 
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<form action="<?= base_url('dashboard/update_jadwal_siaran_ptsp19/' . $detail->id_ptsp) ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="formupload_ptsp19_2">
 								<div class="form-group">
@@ -290,12 +290,12 @@
 								<?php } ?>
 							</tbody>
 						</table>
-						<?php if ($detail->status == 'Pending') { ?>
+						<?php if ($detail->status == 'Belum Tuntas') { ?>
 							<em class="small text-danger float-right mt-2 mb-0">*Pastikan data benar dan Unggah semua dokumen disamping/em>
 						<?php } ?>
 					</div>
 
-					<?php if ($detail->status == 'Pending') { ?>
+					<?php if ($detail->status == 'Belum Tuntas') { ?>
 						<div class="card-footer">
 							<div class="float-right">
 								<a href="<?= base_url() ?>dashboard/form_ubah_ptsp19/<?= $detail->id_permohonan_ptsp ?>">

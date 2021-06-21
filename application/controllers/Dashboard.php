@@ -22,6 +22,7 @@ class Dashboard extends CI_Controller
         $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
         $data_permohonan['permohonan_validasi_kemenag'] = $this->m_pemohon->jml_permohonan_validasi_kemenag()->result();
         $data_permohonan['permohonan_pending'] = $this->m_pemohon->jml_permohonan_pending()->result();
+        $data_permohonan['permohonan_belum_tuntas'] = $this->m_pemohon->jml_permohonan_belum_tuntas()->result();
         $data_permohonan['permohonan_selesai'] = $this->m_pemohon->jml_permohonan_selesai()->result();
 
         $this->load->view('header', $data_title);
@@ -210,6 +211,23 @@ class Dashboard extends CI_Controller
         $this->load->view('pemohon/sidebar_pemohon');
         $this->load->view('topbar', $data);
         $this->load->view('pemohon/list_permohonan_pending', $data_detail);
+        $this->load->view('footer');
+    }
+
+    //list permohonan belum tuntas
+    public function list_permohonan_belum_tuntas()
+    {
+        $data_title['title'] = 'List Permohonan Belum Tuntas';
+        $data['pemohon'] = $this->db->get_where('pemohon', ['id_pemohon' =>
+        $this->session->userdata('id_pemohon')])->row_array();
+        $data['total_notif'] = $this->m_pemohon->jml_notif()->result();
+
+        $data_detail['data_permohonan'] = $this->m_pemohon->list_permohonan_belum_tuntas()->result();
+
+        $this->load->view('header', $data_title);
+        $this->load->view('pemohon/sidebar_pemohon');
+        $this->load->view('topbar', $data);
+        $this->load->view('pemohon/list_permohonan_belum_tuntas', $data_detail);
         $this->load->view('footer');
     }
 
@@ -746,6 +764,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '3',
             'sie' => 'Subbag TU',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
