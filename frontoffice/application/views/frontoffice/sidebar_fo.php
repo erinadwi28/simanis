@@ -44,6 +44,7 @@
 					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_prosesKasi') ?>">Proses Kasi</a>
 					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_prosesKasubag') ?>">Proses Kasubag</a>
 					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_selesai') ?>">Selesai</a>
+					<a class="collapse-item" href="<?= base_url('dashboard/list_permohonan_arsip') ?>">Arsip Permohonan</a>
 				</div>
 			</div>
 		</li>

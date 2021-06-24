@@ -1498,6 +1498,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '1',
             'sie' => 'Subbag TU',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -1653,6 +1654,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '2',
             'sie' => 'Subbag TU',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -1954,6 +1956,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '4',
             'sie' => 'Subbag TU',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -2098,6 +2101,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '5',
             'sie' => 'PHU',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -2381,6 +2385,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '6',
             'sie' => 'PHU',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -2683,6 +2688,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '7',
             'sie' => 'PHU',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -3019,6 +3025,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '8',
             'sie' => 'PHU',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -3507,6 +3514,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '9',
             'sie' => 'PHU',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -3995,6 +4003,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '10',
             'sie' => 'PHU',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -4483,6 +4492,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '11',
             'sie' => 'Penmad',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -4717,6 +4727,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '12',
             'sie' => 'Penmad',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -4865,6 +4876,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '13',
             'sie' => 'Penmad',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -5071,6 +5083,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '14',
             'sie' => 'Pontren',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -5227,6 +5240,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '15',
             'sie' => 'Pontren',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -5377,6 +5391,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '16',
             'sie' => 'Pontren',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -5579,6 +5594,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '17',
             'sie' => 'Subbag TU',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -5833,6 +5849,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '18',
             'sie' => 'Bimas Islam',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -6035,6 +6052,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '19',
             'sie' => 'Bimas Islam',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -6221,6 +6239,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '20',
             'sie' => 'Bimas Islam',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -6409,6 +6428,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '21',
             'sie' => 'Bimas Islam',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -6557,6 +6577,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '22',
             'sie' => 'Bimas Islam',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -6737,6 +6758,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '23',
             'sie' => 'PAIS',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -6899,6 +6921,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '24',
             'sie' => 'Subbag TU',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -7083,6 +7106,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '25',
             'sie' => 'Garazawa',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -7226,6 +7250,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '26',
             'sie' => 'Subbag TU',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
@@ -7369,6 +7394,7 @@ class Dashboard extends CI_Controller
             'id_pemohon' => $this->session->userdata('id_pemohon'),
             'id_layanan' => '27',
             'sie' => 'Subbag TU',
+            'status' => 'Belum Tuntas',
         );
 
         $id_permohonan = $this->m_pemohon->tambah_permohonan($data_permohonan);
